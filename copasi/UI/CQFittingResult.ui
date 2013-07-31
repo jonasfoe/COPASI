@@ -427,6 +427,19 @@
        </property>
       </column>
      </widget>
+     <widget class="QWidget" name="mpProtocolPage">
+       <attribute name="title">
+         <string>Protocol</string>
+       </attribute>
+       <layout class="QGridLayout">
+         <property name="margin">
+           <number>0</number>
+         </property>
+         <item row="0" column="0">
+           <widget class="QTextBrowser" name="protocolTextEdit"/>
+         </item>
+       </layout>
+     </widget>
     </widget>
    </item>
   </layout>
