@@ -30,6 +30,7 @@
 #include "parameterFitting/CFitItem.h"
 #include "parameterFitting/CExperimentSet.h"
 #include "parameterFitting/CExperiment.h"
+#include "optimization/COptMethod.h"
 #include "report/CCopasiRootContainer.h"
 #include "commandline/CLocaleString.h"
 #include "model/CModel.h"
@@ -427,6 +428,21 @@ bool CQFittingResult::enterProtected()
 
   mpCrossValidationValues->resizeColumnsToContents();
   mpCrossValidationValues->resizeRowsToContents();
+
+  // protocol
+  if (true)
+    {
+      mpTabWidget->setTabEnabled(mpTabWidget->indexOf(mpProtocolPage), true);
+
+      const COptMethod * pMethod =
+        dynamic_cast<const COptMethod *>(mpTask->getMethod());
+      assert(pMethod);
+      protocolTextEdit->setText(FROM_UTF8(pMethod->getMethodLog()));
+    }
+  else
+    {
+      mpTabWidget->setTabEnabled(mpTabWidget->indexOf(mpProtocolPage), false);
+    }
 
   return true;
 }

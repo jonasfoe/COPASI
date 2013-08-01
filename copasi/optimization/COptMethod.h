@@ -73,6 +73,11 @@ protected:
    */
   const std::vector< COptItem * > * mpOptContraints;
 
+  /**
+  * The Log created during parameter estimation
+  */
+  std::ostringstream mMethodLog;
+
   // Operations
 private:
   /**
@@ -129,6 +134,11 @@ public:
    * @return bool suitability of the method
    */
   virtual bool isValidProblem(const CCopasiProblem * pProblem);
+
+  /**
+   * Retrieve the log of the solution
+   */
+  std::string getMethodLog() const;
 
 protected:
   /**

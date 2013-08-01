@@ -443,6 +443,9 @@ bool COptMethodLevenbergMarquardt::initialize()
   else
     mHaveResiduals = false;
 
+  //clear log
+  mMethodLog.str("");
+
   return true;
 }
 
