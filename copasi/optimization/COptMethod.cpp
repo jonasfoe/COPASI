@@ -230,3 +230,8 @@ bool COptMethod::isValidProblem(const CCopasiProblem * pProblem)
 
   return true;
 }
+
+std::string COptMethod::getMethodLog() const
+{
+  return mMethodLog.str();
+}
