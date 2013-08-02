@@ -123,6 +123,11 @@ private:
   unsigned C_INT32 mIteration;
 
   /**
+   * Count of algorithm leaving parameter space
+   */
+  unsigned C_INT32 mParameterOutOfBounds;
+
+  /**
    * Handle to the process report item "Current Iteration"
    */
   size_t mhIteration;

@@ -71,7 +71,13 @@ protected:
   /**
    * A vector of pointers to the functional constraints
    */
+
   const std::vector< COptItem * > * mpOptContraints;
+
+  /**
+   * Define the level of detail for the log
+   */
+  unsigned C_INT32 mLogDetail;
 
   /**
   * The Log created during parameter estimation

@@ -90,6 +90,11 @@ bool COptMethod::initialize()
       !mpReport->getStream())
     mpReport = NULL;*/
 
+  mLogDetail = 2;
+
+  //clear log
+  mMethodLog.str("");
+
   return true;
 }
 
