@@ -37,6 +37,7 @@ COptMethodLevenbergMarquardt::COptMethodLevenbergMarquardt(const CCopasiContaine
   mTolerance(1.e-006),
   mModulation(1.e-006),
   mIteration(0),
+  mParameterOutOfBounds(0),
   mhIteration(C_INVALID_INDEX),
   mVariableSize(0),
   mCurrent(),
@@ -69,6 +70,7 @@ COptMethodLevenbergMarquardt::COptMethodLevenbergMarquardt(const COptMethodLeven
   mTolerance(src.mTolerance),
   mModulation(src.mModulation),
   mIteration(0),
+  mParameterOutOfBounds(0),
   mhIteration(C_INVALID_INDEX),
   mVariableSize(0),
   mCurrent(),
@@ -131,6 +133,7 @@ bool COptMethodLevenbergMarquardt::optimise()
 
   // initial point is first guess but we have to make sure that we
   // are within the parameter domain
+  bool pointInParameterDomain = true;
   for (i = 0; i < mVariableSize; i++)
     {
       const COptItem & OptItem = *(*mpOptItem)[i];
@@ -139,10 +142,12 @@ bool COptMethodLevenbergMarquardt::optimise()
         {
           case -1:
             mCurrent[i] = *OptItem.getLowerBoundValue();
+            pointInParameterDomain = false;
             break;
 
           case 1:
             mCurrent[i] = *OptItem.getUpperBoundValue();
+            pointInParameterDomain = false;
             break;
 
           case 0:
@@ -152,6 +157,7 @@ bool COptMethodLevenbergMarquardt::optimise()
 
       (*(*mpSetCalculateVariable)[i])(mCurrent[i]);
     }
+  if (mLogDetail >= 1 && !pointInParameterDomain) mMethodLog << "Initial point not within parameter domain.\n";
 
   // keep the current parameter for later
   mBest = mCurrent;
@@ -230,6 +236,7 @@ bool COptMethodLevenbergMarquardt::optimise()
       // Force the parameters to stay within the defined boundaries.
       // Forcing the parameters gives better solution than forcing the steps.
       // It gives same results with Gepasi.
+      pointInParameterDomain = true;
       for (i = 0; i < mVariableSize; i++)
         {
           mCurrent[i] = mBest[i] + mStep[i];
@@ -240,16 +247,19 @@ bool COptMethodLevenbergMarquardt::optimise()
             {
               case - 1:
                 mCurrent[i] = *OptItem.getLowerBoundValue() + std::numeric_limits< C_FLOAT64 >::epsilon();
+                pointInParameterDomain = false;
                 break;
 
               case 1:
                 mCurrent[i] = *OptItem.getUpperBoundValue() - std::numeric_limits< C_FLOAT64 >::epsilon();
+                pointInParameterDomain = false;
                 break;
 
               case 0:
                 break;
             }
         }
+        if (!pointInParameterDomain) mParameterOutOfBounds++;
 
 // This is the Gepasi code, which would do the truncation along the search line
 
@@ -331,13 +341,17 @@ bool COptMethodLevenbergMarquardt::optimise()
             {
               if (starts < 3)
                 {
+                  if (mLogDetail >= 1) mMethodLog << "Iteration " << mIteration << ": Objective function value and parameter change lower than tolerance (" << starts << "/3). Resetting lambda.\n";
                   // let's restart with lambda=1
                   LM_lambda = 1.0;
                   starts++;
                 }
               else
-                // signal the end
-                nu = 0.0;
+                {
+                  if (mLogDetail >= 1) mMethodLog << "Iteration " << mIteration << ": Objective function value and parameter change lower than tolerance  (" << starts << "/3). Terminating.\n";
+                  // signal the end
+                  nu = 0.0;
+                }
             }
         }
       else
@@ -349,9 +363,15 @@ bool COptMethodLevenbergMarquardt::optimise()
             (*(*mpSetCalculateVariable)[i])(mCurrent[i]);
 
           // if lambda too high terminate
-          if (LM_lambda > LAMBDA_MAX) nu = 0.0;
+          if (LM_lambda > LAMBDA_MAX)
+            {
+              if (mLogDetail >= 1) mMethodLog << "Iteration " << mIteration << ": Lambda reached max value. Terminating.\n";
+              nu = 0.0;
+            }
           else
             {
+              if (mLogDetail >= 2) mMethodLog << "Iteration " << mIteration << ": Restarting iteration with increased lambda.\n";
+
               // increase lambda
               LM_lambda *= nu * 2;
               // don't recalculate the Hessian
@@ -363,6 +383,12 @@ bool COptMethodLevenbergMarquardt::optimise()
 
       if (mpCallBack)
         mContinue &= mpCallBack->progressItem(mhIteration);
+    }
+
+  if (mLogDetail >= 1)
+    {
+      mMethodLog << "Algorithm reached the edge of the parameter domain " << mParameterOutOfBounds << " times.\n";
+      mMethodLog << "Algorithm terminated after " << mIteration << " of " << mIterationLimit << " Iterations.\n";
     }
 
   if (mpCallBack)
@@ -440,9 +466,6 @@ bool COptMethodLevenbergMarquardt::initialize()
     }
   else
     mHaveResiduals = false;
-
-  //clear log
-  mMethodLog.str("");
 
   return true;
 }

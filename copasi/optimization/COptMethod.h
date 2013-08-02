@@ -77,6 +77,11 @@ class COptMethod : public CCopasiMethod
     const std::vector< COptItem * > * mpOptContraints;
 
     /**
+     * Define the level of detail for the log
+     */
+    unsigned C_INT32 mLogDetail;
+
+    /**
      * The Log created during parameter estimation
      */
     std::ostringstream mMethodLog;
