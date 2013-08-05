@@ -975,7 +975,10 @@ bool CFitProblem::calculate()
     }
 
   if (isnan(mCalculateValue))
-    mCalculateValue = mWorstValue;
+    {
+      mFailedCounter++;
+      mCalculateValue = mWorstValue;
+    }
 
   if (mpCallBack) return mpCallBack->progressItem(mhCounter);
 
@@ -1980,7 +1983,10 @@ bool CFitProblem::calculateCrossValidation()
     }
 
   if (isnan(CalculateValue))
-    CalculateValue = mWorstValue;
+    {
+      mFailedCounter++;
+      CalculateValue = mWorstValue;
+    }
 
   if (!checkFunctionalConstraints())
     CalculateValue = mWorstValue;
