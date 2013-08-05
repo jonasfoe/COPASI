@@ -211,6 +211,7 @@ bool COptMethodLevenbergMarquardt::optimise()
       // if Hessian is positive definite solve Hess * h = -grad
       if (info == 0)
         {
+          if (mLogDetail >= 2) mMethodLog << "Iteration " << mIteration << ": Hessian matrix is positive definite. Calculating gradient.\n";
           // SUBROUTINE DPOTRS(UPLO, N, NRHS, A, LDA, B, LDB, INFO)
           dpotrs_(&UPLO, &dim, &one, mHessianLM.array(), &dim, mStep.array(), &dim, &info);
 
@@ -220,6 +221,7 @@ bool COptMethodLevenbergMarquardt::optimise()
         }
       else
         {
+          if (mLogDetail >= 2 && info > 0) mMethodLog << "Iteration " << mIteration << ": Hessian matrix is not positive definite because the leading minor of order " << info << " is not positive definite.\n";
           // We are in a concave region. Thus the current step is an over estimation.
           // We reduce it by dividing by lambda
           for (i = 0; i < mVariableSize; i++)
