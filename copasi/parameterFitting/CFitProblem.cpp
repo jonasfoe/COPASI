@@ -894,7 +894,7 @@ bool CFitProblem::calculate()
 
                     if (!Continue)
                       {
-                        mFailedCounter++;
+                        mFailedCounterException++;
                         mCalculateValue = mWorstValue;
                         break;
                       }
@@ -1053,7 +1053,7 @@ bool CFitProblem::calculate()
       // We do not want to clog the message cue.
       CCopasiMessage::getLastMessage();
 
-      mFailedCounter++;
+      mFailedCounterException++;
 #ifdef XXX
       std::vector<COptItem * >::iterator it = mpOptItems->begin();
       std::vector<COptItem * >::iterator end = mpOptItems->end();
@@ -1080,7 +1080,7 @@ bool CFitProblem::calculate()
 
   catch (...)
     {
-      mFailedCounter++;
+      mFailedCounterException++;
       mCalculateValue = mWorstValue;
 
       if (pExp)
@@ -1097,7 +1097,7 @@ bool CFitProblem::calculate()
 
   if (isnan(mCalculateValue))
     {
-      mFailedCounter++;
+      mFailedCounterNaN++;
       mCalculateValue = mWorstValue;
     }
 
@@ -2047,7 +2047,7 @@ bool CFitProblem::calculateCrossValidation()
       // We do not want to clog the message cue.
       CCopasiMessage::getLastMessage();
 
-      mFailedCounter++;
+      mFailedCounterException++;
       CalculateValue = mWorstValue;
 
       if (pExp)
@@ -2065,7 +2065,7 @@ bool CFitProblem::calculateCrossValidation()
 
   catch (...)
     {
-      mFailedCounter++;
+      mFailedCounterException++;
       CalculateValue = mWorstValue;
 
       if (pExp)
@@ -2083,7 +2083,7 @@ bool CFitProblem::calculateCrossValidation()
 
   if (isnan(CalculateValue))
     {
-      mFailedCounter++;
+      mFailedCounterNaN++;
       CalculateValue = mWorstValue;
     }
 

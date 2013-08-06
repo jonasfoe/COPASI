@@ -80,6 +80,10 @@ void CQFittingResultTab1::load(const CFitProblem * pProblem)
   mpEditCPUTime->setText(QString::number(ExecutionTime));
 
   mpEditSpeed->setText(QString::number(FunctionEvaluations / ExecutionTime));
+  const unsigned C_INT32 & FailedEvaluationsExc = pProblem->getFailedEvaluationsExc();
+  mpEditFailedEvaluationsExc->setText(QString::number(FailedEvaluationsExc));
+  const unsigned C_INT32 & FailedEvaluationsNaN = pProblem->getFailedEvaluationsNaN();
+  mpEditFailedEvaluationsNaN->setText(QString::number(FailedEvaluationsNaN));
 }
 
 void CQFittingResultTab1::init()
