@@ -75,7 +75,7 @@ protected:
   const std::vector< COptItem * > * mpOptContraints;
 
   /**
-   * Define the level of detail for the log
+   * Define the current level of detail for the log
    */
   unsigned C_INT32 mLogDetail;
 
@@ -140,6 +140,11 @@ public:
    * @return bool suitability of the method
    */
   virtual bool isValidProblem(const CCopasiProblem * pProblem);
+
+  /**
+   * Returns the maximum detail at which the method can log.
+   */
+  virtual unsigned C_INT32 getMaxLogDetail() const;
 
   /**
    * Retrieve the log of the solution
