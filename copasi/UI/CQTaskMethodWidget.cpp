@@ -11,6 +11,7 @@
 #include "utilities/CCopasiTask.h"
 #include "utilities/CCopasiMethod.h"
 #include "utilities/utility.h"
+#include "optimization/COptMethod.h"
 
 CQTaskMethodWidget::CQTaskMethodWidget(QWidget* parent, Qt::WindowFlags f):
   QWidget(parent, f),
@@ -29,6 +30,8 @@ CQTaskMethodWidget::CQTaskMethodWidget(QWidget* parent, Qt::WindowFlags f):
 
   mpLblMethod->hide();
   mpBoxMethod->hide();
+  mpLblMethodProtocol->hide();
+  mpBoxMethodProtocol->hide();
 
   mpLblParameter->hide();
   mpTableParameter->hide();
@@ -44,10 +47,12 @@ void CQTaskMethodWidget::changeMethod(int /* index */)
   if (mpTask == NULL)
     return;
 
+  size_t logParameterIndex = mpActiveMethod->getIndex("#LogDetail");
+
   // We update the active methods parameters
   if (mShowMethodParameters)
     {
-      unsigned C_INT32 i;
+      unsigned C_INT32 i, j;
       QString Value;
 
       for (i = 0; i < mpActiveMethod->size(); i++)
@@ -56,9 +61,13 @@ void CQTaskMethodWidget::changeMethod(int /* index */)
             continue;
 
           Value = mpTableParameter->item(i, 0)->text();
-          setParameterValue(mpActiveMethod, i, Value);
+          j = (i < logParameterIndex) ? i : i + 1;
+          setParameterValue(mpActiveMethod, j, Value);
         }
     }
+
+  if (logParameterIndex != C_INVALID_INDEX)
+    mpActiveMethod->setValue(logParameterIndex, (unsigned C_INT32) mpBoxMethodProtocol->currentIndex());
 
   CCopasiMethod::SubType Type =
     toEnum(TO_UTF8(mpBoxMethod->currentText()), CCopasiMethod::SubTypeName, CCopasiMethod::unset);
@@ -102,6 +111,8 @@ void CQTaskMethodWidget::setValidMethods(const unsigned int * validMethods)
       mShowMethods = true;
       mpLblMethod->show();
       mpBoxMethod->show();
+      mpLblMethodProtocol->show();
+      mpBoxMethodProtocol->show();
 
       connect(mpBoxMethod, SIGNAL(activated(int)), this, SLOT(changeMethod(int)));
     }
@@ -110,6 +121,8 @@ void CQTaskMethodWidget::setValidMethods(const unsigned int * validMethods)
       mShowMethods = false;
       mpLblMethod->hide();
       mpBoxMethod->hide();
+      mpLblMethodProtocol->hide();
+      mpBoxMethodProtocol->hide();
 
       disconnect(mpBoxMethod, SIGNAL(activated(int)), this, SLOT(changeMethod(int)));
     }
@@ -137,9 +150,36 @@ bool CQTaskMethodWidget::loadMethod()
 
   if (!mpActiveMethod) return false;
 
+  //Index of logging parameter to be ignored when populating list of parameters
+  //This is a workaround since the logging level has to be defined as CCopasiParameter as to be assigned to the actual mpMethod
+  size_t logParameterIndex = mpActiveMethod->getIndex("#LogDetail");
+
   if (mShowMethods)
     {
       mpBoxMethod->setCurrentIndex(mpBoxMethod->findText(FROM_UTF8(CCopasiMethod::SubTypeName[mpActiveMethod->getSubType()])));
+
+      mpBoxMethodProtocol->clear();
+
+      //Maybe getMaxLogDetail() should be defined in CCopasiMethod. COptMethod and CSteadyStateMethod have getMethodLog() defined individually now.
+      COptMethod * pActiveOptMethod = dynamic_cast< COptMethod * >(mpActiveMethod);
+
+      if (logParameterIndex != C_INVALID_INDEX && pActiveOptMethod != NULL)
+        {
+          mpLblMethodProtocol->setEnabled(true);
+          mpBoxMethodProtocol->setEnabled(true);
+
+          for (unsigned C_INT32 i = 0; i <= pActiveOptMethod->getMaxLogDetail(); i++)
+            {
+              mpBoxMethodProtocol->addItem(QString::number(i));
+            }
+
+          mpBoxMethodProtocol->setCurrentIndex(*mpActiveMethod->getValue(logParameterIndex).pUINT);
+        }
+      else
+        {
+          mpLblMethodProtocol->setEnabled(false);
+          mpBoxMethodProtocol->setEnabled(false);
+        }
     }
 
   if (mShowMethodParameters)
@@ -164,6 +204,10 @@ bool CQTaskMethodWidget::loadMethod()
           pValueItem->setTextAlignment(Qt::AlignRight);
           mpTableParameter->setItem(i, 0, pValueItem);
         }
+
+      //Skip adding "#LogDetail"
+      if (logParameterIndex != C_INVALID_INDEX)
+        mpTableParameter->removeRow(logParameterIndex);
     }
 
   mpTableParameter->resizeColumnsToContents();
@@ -180,6 +224,7 @@ bool CQTaskMethodWidget::saveMethod()
   if (!pMethod) return false;
 
   bool changed = false;
+  size_t logParameterIndex = mpActiveMethod->getIndex("#LogDetail");
 
   if (mShowMethods)
     {
@@ -194,7 +239,7 @@ bool CQTaskMethodWidget::saveMethod()
 
   if (mShowMethodParameters)
     {
-      unsigned C_INT32 i;
+      unsigned C_INT32 i, j;
       QString Value;
       CCopasiParameter::Type Type;
 
@@ -204,13 +249,19 @@ bool CQTaskMethodWidget::saveMethod()
             continue;
 
           Value = mpTableParameter->item(i, 0)->text();
-
-          if (Value != getParameterValue(mpActiveMethod, i, &Type))
+          j = (i < logParameterIndex) ? i : i + 1;
+          if (Value != getParameterValue(mpActiveMethod, j, &Type))
             {
-              setParameterValue(mpActiveMethod, i, Value);
+              setParameterValue(mpActiveMethod, j, Value);
               changed = true;
             }
         }
+    }
+
+  if (logParameterIndex != C_INVALID_INDEX && mpBoxMethodProtocol->currentIndex() != *mpActiveMethod->getValue(logParameterIndex).pUINT)
+    {
+      mpActiveMethod->setValue(logParameterIndex, (unsigned C_INT32) mpBoxMethodProtocol->currentIndex());
+      changed = true;
     }
 
   if (changed)

@@ -55,6 +55,7 @@ COptMethodLevenbergMarquardt::COptMethodLevenbergMarquardt(const CCopasiContaine
 {
   addParameter("Iteration Limit", CCopasiParameter::UINT, (unsigned C_INT32) 2000);
   addParameter("Tolerance", CCopasiParameter::DOUBLE, (C_FLOAT64) 1.e-006);
+  addParameter("#LogDetail", CCopasiParameter::UINT, (unsigned C_INT32) 0);
 
 #ifdef COPASI_DEBUG
   addParameter("Modulation", CCopasiParameter::DOUBLE, (C_FLOAT64) 1.e-006);
@@ -432,6 +433,7 @@ bool COptMethodLevenbergMarquardt::initialize()
   mModulation = 0.001;
   mIterationLimit = * getValue("Iteration Limit").pUINT;
   mTolerance = * getValue("Tolerance").pDOUBLE;
+  mLogDetail = * getValue("#LogDetail").pUINT;
 
 #ifdef COPASI_DEBUG
   mModulation = * getValue("Modulation").pDOUBLE;
@@ -662,4 +664,9 @@ void COptMethodLevenbergMarquardt::hessian()
   for (i = 0; i < mVariableSize; i++)
     for (j = i + 1; j < mVariableSize; j++)
       mHessian[i][j] = mHessian[j][i];
+}
+
+unsigned C_INT32 COptMethodLevenbergMarquardt::getMaxLogDetail() const
+{
+  return 2;
 }
