@@ -35,6 +35,7 @@ COptMethodNelderMead::COptMethodNelderMead(const CCopasiContainer * pParent,
   addParameter("Iteration Limit", CCopasiParameter::UINT, (unsigned C_INT32) 200);
   addParameter("Tolerance", CCopasiParameter::UDOUBLE, (C_FLOAT64) 1.e-005);
   addParameter("Scale", CCopasiParameter::UDOUBLE, (C_FLOAT64) 10.0);
+  addParameter("#LogDetail", CCopasiParameter::UINT, (unsigned C_INT32) 0);
 
   initObjects();
 }
@@ -215,6 +216,7 @@ bool COptMethodNelderMead::optimise()
 
   // initial point is first guess but we have to make sure that we
   // are within the parameter domain
+  bool pointInParameterDomain = true;
   for (i = 0; i < mVariableSize; i++)
     {
       const COptItem & OptItem = *(*mpOptItem)[i];
@@ -223,10 +225,12 @@ bool COptMethodNelderMead::optimise()
         {
           case - 1:
             mCurrent[i] = *OptItem.getLowerBoundValue();
+            pointInParameterDomain = false;
             break;
 
           case 1:
             mCurrent[i] = *OptItem.getUpperBoundValue();
+            pointInParameterDomain = false;
             break;
 
           case 0:
@@ -239,6 +243,7 @@ bool COptMethodNelderMead::optimise()
       // set the magnitude of each parameter
       mStep[i] = (*OptItem.getUpperBoundValue() - *OptItem.getLowerBoundValue()) / mScale;
     }
+  if (mLogDetail >= 1 && !pointInParameterDomain) mMethodLog << "Initial point not within parameter domain.\n";
 
   evaluate();
 
@@ -549,6 +554,8 @@ First:
         }
     }   /* while not found and not quit ... */
 
+  if (mLogDetail >= 1 && found) mMethodLog << "Iteration: " << mIteration << ": Objective function value change lower than tolerance. Checking whether local minimum was found.\n";
+
   /* **** bail out if necessary **** */
   if (quit || !mContinue) goto Finish;
 
@@ -588,10 +595,13 @@ First:
 
   if (ok) /* then */
     {
+      if (mLogDetail >= 1) mMethodLog << "Iteration: " << mIteration << ": Local minimum found. Terminating.\n";
       goto Finish;
     }
 
   /* ---- Reduce the size of the simplex and restart the procedure. ---- */
+
+  if (mLogDetail >= 1) mMethodLog << "Iteration: " << mIteration << ": No local minimum found. Reducing simplex size.\n";
 
   found = 0;   /* -- we did not find a 1 minimum -- */
   del = std::max(del * factor, 100.0 * std::numeric_limits< C_FLOAT64 >::epsilon());
@@ -599,6 +609,7 @@ First:
   goto First;
 
 Finish:  /* end of procedure */
+  if (mLogDetail >= 1) mMethodLog << "Algorithm terminated after " << mIteration << " of " << mIterationLimit << " Iterations.\n";
 
   if (mpCallBack)
     mpCallBack->finishItem(mhIteration);
@@ -639,6 +650,7 @@ bool COptMethodNelderMead::initialize()
   mIterationLimit = getValue< unsigned C_INT32 >("Iteration Limit");
   mTolerance = getValue< C_FLOAT64 >("Tolerance");
   mScale = getValue< C_FLOAT64 >("Scale");
+  mLogDetail = * getValue("#LogDetail").pUINT;
 
   mIteration = 0;
 
@@ -662,4 +674,9 @@ bool COptMethodNelderMead::initialize()
   mContinue = true;
 
   return true;
+}
+
+unsigned C_INT32 COptMethodNelderMead::getMaxLogDetail() const
+{
+  return 1;
 }
