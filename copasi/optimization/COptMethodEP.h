@@ -125,6 +125,11 @@ public:
    */
   virtual bool optimise();
 
+  /**
+   * Returns the maximum detail at which the method can log.
+   */
+  virtual unsigned C_INT32 getMaxLogDetail() const;
+
 private :
   // variables
 

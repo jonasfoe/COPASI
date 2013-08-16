@@ -46,6 +46,7 @@ COptMethodEP::COptMethodEP(const CCopasiContainer * pParent,
   addParameter("Population Size", CCopasiParameter::UINT, (unsigned C_INT32) 20);
   addParameter("Random Number Generator", CCopasiParameter::UINT, (unsigned C_INT32) CRandom::mt19937);
   addParameter("Seed", CCopasiParameter::UINT, (unsigned C_INT32) 0);
+  addParameter("#LogDetail", CCopasiParameter::UINT, (unsigned C_INT32) 0);
 
   initObjects();
 }
@@ -101,6 +102,8 @@ bool COptMethodEP::optimise()
 
   if (!Continue)
     {
+      if (mLogDetail >= 1) mMethodLog << "Algorithm was terminated preemptively after initial population creation.\n";
+
       if (mpCallBack)
         mpCallBack->finishItem(mhGenerations);
 
@@ -136,6 +139,8 @@ bool COptMethodEP::optimise()
         Continue = mpCallBack->progressItem(mhGenerations);
     }
 
+  if (mLogDetail >= 1) mMethodLog << "Algorithm terminated after " << (mGeneration - 1) << " of " << mGenerations << " generations.\n";
+
   if (mpCallBack)
     mpCallBack->finishItem(mhGenerations);
 
@@ -166,6 +171,8 @@ bool COptMethodEP::initialize()
   size_t i;
 
   if (!COptMethod::initialize()) return false;
+
+  mLogDetail = * getValue("#LogDetail").pUINT;
 
   mGenerations = getValue< unsigned C_INT32 >("Number of Generations");
   mGeneration = 0;
@@ -244,6 +251,7 @@ bool COptMethodEP::creation()
   bool Continue = true;
 
   // set the first individual to the initial guess
+  bool pointInParameterDomain = true;
 
   for (i = 0; i < mVariableSize; i++)
     {
@@ -266,6 +274,8 @@ bool COptMethodEP::creation()
                   mut += mut * std::numeric_limits< C_FLOAT64 >::epsilon();
               }
 
+            pointInParameterDomain = false;
+
             break;
 
           case 1:
@@ -279,6 +289,8 @@ bool COptMethodEP::creation()
                   mut -= mut * std::numeric_limits< C_FLOAT64 >::epsilon();
               }
 
+            pointInParameterDomain = false;
+
             break;
         }
 
@@ -289,6 +301,8 @@ bool COptMethodEP::creation()
       // Set the variance for this parameter.
       (*mVariance[0])[i] = fabs(mut) * 0.5;
     }
+
+  if (mLogDetail >= 1 && !pointInParameterDomain) mMethodLog << "Initial point not within parameter domain.\n";
 
   Continue = evaluate(*mIndividual[0]);
   mValue[0] = mEvaluationValue;
@@ -563,4 +577,9 @@ bool COptMethodEP::mutate(size_t i)
   mValue[i] = mEvaluationValue;
 
   return Continue;
+}
+
+unsigned C_INT32 COptMethodEP::getMaxLogDetail() const
+{
+  return 1;
 }
