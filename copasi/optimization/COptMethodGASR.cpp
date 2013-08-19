@@ -50,6 +50,7 @@ COptMethodGASR::COptMethodGASR(const CCopasiContainer * pParent):
   addParameter("Random Number Generator", CCopasiParameter::UINT, (unsigned C_INT32) CRandom::mt19937);
   addParameter("Seed", CCopasiParameter::UINT, (unsigned C_INT32) 0);
   addParameter("Pf", CCopasiParameter::DOUBLE, (C_FLOAT64) 0.475);  //*****ADDED for SR
+  addParameter("#LogDetail", CCopasiParameter::UINT, (unsigned C_INT32) 0);
 
   initObjects();
 }
@@ -404,6 +405,8 @@ bool COptMethodGASR::initialize()
 
   if (!COptMethod::initialize()) return false;
 
+  mLogDetail = * getValue("#LogDetail").pUINT;
+
   mGeneration = 0;
   mGenerations = * getValue("Number of Generations").pUINT;
 
@@ -420,6 +423,8 @@ bool COptMethodGASR::initialize()
 
   if (mPf < 0.0 || 1.0 < mPf)
     {
+      if (mLogDetail >= 1) mMethodLog << "User defined Pf not in interval (0,1). Reset to default: 0.475.\n";
+
       mPf = 0.475;
       setValue("Pf", mPf);
     }
@@ -521,6 +526,8 @@ bool COptMethodGASR::optimise()
 
   if (!Continue)
     {
+      if (mLogDetail >= 1) mMethodLog << "Algorithm was terminated preemptively after initial population creation.\n";
+
       if (mpCallBack)
         mpCallBack->finishItem(mhGenerations);
 
@@ -536,18 +543,24 @@ bool COptMethodGASR::optimise()
       // perturb the population if we have stalled for a while
       if (Stalled > 50 && Stalled50 > 50)
         {
+          if (mLogDetail >= 1) mMethodLog << "Generation " << mGeneration << ": Fittest individual has not changed for the last 50 generations. 50% random individuals created.\n";
+
           Continue = creation((size_t)(mPopulationSize * 0.5),
                               mPopulationSize);
           Stalled10 = Stalled30 = Stalled50 = 0;
         }
       else if (Stalled > 30 && Stalled30 > 30)
         {
+          if (mLogDetail >= 1) mMethodLog << "Generation " << mGeneration << ": Fittest individual has not changed for the last 30 generations. 30% random individuals created.\n";
+
           Continue = creation((size_t)(mPopulationSize * 0.7),
                               mPopulationSize);
           Stalled10 = Stalled30 = 0;
         }
       else if (Stalled > 10 && Stalled10 > 10)
         {
+          if (mLogDetail >= 1) mMethodLog << "Generation " << mGeneration << ": Fittest individual has not changed for the last 10 generations. 10% random individuals created.\n";
+
           Continue = creation((size_t)(mPopulationSize * 0.9),
                               mPopulationSize);
           Stalled10 = 0;
@@ -578,10 +591,17 @@ bool COptMethodGASR::optimise()
         Continue = mpCallBack->progressItem(mhGenerations);
     }
 
+  if (mLogDetail >= 1) mMethodLog << "Algorithm terminated after " << (mGeneration - 1) << " of " << mGenerations << " generations.\n";
+
   if (mpCallBack)
     mpCallBack->finishItem(mhGenerations);
 
   cleanup();
 
   return true;
+}
+
+unsigned C_INT32 COptMethodGASR::getMaxLogDetail() const
+{
+  return 1;
 }
