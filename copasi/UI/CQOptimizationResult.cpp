@@ -19,6 +19,7 @@
 #include "optimization/COptTask.h"
 #include "optimization/COptProblem.h"
 #include "optimization/COptItem.h"
+#include "optimization/COptMethod.h"
 #include "report/CCopasiRootContainer.h"
 #include "commandline/CLocaleString.h"
 #include "model/CModel.h"
@@ -85,6 +86,10 @@ bool CQOptimizationResult::enterProtected()
   const C_FLOAT64 & ExecutionTime = mpProblem->getExecutionTime();
   mpEditCPUTime->setText(QString::number(ExecutionTime));
   mpEditSpeed->setText(QString::number(FunctionEvaluations / ExecutionTime));
+  const unsigned C_INT32 & FailedEvaluationsExc = mpProblem->getFailedEvaluationsExc();
+  mpEditFailedEvaluationsExc->setText(QString::number(FailedEvaluationsExc));
+  const unsigned C_INT32 & FailedEvaluationsNaN = mpProblem->getFailedEvaluationsNaN();
+  mpEditFailedEvaluationsNaN->setText(QString::number(FailedEvaluationsNaN));
 
   size_t i, imax;
 
@@ -164,6 +169,21 @@ bool CQOptimizationResult::enterProtected()
 
   mpParameters->resizeColumnsToContents();
   mpParameters->resizeRowsToContents();
+
+  // protocol
+  if (true)
+    {
+      mpTabWidget->setTabEnabled(mpTabWidget->indexOf(mpProtocolPage), true);
+
+      const COptMethod * pMethod =
+        dynamic_cast<const COptMethod *>(mpTask->getMethod());
+      assert(pMethod);
+      protocolTextEdit->setText(FROM_UTF8(pMethod->getMethodLog()));
+    }
+  else
+    {
+      mpTabWidget->setTabEnabled(mpTabWidget->indexOf(mpProtocolPage), false);
+    }
 
   return true;
 }
