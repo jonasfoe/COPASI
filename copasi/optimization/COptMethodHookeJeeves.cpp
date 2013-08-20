@@ -38,6 +38,7 @@ COptMethodHookeJeeves::COptMethodHookeJeeves(const CCopasiContainer * pParent,
   addParameter("Iteration Limit", CCopasiParameter::UINT, (unsigned C_INT32) 50);
   addParameter("Tolerance", CCopasiParameter::DOUBLE, (C_FLOAT64) 1.e-005);
   addParameter("Rho", CCopasiParameter::DOUBLE, (C_FLOAT64) 0.2);
+  addParameter("#LogDetail", CCopasiParameter::UINT, (unsigned C_INT32) 0);
 
   initObjects();
 }
@@ -72,6 +73,8 @@ bool COptMethodHookeJeeves::optimise()
   size_t i;
 
   // initialise the guess vector
+  bool pointInParameterDomain = true;
+
   for (i = 0; i < mVariableSize; i++)
     {
       C_FLOAT64 & mut = mIndividual[i];
@@ -84,10 +87,12 @@ bool COptMethodHookeJeeves::optimise()
         {
           case - 1:
             mut = *OptItem.getLowerBoundValue();
+            pointInParameterDomain = false;
             break;
 
           case 1:
             mut = *OptItem.getUpperBoundValue();
+            pointInParameterDomain = false;
             break;
         }
 
@@ -95,6 +100,8 @@ bool COptMethodHookeJeeves::optimise()
       // account of the value.
       *mContainerVariables[i] = mut;
     }
+
+  if (mLogDetail >= 1 && !pointInParameterDomain) mMethodLog << "Initial point not within parameter domain.\n";
 
   mContinue &= evaluate();
 
@@ -105,6 +112,8 @@ bool COptMethodHookeJeeves::optimise()
 
   if (!mContinue)
     {
+      if (mLogDetail >= 1) mMethodLog << "Algorithm was terminated preemptively after initial function evaluation.\n";
+
       if (mpCallBack)
         mpCallBack->finishItem(mhIteration);
 
@@ -212,6 +221,12 @@ bool COptMethodHookeJeeves::optimise()
         }
     }
 
+  if (mLogDetail >= 1)
+    {
+      if (steplength < mTolerance) mMethodLog << "Iteration: " << mIteration << ": Steplength below tolerance. Terminating.\n";
+      mMethodLog << "Algorithm terminated after " << mIteration << " of " << mIterationLimit << " iterations.\n";
+    }
+
   if (mpCallBack)
     mpCallBack->finishItem(mhIteration);
 
@@ -229,6 +244,8 @@ bool COptMethodHookeJeeves::initialize()
   cleanup();
 
   if (!COptMethod::initialize()) return false;
+
+  mLogDetail = * getValue("#LogDetail").pUINT;
 
   mIterationLimit = getValue< unsigned C_INT32 >("Iteration Limit");
   mTolerance = getValue< C_FLOAT64 >("Tolerance");
@@ -356,6 +373,11 @@ C_FLOAT64 COptMethodHookeJeeves::bestNearby()
   mNew = mIndividual;
 
   return (minf);
+}
+
+unsigned C_INT32 COptMethodHookeJeeves::getMaxLogDetail() const
+{
+  return 1;
 }
 
 /* Find a point X where the nonlinear function f(X) has a local    */
