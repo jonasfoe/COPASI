@@ -50,6 +50,7 @@ COptMethodSRES::COptMethodSRES(const CCopasiContainer * pParent):
   addParameter("Random Number Generator", CCopasiParameter::UINT, (unsigned C_INT32) CRandom::mt19937);
   addParameter("Seed", CCopasiParameter::UINT, (unsigned C_INT32) 0);
   addParameter("Pf", CCopasiParameter::DOUBLE, (C_FLOAT64) 0.475);  //*****ADDED for SR
+  addParameter("#LogDetail", CCopasiParameter::UINT, (unsigned C_INT32) 0);
 
   initObjects();
 }
@@ -320,6 +321,8 @@ bool COptMethodSRES::creation(size_t first)
       pVariance = (*itVariance)->array();
       pMaxVariance = mMaxVariance.array();
 
+      bool pointInParameterDomain = true;
+
       for (j = 0; pVariable != pVariableEnd; ++pVariable, ++pVariance, ++pMaxVariance, ++j)
         {
           C_FLOAT64 & mut = *pVariable;
@@ -341,6 +344,8 @@ bool COptMethodSRES::creation(size_t first)
                       mut += mut * std::numeric_limits< C_FLOAT64 >::epsilon();
                   }
 
+                pointInParameterDomain = false;
+
                 break;
 
               case 1:
@@ -354,6 +359,8 @@ bool COptMethodSRES::creation(size_t first)
                       mut -= mut * std::numeric_limits< C_FLOAT64 >::epsilon();
                   }
 
+                pointInParameterDomain = false;
+
                 break;
             }
 
@@ -364,6 +371,8 @@ bool COptMethodSRES::creation(size_t first)
           // Set the variance for this parameter.
           *pVariance = std::min(*OptItem.getUpperBoundValue() - mut, mut - *OptItem.getLowerBoundValue()) / sqrt(double(mVariableSize));
         }
+
+      if (mLogDetail >= 1 && !pointInParameterDomain) mMethodLog << "Initial point not within parameter domain.\n";
 
       Continue = evaluate(**it);
       *pValue++ = mEvaluationValue;
@@ -503,6 +512,8 @@ bool COptMethodSRES::initialize()
 
   if (!COptMethod::initialize()) return false;
 
+  mLogDetail = * getValue("#LogDetail").pUINT;
+
   mGenerations = * getValue("Number of Generations").pUINT;
   mGeneration = 0;
 
@@ -520,6 +531,8 @@ bool COptMethodSRES::initialize()
 
   if (mPf < 0.0 || 1.0 < mPf)
     {
+      if (mLogDetail >= 1) mMethodLog << "User defined Pf not in interval (0,1). Reset to default: 0.475.\n";
+
       mPf = 0.475;
       setValue("Pf", mPf);
     }
@@ -676,6 +689,8 @@ bool COptMethodSRES::optimise()
 
   if (!Continue)
     {
+      if (mLogDetail >= 1) mMethodLog << "Algorithm was terminated preemptively after initial population creation.\n";
+
       if (mpCallBack)
         mpCallBack->finishItem(mhGenerations);
 
@@ -693,21 +708,29 @@ bool COptMethodSRES::optimise()
       // perturb the population if we have stalled for a while
       if (Stalled80 > 80)
         {
+          if (mLogDetail >= 1) mMethodLog << "Generation " << mGeneration << ": Fittest individual has not changed for the last 80 generations. 80% random individuals created.\n";
+
           Continue = creation((size_t)(mPopulationSize * 0.2));
           Stalled10 = Stalled20 = Stalled40 = Stalled80 = 0;
         }
       else if (Stalled40 > 40)
         {
+          if (mLogDetail >= 1) mMethodLog << "Generation " << mGeneration << ": Fittest individual has not changed for the last 40 generations. 40% random individuals created.\n";
+
           Continue = creation((size_t)(mPopulationSize * 0.6));
           Stalled10 = Stalled20 = Stalled40 = 0;
         }
       else if (Stalled20 > 20)
         {
+          if (mLogDetail >= 1) mMethodLog << "Generation " << mGeneration << ": Fittest individual has not changed for the last 20 generations. 20% random individuals created.\n";
+
           Continue = creation((size_t)(mPopulationSize * 0.8));
           Stalled10 = Stalled20 = 0;
         }
       else if (Stalled10 > 10)
         {
+          if (mLogDetail >= 1) mMethodLog << "Generation " << mGeneration << ": Fittest individual has not changed for the last 10 generations. 10% random individuals created.\n";
+
           Continue = creation((size_t)(mPopulationSize * 0.9));
           Stalled10 = 0;
         }
@@ -745,8 +768,15 @@ bool COptMethodSRES::optimise()
         Continue = mpCallBack->progressItem(mhGenerations);
     }
 
+  if (mLogDetail >= 1) mMethodLog << "Algorithm terminated after " << (mGeneration - 1) << " of " << mGenerations << " generations.\n";
+
   if (mpCallBack)
     mpCallBack->finishItem(mhGenerations);
 
   return true;
+}
+
+unsigned C_INT32 COptMethodSRES::getMaxLogDetail() const
+{
+  return 1;
 }
