@@ -28,7 +28,11 @@ COptMethodTruncatedNewton::COptMethodTruncatedNewton(const CCopasiContainer * pP
   COptMethod(pParent, methodType, taskType),
   mpTruncatedNewton(new FTruncatedNewtonTemplate<COptMethodTruncatedNewton>(this, &COptMethodTruncatedNewton::sFun)),
   mpCTruncatedNewton(new CTruncatedNewton())
-{initObjects();}
+{
+  addParameter("#LogDetail", CCopasiParameter::UINT, (unsigned C_INT32) 0);
+
+  initObjects();
+}
 
 COptMethodTruncatedNewton::COptMethodTruncatedNewton(const COptMethodTruncatedNewton & src,
     const CCopasiContainer * pParent):
@@ -68,6 +72,7 @@ bool COptMethodTruncatedNewton::optimise()
   // initial point is the first guess but we have to make sure that
   // we are within the parameter domain
   C_INT i, repeat;
+  bool pointInParameterDomain = true;
 
   for (i = 0; i < mVariableSize; i++)
     {
@@ -85,10 +90,12 @@ bool COptMethodTruncatedNewton::optimise()
         {
           case - 1:
             mCurrent[i] = *OptItem.getLowerBoundValue();
+            pointInParameterDomain = false;
             break;
 
           case 1:
             mCurrent[i] = *OptItem.getUpperBoundValue();
+            pointInParameterDomain = false;
             break;
 
           case 0:
@@ -98,6 +105,7 @@ bool COptMethodTruncatedNewton::optimise()
       // set the value
       *mContainerVariables[i] = (mCurrent[i]);
     }
+  if (mLogDetail >= 1 && !pointInParameterDomain) mMethodLog << "Initial point not within parameter domain.\n";
 
   // Report the first value as the current best
   mBestValue = evaluate();
@@ -225,6 +233,8 @@ bool COptMethodTruncatedNewton::optimise()
         }
 
 #endif // XXXX
+
+      if (mLogDetail >= 1) mMethodLog << "Solution parameters outside of the boundaries. Repeating calculations from current border position (" << repeat << "/9).\n";
     }
 
   return true;
@@ -235,6 +245,8 @@ bool COptMethodTruncatedNewton::initialize()
   cleanup();
 
   if (!COptMethod::initialize()) return false;
+
+  mLogDetail = * getValue("#LogDetail").pUINT;
 
   mVariableSize = (C_INT) mpOptItem->size();
   mCurrent.resize(mVariableSize);
@@ -320,4 +332,9 @@ const C_FLOAT64 & COptMethodTruncatedNewton::evaluate()
     mEvaluationValue = mBestValue + mBestValue - mEvaluationValue;
 
   return mEvaluationValue;
+}
+
+unsigned C_INT32 COptMethodTruncatedNewton::getMaxLogDetail() const
+{
+  return 1;
 }
