@@ -31,6 +31,7 @@ COptMethodCoranaWalk::COptMethodCoranaWalk(const CCopasiContainer * pParent):
   addParameter("Iterations", CCopasiParameter::UINT, (unsigned C_INT32) 100);
   addParameter("Random Number Generator", CCopasiParameter::UINT, (unsigned C_INT32) CRandom::mt19937);
   addParameter("Seed", CCopasiParameter::UINT, (unsigned C_INT32) 0);
+  addParameter("#LogDetail", CCopasiParameter::UINT, (unsigned C_INT32) 0);
 
   initObjects();
 }
@@ -76,8 +77,12 @@ bool COptMethodCoranaWalk::optimise()
   else
     minstep = 100 * std::numeric_limits< C_FLOAT64 >::epsilon();
 
+  if (mLogDetail >= 1) mMethodLog << "Minimum step size is " << minstep << ".\n";
+
   // initial point is first guess but we have to make sure that we
   // are within the parameter domain
+  bool pointInParameterDomain = true;
+
   for (i = 0; i < mVariableSize; i++)
     {
       const COptItem & OptItem = *(*mpOptItem)[i];
@@ -86,10 +91,12 @@ bool COptMethodCoranaWalk::optimise()
         {
           case - 1:
             mCurrent[i] = *OptItem.getLowerBoundValue();
+            pointInParameterDomain = false;
             break;
 
           case 1:
             mCurrent[i] = *OptItem.getUpperBoundValue();
+            pointInParameterDomain = false;
             break;
 
           case 0:
@@ -102,6 +109,7 @@ bool COptMethodCoranaWalk::optimise()
       // The step must not contain any zeroes
       mStep[i] = std::max(fabs(mCurrent[i]), minstep);
     }
+  if (mLogDetail >= 1 && !pointInParameterDomain) mMethodLog << "Initial point not within parameter domain.\n";
 
   // find the objective function value at the start
   mCurrentValue = evaluate();
@@ -236,6 +244,8 @@ bool COptMethodCoranaWalk::optimise()
     }
   while (processing && mContinue);
 
+  if (mLogDetail >= 1) mMethodLog << "Algorithm terminated after " << mCurrentIteration << " of " << mIterations << " Iterations.\n";
+
   if (mpCallBack)
     mpCallBack->finishItem(mhIterations);
 
@@ -269,6 +279,8 @@ bool COptMethodCoranaWalk::initialize()
 
   if (!COptMethod::initialize()) return false;
 
+  mLogDetail = * getValue("#LogDetail").pUINT;
+
   mTemperature = * getValue("Temperature").pUDOUBLE;
   mIterations = * getValue("Iterations").pUINT;
   mpRandom =
@@ -292,4 +304,9 @@ bool COptMethodCoranaWalk::initialize()
   mAccepted.resize(mVariableSize);
 
   return true;
+}
+
+unsigned C_INT32 COptMethodCoranaWalk::getMaxLogDetail() const
+{
+  return 1;
 }
