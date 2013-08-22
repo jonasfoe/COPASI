@@ -41,6 +41,7 @@ COptMethodDE::COptMethodDE(const CCopasiContainer * pParent,
   addParameter("Population Size", CCopasiParameter::UINT, (unsigned C_INT32) 10);
   addParameter("Random Number Generator", CCopasiParameter::UINT, (unsigned C_INT32) CRandom::mt19937);
   addParameter("Seed", CCopasiParameter::UINT, (unsigned C_INT32) 0);
+  addParameter("#LogDetail", CCopasiParameter::UINT, (unsigned C_INT32) 0);
 
   initObjects();
 }
@@ -338,6 +339,8 @@ bool COptMethodDE::initialize()
       return false;
     }
 
+  mLogDetail = * getValue("#LogDetail").pUINT;
+
   mGenerations = getValue< unsigned C_INT32 >("Number of Generations");
   mGeneration = 0;
 
@@ -353,6 +356,8 @@ bool COptMethodDE::initialize()
 
   if (mPopulationSize < 4)
     {
+      if (mLogDetail >= 1) mMethodLog << "User defined Population Size too small. Reset to default: 3.\n";
+
       mPopulationSize = 4;
       setValue("Population Size", mPopulationSize);
     }
@@ -408,6 +413,8 @@ bool COptMethodDE::optimise()
 
   // initialise the population
   // first individual is the initial guess
+  bool pointInParameterDomain = true;
+
   for (i = 0; i < mVariableSize; i++)
     {
       C_FLOAT64 & mut = (*mIndividual[0])[i];
@@ -420,10 +427,12 @@ bool COptMethodDE::optimise()
         {
           case - 1:
             mut = *OptItem.getLowerBoundValue();
+            pointInParameterDomain = false;
             break;
 
           case 1:
             mut = *OptItem.getUpperBoundValue();
+            pointInParameterDomain = false;
             break;
         }
 
@@ -431,6 +440,7 @@ bool COptMethodDE::optimise()
       // account of the value.
       *mContainerVariables[i] = mut;
     }
+  if (mLogDetail >= 1 && !pointInParameterDomain) mMethodLog << "Initial point not within parameter domain.\n";
 
   Continue &= evaluate(*mIndividual[0]);
   mValue[0] = mEvaluationValue;
@@ -463,6 +473,8 @@ bool COptMethodDE::optimise()
 
   if (!Continue)
     {
+      if (mLogDetail >= 1) mMethodLog << "Algorithm was terminated preemptively after initial population creation.\n";
+
       if (mpCallBack)
         mpCallBack->finishItem(mhGenerations);
 
@@ -479,6 +491,8 @@ bool COptMethodDE::optimise()
     {
       if (Stalled > 10)
         {
+          if (mLogDetail >= 1) mMethodLog << "Generation " << mGeneration << ": Fittest individual has not changed for the last 10 generations. 40% random individuals created.\n";
+
           Continue &= creation((size_t) 0.4 * mPopulationSize, (size_t) 0.8 * mPopulationSize);
         }
 
@@ -507,10 +521,17 @@ bool COptMethodDE::optimise()
         Continue &= mpCallBack->progressItem(mhGenerations);
     }
 
+  if (mLogDetail >= 1) mMethodLog << "Algorithm terminated after " << (mGeneration - 1) << " of " << mGenerations << " generations.\n";
+
   if (mpCallBack)
     mpCallBack->finishItem(mhGenerations);
 
   cleanup();
 
   return true;
+}
+
+unsigned C_INT32 COptMethodDE::getMaxLogDetail() const
+{
+  return 1;
 }
