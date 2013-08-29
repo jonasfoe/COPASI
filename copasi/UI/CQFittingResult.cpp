@@ -437,7 +437,30 @@ bool CQFittingResult::enterProtected()
       const COptMethod * pMethod =
         dynamic_cast<const COptMethod *>(mpTask->getMethod());
       assert(pMethod);
-      protocolTextEdit->setText(FROM_UTF8(pMethod->getMethodLog()));
+
+      QStringList protocolHtml;
+      QFile protocolFile("../protocol/protocol.html");
+      protocolFile.open(QIODevice::ReadOnly);
+      protocolHtml = ((QString)protocolFile.readAll()).split("id=\"accordion\">\n");
+      protocolFile.close();
+
+
+      if (protocolHtml.size() > 1)
+        {
+          QString * protocolHtmlBuilder = & protocolHtml[0];
+
+          protocolHtmlBuilder->append("id=\"accordion\">\n");
+
+          //for (i = 0; i < 2000; i++)
+            //protocolHtmlBuilder->append("<h3>dsgfdhfg</h3>\n<div></div>\n");
+
+          QString bla = protocolHtml.join(QString());
+          protocolWebView->page()->action(QWebPage::Reload)->setVisible(false);
+          protocolWebView->setHtml(bla, QUrl::fromLocalFile(QFileInfo("../protocol/protocol.html").absoluteFilePath()));
+
+          protocolSourceView->setPlainText(bla);
+          protocolSourceView->hide();
+        }
     }
   else
     {
