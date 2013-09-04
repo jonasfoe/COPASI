@@ -54,6 +54,7 @@ COptMethodPS::COptMethodPS(const CCopasiContainer * pParent):
   addParameter("Std. Deviation", CCopasiParameter::UDOUBLE, (C_FLOAT64) 1.0e-6);
   addParameter("Random Number Generator", CCopasiParameter::UINT, (unsigned C_INT32) CRandom::mt19937);
   addParameter("Seed", CCopasiParameter::UINT, (unsigned C_INT32) 0);
+  addParameter("#LogDetail", CCopasiParameter::UINT, (unsigned C_INT32) 0);
 
   initObjects();
 }
@@ -331,6 +332,7 @@ bool COptMethodPS::initialize()
   if (!COptMethod::initialize()) return false;
 
   mIterationLimit = * getValue("Iteration Limit").pUINT;
+  mLogDetail = * getValue("#LogDetail").pUINT;
   mIteration = 0;
 
   if (mpCallBack)
@@ -343,6 +345,8 @@ bool COptMethodPS::initialize()
 
   if (mSwarmSize < 5)
     {
+      if (mLogDetail >= 1) mMethodLog << "User defined Swarm Size too small. Reset to default: 5.\n";
+
       mSwarmSize = 5;
       setValue("Swarm Size", mSwarmSize);
     }
@@ -370,6 +374,8 @@ bool COptMethodPS::initialize()
 
   mNumInformedMin = std::max<size_t>(mSwarmSize / 10, 5) - 1;
   mNumInformed = mNumInformedMin;
+
+  if (mLogDetail >= 1) mMethodLog << "Minimal number of informants per particle is " << mNumInformedMin << " at a swarm size of " << mSwarmSize << " particles.\n";
 
   mpPermutation = new CPermutation(mpRandom, mSwarmSize);
 
@@ -513,6 +519,7 @@ bool COptMethodPS::optimise()
 
   // initialise the population
   // first individual is the initial guess
+  bool pointInParameterDomain = true;
   for (; pIndividual != pEnd;
        ++pIndividual, ++pVelocity, ++pBestPosition, ++itOptItem, ++itSetCalculateVariable)
     {
@@ -525,10 +532,12 @@ bool COptMethodPS::optimise()
         {
           case - 1:
             *pIndividual = *OptItem.getLowerBoundValue();
+            pointInParameterDomain = false;
             break;
 
           case 1:
             *pIndividual = *OptItem.getUpperBoundValue();
+            pointInParameterDomain = false;
             break;
         }
 
@@ -539,6 +548,7 @@ bool COptMethodPS::optimise()
       // account of the value.
       (**itSetCalculateVariable)(*pIndividual);
     }
+  if (mLogDetail >= 1 && !pointInParameterDomain) mMethodLog << "Initial point not within parameter domain.\n";
 
   // calculate its fitness
   mBestValues[0] = mValues[0] = evaluate();
@@ -567,9 +577,15 @@ bool COptMethodPS::optimise()
         Improved |= move(i);
 
       if (!Improved)
-        buildInformants();
+        {
+          buildInformants();
+          if (mLogDetail >= 2) mMethodLog << "Iteration " << mIteration << ": None of the particles improved in objective function value. Rebuilding informants with " << mNumInformed << " informants per particle.\n";
+        }
       else if (reachedStdDeviation())
-        break;
+        {
+          if (mLogDetail >= 1) mMethodLog << "Iteration " << mIteration << ": Standard deviation of the particles was lower than tolerance. Terminating.\n";
+          break;
+        }
 
       if (mpCallBack)
         mContinue &= mpCallBack->progressItem(mhIteration);
@@ -578,7 +594,14 @@ bool COptMethodPS::optimise()
   if (mpCallBack)
     mpCallBack->finishItem(mhIteration);
 
+  if (mLogDetail >= 1) mMethodLog << "Algorithm terminated after " << mIteration << " of " << mIterationLimit << " Iterations.\n";
+
   cleanup();
 
   return true;
+}
+
+unsigned C_INT32 COptMethodPS::getMaxLogDetail() const
+{
+  return 2;
 }
