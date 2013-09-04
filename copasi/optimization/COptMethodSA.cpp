@@ -40,6 +40,7 @@ COptMethodSA::COptMethodSA(const CCopasiContainer * pParent):
   addParameter("Tolerance", CCopasiParameter::UDOUBLE, (C_FLOAT64) 1.e-006);
   addParameter("Random Number Generator", CCopasiParameter::UINT, (unsigned C_INT32) CRandom::mt19937);
   addParameter("Seed", CCopasiParameter::UINT, (unsigned C_INT32) 0);
+  addParameter("#LogDetail", CCopasiParameter::UINT, (unsigned C_INT32) 0);
 
   initObjects();
 }
@@ -76,6 +77,7 @@ bool COptMethodSA::optimise()
 
   // initial point is first guess but we have to make sure that we
   // are within the parameter domain
+  bool pointInParameterDomain = true;
   for (i = 0; i < mVariableSize; i++)
     {
       const COptItem & OptItem = *(*mpOptItem)[i];
@@ -84,10 +86,12 @@ bool COptMethodSA::optimise()
         {
           case - 1:
             mCurrent[i] = *OptItem.getLowerBoundValue();
+            pointInParameterDomain = false;
             break;
 
           case 1:
             mCurrent[i] = *OptItem.getUpperBoundValue();
+            pointInParameterDomain = false;
             break;
 
           case 0:
@@ -100,6 +104,7 @@ bool COptMethodSA::optimise()
       // The step must not contain any zeroes
       mStep[i] = std::max(fabs(mCurrent[i]), 1.0);
     }
+  if (mLogDetail >= 1 && !pointInParameterDomain) mMethodLog << "Initial point not within parameter domain.\n";
 
   mCurrentValue = evaluate();
 
@@ -123,6 +128,8 @@ bool COptMethodSA::optimise()
   nt = (C_FLOAT64)(5 * mVariableSize);
 
   if (nt < 100) nt = 100;
+
+  if (mLogDetail >= 1) mMethodLog << "Steps at one single temperature: " << nt << ".\n";
 
   // no temperature reductions yet
   k = 0;
@@ -242,8 +249,12 @@ bool COptMethodSA::optimise()
               fk[STORED - 1] = mCurrentValue;
             }
           // check the termination criterion of not much larger than last optimal
-          else if (fabs(mCurrentValue - mBestValue) > mTolerance)
-            ready = false;
+          else
+            {
+              if (mLogDetail >= 1) mMethodLog << "Temperature step " << k << ": T = " << mTemperature << ". Objective function value progression for last " << STORED << " temperatures was lower than the tolerance.\n";
+              if (fabs(mCurrentValue - mBestValue) > mTolerance)
+                ready = false;
+            }
         }
 
       if (!ready)
@@ -257,6 +268,8 @@ bool COptMethodSA::optimise()
 
           mCurrentValue = mBestValue;
         }
+      else
+        if (mLogDetail >= 1) mMethodLog << "Temperature step " << k << ": T = " << mTemperature << ". Objective function value didn't progress from optimum by more than the tolerance. Terminating\n";
 
       // update the temperature
       mTemperature *= mCoolingFactor;
@@ -265,6 +278,8 @@ bool COptMethodSA::optimise()
         mContinue &= mpCallBack->progressItem(mhTemperature);
     }
   while (!ready && mContinue);
+
+  if (mLogDetail >= 1) mMethodLog << "Final Temperature was " << mTemperature << " after " << k << " temperature steps.\n";
 
   if (mpCallBack)
     mpCallBack->finishItem(mhTemperature);
@@ -302,6 +317,7 @@ bool COptMethodSA::initialize()
   mTemperature = * getValue("Start Temperature").pUDOUBLE;
   mCoolingFactor = * getValue("Cooling Factor").pUDOUBLE;
   mTolerance = * getValue("Tolerance").pUDOUBLE;
+  mLogDetail = * getValue("#LogDetail").pUINT;
   mpRandom =
     CRandom::createGenerator(* (CRandom::Type *) getValue("Random Number Generator").pUINT,
                              * getValue("Seed").pUINT);
@@ -321,4 +337,9 @@ bool COptMethodSA::initialize()
   mAccepted.resize(mVariableSize);
 
   return true;
+}
+
+unsigned C_INT32 COptMethodSA::getMaxLogDetail() const
+{
+  return 1;
 }
