@@ -111,7 +111,7 @@ bool COptMethodTruncatedNewton::optimise()
       // set the value
       (*(*mpSetCalculateVariable)[i])(mCurrent[i]);
     }
-  if (mLogDetail >= 1 && !pointInParameterDomain) mMethodLog << "Initial point not within parameter domain.\n";
+  if (mLogDetail >= 1 && !pointInParameterDomain) mMethodLogOld << "Initial point not within parameter domain.\n";
 
   // Report the first value as the current best
   mBestValue = evaluate();
@@ -240,7 +240,7 @@ bool COptMethodTruncatedNewton::optimise()
 
 #endif // XXXX
 
-      if (mLogDetail >= 1) mMethodLog << "Solution parameters outside of the boundaries. Repeating calculations from current border position (" << repeat << "/9).\n";
+      if (mLogDetail >= 1) mMethodLogOld << "Solution parameters outside of the boundaries. Repeating calculations from current border position (" << repeat << "/9).\n";
     }
 
   return true;

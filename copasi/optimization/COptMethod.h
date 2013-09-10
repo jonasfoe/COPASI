@@ -34,6 +34,7 @@
 #include <string>
 
 #include "utilities/CCopasiMethod.h"
+#include "COptLog.h"
 
 class COptProblem;
 class COptItem;
@@ -84,7 +85,8 @@ class COptMethod : public CCopasiMethod
     /**
      * The Log created during parameter estimation
      */
-    std::ostringstream mMethodLog;
+    std::ostringstream mMethodLogOld;
+    COptLog mMethodLog;
 
     // Operations
   private:
@@ -165,7 +167,21 @@ class COptMethod : public CCopasiMethod
     /**
      * Retrieve the log of the solution
      */
-    std::string getMethodLog() const;
+    std::string getMethodLogOld() const;
+
+    /**
+     * Retrieve the method log as plain text.
+     * Does not include status dumps.
+     * @return std::string plainLog
+     */
+    std::string getPlainMethodLog() const;
+
+    /**
+     * Retrieve the method log as rich text.
+     * Uses html headings, divs and tables.
+     * @return std::string richLog
+     */
+    std::string getRichMethodLog() const;
 
   protected:
     /**

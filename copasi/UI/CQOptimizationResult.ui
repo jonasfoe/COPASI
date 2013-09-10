@@ -230,26 +230,17 @@ p, li { white-space: pre-wrap; }
        </property>
       </column>
      </widget>
-     <widget class="QWidget" name="mpProtocolPage">
+     <widget class="QWidget" name="mpLogPage">
       <attribute name="title">
-       <string>Protocol</string>
+       <string>Log</string>
       </attribute>
       <layout class="QGridLayout">
-       <property name="leftMargin">
-        <number>0</number>
-       </property>
-       <property name="topMargin">
-        <number>0</number>
-       </property>
-       <property name="rightMargin">
-        <number>0</number>
-       </property>
-       <property name="bottomMargin">
-        <number>0</number>
-       </property>
-       <item row="0" column="0">
-        <widget class="QTextBrowser" name="protocolTextEdit"/>
-       </item>
+        <property name="margin">
+          <number>0</number>
+        </property>
+        <item row="0" column="0">
+          <widget class="QWebView" name="mpLogWebView"/>
+        </item>
       </layout>
      </widget>
     </widget>

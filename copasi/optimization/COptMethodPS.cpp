@@ -345,7 +345,7 @@ bool COptMethodPS::initialize()
 
   if (mSwarmSize < 5)
     {
-      if (mLogDetail >= 1) mMethodLog << "User defined Swarm Size too small. Reset to default: 5.\n";
+      if (mLogDetail >= 1) mMethodLogOld << "User defined Swarm Size too small. Reset to default: 5.\n";
 
       mSwarmSize = 5;
       setValue("Swarm Size", mSwarmSize);
@@ -375,7 +375,7 @@ bool COptMethodPS::initialize()
   mNumInformedMin = std::max<size_t>(mSwarmSize / 10, 5) - 1;
   mNumInformed = mNumInformedMin;
 
-  if (mLogDetail >= 1) mMethodLog << "Minimal number of informants per particle is " << mNumInformedMin << " at a swarm size of " << mSwarmSize << " particles.\n";
+  if (mLogDetail >= 1) mMethodLogOld << "Minimal number of informants per particle is " << mNumInformedMin << " at a swarm size of " << mSwarmSize << " particles.\n";
 
   mpPermutation = new CPermutation(mpRandom, mSwarmSize);
 
@@ -548,7 +548,7 @@ bool COptMethodPS::optimise()
       // account of the value.
       (**itSetCalculateVariable)(*pIndividual);
     }
-  if (mLogDetail >= 1 && !pointInParameterDomain) mMethodLog << "Initial point not within parameter domain.\n";
+  if (mLogDetail >= 1 && !pointInParameterDomain) mMethodLogOld << "Initial point not within parameter domain.\n";
 
   // calculate its fitness
   mBestValues[0] = mValues[0] = evaluate();
@@ -579,11 +579,11 @@ bool COptMethodPS::optimise()
       if (!Improved)
         {
           buildInformants();
-          if (mLogDetail >= 2) mMethodLog << "Iteration " << mIteration << ": None of the particles improved in objective function value. Rebuilding informants with " << mNumInformed << " informants per particle.\n";
+          if (mLogDetail >= 2) mMethodLogOld << "Iteration " << mIteration << ": None of the particles improved in objective function value. Rebuilding informants with " << mNumInformed << " informants per particle.\n";
         }
       else if (reachedStdDeviation())
         {
-          if (mLogDetail >= 1) mMethodLog << "Iteration " << mIteration << ": Standard deviation of the particles was lower than tolerance. Terminating.\n";
+          if (mLogDetail >= 1) mMethodLogOld << "Iteration " << mIteration << ": Standard deviation of the particles was lower than tolerance. Terminating.\n";
           break;
         }
 
@@ -594,7 +594,7 @@ bool COptMethodPS::optimise()
   if (mpCallBack)
     mpCallBack->finishItem(mhIteration);
 
-  if (mLogDetail >= 1) mMethodLog << "Algorithm terminated after " << mIteration << " of " << mIterationLimit << " Iterations.\n";
+  if (mLogDetail >= 1) mMethodLogOld << "Algorithm terminated after " << mIteration << " of " << mIterationLimit << " Iterations.\n";
 
   cleanup();
 

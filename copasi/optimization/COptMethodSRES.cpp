@@ -372,7 +372,7 @@ bool COptMethodSRES::creation(size_t first)
           *pVariance = std::min(*OptItem.getUpperBoundValue() - mut, mut - *OptItem.getLowerBoundValue()) / sqrt(double(mVariableSize));
         }
 
-      if (mLogDetail >= 1 && !pointInParameterDomain) mMethodLog << "Initial point not within parameter domain.\n";
+      if (mLogDetail >= 1 && !pointInParameterDomain) mMethodLogOld << "Initial point not within parameter domain.\n";
 
       Continue = evaluate(**it);
       *pValue++ = mEvaluationValue;
@@ -531,7 +531,7 @@ bool COptMethodSRES::initialize()
 
   if (mPf < 0.0 || 1.0 < mPf)
     {
-      if (mLogDetail >= 1) mMethodLog << "User defined Pf not in interval (0,1). Reset to default: 0.475.\n";
+      if (mLogDetail >= 1) mMethodLogOld << "User defined Pf not in interval (0,1). Reset to default: 0.475.\n";
 
       mPf = 0.475;
       setValue("Pf", mPf);
@@ -689,7 +689,7 @@ bool COptMethodSRES::optimise()
 
   if (!Continue)
     {
-      if (mLogDetail >= 1) mMethodLog << "Algorithm was terminated preemptively after initial population creation.\n";
+      if (mLogDetail >= 1) mMethodLogOld << "Algorithm was terminated preemptively after initial population creation.\n";
 
       if (mpCallBack)
         mpCallBack->finishItem(mhGenerations);
@@ -768,7 +768,7 @@ bool COptMethodSRES::optimise()
         Continue = mpCallBack->progressItem(mhGenerations);
     }
 
-  if (mLogDetail >= 1) mMethodLog << "Algorithm terminated after " << (mGeneration - 1) << " of " << mGenerations << " generations.\n";
+  if (mLogDetail >= 1) mMethodLogOld << "Algorithm terminated after " << (mGeneration - 1) << " of " << mGenerations << " generations.\n";
 
   if (mpCallBack)
     mpCallBack->finishItem(mhGenerations);

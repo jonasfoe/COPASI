@@ -54,6 +54,8 @@ set(COPASI_HEADERS ${COPASI_HEADERS} ${HEADERS_OPTIMIZATION})
 
 
 # set(HEADERS ${HEADERS} COptItem.h)
+# set(HEADERS ${HEADERS} COptLog.h)
+# set(HEADERS ${HEADERS} COptLogItem.h)
 # set(HEADERS ${HEADERS} COptMethod.h)
 # set(HEADERS ${HEADERS} COptMethodEP.h)
 # set(HEADERS ${HEADERS} COptMethodGA.h)
@@ -76,6 +78,8 @@ set(COPASI_HEADERS ${COPASI_HEADERS} ${HEADERS_OPTIMIZATION})
 # set(HEADERS ${HEADERS} FminBrent.h)
 # 
 # set(SOURCES ${SOURCES} COptItem.cpp)
+# set(SOURCES ${SOURCES} COptLog.cpp)
+# set(SOURCES ${SOURCES} COptLogItem.cpp)
 # set(SOURCES ${SOURCES} COptMethod.cpp)
 # set(SOURCES ${SOURCES} COptMethodEP.cpp)
 # set(SOURCES ${SOURCES} COptMethodGA.cpp)

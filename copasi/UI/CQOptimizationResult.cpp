@@ -169,19 +169,36 @@ bool CQOptimizationResult::enterProtected()
   mpParameters->resizeColumnsToContents();
   mpParameters->resizeRowsToContents();
 
-  // protocol
-  if (true)
-    {
-      mpTabWidget->setTabEnabled(mpTabWidget->indexOf(mpProtocolPage), true);
+  // log
+  const COptMethod * pMethod = dynamic_cast<const COptMethod *>(mpTask->getMethod());
 
-      const COptMethod * pMethod =
-        dynamic_cast<const COptMethod *>(mpTask->getMethod());
-      assert(pMethod);
-      protocolTextEdit->setText(FROM_UTF8(pMethod->getMethodLog()));
+  if (pMethod)
+    {
+      mpTabWidget->setTabEnabled(mpTabWidget->indexOf(mpLogPage), true);
+
+      QStringList logHtml;
+      QFile logFile("../protocol/protocol.html");
+      logFile.open(QIODevice::ReadOnly);
+      logHtml = ((QString)logFile.readAll()).split("id=\"accordion\">\n");
+      logFile.close();
+
+
+      if (logHtml.size() > 1)
+        {
+          QString & logHtmlBuilder = logHtml[0];
+
+          logHtmlBuilder.append("id=\"accordion\">\n");
+
+          logHtmlBuilder.append(pMethod->getRichMethodLog().c_str());
+
+          QString logQString = logHtml.join(QString());
+          mpLogWebView->page()->action(QWebPage::Reload)->setVisible(false);
+          mpLogWebView->setHtml(logQString, QUrl::fromLocalFile(QFileInfo("../protocol/protocol.html").absoluteFilePath()));
+        }
     }
   else
     {
-      mpTabWidget->setTabEnabled(mpTabWidget->indexOf(mpProtocolPage), false);
+      mpTabWidget->setTabEnabled(mpTabWidget->indexOf(mpLogPage), false);
     }
 
   return true;

@@ -427,19 +427,16 @@
        </property>
       </column>
      </widget>
-     <widget class="QWidget" name="mpProtocolPage">
+     <widget class="QWidget" name="mpLogPage">
        <attribute name="title">
-         <string>Protocol</string>
+         <string>Log</string>
        </attribute>
        <layout class="QGridLayout">
          <property name="margin">
            <number>0</number>
          </property>
          <item row="0" column="0">
-           <widget class="QWebView" name="protocolWebView"/>
-         </item>
-         <item row="1" column="0">
-           <widget class="QTextBrowser" name="protocolSourceView"/>
+           <widget class="QWebView" name="mpLogWebView"/>
          </item>
        </layout>
      </widget>

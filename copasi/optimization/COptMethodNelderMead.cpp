@@ -241,7 +241,7 @@ bool COptMethodNelderMead::optimise()
       // set the magnitude of each parameter
       mStep[i] = (*OptItem.getUpperBoundValue() - *OptItem.getLowerBoundValue()) / mScale;
     }
-  if (mLogDetail >= 1 && !pointInParameterDomain) mMethodLog << "Initial point not within parameter domain.\n";
+  if (mLogDetail >= 1 && !pointInParameterDomain) mMethodLogOld << "Initial point not within parameter domain.\n";
 
   evaluate();
 
@@ -552,7 +552,7 @@ First:
         }
     }   /* while not found and not quit ... */
 
-  if (mLogDetail >= 1 && found) mMethodLog << "Iteration: " << mIteration << ": Objective function value change lower than tolerance. Checking whether local minimum was found.\n";
+  if (mLogDetail >= 1 && found) mMethodLogOld << "Iteration: " << mIteration << ": Objective function value change lower than tolerance. Checking whether local minimum was found.\n";
 
   /* **** bail out if necessary **** */
   if (quit || !mContinue) goto Finish;
@@ -593,13 +593,13 @@ First:
 
   if (ok) /* then */
     {
-      if (mLogDetail >= 1) mMethodLog << "Iteration: " << mIteration << ": Local minimum found. Terminating.\n";
+      if (mLogDetail >= 1) mMethodLogOld << "Iteration: " << mIteration << ": Local minimum found. Terminating.\n";
       goto Finish;
     }
 
   /* ---- Reduce the size of the simplex and restart the procedure. ---- */
 
-  if (mLogDetail >= 1) mMethodLog << "Iteration: " << mIteration << ": No local minimum found. Reducing simplex size.\n";
+  if (mLogDetail >= 1) mMethodLogOld << "Iteration: " << mIteration << ": No local minimum found. Reducing simplex size.\n";
 
   found = 0;   /* -- we did not find a 1 minimum -- */
   del = std::max(del * factor, 100.0 * std::numeric_limits< C_FLOAT64 >::epsilon());
@@ -607,7 +607,7 @@ First:
   goto First;
 
 Finish:  /* end of procedure */
-  if (mLogDetail >= 1) mMethodLog << "Algorithm terminated after " << mIteration << " of " << mIterationLimit << " Iterations.\n";
+  if (mLogDetail >= 1) mMethodLogOld << "Algorithm terminated after " << mIteration << " of " << mIterationLimit << " Iterations.\n";
 
   if (mpCallBack)
     mpCallBack->finishItem(mhIteration);
