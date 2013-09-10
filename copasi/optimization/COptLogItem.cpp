@@ -16,6 +16,8 @@ const std::string COptLogItem::MsgIDHeader[] =
   "Algorithm started at %_timestamp%.",
   //Std_finish_x_of_max
   "Algorithm finished at %_timestamp%.",
+  //STD_finish_temp_info
+  "Algorithm finished at %_timestamp%.",
   //STD_initial_point_out_of_Domain
   "Initial point not within parameter domain.",
 
@@ -27,6 +29,13 @@ const std::string COptLogItem::MsgIDHeader[] =
   "Iteration %_iteration%: None of the particles improved in objective function value.",
   //PS_stddev_below_tol
   "Iteration %_iteration%: Standard deviation of the particles was lower than tolerance. Terminating.\n",
+
+  //SA_steps_per_temp
+  "Steps at one single temperature: %s%.",
+  //SA_fval_progress_lower_that_tol
+  "Temperature step %_iteration%: Objective function value progression for last %s% temperatures was lower than the tolerance.",
+  //SA_fval_tol_termination
+  "Temperature step %_iteration%: Objective function value didn't progress from optimum by more than the tolerance. Terminating.",
 };
 
 const std::string COptLogItem::MsgIDSubtext[] =
@@ -35,6 +44,8 @@ const std::string COptLogItem::MsgIDSubtext[] =
   "For more information about this method see: http://www.copasi.org/tiki-index.php?page=%s%",
   //Std_finish_x_of_max
   "Terminated after %_iteration% of %s% iterations.",
+  //STD_finish_temp_info
+  "Final Temperature was %s% after %_iteration% temperature steps.",
   //STD_initial_point_out_of_Domain
   "",
 
@@ -46,6 +57,13 @@ const std::string COptLogItem::MsgIDSubtext[] =
   "Rebuilding informants with %s% informants per particle.",
   //PS_stddev_below_tol
   "",
+
+  //SA_steps_per_temp
+  "",
+  //SA_fval_progress_lower_that_tol
+  "T = %s%.",
+  //SA_fval_tol_termination
+  "T = %s%.",
 };
 
 // Constructor

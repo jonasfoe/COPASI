@@ -19,12 +19,17 @@ class COptLogItem
     {
       STD_start,
       STD_finish_x_of_max,
+      STD_finish_temp_info,
       STD_initial_point_out_of_domain,
 
       PS_usrdef_error_swarm_size,
       PS_info_informants,
       PS_no_particle_improved,
-      PS_stddev_below_tol
+      PS_stddev_below_tol,
+
+      SA_steps_per_temp,
+      SA_fval_progress_lower_that_tol,
+      SA_fval_tol_termination
     };
 
     /**
