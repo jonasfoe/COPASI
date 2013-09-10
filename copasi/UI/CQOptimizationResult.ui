@@ -239,6 +239,13 @@ p, li { white-space: pre-wrap; }
           <number>0</number>
         </property>
         <item row="0" column="0">
+         <widget class="QPushButton" name="mpBtnFormatLog">
+          <property name="text">
+           <string>Get Formated Log</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
           <widget class="QWebView" name="mpLogWebView"/>
         </item>
       </layout>
@@ -282,6 +289,22 @@ p, li { white-space: pre-wrap; }
    <signal>clicked()</signal>
    <receiver>CQOptimizationResult</receiver>
    <slot>slotUpdateModel()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>mpBtnFormatLog</sender>
+   <signal>clicked()</signal>
+   <receiver>CQOptimizationResult</receiver>
+   <slot>slotFormatLog()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>20</x>
