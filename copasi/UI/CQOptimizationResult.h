@@ -46,11 +46,14 @@ private:
   const COptProblem * mpProblem;
   const COptTask * mpTask;
 
+  bool mLogFormatted;
+
   void init();
 
 private slots:
   void slotSave(void);
   void slotUpdateModel();
+  void slotFormatLog();
 };
 
 #endif // CQOPTIMIZATIONRESULT_H
