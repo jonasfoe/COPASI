@@ -18,7 +18,9 @@ class COptLogItem
     enum MsgID
     {
       STD_start,
+      STD_early_stop,
       STD_finish_x_of_max,
+      Std_finish_x_of_max_gener,
       STD_finish_temp_info,
       STD_initial_point_out_of_domain,
 
