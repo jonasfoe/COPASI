@@ -70,6 +70,8 @@ bool COptMethodSA::optimise()
       return false;
     }
 
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_start).with("OD.Simulated.Annealing"));
+
   size_t i, j, k, m;
 
   size_t h, a;
@@ -106,7 +108,7 @@ bool COptMethodSA::optimise()
       // The step must not contain any zeroes
       mStep[i] = std::max(fabs(mCurrent[i]), 1.0);
     }
-  if (mLogDetail >= 1 && !pointInParameterDomain) mMethodLogOld << "Initial point not within parameter domain.\n";
+  if (!pointInParameterDomain) mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_initial_point_out_of_domain));
 
   mCurrentValue = evaluate();
 
@@ -131,7 +133,7 @@ bool COptMethodSA::optimise()
 
   if (nt < 100) nt = 100;
 
-  if (mLogDetail >= 1) mMethodLogOld << "Steps at one single temperature: " << nt << ".\n";
+  if (!pointInParameterDomain) mMethodLog.enterLogItem(COptLogItem(COptLogItem::SA_steps_per_temp).with(nt));
 
   // no temperature reductions yet
   k = 0;
@@ -253,7 +255,8 @@ bool COptMethodSA::optimise()
           // check the termination criterion of not much larger than last optimal
           else
             {
-              if (mLogDetail >= 1) mMethodLogOld << "Temperature step " << k << ": T = " << mTemperature << ". Objective function value progression for last " << STORED << " temperatures was lower than the tolerance.\n";
+              mMethodLog.enterLogItem(COptLogItem(COptLogItem::SA_fval_progress_lower_that_tol).iter(k).with(STORED).with(mTemperature));
+
               if (fabs(mCurrentValue - mBestValue) > mTolerance)
                 ready = false;
             }
@@ -271,7 +274,7 @@ bool COptMethodSA::optimise()
           mCurrentValue = mBestValue;
         }
       else
-        if (mLogDetail >= 1) mMethodLogOld << "Temperature step " << k << ": T = " << mTemperature << ". Objective function value didn't progress from optimum by more than the tolerance. Terminating\n";
+        mMethodLog.enterLogItem(COptLogItem(COptLogItem::SA_fval_tol_termination).iter(k).with(mTemperature));
 
       // update the temperature
       mTemperature *= mCoolingFactor;
@@ -281,7 +284,7 @@ bool COptMethodSA::optimise()
     }
   while (!ready && mContinue);
 
-  if (mLogDetail >= 1) mMethodLogOld << "Final Temperature was " << mTemperature << " after " << k << " temperature steps.\n";
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_finish_temp_info).iter(k).with(mTemperature));
 
   if (mpCallBack)
     mpCallBack->finishItem(mhTemperature);
