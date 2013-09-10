@@ -356,7 +356,7 @@ bool COptMethodDE::initialize()
 
   if (mPopulationSize < 4)
     {
-      if (mLogDetail >= 1) mMethodLog << "User defined Population Size too small. Reset to default: 3.\n";
+      if (mLogDetail >= 1) mMethodLogOld << "User defined Population Size too small. Reset to default: 3.\n";
 
       mPopulationSize = 4;
       setValue("Population Size", mPopulationSize);
@@ -440,7 +440,7 @@ bool COptMethodDE::optimise()
       // account of the value.
       *mContainerVariables[i] = mut;
     }
-  if (mLogDetail >= 1 && !pointInParameterDomain) mMethodLog << "Initial point not within parameter domain.\n";
+  if (mLogDetail >= 1 && !pointInParameterDomain) mMethodLogOld << "Initial point not within parameter domain.\n";
 
   Continue &= evaluate(*mIndividual[0]);
   mValue[0] = mEvaluationValue;
@@ -473,7 +473,7 @@ bool COptMethodDE::optimise()
 
   if (!Continue)
     {
-      if (mLogDetail >= 1) mMethodLog << "Algorithm was terminated preemptively after initial population creation.\n";
+      if (mLogDetail >= 1) mMethodLogOld << "Algorithm was terminated preemptively after initial population creation.\n";
 
       if (mpCallBack)
         mpCallBack->finishItem(mhGenerations);
@@ -491,7 +491,7 @@ bool COptMethodDE::optimise()
     {
       if (Stalled > 10)
         {
-          if (mLogDetail >= 1) mMethodLog << "Generation " << mGeneration << ": Fittest individual has not changed for the last 10 generations. 40% random individuals created.\n";
+          if (mLogDetail >= 1) mMethodLogOld << "Generation " << mGeneration << ": Fittest individual has not changed for the last 10 generations. 40% random individuals created.\n";
 
           Continue &= creation((size_t) 0.4 * mPopulationSize, (size_t) 0.8 * mPopulationSize);
         }
@@ -521,7 +521,7 @@ bool COptMethodDE::optimise()
         Continue &= mpCallBack->progressItem(mhGenerations);
     }
 
-  if (mLogDetail >= 1) mMethodLog << "Algorithm terminated after " << (mGeneration - 1) << " of " << mGenerations << " generations.\n";
+  if (mLogDetail >= 1) mMethodLogOld << "Algorithm terminated after " << (mGeneration - 1) << " of " << mGenerations << " generations.\n";
 
   if (mpCallBack)
     mpCallBack->finishItem(mhGenerations);

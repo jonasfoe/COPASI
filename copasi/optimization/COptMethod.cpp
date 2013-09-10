@@ -91,7 +91,8 @@ bool COptMethod::initialize()
     mpReport = NULL;*/
 
   //clear log
-  mMethodLog.str("");
+  mMethodLogOld.str("");
+  mMethodLog = COptLog();
 
   return true;
 }
@@ -120,7 +121,17 @@ unsigned C_INT32 COptMethod::getMaxLogDetail() const
   return 0;
 }
 
-std::string COptMethod::getMethodLog() const
+std::string COptMethod::getMethodLogOld() const
 {
-  return mMethodLog.str();
+  return mMethodLogOld.str();
+}
+
+std::string COptMethod::getPlainMethodLog() const
+{
+  return mMethodLog.getPlainLog();
+}
+
+std::string COptMethod::getRichMethodLog() const
+{
+  return mMethodLog.getRichLog();
 }

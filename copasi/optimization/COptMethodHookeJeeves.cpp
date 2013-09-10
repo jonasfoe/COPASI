@@ -101,7 +101,7 @@ bool COptMethodHookeJeeves::optimise()
       *mContainerVariables[i] = mut;
     }
 
-  if (mLogDetail >= 1 && !pointInParameterDomain) mMethodLog << "Initial point not within parameter domain.\n";
+  if (mLogDetail >= 1 && !pointInParameterDomain) mMethodLogOld << "Initial point not within parameter domain.\n";
 
   mContinue &= evaluate();
 
@@ -112,7 +112,7 @@ bool COptMethodHookeJeeves::optimise()
 
   if (!mContinue)
     {
-      if (mLogDetail >= 1) mMethodLog << "Algorithm was terminated preemptively after initial function evaluation.\n";
+      if (mLogDetail >= 1) mMethodLogOld << "Algorithm was terminated preemptively after initial function evaluation.\n";
 
       if (mpCallBack)
         mpCallBack->finishItem(mhIteration);
@@ -223,8 +223,8 @@ bool COptMethodHookeJeeves::optimise()
 
   if (mLogDetail >= 1)
     {
-      if (steplength < mTolerance) mMethodLog << "Iteration: " << mIteration << ": Steplength below tolerance. Terminating.\n";
-      mMethodLog << "Algorithm terminated after " << mIteration << " of " << mIterationLimit << " iterations.\n";
+      if (steplength < mTolerance) mMethodLogOld << "Iteration: " << mIteration << ": Steplength below tolerance. Terminating.\n";
+      mMethodLogOld << "Algorithm terminated after " << mIteration << " of " << mIterationLimit << " iterations.\n";
     }
 
   if (mpCallBack)

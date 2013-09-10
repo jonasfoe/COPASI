@@ -106,7 +106,7 @@ bool COptMethodSA::optimise()
       // The step must not contain any zeroes
       mStep[i] = std::max(fabs(mCurrent[i]), 1.0);
     }
-  if (mLogDetail >= 1 && !pointInParameterDomain) mMethodLog << "Initial point not within parameter domain.\n";
+  if (mLogDetail >= 1 && !pointInParameterDomain) mMethodLogOld << "Initial point not within parameter domain.\n";
 
   mCurrentValue = evaluate();
 
@@ -131,7 +131,7 @@ bool COptMethodSA::optimise()
 
   if (nt < 100) nt = 100;
 
-  if (mLogDetail >= 1) mMethodLog << "Steps at one single temperature: " << nt << ".\n";
+  if (mLogDetail >= 1) mMethodLogOld << "Steps at one single temperature: " << nt << ".\n";
 
   // no temperature reductions yet
   k = 0;
@@ -253,7 +253,7 @@ bool COptMethodSA::optimise()
           // check the termination criterion of not much larger than last optimal
           else
             {
-              if (mLogDetail >= 1) mMethodLog << "Temperature step " << k << ": T = " << mTemperature << ". Objective function value progression for last " << STORED << " temperatures was lower than the tolerance.\n";
+              if (mLogDetail >= 1) mMethodLogOld << "Temperature step " << k << ": T = " << mTemperature << ". Objective function value progression for last " << STORED << " temperatures was lower than the tolerance.\n";
               if (fabs(mCurrentValue - mBestValue) > mTolerance)
                 ready = false;
             }
@@ -271,7 +271,7 @@ bool COptMethodSA::optimise()
           mCurrentValue = mBestValue;
         }
       else
-        if (mLogDetail >= 1) mMethodLog << "Temperature step " << k << ": T = " << mTemperature << ". Objective function value didn't progress from optimum by more than the tolerance. Terminating\n";
+        if (mLogDetail >= 1) mMethodLogOld << "Temperature step " << k << ": T = " << mTemperature << ". Objective function value didn't progress from optimum by more than the tolerance. Terminating\n";
 
       // update the temperature
       mTemperature *= mCoolingFactor;
@@ -281,7 +281,7 @@ bool COptMethodSA::optimise()
     }
   while (!ready && mContinue);
 
-  if (mLogDetail >= 1) mMethodLog << "Final Temperature was " << mTemperature << " after " << k << " temperature steps.\n";
+  if (mLogDetail >= 1) mMethodLogOld << "Final Temperature was " << mTemperature << " after " << k << " temperature steps.\n";
 
   if (mpCallBack)
     mpCallBack->finishItem(mhTemperature);

@@ -102,7 +102,7 @@ bool COptMethodEP::optimise()
 
   if (!Continue)
     {
-      if (mLogDetail >= 1) mMethodLog << "Algorithm was terminated preemptively after initial population creation.\n";
+      if (mLogDetail >= 1) mMethodLogOld << "Algorithm was terminated preemptively after initial population creation.\n";
 
       if (mpCallBack)
         mpCallBack->finishItem(mhGenerations);
@@ -139,7 +139,7 @@ bool COptMethodEP::optimise()
         Continue = mpCallBack->progressItem(mhGenerations);
     }
 
-  if (mLogDetail >= 1) mMethodLog << "Algorithm terminated after " << (mGeneration - 1) << " of " << mGenerations << " generations.\n";
+  if (mLogDetail >= 1) mMethodLogOld << "Algorithm terminated after " << (mGeneration - 1) << " of " << mGenerations << " generations.\n";
 
   if (mpCallBack)
     mpCallBack->finishItem(mhGenerations);
@@ -302,7 +302,7 @@ bool COptMethodEP::creation()
       (*mVariance[0])[i] = fabs(mut) * 0.5;
     }
 
-  if (mLogDetail >= 1 && !pointInParameterDomain) mMethodLog << "Initial point not within parameter domain.\n";
+  if (mLogDetail >= 1 && !pointInParameterDomain) mMethodLogOld << "Initial point not within parameter domain.\n";
 
   Continue = evaluate(*mIndividual[0]);
   mValue[0] = mEvaluationValue;

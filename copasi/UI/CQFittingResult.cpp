@@ -429,42 +429,43 @@ bool CQFittingResult::enterProtected()
   mpCrossValidationValues->resizeColumnsToContents();
   mpCrossValidationValues->resizeRowsToContents();
 
-  // protocol
-  if (true)
+  // log
+  const COptMethod * pMethod = dynamic_cast<const COptMethod *>(mpTask->getMethod());
+
+  if (pMethod)
     {
-      mpTabWidget->setTabEnabled(mpTabWidget->indexOf(mpProtocolPage), true);
+      mpTabWidget->setTabEnabled(mpTabWidget->indexOf(mpLogPage), true);
 
-      const COptMethod * pMethod =
-        dynamic_cast<const COptMethod *>(mpTask->getMethod());
-      assert(pMethod);
-
-      QStringList protocolHtml;
-      QFile protocolFile("../protocol/protocol.html");
-      protocolFile.open(QIODevice::ReadOnly);
-      protocolHtml = ((QString)protocolFile.readAll()).split("id=\"accordion\">\n");
-      protocolFile.close();
+      QStringList logHtml;
+      QFile logFile("../protocol/protocol.html");
+      logFile.open(QIODevice::ReadOnly);
+      logHtml = ((QString)logFile.readAll()).split("id=\"accordion\">\n");
+      logFile.close();
 
 
-      if (protocolHtml.size() > 1)
+      if (logHtml.size() > 1)
         {
-          QString * protocolHtmlBuilder = & protocolHtml[0];
+          QString & logHtmlBuilder = logHtml[0];
 
-          protocolHtmlBuilder->append("id=\"accordion\">\n");
+          logHtmlBuilder.append("id=\"accordion\">\n");
 
-          //for (i = 0; i < 2000; i++)
-            //protocolHtmlBuilder->append("<h3>dsgfdhfg</h3>\n<div></div>\n");
+          logHtmlBuilder.append(pMethod->getRichMethodLog().c_str());
 
-          QString bla = protocolHtml.join(QString());
-          protocolWebView->page()->action(QWebPage::Reload)->setVisible(false);
-          protocolWebView->setHtml(bla, QUrl::fromLocalFile(QFileInfo("../protocol/protocol.html").absoluteFilePath()));
-
-          protocolSourceView->setPlainText(bla);
-          protocolSourceView->hide();
+          QString logQString = logHtml.join(QString());
+          mpLogWebView->page()->action(QWebPage::Reload)->setVisible(false);
+          /* Somehow can't enable select all in context menu
+          mpLogWebView->page()->action(QWebPage::SelectAll)->setEnabled(true);
+          mpLogWebView->page()->action(QWebPage::SelectAll)->setVisible(true);
+          */
+#ifdef COPASI_DEBUG
+          mpLogWebView->settings()->setAttribute(QWebSettings::DeveloperExtrasEnabled, true);
+#endif // COPASI_DEBUG
+          mpLogWebView->setHtml(logQString, QUrl::fromLocalFile(QFileInfo("../protocol/protocol.html").absoluteFilePath()));
         }
     }
   else
     {
-      mpTabWidget->setTabEnabled(mpTabWidget->indexOf(mpProtocolPage), false);
+      mpTabWidget->setTabEnabled(mpTabWidget->indexOf(mpLogPage), false);
     }
 
   return true;
