@@ -109,6 +109,25 @@ private:
 
   bool reachedStdDeviation();
 
+  /**
+   * Calculate the swarm variance of the function value
+   * @return C_FLOAT64 variance
+   */
+  C_FLOAT64 calcFValVariance() const;
+
+  /**
+   * Calculate the swarm variance of a given parameter
+   * @param const size_t & variable
+   * @return C_FLOAT64 variance
+   */
+  C_FLOAT64 calcVariableVariance(const size_t & variable) const;
+
+  /**
+   * Create a status dump string containing html tables of parameter and variance information
+   * @return std::string statusDump
+   */
+  std::string dumpStatus() const;
+
   // Attributes
 private:
   /**
