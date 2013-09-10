@@ -347,7 +347,7 @@ bool COptMethodPS::initialize()
 
   if (mSwarmSize < 5)
     {
-      if (mLogDetail >= 1) mMethodLogOld << "User defined Swarm Size too small. Reset to default: 5.\n";
+      mMethodLog.enterLogItem(COptLogItem(COptLogItem::PS_usrdef_error_swarm_size).with(5));
 
       mSwarmSize = 5;
       setValue("Swarm Size", mSwarmSize);
@@ -377,7 +377,7 @@ bool COptMethodPS::initialize()
   mNumInformedMin = std::max<size_t>(mSwarmSize / 10, 5) - 1;
   mNumInformed = mNumInformedMin;
 
-  if (mLogDetail >= 1) mMethodLogOld << "Minimal number of informants per particle is " << mNumInformedMin << " at a swarm size of " << mSwarmSize << " particles.\n";
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::PS_info_informants).with(mNumInformedMin).with(mSwarmSize));
 
   mpPermutation = new CPermutation(mpRandom, mSwarmSize);
 
@@ -434,8 +434,24 @@ bool COptMethodPS::reachedStdDeviation()
     mNumInformed--;
 
   // Check whether the swarm has settled
-  C_FLOAT64 * pValue = mValues.array();
-  C_FLOAT64 * pEnd = pValue + mSwarmSize;
+  if (calcFValVariance() > mVariance)
+    return false;
+
+  // The variance of the function value is smaller than required. We now
+  // Check the variance of the flock positions.
+
+  for (size_t i = 0; i < mVariableSize; ++i)
+    {
+      if (calcVariableVariance(i) > mVariance) return false;
+    }
+
+  return true;
+}
+
+C_FLOAT64 COptMethodPS::calcFValVariance() const
+{
+  const C_FLOAT64 * pValue = mValues.array();
+  const C_FLOAT64 * pEnd = pValue + mSwarmSize;
 
   C_FLOAT64 Delta;
 
@@ -457,47 +473,29 @@ bool COptMethodPS::reachedStdDeviation()
 
   Variance /= (N - 1);
 
-  if (Variance > mVariance)
-    return false;
+  return Variance;
+}
 
-  // The variance of the function value is smaller than required. We now
-  // Check the variance of the flock positions.
-  CVector< C_FLOAT64 > FirstMoments(mVariableSize);
-  CVector< C_FLOAT64 > SecondMoments(mVariableSize);
-  FirstMoments = 0.0;
-  SecondMoments = 0.0;
+C_FLOAT64 COptMethodPS::calcVariableVariance(const size_t & variable) const
+{
+  C_FLOAT64 FirstMoment;
+  C_FLOAT64 SecondMoment;
+  FirstMoment = 0.0;
+  SecondMoment = 0.0;
 
-  CVector< C_FLOAT64 > * pIndividual = mIndividuals.array();
-  CVector< C_FLOAT64 > * pIndividualEnd = pIndividual + mSwarmSize;
+  const C_FLOAT64 * pValue;
 
-  C_FLOAT64 * pFirstMoment;
-  C_FLOAT64 * pSecondMoment;
-  pEnd = FirstMoments.array() + mVariableSize;
+  const CVector< C_FLOAT64 > * pIndividual = mIndividuals.array();
+  const CVector< C_FLOAT64 > * pIndividualEnd = pIndividual + mSwarmSize;
 
   for (; pIndividual != pIndividualEnd; ++pIndividual)
     {
-      pFirstMoment = FirstMoments.array();
-      pSecondMoment = SecondMoments.array();
-      pValue = pIndividual->array();
-
-      for (; pFirstMoment != pEnd; ++pFirstMoment, ++pSecondMoment, ++pValue)
-        {
-          *pFirstMoment += *pValue;
-          *pSecondMoment += *pValue **pValue;
-        }
+        pValue = pIndividual->array() + variable;
+        FirstMoment += *pValue;
+        SecondMoment += *pValue **pValue;
     }
 
-  pFirstMoment = FirstMoments.array();
-  pSecondMoment = SecondMoments.array();
-
-  for (; pFirstMoment != pEnd; ++pFirstMoment, ++pSecondMoment)
-    {
-      Variance = (*pSecondMoment - *pFirstMoment **pFirstMoment / mSwarmSize) / (mSwarmSize - 1);
-
-      if (Variance > mVariance) return false;
-    }
-
-  return true;
+  return (SecondMoment - FirstMoment * FirstMoment / mSwarmSize) / (mSwarmSize - 1);
 }
 
 bool COptMethodPS::optimise()
@@ -511,6 +509,8 @@ bool COptMethodPS::optimise()
 
       return false;
     }
+
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_start).with("OD.Particle.Swarm"));
 
   C_FLOAT64 * pIndividual = mIndividuals[0].array();
   C_FLOAT64 * pEnd = pIndividual + mVariableSize;
@@ -550,7 +550,7 @@ bool COptMethodPS::optimise()
       // account of the value.
       **ppContainerVariable = *pIndividual;
     }
-  if (mLogDetail >= 1 && !pointInParameterDomain) mMethodLogOld << "Initial point not within parameter domain.\n";
+  if (!pointInParameterDomain) mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_initial_point_out_of_domain));
 
   // calculate its fitness
   mBestValues[0] = mValues[0] = evaluate();
@@ -581,11 +581,11 @@ bool COptMethodPS::optimise()
       if (!Improved)
         {
           buildInformants();
-          if (mLogDetail >= 2) mMethodLogOld << "Iteration " << mIteration << ": None of the particles improved in objective function value. Rebuilding informants with " << mNumInformed << " informants per particle.\n";
+          if (mLogDetail >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::PS_no_particle_improved, dumpStatus()).iter(mIteration).with(mNumInformed));
         }
       else if (reachedStdDeviation())
         {
-          if (mLogDetail >= 1) mMethodLogOld << "Iteration " << mIteration << ": Standard deviation of the particles was lower than tolerance. Terminating.\n";
+          mMethodLog.enterLogItem(COptLogItem(COptLogItem::PS_stddev_below_tol, dumpStatus()).iter(mIteration));
           break;
         }
 
@@ -596,7 +596,7 @@ bool COptMethodPS::optimise()
   if (mpCallBack)
     mpCallBack->finishItem(mhIteration);
 
-  if (mLogDetail >= 1) mMethodLogOld << "Algorithm terminated after " << mIteration << " of " << mIterationLimit << " Iterations.\n";
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_finish_x_of_max, dumpStatus()).iter(mIteration).with(mIterationLimit));
 
   cleanup();
 
@@ -606,4 +606,36 @@ bool COptMethodPS::optimise()
 unsigned C_INT32 COptMethodPS::getMaxLogDetail() const
 {
   return 2;
+}
+
+std::string COptMethodPS::dumpStatus() const
+{
+  if (mLogDetail >= 2)
+    {
+      std::stringstream status;
+
+      status << "<div class=\"content-set\">\nCurrent Best Individual:\n<table><tbody>\n";
+      status << "<tr><td>FVal</td><td>" << mValues[mBestIndex] << "</td></tr>\n";
+
+      for (size_t i = 0; i < mVariableSize; ++i)
+        {
+          status << "<tr><td>Param " << i << "</td><td>" << mIndividuals[mBestIndex][i] << "</td></tr>\n";
+        }
+
+      status << "</tbody></table>\n</div>\n";
+
+      status << "<div class=\"content-set\">\nCurrent Swarm Variances:\n<table><tbody>\n";
+      status << "<tr><td>FVal</td><td>" << calcFValVariance() << "</td></tr>\n";
+
+      for (size_t i = 0; i < mVariableSize; ++i)
+        {
+          status << "<tr><td>Param " << i << "</td><td>" << calcVariableVariance(i) << "</td></tr>\n";
+        }
+
+      status << "</tbody></table>\n</div>\n";
+
+      return status.str();
+    }
+  else
+    return "";
 }
