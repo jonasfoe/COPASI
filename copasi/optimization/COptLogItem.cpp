@@ -14,7 +14,11 @@ const std::string COptLogItem::MsgIDHeader[] =
 {
   //Std_start
   "Algorithm started at %_timestamp%.",
+  //STD_early_stop
+  "Algorithm was terminated preemptively after initial population creation.",
   //Std_finish_x_of_max
+  "Algorithm finished at %_timestamp%.",
+  //Std_finish_x_of_max_gener
   "Algorithm finished at %_timestamp%.",
   //STD_finish_temp_info
   "Algorithm finished at %_timestamp%.",
@@ -42,8 +46,12 @@ const std::string COptLogItem::MsgIDSubtext[] =
 {
   //Std_start
   "For more information about this method see: http://www.copasi.org/tiki-index.php?page=%s%",
+  //STD_early_stop
+  "",
   //Std_finish_x_of_max
   "Terminated after %_iteration% of %s% iterations.",
+  //Std_finish_x_of_max_gener
+  "Terminated after %_iteration% of %s% generations.",
   //STD_finish_temp_info
   "Final Temperature was %s% after %_iteration% temperature steps.",
   //STD_initial_point_out_of_Domain

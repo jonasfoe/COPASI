@@ -80,6 +80,8 @@ bool COptMethodEP::optimise()
       return false;
     }
 
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_start).with("OD.Evolutionary.Programming"));
+
   bool Continue = true;
 
   // Initialize the population
@@ -100,7 +102,7 @@ bool COptMethodEP::optimise()
 
   if (!Continue)
     {
-      if (mLogDetail >= 1) mMethodLogOld << "Algorithm was terminated preemptively after initial population creation.\n";
+      mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_early_stop));
 
       if (mpCallBack)
         mpCallBack->finishItem(mhGenerations);
@@ -137,7 +139,7 @@ bool COptMethodEP::optimise()
         Continue = mpCallBack->progressItem(mhGenerations);
     }
 
-  if (mLogDetail >= 1) mMethodLogOld << "Algorithm terminated after " << (mGeneration - 1) << " of " << mGenerations << " generations.\n";
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::Std_finish_x_of_max_gener).iter(mGeneration - 1).with(mGenerations));
 
   if (mpCallBack)
     mpCallBack->finishItem(mhGenerations);
@@ -300,7 +302,7 @@ bool COptMethodEP::creation()
       (*mVariance[0])[i] = fabs(mut) * 0.5;
     }
 
-  if (mLogDetail >= 1 && !pointInParameterDomain) mMethodLogOld << "Initial point not within parameter domain.\n";
+  if (!pointInParameterDomain) mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_initial_point_out_of_domain));
 
   Continue = evaluate(*mIndividual[0]);
   mValue[0] = mEvaluationValue;
