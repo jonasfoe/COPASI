@@ -85,7 +85,6 @@ class COptMethod : public CCopasiMethod
     /**
      * The Log created during parameter estimation
      */
-    std::ostringstream mMethodLogOld;
     COptLog mMethodLog;
 
     // Operations
