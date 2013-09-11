@@ -36,6 +36,7 @@ COptMethodPraxis::COptMethodPraxis(const CCopasiContainer * pParent):
     mpCPraxis(new CPraxis())
 {
   addParameter("Tolerance", CCopasiParameter::DOUBLE, (C_FLOAT64) 1.e-005);
+  addParameter("#LogVerbosity", CCopasiParameter::UINT, (unsigned C_INT32) 0);
   initObjects();
 }
 
@@ -62,6 +63,8 @@ bool COptMethodPraxis::optimise()
 {
   if (!initialize()) return false;
 
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_start).with("OD.Praxis"));
+
   C_INT i;
   C_INT prin = 0;
   C_FLOAT64 tmp = 0.0;
@@ -70,6 +73,7 @@ bool COptMethodPraxis::optimise()
   // initial point is the first guess but we have to make sure that
   // we are within the parameter domain
 
+  bool pointInParameterDomain = true;
   for (i = 0; i < mVariableSize; i++)
     {
       const COptItem & OptItem = *(*mpOptItem)[i];
@@ -80,16 +84,19 @@ bool COptMethodPraxis::optimise()
         {
           case - 1:
             mCurrent[i] = *OptItem.getLowerBoundValue();
+            pointInParameterDomain = false;
             break;
 
           case 1:
             mCurrent[i] = *OptItem.getUpperBoundValue();
+            pointInParameterDomain = false;
             break;
         }
 
       //set the value
       (*(*mpSetCalculateVariable)[i])(mCurrent[i]);
     }
+  if (!pointInParameterDomain) mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_initial_point_out_of_domain));
 
   // Report the first value as the current best
   mBestValue = evaluate();
@@ -122,6 +129,8 @@ bool COptMethodPraxis::optimise()
   catch (bool)
     {}
 
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_finish));
+
   return true;
 }
 
@@ -130,6 +139,8 @@ bool COptMethodPraxis::initialize()
   cleanup();
 
   if (!COptMethod::initialize()) return false;
+
+  mLogVerbosity = * getValue("#LogVerbosity").pUINT;
 
   mTolerance = * getValue("Tolerance").pDOUBLE;
   mIteration = 0;
@@ -196,4 +207,9 @@ const C_FLOAT64 & COptMethodPraxis::evaluate()
     mEvaluationValue = mBestValue + mBestValue - mEvaluationValue;
 
   return mEvaluationValue;
+}
+
+unsigned C_INT32 COptMethodPraxis::getMaxLogVerbosity() const
+{
+  return 0;
 }
