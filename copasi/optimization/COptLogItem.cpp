@@ -18,6 +18,8 @@ const std::string COptLogItem::MsgIDHeader[] =
   "Algorithm started at %_timestamp%.",
   //STD_early_stop
   "Algorithm was terminated preemptively after initial population creation.",
+  //STD_finish
+  "Algorithm finished at %_timestamp%.",
   //STD_finish_x_of_max_iter
   "Algorithm finished at %_timestamp%.",
   //STD_finish_x_of_max_gener
@@ -93,6 +95,8 @@ const std::string COptLogItem::MsgIDSubtext[] =
   //STD_start_nodoc
   "",
   //STD_early_stop
+  "",
+  //STD_finish
   "",
   //STD_finish_x_of_max_iter
   "Terminated after %_iteration% of %s% iterations.",
