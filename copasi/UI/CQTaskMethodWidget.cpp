@@ -168,7 +168,7 @@ bool CQTaskMethodWidget::loadMethod()
           mpLblMethodLog->setEnabled(true);
           mpBoxMethodLog->setEnabled(true);
 
-          for (unsigned C_INT32 i = 0; i <= pActiveOptMethod->getMaxLogDetail(); i++)
+          for (unsigned C_INT32 i = 0; i <= pActiveOptMethod->getMaxLogVerbosity(); i++)
             {
               mpBoxMethodLog->addItem(QString::number(i));
             }

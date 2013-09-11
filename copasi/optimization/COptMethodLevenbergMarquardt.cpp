@@ -214,7 +214,7 @@ bool COptMethodLevenbergMarquardt::optimise()
       // if Hessian is positive definite solve Hess * h = -grad
       if (info == 0)
         {
-          if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::LevenMarq_hess_pos_def).iter(mIteration));
+          if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::LM_hess_pos_def).iter(mIteration));
 
           // SUBROUTINE DPOTRS(UPLO, N, NRHS, A, LDA, B, LDB, INFO)
           dpotrs_(&UPLO, &dim, &one, mHessianLM.array(), &dim, mStep.array(), &dim, &info);
@@ -225,7 +225,7 @@ bool COptMethodLevenbergMarquardt::optimise()
         }
       else
         {
-          if (mLogVerbosity >= 1 && info > 0) mMethodLog.enterLogItem(COptLogItem(COptLogItem::LevenMarq_hess_not_pos_def).iter(mIteration).with(info));
+          if (mLogVerbosity >= 1 && info > 0) mMethodLog.enterLogItem(COptLogItem(COptLogItem::LM_hess_not_pos_def).iter(mIteration).with(info));
 
           // We are in a concave region. Thus the current step is an over estimation.
           // We reduce it by dividing by lambda
@@ -348,7 +348,7 @@ bool COptMethodLevenbergMarquardt::optimise()
             {
               if (starts < 3)
                 {
-                  mMethodLog.enterLogItem(COptLogItem(COptLogItem::LevenMarq_fval_and_param_change_lower_than_tol).iter(mIteration).with(starts));
+                  mMethodLog.enterLogItem(COptLogItem(COptLogItem::LM_fval_and_param_change_lower_than_tol).iter(mIteration).with(starts));
 
                   // let's restart with lambda=1
                   LM_lambda = 1.0;
@@ -356,7 +356,7 @@ bool COptMethodLevenbergMarquardt::optimise()
                 }
               else
                 {
-                  mMethodLog.enterLogItem(COptLogItem(COptLogItem::LevenMarq_fval_and_param_change_lower_than_tol_termination).iter(mIteration).with(starts));
+                  mMethodLog.enterLogItem(COptLogItem(COptLogItem::LM_fval_and_param_change_lower_than_tol_termination).iter(mIteration).with(starts));
                   // signal the end
                   nu = 0.0;
                 }
@@ -373,13 +373,13 @@ bool COptMethodLevenbergMarquardt::optimise()
           // if lambda too high terminate
           if (LM_lambda > LAMBDA_MAX)
             {
-              mMethodLog.enterLogItem(COptLogItem(COptLogItem::LevenMarq_lambda_max_termination).iter(mIteration));
+              mMethodLog.enterLogItem(COptLogItem(COptLogItem::LM_lambda_max_termination).iter(mIteration));
 
               nu = 0.0;
             }
           else
             {
-              if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::LevenMarq_inc_lambda).iter(mIteration));
+              if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::LM_inc_lambda).iter(mIteration));
 
               // increase lambda
               LM_lambda *= nu * 2;
@@ -394,7 +394,7 @@ bool COptMethodLevenbergMarquardt::optimise()
         mContinue &= mpCallBack->progressItem(mhIteration);
     }
 
-  mMethodLog.enterLogItem(COptLogItem(COptLogItem::LevenMarq_count_edge_of_param_domain).with(mParameterOutOfBounds));
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::LM_count_edge_of_param_domain).with(mParameterOutOfBounds));
   mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_finish_x_of_max_iter).iter(mIteration).with(mIterationLimit));
 
   if (mpCallBack)
@@ -669,7 +669,7 @@ void COptMethodLevenbergMarquardt::hessian()
       mHessian[i][j] = mHessian[j][i];
 }
 
-unsigned C_INT32 COptMethodLevenbergMarquardt::getMaxLogDetail() const
+unsigned C_INT32 COptMethodLevenbergMarquardt::getMaxLogVerbosity() const
 {
   return 2;
 }

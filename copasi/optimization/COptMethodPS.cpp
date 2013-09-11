@@ -601,7 +601,7 @@ bool COptMethodPS::optimise()
   return true;
 }
 
-unsigned C_INT32 COptMethodPS::getMaxLogDetail() const
+unsigned C_INT32 COptMethodPS::getMaxLogVerbosity() const
 {
   return 2;
 }

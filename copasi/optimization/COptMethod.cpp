@@ -235,7 +235,7 @@ bool COptMethod::isValidProblem(const CCopasiProblem * pProblem)
   return true;
 }
 
-unsigned C_INT32 COptMethod::getMaxLogDetail() const
+unsigned C_INT32 COptMethod::getMaxLogVerbosity() const
 {
   return 0;
 }

@@ -342,7 +342,7 @@ bool COptMethodSA::initialize()
   return true;
 }
 
-unsigned C_INT32 COptMethodSA::getMaxLogDetail() const
+unsigned C_INT32 COptMethodSA::getMaxLogVerbosity() const
 {
   return 1;
 }
