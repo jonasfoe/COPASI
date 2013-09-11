@@ -52,7 +52,11 @@ class COptLogItem
       LevenMarq_inc_lambda,
       LevenMarq_count_edge_of_param_domain,
 
-      CW_min_step_size
+      CW_min_step_size,
+
+      NM_fval_change_below_tol,
+      NM_local_min_termination,
+      NM_no_local_min_reducing_simplex,
     };
 
     /**
