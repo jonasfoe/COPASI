@@ -76,6 +76,14 @@ const std::string COptLogItem::MsgIDHeader[] =
 
   //CW_min_step_size
   "Minimum step size is %s%.",
+
+  //NM_fval_change_below_tol
+  "Iteration %_iteration%: Objective function value change lower than tolerance. Checking whether local minimum was found.",
+  //NM_local_min_termination
+  "Iteration %_iteration%: Local minimum found. Terminating.",
+  //NM_no_local_min_reducing_simplex
+  "Iteration %_iteration%: No local minimum found. Reducing simplex size.",
+
 };
 
 const std::string COptLogItem::MsgIDSubtext[] =
@@ -144,6 +152,14 @@ const std::string COptLogItem::MsgIDSubtext[] =
 
   //CW_min_step_size
   "",
+
+  //NM_fval_change_below_tol
+  "",
+  //NM_local_min_termination
+  "",
+  //NM_no_local_min_reducing_simplex
+  "",
+
 };
 
 // Constructor
