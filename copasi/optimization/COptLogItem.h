@@ -18,6 +18,7 @@ class COptLogItem
     enum MsgID
     {
       STD_start,
+      STD_start_nodoc,
       STD_early_stop,
       STD_finish_x_of_max,
       Std_finish_x_of_max_gener,
@@ -31,7 +32,10 @@ class COptLogItem
 
       SA_steps_per_temp,
       SA_fval_progress_lower_that_tol,
-      SA_fval_tol_termination
+      SA_fval_tol_termination,
+
+      DE_usrdef_error_pop_size,
+      DE_fittest_not_changed_x_random_generated
     };
 
     /**
