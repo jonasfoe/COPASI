@@ -83,7 +83,6 @@ protected:
   /**
   * The Log created during parameter estimation
   */
-  std::ostringstream mMethodLogOld;
   COptLog mMethodLog;
 
   // Operations
