@@ -58,6 +58,10 @@ class COptLogItem
       NM_fval_change_below_tol,
       NM_local_min_termination,
       NM_no_local_min_reducing_simplex,
+
+      SRES_usrdef_error_pf,
+      SRES_fittest_not_changed_x_random_generated,
+
     };
 
     /**

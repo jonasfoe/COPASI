@@ -371,8 +371,7 @@ bool COptMethodSRES::creation(size_t first)
           // Set the variance for this parameter.
           *pVariance = std::min(*OptItem.getUpperBoundValue() - mut, mut - *OptItem.getLowerBoundValue()) / sqrt(double(mVariableSize));
         }
-
-      if (mLogVerbosity >= 1 && !pointInParameterDomain) mMethodLogOld << "Initial point not within parameter domain.\n";
+      if (!pointInParameterDomain) mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_initial_point_out_of_domain));
 
       Continue = evaluate(**it);
       *pValue++ = mEvaluationValue;
@@ -531,7 +530,7 @@ bool COptMethodSRES::initialize()
 
   if (mPf < 0.0 || 1.0 < mPf)
     {
-      if (mLogVerbosity >= 1) mMethodLogOld << "User defined Pf not in interval (0,1). Reset to default: 0.475.\n";
+      mMethodLog.enterLogItem(COptLogItem(COptLogItem::SRES_usrdef_error_pf).with(0.475));
 
       mPf = 0.475;
       setValue("Pf", mPf);
@@ -671,6 +670,8 @@ bool COptMethodSRES::optimise()
       return false;
     }
 
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_start).with("OD.Evolutionary.Strategy.SRES"));
+
   // initialise the population
   Continue = creation(0);
 
@@ -689,7 +690,7 @@ bool COptMethodSRES::optimise()
 
   if (!Continue)
     {
-      if (mLogVerbosity >= 1) mMethodLogOld << "Algorithm was terminated preemptively after initial population creation.\n";
+      mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_early_stop));
 
       if (mpCallBack)
         mpCallBack->finishItem(mhGenerations);
@@ -708,28 +709,28 @@ bool COptMethodSRES::optimise()
       // perturb the population if we have stalled for a while
       if (Stalled80 > 80)
         {
-          if (mLogDetail >= 1) mMethodLog << "Generation " << mGeneration << ": Fittest individual has not changed for the last 80 generations. 80% random individuals created.\n";
+          if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::SRES_fittest_not_changed_x_random_generated).iter(mGeneration).with(80).with(80);
 
           Continue = creation((size_t)(mPopulationSize * 0.2));
           Stalled10 = Stalled20 = Stalled40 = Stalled80 = 0;
         }
       else if (Stalled40 > 40)
         {
-          if (mLogDetail >= 1) mMethodLog << "Generation " << mGeneration << ": Fittest individual has not changed for the last 40 generations. 40% random individuals created.\n";
+          if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::SRES_fittest_not_changed_x_random_generated).iter(mGeneration).with(40).with(40);
 
           Continue = creation((size_t)(mPopulationSize * 0.6));
           Stalled10 = Stalled20 = Stalled40 = 0;
         }
       else if (Stalled20 > 20)
         {
-          if (mLogDetail >= 1) mMethodLog << "Generation " << mGeneration << ": Fittest individual has not changed for the last 20 generations. 20% random individuals created.\n";
+          if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::SRES_fittest_not_changed_x_random_generated).iter(mGeneration).with(20).with(20);
 
           Continue = creation((size_t)(mPopulationSize * 0.8));
           Stalled10 = Stalled20 = 0;
         }
       else if (Stalled10 > 10)
         {
-          if (mLogDetail >= 1) mMethodLog << "Generation " << mGeneration << ": Fittest individual has not changed for the last 10 generations. 10% random individuals created.\n";
+          if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::SRES_fittest_not_changed_x_random_generated).iter(mGeneration).with(10).with(10);
 
           Continue = creation((size_t)(mPopulationSize * 0.9));
           Stalled10 = 0;
@@ -768,7 +769,7 @@ bool COptMethodSRES::optimise()
         Continue = mpCallBack->progressItem(mhGenerations);
     }
 
-  if (mLogVerbosity >= 1) mMethodLogOld << "Algorithm terminated after " << (mGeneration - 1) << " of " << mGenerations << " generations.\n";
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_finish_x_of_max_gener).iter(mGeneration - 1).with(mGenerations));
 
   if (mpCallBack)
     mpCallBack->finishItem(mhGenerations);
