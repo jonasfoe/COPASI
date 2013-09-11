@@ -40,7 +40,7 @@ COptMethodSA::COptMethodSA(const CCopasiContainer * pParent):
   addParameter("Tolerance", CCopasiParameter::UDOUBLE, (C_FLOAT64) 1.e-006);
   addParameter("Random Number Generator", CCopasiParameter::UINT, (unsigned C_INT32) CRandom::mt19937);
   addParameter("Seed", CCopasiParameter::UINT, (unsigned C_INT32) 0);
-  addParameter("#LogDetail", CCopasiParameter::UINT, (unsigned C_INT32) 0);
+  addParameter("#LogVerbosity", CCopasiParameter::UINT, (unsigned C_INT32) 0);
 
   initObjects();
 }
@@ -320,7 +320,7 @@ bool COptMethodSA::initialize()
   mTemperature = * getValue("Start Temperature").pUDOUBLE;
   mCoolingFactor = * getValue("Cooling Factor").pUDOUBLE;
   mTolerance = * getValue("Tolerance").pUDOUBLE;
-  mLogDetail = * getValue("#LogDetail").pUINT;
+  mLogVerbosity = * getValue("#LogVerbosity").pUINT;
   mpRandom =
     CRandom::createGenerator(* (CRandom::Type *) getValue("Random Number Generator").pUINT,
                              * getValue("Seed").pUINT);

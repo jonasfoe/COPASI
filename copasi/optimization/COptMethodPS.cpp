@@ -54,7 +54,7 @@ COptMethodPS::COptMethodPS(const CCopasiContainer * pParent):
   addParameter("Std. Deviation", CCopasiParameter::UDOUBLE, (C_FLOAT64) 1.0e-6);
   addParameter("Random Number Generator", CCopasiParameter::UINT, (unsigned C_INT32) CRandom::mt19937);
   addParameter("Seed", CCopasiParameter::UINT, (unsigned C_INT32) 0);
-  addParameter("#LogDetail", CCopasiParameter::UINT, (unsigned C_INT32) 0);
+  addParameter("#LogVerbosity", CCopasiParameter::UINT, (unsigned C_INT32) 0);
 
   initObjects();
 }
@@ -332,7 +332,7 @@ bool COptMethodPS::initialize()
   if (!COptMethod::initialize()) return false;
 
   mIterationLimit = * getValue("Iteration Limit").pUINT;
-  mLogDetail = * getValue("#LogDetail").pUINT;
+  mLogVerbosity = * getValue("#LogVerbosity").pUINT;
   mIteration = 0;
 
   if (mpCallBack)
@@ -579,7 +579,7 @@ bool COptMethodPS::optimise()
       if (!Improved)
         {
           buildInformants();
-          if (mLogDetail >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::PS_no_particle_improved, dumpStatus()).iter(mIteration).with(mNumInformed));
+          if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::PS_no_particle_improved, dumpStatus()).iter(mIteration).with(mNumInformed));
         }
       else if (reachedStdDeviation())
         {
@@ -594,7 +594,7 @@ bool COptMethodPS::optimise()
   if (mpCallBack)
     mpCallBack->finishItem(mhIteration);
 
-  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_finish_x_of_max, dumpStatus()).iter(mIteration).with(mIterationLimit));
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_finish_x_of_max_iter, dumpStatus()).iter(mIteration).with(mIterationLimit));
 
   cleanup();
 
@@ -608,7 +608,7 @@ unsigned C_INT32 COptMethodPS::getMaxLogDetail() const
 
 std::string COptMethodPS::dumpStatus() const
 {
-  if (mLogDetail >= 2)
+  if (mLogVerbosity >= 2)
     {
       std::stringstream status;
 

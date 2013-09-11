@@ -39,7 +39,7 @@ COptMethodDE::COptMethodDE(const CCopasiContainer * pParent):
   addParameter("Population Size", CCopasiParameter::UINT, (unsigned C_INT32) 10);
   addParameter("Random Number Generator", CCopasiParameter::UINT, (unsigned C_INT32) CRandom::mt19937);
   addParameter("Seed", CCopasiParameter::UINT, (unsigned C_INT32) 0);
-  addParameter("#LogDetail", CCopasiParameter::UINT, (unsigned C_INT32) 0);
+  addParameter("#LogVerbosity", CCopasiParameter::UINT, (unsigned C_INT32) 0);
 
   initObjects();
 }
@@ -337,7 +337,7 @@ bool COptMethodDE::initialize()
       return false;
     }
 
-  mLogDetail = * getValue("#LogDetail").pUINT;
+  mLogVerbosity = * getValue("#LogVerbosity").pUINT;
 
   mGenerations = * getValue("Number of Generations").pUINT;
   mGeneration = 0;

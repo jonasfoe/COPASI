@@ -47,7 +47,7 @@ void CQTaskMethodWidget::changeMethod(int /* index */)
   if (mpTask == NULL)
     return;
 
-  size_t logParameterIndex = mpActiveMethod->getIndex("#LogDetail");
+  size_t logParameterIndex = mpActiveMethod->getIndex("#LogVerbosity");
 
   // We update the active methods parameters
   if (mShowMethodParameters)
@@ -152,7 +152,7 @@ bool CQTaskMethodWidget::loadMethod()
 
   //Index of logging parameter to be ignored when populating list of parameters
   //This is a workaround since the logging level has to be defined as CCopasiParameter as to be assigned to the actual mpMethod
-  size_t logParameterIndex = mpActiveMethod->getIndex("#LogDetail");
+  size_t logParameterIndex = mpActiveMethod->getIndex("#LogVerbosity");
 
   if (mShowMethods)
     {
@@ -205,7 +205,7 @@ bool CQTaskMethodWidget::loadMethod()
           mpTableParameter->setItem(i, 0, pValueItem);
         }
 
-      //Skip adding "#LogDetail"
+      //Skip adding "#LogVerbosity"
       if (logParameterIndex != C_INVALID_INDEX)
         mpTableParameter->removeRow(logParameterIndex);
     }
@@ -224,7 +224,7 @@ bool CQTaskMethodWidget::saveMethod()
   if (!pMethod) return false;
 
   bool changed = false;
-  size_t logParameterIndex = mpActiveMethod->getIndex("#LogDetail");
+  size_t logParameterIndex = mpActiveMethod->getIndex("#LogVerbosity");
 
   if (mShowMethods)
     {
