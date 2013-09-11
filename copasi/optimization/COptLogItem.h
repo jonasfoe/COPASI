@@ -43,6 +43,14 @@ class COptLogItem
       GASR_fittest_not_changed_x_random_generated,
 
       HookeJeeves_steplength_below_tol,
+
+      LevenMarq_hess_pos_def,
+      LevenMarq_hess_not_pos_def,
+      LevenMarq_fval_and_param_change_lower_than_tol,
+      LevenMarq_fval_and_param_change_lower_than_tol_termination,
+      LevenMarq_lambda_max_termination,
+      LevenMarq_inc_lambda,
+      LevenMarq_count_edge_of_param_domain,
     };
 
     /**
