@@ -50,6 +50,12 @@ const std::string COptLogItem::MsgIDHeader[] =
 
   //GA_fittest_not_changed_x_random_generated
   "Generation %_iteration%: Fittest individual has not changed for the last %s% generations. %s%% random individuals created.",
+
+  //GASR_usrdef_error_pf
+  "User defined Pf not in interval (0,1). Reset to default: %s%.",
+  //GASR_fittest_not_changed_x_random_generated
+  "Generation %_iteration%: Fittest individual has not changed for the last %s% generations. %s%% random individuals created.",
+
 };
 
 const std::string COptLogItem::MsgIDSubtext[] =
@@ -92,6 +98,12 @@ const std::string COptLogItem::MsgIDSubtext[] =
 
   //GA_fittest_not_changed_x_random_generated
   "",
+
+  //GASR_usrdef_error_pf
+  "",
+  //GASR_fittest_not_changed_x_random_generated
+  "Generation %_iteration%: Fittest individual has not changed for the last %s% generations. %s%% random individuals created.",
+
 };
 
 // Constructor
