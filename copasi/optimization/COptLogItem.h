@@ -29,7 +29,7 @@ class COptLogItem
       PS_usrdef_error_swarm_size,
       PS_info_informants,
       PS_no_particle_improved,
-      PS_stddev_below_tol,
+      PS_stddev_below_tol_termination,
 
       SA_steps_per_temp,
       SA_fval_progress_lower_that_tol,

@@ -583,5 +583,5 @@ bool COptMethodEP::mutate(size_t i)
 
 unsigned C_INT32 COptMethodEP::getMaxLogVerbosity() const
 {
-  return 1;
+  return 0;
 }

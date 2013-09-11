@@ -312,5 +312,5 @@ bool COptMethodCoranaWalk::initialize()
 
 unsigned C_INT32 COptMethodCoranaWalk::getMaxLogVerbosity() const
 {
-  return 1;
+  return 0;
 }

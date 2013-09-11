@@ -35,8 +35,8 @@ const std::string COptLogItem::MsgIDHeader[] =
   "Minimal number of informants per particle is %s% at a swarm size of %s% particles.",
   //PS_no_particle_improved
   "Iteration %_iteration%: None of the particles improved in objective function value.",
-  //PS_stddev_below_tol
-  "Iteration %_iteration%: Standard deviation of the particles was lower than tolerance. Terminating.\n",
+  //PS_stddev_below_tol_termination
+  "Iteration %_iteration%: Standard deviation of the particles was lower than tolerance. Terminating.",
 
   //SA_steps_per_temp
   "Steps at one single temperature: %s%.",
@@ -120,7 +120,7 @@ const std::string COptLogItem::MsgIDSubtext[] =
   "",
   //PS_no_particle_improved
   "Rebuilding informants with %s% informants per particle.",
-  //PS_stddev_below_tol
+  //PS_stddev_below_tol_termination
   "",
 
   //SA_steps_per_temp
