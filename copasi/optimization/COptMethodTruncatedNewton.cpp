@@ -334,7 +334,7 @@ const C_FLOAT64 & COptMethodTruncatedNewton::evaluate()
   return mEvaluationValue;
 }
 
-unsigned C_INT32 COptMethodTruncatedNewton::getMaxLogDetail() const
+unsigned C_INT32 COptMethodTruncatedNewton::getMaxLogVerbosity() const
 {
   return 1;
 }

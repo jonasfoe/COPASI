@@ -67,9 +67,9 @@ public:
   virtual bool optimise();
 
   /**
-   * Returns the maximum detail at which the method can log.
+   * Returns the maximum verbosity at which the method can log.
    */
-  virtual unsigned C_INT32 getMaxLogDetail() const;
+  virtual unsigned C_INT32 getMaxLogVerbosity() const;
 
 private:
   /**

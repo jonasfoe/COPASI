@@ -523,7 +523,7 @@ bool COptMethodDE::optimise()
         Continue &= mpCallBack->progressItem(mhGenerations);
     }
 
-  mMethodLog.enterLogItem(COptLogItem(COptLogItem::Std_finish_x_of_max_gener).iter(mGeneration - 1).with(mGenerations));
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_finish_x_of_max_gener).iter(mGeneration - 1).with(mGenerations));
 
   if (mpCallBack)
     mpCallBack->finishItem(mhGenerations);
@@ -533,7 +533,7 @@ bool COptMethodDE::optimise()
   return true;
 }
 
-unsigned C_INT32 COptMethodDE::getMaxLogDetail() const
+unsigned C_INT32 COptMethodDE::getMaxLogVerbosity() const
 {
   return 1;
 }

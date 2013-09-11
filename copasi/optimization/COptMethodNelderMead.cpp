@@ -679,7 +679,7 @@ bool COptMethodNelderMead::initialize()
   return true;
 }
 
-unsigned C_INT32 COptMethodNelderMead::getMaxLogDetail() const
+unsigned C_INT32 COptMethodNelderMead::getMaxLogVerbosity() const
 {
   return 1;
 }

@@ -222,7 +222,7 @@ bool COptMethodHookeJeeves::optimise()
         }
     }
 
-  if (steplength < mTolerance) mMethodLog.enterLogItem(COptLogItem(COptLogItem::HookeJeeves_steplength_below_tol).iter(mIteration));
+  if (steplength < mTolerance) mMethodLog.enterLogItem(COptLogItem(COptLogItem::HJ_steplength_below_tol).iter(mIteration));
 
   mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_finish_x_of_max_iter).iter(mIteration).with(mIterationLimit));
 
@@ -374,7 +374,7 @@ C_FLOAT64 COptMethodHookeJeeves::bestNearby()
   return (minf);
 }
 
-unsigned C_INT32 COptMethodHookeJeeves::getMaxLogDetail() const
+unsigned C_INT32 COptMethodHookeJeeves::getMaxLogVerbosity() const
 {
   return 1;
 }

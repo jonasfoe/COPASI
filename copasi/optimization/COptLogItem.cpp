@@ -18,9 +18,9 @@ const std::string COptLogItem::MsgIDHeader[] =
   "Algorithm started at %_timestamp%.",
   //STD_early_stop
   "Algorithm was terminated preemptively after initial population creation.",
-  //Std_finish_x_of_max_iter
+  //STD_finish_x_of_max_iter
   "Algorithm finished at %_timestamp%.",
-  //Std_finish_x_of_max_gener
+  //STD_finish_x_of_max_gener
   "Algorithm finished at %_timestamp%.",
   //STD_finish_temp_info
   "Algorithm finished at %_timestamp%.",
@@ -56,22 +56,22 @@ const std::string COptLogItem::MsgIDHeader[] =
   //GASR_fittest_not_changed_x_random_generated
   "Generation %_iteration%: Fittest individual has not changed for the last %s% generations. %s%% random individuals created.",
 
-  //HookeJeeves_steplength_below_tol
+  //HJ_steplength_below_tol
   "Iteration %_iteration%: Steplength below tolerance. Terminating.",
 
-  //LevenMarq_hess_pos_def
+  //LM_hess_pos_def
   "Iteration %_iteration%: Hessian matrix is positive definite. Calculating gradient.",
-  //LevenMarq_hess_not_pos_def
+  //LM_hess_not_pos_def
   "Iteration %_iteration%: Hessian matrix is not positive definite because the leading minor of order %s% is not positive definite.",
-  //LevenMarq_fval_and_param_change_lower_than_tol
+  //LM_fval_and_param_change_lower_than_tol
   "Iteration %_iteration%: Objective function value and parameter change lower than tolerance (%s%/3). Resetting lambda.",
-  //LevenMarq_fval_and_param_change_lower_than_tol_termination
+  //LM_fval_and_param_change_lower_than_tol_termination
   "Iteration %_iteration%: Objective function value and parameter change lower than tolerance  (%s%/3). Terminating.",
-  //LevenMarq_lambda_max_termination
+  //LM_lambda_max_termination
   "Iteration %_iteration%: Lambda reached max value. Terminating.",
-  //LevenMarq_inc_lambda
+  //LM_inc_lambda
   "Iteration %_iteration%: Restarting iteration with increased lambda.",
-  //LevenMarq_count_edge_of_param_domain
+  //LM_count_edge_of_param_domain
   "Algorithm reached the edge of the parameter domain %s% times.",
 
   //CW_min_step_size
@@ -94,9 +94,9 @@ const std::string COptLogItem::MsgIDSubtext[] =
   "",
   //STD_early_stop
   "",
-  //Std_finish_x_of_max_iter
+  //STD_finish_x_of_max_iter
   "Terminated after %_iteration% of %s% iterations.",
-  //Std_finish_x_of_max_gener
+  //STD_finish_x_of_max_gener
   "Terminated after %_iteration% of %s% generations.",
   //STD_finish_temp_info
   "Final Temperature was %s% after %_iteration% temperature steps.",
@@ -132,22 +132,22 @@ const std::string COptLogItem::MsgIDSubtext[] =
   //GASR_fittest_not_changed_x_random_generated
   "Generation %_iteration%: Fittest individual has not changed for the last %s% generations. %s%% random individuals created.",
 
-  //HookeJeeves_steplength_below_tol
+  //HJ_steplength_below_tol
   "",
 
-  //LevenMarq_hess_pos_def
+  //LM_hess_pos_def
   "",
-  //LevenMarq_hess_not_pos_def
+  //LM_hess_not_pos_def
   "",
-  //LevenMarq_fval_and_param_change_lower_than_tol
+  //LM_fval_and_param_change_lower_than_tol
   "",
-  //LevenMarq_fval_and_param_change_lower_than_tol_termination
+  //LM_fval_and_param_change_lower_than_tol_termination
   "",
-  //LevenMarq_lambda_max_termination
+  //LM_lambda_max_termination
   "",
-  //LevenMarq_inc_lambda
+  //LM_inc_lambda
   "",
-  //LevenMarq_count_edge_of_param_domain
+  //LM_count_edge_of_param_domain
   "",
 
   //CW_min_step_size

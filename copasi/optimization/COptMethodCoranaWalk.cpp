@@ -310,7 +310,7 @@ bool COptMethodCoranaWalk::initialize()
   return true;
 }
 
-unsigned C_INT32 COptMethodCoranaWalk::getMaxLogDetail() const
+unsigned C_INT32 COptMethodCoranaWalk::getMaxLogVerbosity() const
 {
   return 1;
 }

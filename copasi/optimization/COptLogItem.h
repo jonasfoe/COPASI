@@ -21,7 +21,7 @@ class COptLogItem
       STD_start_nodoc,
       STD_early_stop,
       STD_finish_x_of_max_iter,
-      Std_finish_x_of_max_gener,
+      STD_finish_x_of_max_gener,
       STD_finish_temp_info,
       STD_initial_point_out_of_domain,
 
@@ -42,15 +42,15 @@ class COptLogItem
       GASR_usrdef_error_pf,
       GASR_fittest_not_changed_x_random_generated,
 
-      HookeJeeves_steplength_below_tol,
+      HJ_steplength_below_tol,
 
-      LevenMarq_hess_pos_def,
-      LevenMarq_hess_not_pos_def,
-      LevenMarq_fval_and_param_change_lower_than_tol,
-      LevenMarq_fval_and_param_change_lower_than_tol_termination,
-      LevenMarq_lambda_max_termination,
-      LevenMarq_inc_lambda,
-      LevenMarq_count_edge_of_param_domain,
+      LM_hess_pos_def,
+      LM_hess_not_pos_def,
+      LM_fval_and_param_change_lower_than_tol,
+      LM_fval_and_param_change_lower_than_tol_termination,
+      LM_lambda_max_termination,
+      LM_inc_lambda,
+      LM_count_edge_of_param_domain,
 
       CW_min_step_size,
 
