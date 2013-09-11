@@ -86,6 +86,11 @@ const std::string COptLogItem::MsgIDHeader[] =
   //NM_no_local_min_reducing_simplex
   "Iteration %_iteration%: No local minimum found. Reducing simplex size.",
 
+  //SRES_usrdef_error_pf
+  "User defined Pf not in interval (0,1). Reset to default: %s%.",
+  //SRES_fittest_not_changed_x_random_generated
+  "Generation %_iteration%: Fittest individual has not changed for the last %s% generations. %s%% random individuals created.",
+
 };
 
 const std::string COptLogItem::MsgIDSubtext[] =
@@ -162,6 +167,11 @@ const std::string COptLogItem::MsgIDSubtext[] =
   //NM_local_min_termination
   "",
   //NM_no_local_min_reducing_simplex
+  "",
+
+  //SRES_usrdef_error_pf
+  "",
+  //SRES_fittest_not_changed_x_random_generated
   "",
 
 };
