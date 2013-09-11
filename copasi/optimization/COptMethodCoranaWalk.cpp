@@ -61,6 +61,8 @@ bool COptMethodCoranaWalk::optimise()
       return false;
     }
 
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_start_nodoc));
+
   size_t i, j;
 
   size_t h, a;
@@ -79,7 +81,7 @@ bool COptMethodCoranaWalk::optimise()
   else
     minstep = 100 * std::numeric_limits< C_FLOAT64 >::epsilon();
 
-  if (mLogVerbosity >= 1) mMethodLogOld << "Minimum step size is " << minstep << ".\n";
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::CW_min_step_size).with(minstep));
 
   // initial point is first guess but we have to make sure that we
   // are within the parameter domain
@@ -111,7 +113,7 @@ bool COptMethodCoranaWalk::optimise()
       // The step must not contain any zeroes
       mStep[i] = std::max(fabs(mCurrent[i]), minstep);
     }
-  if (mLogVerbosity >= 1 && !pointInParameterDomain) mMethodLogOld << "Initial point not within parameter domain.\n";
+  if (!pointInParameterDomain) mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_initial_point_out_of_domain));
 
   // find the objective function value at the start
   mCurrentValue = evaluate();
@@ -246,7 +248,7 @@ bool COptMethodCoranaWalk::optimise()
     }
   while (processing && mContinue);
 
-  if (mLogVerbosity >= 1) mMethodLogOld << "Algorithm terminated after " << mCurrentIteration << " of " << mIterations << " Iterations.\n";
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_finish_x_of_max_iter).iter(mCurrentIteration).with(mIterations));
 
   if (mpCallBack)
     mpCallBack->finishItem(mhIterations);

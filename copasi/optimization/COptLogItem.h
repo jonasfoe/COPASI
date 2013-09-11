@@ -51,6 +51,8 @@ class COptLogItem
       LevenMarq_lambda_max_termination,
       LevenMarq_inc_lambda,
       LevenMarq_count_edge_of_param_domain,
+
+      CW_min_step_size
     };
 
     /**

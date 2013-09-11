@@ -73,6 +73,9 @@ const std::string COptLogItem::MsgIDHeader[] =
   "Iteration %_iteration%: Restarting iteration with increased lambda.",
   //LevenMarq_count_edge_of_param_domain
   "Algorithm reached the edge of the parameter domain %s% times.",
+
+  //CW_min_step_size
+  "Minimum step size is %s%.",
 };
 
 const std::string COptLogItem::MsgIDSubtext[] =
@@ -137,6 +140,9 @@ const std::string COptLogItem::MsgIDSubtext[] =
   //LevenMarq_inc_lambda
   "",
   //LevenMarq_count_edge_of_param_domain
+  "",
+
+  //CW_min_step_size
   "",
 };
 
