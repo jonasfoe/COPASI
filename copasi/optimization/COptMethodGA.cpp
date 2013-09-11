@@ -493,6 +493,8 @@ bool COptMethodGA::optimise()
       return false;
     }
 
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_start).with("OD.Genetic.Algorithm"));
+
   // Counters to determine whether the optimization process has stalled
   // They count the number of generations without advances.
   size_t Stalled, Stalled10, Stalled30, Stalled50;
@@ -528,8 +530,7 @@ bool COptMethodGA::optimise()
       // account of the value.
       (*(*mpSetCalculateVariable)[i])(mut);
     }
-  if (mLogVerbosity >= 1 && !pointInParameterDomain) mMethodLogOld << "Initial point not within parameter domain.\n";
-
+  if (!pointInParameterDomain) mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_initial_point_out_of_domain));
 
   Continue &= evaluate(*mIndividual[0]);
   mValue[0] = mEvaluationValue;
@@ -568,7 +569,7 @@ bool COptMethodGA::optimise()
   // test if the user wants to stop, and do so if needed
   if (!Continue)
     {
-      if (mLogVerbosity >= 1) mMethodLogOld << "Algorithm was terminated preemptively after initial population creation.\n";
+      mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_early_stop));
 
       if (mpCallBack)
         mpCallBack->finishItem(mhGenerations);
@@ -584,7 +585,7 @@ bool COptMethodGA::optimise()
       // perturb the population if we have stalled for a while
       if (Stalled > 50 && Stalled50 > 50)
         {
-          if (mLogVerbosity >= 1) mMethodLogOld << "Generation " << mGeneration << ": Fittest individual has not changed for the last 50 generations. 50% random individuals created.\n";
+          mMethodLog.enterLogItem(COptLogItem(COptLogItem::GA_fittest_not_changed_x_random_generated).iter(mGeneration).with(50).with(50));
 
           Continue &= creation((size_t)(mPopulationSize / 2),
                                mPopulationSize);
@@ -592,7 +593,7 @@ bool COptMethodGA::optimise()
         }
       else if (Stalled > 30 && Stalled30 > 30)
         {
-          if (mLogVerbosity >= 1) mMethodLogOld << "Generation " << mGeneration << ": Fittest individual has not changed for the last 30 generations. 30% random individuals created.\n";
+          mMethodLog.enterLogItem(COptLogItem(COptLogItem::GA_fittest_not_changed_x_random_generated).iter(mGeneration).with(30).with(30));
 
           Continue &= creation((size_t)(mPopulationSize * 0.7),
                                mPopulationSize);
@@ -600,7 +601,7 @@ bool COptMethodGA::optimise()
         }
       else if (Stalled > 10 && Stalled10 > 10)
         {
-          if (mLogVerbosity >= 1) mMethodLogOld << "Generation " << mGeneration << ": Fittest individual has not changed for the last 10 generations. 10% random individuals created.\n";
+          mMethodLog.enterLogItem(COptLogItem(COptLogItem::GA_fittest_not_changed_x_random_generated).iter(mGeneration).with(10).with(10));
 
           Continue &= creation((size_t)(mPopulationSize * 0.9),
                                mPopulationSize);
@@ -636,7 +637,7 @@ bool COptMethodGA::optimise()
 #endif
     }
 
-  if (mLogVerbosity >= 1) mMethodLogOld << "Algorithm terminated after " << (mGeneration - 1) << " of " << mGenerations << " generations.\n";
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::Std_finish_x_of_max_gener).iter(mGeneration - 1).with(mGenerations));
 
   if (mpCallBack)
     mpCallBack->finishItem(mhGenerations);
