@@ -671,5 +671,5 @@ void COptMethodLevenbergMarquardt::hessian()
 
 unsigned C_INT32 COptMethodLevenbergMarquardt::getMaxLogVerbosity() const
 {
-  return 2;
+  return 1;
 }

@@ -131,7 +131,7 @@ bool COptMethodSA::optimise()
 
   if (nt < 100) nt = 100;
 
-  if (!pointInParameterDomain) mMethodLog.enterLogItem(COptLogItem(COptLogItem::SA_steps_per_temp).with(nt));
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::SA_steps_per_temp).with(nt));
 
   // no temperature reductions yet
   k = 0;
@@ -253,7 +253,7 @@ bool COptMethodSA::optimise()
           // check the termination criterion of not much larger than last optimal
           else
             {
-              mMethodLog.enterLogItem(COptLogItem(COptLogItem::SA_fval_progress_lower_that_tol).iter(k).with(STORED).with(mTemperature));
+              if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::SA_fval_progress_lower_that_tol).iter(k).with(STORED).with(mTemperature));
 
               if (fabs(mCurrentValue - mBestValue) > mTolerance)
                 ready = false;

@@ -533,5 +533,5 @@ bool COptMethodDE::optimise()
 
 unsigned C_INT32 COptMethodDE::getMaxLogVerbosity() const
 {
-  return 1;
+  return 0;
 }

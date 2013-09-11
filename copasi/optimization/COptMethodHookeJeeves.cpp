@@ -382,7 +382,7 @@ C_FLOAT64 COptMethodHookeJeeves::bestNearby()
 
 unsigned C_INT32 COptMethodHookeJeeves::getMaxLogVerbosity() const
 {
-  return 1;
+  return 0;
 }
 
 /* Find a point X where the nonlinear function f(X) has a local    */
