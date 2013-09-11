@@ -71,6 +71,8 @@ bool COptMethodHookeJeeves::optimise()
       return false;
     }
 
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_start).with("OD.Hooke.Jeeves"));
+
   C_FLOAT64 newf, steplength, tmp;
   bool Keep;
   size_t iadj;
@@ -106,8 +108,7 @@ bool COptMethodHookeJeeves::optimise()
       // account of the value.
       (*(*mpSetCalculateVariable)[i])(mut);
     }
-
-  if (mLogVerbosity >= 1 && !pointInParameterDomain) mMethodLogOld << "Initial point not within parameter domain.\n";
+  if (!pointInParameterDomain) mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_initial_point_out_of_domain));
 
   mContinue &= evaluate();
 
@@ -118,7 +119,7 @@ bool COptMethodHookeJeeves::optimise()
 
   if (!mContinue)
     {
-      if (mLogVerbosity >= 1) mMethodLogOld << "Algorithm was terminated preemptively after initial function evaluation.\n";
+      mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_early_stop));
 
       if (mpCallBack)
         mpCallBack->finishItem(mhIteration);
@@ -227,11 +228,9 @@ bool COptMethodHookeJeeves::optimise()
         }
     }
 
-  if (mLogVerbosity >= 1)
-    {
-      if (steplength < mTolerance) mMethodLogOld << "Iteration: " << mIteration << ": Steplength below tolerance. Terminating.\n";
-      mMethodLogOld << "Algorithm terminated after " << mIteration << " of " << mIterationLimit << " iterations.\n";
-    }
+  if (steplength < mTolerance) mMethodLog.enterLogItem(COptLogItem(COptLogItem::HookeJeeves_steplength_below_tol).iter(mIteration));
+
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_finish_x_of_max_iter).iter(mIteration).with(mIterationLimit));
 
   if (mpCallBack)
     mpCallBack->finishItem(mhIteration);

@@ -56,6 +56,8 @@ const std::string COptLogItem::MsgIDHeader[] =
   //GASR_fittest_not_changed_x_random_generated
   "Generation %_iteration%: Fittest individual has not changed for the last %s% generations. %s%% random individuals created.",
 
+  //HookeJeeves_steplength_below_tol
+  "Iteration %_iteration%: Steplength below tolerance. Terminating.",
 };
 
 const std::string COptLogItem::MsgIDSubtext[] =
@@ -104,6 +106,8 @@ const std::string COptLogItem::MsgIDSubtext[] =
   //GASR_fittest_not_changed_x_random_generated
   "Generation %_iteration%: Fittest individual has not changed for the last %s% generations. %s%% random individuals created.",
 
+  //HookeJeeves_steplength_below_tol
+  "",
 };
 
 // Constructor
