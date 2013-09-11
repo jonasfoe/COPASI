@@ -37,7 +37,11 @@ class COptLogItem
       DE_usrdef_error_pop_size,
       DE_fittest_not_changed_x_random_generated,
 
-      GA_fittest_not_changed_x_random_generated
+      GA_fittest_not_changed_x_random_generated,
+
+      GASR_usrdef_error_pf,
+      GASR_fittest_not_changed_x_random_generated,
+
     };
 
     /**
