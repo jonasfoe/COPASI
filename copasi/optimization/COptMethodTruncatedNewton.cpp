@@ -29,7 +29,7 @@ COptMethodTruncatedNewton::COptMethodTruncatedNewton(const CCopasiContainer * pP
   mpTruncatedNewton(new FTruncatedNewtonTemplate<COptMethodTruncatedNewton>(this, &COptMethodTruncatedNewton::sFun)),
   mpCTruncatedNewton(new CTruncatedNewton())
 {
-  addParameter("#LogDetail", CCopasiParameter::UINT, (unsigned C_INT32) 0);
+  addParameter("#LogVerbosity", CCopasiParameter::UINT, (unsigned C_INT32) 0);
 
   initObjects();
 }
@@ -105,7 +105,7 @@ bool COptMethodTruncatedNewton::optimise()
       // set the value
       *mContainerVariables[i] = (mCurrent[i]);
     }
-  if (mLogDetail >= 1 && !pointInParameterDomain) mMethodLogOld << "Initial point not within parameter domain.\n";
+  if (mLogVerbosity >= 1 && !pointInParameterDomain) mMethodLogOld << "Initial point not within parameter domain.\n";
 
   // Report the first value as the current best
   mBestValue = evaluate();
@@ -234,7 +234,7 @@ bool COptMethodTruncatedNewton::optimise()
 
 #endif // XXXX
 
-      if (mLogDetail >= 1) mMethodLogOld << "Solution parameters outside of the boundaries. Repeating calculations from current border position (" << repeat << "/9).\n";
+      if (mLogVerbosity >= 1) mMethodLogOld << "Solution parameters outside of the boundaries. Repeating calculations from current border position (" << repeat << "/9).\n";
     }
 
   return true;
@@ -246,7 +246,7 @@ bool COptMethodTruncatedNewton::initialize()
 
   if (!COptMethod::initialize()) return false;
 
-  mLogDetail = * getValue("#LogDetail").pUINT;
+  mLogVerbosity = * getValue("#LogVerbosity").pUINT;
 
   mVariableSize = (C_INT) mpOptItem->size();
   mCurrent.resize(mVariableSize);

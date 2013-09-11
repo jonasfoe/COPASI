@@ -57,7 +57,7 @@ COptMethodLevenbergMarquardt::COptMethodLevenbergMarquardt(const CCopasiContaine
 {
   addParameter("Iteration Limit", CCopasiParameter::UINT, (unsigned C_INT32) 2000);
   addParameter("Tolerance", CCopasiParameter::DOUBLE, (C_FLOAT64) 1.e-006);
-  addParameter("#LogDetail", CCopasiParameter::UINT, (unsigned C_INT32) 0);
+  addParameter("#LogVerbosity", CCopasiParameter::UINT, (unsigned C_INT32) 0);
 
 #ifdef COPASI_DEBUG
   addParameter("Modulation", CCopasiParameter::DOUBLE, (C_FLOAT64) 1.e-006);
@@ -160,7 +160,7 @@ bool COptMethodLevenbergMarquardt::optimise()
 
       *mContainerVariables[i] = mCurrent[i];
     }
-  if (mLogDetail >= 1 && !pointInParameterDomain) mMethodLogOld << "Initial point not within parameter domain.\n";
+  if (mLogVerbosity >= 1 && !pointInParameterDomain) mMethodLogOld << "Initial point not within parameter domain.\n";
 
   // keep the current parameter for later
   mBest = mCurrent;
@@ -214,7 +214,7 @@ bool COptMethodLevenbergMarquardt::optimise()
       // if Hessian is positive definite solve Hess * h = -grad
       if (info == 0)
         {
-          if (mLogDetail >= 2) mMethodLogOld << "Iteration " << mIteration << ": Hessian matrix is positive definite. Calculating gradient.\n";
+          if (mLogVerbosity >= 2) mMethodLogOld << "Iteration " << mIteration << ": Hessian matrix is positive definite. Calculating gradient.\n";
           // SUBROUTINE DPOTRS(UPLO, N, NRHS, A, LDA, B, LDB, INFO)
           dpotrs_(&UPLO, &dim, &one, mHessianLM.array(), &dim, mStep.array(), &dim, &info);
 
@@ -224,7 +224,7 @@ bool COptMethodLevenbergMarquardt::optimise()
         }
       else
         {
-          if (mLogDetail >= 2 && info > 0) mMethodLogOld << "Iteration " << mIteration << ": Hessian matrix is not positive definite because the leading minor of order " << info << " is not positive definite.\n";
+          if (mLogVerbosity >= 2 && info > 0) mMethodLogOld << "Iteration " << mIteration << ": Hessian matrix is not positive definite because the leading minor of order " << info << " is not positive definite.\n";
           // We are in a concave region. Thus the current step is an over estimation.
           // We reduce it by dividing by lambda
           for (i = 0; i < mVariableSize; i++)
@@ -347,14 +347,14 @@ bool COptMethodLevenbergMarquardt::optimise()
               if (starts < 3)
                 {
                   //if (mLogDetail >= 1) mMethodLog << COptLogItemLM(COptLogItemLM::OPT_ITEM_LM_, mIteration,  starts);
-                  if (mLogDetail >= 1) mMethodLogOld << "Iteration " << mIteration << ": Objective function value and parameter change lower than tolerance (" << starts << "/3). Resetting lambda.\n";
+                  if (mLogVerbosity >= 1) mMethodLogOld << "Iteration " << mIteration << ": Objective function value and parameter change lower than tolerance (" << starts << "/3). Resetting lambda.\n";
                   // let's restart with lambda=1
                   LM_lambda = 1.0;
                   starts++;
                 }
               else
                 {
-                  if (mLogDetail >= 1) mMethodLogOld << "Iteration " << mIteration << ": Objective function value and parameter change lower than tolerance  (" << starts << "/3). Terminating.\n";
+                  if (mLogVerbosity >= 1) mMethodLogOld << "Iteration " << mIteration << ": Objective function value and parameter change lower than tolerance  (" << starts << "/3). Terminating.\n";
                   // signal the end
                   nu = 0.0;
                 }
@@ -371,12 +371,12 @@ bool COptMethodLevenbergMarquardt::optimise()
           // if lambda too high terminate
           if (LM_lambda > LAMBDA_MAX)
             {
-              if (mLogDetail >= 1) mMethodLogOld << "Iteration " << mIteration << ": Lambda reached max value. Terminating.\n";
+              if (mLogVerbosity >= 1) mMethodLogOld << "Iteration " << mIteration << ": Lambda reached max value. Terminating.\n";
               nu = 0.0;
             }
           else
             {
-              if (mLogDetail >= 2) mMethodLogOld << "Iteration " << mIteration << ": Restarting iteration with increased lambda.\n";
+              if (mLogVerbosity >= 2) mMethodLogOld << "Iteration " << mIteration << ": Restarting iteration with increased lambda.\n";
 
               // increase lambda
               LM_lambda *= nu * 2;
@@ -391,7 +391,7 @@ bool COptMethodLevenbergMarquardt::optimise()
         mContinue &= mpCallBack->progressItem(mhIteration);
     }
 
-  if (mLogDetail >= 1)
+  if (mLogVerbosity >= 1)
     {
       mMethodLogOld << "Algorithm reached the edge of the parameter domain " << mParameterOutOfBounds << " times.\n";
       mMethodLogOld << "Algorithm terminated after " << mIteration << " of " << mIterationLimit << " Iterations.\n";
@@ -436,7 +436,7 @@ bool COptMethodLevenbergMarquardt::initialize()
   mModulation = 0.001;
   mIterationLimit = getValue< unsigned C_INT32 >("Iteration Limit");
   mTolerance = getValue< C_FLOAT64 >("Tolerance");
-  mLogDetail = * getValue("#LogDetail").pUINT;
+  mLogVerbosity = * getValue("#LogVerbosity").pUINT;
 
 #ifdef COPASI_DEBUG
   mModulation = getValue< C_FLOAT64 >("Modulation");

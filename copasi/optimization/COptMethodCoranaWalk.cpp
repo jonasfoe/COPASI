@@ -33,7 +33,7 @@ COptMethodCoranaWalk::COptMethodCoranaWalk(const CCopasiContainer * pParent,
   addParameter("Iterations", CCopasiParameter::UINT, (unsigned C_INT32) 100);
   addParameter("Random Number Generator", CCopasiParameter::UINT, (unsigned C_INT32) CRandom::mt19937);
   addParameter("Seed", CCopasiParameter::UINT, (unsigned C_INT32) 0);
-  addParameter("#LogDetail", CCopasiParameter::UINT, (unsigned C_INT32) 0);
+  addParameter("#LogVerbosity", CCopasiParameter::UINT, (unsigned C_INT32) 0);
 
   initObjects();
 }
@@ -79,7 +79,7 @@ bool COptMethodCoranaWalk::optimise()
   else
     minstep = 100 * std::numeric_limits< C_FLOAT64 >::epsilon();
 
-  if (mLogDetail >= 1) mMethodLogOld << "Minimum step size is " << minstep << ".\n";
+  if (mLogVerbosity >= 1) mMethodLogOld << "Minimum step size is " << minstep << ".\n";
 
   // initial point is first guess but we have to make sure that we
   // are within the parameter domain
@@ -111,7 +111,7 @@ bool COptMethodCoranaWalk::optimise()
       // The step must not contain any zeroes
       mStep[i] = std::max(fabs(mCurrent[i]), minstep);
     }
-  if (mLogDetail >= 1 && !pointInParameterDomain) mMethodLogOld << "Initial point not within parameter domain.\n";
+  if (mLogVerbosity >= 1 && !pointInParameterDomain) mMethodLogOld << "Initial point not within parameter domain.\n";
 
   // find the objective function value at the start
   mCurrentValue = evaluate();
@@ -246,7 +246,7 @@ bool COptMethodCoranaWalk::optimise()
     }
   while (processing && mContinue);
 
-  if (mLogDetail >= 1) mMethodLogOld << "Algorithm terminated after " << mCurrentIteration << " of " << mIterations << " Iterations.\n";
+  if (mLogVerbosity >= 1) mMethodLogOld << "Algorithm terminated after " << mCurrentIteration << " of " << mIterations << " Iterations.\n";
 
   if (mpCallBack)
     mpCallBack->finishItem(mhIterations);
@@ -281,7 +281,7 @@ bool COptMethodCoranaWalk::initialize()
 
   if (!COptMethod::initialize()) return false;
 
-  mLogDetail = * getValue("#LogDetail").pUINT;
+  mLogVerbosity = * getValue("#LogVerbosity").pUINT;
 
   mTemperature = getValue< C_FLOAT64 >("Temperature");
   mIterations = getValue< unsigned C_INT32 >("Iterations");

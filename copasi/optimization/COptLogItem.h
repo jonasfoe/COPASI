@@ -20,7 +20,7 @@ class COptLogItem
       STD_start,
       STD_start_nodoc,
       STD_early_stop,
-      STD_finish_x_of_max,
+      STD_finish_x_of_max_iter,
       Std_finish_x_of_max_gener,
       STD_finish_temp_info,
       STD_initial_point_out_of_domain,

@@ -18,7 +18,7 @@ const std::string COptLogItem::MsgIDHeader[] =
   "Algorithm started at %_timestamp%.",
   //STD_early_stop
   "Algorithm was terminated preemptively after initial population creation.",
-  //Std_finish_x_of_max
+  //Std_finish_x_of_max_iter
   "Algorithm finished at %_timestamp%.",
   //Std_finish_x_of_max_gener
   "Algorithm finished at %_timestamp%.",
@@ -28,7 +28,7 @@ const std::string COptLogItem::MsgIDHeader[] =
   "Initial point not within parameter domain.",
 
   //PS_usrdef_error_swarm_size
-  "User defined Swarm Size too small. Reset to default: %s%.",
+  "User defined Swarm Size too small. Reset to minimum: %s%.",
   //PS_info_informants
   "Minimal number of informants per particle is %s% at a swarm size of %s% particles.",
   //PS_no_particle_improved
@@ -57,7 +57,7 @@ const std::string COptLogItem::MsgIDSubtext[] =
   "",
   //STD_early_stop
   "",
-  //Std_finish_x_of_max
+  //Std_finish_x_of_max_iter
   "Terminated after %_iteration% of %s% iterations.",
   //Std_finish_x_of_max_gener
   "Terminated after %_iteration% of %s% generations.",
