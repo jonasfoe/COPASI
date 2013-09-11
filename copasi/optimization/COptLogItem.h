@@ -62,6 +62,7 @@ class COptLogItem
       SRES_usrdef_error_pf,
       SRES_fittest_not_changed_x_random_generated,
 
+      TN_next_repeat
     };
 
     /**
