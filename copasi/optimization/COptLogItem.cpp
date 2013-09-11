@@ -14,6 +14,8 @@ const std::string COptLogItem::MsgIDHeader[] =
 {
   //Std_start
   "Algorithm started at %_timestamp%.",
+  //STD_start_nodoc
+  "Algorithm started at %_timestamp%.",
   //STD_early_stop
   "Algorithm was terminated preemptively after initial population creation.",
   //Std_finish_x_of_max
@@ -40,12 +42,19 @@ const std::string COptLogItem::MsgIDHeader[] =
   "Temperature step %_iteration%: Objective function value progression for last %s% temperatures was lower than the tolerance.",
   //SA_fval_tol_termination
   "Temperature step %_iteration%: Objective function value didn't progress from optimum by more than the tolerance. Terminating.",
+
+  //DE_usrdef_error_pop_size
+  "User defined Population Size too small. Reset to minimum: %s%.",
+  //DE_fittest_not_changed_x_random_generated
+  "Generation %_iteration%: Fittest individual has not changed for the last %s% generations. %s%% random individuals created.",
 };
 
 const std::string COptLogItem::MsgIDSubtext[] =
 {
   //Std_start
   "For more information about this method see: http://www.copasi.org/tiki-index.php?page=%s%",
+  //STD_start_nodoc
+  "",
   //STD_early_stop
   "",
   //Std_finish_x_of_max
@@ -72,6 +81,11 @@ const std::string COptLogItem::MsgIDSubtext[] =
   "T = %s%.",
   //SA_fval_tol_termination
   "T = %s%.",
+
+  //DE_usrdef_error_pop_size
+  "",
+  //DE_fittest_not_changed_x_random_generated
+  "",
 };
 
 // Constructor

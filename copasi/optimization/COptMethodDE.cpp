@@ -354,7 +354,7 @@ bool COptMethodDE::initialize()
 
   if (mPopulationSize < 4)
     {
-      if (mLogDetail >= 1) mMethodLogOld << "User defined Population Size too small. Reset to default: 3.\n";
+      mMethodLog.enterLogItem(COptLogItem(COptLogItem::DE_usrdef_error_pop_size).with(4));
 
       mPopulationSize = 4;
       setValue("Population Size", mPopulationSize);
@@ -407,6 +407,8 @@ bool COptMethodDE::optimise()
       return false;
     }
 
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_start_nodoc));
+
   size_t i;
 
   // initialise the population
@@ -438,7 +440,7 @@ bool COptMethodDE::optimise()
       // account of the value.
       (*(*mpSetCalculateVariable)[i])(mut);
     }
-  if (mLogDetail >= 1 && !pointInParameterDomain) mMethodLogOld << "Initial point not within parameter domain.\n";
+  if (!pointInParameterDomain) mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_initial_point_out_of_domain));
 
   Continue &= evaluate(*mIndividual[0]);
   mValue[0] = mEvaluationValue;
@@ -471,7 +473,7 @@ bool COptMethodDE::optimise()
 
   if (!Continue)
     {
-      if (mLogDetail >= 1) mMethodLogOld << "Algorithm was terminated preemptively after initial population creation.\n";
+      mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_early_stop));
 
       if (mpCallBack)
         mpCallBack->finishItem(mhGenerations);
@@ -489,7 +491,7 @@ bool COptMethodDE::optimise()
     {
       if (Stalled > 10)
         {
-          if (mLogDetail >= 1) mMethodLogOld << "Generation " << mGeneration << ": Fittest individual has not changed for the last 10 generations. 40% random individuals created.\n";
+          mMethodLog.enterLogItem(COptLogItem(COptLogItem::DE_fittest_not_changed_x_random_generated).iter(mGeneration).with(10).with(40));
 
           Continue &= creation((size_t) 0.4 * mPopulationSize, (size_t) 0.8 * mPopulationSize);
         }
@@ -519,7 +521,7 @@ bool COptMethodDE::optimise()
         Continue &= mpCallBack->progressItem(mhGenerations);
     }
 
-  if (mLogDetail >= 1) mMethodLogOld << "Algorithm terminated after " << (mGeneration - 1) << " of " << mGenerations << " generations.\n";
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::Std_finish_x_of_max_gener).iter(mGeneration - 1).with(mGenerations));
 
   if (mpCallBack)
     mpCallBack->finishItem(mhGenerations);
