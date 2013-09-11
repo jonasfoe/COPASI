@@ -110,6 +110,8 @@ bool COptMethodLevenbergMarquardt::optimise()
       return false;
     }
 
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_start).with("OD.Levenberg.Marquardt"));
+
   C_INT dim, starts, info, nrhs;
   C_INT one = 1;
 
@@ -158,7 +160,7 @@ bool COptMethodLevenbergMarquardt::optimise()
 
       (*(*mpSetCalculateVariable)[i])(mCurrent[i]);
     }
-  if (mLogVerbosity >= 1 && !pointInParameterDomain) mMethodLogOld << "Initial point not within parameter domain.\n";
+  if (!pointInParameterDomain) mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_initial_point_out_of_domain));
 
   // keep the current parameter for later
   mBest = mCurrent;
@@ -212,7 +214,8 @@ bool COptMethodLevenbergMarquardt::optimise()
       // if Hessian is positive definite solve Hess * h = -grad
       if (info == 0)
         {
-          if (mLogVerbosity >= 2) mMethodLogOld << "Iteration " << mIteration << ": Hessian matrix is positive definite. Calculating gradient.\n";
+          if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::LevenMarq_hess_pos_def).iter(mIteration));
+
           // SUBROUTINE DPOTRS(UPLO, N, NRHS, A, LDA, B, LDB, INFO)
           dpotrs_(&UPLO, &dim, &one, mHessianLM.array(), &dim, mStep.array(), &dim, &info);
 
@@ -222,7 +225,8 @@ bool COptMethodLevenbergMarquardt::optimise()
         }
       else
         {
-          if (mLogVerbosity >= 2 && info > 0) mMethodLogOld << "Iteration " << mIteration << ": Hessian matrix is not positive definite because the leading minor of order " << info << " is not positive definite.\n";
+          if (mLogVerbosity >= 1 && info > 0) mMethodLog.enterLogItem(COptLogItem(COptLogItem::LevenMarq_hess_not_pos_def).iter(mIteration).with(info));
+
           // We are in a concave region. Thus the current step is an over estimation.
           // We reduce it by dividing by lambda
           for (i = 0; i < mVariableSize; i++)
@@ -344,15 +348,15 @@ bool COptMethodLevenbergMarquardt::optimise()
             {
               if (starts < 3)
                 {
-                  //if (mLogDetail >= 1) mMethodLog << COptLogItemLM(COptLogItemLM::OPT_ITEM_LM_, mIteration,  starts);
-                  if (mLogVerbosity >= 1) mMethodLogOld << "Iteration " << mIteration << ": Objective function value and parameter change lower than tolerance (" << starts << "/3). Resetting lambda.\n";
+                  mMethodLog.enterLogItem(COptLogItem(COptLogItem::LevenMarq_fval_and_param_change_lower_than_tol).iter(mIteration).with(starts));
+
                   // let's restart with lambda=1
                   LM_lambda = 1.0;
                   starts++;
                 }
               else
                 {
-                  if (mLogVerbosity >= 1) mMethodLogOld << "Iteration " << mIteration << ": Objective function value and parameter change lower than tolerance  (" << starts << "/3). Terminating.\n";
+                  mMethodLog.enterLogItem(COptLogItem(COptLogItem::LevenMarq_fval_and_param_change_lower_than_tol_termination).iter(mIteration).with(starts));
                   // signal the end
                   nu = 0.0;
                 }
@@ -369,12 +373,13 @@ bool COptMethodLevenbergMarquardt::optimise()
           // if lambda too high terminate
           if (LM_lambda > LAMBDA_MAX)
             {
-              if (mLogVerbosity >= 1) mMethodLogOld << "Iteration " << mIteration << ": Lambda reached max value. Terminating.\n";
+              mMethodLog.enterLogItem(COptLogItem(COptLogItem::LevenMarq_lambda_max_termination).iter(mIteration));
+
               nu = 0.0;
             }
           else
             {
-              if (mLogVerbosity >= 2) mMethodLogOld << "Iteration " << mIteration << ": Restarting iteration with increased lambda.\n";
+              if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::LevenMarq_inc_lambda).iter(mIteration));
 
               // increase lambda
               LM_lambda *= nu * 2;
@@ -389,11 +394,8 @@ bool COptMethodLevenbergMarquardt::optimise()
         mContinue &= mpCallBack->progressItem(mhIteration);
     }
 
-  if (mLogVerbosity >= 1)
-    {
-      mMethodLogOld << "Algorithm reached the edge of the parameter domain " << mParameterOutOfBounds << " times.\n";
-      mMethodLogOld << "Algorithm terminated after " << mIteration << " of " << mIterationLimit << " Iterations.\n";
-    }
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::LevenMarq_count_edge_of_param_domain).with(mParameterOutOfBounds));
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_finish_x_of_max_iter).iter(mIteration).with(mIterationLimit));
 
   if (mpCallBack)
     mpCallBack->finishItem(mhIteration);
