@@ -91,6 +91,8 @@ const std::string COptLogItem::MsgIDHeader[] =
   //SRES_fittest_not_changed_x_random_generated
   "Generation %_iteration%: Fittest individual has not changed for the last %s% generations. %s%% random individuals created.",
 
+  //TN_next_repeat
+  "Solution parameters outside of the boundaries. Repeating calculations from current border position (%s%/9).",
 };
 
 const std::string COptLogItem::MsgIDSubtext[] =
@@ -174,6 +176,8 @@ const std::string COptLogItem::MsgIDSubtext[] =
   //SRES_fittest_not_changed_x_random_generated
   "",
 
+  //TN_next_repeat
+  "",
 };
 
 // Constructor

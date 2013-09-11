@@ -57,6 +57,8 @@ bool COptMethodTruncatedNewton::optimise()
 {
   if (!initialize()) return false;
 
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_start).with("OD.Truncated.Newton"));
+
   C_FLOAT64 fest;
   C_INT lw, ierror = 0;
   lw = 14 * mVariableSize;
@@ -105,7 +107,7 @@ bool COptMethodTruncatedNewton::optimise()
       // set the value
       *mContainerVariables[i] = (mCurrent[i]);
     }
-  if (mLogVerbosity >= 1 && !pointInParameterDomain) mMethodLogOld << "Initial point not within parameter domain.\n";
+  if (!pointInParameterDomain) mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_initial_point_out_of_domain));
 
   // Report the first value as the current best
   mBestValue = evaluate();
@@ -234,8 +236,10 @@ bool COptMethodTruncatedNewton::optimise()
 
 #endif // XXXX
 
-      if (mLogVerbosity >= 1) mMethodLogOld << "Solution parameters outside of the boundaries. Repeating calculations from current border position (" << repeat << "/9).\n";
+      if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::TN_next_repeat).with(repeat));
     }
+
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_finish));
 
   return true;
 }
