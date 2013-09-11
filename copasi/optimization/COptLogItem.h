@@ -42,6 +42,7 @@ class COptLogItem
       GASR_usrdef_error_pf,
       GASR_fittest_not_changed_x_random_generated,
 
+      HookeJeeves_steplength_below_tol,
     };
 
     /**
