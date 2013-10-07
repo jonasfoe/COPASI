@@ -455,10 +455,8 @@ bool CQFittingResult::enterProtected()
 
           QString logQString = logHtml.join(QString());
           mpLogWebView->page()->action(QWebPage::Reload)->setVisible(false);
-          /* Somehow can't enable select all in context menu
           mpLogWebView->page()->action(QWebPage::SelectAll)->setEnabled(true);
           mpLogWebView->page()->action(QWebPage::SelectAll)->setVisible(true);
-          */
 #ifdef COPASI_DEBUG
           mpLogWebView->settings()->setAttribute(QWebSettings::DeveloperExtrasEnabled, true);
 #endif // COPASI_DEBUG
