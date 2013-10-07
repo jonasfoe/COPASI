@@ -180,7 +180,7 @@ bool CQOptimizationResult::enterProtected()
       mpTabWidget->setTabEnabled(mpTabWidget->indexOf(mpLogPage), true);
 
       QStringList logHtml;
-      QFile logFile("../protocol/protocol.html");
+      QFile logFile("../protocol/protocol_new.html");
       logFile.open(QIODevice::ReadOnly);
       logHtml = ((QString)logFile.readAll()).split("id=\"accordion\">\n");
       logFile.close();
@@ -196,10 +196,8 @@ bool CQOptimizationResult::enterProtected()
 
           QString logQString = logHtml.join(QString());
           mpLogWebView->page()->action(QWebPage::Reload)->setVisible(false);
-          /* Somehow can't enable select all
           mpLogWebView->page()->action(QWebPage::SelectAll)->setEnabled(true);
           mpLogWebView->page()->action(QWebPage::SelectAll)->setVisible(true);
-          */
 #ifdef COPASI_DEBUG
           mpLogWebView->settings()->setAttribute(QWebSettings::DeveloperExtrasEnabled, true);
 #endif // COPASI_DEBUG
