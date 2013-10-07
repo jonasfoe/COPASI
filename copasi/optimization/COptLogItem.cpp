@@ -240,13 +240,13 @@ std::string COptLogItem::getRichMessage() const
       if (!MsgIDSubtext[mID].empty())
         msg += "<div>\n<div class=\"content-set\">" + fillString(MsgIDSubtext[mID], &currVar) + "</div>\n";
       else
-        msg += "<div>\n";
+        msg += "<div>";
 
       //encountered a message with more defined variables than needed?
       assert(currVar >= mMsgVars.size());
     }
   else
-    msg = "<h4>!Message ID not implemented!</h4>\n";
+    msg = "<h4>!Message ID not implemented!</h4>\n<div>";
 
   if (!mStatusDump.empty())
     msg += "<div class=\"content-set\">" + mStatusDump + "</div>\n";
