@@ -171,9 +171,21 @@ public:
 
   /**
    * Retrieve the Fisher Information Matrix of the solution variables.
-   * @return CArrayAnnotation & variableCorrelations
+   * @return CArrayAnnotation & fisherInformationMatrix
    */
   CArrayAnnotation & getFisherInformation() const;
+
+  /**
+   * Retrieve the Eigenvalues of the Fisher Information Matrix of the solution variables.
+   * @return CArrayAnnotation & fimEigenvalues
+   */
+  CArrayAnnotation & getFisherInformationEigenvalues() const;
+
+  /**
+   * Retrieve the Eigenvectors corresponding to the Eigenvalues of the Fisher Information Matrix of the solution variables.
+   * @return CArrayAnnotation & fimEigenvectors
+   */
+  CArrayAnnotation & getFisherInformationEigenvectors() const;
 
   /**
    * Retrieve the correlations of the solution variables.
@@ -406,6 +418,17 @@ private:
   CMatrix< C_FLOAT64 > mFisher;
   CCopasiMatrixInterface< CMatrix< C_FLOAT64 > > * mpFisherMatrixInterface;
   CArrayAnnotation * mpFisherMatrix;
+
+  /**
+   * The Fisher information Matrix Eigenvalues and corresponding Eigenvectors
+   */
+  CMatrix< C_FLOAT64 > mFisherEigenvalues;
+  CCopasiMatrixInterface< CMatrix< C_FLOAT64 > > * mpFisherEigenvaluesMatrixInterface;
+  CArrayAnnotation * mpFisherEigenvaluesMatrix;
+
+  CMatrix< C_FLOAT64 > mFisherEigenvectors;
+  CCopasiMatrixInterface< CMatrix< C_FLOAT64 > > * mpFisherEigenvectorsMatrixInterface;
+  CArrayAnnotation * mpFisherEigenvectorsMatrix;
 
   /**
    * The  parameter correlation matrix

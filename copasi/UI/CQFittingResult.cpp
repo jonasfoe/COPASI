@@ -59,7 +59,9 @@ CQFittingResult::~CQFittingResult()
 void CQFittingResult::init()
 {
   mpCorrelations->setLegendEnabled(false);
-  mpFisherInformation->setLegendEnabled(false);
+  mpFisherInformationMatrix->setLegendEnabled(false);
+  mpFisherInformationEigenvalues->setLegendEnabled(false);
+  mpFisherInformationEigenvectors->setLegendEnabled(false);
 }
 
 bool CQFittingResult::update(ListViews::ObjectType /* objectType */,
@@ -98,7 +100,7 @@ bool CQFittingResult::enterProtected()
       mpTabWidget->setTabEnabled(mpTabWidget->indexOf(mpExperiments), true);
       mpTabWidget->setTabEnabled(mpTabWidget->indexOf(mpValues), true);
       mpTabWidget->setTabEnabled(mpTabWidget->indexOf(mpCorrelations), true);
-      mpTabWidget->setTabEnabled(mpTabWidget->indexOf(mpFisherInformation), true);
+      mpTabWidget->setTabEnabled(mpTabWidget->indexOf(mpFisherInformationPage), true);
 
       mpTabWidget->setTabEnabled(mpTabWidget->indexOf(mpCrossValidations), true);
       mpTabWidget->setTabEnabled(mpTabWidget->indexOf(mpCrossValidationValues), true);
@@ -108,7 +110,7 @@ bool CQFittingResult::enterProtected()
       mpTabWidget->setTabEnabled(mpTabWidget->indexOf(mpExperiments), false);
       mpTabWidget->setTabEnabled(mpTabWidget->indexOf(mpValues), false);
       mpTabWidget->setTabEnabled(mpTabWidget->indexOf(mpCorrelations), false);
-      mpTabWidget->setTabEnabled(mpTabWidget->indexOf(mpFisherInformation), false);
+      mpTabWidget->setTabEnabled(mpTabWidget->indexOf(mpFisherInformationPage), false);
 
       mpTabWidget->setTabEnabled(mpTabWidget->indexOf(mpCrossValidations), false);
       mpTabWidget->setTabEnabled(mpTabWidget->indexOf(mpCrossValidationValues), false);
@@ -283,9 +285,19 @@ bool CQFittingResult::enterProtected()
   mpCorrelations->setArrayAnnotation(&mpProblem->getCorrelations());
 
   tcs = new CColorScaleBiLog();
-  mpFisherInformation->setColorCoding(tcs);
-  mpFisherInformation->setColorScalingAutomatic(true);
-  mpFisherInformation->setArrayAnnotation(&mpProblem->getFisherInformation());
+  mpFisherInformationMatrix->setColorCoding(tcs);
+  mpFisherInformationMatrix->setColorScalingAutomatic(true);
+  mpFisherInformationMatrix->setArrayAnnotation(&mpProblem->getFisherInformation());
+
+  tcs = new CColorScaleBiLog();
+  mpFisherInformationEigenvalues->setColorCoding(tcs);
+  mpFisherInformationEigenvalues->setColorScalingAutomatic(true);
+  mpFisherInformationEigenvalues->setArrayAnnotation(&mpProblem->getFisherInformationEigenvalues());
+
+  tcs = new CColorScaleBiLog();
+  mpFisherInformationEigenvectors->setColorCoding(tcs);
+  mpFisherInformationEigenvectors->setColorScalingAutomatic(true);
+  mpFisherInformationEigenvectors->setArrayAnnotation(&mpProblem->getFisherInformationEigenvectors());
 
   bool Enable = (mpProblem->getCrossValidationSet().getExperimentCount() > 0);
 
@@ -498,6 +510,12 @@ void CQFittingResult::slotSave(void)
 
   // Save the Fisher information
   file << mpProblem->getFisherInformation() << std::endl;
+
+  // Save the Fisher information Eigenvalues
+  file << mpProblem->getFisherInformationEigenvalues() << std::endl;
+
+  // Save the Fisher information Eigenvectors
+  file << mpProblem->getFisherInformationEigenvectors() << std::endl;
 
   const CCrossValidationSet & CrossValidations = mpProblem->getCrossValidationSet();
   imax = CrossValidations.getExperimentCount();
