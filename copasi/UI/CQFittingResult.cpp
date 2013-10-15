@@ -62,6 +62,9 @@ void CQFittingResult::init()
   mpFisherInformationMatrix->setLegendEnabled(false);
   mpFisherInformationEigenvalues->setLegendEnabled(false);
   mpFisherInformationEigenvectors->setLegendEnabled(false);
+  mpFisherInformationScaledMatrix->setLegendEnabled(false);
+  mpFisherInformationScaledEigenvalues->setLegendEnabled(false);
+  mpFisherInformationScaledEigenvectors->setLegendEnabled(false);
 }
 
 bool CQFittingResult::update(ListViews::ObjectType /* objectType */,
@@ -298,6 +301,21 @@ bool CQFittingResult::enterProtected()
   mpFisherInformationEigenvectors->setColorCoding(tcs);
   mpFisherInformationEigenvectors->setColorScalingAutomatic(true);
   mpFisherInformationEigenvectors->setArrayAnnotation(&mpProblem->getFisherInformationEigenvectors());
+
+  tcs = new CColorScaleBiLog();
+  mpFisherInformationScaledMatrix->setColorCoding(tcs);
+  mpFisherInformationScaledMatrix->setColorScalingAutomatic(true);
+  mpFisherInformationScaledMatrix->setArrayAnnotation(&mpProblem->getScaledFisherInformation());
+
+  tcs = new CColorScaleBiLog();
+  mpFisherInformationScaledEigenvalues->setColorCoding(tcs);
+  mpFisherInformationScaledEigenvalues->setColorScalingAutomatic(true);
+  mpFisherInformationScaledEigenvalues->setArrayAnnotation(&mpProblem->getScaledFisherInformationEigenvalues());
+
+  tcs = new CColorScaleBiLog();
+  mpFisherInformationScaledEigenvectors->setColorCoding(tcs);
+  mpFisherInformationScaledEigenvectors->setColorScalingAutomatic(true);
+  mpFisherInformationScaledEigenvectors->setArrayAnnotation(&mpProblem->getScaledFisherInformationEigenvectors());
 
   bool Enable = (mpProblem->getCrossValidationSet().getExperimentCount() > 0);
 

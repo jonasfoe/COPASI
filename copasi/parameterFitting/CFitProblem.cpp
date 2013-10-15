@@ -75,6 +75,15 @@ CFitProblem::CFitProblem(const CCopasiTask::Type & type,
   mFisherEigenvectors(0, 0),
   mpFisherEigenvectorsMatrixInterface(NULL),
   mpFisherEigenvectorsMatrix(NULL),
+  mFisherScaled(0, 0),
+  mpFisherScaledMatrixInterface(NULL),
+  mpFisherScaledMatrix(NULL),
+  mFisherScaledEigenvalues(0, 0),
+  mpFisherScaledEigenvaluesMatrixInterface(NULL),
+  mpFisherScaledEigenvaluesMatrix(NULL),
+  mFisherScaledEigenvectors(0, 0),
+  mpFisherScaledEigenvectorsMatrixInterface(NULL),
+  mpFisherScaledEigenvectorsMatrix(NULL),
   mCorrelation(0, 0),
   mpCorrelationMatrixInterface(NULL),
   mpCorrelationMatrix(NULL)
@@ -120,6 +129,15 @@ CFitProblem::CFitProblem(const CFitProblem& src,
   mFisherEigenvectors(src.mFisherEigenvectors),
   mpFisherEigenvectorsMatrixInterface(NULL),
   mpFisherEigenvectorsMatrix(NULL),
+  mFisherScaled(src.mFisherScaled),
+  mpFisherScaledMatrixInterface(NULL),
+  mpFisherScaledMatrix(NULL),
+  mFisherScaledEigenvalues(src.mFisherScaledEigenvalues),
+  mpFisherScaledEigenvaluesMatrixInterface(NULL),
+  mpFisherScaledEigenvaluesMatrix(NULL),
+  mFisherScaledEigenvectors(src.mFisherScaledEigenvectors),
+  mpFisherScaledEigenvectorsMatrixInterface(NULL),
+  mpFisherScaledEigenvectorsMatrix(NULL),
   mCorrelation(src.mCorrelation),
   mpCorrelationMatrixInterface(NULL),
   mpCorrelationMatrix(NULL)
@@ -139,6 +157,12 @@ CFitProblem::~CFitProblem()
   pdelete(mpFisherEigenvaluesMatrix);
   pdelete(mpFisherEigenvectorsMatrixInterface);
   pdelete(mpFisherEigenvectorsMatrix);
+  pdelete(mpFisherScaledMatrixInterface);
+  pdelete(mpFisherScaledMatrix);
+  pdelete(mpFisherScaledEigenvaluesMatrixInterface);
+  pdelete(mpFisherScaledEigenvaluesMatrix);
+  pdelete(mpFisherScaledEigenvectorsMatrixInterface);
+  pdelete(mpFisherScaledEigenvectorsMatrix);
   pdelete(mpCorrelationMatrixInterface);
   pdelete(mpCorrelationMatrix);
 }
@@ -169,6 +193,28 @@ void CFitProblem::initObjects()
   mpFisherEigenvectorsMatrix->setDimensionDescription(1, "Eigenvectors");
   mpFisherEigenvectorsMatrix->setMode(0, CArrayAnnotation::STRINGS);
   mpFisherEigenvectorsMatrix->setMode(1, CArrayAnnotation::NUMBERS);
+
+  mpFisherScaledMatrixInterface = new CCopasiMatrixInterface< CMatrix< C_FLOAT64 > >(&mFisherScaled);
+  mpFisherScaledMatrix = new CArrayAnnotation("Fisher Information Matrix (scaled)", this, mpFisherScaledMatrixInterface, false);
+  mpFisherScaledMatrix->setDescription("Fisher Information Matrix (scaled)");
+  mpFisherScaledMatrix->setDimensionDescription(0, "Parameters");
+  mpFisherScaledMatrix->setDimensionDescription(1, "Parameters");
+  mpFisherScaledMatrix->setMode(CArrayAnnotation::STRINGS);
+
+  mpFisherScaledEigenvaluesMatrixInterface = new CCopasiMatrixInterface< CMatrix< C_FLOAT64 > >(&mFisherScaledEigenvalues);
+  mpFisherScaledEigenvaluesMatrix = new CArrayAnnotation("FIM Eigenvalues (scaled)", this, mpFisherScaledEigenvaluesMatrixInterface, false);
+  mpFisherScaledEigenvaluesMatrix->setDescription("FIM Eigenvalues (scaled)");
+  mpFisherScaledEigenvaluesMatrix->setDimensionDescription(0, "Result");
+  mpFisherScaledEigenvaluesMatrix->setDimensionDescription(1, "Eigenvalues");
+  mpFisherScaledEigenvaluesMatrix->setMode(CArrayAnnotation::NUMBERS);
+
+  mpFisherScaledEigenvectorsMatrixInterface = new CCopasiMatrixInterface< CMatrix< C_FLOAT64 > >(&mFisherScaledEigenvectors);
+  mpFisherScaledEigenvectorsMatrix = new CArrayAnnotation("FIM Eigenvectors", this, mpFisherScaledEigenvectorsMatrixInterface, false);
+  mpFisherScaledEigenvectorsMatrix->setDescription("FIM Eigenvectors (scaled)");
+  mpFisherScaledEigenvectorsMatrix->setDimensionDescription(0, "Parameters");
+  mpFisherScaledEigenvectorsMatrix->setDimensionDescription(1, "Eigenvectors");
+  mpFisherScaledEigenvectorsMatrix->setMode(0, CArrayAnnotation::STRINGS);
+  mpFisherScaledEigenvectorsMatrix->setMode(1, CArrayAnnotation::NUMBERS);
 
   mpCorrelationMatrixInterface = new CCopasiMatrixInterface< CMatrix< C_FLOAT64 > >(&mCorrelation);
   mpCorrelationMatrix = new CArrayAnnotation("Correlation Matrix", this, mpCorrelationMatrixInterface, false);
@@ -489,6 +535,12 @@ bool CFitProblem::initialize()
   mpFisherEigenvaluesMatrix->resize();
   mFisherEigenvectors.resize(imax, 0);
   mpFisherEigenvectorsMatrix->resize();
+  mFisherScaled.resize(imax, imax);
+  mpFisherScaledMatrix->resize();
+  mFisherScaledEigenvalues.resize(1, 0);
+  mpFisherScaledEigenvaluesMatrix->resize();
+  mFisherScaledEigenvectors.resize(imax, 0);
+  mpFisherScaledEigenvectorsMatrix->resize();
   mCorrelation.resize(imax, imax);
   mpCorrelationMatrix->resize();
 
@@ -530,6 +582,9 @@ bool CFitProblem::initialize()
       mpFisherMatrix->setAnnotationString(0, j, Annotation);
       mpFisherMatrix->setAnnotationString(1, j, Annotation);
       mpFisherEigenvectorsMatrix->setAnnotationString(0, j, Annotation);
+      mpFisherScaledMatrix->setAnnotationString(0, j, Annotation);
+      mpFisherScaledMatrix->setAnnotationString(1, j, Annotation);
+      mpFisherScaledEigenvectorsMatrix->setAnnotationString(0, j, Annotation);
       mpCorrelationMatrix->setAnnotationString(0, j, Annotation);
       mpCorrelationMatrix->setAnnotationString(1, j, Annotation);
     }
@@ -1109,6 +1164,15 @@ void CFitProblem::printResult(std::ostream * ostream) const
       os << "FIM Eigenvectors corresponding to Eigenvalues:" << std::endl;
       os << "  " << mFisherEigenvectors << std::endl;
 
+      os << "Fisher Information Matrix (scaled):" << std::endl;
+      os << "  " << mFisherScaled << std::endl;
+
+      os << "FIM Eigenvalues (scaled):" << std::endl;
+      os << "  " << mFisherScaledEigenvalues << std::endl;
+
+      os << "FIM Eigenvectors (scaled) corresponding to Eigenvalues:" << std::endl;
+      os << "  " << mFisherScaledEigenvectors << std::endl;
+
       os << "Correlation Matrix:" << std::endl;
       os << "  " << mCorrelation << std::endl;
     }
@@ -1201,6 +1265,9 @@ bool CFitProblem::calculateStatistics(const C_FLOAT64 & factor,
   mFisher = std::numeric_limits<C_FLOAT64>::quiet_NaN();
   mFisherEigenvectors = std::numeric_limits<C_FLOAT64>::quiet_NaN();
   mFisherEigenvalues = std::numeric_limits<C_FLOAT64>::quiet_NaN();
+  mFisherScaled = std::numeric_limits<C_FLOAT64>::quiet_NaN();
+  mFisherScaledEigenvectors = std::numeric_limits<C_FLOAT64>::quiet_NaN();
+  mFisherScaledEigenvalues = std::numeric_limits<C_FLOAT64>::quiet_NaN();
   mGradient.resize(imax);
   mGradient = std::numeric_limits<C_FLOAT64>::quiet_NaN();
 
@@ -1440,6 +1507,50 @@ bool CFitProblem::calculateStatistics(const C_FLOAT64 & factor,
       mpFisherEigenvectorsMatrix->resize();
       mpFisherEigenvaluesMatrix->resize();
 
+      for (i = 0; i < imax; i++)
+      {
+        for (j = 0; j < imax; j++)
+        {
+          mFisherScaled[i][j] = mFisher[i][j]*mSolutionVariables[i]*mSolutionVariables[j];
+        }
+      }
+
+      mFisherScaledEigenvectors.resize(imax, imax);
+      mFisherScaledEigenvectors = mFisherScaled;
+      mFisherScaledEigenvalues.resize(1, imax);
+
+      work.resize(1);
+      lwork = -1; //first query the memory need
+
+      dsyev_(&vv,
+             &uu,
+             (C_INT*)&imax,
+             mFisherScaledEigenvectors.array(),
+             &lda,
+             mFisherScaledEigenvalues.array(),
+             work.array(),
+             &lwork,
+             &info);
+
+      lwork = (C_INT) work[0];
+      work.resize(lwork);
+
+      //now do the real calculation
+      dsyev_(&vv,
+             &uu,
+             (C_INT*)&imax,
+             mFisherScaledEigenvectors.array(),
+             &lda,
+             mFisherScaledEigenvalues.array(),
+             work.array(),
+             &lwork,
+             &info);
+
+      assert(info != 0);
+
+      mpFisherScaledEigenvectorsMatrix->resize();
+      mpFisherScaledEigenvaluesMatrix->resize();
+
       mCorrelation = mFisher;
 
       // The Fisher Information matrix is a symmetric positive semidefinit matrix.
@@ -1633,6 +1744,15 @@ CArrayAnnotation & CFitProblem::getFisherInformationEigenvalues() const
 
 CArrayAnnotation & CFitProblem::getFisherInformationEigenvectors() const
 {return *mpFisherEigenvectorsMatrix;}
+
+CArrayAnnotation & CFitProblem::getScaledFisherInformation() const
+{return *mpFisherScaledMatrix;}
+
+CArrayAnnotation & CFitProblem::getScaledFisherInformationEigenvalues() const
+{return *mpFisherScaledEigenvaluesMatrix;}
+
+CArrayAnnotation & CFitProblem::getScaledFisherInformationEigenvectors() const
+{return *mpFisherScaledEigenvectorsMatrix;}
 
 CArrayAnnotation & CFitProblem::getCorrelations() const
 {return *mpCorrelationMatrix;}

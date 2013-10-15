@@ -188,6 +188,24 @@ public:
   CArrayAnnotation & getFisherInformationEigenvectors() const;
 
   /**
+   * Retrieve the scaled Fisher Information Matrix of the solution variables.
+   * @return CArrayAnnotation & fisherInformationMatrix
+   */
+  CArrayAnnotation & getScaledFisherInformation() const;
+
+  /**
+   * Retrieve the Eigenvalues of the scaled Fisher Information Matrix of the solution variables.
+   * @return CArrayAnnotation & fimEigenvalues
+   */
+  CArrayAnnotation & getScaledFisherInformationEigenvalues() const;
+
+  /**
+   * Retrieve the Eigenvectors corresponding to the Eigenvalues of the scaled Fisher Information Matrix of the solution variables.
+   * @return CArrayAnnotation & fimEigenvectors
+   */
+  CArrayAnnotation & getScaledFisherInformationEigenvectors() const;
+
+  /**
    * Retrieve the correlations of the solution variables.
    * @return CArrayAnnotation & variableCorrelations
    */
@@ -429,6 +447,24 @@ private:
   CMatrix< C_FLOAT64 > mFisherEigenvectors;
   CCopasiMatrixInterface< CMatrix< C_FLOAT64 > > * mpFisherEigenvectorsMatrixInterface;
   CArrayAnnotation * mpFisherEigenvectorsMatrix;
+
+  /**
+   * The Fisher information or parameter correlation matrix scaled to parameter values
+   */
+  CMatrix< C_FLOAT64 > mFisherScaled;
+  CCopasiMatrixInterface< CMatrix< C_FLOAT64 > > * mpFisherScaledMatrixInterface;
+  CArrayAnnotation * mpFisherScaledMatrix;
+
+  /**
+   * The scaled Fisher information Matrix Eigenvalues and corresponding Eigenvectors
+   */
+  CMatrix< C_FLOAT64 > mFisherScaledEigenvalues;
+  CCopasiMatrixInterface< CMatrix< C_FLOAT64 > > * mpFisherScaledEigenvaluesMatrixInterface;
+  CArrayAnnotation * mpFisherScaledEigenvaluesMatrix;
+
+  CMatrix< C_FLOAT64 > mFisherScaledEigenvectors;
+  CCopasiMatrixInterface< CMatrix< C_FLOAT64 > > * mpFisherScaledEigenvectorsMatrixInterface;
+  CArrayAnnotation * mpFisherScaledEigenvectorsMatrix;
 
   /**
    * The  parameter correlation matrix
