@@ -185,7 +185,12 @@ COptLogItem::COptLogItem(MsgID id, std::string statusDump):
   mID(id),
   mTimestamp(time(NULL)),
   mStatusDump(statusDump)
-{}
+{
+  //encountered a Message ID with undefined message string?
+  assert(mID < sizeof(MsgIDHeader)/sizeof(MsgIDHeader[0]) && !MsgIDHeader[mID].empty());
+
+  mVarCount = countVars(MsgIDHeader[id]) + countVars(MsgIDSubtext[id]);
+}
 
 COptLogItem::~COptLogItem()
 {}
@@ -197,66 +202,38 @@ COptLogItem & COptLogItem::iter(unsigned C_INT32 val)
   return *this;
 }
 
-std::string COptLogItem::getPlainMessage() const
+COptLogItem::MsgID COptLogItem::getMsgId() const
 {
-  std::string msg;
-
-  //encountered a Message ID with undefined message string?
-  assert(mID < sizeof(MsgIDHeader)/sizeof(MsgIDHeader[0]) && !MsgIDHeader[mID].empty());
-
-  if (mID < sizeof(MsgIDHeader)/sizeof(MsgIDHeader[0]))
-    {
-      unsigned C_INT32 currVar = 0;
-
-      msg = fillString(MsgIDHeader[mID], &currVar) + "\n";
-
-      if (!MsgIDSubtext[mID].empty())
-        msg += fillString(MsgIDSubtext[mID], &currVar) + "\n";
-
-      //encountered a message with more defined variables than needed?
-      assert(currVar >= mMsgVars.size());
-    }
-  else
-    msg = "<h4>!Message ID not implemented!</h4>\n";
-
-  msg += "\n";
-
-  return msg;
+  return mID;
 }
 
-std::string COptLogItem::getRichMessage() const
+time_t COptLogItem::getTimestamp() const
 {
-  std::string msg;
-
-  //encountered a Message ID with undefined message string?
-  assert(mID < sizeof(MsgIDHeader)/sizeof(MsgIDHeader[0]) && !MsgIDHeader[mID].empty());
-
-  if (mID < sizeof(MsgIDHeader)/sizeof(MsgIDHeader[0]))
-    {
-      unsigned C_INT32 currVar = 0;
-
-      msg = "<h4>" + fillString(MsgIDHeader[mID], &currVar) + "</h4>\n";
-
-      if (!MsgIDSubtext[mID].empty())
-        msg += "<div>\n<div class=\"content-set\">" + fillString(MsgIDSubtext[mID], &currVar) + "</div>\n";
-      else
-        msg += "<div>";
-
-      //encountered a message with more defined variables than needed?
-      assert(currVar >= mMsgVars.size());
-    }
-  else
-    msg = "<h4>!Message ID not implemented!</h4>\n<div>";
-
-  if (!mStatusDump.empty())
-    msg += "<div class=\"content-set\">" + mStatusDump + "</div>\n";
-
-  msg += "</div>\n";
-
-  return msg;
+  return mTimestamp;
 }
 
-std::string COptLogItem::fillString(const std::string & inputStr, unsigned C_INT32 * currVar) const
+std::string COptLogItem::getHeader() const
+{
+  if (mID < sizeof(MsgIDHeader)/sizeof(MsgIDHeader[0]) && !MsgIDHeader[mID].empty())
+    return fillString(MsgIDHeader[mID]);
+  else
+    return "!Message ID not implemented!";
+}
+
+std::string COptLogItem::getSubtext() const
+{
+  if (mID < sizeof(MsgIDSubtext)/sizeof(MsgIDSubtext[0]) && !MsgIDSubtext[mID].empty())
+    return fillString(MsgIDSubtext[mID], countVars(MsgIDHeader[mID]));
+  else
+    return "";
+}
+
+std::string COptLogItem::getStatusDetails() const
+{
+  return mStatusDump;
+}
+
+std::string COptLogItem::fillString(const std::string & inputStr, unsigned C_INT32 varOffset) const
 {
   size_t found;
   std::string str = inputStr;
@@ -284,21 +261,29 @@ std::string COptLogItem::fillString(const std::string & inputStr, unsigned C_INT
 
   while (found != std::string::npos)
     {
-      //encountered a message with less defined variables than needed?
-      assert(*currVar < mMsgVars.size());
-
-      if (*currVar < mMsgVars.size())
+      if (varOffset < mMsgVars.size())
         {
-          str.replace(found, 3, mMsgVars[*currVar]);
+          str.replace(found, 3, mMsgVars[varOffset]);
 
           found = str.find("%s%", found + 1);
-          (*currVar)++;
+          ++varOffset;
         }
       else
         {
+          assert(false);
           break;
         }
     }
 
   return str;
+}
+
+unsigned C_INT32 COptLogItem::countVars(const std::string & str) const
+{
+  C_INT32 count = 0;
+  for (size_t offset = str.find("%s%"); offset != std::string::npos; offset = str.find("%s%", offset + 1))
+  {
+      ++count;
+  }
+  return count;
 }

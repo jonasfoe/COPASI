@@ -82,6 +82,11 @@ class COptLogItem
     MsgID mID;
 
     /**
+     * Amount of variables for this log item.
+     */
+    unsigned C_INT32 mVarCount;
+
+    /**
      * Timestamp for this log item.
      */
     time_t mTimestamp;
@@ -110,10 +115,12 @@ class COptLogItem
     /**
      * Replace %s%, %_timestamp% and %_iteration% in strings.
      * @param const std::string & string template
-     * @param unsigned C_Int32 * current position in mMsgVars
+     * @param unsigned C_Int32 * offset in mMsgVars
      * @return std::string filledString
      */
-    std::string fillString(const std::string & str, unsigned C_INT32 * currVar) const;
+    std::string fillString(const std::string & str, unsigned C_INT32 varOffset = 0) const;
+
+    unsigned C_INT32 countVars(const std::string & str) const;
 
   public:
     /**
@@ -141,6 +148,8 @@ class COptLogItem
     template <class T>
     COptLogItem & with(T arg)
     {
+      assert(mMsgVars.size() < mVarCount);
+
       std::stringstream s;
       s << arg;
       mMsgVars.push_back(s.str());
@@ -160,6 +169,16 @@ class COptLogItem
      * @return std::string richMessage
      */
     std::string getRichMessage() const;
+
+    MsgID getMsgId() const;
+
+    time_t getTimestamp() const;
+
+    std::string getHeader() const;
+
+    std::string getSubtext() const;
+
+    std::string getStatusDetails() const;
   };
 
 #endif  // COPASI_COptLogItem
