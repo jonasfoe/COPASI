@@ -296,11 +296,13 @@ bool CQFittingResult::enterProtected()
   mpFisherInformationEigenvalues->setColorCoding(tcs);
   mpFisherInformationEigenvalues->setColorScalingAutomatic(true);
   mpFisherInformationEigenvalues->setArrayAnnotation(&mpProblem->getFisherInformationEigenvalues());
+  mpFisherInformationEigenvalues->mpComboRows->setCurrentIndex(1);
 
   tcs = new CColorScaleBiLog();
   mpFisherInformationEigenvectors->setColorCoding(tcs);
   mpFisherInformationEigenvectors->setColorScalingAutomatic(true);
   mpFisherInformationEigenvectors->setArrayAnnotation(&mpProblem->getFisherInformationEigenvectors());
+  mpFisherInformationEigenvectors->mpComboRows->setCurrentIndex(1);
 
   tcs = new CColorScaleBiLog();
   mpFisherInformationScaledMatrix->setColorCoding(tcs);
@@ -311,11 +313,13 @@ bool CQFittingResult::enterProtected()
   mpFisherInformationScaledEigenvalues->setColorCoding(tcs);
   mpFisherInformationScaledEigenvalues->setColorScalingAutomatic(true);
   mpFisherInformationScaledEigenvalues->setArrayAnnotation(&mpProblem->getScaledFisherInformationEigenvalues());
+  mpFisherInformationScaledEigenvalues->mpComboRows->setCurrentIndex(1);
 
   tcs = new CColorScaleBiLog();
   mpFisherInformationScaledEigenvectors->setColorCoding(tcs);
   mpFisherInformationScaledEigenvectors->setColorScalingAutomatic(true);
   mpFisherInformationScaledEigenvectors->setArrayAnnotation(&mpProblem->getScaledFisherInformationEigenvectors());
+  mpFisherInformationScaledEigenvectors->mpComboRows->setCurrentIndex(1);
 
   bool Enable = (mpProblem->getCrossValidationSet().getExperimentCount() > 0);
 
@@ -534,6 +538,15 @@ void CQFittingResult::slotSave(void)
 
   // Save the Fisher information Eigenvectors
   file << mpProblem->getFisherInformationEigenvectors() << std::endl;
+
+  // Save the scaled Fisher information
+  file << mpProblem->getScaledFisherInformation() << std::endl;
+
+  // Save the scaled Fisher information Eigenvalues
+  file << mpProblem->getScaledFisherInformationEigenvalues() << std::endl;
+
+  // Save the scaled Fisher information Eigenvectors
+  file << mpProblem->getScaledFisherInformationEigenvectors() << std::endl;
 
   const CCrossValidationSet & CrossValidations = mpProblem->getCrossValidationSet();
   imax = CrossValidations.getExperimentCount();
