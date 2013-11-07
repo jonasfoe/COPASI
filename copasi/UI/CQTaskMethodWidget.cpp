@@ -13,6 +13,12 @@
 #include "utilities/utility.h"
 #include "optimization/COptMethod.h"
 
+const QString CQTaskMethodWidget::LogVerbosityStrings[] = {
+  "Basic",
+  "Iterative",
+  "Detailed",
+};
+
 CQTaskMethodWidget::CQTaskMethodWidget(QWidget* parent, Qt::WindowFlags f):
   QWidget(parent, f),
   mpTask(NULL),
@@ -170,7 +176,7 @@ bool CQTaskMethodWidget::loadMethod()
 
           for (unsigned C_INT32 i = 0; i <= pActiveOptMethod->getMaxLogVerbosity(); i++)
             {
-              mpBoxMethodLog->addItem(QString::number(i));
+              mpBoxMethodLog->addItem(LogVerbosityStrings[i]);
             }
 
           mpBoxMethodLog->setCurrentIndex(*mpActiveMethod->getValue(logParameterIndex).pUINT);

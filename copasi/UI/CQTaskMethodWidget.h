@@ -51,6 +51,8 @@ protected:
   std::map< CCopasiMethod::SubType, CCopasiMethod * > mMethodHistory;
   bool mShowMethods;
   bool mShowMethodParameters;
+
+  static const QString LogVerbosityStrings[];
 };
 
 #endif // COPASI_CQTaskMethodWidget
