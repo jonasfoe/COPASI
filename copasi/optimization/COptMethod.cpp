@@ -239,12 +239,7 @@ unsigned C_INT32 COptMethod::getMaxLogVerbosity() const
   return 0;
 }
 
-std::string COptMethod::getPlainMethodLog() const
+const COptLog &COptMethod::getMethodLog() const
 {
-  return mMethodLog.getPlainLog();
-}
-
-std::string COptMethod::getRichMethodLog() const
-{
-  return mMethodLog.getRichLog();
+  return mMethodLog;
 }
