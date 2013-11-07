@@ -150,21 +150,7 @@ public:
   /**
    * Retrieve the log of the solution
    */
-  std::string getMethodLogOld() const;
-
-  /**
-   * Retrieve the method log as plain text.
-   * Does not include status dumps.
-   * @return std::string plainLog
-   */
-  std::string getPlainMethodLog() const;
-
-  /**
-   * Retrieve the method log as rich text.
-   * Uses html headings, divs and tables.
-   * @return std::string richLog
-   */
-  std::string getRichMethodLog() const;
+  const COptLog &getMethodLog() const;
 
 protected:
   /**

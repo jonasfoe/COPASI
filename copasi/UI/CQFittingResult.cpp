@@ -31,6 +31,7 @@
 #include "parameterFitting/CExperimentSet.h"
 #include "parameterFitting/CExperiment.h"
 #include "optimization/COptMethod.h"
+#include "optimization/COptLog.h"
 #include "report/CCopasiRootContainer.h"
 #include "commandline/CLocaleString.h"
 #include "model/CModel.h"
@@ -451,7 +452,7 @@ bool CQFittingResult::enterProtected()
 
           logHtmlBuilder.append("id=\"accordion\">\n");
 
-          logHtmlBuilder.append(pMethod->getRichMethodLog().c_str());
+          logHtmlBuilder.append(pMethod->getMethodLog().getRichLog().c_str());
 
           QString logQString = logHtml.join(QString());
           mpLogWebView->page()->action(QWebPage::Reload)->setVisible(false);
