@@ -32,8 +32,7 @@
  *  name 'name'.'
  */
 CQOptimizationResult::CQOptimizationResult(QWidget* parent, const char* name):
-  CopasiWidget(parent, name),
-  mLogFormatted(false)
+  CopasiWidget(parent, name)
 {
   setupUi(this);
 
@@ -203,8 +202,6 @@ bool CQOptimizationResult::enterProtected()
           mpLogWebView->settings()->setAttribute(QWebSettings::DeveloperExtrasEnabled, true);
 #endif // COPASI_DEBUG
           mpLogWebView->setHtml(logQString, QUrl::fromLocalFile(QFileInfo("../protocol/protocol.html").absoluteFilePath()));
-          mLogFormatted = false;
-          mpBtnFormatLog->setText("Get Formated Text");
         }
     }
   else
@@ -274,20 +271,4 @@ void CQOptimizationResult::slotSave(void)
 void CQOptimizationResult::slotUpdateModel()
 {
   const_cast< COptProblem * >(mpProblem)->restoreModel(true);
-}
-
-void CQOptimizationResult::slotFormatLog()
-{
-  if (!mLogFormatted)
-    {
-      mpLogWebView->page()->mainFrame()->evaluateJavaScript("$(\"#accordion\").accordion({collapsible: true, heightStyle: \"content\", active: false, header: \"h4\"});");
-      mLogFormatted = true;
-      mpBtnFormatLog->setText("Get Plain Text");
-    }
-  else
-    {
-      mpLogWebView->page()->mainFrame()->evaluateJavaScript("$(\"#accordion\").accordion(\"destroy\");");
-      mLogFormatted = false;
-      mpBtnFormatLog->setText("Get Formated Log");
-    }
 }

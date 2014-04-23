@@ -47,14 +47,11 @@ private:
   const CFitTask * mpTask;
   const CFitProblem * mpProblem;
 
-  bool mLogFormatted;
-
   void init();
 
 private slots:
   void slotSave(void);
   void slotUpdateModel();
-  void slotFormatLog();
 };
 
 #endif // CQFITTINGRESULT_H
