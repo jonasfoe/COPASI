@@ -181,7 +181,7 @@ bool CQOptimizationResult::enterProtected()
       mpTabWidget->setTabEnabled(mpTabWidget->indexOf(mpLogPage), true);
 
       QStringList logHtml;
-      QFile logFile("../protocol/protocol_new.html");
+      QFile logFile("../protocol/protocol.html");
       logFile.open(QIODevice::ReadOnly);
       logHtml = ((QString)logFile.readAll()).split("id=\"accordion\">\n");
       logFile.close();
