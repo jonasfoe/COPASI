@@ -554,7 +554,7 @@ First:
         }
     }   /* while not found and not quit ... */
 
-  if (mLogVerbosity >= 1 && found) mMethodLog.enterLogItem(COptLogItem(COptLogItem::NM_fval_change_below_tol).iter(mIteration));
+  if (mLogVerbosity >= 1 && found) mMethodLog.enterLogItem(COptLogItem(COptLogItem::NM_fval_change_lower_than_tol).iter(mIteration));
 
   /* **** bail out if necessary **** */
   if (quit || !mContinue) goto Finish;

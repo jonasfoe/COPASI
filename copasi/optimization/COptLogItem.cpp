@@ -35,12 +35,12 @@ const std::string COptLogItem::MsgIDHeader[] =
   "Minimal number of informants per particle is %s% at a swarm size of %s% particles.",
   //PS_no_particle_improved
   "Iteration %_iteration%: None of the particles improved in objective function value.",
-  //PS_stddev_below_tol_termination
+  //PS_stddev_lower_than_tol_termination
   "Iteration %_iteration%: Standard deviation of the particles was lower than tolerance. Terminating.",
 
   //SA_steps_per_temp
   "Steps at one single temperature: %s%.",
-  //SA_fval_progress_lower_that_tol
+  //SA_fval_progress_lower_than_tol
   "Temperature step %_iteration%: Objective function value progression for last %s% temperatures was lower than the tolerance.",
   //SA_fval_tol_termination
   "Temperature step %_iteration%: Objective function value didn't progress from optimum by more than the tolerance. Terminating.",
@@ -58,8 +58,8 @@ const std::string COptLogItem::MsgIDHeader[] =
   //GASR_fittest_not_changed_x_random_generated
   "Generation %_iteration%: Fittest individual has not changed for the last %s% generations. %s%% random individuals created.",
 
-  //HJ_steplength_below_tol
-  "Iteration %_iteration%: Steplength below tolerance. Terminating.",
+  //HJ_steplength_lower_than_tol
+  "Iteration %_iteration%: Steplength lower than tolerance. Terminating.",
 
   //LM_hess_pos_def
   "Iteration %_iteration%: Hessian matrix is positive definite. Calculating gradient.",
@@ -79,7 +79,7 @@ const std::string COptLogItem::MsgIDHeader[] =
   //CW_min_step_size
   "Minimum step size is %s%.",
 
-  //NM_fval_change_below_tol
+  //NM_fval_change_lower_than_tol
   "Iteration %_iteration%: Objective function value change lower than tolerance. Checking whether local minimum was found.",
   //NM_local_min_termination
   "Iteration %_iteration%: Local minimum found. Terminating.",
@@ -120,12 +120,12 @@ const std::string COptLogItem::MsgIDSubtext[] =
   "",
   //PS_no_particle_improved
   "Rebuilding informants with %s% informants per particle.",
-  //PS_stddev_below_tol_termination
+  //PS_stddev_lower_than_tol_termination
   "",
 
   //SA_steps_per_temp
   "",
-  //SA_fval_progress_lower_that_tol
+  //SA_fval_progress_lower_than_tol
   "T = %s%.",
   //SA_fval_tol_termination
   "T = %s%.",
@@ -141,9 +141,9 @@ const std::string COptLogItem::MsgIDSubtext[] =
   //GASR_usrdef_error_pf
   "",
   //GASR_fittest_not_changed_x_random_generated
-  "Generation %_iteration%: Fittest individual has not changed for the last %s% generations. %s%% random individuals created.",
+  "",
 
-  //HJ_steplength_below_tol
+  //HJ_steplength_lower_than_tol
   "",
 
   //LM_hess_pos_def
@@ -164,7 +164,7 @@ const std::string COptLogItem::MsgIDSubtext[] =
   //CW_min_step_size
   "",
 
-  //NM_fval_change_below_tol
+  //NM_fval_change_lower_than_tol
   "",
   //NM_local_min_termination
   "",

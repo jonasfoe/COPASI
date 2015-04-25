@@ -228,7 +228,7 @@ bool COptMethodHookeJeeves::optimise()
         }
     }
 
-  if (steplength < mTolerance) mMethodLog.enterLogItem(COptLogItem(COptLogItem::HJ_steplength_below_tol).iter(mIteration));
+  if (steplength <= mTolerance) mMethodLog.enterLogItem(COptLogItem(COptLogItem::HJ_steplength_lower_than_tol).iter(mIteration));
 
   mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_finish_x_of_max_iter).iter(mIteration).with(mIterationLimit));
 
