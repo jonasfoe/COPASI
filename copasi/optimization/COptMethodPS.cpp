@@ -585,7 +585,7 @@ bool COptMethodPS::optimise()
         }
       else if (reachedStdDeviation())
         {
-          mMethodLog.enterLogItem(COptLogItem(COptLogItem::PS_stddev_below_tol_termination, dumpStatus()).iter(mIteration));
+          mMethodLog.enterLogItem(COptLogItem(COptLogItem::PS_stddev_lower_than_tol_termination, dumpStatus()).iter(mIteration));
           break;
         }
 

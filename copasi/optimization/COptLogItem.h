@@ -29,10 +29,10 @@ class COptLogItem
       PS_usrdef_error_swarm_size,
       PS_info_informants,
       PS_no_particle_improved,
-      PS_stddev_below_tol_termination,
+      PS_stddev_lower_than_tol_termination,
 
       SA_steps_per_temp,
-      SA_fval_progress_lower_that_tol,
+      SA_fval_progress_lower_than_tol,
       SA_fval_tol_termination,
 
       DE_usrdef_error_pop_size,
@@ -43,7 +43,7 @@ class COptLogItem
       GASR_usrdef_error_pf,
       GASR_fittest_not_changed_x_random_generated,
 
-      HJ_steplength_below_tol,
+      HJ_steplength_lower_than_tol,
 
       LM_hess_pos_def,
       LM_hess_not_pos_def,
@@ -55,7 +55,7 @@ class COptLogItem
 
       CW_min_step_size,
 
-      NM_fval_change_below_tol,
+      NM_fval_change_lower_than_tol,
       NM_local_min_termination,
       NM_no_local_min_reducing_simplex,
 

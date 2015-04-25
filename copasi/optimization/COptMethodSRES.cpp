@@ -532,10 +532,10 @@ bool COptMethodSRES::initialize()
 
   if (mPf < 0.0 || 1.0 < mPf)
     {
-      mMethodLog.enterLogItem(COptLogItem(COptLogItem::SRES_usrdef_error_pf).with(0.475));
-
       mPf = 0.475;
       setValue("Pf", mPf);
+
+      mMethodLog.enterLogItem(COptLogItem(COptLogItem::SRES_usrdef_error_pf).with(mPf));
     }
 
   mpRandom =

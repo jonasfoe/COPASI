@@ -255,7 +255,7 @@ bool COptMethodSA::optimise()
           // check the termination criterion of not much larger than last optimal
           else
             {
-              if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::SA_fval_progress_lower_that_tol).iter(k).with(STORED).with(mTemperature));
+              if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::SA_fval_progress_lower_than_tol).iter(k).with(STORED).with(mTemperature));
 
               if (fabs(mCurrentValue - mBestValue) > mTolerance)
                 ready = false;

@@ -424,10 +424,10 @@ bool COptMethodGASR::initialize()
 
   if (mPf < 0.0 || 1.0 < mPf)
     {
-      mMethodLog.enterLogItem(COptLogItem(COptLogItem::GASR_usrdef_error_pf).with(0.475));
-
       mPf = 0.475;
       setValue("Pf", mPf);
+
+      mMethodLog.enterLogItem(COptLogItem(COptLogItem::GASR_usrdef_error_pf).with(mPf));
     }
 
   mpRandom =
