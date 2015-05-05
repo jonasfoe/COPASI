@@ -491,7 +491,7 @@ bool COptMethodDE::optimise()
     {
       if (Stalled > 10)
         {
-          mMethodLog.enterLogItem(COptLogItem(COptLogItem::DE_fittest_not_changed_x_random_generated).iter(mGeneration).with(10).with(40));
+          if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::DE_fittest_not_changed_x_random_generated).iter(mGeneration).with(Stalled - 1).with(40));
 
           Continue &= creation((size_t) 0.4 * mPopulationSize, (size_t) 0.8 * mPopulationSize);
         }
@@ -533,5 +533,5 @@ bool COptMethodDE::optimise()
 
 unsigned C_INT32 COptMethodDE::getMaxLogVerbosity() const
 {
-  return 0;
+  return 1;
 }

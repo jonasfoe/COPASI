@@ -709,28 +709,28 @@ bool COptMethodSRES::optimise()
       // perturb the population if we have stalled for a while
       if (Stalled80 > 80)
         {
-          if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::SRES_fittest_not_changed_x_random_generated).iter(mGeneration).with(80).with(80);
+          if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::SRES_fittest_not_changed_x_random_generated).iter(mGeneration).with(Stalled80 - 1).with(80);
 
           Continue = creation((size_t)(mPopulationSize * 0.2));
           Stalled10 = Stalled20 = Stalled40 = Stalled80 = 0;
         }
       else if (Stalled40 > 40)
         {
-          if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::SRES_fittest_not_changed_x_random_generated).iter(mGeneration).with(40).with(40);
+          if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::SRES_fittest_not_changed_x_random_generated).iter(mGeneration).with(Stalled80 - 1).with(40);
 
           Continue = creation((size_t)(mPopulationSize * 0.6));
           Stalled10 = Stalled20 = Stalled40 = 0;
         }
       else if (Stalled20 > 20)
         {
-          if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::SRES_fittest_not_changed_x_random_generated).iter(mGeneration).with(20).with(20);
+          if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::SRES_fittest_not_changed_x_random_generated).iter(mGeneration).with(Stalled80 - 1).with(20);
 
           Continue = creation((size_t)(mPopulationSize * 0.8));
           Stalled10 = Stalled20 = 0;
         }
       else if (Stalled10 > 10)
         {
-          if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::SRES_fittest_not_changed_x_random_generated).iter(mGeneration).with(10).with(10);
+          if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::SRES_fittest_not_changed_x_random_generated).iter(mGeneration).with(Stalled80 - 1).with(10);
 
           Continue = creation((size_t)(mPopulationSize * 0.9));
           Stalled10 = 0;
