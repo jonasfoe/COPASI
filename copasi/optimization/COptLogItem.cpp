@@ -80,7 +80,7 @@ const std::string COptLogItem::MsgIDHeader[] =
   "Minimum step size is %s%.",
 
   //NM_fval_change_lower_than_tol
-  "Iteration %_iteration%: Objective function value change lower than tolerance. Checking whether local minimum was found.",
+  "Iteration %_iteration%: Variance of the objective function values at the vertices of the current simplex lower than tolerance. Checking whether local minimum was found.",
   //NM_local_min_termination
   "Iteration %_iteration%: Local minimum found. Terminating.",
   //NM_no_local_min_reducing_simplex

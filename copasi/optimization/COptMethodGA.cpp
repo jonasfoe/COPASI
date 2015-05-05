@@ -592,7 +592,7 @@ bool COptMethodGA::optimise()
       // perturb the population if we have stalled for a while
       if (Stalled > 50 && Stalled50 > 50)
         {
-          if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::GA_fittest_not_changed_x_random_generated).iter(mGeneration).with(50).with(50));
+          if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::GA_fittest_not_changed_x_random_generated).iter(mGeneration).with(Stalled50 - 1).with(50));
 
           Continue &= creation((size_t)(mPopulationSize / 2),
                                mPopulationSize);
@@ -600,7 +600,7 @@ bool COptMethodGA::optimise()
         }
       else if (Stalled > 30 && Stalled30 > 30)
         {
-          if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::GA_fittest_not_changed_x_random_generated).iter(mGeneration).with(30).with(30));
+          if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::GA_fittest_not_changed_x_random_generated).iter(mGeneration).with(Stalled50 - 1).with(30));
 
           Continue &= creation((size_t)(mPopulationSize * 0.7),
                                mPopulationSize);
@@ -608,7 +608,7 @@ bool COptMethodGA::optimise()
         }
       else if (Stalled > 10 && Stalled10 > 10)
         {
-          if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::GA_fittest_not_changed_x_random_generated).iter(mGeneration).with(10).with(10));
+          if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::GA_fittest_not_changed_x_random_generated).iter(mGeneration).with(Stalled50 - 1).with(10));
 
           Continue &= creation((size_t)(mPopulationSize * 0.9),
                                mPopulationSize);
