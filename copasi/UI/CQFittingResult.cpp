@@ -503,6 +503,103 @@ void CQFittingResult::slotSave(void)
 
   mpProblem->printResult(&file);
 
+  if (mpValues->isEnabled())
+    {
+      // Set up the fitted values table
+      file << "Fitted Values:" << std::endl;
+      file << "Fitted Value\tObjective Value\tRoot Mean Square\tError Mean\tError Mean Std. Deviation" << std::endl;
+
+      // Loop over the fitted values objects
+      imax = mpValues->rowCount();
+
+      for (i = 0; i != imax; i++)
+        {
+          file << TO_UTF8(mpValues->item((int) i, 0)->text()) << "\t";
+          file << TO_UTF8(mpValues->item((int) i, 1)->text()) << "\t";
+          file << TO_UTF8(mpValues->item((int) i, 2)->text()) << "\t";
+          file << TO_UTF8(mpValues->item((int) i, 3)->text()) << "\t";
+          file << TO_UTF8(mpValues->item((int) i, 4)->text()) << std::endl;
+        }
+
+      file << std::endl;
+    }
+
+  // Save the parameter correlations
+  file << mpProblem->getCorrelations() << std::endl;
+
+  // Save the Fisher information
+  file << mpProblem->getFisherInformation() << std::endl;
+
+  // Save the Fisher information Eigenvalues
+  file << mpProblem->getFisherInformationEigenvalues() << std::endl;
+
+  // Save the Fisher information Eigenvectors
+  file << mpProblem->getFisherInformationEigenvectors() << std::endl;
+
+  // Save the scaled Fisher information
+  file << mpProblem->getScaledFisherInformation() << std::endl;
+
+  // Save the scaled Fisher information Eigenvalues
+  file << mpProblem->getScaledFisherInformationEigenvalues() << std::endl;
+
+  // Save the scaled Fisher information Eigenvectors
+  file << mpProblem->getScaledFisherInformationEigenvectors() << std::endl << std::endl;
+
+  if (mpValues->isEnabled())
+    {
+      // Set up the cross validations table
+      file << "Validations:" << std::endl;
+      file << "Validation Experiment\t Objective Value\tRoot Mean Square\tError Mean\tError Mean Std. Deviation" << std::endl;
+
+      // Loop over the experiments
+      imax = mpCrossValidations->rowCount();
+
+      for (i = 0; i != imax; i++)
+        {
+          file << TO_UTF8(mpCrossValidations->item((int) i, 0)->text()) << "\t";
+          file << TO_UTF8(mpCrossValidations->item((int) i, 1)->text()) << "\t";
+          file << TO_UTF8(mpCrossValidations->item((int) i, 2)->text()) << "\t";
+          file << TO_UTF8(mpCrossValidations->item((int) i, 3)->text()) << "\t";
+          file << TO_UTF8(mpCrossValidations->item((int) i, 4)->text()) << std::endl;
+        }
+
+      file << std::endl;
+    }
+
+  if (mpValues->isEnabled())
+    {
+      // Set up the fitted values table
+      file << "Validation Fitted Values:" << std::endl;
+      file << "Validation Fitted Value\tObjective Value\tRoot Mean Square\tError Mean\tError Mean Std. Deviation" << std::endl;
+
+      // Loop over the fitted values objects
+      imax = mpCrossValidationValues->rowCount();
+
+      for (i = 0; i != imax; i++)
+        {
+          file << TO_UTF8(mpCrossValidationValues->item((int) i, 0)->text()) << "\t";
+          file << TO_UTF8(mpCrossValidationValues->item((int) i, 1)->text()) << "\t";
+          file << TO_UTF8(mpCrossValidationValues->item((int) i, 2)->text()) << "\t";
+          file << TO_UTF8(mpCrossValidationValues->item((int) i, 3)->text()) << "\t";
+          file << TO_UTF8(mpCrossValidationValues->item((int) i, 4)->text()) << std::endl;
+        }
+
+      file << std::endl;
+    }
+
+  // log
+  const COptMethod * pMethod = dynamic_cast<const COptMethod *>(mpTask->getMethod());
+
+  if (pMethod)
+    {
+      // Set up log output
+      file << "Method Log:" << std::endl;
+
+      file << pMethod->getMethodLog().getPlainLog().c_str();
+
+      file << std::endl;
+    }
+
   file.close();
 }
 

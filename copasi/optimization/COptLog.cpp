@@ -24,6 +24,7 @@ std::string COptLog::getPlainLog() const
 {
   std::string log;
   std::string currSubtext;
+  std::string currStatusDetails;
 
   for (std::vector<COptLogItem>::const_iterator item = mLogItems.begin(); item != mLogItems.end(); ++item)
     {
@@ -33,6 +34,12 @@ std::string COptLog::getPlainLog() const
       if (!currSubtext.empty())
         {
           log.append(currSubtext + "\n");
+        }
+
+      currStatusDetails = item->getStatusDetails();
+      if (!currStatusDetails.empty())
+        {
+          log.append(currStatusDetails +"\n");
         }
 
       log.append("\n");

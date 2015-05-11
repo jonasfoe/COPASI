@@ -44,7 +44,7 @@ class COptLog
 
     /**
      * Retrieve the method log as plain text.
-     * Does not include status dumps.
+     * Uses html tables for detailed log.
      * @return std::string plainLog
      */
     std::string getPlainLog() const;
