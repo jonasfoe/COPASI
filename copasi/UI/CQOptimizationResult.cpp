@@ -265,6 +265,22 @@ void CQOptimizationResult::slotSave(void)
       file << TO_UTF8(mpParameters->item((int) i, 5)->text()) << std::endl;
     }
 
+  // log
+  const COptMethod * pMethod = dynamic_cast<const COptMethod *>(mpTask->getMethod());
+
+  if (pMethod)
+    {
+
+      file << std::endl;
+
+      // Set up log output
+      file << "Method Log:" << std::endl;
+
+      file << pMethod->getMethodLog().getPlainLog().c_str();
+
+      file << std::endl;
+    }
+
   file << std::endl;
 }
 

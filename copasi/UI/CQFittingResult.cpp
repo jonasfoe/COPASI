@@ -637,6 +637,19 @@ void CQFittingResult::slotSave(void)
 
       file << std::endl;
     }
+
+  // log
+  const COptMethod * pMethod = dynamic_cast<const COptMethod *>(mpTask->getMethod());
+
+  if (pMethod)
+    {
+      // Set up log output
+      file << "Method Log:" << std::endl;
+
+      file << pMethod->getMethodLog().getPlainLog().c_str();
+
+      file << std::endl;
+    }
 }
 
 void CQFittingResult::slotUpdateModel()
