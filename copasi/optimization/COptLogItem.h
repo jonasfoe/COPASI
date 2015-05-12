@@ -157,19 +157,6 @@ class COptLogItem
       return *this;
     }
 
-    /**
-     * Form a plain string of this items data.
-     * Does not include status dumps.
-     * @return std::string plainMessage
-     */
-    std::string getPlainMessage() const;
-
-    /**
-     * Form a html formatted string of this items data.
-     * @return std::string richMessage
-     */
-    std::string getRichMessage() const;
-
     MsgID getMsgId() const;
 
     time_t getTimestamp() const;
