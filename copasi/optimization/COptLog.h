@@ -43,6 +43,12 @@ class COptLog
     void enterLogItem(COptLogItem item);
 
     /**
+     * Get the log element count
+     * @return unsigned C_INT32 elementCount
+     */
+    unsigned C_INT32 getElementCount() const;
+
+    /**
      * Retrieve the method log as plain text.
      * Uses html tables for detailed log.
      * @return std::string plainLog

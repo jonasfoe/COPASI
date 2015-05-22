@@ -180,20 +180,28 @@ bool CQOptimizationResult::enterProtected()
     {
       mpTabWidget->setTabEnabled(mpTabWidget->indexOf(mpLogPage), true);
 
-      QStringList logHtml;
+      QStringList logHtmlTemp, logHtml;
       QFile logFile("../protocol/protocol.html");
       logFile.open(QIODevice::ReadOnly);
-      logHtml = ((QString)logFile.readAll()).split("id=\"accordion\">\n");
+
+      logHtml = ((QString)logFile.readAll()).split("var elementcount");
+      logHtmlTemp = logHtml[1].split("id=\"accordion\">\n");
+
+      logHtml[1] = logHtmlTemp[0];
+      logHtml << logHtmlTemp[1];
+
       logFile.close();
 
 
-      if (logHtml.size() > 1)
+      if (logHtml.size() == 3)
         {
-          QString & logHtmlBuilder = logHtml[0];
+          logHtml[0].append("var elementcount = ");
 
-          logHtmlBuilder.append("id=\"accordion\">\n");
+          logHtml[0].append(QString::number(pMethod->getMethodLog().getElementCount()));
 
-          logHtmlBuilder.append(pMethod->getMethodLog().getRichLog().c_str());
+          logHtml[1].append("id=\"accordion\">\n");
+
+          logHtml[1].append(pMethod->getMethodLog().getRichLog().c_str());
 
           QString logQString = logHtml.join(QString());
           mpLogWebView->page()->action(QWebPage::Reload)->setVisible(false);

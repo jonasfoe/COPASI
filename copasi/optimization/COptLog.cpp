@@ -20,6 +20,11 @@ void COptLog::enterLogItem(COptLogItem item)
   mLogItems.push_back(item);
 }
 
+unsigned C_INT32 COptLog::getElementCount() const
+{
+  return mLogItems.size();
+}
+
 std::string COptLog::getPlainLog() const
 {
   std::string log;
