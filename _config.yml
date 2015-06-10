@@ -1,7 +1,6 @@
 ### Global gh-pages pre-amble
 safe: true
 lsi: false
-highlighter: false
 
 ### The following properties will change on a project-by-project basis
 
