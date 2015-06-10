@@ -67,11 +67,11 @@ function suggest_package(release_idx) {
     var dnld_btn = document.getElementById('download_button');
     var pltfrm_icon_code = '';
     if (icon_filename != 'none') {
-        pltfrm_icon_code = '<img src="/images/' + icon_filename + '">&nbsp';
+        pltfrm_icon_code = '<img src="{{ site.baseurl }}/images/' + icon_filename + '">&nbsp';
     }
 sug_div.innerHTML = "<h3>Your browser reports it is running on " + pltfrm + ". You may want to download . . . <br /><br />" + pltfrm_icon_code + filename + "</h3>";
     dnld_btn.title = 'Download ' + filename;
-    dnld_btn.src = "/images/download-button.png";
+    dnld_btn.src = "{{ site.baseurl }}/images/download-button.png";
     dnld_lnk.href = dnld_url;
 }
 
