@@ -1,0 +1,38 @@
+<div class="navbar navbar-inverse">
+  <div class="container">
+    <div class="navbar-header" style="min-height: 80px;">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"><img alt="COPASI" src="/images/COPASI-light.png"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li {% if page.section == "Home" %} class="active" {% endif %} >
+          <a href="/">Home</a>
+        </li>
+        <li {% if page.section == "Download" %} class="active" {% endif %} >
+          <a href="/Download">Download</a>
+        </li>
+        <li {% if page.section == "Features" %} class="active" {% endif %} >
+          <a href="/Features">Features</a>
+        </li>
+        <li {% if page.section == "Support" %} class="active" {% endif %} >
+          <a href="/Support">Support</a>
+        </li>
+        <li {% if page.section == "Projects" %} class="active" {% endif %} >
+          <a href="/Projects">Projects</a>
+        </li>
+        <li {% if page.section == "Events" %} class="active" {% endif %} >
+          <a href="/Events">Events</a>
+        </li>
+        <li {% if page.section == "About" %} class="active" {% endif %} >
+          <a href="/About">About</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

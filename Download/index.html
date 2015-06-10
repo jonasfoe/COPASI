@@ -1,0 +1,178 @@
+---
+title: Download
+section: Download
+---
+<!-- HEADER -->
+{% include header.html %}
+{% include navbar.html %}
+
+<script>
+var github_json_url = 'https://api.github.com/repos/copasi/COPASI/releases';
+
+// global variable to be reused for updating on selector changes
+var github_json;
+
+function suggest_package(release_idx) {
+    var pltfrm = navigator.platform;
+    var plt_match, bit_match;
+    var icon_filename = 'none';
+    
+    // set to debug specific cases
+    //pltfrm = 'MacIntel';
+    //pltfrm = 'Linux';
+    //pltfrm = 'Win32';
+    
+    if (pltfrm.match('Linux') && !pltfrm.match('arm')) {
+        plt_match = 'linux';
+        bit_match = '64';
+        icon_filename = 'linux_icon.png';
+    } else if (pltfrm.match('MacIntel')) {
+        plt_match = 'darwin';
+        icon_filename = 'osx_icon.png';
+    } else if (pltfrm.match('Win') && !pltfrm.match('Win16')) {
+        plt_match = 'win';
+        icon_filename = 'windows_icon.png';
+    } else {plt_match = 'source';}
+
+    if (pltfrm.match('64')) {
+        bit_match = '64';
+    } else if (pltfrm.match('32')) {
+        bit_match = '32';
+    }
+    
+    var filename, dnld_url, candidate_fn, candidate_url, clean_fn;
+    var found_name_match = false;
+    var assets = github_json[release_idx]['assets'];
+
+    for (asset_idx in assets) {
+        filename = github_json[release_idx]['assets'][asset_idx]['name'];
+        dnld_url = github_json[release_idx]['assets'][asset_idx]['browser_download_url'];
+
+        if (filename.match(RegExp("^copasi-[0-9.]+-" + plt_match, "i"))) {
+            if (filename.match(bit_match)) { break;}
+            if (found_name_match) {continue;}
+            candidate_fn = filename;
+            candidate_url = dnld_url;
+            found_name_match = true;
+        } else if (plt_match == 'source' && filename.match('SRC')) {
+            break;
+        } else if (found_name_match == true && asset_idx == assets.length - 1) {
+            filename = candidate_fn;
+            dnld_url = candidate_url;
+        }
+    }
+    
+    var sug_div = document.getElementById('suggest_div');
+    var dnld_lnk = document.getElementById('download_link');
+    var dnld_btn = document.getElementById('download_button');
+    var pltfrm_icon_code = '';
+    if (icon_filename != 'none') {
+        pltfrm_icon_code = '<img src="/images/' + icon_filename + '">&nbsp';
+    }
+sug_div.innerHTML = "<h3>Your browser reports it is running on " + pltfrm + ". You may want to download . . . <br /><br />" + pltfrm_icon_code + filename + "</h3>";
+    dnld_btn.title = 'Download ' + filename;
+    dnld_btn.src = "/images/download-button.png";
+    dnld_lnk.href = dnld_url;
+}
+
+function load_releases(json_obj){
+    var vslct = document.getElementById('version_selector');
+    var name, txt;
+    for (rel_idx in json_obj) {
+        name = json_obj[rel_idx]["name"].replace('Released', ''); //Remove 'Released'
+        txt = txt + '<option value="' + name + '">' + name + '</option>';
+    }
+    vslct.innerHTML = txt;
+}
+
+function update_packages() {
+    var vsltr = document.getElementById('version_selector');
+    var release_idx = vsltr.selectedIndex;
+    
+    suggest_package(release_idx);
+    
+    var man_dnld_div = document.getElementById('manual_dnld_div');
+
+    // assets are the files available under a release
+    var assets = github_json[release_idx]['assets'];
+    var div_txt = '<table><tr><th>Platform</th><th>File</th></tr>';
+    var clean_fn, notes;
+    for (asset_idx in assets) {
+        filename = assets[asset_idx]['name'];
+        dnld_url = assets[asset_idx]['browser_download_url'];
+        clean_fn = filename.replace('opasi-64', 'opasi').replace('opasi-32', 'opasi').toLowerCase();
+
+        if (clean_fn.match('allse')) {
+            notes = "Simulation Engines for all platforms<br />(for use in heterogenous clusters)"
+        } else if (clean_fn.match('darwin')) {
+            notes = 'Mac OS X (10.6 and above)';            
+        } else if (clean_fn.match('linux')) {
+            notes = 'Linux';
+        } else if (clean_fn.match('win')) {
+            notes = 'Windows';
+        }else if (clean_fn.match('source') || clean_fn.match('src')) {
+            notes = 'source code';
+        }
+        
+        if (clean_fn.match('32')) {
+            notes = notes + ' 32-bit';
+        } else if (clean_fn.match('64')) {
+            notes = notes + ' 64-bit';
+        }
+        
+        if (clean_fn.match('dynamic')) { notes = notes + ' dynamic';}
+        
+        div_txt += '<tr>';
+        div_txt += '<td>' + notes + '</td>';
+        div_txt += '<td>' + '<a href=' + dnld_url + '> ' + filename + '</a> </td>';
+        div_txt += '</tr>';
+    }
+
+    div_txt += '</table>';
+
+    man_dnld_div.innerHTML = div_txt;
+}
+
+// This will run when the page is loaded, to get the github info.
+// Then the update functions are called back, after the info is ready.
+var AJAX_req = new XMLHttpRequest();
+AJAX_req.open( "GET", github_json_url, true );
+AJAX_req.setRequestHeader("Content-type", "application/json");
+    
+AJAX_req.onreadystatechange = function() {
+    if( AJAX_req.readyState == 4 && AJAX_req.status == 200 )  {
+        // store in global variable, for subsequent selector changes
+        // github_json = JSON.parse( AJAX_req.responseText ).reverse();
+        github_json = JSON.parse( AJAX_req.responseText ).sort(function(a,b) {
+            return parseInt(b["tag_name"].substr(6), 10) - parseInt(a["tag_name"].substr(6), 10)});
+
+        load_releases(github_json); // seems to need to be passed in, rather than accessed in function; perhaps related to asynchronous nature
+        update_packages();
+    }
+}
+AJAX_req.send();
+</script>
+
+<div class="section">
+  <div class="container">
+    <label for="version_selector">Version:</label>
+    <select id="version_selector" onchange="update_packages()" ;="">undefined<option value="COPASI 4.14 (Build 89)  "></select>
+    <br>
+    
+    <div id="suggest_div"></div>
+    <a id="download_link"><img id="download_button" alt="download button"></a>
+    
+    <br>
+    <br>
+    <br>
+    <p>Otherwise, choose a download from below.</p>
+    <div id="manual_dnld_div"></div>
+    <br>
+    <p>Go directly to our <a href="https://github.com/copasi/COPASI/releases" target="_blank">GitHub COPASI Releases page</a>,
+    if the above frame doesn't load correctly.</p>
+  
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}
