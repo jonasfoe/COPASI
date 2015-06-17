@@ -11,25 +11,25 @@
     </div>
     <div class="collapse navbar-collapse" id="navbar-ex-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li {% if page.section == "Home" %} class="active" {% endif %} >
+        <li {% if cps_path.first == "Home" %} class="active" {% endif %} >
           <a href="{{ site.baseurl }}/">Home</a>
         </li>
-        <li {% if page.section == "Download" %} class="active" {% endif %} >
+        <li {% if cps_path.first == "Download" %} class="active" {% endif %} >
           <a href="{{ site.baseurl }}/Download">Download</a>
         </li>
-        <li {% if page.section == "Features" %} class="active" {% endif %} >
+        <li {% if cps_path.first == "Features" %} class="active" {% endif %} >
           <a href="{{ site.baseurl }}/Features">Features</a>
         </li>
-        <li {% if page.section == "Support" %} class="active" {% endif %} >
+        <li {% if cps_path.first == "Support" %} class="active" {% endif %} >
           <a href="{{ site.baseurl }}/Support">Support</a>
         </li>
-        <li {% if page.section == "Projects" %} class="active" {% endif %} >
+        <li {% if cps_path.first == "Projects" %} class="active" {% endif %} >
           <a href="{{ site.baseurl }}/Projects">Projects</a>
         </li>
-        <li {% if page.section == "Events" %} class="active" {% endif %} >
+        <li {% if cps_path.first == "Events" %} class="active" {% endif %} >
           <a href="{{ site.baseurl }}/Events">Events</a>
         </li>
-        <li {% if page.section == "About" %} class="active" {% endif %} >
+        <li {% if cps_path.first == "About" %} class="active" {% endif %} >
           <a href="{{ site.baseurl }}/About">About</a>
         </li>
       </ul>

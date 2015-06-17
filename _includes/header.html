@@ -1,9 +1,11 @@
+{% assign cps_path = page.url | remove_first: '/' | remove: '/index.html' | split: '/' %}
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="Content-Type" content="text/html">
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta name="description" content="COPASI is a software application for simulation and analysis of biochemical networks and their dynamics.">
     <meta name="keywords" content="Modeling, Simulation, Biochemical Networks, Biochemical Pathways, Systems Biology, Time Course, Steady state, Optimization, Parameter Fitting, Software">
 
@@ -19,7 +21,7 @@
     <script src="{{ site.baseurl }}/javascripts/jquery-1.11.3/jquery-1.11.3.js"></script>
     <script src="{{ site.baseurl }}/stylesheets/bootstrap-3.3.4/js/bootstrap.js"></script>
 
-    <title>COPASI: {{ page.title }}</title>
+    <title>COPASI: {{ page.url | remove_first: '/' | remove: '/index.html' | replace: '_', ' ' }}</title>
   </head>
   <body>
 
