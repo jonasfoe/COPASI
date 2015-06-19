@@ -20,8 +20,14 @@
         <li {% if cps_path.first == "Features" %} class="active" {% endif %} >
           <a href="{{ site.baseurl }}/Features">Features</a>
         </li>
-        <li {% if cps_path.first == "Support" %} class="active" {% endif %} >
-          <a href="{{ site.baseurl }}/Support">Support</a>
+        <li class="dropdown{% if cps_path.first == "Support" %} active{% endif %}">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Support <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{{ site.baseurl }}/Support/User_Forum">User Forum</a></li>
+            <li><a href="{{ site.baseurl }}/Support/User_Manual">Manual</a></li>
+            <li><a href="{{ site.baseurl }}/Support/Video_Tutorials">Video Tutorials</a></li>
+            <li><a href="{{ site.baseurl }}/Support/Publications">Publications</a></li>
+          </ul>
         </li>
         <li {% if cps_path.first == "Projects" %} class="active" {% endif %} >
           <a href="{{ site.baseurl }}/Projects">Projects</a>
