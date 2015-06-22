@@ -5636,3 +5636,22 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
+DIV.latex-preamble {
+        display: none;
+}
+
+DIV.latex-frontmatter {
+        display: none;
+}
+
+DIV.latex-beginbibliography {
+        display: none;
+}
+
+DIV.latex-endbibliography {
+        display: none;
+}
+
+DIV.latex {
+        display: none;
+}
