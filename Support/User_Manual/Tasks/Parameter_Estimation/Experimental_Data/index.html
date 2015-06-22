@@ -1,0 +1,46 @@
+---
+title: "Experimental Data"
+previous: "Support/User_Manual/Tasks/Parameter_Estimation"
+next: "Support/User_Manual/Tasks/Parameter_Estimation/Result"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+Before you can execute a parameter estimation task you need to specify the dataset which COPASI will use to fit the parameters you have specified. Each experiment of your dataset contributes to the objective function with the following weighted sum of squares:<br />
+<br />
+<div align="center"><img class="latex-equation" style="vertical-align: middle; position: relative; bottom: 0px; height: 31; width: 192;" src="eb78b7201ee92eb3ff71116d6f2bd4cf.png" alt="$E(P)=\sum_{i,j}\omega_{j}\cdot(x_{i,j}-y_{i,j}(P))^{2}$"></div><br />
+Where P is the currently tested parameter set, <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: -1px; height: 10; width: 20;" src="ed58f765f612d8bd1c29148e1379317e.png" alt="$x_{i,j}$"> is a point in the dataset, and <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: -1px; height: 14; width: 40;" src="4b1013af34add9d804564c43bee9fa22.png" alt="$y_{i,j}(P)$"> the corresponding simulated value. The indices <i>i</i> and <i>j</i> denote rows and columns in the dataset. The weight for each data column is given by <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: -1px; height: 10; width: 14;" src="04a32ea92aaa539d676e72f5c8e05a41.png" alt="$\omega_{j}$">. COPASI provides 3 methods shown in the table below to calculate the weights for you. After applying the method chosen COPASI scales the weights so that for each experiment the maximal occurring weight is 1. In case that the weights calculated are not satisfactory you are able to manually override them individually.<br />
+<br />
+<table class="normal"><caption>Weight Calculation Methods</caption><colgroup><col width="20%" /><col width="80%" /></colgroup><tr><td class="heading">Name </td><td class="heading"> Formula</td></tr><tr><td class="odd">Mean </td><td class="odd"> <img class="latex-equation" style="vertical-align: middle; position: relative; bottom: 0px; height: 31; width: 84;" src="3efc52caa6088f48551d205488e067b2.png" alt="$\omega_{j}=\frac{1}{<x_{j}>^{2}}$"></td></tr><tr><td class="even">Mean Square </td><td class="even"> <img class="latex-equation" style="vertical-align: middle; position: relative; bottom: 0px; height: 33; width: 78;" src="36a495c9fb05c74e23a3d9a7b370e800.png" alt="$\omega_{j}=\frac{1}{<x_{j}^{2}>}$"></td></tr><tr><td class="odd">Standard Deviation </td><td class="odd"> <img class="latex-equation" style="vertical-align: middle; position: relative; bottom: 0px; height: 33; width: 183;" src="118b08dd852c74f8390e7e5bcd641b9f.png" alt="$\omega_{j}=\frac{1}{<x_{j}^{2}>-<x_{j}><x_{j}>}$"></td></tr></table><br />
+<br />
+To specify the experimental data you click on the Experimental Data button at the top right of the parameter estimation dialog. A new dialog opens that lets you enter experimental data.<br />
+<br />
+<div class="img" align="center"><table cellpadding="0" cellspacing="0"><tr><td><img alt="" src="ParameterEstimation_02.png" style="width:100%" border="0"  /></td></tr><tr><td class="mini">Experimental&nbsp;Data&nbsp;Dialog</td></tr></table></div><br />
+<br />
+To read a data file, click on the open button beside the label File at the top of the dialog and choose a file that contains experimental data from the file dialog. The data file should contain experimental data grouped in experiments. To support automatic detection of experiments these must be separated by one or more empty lines. But manually definition of experiments is allowed. The data for an experiment must be a table of values. The columns of the table are separated by a user specifiable separation character. The default and recommended character is the &lt;tab&gt;-character. The first line of each experiment is treated as the row containing the column headings. However, this is only a default and the header row can be specified by the user. The header row may be anywhere in the file the data is contained. The purpose of the header row is to ease the interface to the data file and may be omitted. To tell COPASI that no header row is included uncheck the box next to the header. Once COPASI has read a file, you have to specify some information for each experiment included in the file. To select an experiment you choose it from the right selection box. The first thing you need to specify is whether the data belongs to a Steady-State analysis or to a time course simulation. You also have to associate the individual columns of input data to elements of the model. For this, you click on the ... button in each row and select the corresponding object in the selection dialog. It is mandatory that COPASI knows about the meaning of each data column. The data in a column can have four different types, which are:<br />
+<dl><dt><b>ignored</b></dt><dd> Values in columns marked ignored are not taken into account during parameter fitting. Columns of this type may not be associated with elements of the model.</dd></dl><br />
+<dl><dt><b>independent</b></dt><dd> Independent data is data which needs to be set for the correct simulation of the experiment row. Possible model elements are initial concentrations or kinetic parameters. Note, for a time course experiment only the independent data in the first data row is set before the start of the simulation. Columns of this type must be associated with elements of the model.</dd></dl><br />
+<dl><dt><b>dependent</b></dt><dd> The dependent data is the data, which COPASI tries to fit by minimizing the sum of squares between the simulated data and the experimental data. Columns of this type must be associated with elements of the model.</dd></dl><br />
+<dl><dt><b>Time</b></dt><dd> This column type is only available for time course experiments. Obviously only one column with this data type may exist. COPASI attempts to automatically identify the column containing the time by looking at the column headers. You may correct COPASI's guess. This column may not be mapped to any model elements.</dd></dl><br />
+<br />
+The last column in each of the lines contains the weight for the specific data set. If it is calculated by COPASI (using one of the modes mentioned above) it is surrounded by brackets. If you want to change this value you have to remove the brackets and enter a different value. If you want to go back to automatically calculated values you can delete the content of the box completely and COPASI will return to automatically calculating the weight.<br />
+<br />
+If you don't want COPASI to use the whole dataset of an experiment, but only a subset, you can specify the start and end line for this subset. You also may delete experiments completely. If you do so, you may notice that the New Document will be enabled. Pressing it will add the first not used experiment of the currently active file. Since it is commonly the case that all experimental data within one file has the same format, COPASI allows you to copy information of experimental data from the previous to the current or form the current to the next experiment within a file by selecting from previous and to next. If COPASI detects that experimental data descriptions are identical it will automatically set the from previous check box and disable editing the current experiment. Should you want to modify it you will have to unmark the check box first.<br />
+<br />
+If you have more than one file, you can load additional data files and process them in the same manner. Once you are finished defining your datasets for the fitting, you close the data dialog with the OK button. Before you can start the parameter estimation process, you have to choose the method by which the fitting will be done and maybe set some method parameters. Most of the time, the default parameter values should do. The method choosing is done at the bottom of the dialog by selecting the method from the drop down list. For an explanation of the individual methods, please consult the methods section.<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

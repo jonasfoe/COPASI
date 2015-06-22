@@ -1,0 +1,29 @@
+---
+title: "Reactions"
+previous: "Support/User_Manual/The_Model_in_COPASI/Global_Quantities"
+next: "Support/User_Manual/The_Model_in_COPASI/Functions"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+A reaction is a process by which species will be consumed or produced. It is characterized by a description of how fast this happens. It contains a list of substrates, i.e. the species that are consumed if the reaction takes place, along with the information about how many molecules of each substrate are consumed when the reaction event happens once (the stoichiometry). Correspondingly there is a list of products with the respective stoichiometries. Reactions without substrates are possible, as well as reactions without products. However reactions without both substrates and without products are not allowed. In addition so called modifiers can be specified which are neither produced nor consumed in the reaction but which have influence on the speed of the reaction.<br />
+<br />
+The speed of the reaction is always specified by a reference to a kinetic function. The kinetics can depend on the concentrations of the substrates, products, and modifiers, on the volume of a compartment, on local or global parameters, and on the simulation time. The difference between local and global parameters is that local parameters only specify a numerical value of a kinetic parameter for one specific reaction. Global parameters can be used in several reactions.<br />
+<br />
+Reactions can be reversible or irreversible. Kinetic functions for irreversible reactions should always be positive. Also they should not depend on the concentration of the products (only on the concentrations of the substrates and modifiers). While all built in kinetic functions satisfy these conditions, they are not enforced for user defined functions.<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

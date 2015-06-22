@@ -1,0 +1,76 @@
+---
+title: "Video production"
+previous: "Hidden/Intranet/Optimisation_Benchmarks"
+next: ""
+sitemap: false
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<br />
+This page describes the procedures and resources that are used for production of videos for the <a target="_blank" href="http://www.youtube.com/user/CopasiTutorials" rel="external">CopasiTutorials YouTube channel</a>. We seek some uniformity of the videos, so that they are recognizable as from the same source. Despite this, it is useful to show different OS versions of COPASI, to show that the software is portable. This means that different software applications may need to be used to build the videos, depending on whether they are done on a Mac, Linux or Windows.<br />
+<br />
+<h3 name="Structure_of_a_video_tutorial">Structure of a video tutorial</h3>
+All our video tutorials are structured in the following way:<br />
+<ol><li><b>Title</b> - This includes a short animation followed by the title of the tutorial. The animation is ready made and should be used on all tutorials. The title should be made from a template slide from <i>Gimp</i>.
+</li><li><b>Introduction</b> - A very brief oral explanation of what the tutorial is about, this should display a still image of COPASI.
+</li><li><b>Tutorial</b> - This is the bulk of the video. The tutorial should be mainly a hands-on example of the functionality, with screen capture of the actions. Parts of this can include still images and maybe some camera zooming/panning. It is important to plan carefully the model used for example, so that the main issues are covered. Practiceis important so that the action is smooth (and avoid moving the cursor when not needed!)
+</li><li><b>Ending</b> - The ending displays acknowledgements, including names of the COPASI team members, and, importantly, the source of funding. It is best if each video produced identifies the source of funding of the group that made it (this is to allow easy attribution under each grant). Logos of the agencies should be included. The videos should be licensed under the CC-BY-SA license. The year of production should be indicated and the author(s) of the video (such as &quot;(P) 2013 by Pedro Mendes and Brian Klahn&quot;).
+</li></ol>
+<br />
+<h3 name="Software">Software</h3>
+<h4 name="Screen_capture">Screen capture</h4>
+A series of programs can do video capture:<br />
+<ul><li><a target="_blank" href="http://recordmydesktop.sourceforge.net" rel="external">recordmydesktop</a> and its QT or Python front-ends
+</li><li><a target="_blank" href="http://www.ffmpeg.org/" rel="external">FFmpeg</a> which could be controlled by <a target="_blank" href="http://recorditnow.sourceforge.net/" rel="external">RecordItNow</a>.
+</li><li>the video editors can also do this (<a target="_blank" href="http://www.kdenlive.org/" rel="external">kdenlive</a>, etc)
+</li><li>the Mac has a native way of capturing video too.
+</li></ul>
+<h4 name="Sound_recording">Sound recording</h4>
+It is recommended that a good quality sound recorder be used (for example we use the <a target="_blank" href="http://www.amazon.com/Zoom-H2N-H2n-Handy-Recorder/dp/B005CQ2ZY6/ref=dp_ob_title_ce" rel="external">Zoom H2</a> at VBI). If this is not available, you can try using your own computer sound card but <i>use a good microphone</i>! (at least a microphone from headphones). Never use the embedded microphones on laptops, these produce lots of noise in the background.<br />
+<br />
+<i>audio editing</i>: <a target="_blank" href="http://audacity.sourceforge.net/" rel="external">Audacity</a> is the best tool.<br />
+<h4 name="Stills_and_animation">Stills and animation</h4>
+<i>bitmap editing</i>: <a target="_blank" href="http://www.gimp.org/" rel="external">Gimp</a> is the preferred tool, but any bitmap editor will work. However note that below there are template files for using with Gimp (.xcf files)<br />
+<i>bitmap animation</i>: <a target="_blank" href="http://www.deniscarl.com/stills2dv/" rel="external">stills2dv</a> is a tool that allows a camera to pan, zoom, etc. over a bitmap. This is used to create the credits sequence at the end. It can be used for other purposes too (like panning over a paper, etc.). This is a command line tool that is controlled by simple text config files (examples below under <i>Media</i>)<br />
+<i>video encoding</i>: if you need to create a video out of several bitmap frames you can use <i>mencoder</i> which is part of <a target="_blank" href="http://www.mplayerhq.hu" rel="external">MPlayer</a>. For an example of how to use it see the <i>encode-credits.sh</i> file below (under <i>Media</i>).<br />
+<h4 name="Video_editing_and_production">Video editing and production</h4>
+This should be a linear video editor. The preferred one is <a target="_blank" href="http://www.kdenlive.org/" rel="external">kdenlive</a>, however similar results could be achieved with other tools like <a target="_blank" href="http://www.openshot.org/" rel="external">OpenShot</a> or <a target="_blank" href="http://cinelerra.org/" rel="external">Cinelerra</a>.<br />
+<h3 name="Media">Media</h3>
+These media are for creation of the opening and closing of the videos.<br />
+<h4 name="Opening">Opening</h4>
+<i>Opening video</i>: <a  href="opening720.mpg" rel="">opening700.mpg (1440x720)</a> or <a  href="opening600.mpg" rel="">opening600.mpg (800x600)</a> . Put this right at the very beginning. (This video has sound).<br />
+<br />
+<i>Title frame</i>: <a  href="CopasiTutorialsTitle.xcf" rel="">CopasiTutorialsTitle.xcf</a> is a Gimp file to generate the title frame. Edit the text in white to reflect your video title. Then generate a png that will be faded in from the opening video.<br />
+<br />
+<h4 name="Closing_credits">Closing credits</h4>
+Closing credits are a rolling scene, created with stills2dv software. This requires a base image with the credits that is layed out as a large bitmap, a stills2dv script (which specifies how the camera rolls over the large bitmap), and a shell script that runs all the processes together.<br />
+<br />
+<i>Base image</i>: <a  href="credits.xcf" rel="">credits.xcf</a>, this is a Gimp image using layers. Change any text that is needed:<br />
+<ul><li>add more members to the teams if needed
+</li><li>change the (P) line (use the author name)
+</li><li>change the licensing line (has author name)
+</li><li>change the text on funding, according to the grant that sponsors your work
+</li><li>change the logos at the bottom to your institution's and your funder's
+</li></ul>
+Then export the file as a PNG.<br />
+<br />
+<i>stills2dv script</i>:  <a  href="credits.s2d" rel="">credits.s2d</a> you may need to tweak this if you want to change the timings, otherwise no need to touch it.<br />
+<br />
+<i>shell script</i>: <a  href="encode-credits.sh" rel="">encode-credits.sh</a> this will run stills2dv and then mencoder to create an AVI with the credits. This AVI is what you add to the end of your video.<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

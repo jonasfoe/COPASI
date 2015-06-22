@@ -1,0 +1,29 @@
+---
+title: "Sensitivities Calculation"
+previous: "Support/User_Manual/Methods/Lyapunov_Exponents_Calculation"
+next: "Support/User_Manual/Methods/Time_Scale_Separation_Methods"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+COPASI allows the calculation of generalized sensitivities of a model. This is done by numerical differentiation using finite differences. The user specifies a list of functions to be differentiated and one or two lists of variables. The differentiation is performed with respect to these variables. Since every function in the list is differentiated with respect to every variable in the list the result will generally be a two-dimensional matrix. If also a list of variables for second derivatives is given then all the first derivatives are again differentiated with respect to all the variables in the second list. The result will be a three-dimensional array of second derivatives.<br />
+<br />
+<h3 name="Options_for_sensitivities_calculation">Options for sensitivities calculation</h3>
+<dl><dt><b>Delta factor</b></dt><dd> This is used to determine the delta value for the finite difference numerical differentiation. The delta is calculated as the product of the delta factor and the current absolute value of the variable. If the resulting value is smaller than the &quot;Delta minimum&quot; parameter, it is discarded and the &quot;Delta minimum&quot; value is used instead. Default value is <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: +3px; height: 12; width: 27;" src="4d92e0c08889f50a40d155f0352127a6.png" alt="$10^{-6}$"></dd></dl><br />
+<dl><dt><b>Delta minimum</b></dt><dd> The minimal delta for numerical differentiation. Default value is <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: +3px; height: 12; width: 32;" src="9c5defbc0b600fb75b77db5999a14ea1.png" alt="$10^{-12}$">.</dd></dl><br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

@@ -1,0 +1,86 @@
+---
+title: "Mutliple Models"
+previous: "Hidden/Intranet/ICSB_2008"
+next: "Hidden/Intranet/JointAnnouncement"
+sitemap: false
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+A while ago I proposed some changes to COPASI that would allow the COPASI backend to work with several models at the same time. Right now, some code in the backend still assumes that there is only one instance of CCopasiDataModel called CCopasiDataModel::Global.<br />
+<br />
+Why would it be necessary to work with several models at the same time? Here are some scenarios I can think of:<br />
+<br />
+a) One of our PhD Students wants to compare several models for this, she needs to be able to handle several models at the same time.<br />
+<br />
+b) Have libCOPASI as a dynamic library on a system and allow several programs to use that one library instead of requiring the programs to be statically linked against libCOPASI<br />
+<br />
+<b>shoops:</b><br />
+Having a library which can be dynamically linked can be easily solved with any data structure. To achieve this we need to move all statically available objects into an object which is generated at load time of the library. This object will only be available to the program which loaded the library, i.e., multiple programs loading the library will see their own version of the object.  Thus the only thing to change below is that the root container must be created at load time. We need to carefully look at all objects (data and methods) which a created as static not just the one below.<br />
+<br />
+c) Have a batch processing system in COPASI that would just copy a datamodel and it's tasks to a batch queue and process one after the other or maybe process several tasks at oncer, depending on the number of available processors on the system. This actually greatly overlaps with another taks we have to tackle, which is to parallelize the CCOPASI backend itself.<br />
+<br />
+There have been some emails on the development mailing list and I will try to summarize what was discussed in this mail.<br />
+<br />
+When we first looked at the COPASI code to find out how to tackle this task best, we found that CCopasiDataModel currently is not a subclass of CCopasiContainer, that is it can not contain children of its own. Right now it delegates that task to a root container which is an instance of CCopasiContainer.<br />
+<br />
+Stefan had a suggestion how to change this data structure which includes making CCopasiDataModel a subclass of CCopasiContainer and moving all the children that are specific to a certain model to CCopasiDataModel and only leave those attributes in the original root container that all models have in common. His suggestion looks like this:<br />
+<br />
+<pre class="codelisting" dir="ltr" style="overflow:auto;">Version
+Root Container (derived from CCopasiContainer)
+ + Configuration
+ + Function list
+ + Key Factory
+ + List of Datamodels
+    + Data model (derived from CCopasiDataModel, CCopasiContainer)
+    |  + COPASI Filename
+    |  + Model (CModel)
+    |  + Task List
+    |  + Report List
+    |  + Plot List
+    |  + Layout List
+    |  + Rename Handler
+    |  + SBML Filename
+    |  + COPASI2SBMLMap
+    |  + GUI
+    + ...</pre><br />
+<b>shoops:</b><br />
+I made a minor change by moving the version out of the root container.<br />
+<br />
+In principle we seem to agree on the general idea, but I have some concerns with the structure suggested by Stefan.<br />
+<br />
+Those are the points that I think are still unsolved with this proposal:<br />
+<ol><li> in scenario b) above, several programs would use one instance of libCOPASI and if we implement the structure like proposed above, all the programs would see all models. This means if user A runs his program and user B runs a program at the same time, the two programs can access the other programs data. I don't think this is a good idea. Therefore my suggestion would be not to have a common global datastructure to hold the models, but each program generates it's own models and the data structures it need to store them.
+</li><li> the same basically applies to the function database. Two programs running at the same time can access the same function database and manipulate it at the same time. This is usually not good since program A should not be able to modify (nor see) function definitions created by program B and vice versa. And even if it was the same program, the program could be working with two models that both have a function definition with the same name, but different mathematical content. If we only have one global function database, the functions definitions could not both keep their name (actually they could but that we be confusing).
+</li><li> Also implementing a batch system for queuing tasks would not be possible since the user could not change functions that are currently being used be a task in the queue.
+</li><li> I also think that the configuration should not be a global property because if two users run a program against a dynamic libCOPASI, each user probably wants to use the configuration stored in his/her HOME directory. Especially once we have some means to allow users to create a custom function database in the configuration directory.
+</li><li> Another thing that probably has to be changed is the message stack. If two programs run at the same time, each program should get it's own messages, and if a program works with several models, each model should actually have it's own message stack (e.g. if a program works with several models and wants to export them to SBML in several threads).
+</li></ol>
+<b>shoops:</b><br />
+<ul><li> I agree with the last point. It is correct each program needs to have its own message stack. For parallel processing we need to make sure that the thread creating the message is identified in the message.
+</li><li> I think all other items can be resolved with my comment regarding the requirement of having a DLL version of the COPASI libraries.
+</li></ul>
+<br />
+Obviously extending COPASI to work with several models at the same time greatly overlaps with what would have to be done to parallelize the COPASI backend, so maybe it would be a good idea to tackle both problems at the same time if possible. Because I think having local function databases and message stacks would also be beneficial to the parallelization effort.<br />
+<b>shoops:</b><br />
+I disagree about this. Having multiple programs accessing the same library is a surprisingly different problem than several threads accessing the same runtime objects.<br />
+<br />
+Some of this has come out of the discussion on the COPASI mailing list and some are my person thoughts on the topic, so I would be glad if other would also contribute their own thoughts and opinions.<br />
+<br />
+<br />
+<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

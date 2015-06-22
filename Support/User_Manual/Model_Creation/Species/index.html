@@ -1,0 +1,62 @@
+---
+title: "Species"
+previous: "Support/User_Manual/Model_Creation/Compartments"
+next: "Support/User_Manual/Model_Creation/Reactions"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+Adding new species works exactly the same as adding new compartment, so we strongly suggest reading the  section if you haven't already done so. Here we will just cover the differences between adding a compartment and adding a species.<br />
+<br />
+<div class="img" align="center"><table cellpadding="0" cellspacing="0"><tr><td><img alt="" src="Species_01.png" style="width:100%" border="0"  /></td></tr><tr><td class="mini">Species&nbsp;Table&nbsp;with&nbsp;new&nbsp;Entry</td></tr></table></div><br />
+<br />
+First of all in order to add a new species, as it is called in COPASI, you have to navigate to the Species branch of the object tree which is located in the Model-&gt;Biochemical branch directly below the Compartments. Here again you see a table (see above), but this table consists of nine columns. This is due to the fact that a species has more parameters than a compartment. The Status and Name columns should already be familiar from the compartments table. The other columns specify the compartment where the species is located in, the way the concentration of the species is calculated, initial concentration of the species, the transient concentration, the rate of change of the species as well as two mathematical expressions used to determine the initial concentration and the transient one, respectively. For newly created species the rate will be empty since it needs to be calculated first, e.g. during a <a title="OD.Time.Course.Simulation" href="/../../../Support/User_Manual/Tasks/Time_Course_Simulation">time course simulation</a>.<br />
+<br />
+When a species is added and the model does not contain a compartment yet, COPASI will automatically add a new compartment to the model and the species will be added to this compartment. If there already is one or more compartments, the species will be added to the first compartment in the list. This can be changed later.<br />
+<br />
+To add a new species you have the same three ways as for adding compartments and if you are not familiar with those, we recommend to read that section first.<br />
+<br />
+<div class="img" align="center"><table cellpadding="0" cellspacing="0"><tr><td><img alt="" src="Species_02.png" style="width:100%" border="0"  /></td></tr><tr><td class="mini">Dialog&nbsp;for&nbsp;changing&nbsp;Species&nbsp;Parameters</td></tr></table></div><br />
+<br />
+Editing the parameters of a species also works exactly the way it does for compartments. Either you double click on a species entry in the table, or you use the object tree to navigate to the species leaf you intend to edit. The parameters of a species lying on below the separator line are determined automatically and can not be changed by the user. The parameters that you can change are the Species Name, the Compartment the species belongs to, and how the concentration is calculated. Unless the Simulation Type is set to <i>assignment</i>, its Initial Concentration could also be changed.<br />
+<br />
+If you would rather change the initial particle number instead of the Initial Concentration, you should select <i>Particle Numbers</i> in the drop down list in the menu bar at the top. This will change all displays in the program to use particle numbers rather than concentrations and you can now enter the Initial Particle Number (note the label will be changed). The volume used to calculate particle numbers from concentration comes from the compartment associated with the species.<br />
+<br />
+If you change back to initial concentration, COPASI will internally recalculate the initial particle number.  In some situations COPASI will prevent the user from changing the initial concentration. This is done when changing the concentration would lead to circular dependencies during the calculation of all initial values. The cause for this is most likely an assignment rule for the containing compartment. In such a case it is still possible to change the initial particle number.<br />
+<br />
+Normally the concentration of a species is determined by its initial concentration and by the reaction kinetics of the reactions it participates in either as a substrate or a product. The reactions are listed at the bottom of the species widget (see above).<br />
+<br />
+<table class="normal"><caption>Species Simulation Types</caption><colgroup><col width="10%" /><col width="90%" /></colgroup><tr><td class="heading">Name </td><td class="heading"> Description</td></tr><tr><td class="odd">reactions </td><td class="odd"> the concentration/amount of the species is determined by the kinetic laws of the reactions that modify the species</td></tr><tr><td class="even">fixed </td><td class="even"> the concentration/amount of the species has a constant value (which corresponds to the given initial value)</td></tr><tr><td class="odd">assignment </td><td class="odd"> the concentration/amount of the species is determined by evaluating the given mathematical expression</td></tr><tr><td class="even">ode </td><td class="even"> the rate of change of the species concentration/amount is determined by an ordinary differential equation</td></tr></table><br />
+Newer versions of COPASI also allow the concentration of a species to be determined by a mathematical expression or by providing an ordinary differential equation for its rate of change. In order to specify whether a species has a constant concentration/amount, it is determined by reactions, or its concentration/amount is calculated on the fly according to a mathematical expression, the drop down list called Simulation Type should be used. It contains four entries listed on the above table.<br />
+<br />
+If you want the species to be calculated from a given mathematical expression you select the entry called <i>assignment</i> from the drop down list. This enables a text field where the mathematical expression can be entered (see below). Likewise if you want the rate of change of the species concentration to be determined by an ordinary differential equation (ode) you select the entry called <i>ode</i> from the drop down list.<br />
+<br />
+<div class="img" align="center"><table cellpadding="0" cellspacing="0"><tr><td><img alt="" src="Species_03.png" style="width:100%" border="0"  /></td></tr><tr><td class="mini">Species&nbsp;Widget&nbsp;with&nbsp;Assignment&nbsp;Rule</td></tr></table></div><br />
+<br />
+<div class="img" align="center"><table cellpadding="0" cellspacing="0"><tr><td><img alt="" src="Species_04.png" style="width:100%" border="0"  /></td></tr><tr><td class="mini">Species&nbsp;Widget&nbsp;with&nbsp;constant&nbsp;Species&nbsp;and&nbsp;Initial&nbsp;Assignment</td></tr></table></div><br />
+<br />
+Not only the transient concentration of a species can be specified as a mathematical expression, but also the initial concentration of the compartment. If you want to specify such a mathematical expression for the initial concentration of a species, check the check box called Use Initial Expression.<br />
+<br />
+An initial expression can be specified unless the Simulation Type drop down list is set to <i>assignment</i>. Since the given assignment automatically acts as an initial assignment, there is no need to specify an additional initial assignment.<br />
+<br />
+<div class="img" align="center"><table cellpadding="0" cellspacing="0"><tr><td><img alt="" src="Species_05.png" style="width:100%" border="0"  /></td></tr><tr><td class="mini">Species&nbsp;Widget&nbsp;with&nbsp;ODE&nbsp;Rule&nbsp;and&nbsp;Initial&nbsp;Assignment</td></tr></table></div><br />
+<br />
+The mathematical expressions that can be specified for rules and initial assignments may contain the same elements as the expressions used to defined function definitions. For a detailed description of the elements see User Defined Functions.<br />
+<br />
+When it comes to referencing values of other model entities within mathematical expressions, there is a slight difference between the mathematical expression for a rule and that for an initial assignment. The former may reference transient values of other model entities whereas the latter may only reference initial values of other model entities.<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

@@ -1,0 +1,38 @@
+---
+title: "ILDM (Deuflhard)"
+previous: "Support/User_Manual/Methods/Time_Scale_Separation_Methods"
+next: "Support/User_Manual/Methods/Time_Scale_Separation_Methods/Modified_ILDM"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<br />
+The ILDM (Deuflhard) method utilizes the algorithm developed by Deuflhard and Heroth (see [<a title="OD.Bibliography" href='/../../../Support/User_Manual/Bibliography#Deuflhard96'>Deuflhard96</a>, <a title="OD.Bibliography" href='/../../../Support/User_Manual/Bibliography#Zobeley05'> Zobeley05</a>, <a title="OD.Bibliography" href='/../../../Support/User_Manual/Bibliography#Surovtsova09'>Surovtsova09</a>] for details).<br />
+<br />
+<h3 name="Basic_concept_of_decomposition_into_quot_slow_quot_and_quot_fast_quot_modes">Basic concept of decomposition into &quot;slow&quot; and &quot;fast&quot; modes</h3>
+The block slow &mdash; fast decomposition of the Jacobian is performed in two steps:<br />
+<ul><li>First a real Schur decomposition yields a block upper triangular matrix.
+</li><li>In a second step the desired decoupled  structure of the transformed Jacobian is obtained by solving a Sylvester  equation.
+</li></ul>
+<br />
+This basis procedure results in a transformation of state vectors in new modes, which are then separated in slow and fast modes. Accordingly, the system dynamics of a full reaction system comprising <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: +2px; height: 6; width: 9;" src="a1e9521da54cd8d534a89ae87f49eef3.png" alt="$n$"> ODEs is reduced to a DAE system consisting of <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: -3px; height: 11; width: 34;" src="f94c35b3d02a4619c80096d88cad1110.png" alt="$n_{\mbox{slow}}$"> ordinary differential equations and <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: -3px; height: 11; width: 59;" src="bd443a49017fe361caf79f76f10d6961.png" alt="$n-n_{\mbox{slow}}$"> algebraic equations. The number <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: -3px; height: 11; width: 34;" src="f94c35b3d02a4619c80096d88cad1110.png" alt="$n_{\mbox{slow}}$"> of slow  variables is calculated iteratively using the tolerance criterion of Deuflhard and Heroth. The method implemented in COPASI has an additional focus on the reduction of the underlying biochemical network and not only on the reduction of the mathematical equations. For this purpose COPASI performs the analysis of transformation matrices derived after solving the Sylvester equation.<br />
+<br />
+<h3 name="The_implementation_in_COPASI">The implementation in COPASI</h3>
+The Jacobian is calculated by using finite differences. The Schur transformation and the solution of Sylvester equation are performed using CLAPACK. Results in COPASI  are displayed in  four matrices and four vectors. The matrix &quot;Species&quot;  provides the contribution of each metabolite to  every mode, whereas the table &quot;Modes&quot;  summarizes the mode distribution for each metabolite. Vector &quot;Slow space&quot;  (&quot;Fast space&quot; respectively)  displays the contribution of each concentration variable to the set of all slow (fast) modes. The matrices &quot;Reactions contributions to modes&quot;  and &quot;Reactions distribution between modes&quot;  are the product of stoichiometric matrix and transformation matrix normed by column and row respectively. Two vectors &quot;Reactions slow space&quot; and &quot;Reactions fast space&quot; provide the contribution of each reaction to the slow and fast spaces. The metabolites with largest   contribution to the fast space could be supposed to be &quot;fast&quot; and thus, its ordinary differential equation is replaced by the corresponding algebraic equation (i.e. with the same right-hand side). In the specific case that a subset of species does not contribute to the slow space (but contributes only to the fast space), the time-scale decomposition results in a dissection of the reaction network. The reactions dominating in the fast modes are fast reactions.<br />
+<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

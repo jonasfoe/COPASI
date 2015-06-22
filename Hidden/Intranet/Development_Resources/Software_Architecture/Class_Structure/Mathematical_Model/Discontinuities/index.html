@@ -1,0 +1,39 @@
+---
+title: "Discontinuities"
+previous: "Hidden/Intranet/Development_Resources/Software_Architecture/Class_Structure/Mathematical_Model/Dependency_Graph"
+next: "Hidden/Intranet/Development_Resources/Software_Architecture/Class_Structure/Mathematical_Model/Event"
+sitemap: false
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+<h3 name="Discontinuities">Discontinuities</h3>
+Discontinuities can be introduced into the mathematical model through nodes of type<code> CHOICE|IF</code>,<code> FUNCTION|CEIL</code>,<code> FUNCTION|FLOOR</code>, and<code> OPERATOR|MODULUS</code>. These discontinuities are in general not handled correctly in any integrator as they might be missed or recognized to late based on the internals of the integration method. To deal with this issue we need to inform the integrator whenever a discontinuous change occurs. We can use the existing event and root finding method to achieve this. What is missing is the creation of these events.<br />
+<br />
+<h4 name="Algorithm">Algorithm</h4>
+<ol><li> Create the Math Model and its dependency tree.
+</li><li> Determine all nodes which may introduce discontinuities in expressions for objects and event triggers.
+</li><li> For each node create an object of type discontinuity where the associated expression's root node is derived from the discontinuous node.
+</li><li> We replace the original discontinuous node with a node pointing to the value of the object created in previous step
+</li><li> Create events for the each discontinuity object.
+</li></ol>
+<table class="normal"><caption>Trigger Expression for Events created by Dicontinuities</caption><colgroup><col width="33% " /><col width=" 67%" /></colgroup><tr><td class="heading"><b>Node Type</b> </td><td class="heading"> <b>Event Trigger</b></td></tr><tr><td class="odd">CHOICE | IF </td><td class="odd"> If expression</td></tr><tr><td class="even">FUNCTION | CEIL </td><td class="even"> sin(Ï€ x) &gt; 0 &nbsp; (sin is zero whenever x is an integer)</td></tr><tr><td class="odd">FUNCTION | FLOOR </td><td class="odd"> sin(Ï€ x) &gt; 0</td></tr><tr><td class="even">OPERATOR | MODULUS </td><td class="even"> sin(Ï€ x) &gt; 0 ||  sin(Ï€ y) &gt; 0</td></tr></table><br />
+<br />
+<ol><li> For each node of type<code> CHOICE | IF</code>,<code> FUNCTION | CEIL</code>, and<code> FUNCTION | FLOOR</code> we create a mathematical object of type<code> Discontinuous</code>, which is calculated by the expression derived from the discontinuous node.
+</li><li> For each discontinuous node created in step 1), which depends on state values of type<code> ODE</code>,<code> ReactionIndependent</code>, and<code> ReactionDependent</code> and which is used in the calculation of rates of type<code> ODE</code>,<code> ReactionIndependent</code>, and<code> ReactionDependent</code> we add an event.
+</li></ol>
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

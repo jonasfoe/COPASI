@@ -1,0 +1,40 @@
+---
+title: "Genetic Algorithm"
+previous: "Support/User_Manual/Methods/Optimization_Methods/Evolutionary_Strategy_SRES"
+next: "Support/User_Manual/Methods/Optimization_Methods/Genetic_Algorithm_SR"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+The genetic algorithm (GA) [<a title="OD.Bibliography" href='/../../../Support/User_Manual/Bibliography#Baeck97'>Baeck97</a> <a title="OD.Bibliography" href='/../../../Support/User_Manual/Bibliography#Baeck93'>Baeck93</a> <a title="OD.Bibliography" href='/../../../Support/User_Manual/Bibliography#Michalewicz94'>Michalewicz94</a> <a title="OD.Bibliography" href='/../../../Support/User_Manual/Bibliography#Mitchell95'>Mitchell95</a>] is a computational technique that mimics evolution and is based on reproduction and selection. A GA is composed of individuals that reproduce and compete, each one is a potential solution to the (optimization) problem and is represented by a &quot;genome&quot; where each gene corresponds to one adjustable parameter. At each generation of the GA, each individual is paired with one other at random for reproduction. Two offspring are produced by combining their genomes and allowing for &quot;cross-over&quot;, i.e., the two new individuals have genomes that are formed from a combination of the genomes of their parents. Also each new gene might have mutated, i.e. the parameter value might have changed slightly. At the end of the generation, the algorithm has double the number of individuals. Then each of the individuals is confronted with a number of others to count how many does it outperform (the number of wins is the number of these competitors that represent worse solutions than itself). All the individuals are ranked by their number of wins, and the population is again reduced to the original number of individuals by eliminating those which have worse fitness (solutions).<br />
+<br />
+Many features of a GA may be varied. The details of this particular implementation of the GA for optimization of biochemical kinetics are:<br />
+<ul><li> Parameters are encoded in genes using floating-point representation, rather than the more usual binary representation.
+</li><li> Mutation is carried out by adding to the gene a random number drawn from a normal distribution with zero mean and a standard deviation of 10% of the parameter value. Whenever this makes the parameter (gene) exceed one boundary, it is set to that boundary value.
+</li><li> Cross-over is always performed at gene boundaries so that no gene is ever disrupted. The number of cross-over points is a random number between zero and half the number of adjustable parameters (uniform distribution).
+</li><li> Selection is done by a tournament where each individual competes with a number of others equal to 20% the population size. The competitors are chosen at random.
+</li><li> The initial population contains one individual whose genes are the initial parameter values, the genes of all other individuals are initialized to a random value between their boundaries. If the boundaries span two orders of magnitude or more, the random distribution is exponential, otherwise normal.
+</li><li> Whenever the fittest individual has not changed for the last 10 generations, the 10% less fit individuals are replaced by individuals with random genes. When the fittest individual has not changed for 30 generations, the worse 30% are substituted by individuals with random genes. When the fittest individual has not changed for 50 generations, the worse 50% are substituted by individuals with random genes. This procedure helps the algorithm escape local minima and is somewhat equivalent to increasing the mutation rate when the population has become uniform.
+</li></ul>
+<br />
+<h3 name="Options_for_Genetic_Algorithm">Options for Genetic Algorithm</h3>
+<dl><dt><b>Number of Generations</b></dt><dd> The parameter is a positive integer value to determine the number of generations the algorithm shall evolve the population. The default is '200'.</dd></dl><br />
+<dl><dt><b>Population Size</b></dt><dd> The parameter is a positive integer value to determine the size of the population, i.e., the number of individuals that survive after each generation. The default is '20'.</dd></dl><br />
+<dl><dt><b>Random Number Generator</b></dt><dd> The parameter is an enumeration value to determine which random number generator this method shall use. COPASI provides two random number generators R250 [<a title="OD.Bibliography" href='/../../../Support/User_Manual/Bibliography#Maier91'>Maier91</a>] (selected through the value 0) and the <a target="_blank" href="http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt.html" rel="external">Mersenne Twister</a> [<a title="OD.Bibliography" href='/../../../Support/User_Manual/Bibliography#Matsumoto98'>Matsumoto98</a>] (selected through the value 1 (default)).</dd></dl><br />
+<dl><dt><b>Seed</b></dt><dd> The parameter is a positive integer value to determine the seed for the random number generator. A value of zero instructs COPASI to select a &quot;random&quot; value.</dd></dl><br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

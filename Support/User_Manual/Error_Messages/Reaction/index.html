@@ -1,0 +1,69 @@
+---
+title: "Reaction"
+previous: "Support/User_Manual/Error_Messages/COPASI_Method"
+next: "Support/User_Manual/Error_Messages/Chemical_Equation"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+CReaction is COPASIs internal reaction representation. Many of the error messages in this class are related to SBML import/export.<br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>CReaction (1)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>Function 'FUNCTIONNAME' not found.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>INTERNAL. A reaction tries to use a function as a kinetic law that is unknown.</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>CReaction (2)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>In Reaction 'REACTIONNAME' the compartment could not be guessed.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>!!!UNDOCUMENTED!!!</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>CReaction (3)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>Reaction 'REACTIONNAME' has no substrates and no products.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>COPASI found a reaction with neither substrates nor products. A reaction needs to have at least one substrate or one product.</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>CReaction (4)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>Only Species, Compartments or Parameter object nodes are allowed in kinetic functions.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>In kinetic functions, only references to compartments, species and/or parameters are allowed. For explicit time dependent models, time can also be referenced from a kinetic function. If this error message occurs, COPASI has found a reference that is neither a reference to a compartment, a species, a parameter or the time.</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>CReaction (5)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>Nodes of type 'TYPENAME' are not implemented yet.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>INTERNAL</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>CReaction (6)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>Nodes of type VARIABLE must not appear in an expression.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>INTERNAL</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>CReaction (7)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>Species object 'OBJECTNAME' is neither substrate, product nor modifier to reaction 'REACTIONNAME' but it is used in the kinetic law.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>During SBML import COPASI found a name in a kinetic law that is neither a parameter, a substrate, product or modifier to the reaction. The most likely cause for this that a modifier has not been declared in the listOfModifiers of the reaction.</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>CReaction (8)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>Could not find variable with name 'VARIABLENAME'.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>INTERNAL</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>CReaction (9)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>Could not find object for key 'KEY'.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>INTERNAL</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>CReaction (10)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>Parameter 'PARAMETER' is a vector.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>INTERNAL</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>CReaction (11)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>Reaction 'REACTIONNAME' refers to unusable Function 'FUNCTIONNAME'.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>!!!UNDOCUMENTED!!!</div></dd></dl><br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

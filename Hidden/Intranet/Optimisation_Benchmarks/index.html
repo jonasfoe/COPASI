@@ -1,0 +1,40 @@
+---
+title: "Optimisation benchmarks"
+previous: "Hidden/Intranet/SBML_Level_3_issues"
+next: "Hidden/Intranet/Video_Production"
+sitemap: false
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<br />
+The purpose of this section is to collect models and studies on optimisation algorithms and parameter estimation.<br />
+<br />
+<h3 name="Benchmark_models">Benchmark models</h3>
+<h4 name="KinMMfit">KinMMfit</h4>
+This benchmark consists of parameter estimation of a couple of rate constants of the Michaelis-Menten mechanism from 5 progress curves.<br />
+<br />
+<table><tr><td > <b>File</b> </td><td > <b>purpose</b> </td></tr><tr><td >  <a  href="KinMMfit.cps" rel="">KinMMfit.cps</a> </td><td > Copasi file </td></tr><tr><td >  <a  href="KinMMfit.gps" rel="">KinMMfit.gps</a> </td><td > Gepasi file </td></tr><tr><td > <a  href="mmspect.txt" rel="">mmspec.txt</a> </td><td > Data file </td></tr></table><br />
+<br />
+<h4 name="Linear_3">Linear-3</h4>
+This benchmark is a parameter estimation for a network consisting of three metabolic reactions catalysed by enzymes that are also target of transcriptional control. The problem is described in a chapter by Mendes in the 2001 Foundations of Systems Biology book. The problem consisted of identifying 36 parameter values by fitting a single time course trajectory. In the original publication Gepasi was used to obtain the best fit through a combination of algorithms (evolutionary programming, followed by Hooke-Jeeves, followed by Levenberg-Marquardt).<br />
+<br />
+<table><tr><td > <b>File</b> </td><td > <b>purpose</b> </td></tr><tr><td >  <a  href="FoundationsSysBioFit.cps" rel="">FoundationSysBioFit.cps</a> </td><td > Copasi file </td></tr><tr><td >  <a  href="FoundationsSysBioFit.gps" rel="">FoundationSysBioFit.gps</a> </td><td > Gepasi file </td></tr><tr><td > <a  href="linear3.perturbations.dyn" rel="">linear3.perturbations.dyn</a> </td><td > Data file </td></tr></table><br />
+<br />
+<h3 name="Comparison_of_Gepasi_and_COPASI">Comparison of Gepasi and COPASI</h3>
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

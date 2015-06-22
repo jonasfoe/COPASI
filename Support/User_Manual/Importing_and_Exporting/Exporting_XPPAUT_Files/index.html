@@ -1,0 +1,32 @@
+---
+title: "Exporting XPPAUT files"
+previous: "Support/User_Manual/Importing_and_Exporting/Exporting_Berkeley_Madonna_Files"
+next: "Support/User_Manual/Diagrams"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<a target="_blank" href="http://www.math.pitt.edu/~bard/xpp/xpp.html" rel="external">XPPAUT</a> is a program to to solve differential equations. It is freely available for Windows, MacOS X, Linux/Unix and probably others. Its input format is very similar to the one from Madonna and COPASI starting from Version 4.1 Build21 can export models as a set of differential equations for use in XPPAUT.<br />
+<br />
+In order to export the set of differential equations to an XPPAUT file, you select the Export ODEs menu entry from COPASI's File menu. In the save dialog that shows up, you select <i>XPPAUT (*.ode)</i> from the File type drop down and specify the name of the file you want to write the ODEs to. After clicking on the Save the ODEs will be saved to the specified file.<br />
+<br />
+<div style=" text-align: left; float: none; clear: none;" class='caution' >Just as in Berkeley Madonna, XPPAUT does not support all functions supported by COPASI. Functions that are not supported are exported as <i>@</i>. Among the unsupported functions are <i>sec</i>, <i>csc</i>, <i>cot</i>, <i>sech</i>, <i>csch</i>, <i>coth</i>, <i>arcsec</i>, <i>arccsc</i>, <i>arccot</i>, <i>arcsech</i>, <i>arccsch</i>, <i>arccoth</i>, <i>factorial</i>, <i>modulus</i> and <i>logical xor</i>.<br />
+<br />
+The values of <i>TRUE</i> and <i>FALSE</i> are converted to <i>1</i> and <i>0</i> respectively upon export. <i>INFINITY</i> and <i>NAN</i> are exported as <i>INF</i> and <i>NAN</i> .  Since both <i>INF</i> and <i>NAN</i> are not supported keywords in XPPAUT, those files have to be modified before they can be used in XPPAUT.<br />
+<br />
+We also note that also <i>ceil</i> was mentioned in the XPPAUT documentation, files containing this function could not be loaded in XPPAUT.</div><br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

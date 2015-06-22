@@ -1,0 +1,42 @@
+---
+title: "Qt 4 Conversion Issues"
+previous: "Hidden/Intranet/GUI_Improvements"
+next: "Hidden/Intranet/Miriam_Annotation"
+sitemap: false
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<br />
+Qt Designer has changed significantly in the Qt 4 release. It is no longer an IDE. Instead, it concentrates on creating a robust form builder which can be extended and embedded in existing IDEs. That means, Qt Designer 4 is no longer able to edit source files (ie., .ui.h files), but can now read and edit .ui files without a need of project file (ie., .pro file). However, no implementation files will be generated anymore by uic. The .ui file is now converted only into a single header file containing the declaration and inline definition of a POD class.<br />
+<br />
+<h3 name="Custom_Signals_Slots_a_href_tiki_editpage_php_page_Signals_Slots_title_Create_page_Signals_Slots_class_wiki_wikinew_a_Connections">Custom Signals-Slots Connections</h3>
+<br />
+Signals-slots connections is the important thing that differs Qt from other libraries. Since the POD class is not a QWidget nor even a QObject, it is not possible to define custom signals or slots for the form.<br />
+<br />
+A quick way to port forms containing custom signals and slots is to generate headers and source code (ie. implementation files) using uic3 instead of uic. uic3 is the tool coming with Qt4 for working with old .ui files. Thus, uic3 can only generate code from Qt 3 .ui files. This implies that the .ui files never get translated to Qt 4 format and hence, need to be edited using Qt Designer 3. Additionally, although uic3 have tried very hard to map Qt 3 classes and their properties to Qt 4, there still may exist some unsupported properties. For instance, the components like Scan, Repeat, etc, in case of CScanWidgetTask class, are displayed without its background colors. The reason is that the behavior of some classes changed significantly in Qt 4.<br />
+<br />
+The second way is to define these signals and slots in the main container and connect them to the widgets in the form after calling setupUi(). We can also connect them through Qt Designer.<br />
+<br />
+The third way is to create implicit connections between the widgets in a from and the main container: on_objectName_signalName(). If the form contains a widget whose object name is objectName, and if that widget has a signal called signalName, then this signal will be connected to the main container's slot.<br />
+<br />
+Note that the last two ways needs .ui file readable by Qt Designer 4. For this purpose, we apply uic3 to convert a Qt Designer 3 .ui file to the Qt Designer 4 format.<br />
+<br />
+<h3 name="Issue_Reporting">Issue Reporting</h3>
+Any GUI layout and presentation issues which are found in the branch cvs development branch HEAD must be assigned to the component <b>Qt 4 Conversion</b>.<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

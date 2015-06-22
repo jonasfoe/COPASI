@@ -1,0 +1,28 @@
+---
+title: "Cascading Events"
+previous: "Hidden/Intranet/Events/Simultaneous_Events"
+next: "Hidden/Intranet/Events/Implementation"
+sitemap: false
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+It is possible that the <b><i>execution</i></b> of one event changes the trigger expression of another from<code> FALSE</code> to<code> TRUE</code>, i.e., another event <b><i>fires</i></b>. This cascading event is added to the processing queue. The possibility of having cascading events may lead to an infinite cascade or loop of triggered events. In order to prevent COPASI to never return from the calculation we limit the number of cascading events similar to the number of internal steps of the integrating method.<br />
+<br />
+Let us look at a situation in which we have two <b><i>executions</i></b> one with the prior flag<code> TRUE</code> and the other with the prior flag<code> FALSE</code> for the same point in time. After processing the <b><i>execution</i></b> for which prior is<code> TRUE</code> cascading events may require the processing of additional <b><i>calculation</i></b> and <b><i>execution</i></b> steps before processing the <b><i>execution</i></b> for which prior is<code> FALSE</code>.<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

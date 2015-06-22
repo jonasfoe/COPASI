@@ -1,0 +1,49 @@
+---
+title: "Trigger"
+previous: "Hidden/Intranet/Events"
+next: "Hidden/Intranet/Events/Trigger/Compiling_the_Trigger_Expression"
+sitemap: false
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+An event trigger is a Boolean expression.  The exact moment at which the expression value changes from<code> TRUE</code> to<code> FALSE</code>  is the time point when the event is <b><i>fired</i></b>.  The Boolean expression must not use any of the random functions (uniform() and normal()) COPASI provides.<br />
+<h3 name="Implementation_Issues">Implementation Issues</h3>
+<h4 name="Comparing_for_Equality">Comparing for Equality</h4>
+The Boolean expression<code> A == B</code> is numerically hard to evaluate for floating point numbers. To avoid this problem we internally duplicate the event and change the trigger expressions to<code> A &le; B</code> and<code> B &le; A</code>. The same numerical problem occurs for the Boolean expression <code> A != B</code>, which we solve similarly by internally duplicating the event and changing the trigger expressions to <code> A < B</code> and<code> B < A</code><br />
+<h4 name="Difference_between_ge_and_">Difference between &ge; and ></h4>
+Numerically the solutions for both trigger expressions are equivalent except for the <b><i>execution</i></b> point of the target assignment. The <b><i>execution</i></b> point for<code> A &ge; B</code> is the point in time when<code> A = B</code> (plus eventual delay) whereas the <b><i>execution</i></b>       point for<code> A > B</code> is infinitesimal larger. This means we need to assure that the <b><i>execution</i></b> for<code> A > B</code> takes place after eventual other processing (e.g. reporting). For reporting we will have to check whether the <b><i>execution</i></b> point is equal to a reporting point. This is again a numerically tough problem for floating point numbers. We need to evaluate approximate equality, which currently in COPASI is defined as:<pre>
+  B - 100 (DBL_EPSILON * |B| + DBL_MIN) &le; A &le; B + 100 (DBL_EPSILON * |B| + DBL_MIN)
+</pre>To decide whether the <b><i>execution</i></b> has to be done prior or after other processing we can not use the result of the trigger expression as this does not suffice to distinguish between the two cases. This means we have to analyze the structure of the trigger expression by using the following logic.<br />
+<br />
+<table class="normal"><tr><td class="heading">&nbsp; Boolean Expression </td><td class="heading"> &nbsp; Execution<code> PRIOR</code> to Processing</td></tr><tr><td class="odd">&nbsp;<code> A < B</code> </td><td class="odd"> &nbsp; false</td></tr><tr><td class="even">&nbsp;<code> A &le; B</code> </td><td class="even"> &nbsp; true</td></tr><tr><td class="odd">&nbsp;<code> A > B</code> </td><td class="odd"> &nbsp; false</td></tr><tr><td class="even">&nbsp;<code> A &ge; B</code> </td><td class="even"> &nbsp; true</td></tr></table><br />
+For the boolean operators we simply apply them. The above logic is static (independent from the values of<code> A</code> and<code> B</code> and can therefor be evaluated once during initialization. We do not need to deal with the comparison operators<code> ==</code> and<code> !=</code> since they have been converted.<br />
+<h4 name="Time_Course">Time Course</h4>
+<h5 name="Deterministic_Integration">Deterministic Integration</h5>
+The method for deterministic integration of models which contain events should switches from LSODA to LSODAR. The R stand for an additional  root finding routine which determines the exact point at which the trigger <b><i>fires</i></b>. This root finding routine requires as input continuous functions. It will look for roots of this function with odd degree, i.e., points where the continuous function changes sign. To provide this we need to translate the Boolean expression of the trigger into a continuous function which changes sign from<code> minus</code> to<code> plus</code> if and only if the trigger expression changes from<code> FALSE</code> to<code> TRUE</code>. The Boolean expression may be complicated however we know that the decision whether a trigger fires depends eventually on the comparison of 2 numbers, which may be calculated by an arbitrary numerical expression. COPASI supports the following comparison between numbers which are easily translated into roots:<br />
+<br />
+<table class="normal"><tr><td class="heading">&nbsp; Boolean Expression </td><td class="heading"> &nbsp; Continuous Root Finding Function</td></tr><tr><td class="odd">&nbsp;<code> A < B</code> </td><td class="odd"> &nbsp;<code> B - A</code></td></tr><tr><td class="even">&nbsp;<code> A &le; B</code> </td><td class="even"> &nbsp;<code> B - A</code></td></tr><tr><td class="odd">&nbsp;<code> A > B</code> </td><td class="odd"> &nbsp;<code> A - B</code></td></tr><tr><td class="even">&nbsp;<code> A &ge; B</code> </td><td class="even"> &nbsp;<code> A - B</code></td></tr></table><br />
+<br />
+To determine whether the root found by the above mechanism leads to <b>firing</b> of an event or to <b>recharge</b> we need to know the slop of the continuous function with respect to t. We do not have access to this information however we can remember the state a trigger is in.<br />
+<h5 name="Stochastic_Integration">Stochastic Integration</h5>
+For the Gibson &amp; Bruck method we add a step which calculates the trigger expression after each reaction event and determines whether the trigger expression changed from<code> FALSE</code> to<code> TRUE</code>. If the trigger expression is time dependent and leads to an <b><i>execution</i></b> prior to the current time we need to discard the current reaction event and update the priority queue.<br />
+<br />
+The &tau;-Leap method should not be allowed for models with events.<br />
+<h4 name="Steady_State">Steady State</h4>
+A steady state for a model with events may no be calculated with the Newton method or backwards integration. This leaves as the only method forward integration.<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

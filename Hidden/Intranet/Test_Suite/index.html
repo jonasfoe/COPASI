@@ -1,0 +1,70 @@
+---
+title: "COPASI Test Suite"
+previous: "Hidden/Intranet/Code_Profiling/Tasks"
+next: "Hidden/Intranet/Test_Suite/SBML"
+sitemap: false
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<br />
+The test suite is designed to test the software for a number of features. The suite will be composed of COPASI files (or SBML or Gepasi format) accompanied by a file that has a short description of the purpose of the test and the expected outcomes.<br />
+<br />
+We antecipate that the test suite will focus on the following aspects:<br />
+<ul><li> accuracy of calculations
+</li><li> speed of calculations
+</li><li> ability to read file formats
+</li></ul>
+<br />
+Each test should contain a set of files with the same basename. The basename should be descriptive but not too long and contain only alphanumeric characters and underline and dash. Some type of input or output may contain several files, for example a test may write out several report files, or there could be several files with data for fitting; in those cases these files will have a number after the basename separated by a dot. The tests will often consist of a COPASI run that produces output file that are then to be matched against supplied target output files (ie what we expect COPASI to write).<br />
+<br />
+For numerical comparisons, which must only match within some predefined tolerances we use an <a  href="ndiff-2.00-copasi.tar.gz&amp;page=TestSuiteIntro" rel="">enhanced version of ndiff</a>. This version only reports errors which are larger than given absolute and relative errors simultaneously.<br />
+<br />
+The files should primarily be added to the CVS and then also to this page (which may be automated in some way).<br />
+<br />
+There should be at least two files for each test: a description file named <i>basename.dsc</i> and the file to load into COPASI, which commonly will be <i>basename.cps</i> but could also be <i>basename.xml</i> or <i>basename.gps</i>.  In many cases there may be extra files, for example a file with targeted output eg. <i>basename.1.txt.tgt</i> or an input data file for fitting <i>basename.1.dat</i>.<br />
+<br />
+<table><tr><td > <b>type of file</b> </td><td > <b>filename structure</b> </td><td > <b>function</b> </td></tr><tr><td > Description </td><td > basename.dsc </td><td > description of the purpose of this test </td></tr><tr><td > Shell Script </td><td > basename.sh </td><td > script to run the test </td></tr><tr><td > COPASI input file </td><td > basename.cps </td><td > the COPASI model and tasks </td></tr><tr><td > SBML input file </td><td > basename.xml </td><td > an SBML file to import </td></tr><tr><td > Gepasi input file </td><td > basename.gps </td><td > a Gepasi file with a model and tasks </td></tr><tr><td > Input data file </td><td > basename.1.dat </td><td > a file with data for tasks that need it (eg fitting); the number is optional if there is only one of these </td></tr><tr><td > Target report file </td><td > basename.1.txt.tgt </td><td > a report file that is a target to match (supplied); the number is optional if there is only one of these </td></tr><tr><td > Report file </td><td > basename.1.txt </td><td > a report file created by running the input file; the number is optional if there is only one of these </td></tr></table><br />
+<br />
+Template for the description file:<br />
+<div class="simplebox"><pre>TITLE HERE
+
+summary of the purpose of this test; this template shows where 
+text goes: where there is an empty line you need to have a blank 
+line (separator of fields). Please do not leave any other empty
+lines. (at the end list only the output files to be created, not 
+the target files)
+
+short description of the expected outcome, this is not the actual
+numbers as those are to be included in the target files. However 
+if the test is for speed, for example, the target desired value 
+should be clearly stated in this paragraph
+
+Creator and date
+
+inputfile1
+inputfile2
+inputfile3 etc
+
+outputfile1
+outputfile2 
+outputfile3 etc
+</pre></div><br />
+<br />
+<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

@@ -1,0 +1,36 @@
+---
+title: "Simultaneous Events"
+previous: "Hidden/Intranet/Events/Delay"
+next: "Hidden/Intranet/Events/Cascading_Events"
+sitemap: false
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+There are three ways in which simultaneity can occur for events:<br />
+<ol><li> <b><i>firing</i></b>
+</li><li> <b><i>calculation</i></b>
+</li><li> <b><i>execution</i></b>
+</li></ol>
+<h3 name="Firing">Firing</h3>
+Simultaneous <b><i>firing</i></b> occurs when the time points at which the trigger expression  changes from<code> FALSE</code> to<code> TRUE</code> coincide for several events. In order to recognize simultaneous <b><i>firing</i></b> of event triggers we must always check for the trigger condition of all events.<br />
+<h3 name="Calculation">Calculation</h3>
+Simultaneous <b><i>calculation</i></b> occurs when the time point <b><i>firing</i></b> or <b><i>firing + delay</i></b>  for several events and the &quot;Execution PRIOR to Processing&quot; are equal.<br />
+<h3 name="Execution">Execution</h3>
+Simultaneous <b><i>execution</i></b> occurs when the time point <b><i>calculation</i></b> or <b><i>calculation + delay</i></b>  for several events and the &quot;Execution PRIOR to Processing&quot; are equal. In the case that simultaneous <b><i>executions</i></b> occur we stop the execution since the outcome of the simulation may depend on the order of processing.  Later we may implement checks for situations in which the outcome is independent of the order of processing.<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

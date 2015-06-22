@@ -1,0 +1,30 @@
+---
+title: "File Dialogs"
+previous: "Hidden/Intranet/Development_Resources/Software_Architecture/GUI"
+next: "Hidden/Intranet/Development_Resources/Software_Architecture/Object_Selection_Filter"
+sitemap: false
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+The file dialog must mimic the OS specific behavior. To achieve this we rely on the Qt provided static methods for opening and saving file dialogs. Related dialogs for opening and saving files must provide the same filters and have the same default filter with the exception that the save file dialog may omit the filter<code> <b>Any (*)</b> </code>.<br />
+<h3 name="Open_File_Dialogs">Open File Dialogs</h3>
+The open file dialog should provide filters to restrict the files displayed. The default filter should select files, which are the most likely ones desired by the user. A filter which must be provided in all open file dialogs is<code> <b>Any (*)</b> </code>  to allow the user to select any file without restrictions.<br />
+<h3 name="Save_File_Dialogs">Save File Dialogs</h3>
+The save file dialog should provide filters to restrict the files displayed. The default filter should select files, which are the most likely the ones desired by the user. The filter provides a 2 functionalities in the save dialog, it filters the displayed files and determines the file format. It is often possible to have several endings for the same format (e.g. jpg and jpeg for the JPEG graphics format) therefore the user must be able to override the suggested file ending or even avoid a file suffix at all. To avoid a suffix the user must end the file name with a '.'. This terminating '.' is stripped from the final file name. To determine whether the user given file has a file suffix the file name must pass the Qt regexp<code> <b>\.\S{1,4}</b></code> (a '.' followed by 1 to 4 non white space characters). Since it is common for users to end file names with a dot followed by digits to indicate versions of the file we must ignore suffixes comprising only digits. This means the file name must not match the Qt regexp<code> <b>\.\d{1,4}</b></code>.<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

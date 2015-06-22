@@ -1,0 +1,39 @@
+---
+title: "Lyapunov Exponents Calculation"
+previous: "Support/User_Manual/Methods/Optimization_Methods/Truncated_Newton"
+next: "Support/User_Manual/Methods/Sensitivities_Calculation"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+COPASI allows the calculation of Lyapunov exponents of a trajectory as well as the average divergence of the system. The exponents are calculated for the reduced system (see ), so the maximum number of exponents that can be calculated is the number of independent variables. If less than this number of exponents is requested, the largest exponents are calculated.<br />
+<br />
+COPASI uses the well known algorithm proposed by Wolf et al. [<a title="OD.Bibliography" href='/../../../Support/User_Manual/Bibliography#Wolf85'>Wolf85</a>]. This algorithm integrates one reference trajectory and simultaneously N difference trajectories (if N is the number of exponents requested) in a system linearized around the reference trajectory. This integration is carried out for a short time interval (the &quot;Orthonormalization interval&quot;, see below) and then the difference vectors are reorthonormalized. The exponents for this time interval are calculated from how much each of the difference trajectories converged or diverged from the reference trajectory during the interval. This calculation is repeated and the &quot;local&quot; exponents are averaged over the the whole trajectory.<br />
+<br />
+The divergence is calculated (if requested) as the average of the trace of the Jacobian. Although it is not numerically necessary the divergence is also calculated for the same short intervals that are used for the Lyapunov exponents. This allows comparing the local values of the divergence with the local exponents.<br />
+<br />
+If you are only interested in the end result of the Lyapunov exponents and the average divergence you can just use the default report that is provided by COPASI (or just look at the result in the GUI). If you want to have access to the &quot;local&quot; results for the single orthonormalization intervals however, you will have to define a plot or report manually. In this version of COPASI you will need to used the &quot;expert&quot; feature of the object selection dialog to access the exponents. They are located in the &quot;Lyapunov Exponents&quot; branch under the &quot;Task List&quot; entry. Output takes place after each reorthonormalization interval. The output can contain each of the ten largest exponents, both the local value from the last interval and the and the average value of all intervals calculated so far. Correspondingly the divergence can be output both as an average over the last interval or as an average over the whole trajectory.<br />
+<br />
+The Jacobian that is used for both Lyapunov exponents and divergence calculation is calculated using finite differences. The integration of the reference and difference trajectories is done using LSODA [<a title="OD.Bibliography" href='/../../../Support/User_Manual/Bibliography#Hindmarsh83'>Hindmarsh83</a>].<br />
+<br />
+<h3 name="Options_for_Lyapunov_exponents_calculation">Options for Lyapunov exponents calculation</h3>
+<dl><dt><b>Orthonormalization interval</b></dt><dd> This is the time interval after which an orthonormalization of the difference trajectories takes place. This parameter is critical for the accuracy of the Lyapunov exponents. Smaller values generally lead to more accurate results, but take longer time (since the numerical integration needs to be restarted for many short calculations). One way to judge the adequacy of this parameter is to compare the sum of exponents with the divergence of the system. Those two values should be the same (only if you request the calculation of all exponents), and since the calculation of the divergence is very robust, a mismatch would typically mean that the orthonormalization interval needs to be smaller. Note that this parameter mostly affects the accuracy of the exponents with the largest absolute values. Since large positive exponents are unusual, this means that the largest negative exponents suffer from accuracy problems related to this parameter. If you don't need the exact values of the strongly negative exponents you can chose a larger value for this parameter and enjoy a much faster calculation. The default value is 1.0.</dd></dl><br />
+<dl><dt><b>Overall time</b></dt><dd> This parameter specifies the overall time of the calculation. The integration will be repeated in small steps given by the &quot;Orthonormalization interval&quot; parameter until the overall time is reached. This value is also critical for the accuracy of the exponents. Since COPASI cannot guess how fast the exponents converge, no save default value can be given for this parameter. One indication would be that if the system does not run into a steady state one of the exponents should be zero. If this is not the case in the result, probably the overall time was to short to allow the exponents to converge to their average value. The default value is 1000.</dd></dl><br />
+<br />
+The rest of the options apply for the LSODA numerical integrator that is used for the calculation. They are described in the section for <a title="OD.Deterministic.Simulation" href="/../../../Support/User_Manual/Methods/Time_Course_Calculation/Deterministic_Simulation">deterministic simulation</a>.<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

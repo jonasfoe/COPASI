@@ -1,0 +1,41 @@
+---
+title: "MathML"
+previous: "Support/User_Manual/Error_Messages/Directory_Entry"
+next: "Support/User_Manual/Error_Messages/Function"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+These error messages can occur when COPASI finds an error while importing the MathML from an SBML file.<br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>MathML (1)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>Unsupported element 'ELEMENT'.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>COPASI does not support all MathML elements allowed in SBML files yet. E.g. the delay function is currently not supported.</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>MathML (2)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>Unknown element in MathML expression.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>During SBML import an unknown MathML element was encountered. Please check the MathML expressions in the SBML file.</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>MathML (3)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>MINUS operator can only have one or two arguments.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>During SBML import, COPASI has encountered a MathML expression where a minus operator has 0 or more than 2 arguments. Please check the MathML in the SBML file.</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>MathML (4)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>DIVIDE and POWER operator can only have 2 arguments.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>The divide and the power operator in MathML must have exactly two arguments. During SBML import COPASI has found a MathML expression where this is not the case. Please check the MathML in the SBML file.</div></dd></dl><br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

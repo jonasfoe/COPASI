@@ -1,0 +1,250 @@
+---
+title: "TeamMeeting2011"
+previous: "Hidden/Intranet/TeamMeeting"
+next: "Hidden/Intranet/SBML_Level_3_issues"
+sitemap: false
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+<h3 name="Thursday_July_21">Thursday July 21</h3>
+<br />
+<ul><li> 9:30 - 11:00 Updates
+<ul><li> Manchester:
+<ul><li> Linear Noise Approximation code in HEAD, paper submitted, prepare for releases.
+</li><li> Condor-COPASI: Code available at: <a target="_blank"  href="http://code.google.com/p/condor-copasi/">http://code.google.com/p/condor-copasi/</a>, paper in preparation.
+</li><li> COPASI maintenance grant submitted to BBSRC.
+</li><li> BioPreDyn FP7 Johannes Jaeger lead effort developing methods for systems biology, large scale models, parameter estimation methods.
+</li><li> Multi-scale simulator, Agent based, SQL Database,  COPASI Webservice as agent, asynchronous
+</li><li> SBRML libsbrml under development target version 1.0 October 2011
+</li><li> Comparison Parameter estimation method COPASI/Gepasi.
+</li></ul></li><li> Heidelberg:
+<ul><li> Work on improving time scale separation result.
+</li><li> Non Linear Dynamic update afternoon
+</li><li> Research, comparison, debugging of Parameter Estimation.
+</li><li> SBML export L1V1 in HEAD
+</li><li> Diagram, automated layout, modification, CellDesigner import, movie export, EFM display, dynamic reaction fluxes (where to get the data).
+</li><li> Ralph has a Ph.D.
+</li></ul></li><li> VBI
+<ul><li> Continue Removing Qt 3 dependencies.
+</li><li> GUI Improvement
+</li><li> New Stochastic hybrid with take into account deterministic changes on stochastic system
+</li><li> New stochastic hybrid using Quasi Steady State Assumption.
+</li><li> Release 13 July
+</li><li> Work on Math Model detail afternoon.
+</li></ul></li></ul></li><li> 11:00 - 11:30 Parameter bounds for Parameter Estimation
+</li><li> 11:30 - 12:30 Collaboration
+<ul><li> Manchester:
+<ul><li> Physics: Multi compartment linear noise approximation and time-resolved.
+</li><li> see Johannes Jaeger above.
+</li><li> Edda Klipp Parameter balancing
+</li></ul></li><li> Heidelberg:
+<ul><li> Exchange of ideas with Jens Timmer groups on parameter estimation.
+</li></ul></li><li> VBI:
+<ul><li> John Tyson: Multi-state protein Model interface and simulation in COPASI
+</li><li> VT CS + Herbert Sauro: Grant submited to NSF SI^2
+</li><li> Modeling collaboration with MIEP (http://modelingimmunity.org/)
+</li></ul></li></ul></li><li> 1:30 Non Linear Dynamics
+<ul><li> Cross Section, Return Maps, implementation option:
+<ol><li> Modify model by adding event to detect the hypersurface
+</li><li> Deriving method from CTrajectoryMethod preferred since it allows the efficient use as sub task.
+</li><li> Special Task
+</li><li> Input
+<ol><li> Hyper surface: object, value, direction
+</li><li> End Time
+</li><li> Max number Crossing
+</li></ol></li></ol></li><li> Continuation
+<ol><li> Find existing library or algorithms: <a target="_blank"  href="http://trilinos.sandia.gov/packages/nox/">http://trilinos.sandia.gov/packages/nox/</a>
+</li></ol></li><li> Bifurcation
+</li></ul></li></ul>
+<br />
+<ul><li> 2:30 Math Model
+</li><li> 3:30 Multi-Threading
+</li><li> 4:00 Differentiation
+<ul><li> Symmetric vs asymmetric: switch to symmetric fall back to asymmetric if fails.
+</li><li> Initial step size 1e-8 for function evaluation, 1e-3 for simulation results
+</li><li> Integrate sensitives for time course experiments.
+</li></ul></li></ul>
+<br />
+<h3 name="Friday_July_22">Friday July 22</h3>
+<ul><li> 9:00 Parameter Estimation
+<ul><li> Comparison between Gepasi and COPASI. Issues in Truncated Newton, SRES, Evolutionary Programming and Simulated Annealing?.
+</li><li> Make test cases available in the intranet.
+</li><li> Option for output of all function evaluations.
+</li><li> Sigma Point Method
+</li><li> Multiple Shooting (http://en.wikipedia.org/wiki/Direct_multiple_shooting_method)
+</li><li> Enable Validation
+</li></ul></li><li> 10:00 Front End
+<ul><li> Improve preferences
+<ul><li> Include Random Generator and Seed
+</li><li> Use a specialized widget instead of tree.
+</li><li> Include Font
+</li></ul></li><li> Remove tool and button State to Initial State
+</li><li> Convert Tabs to Selection Box where appropriate eg in Plots
+</li></ul></li><li> GUI improvements:
+<ul><li> General
+<ul><li> fill empty spaces in widgets (tables should fill space vertically)
+</li><li> <span style="color:#FF0000;">DONE</span> unify button layout of CCopasiWidget derivatives (&quot;Commit&quot;, &quot;Revert&quot;,...), buttons should be divided into left and right aligned group
+</li><li> move units behind input fields
+</li><li> <span style="color:#FF0000;">DONE</span> remove separator line between the buttons and the rest from all widgets
+</li><li> add &quot;wait&quot; cursors whereever needed
+</li><li> <span style="color:#FF0000;">DONE</span> loading a model when in the annotation (or notes tab) will display the annotation (or notes) of the loaded model after load -&gt; reset tabs status when loading a model
+</li><li> hide all method parameters behind a button
+</li><li> boolean values in parameter widgets should be displayed as a checkbox
+</li><li> show parameters for subtasks with parameters of complex tasks
+</li><li> have separate sets of options for subtasks in complex tasks
+</li><li> add &quot;copy&quot; button to &quot;new&quot; and &quot;delete&quot; buttons where applicable, e.g. functions, species, reactions, (compartment)
+</li><li> <span style="color:#FF0000;">DONE</span> when clicking on a species or reaction in the tree view, COPASI scrolls to the top sometimes
+</li></ul></li><li> Model Widget
+<ul><li> <span style="color:#FF0000;">DONE</span> Change &quot;Rate Law Interpreation&quot; &amp; combo box to checkbox &quot;Apply Stochastic Correction to Kinetic Laws&quot;.
+</li></ul></li><li> Compartment Widget: see general
+<ul><li> <span style="color:#FF0000;">DONE</span> Change &quot;Compartment Name&quot; to &quot;Name&quot; and &quot;Contained Metabolites&quot; to &quot;Metabolites&quot;
+</li><li> &quot;<span style="color:#FF0000;">DONE</span> Use Initial Expression&quot; checkbox -&gt; &quot;Initial Expression&quot; checkbox
+</li><li> add &quot;affected by events&quot; table
+</li></ul></li><li> Species Widget:
+<ul><li> <span style="color:#FF0000;">DONE</span> &quot;Use Initial Expression&quot; checkbox -&gt; &quot;Initial Expression&quot; checkbox
+</li><li> add list of events that affect the species
+</li></ul></li><li> Reaction Widget:
+<ul><li> <span style="color:#FF0000;">DONE</span> unify/fix button layout
+</li><li> <span style="color:#FF0000;">DONE</span> Change label Chemical Equation to Reaction
+</li></ul></li><li> Global Quantities:
+<ul><li> add &quot;affected by events&quot; table
+</li></ul></li><li> Events:
+<ul><li> <span style="color:#FF0000;">DONE</span> Disable &quot;ex<x>pression&quot; Box instead of hiding it
+</li><li> <span style="color:#FF0000;">DONE</span> &quot;Trigger Expression&quot; Box and &quot;ex<x>pression&quot; Box are too large
+</li><li> <span style="color:#FF0000;">DONE</span> Replace radio button by combo box -&gt; &quot;Calculate at assignment time&quot; &amp; &quot;Calculate at trigger time&quot;
+</li><li> <span style="color:#FF0000;">DONE</span> align the delay checkbox with the &quot;ex<x>pression&quot; box
+</li></ul></li><li> parameter overview:
+<ul><li> <span style="color:#FF0000;">DONE</span> move title and save button above the table
+</li><li> <span style="color:#FF0000;">DONE</span> add value for global parameters
+</li><li> <span style="color:#FF0000;">DONE</span> (save data) exports the model values with &quot;space&quot; separators instead of &quot;tab&quot;
+</li><li> <span style="color:#FF0000;">DONE</span> (save data) exported parameters are not ordered as the GUI display
+</li></ul></li><li> ODE display:
+<ul><li> <span style="color:#FF0000;">DONE</span> white background
+</li><li> <span style="color:#FF0000;">DONE</span> PNG export with transparent background
+</li><li> Content MathML export
+</li></ul></li><li> matrices widget:
+</li><li> diagram widget:
+<ul><li> <span style="color:#FF0000;">DONE</span> table is too small
+</li><li> enable the disabled buttons
+</li></ul></li><li> Task branch in tree should have a widget that displays common settings like &quot;update model&quot; or &quot;activated&quot;
+</li><li> Steady State Widget:
+<ul><li> remove calculate Jacobian -&gt; is done automatically anyway (only do this if the calculation of the Jacobian has no significant influence on calculation time)
+</li></ul></li><li> Steady State Results:
+<ul><li> Combine the Complete and Reduced Jacobian and make the selection between the two in the table
+</li><li> <span style="color:#FF0000;">DONE</span> Move &quot;Stability&quot; tab before &quot;Jacobian&quot;
+</li></ul></li><li> Elementary Flux Mode Widget:
+<ul><li> <span style="color:#FF0000;">DONE</span> remove separator line after title
+</li><li> allow people to &quot;make species fixed&quot;???
+</li><li> allow people to change the &quot;reversibility&quot; of reactions???
+</li></ul></li><li> Elementary Flux Mode Result:
+<ul><li> <span style="color:#FF0000;">DONE</span> &quot;Filter Expression&quot; -&gt; &quot;Search&quot;
+</li><li> Search in tables as well -&gt; move search field above tabs
+</li></ul></li><li> Mass Conservation:
+</li><li> Mass Conservation Result:
+</li><li> Time Course:
+<ul><li> <span style="color:#FF0000;">DONE</span> find a way to make it apparent that the feedback widgets are not editable, e.g. use label background, label foreground
+</li><li> do stability analysis for time course -&gt; add checkbox
+</li></ul></li><li> Time Course Result:
+<ul><li> add Tab for Fluxes, Stability &amp; Jacobian
+</li></ul></li><li> MCA:
+</li><li> MCA Result:
+<ul><li> <span style="color:#FF0000;">DONE</span> change the &quot;Bars&quot; button to a changing pictogram
+</li><li> add bitmap view option
+</li><li> tweak table layout
+</li></ul></li><li> Lyapunov Exponents
+</li><li> Lyapunov Exponents Result
+<ul><li> <span style="color:#FF0000;">DONE</span> layout needs tweaking
+</li></ul></li><li> Time Scale Separation Analysis
+</li><li> Time Scale Separation Analysis Results
+<ul><li> <span style="color:#FF0000;">DONE</span> replace radio buttons by the actual time and frame number values
+</li><li> <span style="color:#FF0000;">DONE</span> save data to file needs to be behind title
+</li><li> <span style="color:#FF0000;">DONE</span> rename button to &quot;save data&quot;
+</li></ul></li><li> Parameter Scan
+<ul><li> <span style="color:#FF0000;">DONE</span> decrease padding around items
+</li><li> <span style="color:#FF0000;">DONE</span> remove exclamation mark from &quot;...Create!&quot; button
+</li></ul></li><li> Optimization
+<ul><li> hide only a subset of the parameters
+</li><li> shorten parameter names &amp; show complete name on tooltip
+</li><li> display parameters similar to Gepasi -&gt; better use of space
+</li><li> layout of expression widget needs tweaking
+</li><li> don't use +-infinity as defaults, 10e-6 - 10e6
+</li><li> check for duplicate parameters
+</li></ul></li><li> Optimization Result
+<ul><li> <span style="color:#FF0000;">DONE</span> add range and original value to table
+</li><li> graphical display of result and minimum and maximum within a range bar
+</li></ul></li><li> Parameter Estimation
+<ul><li> see optimization
+</li><li> move the &quot;Duplicate for each Experiment&quot; button and change the text, e.g. &quot;multiply&quot; (Q: Where is the best place to move the button?)
+</li></ul></li><li> Parameter Estimation Result
+<ul><li> see optimization
+</li></ul></li><li> Parameter Estimation Experimental Data
+<ul><li> enforce uniform data structure per file -&gt; get rid of some of the widgets
+</li><li> check for errors only on OK button press
+</li></ul></li><li> Sensitivities
+<ul><li> <span style="color:#FF0000;">DONE</span> rename &quot;Function&quot; and &quot;Variable&quot; to &quot;Effect&quot; and &quot;Cause&quot;
+</li><li> <span style="color:#FF0000;">DONE</span> add tooltip to explain &quot;Effect&quot; and &quot;Cause&quot;
+</li><li> add functionality to select set of objects for the &quot;Effect&quot; and the &quot;Cause&quot;
+</li></ul></li><li> Sensitivities Results
+<ul><li> see MCA result
+</li></ul></li><li> Output Specifications
+</li><li> Plots table:
+<ul><li> <span style="color:#FF0000;">DONE</span> activate all/deactivate all
+</li></ul></li><li> Plots
+<ul><li> <span style="color:#FF0000;">DONE</span> tabs need to go -&gt; list view
+</li><li> <span style="color:#FF0000;">DONE</span> put type and log checkboxes into one line
+</li></ul></li><li> Reports
+<ul><li> <span style="color:#FF0000;">DONE</span> rename to report templates
+</li><li> associate files with reports in report definition???
+</li><li> <span style="color:#FF0000;">DONE</span> change &quot;ReportDefinition&quot; to &quot;Template&quot; and &quot;Target&quot; to &quot;Filename&quot;
+</li></ul></li><li> Functions
+<ul><li> <span style="color:#FF0000;">DONE</span> add copy functionality
+</li><li> <span style="color:#FF0000;">DONE</span> remove separator line above buttons
+</li><li> <span style="color:#FF0000;">DONE</span> fix button layout
+</li><li> annotation of predefined functions
+</li><li> paste Gepasi function documentation into notes field of functions
+</li><li> <span style="color:#FF0000;">DONE</span> make &quot;General&quot; lower case
+</li></ul></li><li> <span style="color:#FF0000;">DONE</span> add windows menu to menubar to display all COPASI windows
+</li><li> make plot/report task aware, e.g. associate them with one or more taks so that they only get done for these tasks
+</li><li> tree:
+<ul><li> add &quot;hover&quot; feature that displays the elements children
+</li></ul></li><li> tables:
+<ul><li> add &quot;hover&quot; for table cells and headers that display the full cell content
+</li><li> usability: new elements can not be entered continuously, user has to click last entry to enter next element
+</li></ul></li><li> annotations:
+<ul><li> <span style="color:#FF0000;">DONE</span> create links that lead to the database
+</li></ul></li><li> Output assistant
+<ul><li> <span style="color:#FF0000;">DONE</span> add more items
+</li><li> <span style="color:#FF0000;">DONE</span> only display relevant output items
+</li><li> remove the &quot;empty&quot; item
+</li><li> <span style="color:#FF0000;">DONE</span> remove exclamation mark from &quot;Create!&quot; button
+</li><li> <span style="color:#FF0000;">DONE</span> shorten names (e.g. remove &quot;Plots of&quot; from titles
+</li><li> check for event targets for &quot;variable&quot; plots
+</li><li> add tabs for plots and reports
+</li></ul></li></ul></li></ul>
+<br />
+<br />
+<ul><li> 11:30 New features
+</li><li> 12:00 - 12:30 Website and Outreach
+</li></ul>
+<br />
+<br />
+<ul><li> 2:00 JigCell/Multi State Species
+</li><li> 3:00 Events
+</li></ul>
+<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

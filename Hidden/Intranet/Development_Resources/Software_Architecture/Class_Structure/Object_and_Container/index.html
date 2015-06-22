@@ -1,0 +1,137 @@
+---
+title: "Objects and containers"
+previous: "Hidden/Intranet/Development_Resources/Software_Architecture/Class_Structure"
+next: "Hidden/Intranet/Development_Resources/Software_Architecture/Class_Structure/Model_Classes"
+sitemap: false
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+Many classes in COPASI are derived of the CCopasiObject class. They all inherit some common properties:<br />
+<ul><li> All Objects have a name and a type
+</li><li> The objects can be organized in a hierarchical tree
+</li><li> There is a mechanism to reference objects (Common Names)
+</li><li> Objects can have values that can be calculated and queried with a unified mechanism
+</li><li> All output in COPASI is handled with mechanisms of the CCopasiObject class
+</li></ul>
+The following is a more detailed description of those properties.<br />
+<br />
+<h3 name="Name_and_Type">Name and Type</h3>
+Every CCopasiObject instance has a name and a type. Both are STL strings.<br />
+The name can be set with setObjectName() and can be accessed with getObjectName(). The type is set in the constructor of the derived classes (so there is no need for a setObjectType() method) and can be accessed with the getObjectType() method.<br />
+<br />
+<h3 name="Hierarchical_tree">Hierarchical tree</h3>
+CCopasiObjects can be organized in a hierarchical tree. The parent of an object is retrieved with getObjectParent(). In most cases when an object is created the parent is passed to the constructor. Usually it should not be necessary to call setObjectParent() directly.<br />
+getObjectAncestor(std::string type) looks for an object with a given type among the ancestors (parent, parent of parent, etc.) of a given object.<br />
+An object can only have children if its class is derived from CCopasiContainer (which is itself derived from CCopasiObject). For information on how to access children of objects see the documentation of CCopasiContainer.<br />
+In the current COPASI implementation there is one single hierarchical tree of CCopasiObjects. Most CCopasiObjects (except some temporary ones) are part of this tree. The root of this tree is the static pointer CCopasiContainer::Root. There is also a define which allows to access the root container as RootContainer.<br />
+<br />
+<h3 name="Object_references_with_common_names_CNs_">Object references with common names (CNs)</h3>
+All CCopasiObjects in a hierarchical tree can be referenced by a common name (CN). A CN is unique for most objects within the tree. It is not enforced in the class CCopasiContainer that the type and name combination of an object is unique. However most derived containers enforce this uniqueness. It especially important to note that all objects which are used within a model have unique CNs.<br />
+<br />
+The CN reflects the position of the given object in the tree. It is a STL string and is composed of the types and names of all the direct ancestors of the object. The algorithm to construct the CN of an object is recursive. It constructs the CN by appending the object's type and name to the object's parent's CN. The format of the string which is appended is<code><b> type=name</b> </code> separated by a comma.  The CN does not depend on where in the memory the object is located (as pointers would). The object doesn't even need to exist to have a valid CN. Therefore CNs can be used (and are indeed used) to reference CCopasiObjects in COPASI files.<br />
+<br />
+The structure of CNs also allows to identify corresponding objects in different subtrees.<br />
+The CN of an object is retrieved with the getCN() method. It returns a CCopasiObjectName object. CCopasiObjectName is essentially an STL string with some additional methods that help parsing the CN.<br />
+<br />
+To locate the object for a given CN use the static CCopasiContainer::ObjectFromName(cn) method.<br />
+<br />
+There is also a mechanism to handle renaming of objects (since the CN is constructed using the object name it is usually invalidated if an object is renamed): If a variable that holds a CN is declared as a CRegisteredObjectName it will be automatically added to a global static list of registered CNs. If an object that is referred to by one of the registered CNs is renamed, the CN will be changed accordingly.<br />
+<h3 name="Values_of_objects">Values of objects</h3>
+Some CCopasiObjects have a value. The current implementation allows<br />
+boolean, floating point, integer, and string values. The CCopasiObject<br />
+class provides a uniform interface to calculate and access those values.<br />
+Objects that have a floating point or integer value can be used in<br />
+a plot.<br />
+<br />
+<h3 name="Accessing_the_value">Accessing the value</h3>
+The isValueBool(), isValueDbl(), isValueInt(), isValueString() methods<br />
+can be used to check if a given object has a value (it can only have<br />
+one value of one type). The getValuePointer() method returns a pointer<br />
+to this value. Since it returns a void{*} pointer it needs to be cast<br />
+to the appropriate type: bool, C_FLOAT64, C_INT32, std::string.<br />
+<br />
+The value can be set using the setObjectValue(...) method (which is<br />
+declared for C_FLOAT64, C_INT32, and bool arguments).<br />
+<br />
+<h3 name="Update_method">Update method</h3>
+Some objects need to do some extra actions when their value is set<br />
+(e.g. a CMetab needs to adjust the initial particle number if the<br />
+initial concentration is changed). CCopasiObject also provides an<br />
+interface for that. Every object can have an update method which takes<br />
+one argument (of the type corresponding to the value type of the object).<br />
+This method can be set using the setUpdateMethod({*}object, {*}member\_function).<br />
+It needs to be a member method of an object. Both the pointer to the<br />
+object and the member pointer of the method needs to be given to the<br />
+setUpdateMethod() method. Note that the update method can be a method<br />
+of a different object than the one that needs to be updated. In many<br />
+cases it will be the parent object. The update method should be set<br />
+in the constructor.<br />
+<br />
+<h3 name="Refresh_method">Refresh method</h3>
+Some objects need to do some calculations to ensure their value is<br />
+uptodate. This is not done automatically by accessing the value (since<br />
+accessing the value usually happens through the pointer returned by<br />
+getValuePointer()). So the functor returned by getRefresh() needs<br />
+to be called explicitly before accessing the value of an object.<br />
+<br />
+There may be some rules that specify that calling refresh is not necessary<br />
+in some circumstances. E.g. when calling output routines during a<br />
+calculation all variables of the model should already have an uptodate<br />
+value. But these rules have to be documented elsewhere.<br />
+<br />
+<h3 name="Dependencies">Dependencies</h3>
+The values of some objects depend on values of other objects. These<br />
+dependencies can be queried using the getDirectDependencies(), getAllDependencies(),<br />
+and hasCircularDependencies() methods. CCopasiObject also has a comparison<br />
+operator (operator&lt;()) which can be used to sort a set of objects<br />
+according to their dependencies (so that the refresh methods can then<br />
+be called in the right order).<br />
+<br />
+The way this mechanism is used for output is that at the start of<br />
+a calculation task a list of all objects that need to be output is<br />
+generated. This list is (should be?) sorted according to the dependencies,<br />
+than a sorted list of refresh functors of this objects is stored.<br />
+At each output step the list of refresh functors is called in the<br />
+right order, after that the output can be done using the pointers<br />
+to the values (for plots) or the print() methods (for reports). By<br />
+doing this it can be avoided to call a refresh functor several times<br />
+if an object appears in the output several times.<br />
+<br />
+<h3 name="Output_in_reports">Output in reports</h3>
+Each CCopasiObject has a print(std::ostream *) method which is used<br />
+for output in reports. Simple object that have a value just print<br />
+that value to the stream, more complex objects (like numerical methods)<br />
+generate a formatted output of their current settings or current state.<br />
+<br />
+The refresh method (including the dependencies) should be called before<br />
+calling the print() method.<br />
+<br />
+<h3 name="Hints_for_implementing_derived_classes">Hints for implementing derived classes</h3>
+<h4 name="Constructors">Constructors</h4>
+The standard constructor of a CCopasiObject has four arguments: name,<br />
+parent, type, and flags. The flags argument is an unsigned 32 bit<br />
+integer that contains some flags that specify certain properties of<br />
+objects (e.g. the type of its value, whether it is a container, ...).<br />
+The meaning of the different bits can be found in the CCopasiObject.h<br />
+header.<br />
+<br />
+Constructors of derived classes should at least have the first two<br />
+arguments: name and parent. The other arguments are only necessary<br />
+if you expect that the class will be used as a base class for further<br />
+derived classes which may want to change the flags or type.<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

@@ -1,0 +1,32 @@
+---
+title: "Truncated Newton"
+previous: "Support/User_Manual/Methods/Optimization_Methods/Steepest_Descent"
+next: "Support/User_Manual/Methods/Lyapunov_Exponents_Calculation"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+The Truncated Newton method is a sophisticated variant of the Newton optimization method. The Newton optimization method searches for the minimum of a nonlinear function by following descent directions determined from the function's first and second partial derivatives. The Truncated Newton method does an incomplete (truncated) solution of a system of linear equations to calculate the Newton direction. This means that the actual direction chosen for the descent is between the steepest descent direction and the true Newton direction. A more complete description of the method can be found in [<a title="OD.Bibliography" href='/../../../Support/User_Manual/Bibliography#Gill81'>Gill81</a>] and [<a title="OD.Bibliography" href='/../../../Support/User_Manual/Bibliography#Nash84'>Nash84</a>].<br />
+<br />
+The particular implementation of the Truncated Newton method used here takes into account simple bounds on the optimization parameters. Like the Newton method itself, the Truncated Newton variant converges quadratically when in the vicinity of the minimum. On average this method is one of the best gradient descent methods.<br />
+<br />
+This implementation of the Truncated Newton method was originally written in FORTRAN by Stephen Nash (Operations Research and Applied Statistics Dept., George Mason University, Fairfax, VA 22030, USA). The original code is available from <a target="_blank" href="http://www.netlib.org/opt/tn" rel="external">http://www.netlib.org/opt/tn</a>). The original code was translated automatically to C by the F2C program from AT&amp;T Bell Labs (available at <a target="_blank" href="http://www.netlib.org/f2c/" rel="external">http://www.netlib.org/f2c/</a> ). The C code was then enhanced to suite COPASI's reentrant optimization method interface.<br />
+<br />
+<h3 name="Options_for_Truncated_Newton">Options for Truncated Newton</h3>
+<dl><dt><b>None</b></dt><dd> The algorithm is not tunable.</dd></dl><br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

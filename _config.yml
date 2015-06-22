@@ -1,5 +1,5 @@
 ### Global gh-pages pre-amble
-safe: true
+safe: false
 lsi: false
 
 ### The following properties will change on a project-by-project basis
@@ -19,6 +19,10 @@ github_repo_url: https://github.com/copasi/COPASI
 
 # Exclude tmp directory
 exclude: [tmp]
+
+# Add Processing features
+gems:
+  - jekyll-sitemap
 
 # Project forum URL
 # forum: http://forum.spring.io/forum/spring-projects/container

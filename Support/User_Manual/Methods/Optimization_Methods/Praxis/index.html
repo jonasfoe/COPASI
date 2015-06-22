@@ -1,0 +1,30 @@
+---
+title: "Praxis"
+previous: "Support/User_Manual/Methods/Optimization_Methods/Particle_Swarm"
+next: "Support/User_Manual/Methods/Optimization_Methods/Random_Search"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+Praxis is a direct search method (for a review see [<a title="OD.Bibliography" href='/../../../Support/User_Manual/Bibliography#Swann72'>Swann72</a>]) that searches for the minimum of a nonlinear function without requiring (or attempting to calculate) derivatives of that function. Praxis was developed by Brent [<a title="OD.Bibliography" href='/../../../Support/User_Manual/Bibliography#Brent72'>Brent72</a>] after the method proposed by Powell [<a title="OD.Bibliography" href='/../../../Support/User_Manual/Bibliography#Powel64'>Powel64</a>]. The inspiration for Praxis was the well-known method of minimising each adjustable parameter (direction) at a time - the principal axes method. In Praxis directions are chosen that do not coincide with the principal axes, in fact if the objective function is quadratic then these will be conjugate directions, assuring a fast convergence rate.<br />
+<br />
+This implementation of the Praxis method was originally written in FORTRAN at the Stanford Linear Accelerator Center (dated 3/1/73). The original FORTRAN code is available from <a target="_blank" href="http://www.netlib.org/opt/praxis" rel="external">http://www.netlib.org/opt/praxis</a>. The original code was translated automatically by the F2C program from AT&amp;T Bell Labs (available at <a target="_blank" href="http://www.netlib.org/f2c/" rel="external">http://www.netlib.org/f2c/</a>). The C code was then enhanced to suite COPASI's reentrant optimization method interface.<br />
+<br />
+<h3 name="Options_for_Praxis">Options for Praxis</h3>
+<dl><dt><b>Tolerance</b></dt><dd> Convergence stopping criterium: the method stops when two consecutive estimates differ by less than Tolerance. This parameter is a positive integer to determine the number of parameter sets to be drawn before the algorithm stops. The default value is <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: +3px; height: 13; width: 27;" src="0a23a82fd3eb4213a6e86874ad0a6f44.png" alt="$10^{-5}$">.</dd></dl><br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

@@ -1,0 +1,70 @@
+---
+title: "MIRIAM compliant Annotation in COPASI"
+previous: "Hidden/Intranet/Miriam_Annotation/Terms"
+next: "Hidden/Intranet/Events"
+sitemap: false
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+This page describes the support of MIRIAM compliant annotation in COPASI. COPASI stores the information in a <a target="_blank" href="http://www.w3.org/TR/rdf-primer/" rel="external">Resource Description Framework (RDF)</a> graph which is saved in <a target="_blank" href="http://www.w3.org/TR/rdf-syntax-grammar/" rel="external">RDF/XML Syntax</a> in the COPASI file. MIRIAM annotation is currently provided for the model, the species, the compartments, the global quantities, the reactions, and the kinetic functions.<br />
+<h3 name="Graph">Graph</h3>
+COPASI displays the graph below in the user interface and supports full editing functionality (adding, changing, and deleting).<br />
+<br />
+<table cellpadding="0" cellspacing="0"><tr><td><img alt="" src="MIRIAM.png" style="width:100%" border="0"  /></td></tr><tr><td class="mini">Supported Graph</td></tr></table><br />
+<br />
+<table cellpadding="0" cellspacing="0"><tr><td><img alt="" src="MiriamAnnotation.png" style="width:100%" border="0"  /></td></tr><tr><td class="mini">User Interface</td></tr></table><br />
+<br />
+<h3 name="Supported_Predicates">Supported Predicates</h3>
+COPASI supports the following predicates (name of edges in the RDF graph).<br />
+<h4 name="Terms_defined_by_COPASI">Terms defined by COPASI</h4>
+The terms interpreted by COPASI are derived from the <a target="_blank" href="http://www.ebi.ac.uk/compneur-srv/miriam-main/mdb?section=qualifiers" rel="external">MIRIAM Qualifiers</a> found in Biomodels.net. We do not use the qualifiers from Biomodels.net directly since we feel the distinction between <b>model-qualifiers</b> and <b>biology-qualifiers</b> is cumbersome to the user and does not provide any additional information.<br />
+<br />
+The name space for the terms is:<br />
+&nbsp;&nbsp;&nbsp;&nbsp; http://www.copasi.org/RDF/MiriamTerms#<br />
+<br />
+<table class="normal"><tr><td class="heading">Predicate URI </td><td class="heading"> User Interface </td><td class="heading"> Definition</td></tr><tr><td class="odd">-+encodes+- </td><td class="odd"> encodes </td><td class="odd"> The subject represented by the model component encodes, directly or by transitivity the subject of the referenced resource.</td></tr><tr><td class="even">-+hasPart+- </td><td class="even"> has&nbsp;part </td><td class="even"> The subject represented by the model component includes the subject of the referenced resource, either physically or logically. This relation might be used to link a complex to the description of its components.</td></tr><tr><td class="odd">-+hasVersion+- </td><td class="odd"> has&nbsp;version </td><td class="odd"> The subject of the referenced resource is a version or an instance of the subject represented by the model component.</td></tr><tr><td class="even">-+is+- </td><td class="even"> is </td><td class="even">  The subject represented by the model component is the subject of the referenced resource. This relation might be used to link a reaction to its exact counterpart in KEGG or Reactome for instance.</td></tr><tr><td class="odd">-+isDescribedBy+- </td><td class="odd"> reference </td><td class="odd"> The subject represented by the model component is described by the referenced resource. This relation should be used for instance to link a species or a parameter to the literature that describes the concentration of the species or the value of the parameter.</td></tr><tr><td class="even">-+isEncodedBy+- </td><td class="even"> is&nbsp;encoded&nbsp;by </td><td class="even"> The subject represented by the model component is encoded, directly, or by transitivity, by the subject of the referenced resource.</td></tr><tr><td class="odd">-+isHomologTo+- </td><td class="odd"> is&nbsp;homolog&nbsp;to </td><td class="odd"> The subject represented by the model component is homolog, to the subject of the referenced resource, i.e. they share a common ancestor.</td></tr><tr><td class="even">-+isPartOf+- </td><td class="even"> is&nbsp;part&nbsp;of </td><td class="even"> The subject represented by the model component is a physical or logical part of the subject of the referenced resource. This relation might be used to link a component to the description of the complex is belongs to.</td></tr><tr><td class="odd">-+isVersionOf+- </td><td class="odd"> is&nbsp;version&nbsp;of </td><td class="odd"> The subject represented by the model component is a version or an instance of the subject of the referenced resource.</td></tr><tr><td class="even">-+occursIn+- </td><td class="even"> occurs&nbsp;in </td><td class="even"> The subject represented by the model component takes place in the subject of the reference resource.</td></tr></table><br />
+The above terms may only refer to resources defined as <a target="_blank" href="http://www.ebi.ac.uk/compneur-srv/miriam-main/mdb?section=browse" rel="external">MIRIAM Resources</a> in Biomodels.net.<br />
+<h4 name="Terms_defined_by_a_class_wiki_external_target_blank_href_http_www_w3_org_TR_vcard_rdf_rel_external_VCard_a_">Terms defined by <a target="_blank" href="http://www.w3.org/TR/vcard-rdf" rel="external">VCard</a></h4>
+The name space for the terms is:<br />
+&nbsp;&nbsp;&nbsp;&nbsp; http://www.w3.org/2001/vcard-rdf/3.0# <br />
+<br />
+<table class="normal"><tr><td class="heading">Predicate URI </td><td class="heading"> User Interface </td><td class="heading"> Definition</td></tr><tr><td class="odd">-+EMAIL+- </td><td class="odd"> Email </td><td class="odd"></td></tr><tr><td class="even">-+Family+- </td><td class="even"> Family Name </td><td class="even"> This must be a child of N.</td></tr><tr><td class="odd">-+Given+- </td><td class="odd"> Given Name </td><td class="odd"> This must be a child of N.</td></tr><tr><td class="even">-+N+- </td><td class="even"> Full Name </td><td class="even"></td></tr><tr><td class="odd">-+ORG+- </td><td class="odd"> Organization </td><td class="odd"></td></tr><tr><td class="even">-+Orgname+- </td><td class="even"> Organization Name </td><td class="even"> This must be a child of ORG.</td></tr></table><br />
+<h4 name="Terms_defined_by_a_class_wiki_external_target_blank_href_http_dublincore_org_rel_external_Dublin_Core_a_">Terms defined by <a target="_blank" href="http://dublincore.org/" rel="external">Dublin Core</a></h4>
+The name space for the terms is:<br />
+&nbsp;&nbsp;&nbsp;&nbsp; http://purl.org/dc/terms/<br />
+<br />
+<table class="normal"><tr><td class="heading">Predicate URI </td><td class="heading"> User Interface </td><td class="heading"> Definition</td></tr><tr><td class="odd">-+dcterms:creator+- </td><td class="odd"> creator </td><td class="odd"> An entity primarily responsible for making the resource.</td></tr><tr><td class="even">-+dcterms:W3CDTF+- </td><td class="even"> encoding for dates (hidden) </td><td class="even"> The set of dates and times constructed according to the <a target="_blank" href="http://www.w3.org/TR/NOTE-datetime" rel="external">W3C Date and Time Formats Specification</a>.</td></tr><tr><td class="odd">-+dcterms:created+- </td><td class="odd"> date created </td><td class="odd"> Date of creation of the resource.</td></tr><tr><td class="even">-+dcterms:modified+- </td><td class="even"> date modified </td><td class="even"> Date on which the resource was changed.</td></tr><tr><td class="odd">-+dcterms:bibliographicCitation+- </td><td class="odd"> bibliographic citation </td><td class="odd"> A bibliographic reference for the resource.</td></tr><tr><td class="even">-+dcterms:description+- </td><td class="even"> description </td><td class="even"> Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource.</td></tr></table><br />
+<h4 name="COPASI_File_Format">COPASI File Format</h4>
+The schema for Miriam Annotation Element in the <a title="DocumentationSchema" href="/../../../Support/Technical_Documentation/File_Format">CopasiML</a> is shown below<br />
+<pre>
+  &lt;xs:element name=&quot;MiriamAnnotation&quot; type=&quot;cMIRIAM&quot; minOccurs=&quot;0&quot;/&gt;
+
+  &lt;xs:complexType name=&quot;cMIRIAM&quot; name=&quot;copasi.MIRIAM&quot;&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:any namespace=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;
+              processContents=&quot;skip&quot;/&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+</pre><br />
+The Miriam Annotation element may contain any legal <a target="_blank" href="http://www.w3.org/TR/rdf-syntax-grammar/" rel="external">RDF/XML Syntax</a> .<br />
+<h4 name="SBML_Support">SBML Support</h4>
+<h5 name="Import">Import</h5>
+COPASI will import all correct RDF from existing <a target="_blank" href="http://sbml.org" rel="external">SBML</a> files which can be mapped onto our schema. In particular we are able to import the information specified in L2V2 and L2V3 as well as the L2V1 information provided by Biomodels.net as long as it correct RDF/XML. If we encounter incorrect RDF/XML we will only ignore the part which is incorrect.<br />
+<h4 name="Export">Export</h4>
+COPASI currently does not export MIRIAM annotation to SBML. We are working on a solution to overcome the differences between the SBML specification and the simpler but richer COPASI information.<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

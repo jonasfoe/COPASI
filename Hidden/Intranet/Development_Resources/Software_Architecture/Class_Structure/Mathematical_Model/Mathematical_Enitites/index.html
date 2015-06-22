@@ -1,0 +1,81 @@
+---
+title: "Mathematical Enitites"
+previous: "Hidden/Intranet/Development_Resources/Software_Architecture/Class_Structure/Mathematical_Model/Functionality"
+next: "Hidden/Intranet/Development_Resources/Software_Architecture/Class_Structure/Mathematical_Model/Entity_Order"
+sitemap: false
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+<h3 name="Mathematical_Types"> Mathematical Types</h3>
+<h4 name="Entity_Types"> Entity Types</h4>
+<ul><li> <b>Model:</b> The model time.
+</li><li> <b>Analysis:</b> This is used for entities added by analysis tasks.
+</li><li> <b>Global Quantity:</b> A global quantity is a model value which is neither a compartment nor a species.
+</li><li> <b>Compartment:</b> Compartments are container for species.
+</li><li> <b>Species:</b> Species are contained in compartments and have quantity and density values.
+</li><li> <b>Local Reaction Parameter:</b> Local reaction parameters
+</li><li> <b>Stoichiometic Coefficient:</b> Stoichiometic Coefficients (for future use, to support changing stoichiometry)
+</li><li> <b>Reaction:</b> Reactions contain information about transitions of the system.
+</li><li> <b>Moiety:</b> Based on the system of reactions mass conservation relationships are created which can be used instead of reaction derive ODEs to determine the value of some species.
+</li><li> <b>Event:</b> Numerical values associated with events
+</li><li> <b>Delay:</b> Numerical values associated with delays, i.e., value and lag.
+</li></ul>
+<br />
+The reason for this typing scheme is to avoid any dynamic casting and to facilitate easy determination of  mathematical operations and values available for each entity.<br />
+<h4 name="Simulation_Types">Simulation Types</h4>
+<ul><li> <b>Fixed:</b> Constant value throughout the simulation
+</li><li> <b>EventTarget:</b> Value which is only changed during events
+</li><li> <b>Time:</b> The simulation time
+</li><li> <b>ODE:</b> Value determined by an ODE
+</li><li> <b>Independent:</b> Independent species determined by a reaction
+</li><li> <b>Dependent:</b> Dependent species determined by a reaction
+</li><li> <b>Assignment:</b> Values is determined by a mathematical assignment
+</li><li> <b>Conversion:</b> Special assignment for to account for species duality (intensive vs extensive values)
+</li></ul>
+<br />
+Each entity type may be of a specific simulation type.  Which combinations are suitable can be seen below.<br />
+<br />
+<table class="normal"><caption>Entity Type Combinations</caption><colgroup><col width="23% " /><col width=" 11% " /><col width=" 11% " /><col width=" 11% " /><col width=" 11% " /><col width=" 11% " /><col width=" 11% " /><col width=" 11%" /></colgroup><tr><td class="heading"></td><td class="heading"> <b>Time</b> </td><td class="heading"> <b>ODE</b> </td><td class="heading"> <b>Independent/Dependent</b> </td><td class="heading"> <b>Assignment</b> </td><td class="heading"> <b>Conversion</b> </td><td class="heading"> <b>Fixed</b> </td><td class="heading"> <b>Event Target</b></td></tr><tr><td class="odd"><b>Model</b> </td><td class="odd"> required </td><td class="odd"> prohibited </td><td class="odd"> prohibited </td><td class="odd"> prohibited </td><td class="odd"> prohibited </td><td class="odd"> prohibited  </td><td class="odd"> prohibited</td></tr><tr><td class="even"><b>Analysis</b> </td><td class="even"> prohibited </td><td class="even"> allowed </td><td class="even"> prohibited </td><td class="even"> allowed  </td><td class="even"> prohibited </td><td class="even"> allowed </td><td class="even"> allowed</td></tr><tr><td class="odd"><b>Compartment</b> </td><td class="odd"> prohibited </td><td class="odd"> allowed </td><td class="odd"> prohibited </td><td class="odd"> allowed  </td><td class="odd"> prohibited </td><td class="odd"> allowed </td><td class="odd"> allowed</td></tr><tr><td class="even"><b>Species</b> </td><td class="even"> prohibited </td><td class="even"> allowed </td><td class="even"> allowed </td><td class="even"> allowed </td><td class="even"> allowed </td><td class="even"> allowed  </td><td class="even"> allowed</td></tr><tr><td class="odd"><b>Local Reaction Parameter</b> </td><td class="odd"> prohibited </td><td class="odd"> prohibited </td><td class="odd"> prohibited </td><td class="odd"> prohibited  </td><td class="odd"> prohibited </td><td class="odd"> allowed </td><td class="odd"> allowed</td></tr><tr><td class="even"><b>Stoichiometric Coefficients</b> </td><td class="even"> prohibited </td><td class="even"> prohibited </td><td class="even"> prohibited </td><td class="even"> prohibited  </td><td class="even"> prohibited </td><td class="even"> required </td><td class="even"> prohibited</td></tr><tr><td class="odd"><b>Global Quantity</b> </td><td class="odd"> prohibited </td><td class="odd"> allowed </td><td class="odd"> prohibited </td><td class="odd"> allowed  </td><td class="odd"> prohibited </td><td class="odd"> allowed </td><td class="odd"> allowed</td></tr><tr><td class="even"><b>Reaction</b> </td><td class="even"> prohibited </td><td class="even"> prohibited </td><td class="even"> prohibited </td><td class="even"> prohibited </td><td class="even"> prohibited </td><td class="even"> prohibited </td><td class="even"> prohibited</td></tr><tr><td class="odd"><b>Moiety</b> </td><td class="odd"> prohibited </td><td class="odd"> prohibited </td><td class="odd"> prohibited </td><td class="odd"> prohibited </td><td class="odd"> prohibited </td><td class="odd"> prohibited </td><td class="odd"> prohibited</td></tr></table><br />
+Entities with calculation type Time, ODE, Reaction, or Fixed may be used as targets of events.<br />
+<br />
+<h4 name="Value_Types"> Value Types</h4>
+<ul><li> <b>Value:</b>
+</li><li> <b>Rate:</b>
+</li><li> <b>Particle Flux:</b>
+</li><li> <b>Flux:</b>
+</li><li> <b>Propensity:</b>
+</li><li> <b>Total Mass:</b>
+</li><li> <b>Dependent Mass:</b>
+</li><li> <b>Discontinuous:</b>
+</li><li> <b>Event Delay:</b>
+</li><li> <b>Event Priority:</b>
+</li><li> <b>Event Assignment:</b>
+</li><li> <b>Event Trigger:</b>
+</li><li> <b>Event Root:</b>
+</li><li> <b>Event Root State:</b>
+</li><li> <b>Delay Value:</b>
+</li><li> <b>Delay Lag:</b>
+</li></ul>
+<h4 name="Usage_Declarations">Usage Declarations</h4>
+This is not necessary for the mathematical computation but is a valuable feedback to the user. These settings are automatically determined by COPASI based on the model<br />
+<ul><li> <b>Event Target:</b> This entity is target of an event assignment
+</li><li> <b>Relevant:</b> This entity is used within the model, i.e., its value feeds back into ODEs or events.
+</li><li> <b>Observable:</b> This entity is an observable of the model, it does not influence the model behavior.
+</li><li> <b>Unused:</b> This entity is not used at all, i.e., its values is neither changed nor used.
+</li></ul>
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

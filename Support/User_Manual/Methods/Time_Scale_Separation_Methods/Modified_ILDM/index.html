@@ -1,0 +1,30 @@
+---
+title: "Modified ILDM"
+previous: "Support/User_Manual/Methods/Time_Scale_Separation_Methods/ILDM_Deuflhard"
+next: "Support/User_Manual/Methods/Time_Scale_Separation_Methods/CSP"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+The algorithm of modified ILDM method has been developed by our group. The main goal is to distinguish between &quot;slow&quot; and &quot;fast&quot; metabolites &mdash; instead of &quot;modes&quot;. So the final result of the analysis can be formulated without linear transformation of the reaction system.<br />
+<br />
+<h3 name="The_implementation_in_COPASI">The implementation in COPASI</h3>
+For proposing a selection of fast metabolites, COPASI uses essentially the same numerical tools of local Schur decomposition of Jacobian as for the ILDM (Deuflhard) method.<br />
+<br />
+The vector &quot;Fast space&quot; specifies the metabolites making the largest contributions to the set of fast modes.  So it provides the next candidate of concentration which is then tested whether its additional nomination as fast metabolite still satisfies the criterion of error tolerance.The result will be  two  matrices and two  vectors, which describe the contribution of metabolites  to slow (fast) modes (spaces). However, the corresponding analysis is performed by using Schur transformation matrices. The corresponding numbers of slow and fast components now refer to the &quot;real&quot; slow and fast metabolites (not to  modes).<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

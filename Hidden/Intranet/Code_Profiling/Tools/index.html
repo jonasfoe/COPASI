@@ -1,0 +1,39 @@
+---
+title: "Profiling Tools"
+previous: "Hidden/Intranet/Code_Profiling/Introduction"
+next: "Hidden/Intranet/Code_Profiling/Tasks"
+sitemap: false
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="Prof_and_Gprof">Prof and Gprof</h3>
+Prof and <a target="_blank" href="http://www.cs.utah.edu/dept/old/texinfo/as/gprof_toc.html" rel="external">Gprof</a> are GNU profilers which are freely available on many Unix platforms(Linux, IBM, Sun Solaris etc.). The code is linked or compiled  with special -pg flags. The executable is then run, generating a file called gmon.out. Gprof is then run on the generated file, giving statistics about the run of the program.<br />
+<h3 name="OProfile">OProfile</h3>
+<a target="_blank" href="http://oprofile.sf.net" rel="external">OProfile</a> is a system-wide profiling tool for Linux using sampling. System-wide profiling is only permitted to the root user, as all actions on the system can be observed.<br />
+<h3 name="Valgrind">Valgrind</h3>
+<a target="_blank" href="http://valgrind.org" rel="external">Valgrind</a> is a system for debugging and profiling Linux programs. Valgrind's tool suite can automatically detect many memory management and threading bugs. It helps avoid hours of frustrating bug-hunting and thereby making programs more stable. It also enables detailed profiling of programs to help speed up the programs. There is no requirement for compiling or linking code with special flags.<br />
+<h4 name="Cachegrind">Cachegrind</h4>
+Cachegrind is a cache profiler.<br />
+<h4 name="Callgrind">Callgrind</h4>
+Callgrind is an extension to Cachegrind. It provides all the information that Cachegrind does, plus extra information about call graphs.<br />
+<h4 name="Massif">Massif</h4>
+Massif is a heap profiler. It performs detailed heap profiling by taking regular snapshots of a program's heap. It produces a graph showing heap usage over time, including information about which parts of the program are responsible for the most memory allocations.<br />
+<h4 name="Kcachegrind">Kcachegrind</h4>
+KCachegrind is available separately as a visualization tool and gives a much better overview of the data that Callgrind collects. It can also be used to visualize Cachegrind's output.<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

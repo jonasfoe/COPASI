@@ -1,0 +1,62 @@
+---
+title: "SBML Test Suite"
+previous: "Hidden/Intranet/Test_Suite"
+next: "Hidden/Intranet/Feature_Requests_User_Workshop_2008"
+sitemap: false
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="Installation">Installation</h3>
+In order to run the testsuite, you need three things.<br />
+<h4 name="1_Test_Suite_Runner">1. Test Suite Runner</h4>
+Currently, there is no official way to run the SBML testsuite. However, we have a version of the unofficial java client. This works nicely thanks to the modifications by Frank Bergman. Please download the <i>No such attachment on this page</i> and put in a place of your choice. Before proceeding start it with:<br />
+<br />
+&nbsp;&nbsp;&nbsp;<code> java -jar SBMLTestSuite.jar</code><br />
+<br />
+This will create a configuration directory<code> .sbmltestrunner</code> located in your home directory. Note, under Windows your home directory is<code> C:\Documents and Settings\&lt;your account&gt;</code> which cannot be changed with the environment variable<code> $HOME</code>. The testsuite runner includes a set of test cases which can be found in:<br />
+<br />
+&nbsp;&nbsp;&nbsp;<code> $HOME/.sbmltestrunner/2008-08-24/cases</code><br />
+<br />
+or<br />
+<br />
+&nbsp;&nbsp;&nbsp;<code> $HOME/.sbmltestrunner/null/cases</code><br />
+<h4 name="2_The_Test_Suite">2. The Test Suite</h4>
+An official set of test cases is available via SVN at the <a target="_blank" href="http://sbml.svn.sourceforge.net/viewvc/sbml/" rel="external">SBML SVN Server</a>. To replace the test cases included in Test Suite Runner follow these instructions:<br />
+<ol><li> change to:<code> $HOME/.sbmltestrunner/2008-08-24/cases</code> or<code> $HOME/.sbmltestrunner/null/cases</code>
+</li><li> remove:<code> semantic</code>
+</li><li> execute: <code>  svn co  https://sbml.svn.sourceforge.net/svnroot/sbml/trunk/test-suite/cases/semantic </code>
+</li></ol>
+This allows you to update the test cases through svn when fixes or new tests become available.<br />
+<h4 name="3_The_COPASI_Wrapper">3. The COPASI Wrapper</h4>
+The source code for the wrapper is in a subdirectory called sbml-testsuite of the COPASI sources. If you have configured COPASI, you just enter that directory and call make.<br />
+<br />
+<h3 name="Running_the_tests">Running the tests</h3>
+In order to run the tests, you start a java virtual machine with the jar file<code> java -jar SBMLTestSuite.jar</code>. The testrunner GUI will open and in the "File" menu you can find an item called "New Test Run". Calling that will present you with a wizard that lets you select which version of SBML you want to test (L2V3 is what I use) and which features you don't want to test. I usually exclude "algebraic rules" and "fast reactions". (There is more than one page to disable features!). Currently there is no way to disable "delay functions" in the wizard. So if there are any tests with delay functions, we will fail those, but I don't think that there currently are any.<br />
+<br />
+In the last page of the wizard, you have to specify the full path to the test wrapper you compiled. As arguments to the wrapper you give<code> %d %n %o 2 3</code> where the last two number denote the level and version of SBML you chose to test. The other arguments are variables that specify the test directory, the test number and the output directory.<br />
+<br />
+Once you have finished the wizard, you get to a widget with a little green run button and if you click that, the program will run all the tests you specified. To have a nice view of the results, you can select the "Map View" even while the tests are running.<br />
+<br />
+Interpreting the results is rather obvious. Green rectangle means we passed the test, red rectangle means we failed the test and blue rectangle usually means that there either was no output from the wrapper (e.g. if it crashed) or that there was not enough output (e.g. the integrator stopped before the end). Also if there are NaN values in the file, it gets a blue rectangle.<br />
+<br />
+On Windows I (Stefan) use: <br /><br />
+&nbsp;&nbsp;&nbsp;<code>  &lt;path to&gt;\sbml-testsuite.exe %d %n %o 2 3 </code><br />
+<h3 name="Results">Results</h3>
+We pass 840 of 840 test if we skip tests with "algebraic rules" and "fast reactions".<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

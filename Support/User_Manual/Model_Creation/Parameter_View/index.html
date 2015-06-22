@@ -1,0 +1,29 @@
+---
+title: "Parameter View"
+previous: "Support/User_Manual/Model_Creation/Annotating_Models_and_Model_Elements"
+next: "Support/User_Manual/Model_Creation/User_Defined_Functions"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+The parameter view widget can be displayed by selecting the leaf called Parameter Overview on the Model-&gt;Biochemical branch (see below). This widget allows you to view and edit all parameters of the model in one place. This saves you from moving around the model tree if you e.g. first have to edit the initial concentrations for some species and afterward parameters of one or more reactions. The view shows you the initial concentrations for the species at the top followed by the initial time and the volumes of all the compartments and at the bottom the kinetic parameters of all reactions.<br />
+<br />
+In order to change a value, you double click on it which lets you input a new value. On hitting the return key or clicking somewhere else, the new value is not written to the object directly, but a '*' character appears in front of the name of the changed parameter. If you now leave this widget or press the Commit button at the bottom of the dialog, the new value is written to the corresponding object in the model.<br />
+<br />
+<div class="img" align="center"><table cellpadding="0" cellspacing="0"><tr><td><img alt="" src="Parameters_01.png" style="width:100%" border="0"  /></td></tr><tr><td class="mini">Parameter&nbsp;View</td></tr></table></div><br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

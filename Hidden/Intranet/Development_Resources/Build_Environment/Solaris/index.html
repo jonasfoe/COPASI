@@ -1,0 +1,44 @@
+---
+title: "Solaris Resources"
+previous: "Hidden/Intranet/Development_Resources/Build_Environment/MacOS_X"
+next: "Hidden/Intranet/Development_Resources/Build_Environment/Windows"
+sitemap: false
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<div class="titlebar">This is no longer maintained.</div>
+<h4 name="Libraries">Libraries</h4>
+The libraries below are needed to build COPASI. In addition you need the gcc or Sun Studio compilers.<br />
+<ul><li> <a target="_blank" href="http://www.netlib.org/lapack/" rel="external">LAPACK</a> get the latest package or compile from sources. If needed put the <a target="_blank" href="http://www.netlib.org/f2c/f2c.h" rel="external">f2c.h</a> file from netlib on the copasi directory
+</li><li> <a target="_blank" href="http://sourceforge.net/projects/sbml/files/libsbml/3.4.1/libsbml-3.4.1-src.zip/download" rel="external">libsbml-3.4.1-src.zip</a>
+<ul><li> Make sure that no old sbml include files are in your include search path.
+</li><li>To compile under Solaris we need to disable building shared libraries. Please change  src/SBML/Makefile:
+</li></ul></li></ul>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;193c193</code><br />
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt; libraries = ../$(PACKAGE).a ../$(PACKAGE).$(SHAREDLIBEXT)</code><br />
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;---</code><br />
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt; libraries = ../$(PACKAGE).a</code><br />
+<ul><li> <a target="_blank" href="http://expat.sourceforge.net/" rel="external">expat</a>  2.0.1 or later, which may already be installed in your system
+</li><li><a target="_blank" href="http://librdf.org/raptor" rel="external">raptor</a> 1.4.16 or later is needed for RDF support in the MIRIAM annotation.
+</li><li> Install the SBW integration library, which can be found <a title="DevelopersEnvironment" href="/../../../Hidden/Intranet/Development_Resources/Build_Environment">here</a>.
+</li><li> Install the qwt plotting library, which can be found <a title="DevelopersEnvironment" href="/../../../Hidden/Intranet/Development_Resources/Build_Environment">here</a>.
+</li><li> Install the qwt 3D plotting library, which can be found <a title="DevelopersEnvironment" href="/../../../Hidden/Intranet/Development_Resources/Build_Environment">here</a>.
+</li></ul>
+<br />
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

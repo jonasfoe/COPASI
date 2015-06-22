@@ -1,0 +1,36 @@
+---
+title: "Stochastic Simulation"
+previous: "Support/User_Manual/Methods/Time_Course_Calculation/Deterministic_Simulation"
+next: "Support/User_Manual/Methods/Time_Course_Calculation/Hybrid_Simulation"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="The_Next_Reaction_Method">The Next-Reaction-Method</h3>
+This stochastic simulation method utilizes the algorithm developed by Gibson and Bruck [<a title="OD.Bibliography" href='/../../../Support/User_Manual/Bibliography#Gibson00'>Gibson00</a>]. For each reaction a putative stochastic reaction time is calculated and the reaction with the shortest reaction time will be realized. The set of reactions is organized in a priority queue to allow for the efficient search for the fastest reaction. In addition, by using a so-called dependency graph only those reaction times are recalculated in each step, that are dependent on the reaction, which has been realized. This simulation method requires all the reactions to be irreversible. However, COPASI provides a tool, that converts all reversible reactions into irreversible ones. Because the algorithm internally works on discrete particle numbers rather than concentrations, the particle numbers in the system must not exceed a value of <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: +3px; height: 12; width: 41;" src="3d420d60502208cbe19bbec62891f85f.png" alt="$2^{64}-1$"> which is approximately <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: +3px; height: 12; width: 58;" src="35d7e953b0cbd9eb8d997a7db7439fdf.png" alt="$1.84 \cdot 10^{19}$">.<br />
+<br />
+The current implementation of the Next Reaction Method is very inefficient when the model contains assignment rules, which leads to extended calculation times.<br />
+<br />
+There is a restriction regarding global quantities: If a differential equation is provided for a global quantity (the quantity is of type &quot;ode&quot;) the model cannot be simulated stochastically with the current version of COPASI. If the global quantity is of type &quot;assignment&quot; stochastic simulation is possible but not as efficient as for models without assignments. No restrictions apply for &quot;fixed&quot; global quantities.<br />
+<br />
+<h4 name="Options_for_the_Next_Reaction_Method">Options for the Next-Reaction-Method</h4>
+<dl><dt><b>Max Internal Steps</b></dt><dd> This parameter is a positive integer value specifying the maximal number of internal steps the integrator is allowed to take before the next desired reporting time. The default value is '1000000'.</dd></dl><br />
+<dl><dt><b>Subtype</b></dt><dd> This parameter is ignored in the current version of COPASI.</dd></dl><br />
+<dl><dt><b>Use Random Seed</b></dt><dd> This flag can be '0' or '1' and determines if the user-defined random seed should be used for the calculation. The default is '0' meaning that the random seed is set to a random value before each run and consecutively calculated trajectories will be different. If the value of this flag is set to '1', the user-defined random seed will be used and each calculated trajectory will be the same for the same value of the given random seed.</dd></dl><br />
+<dl><dt><b>Random Seed</b></dt><dd> This unsigned integer is used as random seed in the calculations, if the flag Use Random Seed is set to '1'. The default value is '1'.</dd></dl><br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

@@ -1,0 +1,118 @@
+---
+title: "Build Environment"
+previous: "Hidden/Intranet/Development_Resources/Guide_Lines"
+next: "Hidden/Intranet/Development_Resources/Build_Environment/Linux"
+sitemap: false
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h4 name="Table_of_Contents">Table of Contents</h4>
+<br />
+<h4 name="LibSBML_5"> LibSBML 5</h4>
+To install libsbml5 with layout and render extension:<br />
+<ul><li> Download: <a target="_blank" href="http://sourceforge.net/projects/sbml/files/libsbml/5.8.0/experimental/src/libSBML-5.8.0-Source.tar.gz/download" rel="external">llibSBML-5.8.0-Source</a>
+</li><li> Unpack:<code> tar -xvf libSBML-5.8.0-Source.tar.gz </code>
+</li><li> Create a new build directory:<code> mkdir build </code>
+</li><li> change into it build directory:<code> cd build </code>
+</li><li> Assure that cmake is available in the system and in the path
+</li><li> Execute:<code> cmake [-DCMAKE_INSTALL_PREFIX:PATH=< install directory >] -DENABLE_LAYOUT=ON -DENABLE_RENDER=ON -DENABLE-COMP=ON -DWITH_EXPAT=ON -DWITH_LIBXML=OFF -DWITH_BZIP2=OFF -DWITH_ZLIB=OFF < libsbml-5.8.0 directory > </code>
+</li><li> Execute:<code> make (or nmake) </code>
+</li><li> Execute:<code> make install (or nmake install) </code>
+</li></ul>
+This will install a static and a dynamic version of libSBML, currently the static one is called <b>libsbml-static.a</b>. If you want to link against the static version you need to rename it to <b>libsbml.a</b>.<br />
+<br />
+The Windows binaries for VC 9.0 can be found <a target="_blank" href="https://www.dropbox.com/s/oxzp9g8fc8p08q9/libsbml-5.8.0-icc-vc9.0.zip" rel="external">here</a>.<br />
+<br />
+More information about the Cmake libSBML build: <a target="_blank"  href="http://sbml.org/Software/libSBML/docs/cpp-api/libsbml-installation.html#unix-cmake">http://sbml.org/Software/libSBML/docs/cpp-api/libsbml-installation.html#unix-cmake</a><br />
+General information about additional cmake generators and options: <a target="_blank"  href="http://www.cmake.org/cmake/help/cmake-2-8-docs.html">http://www.cmake.org/cmake/help/cmake-2-8-docs.html</a><br />
+<h4 name="Qwt_Plotting_Library"> Qwt Plotting Library</h4>
+To install qwt follow the following steps:<br />
+<ul><li> Download  <a  href="qwt-5.2.0-20091022.zip" rel="">qwt-5.2.0-20091022.zip</a>
+</li><li> Unzip qwt-5.2.0-20091022.zip to a directory of your choice.
+</li><li> Change to the newly created qwt-5.2.0 directory.
+</li><li> Assure that the QTDIR environment variable is properly set.
+</li><li> Execute: qmake or qmake prefix=&lt;installation path&gt;
+</li><li> Execute: make (or nmake)
+</li><li> Execute: make install (or nmake install)
+</li></ul>
+<h4 name="Qwt_3D_Plotting_Library"> Qwt 3D Plotting Library</h4>
+To install qwtplot3d follow the following steps:<br />
+<ul><li> Download  <a  href="qwtplot3d-0.2.7-20110513.zip" rel="">qwtplot3d-0.2.7-20110513.zip</a>
+</li><li> Unzip qwtplot3d-0.2.7-20110513.zip to a directory of your choice.
+</li><li> Change to the newly created qwtplot3d-0.2.7 directory.
+</li><li> Assure that the QTDIR environment variable is properly set.
+</li><li> Execute: qmake or qmake prefix=&lt;installation path&gt;
+</li><li> Execute: make (or nmake)
+</li><li> Execute: make install (or nmake install)
+</li></ul>
+<h4 name="Qt_MML_Widget_Library"> Qt MML Widget Library</h4>
+To install qtmmlwidget-2.4.1 follow these steps:<br />
+<ul><li> Download  <a  href="qtmmlwidget-2.4.1-20120223.zip" rel="">qtmmlwidget-2.4.1-20120223.zip</a>
+</li><li> Unzip qtmmlwidget-2.4.1-20120223.zip to a directory of your choice.
+</li><li> Change to the newly created qtmmlwidget-2.4.1-20120223 directory.
+</li><li> Assure that the QTDIR environment variable is properly set.
+</li><li> Execute: qmake or qmake prefix=&lt;installation path&gt;
+</li><li> Execute: make (or nmake)
+</li><li> Execute: make install (or nmake install)
+</li></ul>
+<h4 name="SBW_nbsp_nbsp_Integration_Library"> SBW&nbsp;&nbsp;Integration Library</h4>
+To install the SBW integration library follow the following steps:<br />
+<ul><li> Download  <a  href="sbw-2.7.10-20110525.tar.gz" rel="">sbw-2.7.10-20110525.tar.gz</a>
+</li><li> Untar sbw-2.7.10-20110525.tar.gz to a directory of your choice.
+</li><li> Change to the newly created  sbw-2.7.10-20110525 directory.
+</li><li> Execute: qmake or qmake prefix=&lt;installation path&gt;
+</li><li> Execute: make (or nmake)
+</li><li> Execute: make install (or nmake install)
+</li></ul>
+<br />
+<h4 name="Command_Line_Parsing"> Command Line Parsing</h4>
+The parser for COPASI's command line arguments is automatically created from an xml specification. Since clo++ is no longer maintained we provide copies of the source code and the documentation:<br />
+<ul><li> <a  href="clo++-0.6.4-COPASI.tar.gz" rel="">clo++-0.6.4-COPASI.tar.gz</a>
+</li><li> <a  href="clo++.pdf" rel="">Users Manual</a>
+</li></ul>
+<br />
+<h4 name="Language_Bindings"> Language Bindings</h4>
+<br />
+In order to build the Java and/or Python language bindings for COPASI, you have to more or less follow the same procedure as for compiling COPASI.<br />
+You will need the same libraries that are needed for CopasiSE (non-GUI version) and in addition to those, you need the header files and libraries of the languages you want to build the bindings for.<br />
+The bindings use the <a target="_blank" href="http://www.swig.org" rel="external">SWIG software</a> to create the language specific files from COPASI header files and additional SWIG interface files. Any relatively new version of SWIG should do. For Microsot windows there is a special precompiled version of SWIG that you should use, for all other operating systems you can either compile it yourself, or if your distribution/package manager provides a relatively new version, you can install that.<br />
+<br />
+The configure script to prepare COPASIs build system understands some additional options that tell COPASI what language bindings you want to compile and where the headers and libraries for the languages can be found:<br />
+<br />
+<table><tr><td > &nbsp;&nbsp;--with-swig=PATH </td><td > path to the swig install directory </td></tr><tr><td > &nbsp;&nbsp;--with-python[=PATH] </td><td > build python bindings and optionally specify the directory where python is installed </td></tr><tr><td > &nbsp;&nbsp;--with-python-includes=PATH </td><td > specify the path to the python header files </td></tr><tr><td > &nbsp;&nbsp;--with-python-libs=PATH </td><td > specify path to python library directory </td></tr><tr><td > &nbsp;&nbsp;--with-java[=PATH] </td><td > build java bindings and optionally specify where java is installed </td></tr><tr><td > &nbsp;&nbsp;--with-java-includes=PATH </td><td > path to java header files </td></tr><tr><td > &nbsp;&nbsp;--with-java-libs=PATH </td><td > path to Java libraries </td></tr></table><br />
+<br />
+When you specify the path to the swig installation, COPASI expects to find the SWIG binary in PATH/bin/. Likewise if you specify a path to a python or Java installation, COPASI expects the headers for that language to be located under PATH/include/ and the libraries under PATH/lib/. Optionally you can specify directly where COPASI finds the headers and the libraries for a certain language.<br />
+<br />
+Sometimes COPASI can not find out against which libraries it should link the bindings, especially if you have several versions of python on your system and/or if the libraries don't have standard names like libpython.so. In that case you might have to make slight modifications to the project files in copasi/bindings/java/java.pro or copasi/bindings/python/python.pro for the Java and Python bindings respectively.<br />
+<br />
+The language bindings should be linked statically against the libraries the COPASI libraries and other libraries like libSBML, otherwise you might run into problems if you use several different versions of those libraries on your system.<br />
+<br />
+After configuring the build system, you can build the language bindings as you would build COPASI which is described in more detail in the build instructions for the different platforms.<br />
+<br />
+For the windows platform the configuration process is a bit different since you have to specify certain shell variables to the configure.bat script instead of commandline options.<br />
+The names of the variables are:<br />
+<br />
+<br />
+<table><tr><td  colspan="2"> SWIG_PATH </td></tr><tr><td  colspan="2"> ENABLE_PYTHON </td></tr><tr><td  colspan="2">  PYTHON_PATH </td></tr><tr><td  colspan="2"> PYTHON_INCLUDE_PATH </td></tr><tr><td  colspan="2"> PYTHON_LIB_PATH  </td></tr><tr><td  colspan="2"> ENABLE_JAVA </td></tr><tr><td  colspan="2"> JAVA_PATH </td></tr><tr><td  colspan="2"> JAVA_INCLUDE_PATH </td></tr><tr><td  colspan="2"> JAVA_LIB_PATH </td></tr></table><br />
+<br />
+<br />
+They are passed to configure.bat in the same way as described in the COPASI build instructions for windows. And the meaning of the variables can be guessed by looking at the names of the commandline options described above.<br />
+<br />
+<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

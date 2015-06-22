@@ -1,0 +1,31 @@
+---
+title: "ODE Implementation"
+previous: "Hidden/Intranet/Fast_Reactions/Mathematical_Analysis"
+next: "Hidden/Intranet/Code_Profiling"
+sitemap: false
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="Alternative_1">Alternative 1</h3>
+The system described in equation (5) of the <a title="FastReactionMath" href="/../../../Hidden/Intranet/Fast_Reactions/Mathematical_Analysis">Mathematical Analysis</a> can be used as input to the <a target="_blank" href="https://computation.llnl.gov/casc/odepack/odepack_home.html" rel="external">odepack</a> routines LSODI and LSODIS. However neither of them provides root finding, i.e., events and fast reactions can not be part of the same model. To achieve this we need to develop our own root finding extension.<br />
+<h3 name="Alternative_2">Alternative 2</h3>
+The system described in equation (5) of the <a title="FastReactionMath" href="/../../../Hidden/Intranet/Fast_Reactions/Mathematical_Analysis">Mathematical Analysis</a> can be used as input to IDA, which is part of the <a target="_blank" href="https://computation.llnl.gov/casc/sundials/main.html" rel="external">SUNDIALS package</a>. IDA provides a root finder and thus events and fast reactions can be mixed.<br />
+<br />
+<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

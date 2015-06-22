@@ -1,0 +1,27 @@
+---
+title: "Compartments"
+previous: "Support/User_Manual/The_Model_in_COPASI"
+next: "Support/User_Manual/The_Model_in_COPASI/Species"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+Every species in COPASI must be placed in a compartment. The compartment has to have a well defined volume because COPASI relies on being able to calculate particle numbers from concentrations and vice versa. COPASI does not really support models without concentrations (i.e. dealing only with amounts of substance or particle numbers) but you can work around this limitation by setting the volume to be 1.0. But if you do this keep in mind that the dimensions of the different parameters as displayed in the COPASI GUI are not correct. The volumes of compartments can be fixed (the default) or determined by an assignment or an ODE.<br />
+<br />
+If the (chemically) same species is present in several compartments it is treated as several species in COPASI. E.g. if you have a model that contains glucose inside a cell and outside a cell these are two species in the model. They can however have the same name.<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

@@ -1,0 +1,48 @@
+---
+title: "The CCopasiParameter and CCopasiParameterGroup Classes"
+previous: "Hidden/Intranet/Development_Resources/Software_Architecture/Class_Structure/Model_Classes"
+next: "Hidden/Intranet/Development_Resources/Software_Architecture/Class_Structure/Mathematical_Model"
+sitemap: false
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="Parameter">Parameter</h3>
+The class CCopasiParameter is a specialized container (derived from CCopasiContainer) which is designed to store any information of the form<code><b> name = value</b></code>. Currently the type of the value is restricted to:<br />
+<ul><li> float
+</li><li> unsigned float
+</li><li> integer
+</li><li> unsigned integer
+</li><li> bool
+</li><li> group
+</li><li> string
+</li><li> common name
+</li><li> key
+</li><li> file
+</li></ul>
+The type group indicates a vector of parameters. A parameter which contains a group is implemented as the derived class CCopasiParameterGroup and has additional convenience methods to access the contained parameters.<br />
+<br />
+The name of a parameter and its object name are identical. The type of the value is determined at construction and may only be retrieved with the method:<pre class="codelisting" dir="ltr" style="overflow:auto;">const CCopasiParameter::Type &amp; getType() const;</pre><br />
+Additionally, set and retrieval methods for the value are provided:<br />
+<pre class="codelisting" dir="ltr" style="overflow:auto;">bool setValue(const std::vector&lt; CCopasiParameter * &gt; &amp; value);
+const Value &amp; getValue() const;</pre> Please note that the set method will fail if the argument does not match the type of the parameter.<br />
+<br />
+<h3 name="Parameter_Group">Parameter Group</h3>
+The class CCopasiParameterGroup is derived from CCopasiParameter. It is intended to handle an arbitrary list of parameters, i.e., it may contain an other parameter group. It provides convenient methods to access contained parameters by name as well as iterator to process all parameters.<br />
+<br />
+The class CCopasiParamterGroup is the base class for all problems and methods used in the task structure. As long as one knows the type of the derived class it is possible to elevate a CCopasiParameterGroup to a specific method or problem. This mechanism is used when loading a COPASI file. For it to function properly each derived class must implement a constructor which takes a CCopasiParameterGroup as argument. In some cases it is also necessary to overload the virtual method elevateChidren.<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

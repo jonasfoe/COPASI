@@ -1,0 +1,76 @@
+---
+title: "Windows Resources"
+previous: "Hidden/Intranet/Development_Resources/Build_Environment/Solaris"
+next: "Hidden/Intranet/Development_Resources/Build_Environment/Git"
+sitemap: false
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="Compiled_Libraries">Compiled Libraries</h3>
+<h4 name="Visual_Studio_C_9_32_and_64_bit_">Visual Studio C++ 9 (32 and 64 bit)</h4>
+Since the pre-compiled libraries are build with the Intel Compiler you must install the Intel Redistributable Libraries <a target="_blank" href="http://registrationcenter.intel.com/irc_nas/1928/w_cproc_p_11.1.067_redist_ia32.exe" rel="external">32 bit</a> or <a target="_blank" href="http://registrationcenter.intel.com/irc_nas/1928/w_cproc_p_11.1.067_redist_intel64.exe" rel="external">64 bit</a><br />
+<ul><li> <a  href="lapack-3.3.0.zip" rel="">lapack-3.3.0.zip</a>
+</li><li> <a  href="expat-2.0.1-icc-vc9.0.zip" rel="">expat-2.0.1-icc-vc9.0.zip</a>
+</li><li> <a  href="copasi-integrator-download.php?repID=8&amp;file=libsbml-4.2.0-icc-vc9.0.zip" rel="">libsbml-4.2.0-icc-vc9.0.zip</a>
+</li><li> <a  href="clapack-3.0-WIN32.zip0" rel="">sbw-2.7.10-icc-vc9.0.zip</a>
+</li><li> <a  href="raptor-1.4.21-icc-vc9.0.zip" rel="">raptor-1.4.21-icc-vc9.0.zip</a>
+</li></ul>
+<h4 name="Visual_Studio_C_8">Visual Studio C++ 8</h4>
+Since the pre-compiled libraries are build with the Intel Compiler you must install the <a  href="w_cproc_p_11.1.067_redist_ia32.exe" rel="">Intel Redistributable Libraries</a><br />
+You must add:<br />
+<ul><li><code>C:\Program Files\Microsoft Visual Studio 8\Common7\IDE</code>
+</li><li><code>C:\Program Files\Microsoft Visual Studio 8\Common7\Tools\Bin</code>
+</li><li><code>C:\Program Files\Microsoft Visual Studio 8\VC\bin</code>
+</li><li><code>C:\Program Files\Common Files\Intel\Shared Files\cpp\Bin\ia32</code>
+</li></ul>
+<br />
+to the environment variable <b>PATH</b> else the command line tools will not operate. Please note that under VC 8 libraries are dynamically linked if available.<br />
+<br />
+Append the following paths to the environment variables named below:<br />
+<ul><li><code>LIB=C:\Program Files\Common Files\Intel\Shared Files\cpp\Lib\ia32;C:\Program Files\Microsoft Visual Studio 8\VC\PlatformSDK\lib;C:\Program Files\Microsoft Visual Studio 8\VC\lib</code>
+</li><li><code>INCLUDE=C:\Program Files\Microsoft Visual Studio 8\VC\PlatformSDK\Include;C:\Program Files\Microsoft Visual Studio 8\VC\include</code>
+</li></ul>
+<br />
+Note: The above environment variables are sufficient for command line compilation. To compile within Visual Studio 2005 you must add<br /><code> &nbsp;&nbsp;&nbsp;C:\Program&nbsp;Files\Common&nbsp;Files\Intel\Shared&nbsp;Files\cpp\Lib\ia32</code> <br />to the search directories for library files. This setting can be found under <br /><code> &nbsp;&nbsp;&nbsp;Tools-&gt;Options-&gt;Project&nbsp;and&nbsp;Solutions-&gt;VC++&nbsp;Directories</code>.<br />
+<br />
+The libraries below are already compiled and just need to be decompressed into a directory of your choice.<br />
+<ul><li> <a  href="lapack-3.3.0.zip" rel="">lapack-3.3.0.zip</a> (32 and 64 bit)
+</li><li> <a  href="clapack-3.0-WIN32.zip" rel="">clapack-3.0-WIN32.zip</a>
+</li><li> <a  href="expat-2.0.1-icc.zip" rel="">expat-2.0.1-icc.zip</a>
+</li><li> <a  href="libsbml-4.2.0-icc.zip" rel="">libsbml-4.2.0-icc.zip</a>
+</li><li> <a  href="libsbw-2.7.10-icc.zip" rel="">libsbw-2.7.10-icc.zip</a>
+</li><li> <a  href="raptor-1.4.21-icc.zip" rel="">raptor-1.4.21-icc.zip</a>
+</li></ul>
+<h4 name="Visual_Studio_C_6_0_no_longer_supported_">Visual Studio C++ 6.0 (no longer supported)</h4>
+The libraries below are already compiled and just need to be decompressed into a directory of your choice.<br />
+<ul><li> <a  href="clapack-3.0-WIN32.zip" rel="">clapack-3.0-WIN32.zip</a>
+</li><li> <a  href="libsbml-3.1.0-WIN32.zip" rel="">libsbml-3.1.0-WIN32.zip</a> for CVS branch HEAD
+</li><li> <a  href="libsbml-3.1.1-WIN32.zip" rel="">libsbml-3.1.1-WIN32.zip</a> for CVS branch Build-25
+</li><li> <a  href="expat-2.0.1-WIN32.zip" rel="">expat-2.0.1-WIN32.zip</a>
+</li></ul>
+</div><h3 name="Source_Packages">Source Packages</h3>
+<ul><li> Install Qt
+</li><li> Install the qwt plotting library, which can be found <a title="DevelopersEnvironment" href="/../../../Hidden/Intranet/Development_Resources/Build_Environment">here</a>.
+</li><li> Install the qwt 3D plotting library, which can be found <a title="DevelopersEnvironment" href="/../../../Hidden/Intranet/Development_Resources/Build_Environment">here</a>.
+</li><li> Install the Qt MML Widget library, which can be found <a title="DevelopersEnvironment" href="/../../../Hidden/Intranet/Development_Resources/Build_Environment">here</a>.
+</li></ul>
+<h3 name="Optional_Components">Optional Components</h3>
+For some build operations such as building the lex and yacc parsers and the distribution package it is necessary to have the <a target="_blank" href="http://www.cygwin.com" rel="external">cygwin</a> environment installed. In addition the freeware version of <a target="_blank" href="http://www.jrsoftware.org/isinfo.php" rel="external">Inno Setup</a> is needed for packaging.<br />
+<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

@@ -1,0 +1,41 @@
+---
+title: "Exporting C Source files"
+previous: "Support/User_Manual/Importing_and_Exporting/Importing_and_Exporting_SBML_Files"
+next: "Support/User_Manual/Importing_and_Exporting/Exporting_Berkeley_Madonna_Files"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+Sometimes it is of advantage to have the differential equations that make up your model in the form of source code for some programming language. This allows you to integrate your model into some experimental analysis software that you might have written, or some analysis software that expect the input as C source code like <a target="_blank" href="http://sourceforge.net/projects/auto2000/" rel="external">Auto2000</a>.<br />
+<br />
+So far COPASI only supports the export of C source code, source code for other programming languages might follow if there is need for it.<br />
+<br />
+The C source file COPASI exports is split into several smaller parts which are encapsulated in<code> #ifdef</code> structures for the C preprocessor. The file consists of ten such sections which can be included in other files by defining the corresponding preprocessor constants at the place of inclusion. Example:<br />
+<br />
+<pre class="codelisting" dir="ltr" style="overflow:auto;">#define SIZE_DEFINITIONS
+#include &quot;SOURCE FILE&quot;
+#undef SIZE_DEFINITIONS</pre><br />
+<br />
+The file contains the following sections:<br />
+<br />
+<table class="normal"><caption>C Code Export Sections</caption><colgroup><col width="25%" /><col width="75%" /></colgroup><tr><td class="heading">Name </td><td class="heading"> Description</td></tr><tr><td class="odd">SIZE_DEFINITIONS </td><td class="odd"> Contains size definitions for the individual model elements, e.g. N_COMPARTMENTS for the number of compartments or N_REACTIONS for the number of reactions. All definitions are declared with preprocessor #define statements.</td></tr><tr><td class="even">SPECIES </td><td class="even"> Contains assignments for the species initial concentrations. The assignments are of the form y[INDEX]=VALUE where INDEX is the index of the species and VALUE is the initial concentration. This assumes that the including code has generated an array of double values of size N_METABS called y. N_METABS is part of the SIZE_DEFINITIONS section (see SIZE_DEFINITIONS above).</td></tr><tr><td class="odd">INDEP_SPECIES </td><td class="odd"> Contains assignments for the independent species initial concentrations. The assignments are of the form x[INDEX]=VALUE where INDEX is the index of the independent species and VALUE is the initial concentration. This assumes that the including code has generated an array of double values of size N_INDEP_METABS called x. N_INDEP_METABS is part of the SIZE_DEFINITIONS section (see SIZE_DEFINITIONS above).</td></tr><tr><td class="even">MOIETY </td><td class="even"> Contains assignments for the moieties. The assignments are of the form y[INDEX]=RSIDE where INDEX is the index of the species and RSIDE is the calculated value for the moiety, e.g. 0.2 - y[INDEX2]. y is the vector of species (see SPECIES above).</td></tr><tr><td class="odd">COMPARTMENTS </td><td class="odd"> Contains assignments for the compartments initial volumes. The assignments are of the form c[INDEX]=VALUE where INDEX is the index of the compartment and VALUE is the initial volume. This assumes that the including code has generated an array of double values of size N_COMPARTMENTS called c. N_COMPARTMENTS is part of the SIZE_DEFINITIONS section (see SIZE_DEFINITIONS above).</td></tr><tr><td class="even">GLOBAL_PARAMETERS </td><td class="even"> Contains assignments for the values of global kinetic parameters. The assignments are of the form gk[INDEX]=VALUE where INDEX is the index of the global parameter and VALUE is the value. This assumes that the including code has generated an array of double values of size N_GLOBAL_PARAMS called k. N_GLOBALPARAMS is part of the SIZE_DEFINITIONS section (see SIZE_DEFINITIONS above).</td></tr><tr><td class="odd">KINETIC_PARAMETERS </td><td class="odd"> Contains assignments for the values of local kinetic parameters. The assignments are of the form k[INDEX]=VALUE where INDEX is the index of the local parameter and VALUE is the value. This assumes that the including code has generated an array of double values of size N_KIN_PARAMS called k. N_KIN_PARAMS is part of the SIZE_DEFINITIONS section (see SIZE_DEFINITIONS above).</td></tr><tr><td class="even">KINETIC_FUNCTIONS_HEADER </td><td class="even"> This section contains the declarations of function definitions. The section has to be included before the function definitions section itself and before the differential equations section is included.</td></tr><tr><td class="odd">KINETIC_FUNCTIONS </td><td class="odd"> This section contains the implementation of the function definitions.</td></tr><tr><td class="even">DIFFERENTIAL_EQUATIONS </td><td class="even"> This section contains the set of differential equations. The result of the right hand side of each differential equation is stored in a variable dxdt[INDEX]. This assumes that the including program has created an array of double values called dxdt of size N_INDEP_METABS. N_INDEP_METABS is part of the SIZE_DEFINITIONS section (see SIZE_DEFINITIONS above).</td></tr></table><br />
+<br />
+<div style=" text-align: left; float: none; clear: none;" class='caution' >Some models may contains constants or functions that are not included in the ANSI C standard. In order to be able to use exported C source code files with those constants and functions, the user has to provide them, e.g. by including a separate header file that defines those constants and/or functions. Currently those are the constants for pi, Euler's number, TRUE, FALSE and infinity as well as the functions &quot;asinh&quot;, &quot;acosh&quot;, &quot;atanh&quot;, &quot;sec&quot;, &quot;csc&quot;, &quot;cot&quot;, &quot;sech&quot;, &quot;csch&quot;, &quot;coth&quot;, &quot;arcsec&quot;, &quot;arccsc&quot;,  &quot;arccot&quot;, &quot;asech&quot;, &quot;acsch&quot;, &quot;acoth&quot;, &quot;factorial&quot; and logical &quot;xor&quot;.</div><br />
+<br />
+In order to export the set of differential equations to a C source code file, you select the Export ODEs menu entry from COPASI's File menu. In the save dialog that shows up, you select <i>C Files (*.c)</i> from the File type drop down and specify the name of the file you want to write the ODEs to. After clicking on the Save the ODEs will be saved to the specified file.<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

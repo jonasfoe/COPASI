@@ -1,0 +1,30 @@
+---
+title: "Delay"
+previous: "Hidden/Intranet/Events/Assignment"
+next: "Hidden/Intranet/Events/Simultaneous_Events"
+sitemap: false
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+An event delay is the time interval between the <b><i>firing</i></b> of an event and the execution of the event assignments. The default delay in COPASI is 0.<br />
+The delay can be inserted in two places:<br />
+<ol><li> between <b><i>firing</i></b> and <b><i>calculation</i></b>
+</li><li> between <b><i>calculation</i></b> and <b><i>execution</i></b>
+</li></ol>
+In COPASI the delay will a have an attribute <code>delayAfterCalculation</code> which determines the insertion point. This attributes translates to the SBML L2V4 attribute of the event element.<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

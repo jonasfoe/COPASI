@@ -1,0 +1,79 @@
+---
+title: "Implementation"
+previous: "Hidden/Intranet/Events/Cascading_Events"
+next: "Hidden/Intranet/Events/Implementation/Model_Changes"
+sitemap: false
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+<h3 name="Implementation">Implementation</h3>
+<br />
+<h4 name="Processing_in_pseudocode">Processing in pseudocode</h4>
+this is now updated according to the discussion in Heidelberg, sept 2008<br />
+<br />
+<ol><li> generate list of algebraic trigger functions from boolean expressions and map them to the assignments
+</li><li> initialize integration
+</li><li> Reporting
+</li><li> Add events with the prior flag set to<code> FALSE</code> which fire at<code> t = 0</code> to the process queue.
+</li><li> Process queue until no steps are left for which<code> t = 0</code>
+</li><li> calculate nextReportTime
+</li><li> while nextReportTime &lt;= endTime
+<ol><li> Call integration method to proceed to<code> min(nextReportTime, firstProcessQueueTime)</code>. The integration method stops when the end time is reached or when an event is triggered.
+</li><li> if at least one event was triggered loop over all triggered events:
+<ol><li><code> e = triggered event</code>
+</li><li><code> addToQueue(currentTime + (e.delayAfterCalculation ? 0 : e.delay), e.isPrior, CALC, &amp;e)</code> //add the calculation to the event queue
+</li><li><code> addToQueue(currentTime + e.delay, e.isPrior, ASSIGN, &amp;e)</code> //add the assignment to the event queue
+</li></ol></li><li> Process queue until no steps are left for which<code> t = currentTime</code> and prior is<code> TRUE</code>
+</li><li> if (currentTime == nextReportTime)
+<ol><li> Reporting
+</li><li> calculate nextReportTime
+</li></ol></li><li> Process queue until no steps are left for which<code> t = currentTime</code>
+</li></ol></li></ol>
+<br />
+<h4 name="Adding_Events_to_the_process_queue">Adding Events to the process queue</h4>
+Each event has to be added twice to the process queue:<br />
+<ol><li>for calculation
+</li><li>for assignment
+</li></ol>
+<br />
+<h4 name="Processing_the_event_queue">Processing the event queue</h4>
+Processing of the queue is usually called with<code> current_time</code> equal to the topmost time in the queue. The first run should then process all items with the<code> PRIOR</code> flag and<code> item.time == current_time</code>, the second run the remaining items with<code> item.time == current_time</code>.<br />
+The sorting  of the event queue should ensure that the items with the<code> PRIOR</code> flag are on top, and that, on the next sorting level, calculation items are handled before assignment items with the same<code> time</code> and<code> PRIOR</code> flag.<br />
+<br />
+<h5 name="Pseudocode">Pseudocode</h5>
+<ul><li>while<code> current_time == queue.topmostTime</code>
+<ul><li><code> item=queue.topmostItem</code>
+</li><li><code> if item.isCalculation</code>
+<ul><li>evaluate the assignment expressions and store the result(s). The result should be stored (or mapped to) the corresponding assignment item in the queue.
+</li></ul></li><li><code> else if item.isAssignment</code>
+<ul><li>assign the stored value (from the corresponding calculation item) to the proper object in the model.
+</li><li>Check if a new event was triggered by the assignments (<code>a</code>). If yes, loop over all newly triggered events:
+<ul><li><code> e = triggered event</code>
+</li><li><code> addToQueue(currentTime + (e.delayAfterCalculation ? 0 : e.delay), a.PRIOR, CALC, &amp;e)</code> //add the calculation to the event queue
+</li><li><code> addToQueue(currentTime + e.delay, a.PRIOR, ASSIGN, &amp;e)</code> //add the assignment to the event queue
+</li></ul></li></ul></li><li>drop top item from queue
+</li></ul></li></ul>
+<br />
+Note: When an event is triggered by another event, it inherits the<code> isPrior</code> property from the triggering event, not from its own trigger expression.<br />
+<br />
+<h4 name="Update_Simulated_Values">Update Simulated Values</h4>
+The values used in each trigger expression must be handled in the same way as reaction fluxes and the right hand side of ODEs, i.e., they need to be updated in CModel::updateSimulatedValues.<br />
+<br />
+<h4 name="Moieties">Moieties</h4>
+When performing the event assignment, potentially we need to also recalculate the values of the moieties.<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

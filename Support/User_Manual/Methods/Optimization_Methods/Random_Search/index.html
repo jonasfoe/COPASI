@@ -1,0 +1,32 @@
+---
+title: "Random Search"
+previous: "Support/User_Manual/Methods/Optimization_Methods/Praxis"
+next: "Support/User_Manual/Methods/Optimization_Methods/Simulated_Annealing"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+Random search is an optimization method that attempts to find the optimum by testing the objective function's value on a series of combinations of random values of the adjustable parameters. The random values are generated complying with any boundaries selected by the user, furthermore, any combinations of parameter values that do not fulfill constraints on the variables are excluded. This means that the method is capable of handling bounds on the adjustable parameters and fulfilling constraints.<br />
+<br />
+For infinite number of iterations this method is guaranteed to find the global optimum of the objective function. In general one is interested in processing a very large number of iterations.<br />
+<br />
+<h3 name="Options_for_Random_Search">Options for Random Search</h3>
+<dl><dt><b>Number of Iterations</b></dt><dd> This parameter is a positive integer to determine the number of parameter sets to be drawn before the algorithm stops. The default value is '100000'.</dd></dl><br />
+<dl><dt><b>Random Number Generator</b></dt><dd> The parameter is an enumeration value to determine which random number generator this method shall use. COPASI provides two random number generators R250 [<a title="OD.Bibliography" href='/../../../Support/User_Manual/Bibliography#Maier91'>Maier91</a>] (selected through the value 0) and the <a target="_blank" href="http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt.html" rel="external">Mersenne Twister</a> [<a title="OD.Bibliography" href='/../../../Support/User_Manual/Bibliography#Matsumoto98'>Matsumoto98</a>] (selected through the value 1 (default)).</dd></dl><br />
+<dl><dt><b>Seed</b></dt><dd> The parameter is a positive integer value to determine the seed for the random number generator. A value of zero instructs COPASI to select a &quot;random&quot; value.</dd></dl><br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

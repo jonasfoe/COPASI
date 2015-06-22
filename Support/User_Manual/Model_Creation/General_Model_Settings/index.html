@@ -1,0 +1,37 @@
+---
+title: "General Model Settings"
+previous: "Support/User_Manual/Model_Creation/COPASI_GUI_Elements"
+next: "Support/User_Manual/Model_Creation/Compartments"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+If you click on the Model branch of the object tree which was explained in the <a title="OD.COPASI.GUI.Elements" href="/../../../Support/User_Manual/Model_Creation/COPASI_GUI_Elements">COPASI GUI Elements</a> section, you activate the dialog that lets you specify certain parameters for your model like its name and the units that are to be used for time, volume and concentration quantities throughout the current model. You can also give a textual description of your model that is more expressive than reactions and equations. You could for example state which part of the metabolism the model describes (e.g. glycolysis) and add some references to articles related to the model. This will help others (and yourself) to understand and identify your models.<br />
+<br />
+<div class="img" align="center"><table cellpadding="0" cellspacing="0"><tr><td><img alt="" src="General_01.png" style="width:100%" border="0"  /></td></tr><tr><td class="mini">Dialog&nbsp;for&nbsp;general&nbsp;Model&nbsp;Settings</td></tr></table></div><br />
+<div style=" text-align: left; float: none; clear: none;" class='caution' >You should be aware that changing the default units actually changes the model. If you, for example, change the default volume units from liters to milliliters, all the particle numbers in your model change by a factor of 1000.</div><br />
+COPASI internally represents amounts of species by particle numbers. If a concentration has to be displayed or is needed for some output this is calculated from the particle number, the volume of the compartment the species belongs to and Avogadro's number <img class="latex-equation" style="vertical-align: middle; position: relative; bottom: +2px; height: 28; width: 149;" src="665dcb3855ae42861c827d107af48093.png" alt="$6.0221415 \cdot {10}^{23}\,\frac{\mbox{particles}}{\mbox{mol}}$"> . Lets assume that you have set your default volume units to fl and your default substance units to nmol and species <b><i>A</i></b> is given with an the amount of <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: -0px; height: 16; width: 105;" src="e32426d12af1c1e34d89504445a2c032.png" alt="$1.0 \cdot {10}^{15}\,\mbox{particles}$">. Further assuming that the volume of the compartment containing <b><i>A</i></b> is set to 1.0 fl, we will then have a concentration of <img class="latex-equation" style="vertical-align: middle; position: relative; bottom: -2px; height: 44; width: 192;" src="f4f16271ca2d2e77ef36c8f714e36752.png" alt="$\frac{1.0 \cdot {10}^{15} \, \mbox{particles}}{6.0221415 \cdot {10}^{23}\,\frac{\mbox{particles}}{\mbox{mol}}\,\cdot 1.0\, \mbox{fl}}$"> for the species <b><i>A</i></b>. Since the default substance unit is set to nmol instead of mol we have to multiply the result by <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: +3px; height: 12; width: 45;" src="cd69859ff16885ba969757cd103a9e55.png" alt="$1.0 \cdot {10}^{9}$">. So COPASI would display a concentration of <img class="latex-equation" style="vertical-align: middle; position: relative; bottom: +2px; height: 28; width: 64;" src="a41d6f3f300e4ec383009d44e533dd25.png" alt="$1.661\,\frac{\mbox{nmol}}{\mbox{fl}}$">.<br />
+<br />
+You are able to easily change the display between concentrations and particle numbers by selecting the drop down list in the menu bar at the top. COPASI, per default, displays the concentrations.<br />
+<br />
+With the drop down list labeled Rate Law Interpretation you can specify how COPASI should interpret the kinetic rate laws you specify for your reactions. Per default, COPASI will interpret all rate laws as deterministic rate laws. Since COPASI allows the user to simulate a model either deterministically or stochastically, COPASI has to make some corrections to deterministic rate laws when using them for a stochastic simulation. This functionality sometimes interferes with rate laws that have been written for stochastic simulation and where the before mentioned corrections have already been made by the modeler. So if you have a model with rate laws that have been written to be used in a stochastic simulation, you have to specify this by selecting stochastic from this drop down list. If you do this, COPASI will not apply any corrections to the rate laws specified in the model when doing stochastic simulation.<br />
+<br />
+In the field labeled Time (s) under the text Initial the user can tell COPASI to take the given value as the initial time for tasks like time course. This field is only enabled for editing for non-autonomous models, i.e., models which use the value of time explicitly in an ODE, an assignment, a rate law, or an event. COPASI automatically detects whether a model is non-autonomous. If you have a non-autonomous model you can set the start time of a time course by adjusting this field. For more information on running time course simulation is COPASI see <a title="OD.Time.Course.Simulation" href="/../../../Support/User_Manual/Tasks/Time_Course_Simulation">Time Course Simulation</a>.<br />
+<br />
+<div style=" text-align: left; float: none; clear: none;" class='caution' >The update model option on each task will only update the initial time for non-autonomous models otherwise it will be left at 0.</div><br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

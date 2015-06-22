@@ -1,0 +1,77 @@
+---
+title: "Parameter Fitting"
+previous: "Support/User_Manual/Error_Messages/Steady_State_Calculation"
+next: "Support/User_Manual/Error_Messages/COPASI_Object"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+These errors messages can occur when doing a parameter estimation.<br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>CFitting (1)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>Failed to determine work area size for matrix inversion.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>INTERNAL</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>CFitting (2)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>Failed to invert Fisher information matrix.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>This reports that the Fisher information matrix could not be inverted due to singularity or numerical problems. The parameter statistics will be incomplete.</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>CFitting (3)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>No column with type 'Time' specified for a time course experiment.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>For a time course exactly on column of the data file must be mapped to the model time.</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>CFitting (4)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>Insufficient experimental data (columns requested 'COLUMNNUMBER', columns found 'COLUMNNUMBER').</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>The data specification contains more columns than the file provides. Calculation is stopped and the problem must be fixed first.</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>CFitting (5)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>Incomplete data mapping, column 'COLUMNINDEX' must be mapped.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>A column which is not ignored is not mapped to an object within COPASI. Calculation is stopped and the problem must be fixed first.</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>CFitting (6)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>Object 'OBJECTNAME' in column 'COLUMNNINDEX' has no numeric value.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>The object must represent a numerical value. Currently this must be a floating point. This object can currently not be used in parameter fitting.</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>CFitting (7)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>Insufficient experimental data (rows requested 'ROWNUMBER', rows found 'ROWNUMBER').</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>The data specification describes more data rows than the experimental data provides.  Calculation is stopped and the problem must be fixed first.</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>CFitting (8)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>Failure reading file 'FILE'.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>The file cannot be read. Calculation is stopped and the problem must be fixed first. Make sure all data files specified for the fitting are there and readable.</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>CFitting (9)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>Experiment 'EXPERIMENTID' has no data rows.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>!!!UNDOCUMENTED!!!</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>CFitting (10)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>Experiment 'EXPERIMENTID' has no dependent data.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>!!!UNDOCUMENTED!!!</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>CFitting (11)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>Missing independent data for Experiment 'EXPERIMENTID' in row 'ROWNUMBER'.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>!!!UNDOCUMENTED!!!</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>CFitting (12)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>The Fisher information matrix is singular. Therefore, the correlation matrix can not be calculated.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>!!!UNDOCUMENTED!!!</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>CFitting (13)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>Not enough memory available to calculate the Fisher Information Matrix.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>!!!UNDOCUMENTED!!!</div></dd></dl><br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

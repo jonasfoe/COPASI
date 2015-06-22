@@ -1,0 +1,50 @@
+---
+title: "Process Queue"
+previous: "Hidden/Intranet/Events/Implementation/Model_Changes"
+next: "Hidden/Intranet/Events/SBML"
+sitemap: false
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+To keep track of the processing steps involved in <b><i>carrying out</i></b> event assignments we create a process queue. If an event <b><i>fires</i></b> two steps are added to the processing queue for each assignment which are the <b><i>calculation</i></b> and the <b><i>execution</i></b> of the assignment. For each step we must provide additional information about the time point when they must be executed. The time point is either the current time or the current time plus delay.<br />
+<br />
+The  process queue must assure that all steps are properly ordered with respect to their processing time point and the value of the prior flag. Additionally, the <b><i>calculation</i></b> must appear prior to the <b><i>execution</i></b> for each assignment. Steps which have identical values in all three attributes are processed as one block. Please note that after processing a block of <b><i>execution</i></b> steps additional steps may have been added to the queue due to cascading events.<br />
+<br />
+<h5 name="Link_between_calculation_and_assignment_steps">Link between calculation and assignment steps</h5>
+Some connection between the corresponding calculation and assignment steps is needed. Somehow the calculated values of the calculation step need to be stored and passed to the corresponding assignment step. These values need to be stored per step, since one event can fire several times during its own delay. This means we need dynamic memory for the stored values.<br />
+<br />
+<h5 name="Implementation">Implementation</h5>
+Since the processing has to be done in blocks it is natural to implement the process queue as a std::multimap. To achieve the ordering described above we must define our own key.<br />
+<br />
+<h3 name="Process_Queue_Key">Process Queue Key</h3>
+<h5 name="Attributes_">Attributes:</h5>
+<pre class="codelisting" dir="ltr" style="overflow:auto;">double mTimePoint
+bool mPrior
+bool mIsCalculation</pre><br />
+<h5 name="Methods_"> Methods:</h5>
+<pre class="codelisting" dir="ltr" style="overflow:auto;">bool operator &lt; (const CProcessQueueKey &amp; rhs)
+  {
+    if (mTimePoint != rhs.mTimePoint) return mTimePoint &lt; rhs.mTimePoint;
+    if (mPrior != rhs.mPrior) return mPrior;
+    if (mIsCalculation != rhs.mIsCalculation) return mIsCalculation;
+    return false;
+  }</pre><br />
+<div class="simplebox">TODO: For backwards integration the order needs to be corrected with respect to time.</div><br />
+Comment to TODO: We should rather disable backwards integration if we have events. In general it is not possible to reverse events.<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

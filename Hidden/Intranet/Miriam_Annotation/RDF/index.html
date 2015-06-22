@@ -1,0 +1,39 @@
+---
+title: "RDF"
+previous: "Hidden/Intranet/Miriam_Annotation/Resources"
+next: "Hidden/Intranet/Miriam_Annotation/Terms"
+sitemap: false
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+The <a target="_blank" href="http://www.w3.org/TR/rdf-primer/" rel="external">Resource Description Framework (RDF)</a> is a general-purpose language for representing information in the Web.<br />
+<h3 name="RDF_Graph">RDF Graph</h3>
+The COPASI's classes for storing RDF graph information are shown in the diagram below. This PNG has been exported from the <a  href="RDF Classes.dia" rel="">RDF Classes File</a>, which has been created with <a target="_blank" href="http://live.gnome.org/Dia" rel="external">Dia</a>, a freely available program similar to Microsoft Visio.<br />
+<br />
+<span class="img"><img alt="" src="RDF Classes.png" style="width:100%" border="0"  /></span><br />
+<h3 name="RDF_Parsing_and_Serialization">RDF Parsing and Serialization</h3>
+To store the RDF graph information we will use the <a target="_blank" href="http://www.w3.org/TR/rdf-syntax-grammar/" rel="external">RDF/XML Syntax</a>. It is therefore necessary to convert the RDF information from and to the XML syntax. This conversion (parsing and serialization) is done with the  help of the <a target="_blank" href="http://librdf.org/raptor/" rel="external">raptor library</a>.<br />
+<br />
+Conversion from an RDF graph to an RDF/XML syntax string can be performed with:<br />
+<ul><li><code>CRDFWriter::xmlFromGraph(const CRDFGraph * pGraph)</code>
+</li></ul>
+Conversion from an RDF/XML syntax string to an RDF graph can be performed with:<br />
+<ul><li><code>RDFParser::graphFromXml(const std string &amp; xml)</code>
+</li></ul>
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

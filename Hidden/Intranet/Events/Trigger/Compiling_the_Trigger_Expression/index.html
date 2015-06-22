@@ -1,0 +1,46 @@
+---
+title: "Compiling the Trigger Expression"
+previous: "Hidden/Intranet/Events/Trigger"
+next: "Hidden/Intranet/Events/Assignment"
+sitemap: false
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+The Boolean trigger expression comprises numerical comparisons and Boolean operations. Thus specifying the compilation rules for root finders, which determine when the result of the numerical comparison changes from<code> false</code> to<code> true</code>, and Boolean operations suffices to express arbitrary trigger expression within in COPASI. A trigger expression causes an event to fire whenever its value changes from false to true.<br />
+<h3 name="Numerical_Comparison">Numerical Comparison</h3>
+A Boolean trigger expression needs to be compiled into a root finding expression for each numerical comparison (2 for equality).<br />
+<h4 name="Root_Finder">Root Finder</h4>
+LSODAR uses a root finding algorithm which detects roots of odd order, i.e., the points where the root expression changes sign. An event is only triggered when the sign changes from negative to positive. Since we cannot calculate the slope of the root expression with respect to time we need to keep track whether the Boolean expression associated with the root finder currently evaluates to true or false. This values is only recalculated when the root expression changes sign. The root finder also needs to keep track whether the root is checked for equality or inequality. Additionally there exist 2 types of roots, those which may change only through other events, i.e., discretely, and those which also change during integration (deterministic or stochastic).<br />
+<br />
+<pre class="codelisting" dir="ltr" style="overflow:auto;">CRootFinder: 
+  Attributes:
+    CExpression mRoot;
+    double * mpRootValue;
+    bool mEquality;
+    bool mDiscrete;
+    double mTrue;</pre><br />
+The table below specifies how a comparison between two floating point numbers in a trigger expression is converted to a root finder. Whenever the expression evaluates to zero and we have a change of sign the fire expression is evaluated to determine whether the trigger fires and the root expression changes its state to inactive. If the trigger does not fire the charge expression is evaluated to determine whether the root finder's state has to be set to active.<br />
+<br />
+<table class="normal"><caption>Numerical Comparison</caption><colgroup><col width="25% " /><col width=" 25% " /><col width=" 25% " /><col width=" 25%" /></colgroup><tr><td class="heading"><b>Comparison</b> </td><td class="heading"> <b>mRoot</b> </td><td class="heading"> <b>mEquality</b> </td><td class="heading"> <b>initial mTrue</b></td></tr><tr><td class="odd"><img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: -1px; height: 12; width: 33;" src="1db7e07f0041bdd29ee4163e531ba5b7.png" alt="x \le y"> </td><td class="odd"> <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: -3px; height: 9; width: 31;" src="8d53fd0ab449e006fc57a16e7e11a163.png" alt="y - x"> </td><td class="odd"> true </td><td class="odd"> <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 11; width: 77;" src="610a8e7146a4141e5976306de002e546.png" alt="\mbox{mRoot} \ge 0.0"></td></tr><tr><td class="even"><img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: -1px; height: 10; width: 33;" src="c7ff6ee0666858f72c1327a8ae422590.png" alt="x &lt; y"> </td><td class="even"> <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: -3px; height: 9; width: 31;" src="8d53fd0ab449e006fc57a16e7e11a163.png" alt="y - x"> </td><td class="even"> false </td><td class="even"> <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 10; width: 77;" src="392a0eaac3d5c006218c8c09bfedbc77.png" alt="\mbox{mRoot} &gt; 0.0"></td></tr><tr><td class="odd"><img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: -1px; height: 12; width: 33;" src="8cb5eb5c0229e65aaa587c3700416f1d.png" alt="x \ge y"> </td><td class="odd"> <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: -3px; height: 9; width: 31;" src="1928a070291c667c966fb9b20cfb2595.png" alt="x - y"> </td><td class="odd"> true </td><td class="odd"> <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 11; width: 77;" src="610a8e7146a4141e5976306de002e546.png" alt="\mbox{mRoot} \ge 0.0"></td></tr><tr><td class="even"><img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: -1px; height: 10; width: 33;" src="001587335ee94561b04825989f870233.png" alt="x &gt; y"> </td><td class="even"> <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: -3px; height: 9; width: 31;" src="1928a070291c667c966fb9b20cfb2595.png" alt="x - y"> </td><td class="even"> false </td><td class="even"> <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 10; width: 77;" src="392a0eaac3d5c006218c8c09bfedbc77.png" alt="\mbox{mRoot} &gt; 0.0"></td></tr></table><br />
+Transforming the numerical comparison for inequality is trivial since <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 13; width: 109;" src="c50bb4bd01cec7ae96a151c1adc409b6.png" alt="x \not= y \Leftrightarrow \neg \, (x = y)">, i.e., we have the Boolean operation NOT and the comparison for equality, which means we are left with specifying a suitable process of detection equality. We make use of the fact that  <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 13; width: 158;" src="733a340039cb0c83e10f1c743804adde.png" alt="x = y \Leftrightarrow (x \le y) \wedge (y \le x)">, i.e., we are left with finding either of the roots of the right hand side and dealing with the Boolean operation AND.<br />
+<h3 name="Boolean_Operations">Boolean Operations</h3>
+<table class="normal"><caption>Boolean Operations</caption><colgroup><col width="50% " /><col width=" 50%" /></colgroup><tr><td class="heading"><b>Operation</b> </td><td class="heading"> <b>True Expression</b></td></tr><tr><td class="odd"><img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 10; width: 41;" src="1302796f7b3780bcf26e45c381135ece.png" alt="\mbox{NOT} \, x"> </td><td class="odd"> <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 9; width: 47;" src="6b271c100715f6dcac62bccbd7a7ae29.png" alt="\neg \, x.\mbox{true}"></td></tr><tr><td class="even"><img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 13; width: 54;" src="3c122fd7c68af4df0bb0cfc31e6fa18b.png" alt="x \; \mbox{AND} \; y"> </td><td class="even"> <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 12; width: 87;" src="6c169d20b6c12abab52a7c4e51a31eb6.png" alt="x.\mbox{true} \wedge y.\mbox{true}"></td></tr><tr><td class="odd"><img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 12; width: 43;" src="b822d720fc7b802ca31aa89a5a1b98ad.png" alt="x \; \mbox{OR} \; y"> </td><td class="odd"> <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 12; width: 87;" src="c7d7733469d7682c9e74016f61ebfcd7.png" alt="x.\mbox{true} \vee y.\mbox{true}"></td></tr><tr><td class="even"><img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 13; width: 42;" src="e9ca378652b62ddeabdec1475d225b2d.png" alt="x \; \mbox{EQ} \; y"> </td><td class="even"> <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 12; width: 98;" src="98e7294b8b8c5bc8fc6a8332e377490d.png" alt="x.\mbox{true} \; = \; y.\mbox{true}"></td></tr><tr><td class="odd"><img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 12; width: 53;" src="1743ce27efef47c6a98c51a4dab435e2.png" alt="x \; \mbox{XOR} \; y"> </td><td class="odd"> <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 12; width: 110;" src="efe2e8b111b20c0b49e56ecfc5a602b0.png" alt="x.\mbox{true} \; \mbox{XOR} \; y.\mbox{true}"></td></tr></table><br />
+<h3 name="Other_Issues">Other Issues</h3>
+As long as the trigger expression is self contained the above suffices. However, it is possible in COPASI and SBML that the trigger expression makes use of other functions which complicates the issue as can be seen in the following example.<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

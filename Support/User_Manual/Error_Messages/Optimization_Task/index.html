@@ -1,0 +1,57 @@
+---
+title: "Optimization Task"
+previous: "Support/User_Manual/Error_Messages/Configuration_File"
+next: "Support/User_Manual/Error_Messages/SBML"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+These are error messages that can occur when running an optimization task.<br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>Optimization (1)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>Object 'OBJECTNAME' not found.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>The object specified by OBJECTNAME can not be found. This normally indicates that the model was changed and the parameters or constraints must be adjusted.</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>Optimization (2)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>Lower Bound 'OBJECTNAME' not found.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>The lower bound specified by OBJECTNAME can not be found. This normally indicates that the model was changed and the parameters or constraints must be adjusted.</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>Optimization (3)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>Upper Bound 'OBJECTNAME' not found.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>The upper bound specified by OBJECTNAME can not be found. This normally indicates that the model was changed and the parameters or constraints must be adjusted.</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>Optimization (4)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>Empty Interval ('LOWERBOUND', 'UPPERBOUND') specified.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>The interval is invalid as the lower bound is larger than the upper bound. Please correct the problem.</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>Optimization (5)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>Invalid Objective Functions.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>The objective function is invalid, i.e, COPASI can not interpret it. Please correct the problem.</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>Optimization (6)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>No adjustable Parameters specified.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>Since no parameter are specified no optimization can be performed.</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>Optimization (7)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>No Task Type specified.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>The optimization task type is not specified. Supported types are currently time course and steady state.</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>Optimization (8)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>'NUMFAILS' Function Evaluation out of 'NUMEVALS' failed.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>A high percentage of failed function evaluation indicates that the parameter range is not appropriate or the objective function is ill defined. For parameter estimation problems please check also whether the experimental data is correctly specified in accordance with provided data files.</div></dd></dl><br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

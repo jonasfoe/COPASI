@@ -1,0 +1,45 @@
+---
+title: "Lyapunov Exponent Calculation"
+previous: "Support/User_Manual/Error_Messages/COPASI_Object"
+next: "Support/User_Manual/Error_Messages/ODE_Export"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+These error messages can occur when calculating the Lyapunov Exponents of a system.<br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>CLyapMethod (1)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>Problem is not a Lyapunov exponent problem.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>INTERNAL</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>CLyapMethod (2)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>Number of exponents needs to be at least one.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>This means that probably 0 was entered as the number of Lyapunov exponents to be calculated.</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>CLyapMethod (3)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>Only NUM_EXP exponents can be calculated for this model because the model has only NUM_IND independent variables.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>The maximal number of exponents that can be calculated for a given model is the number of independent variables (that is the number of variables in the model minus the number of conservation relations ).</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>CLyapMethod (4)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>Transient time is larger than overall time.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>The Lyapunov exponent calculation starts after the transient time. The calculation stops after overall  time. Therefore overall time should have a bigger value than transient time.</div></dd></dl><br />
+<div style=" text-align: left; float: none; clear: none;" class='errorbox' ><br />
+<dl><dt><b>Identifier</b></dt><dd>CLyapMethod (5)</dd></dl><br />
+<dl><dt><b>Message</b></dt><dd>Orthonormalization interval is larger than overall time.</dd></dl><br />
+<dl><dt><b>Description</b></dt><dd>If the orthonormalization time step is larger than the complete calculation time not a single step can be performed.</div></dd></dl><br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

@@ -1,0 +1,74 @@
+---
+title: "Thoughts on changes necessary for the import/export of SBML Level 3 documents"
+previous: "Hidden/Intranet/TeamMeeting2011"
+next: "Hidden/Intranet/Optimisation_Benchmarks"
+sitemap: false
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<br />
+With SBML Level 3, there are a number of &quot;small&quot; changes that need extra code in the SBML importer and/or exporter to be able to correctly interpret or write SBML Level 3 documents.<br />
+<br />
+Some of the changes in SBML Level 3 would also make changes to COPASIs backend necessary, so I thought that I would open a new page, where we can collect ideas on how to best handle the new features and to find out whether we want to handle them at all.<br />
+<br />
+The list of issues is loosely based on the list of changes Mike Hucka presented at the SBML Hackathon in Seattle (see <a target="_blank"  href="http://sbml.org/images/e/ea/Mhucka-sbml-l3-core-2010-05-01.pdf).">http://sbml.org/images/e/ea/Mhucka-sbml-l3-core-2010-05-01.pdf).</a><br />
+<br />
+Changes in how we might handle them:<br />
+<br />
+- SBML Level 3 allows the storage of a history on all elements now, not only the model as it was the case in SBML Level 2. Since we already have this feature in COPASI, this should be straight forward. We just handle all elements as we did the with the model so far. This should only be a minor change in the code.<br />
+<br />
+- SBML Level 3 supports extension packages and some of the packages will be required to simulate the model. So if we read a model that contains an extension that is marked as required and we can not handle the extension, as will probably be the case for most of them, I think we shouldl refuse to load the model.<br />
+<br />
+- SBML Level 3 allows the storage of units with numbers in MathML expressions. It would be very nice if we could somehow import this information, but currently I don't think are is support for this in the backend. We will have to decide if this is important enough to add support for it in our backend. As long as we do not have this support, the information on the numbers units will be lost during an SBML roundtrip since we regenerate the expression on export.<br />
+<br />
+- SBML Level 3 support to have a definitionURL element on ci element. I have to admit that I do not know what this is actually used for, so I have to read some more before I can try to decide if this concerns us.<br />
+<br />
+- SBML Level 3 has a new symbol definition for Avogadros number. If I understood this correctly, SBML associates a certain numeric value with it and that value can change in later versions of SBML if the definition of the Avogadro number changes. We also have an avogradro number in COPASI, but it might actually differ from the value that is defined for SBML, especially if the definition in SBML will change in the future. So how do we handle this potential discrepancy in numeric values between the value we use in COPASI and the one that might be defined in SBML.<br />
+In other words, how can we make sure that a model that is written now, will give the same result in 20 years, even if Avogadros number changes until then. I think SBML has this covered because they update Avogradros number and the numeric value can be reproduced if one knows which level of SBML the model (was originally written in). Once the model is reexported to a different level with potentially different definition of Avogadros Number, the model might actually change without the user noticing it.<br />
+I think this is somewhat of a problem.<br />
+<br />
+- stoichiometries are handled somewhat different in SBML Level 3. There is no more stoichiometryMath, instead expressions can reference the id of a species reference which stand for the stoichiometry of that species in the reaction. Since we can not reference stoichiometries in mathematical expressions, it is clear that we can not support most of those expressions. So we have to search for expressions where species references are either used on the right or the left side of the equation. The only one we can handle are initial assignments to species references and those might become a bit difficult if the right side references another species reference. All other references to species reference ids would lead to a refusal to read the model.<br />
+<br />
+- SBML Level 3 has conversion factors on the model and the species and I will have to read the specification to find out what they are actually used for to see how we can support this.<br />
+<br />
+- SBML Level 3 allows spatial dimensions on compartments that are not integer numbers. Currently we can not support this and I think we should give a warning that we assume the spatial dimensions to be 3.<br />
+<br />
+- connected to the last point is the fact that unit exponents are now double values and we also currently do not support this in our backend. The user should probably get some kind of warning about this if we encounter it in a file because if the model is written out again, at least those units will be changed.<br />
+<br />
+- reactions do now have a new compartment attribute. This might change the way how we need to interpret the reaction. I don't think it actually does, but I will have to read that part of the specification to be sure.<br />
+<br />
+- there is a new unit for reaction extend which kind of decouples the units that are used for species from the units that come out of a reaction. This will probably only affect the unit display as it might not always be correct in term of the SBML model. We don't have a corresponding unit in COPASI.<br />
+<br />
+<br />
+There are some minor things, I will have to check in the code:<br />
+<br />
+- do we make any assumptions about spatial dimensions because that might be a problem since they do not have a default value in L3 any longer.<br />
+<br />
+- generally I will have to go through the code and check if I made any assumptions about model attributes that in L3 don't have default values any longer (e.g. fast, constant).<br />
+<br />
+- another of those attributes is useValuesFromTriggerTime. This is optional if there is no delay given in the event. I just have to make sure that I didn't assume that it will always be set.<br />
+<br />
+- We might need some code changes for the new LocalParameter class that replaces the Parameter class in reactions.<br />
+<br />
+- make sure I didn't make assumptions about stoichiometryMath that no longer hold now that they are gone in L3.<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

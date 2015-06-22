@@ -1,0 +1,52 @@
+---
+title: "Time Scale Separation Methods"
+previous: "Support/User_Manual/Methods/Sensitivities_Calculation"
+next: "Support/User_Manual/Methods/Time_Scale_Separation_Methods/ILDM_Deuflhard"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="Approach_Model_Analysis_by_means_of_Time_Scale_Separation">Approach:   Model Analysis by means of Time Scale Separation</h3>
+In order to explain the basic notions of time scale decomposition we start with a first-order kinetics system. Then, the  differential equations (ODE) describing the system dynamics <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 9; width: 9;" src="5db329df30aafa9ec24c4f2264aa7b85.png" alt="${\bf y}$"> are linear:<br />
+<div align="center"><img class="latex-equation" style="vertical-align: middle; position: relative; bottom: 0px; height: 28; width: 65;" src="1fe0f32f08bdcbad136f94fa5b40d41c.png" alt="$ \frac{d\,{\bf y}}{d\, t} =  {\bf J} \cdot {\bf y}$"></div><br />
+with constant Jacobian <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 9; width: 7;" src="5d0e331c823e85fd2793cfd3876b4ad4.png" alt="${\bf J}$">. By using the set of  right eigenvectors <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 9; width: 11;" src="63e954408bf2d8ec02d8310c03f55a3b.png" alt="${\bf A}$"> of  <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 9; width: 7;" src="5d0e331c823e85fd2793cfd3876b4ad4.png" alt="${\bf J}$"> as the new basis we can decompose the Jacobian [<a title="OD.Bibliography" href='/../../../Support/User_Manual/Bibliography#Golub96'>Golub96</a>]<br />
+<br />
+<div align="center"><img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 15; width: 192;" src="5aff9c236f1168861e20d50e6cfa00fa.png" alt="${\bf x} = {\bf A}^{-1} \cdot {\bf y}, \quad {\bf \Lambda} = {\bf A}^{-1} \cdot {\bf J} \cdot {\bf A}.$"></div><br />
+<br />
+The components of the transformed concentration vector <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 6; width: 8;" src="10ee671b86fdec80c6042cf22e6cbb1c.png" alt="${\bf x}$"> are called <i>modes</i>. Because  <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 9; width: 10;" src="89e4675a6c76165394ff0923515e7940.png" alt="${\bf \Lambda}$"> is a diagonal  matrix of real or complex eigenvalues <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 11; width: 11;" src="140c5c44a8a280cf84a4f4c4d9fabbc9.png" alt="$\lambda_i$"> of <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 9; width: 7;" src="5d0e331c823e85fd2793cfd3876b4ad4.png" alt="${\bf J}$">, the transformed ODE system is fully decoupled:<br />
+<br />
+<div align="center"><img class="latex-equation" style="vertical-align: middle; position: relative; bottom: 0px; height: 30; width: 147;" src="35ed4d3dfdae07ddc00ab683b7023bba.png" alt="$\frac{d\, x^i}{d\, t}=\lambda^i x^i, \ i=1,...,N.$"></div><br />
+<br />
+Thus, the modes  <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 15; width: 52;" src="4d1b841d78bb8cada84781829bee1d9c.png" alt="$x^i \sim  e^{\lambda^i t}$"> evolve independently of each other. The reciprocals of <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 15; width: 40;" src="655a3cba84fcc63d9fe27d1ae3404532.png" alt="$\Re(\lambda^i):$"><br />
+<br />
+<div align="center"><img class="latex-equation" style="vertical-align: middle; position: relative; bottom: 0px; height: 30; width: 76;" src="5b06a05b7c607fdd80cd6ed0f53b9745.png" alt="$\tau_i = -\frac{1}{\Re(\lambda^i)}$"></div><br />
+<br />
+have a dimension of time and are called time scales (TS). Ordering them w.r.t. magnitudes <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 9; width: 106;" src="7f28d1b85ca7612eab0e8261024790d3.png" alt="$\tau_1 < \tau_2 < ... < \tau_N$"> leads to approximate speed ranking of the modes [<a title="OD.Bibliography" href='/../../../Support/User_Manual/Bibliography#Lam93'>Lam93</a>]. The  modes  corresponding to fast time scales (eigenvalues with large negative real part) approach <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 9; width: 7;" src="f484dff50dabd42a6ffed713d9aedcf5.png" alt="$0$"> very quickly and can be eliminated from the  system for <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 11; width: 44;" src="d0d251214409c20b5c9edab231f4fa87.png" alt="$t \gg \tau_M$">, where <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 8; width: 18;" src="f33728e554fce862d9733cd5f2a7e268.png" alt="$\tau_M$"> is a fast time scale.<br />
+<br />
+For general nonlinear problems  the Jacobian is time-dependent. Its eigenvalues and eigenvectors change with time.<br />
+Hence, in order to obtain a reasonable characterization of the systems dynamics the time scale decomposition has to be applied repeatedly at many time points through  the  evaluation time of the reaction system.<br />
+<br />
+The methods  presented here relies  on the presence of a wide range of characteristic time-scales in biological systems and are based on the local analysis of the Jacobian, which is partitioned into fast and slow components at the initial point of a user chosen interval.<br />
+<br />
+All the three methods involves numerical integration using the LSODA solver [<a title="OD.Bibliography" href='/../../../Support/User_Manual/Bibliography#Petzold83'>Petzold83</a>], <a title="OD.Deterministic.Simulation" href="/../../../Support/User_Manual/Methods/Time_Course_Calculation/Deterministic_Simulation">deterministic simulation</a>.  The TSSA methods uses Schur transformation and the solution of Sylvester equation  [<a title="OD.Bibliography" href='/../../../Support/User_Manual/Bibliography#Golub96'>Golub96</a>] (ILDM and Modified ILDM) performed by <a target="_blank" href="http://www.netlib.org/clapack" rel="external"> CLAPACK</a>.<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

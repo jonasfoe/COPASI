@@ -29,14 +29,24 @@
             <li><a href="{{ site.baseurl }}/Support/Publications">Publications</a></li>
           </ul>
         </li>
-        <li {% if cps_path.first == "Projects" %} class="active" {% endif %} >
-          <a href="{{ site.baseurl }}/Projects">Projects</a>
+        <li class="dropdown{% if cps_path.first == "Projects" %} active{% endif %}">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{{ site.baseurl }}/Projects/Multistate_Model_Builder">Multistate Model Builder</a></li>
+            <li><a href="{{ site.baseurl }}/Projects/JigCell_Run_Manager_2_0">JigCell Run Manager 2.0</a></li>
+            <li><a href="{{ site.baseurl }}/Projects/JigCell_Model_Connector">JigCell Model Connector</a></li>
+          </ul>
         </li>
         <li {% if cps_path.first == "Events" %} class="active" {% endif %} >
           <a href="{{ site.baseurl }}/Events">Events</a>
         </li>
-        <li {% if cps_path.first == "About" %} class="active" {% endif %} >
-          <a href="{{ site.baseurl }}/About">About</a>
+        </li>
+        <li class="dropdown{% if cps_path.first == "About" %} active{% endif %}">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{{ site.baseurl }}/About/Team">Team</a></li>
+            <li><a href="{{ site.baseurl }}/About/Funding">Funding</a></li>
+          </ul>
         </li>
       </ul>
     </div>

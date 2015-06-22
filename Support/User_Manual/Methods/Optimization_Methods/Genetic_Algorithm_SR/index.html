@@ -1,0 +1,69 @@
+---
+title: "Genetic Algorithm SR"
+previous: "Support/User_Manual/Methods/Optimization_Methods/Genetic_Algorithm"
+next: "Support/User_Manual/Methods/Optimization_Methods/Hooke___Jeeves"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+The genetic algorithm with stochastic ranking is very similar to the before described  with tournament selection. With two exception which are the mutations are not forced to be within the boundaries and the selection is done through a bubble sort with a random factor as described in [<a title="OD.Bibliography" href='/../../../Support/User_Manual/Bibliography#Runarsson00'>Runarsson00</a>].<br />
+<ul><li> Parameters are encoded in genes using floating-point representation, rather than the more usual binary representation.
+</li><li> Mutation is carried out by adding to the gene a random number drawn from a normal distribution with zero mean and a standard deviation of 10% of the parameter value. Parameters may exceed boundaries. Whenever this happens or a constraint to the solution is violated the square of the size of the violation is summed up, i.e., we calculate<br /> <br /><div align="center"><img class="latex-equation" style="vertical-align: middle; position: relative; bottom: 0px; height: 34; width: 462;" src="f2d990ad9bbfae51c5de127212a2e907.png" alt="$\varphi = \sum_{p_{i}<l_{p_{i}}}(l_{p_{i}}-p_{i})^{2} + \sum_{p_{i}>u_{p_{i}}}(p_{i}-u_{p_{i}})^{2} + \sum_{c_{j}<l_{c_{j}}}(l_{c_{j}}-c_{j})^{2} + \sum_{c_{j}>u_{c_{j}}}(c_{j}-u_{c_{j}})^{2}$"></div><br /> where the parameters are given by <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: -1px; height: 14; width: 81;" src="4389ca124f8b5fa974184db2da3856f1.png" alt="$p_{i} \in (l_{p_{i}},\,u_{p_{i}})$"> and the constraints by <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 13; width: 77;" src="f5ac9fe3c2017270b66874a406fadf3c.png" alt="$c_{i} \in (l_{c_{i}},\,u_{c_{i}})$"> The value <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: +1px; height: 9; width: 9;" src="d2f229f3bf062b03fef0c63c7c2c235f.png" alt="$\varphi$"> is used within the selection.
+</li><li> Cross-over is always performed at gene boundaries so that no gene is ever disrupted. The number of cross-over points is a random number between zero and half the number of adjustable parameters (uniform distribution).
+</li><li> Selection is done by the bubble sort described in [<a title="OD.Bibliography" href='/../../../Support/User_Manual/Bibliography#Runarsson00'>Runarsson00</a>]. This sort incorporates a probability to compare objective values for individuals with a <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: +1px; height: 13; width: 34;" src="3aecb57f036f7a64451dc8ae342c89bc.png" alt="$\varphi \ne 0$">. The pseudo code for the sort is: <pre class="codelisting" dir="ltr" style="overflow:auto;">// Here sweepNum is optimal number of sweeps from paper, i.e., TotalPopulation
+for (i = 0; i &lt; sweepNum; i++)
+  {
+    wasSwapped = false;
+
+    for (j = 0; j &lt; TotalPopulation - 1; j++)
+      {
+        // within bounds or random chance 
+        if ((phi(j) == 0 and phi(j + 1) == 0) or UniformRandom(0, 1) &lt; Pf)
+          {
+            // compare objective function values
+            if (Value(j) &gt; Value(j + 1))
+              {
+                swap(j, j + 1);
+                wasSwapped = true;
+              }
+          }
+        else // phi != 0 
+          {
+            // individual j further outside then j + 1
+            if (phi(j) &gt; phi(j + 1))
+              {
+                swap(j, j + 1);
+                wasSwapped = true;
+              }
+          }
+      }
+
+    // if no swap then break
+    if (wasSwapped == false) break;
+  }</pre>
+</li><li> The initial population contains one individual whose genes are the initial parameter values, the genes of all other individuals are initialized to a random value between their boundaries. If the boundaries span two orders of magnitude or more, the random distribution is exponential, otherwise normal.
+</li><li> Whenever the fittest individual has not changed for the last 10 generations, the 10% less fit individuals are replaced by individuals with random genes. When the fittest individual has not changed for 30 generations, the worse 30% are substituted by individuals with random genes. When the fittest individual has not changed for 50 generations, the worse 50% are substituted by individuals with random genes. This procedure helps the algorithm escape local minima and is somewhat equivalent to increasing the mutation rate when the population has become uniform.
+</li></ul>
+<br />
+<h3 name="Options_for_Genetic_Algorithm_SR">Options for Genetic Algorithm SR</h3>
+<dl><dt><b>Number of Generations</b></dt><dd> The parameter is a positive integer value to determine the number of generations the algorithm shall evolve the population. The default is '200'.</dd></dl><br />
+<dl><dt><b>Population Size</b></dt><dd> The parameter is a positive integer value to determine the size of the population, i.e., the number of individuals that survive after each generation. The default is '20'.</dd></dl><br />
+<dl><dt><b>Random Number Generator</b></dt><dd> The parameter is an enumeration value to determine which random number generator this method shall use. COPASI provides two random number generators R250 [<a title="OD.Bibliography" href='/../../../Support/User_Manual/Bibliography#Maier91'>Maier91</a>] (selected through the value 0) and the <a target="_blank" href="http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt.html" rel="external">Mersenne Twister</a> [<a title="OD.Bibliography" href='/../../../Support/User_Manual/Bibliography#Matsumoto98'>Matsumoto98</a>] (selected through the value 1 (default)).</dd></dl><br />
+<dl><dt><b>Seed</b></dt><dd> The parameter is a positive integer value to determine the seed for the random number generator. A value of zero instructs COPASI to select a &quot;random&quot; value.</dd></dl><br />
+<dl><dt><b>Pf</b></dt><dd> This parameter is a numerical value in the interval (0, 1) determining the chance that individuals either outside the parameter boundaries or violating the constraints are compared during the selection. The default is '0.475'.</dd></dl><br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

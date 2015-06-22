@@ -1,0 +1,30 @@
+---
+title: "Nelder - Mead"
+previous: "Support/User_Manual/Methods/Optimization_Methods/Levenberg_-_Marquardt"
+next: "Support/User_Manual/Methods/Optimization_Methods/Particle_Swarm"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+This method also known as the simplex method is due to Nelder and Mead [<a title="OD.Bibliography" href='/../../../Support/User_Manual/Bibliography#Nelder65'>Nelder65</a>]. A simplex is a polytope of <i>N+1</i> vertices in <i>N</i> dimensions. The objective function is evaluated at each vertex. Dependent on these calculated values a new simplex is constructed.  The simplest step is to replace the worst point with a point reflected through the centroid of the remaining <i>N</i> points. If this point is better than the best current point, then we can try stretching exponentially out along this line. On the other hand, if this new point isn't much better than the previous value then we are stepping across a valley, so we shrink the simplex towards the best point.<br />
+<br />
+<h3 name="Options_for_Nelder_Mead">Options for Nelder - Mead</h3>
+<dl><dt><b>Iteration Limit</b></dt><dd> This parameter is a positive integer to determine the maximum number of iterations the method is to perform. The default value is '200'.</dd></dl><br />
+<dl><dt><b>Tolerance</b></dt><dd> This parameter is a positive number and provides an alternative termination criteria. If the variance of the values of the objective function at the vertices of the current simplex is smaller than the tolerance the algorithm stops. The default is '<img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: +3px; height: 13; width: 27;" src="0a23a82fd3eb4213a6e86874ad0a6f44.png" alt="$10^{-5}$">'.</dd></dl><br />
+<dl><dt><b>Scale</b></dt><dd> This parameter is a positive number and determines the size of the initial simplex. The edges of the polytope are inverse proportional to the scale, i.e., a larger value makes the initial simplex smaller. The default is '10'.</dd></dl><br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

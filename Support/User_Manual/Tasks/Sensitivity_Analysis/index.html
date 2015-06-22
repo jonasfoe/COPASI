@@ -1,0 +1,42 @@
+---
+title: "Sensitivity Analysis"
+previous: "Support/User_Manual/Tasks/Parameter_Estimation/Result"
+next: "Support/User_Manual/Tasks/Linear_Noise_Approximation"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+COPASI also allows the calculation of sensitivities of the model with respect to various parameters. Generally a sensitivity is a measure for how much a specific &quot;observable&quot; (this means any number that can be obtained by numerical analysis of the model) changes when a given parameter is changed.<br />
+<br />
+In COPASI it is possible to calculate whole arrays of sensitivities for lists of &quot;observables&quot; with respect to lists of parameters. The settings for the sensitivities calculation can be found under &quot;Tasks-&gt;Sensitivities&quot;. LetÂ´s look at an example:<br />
+<br />
+If you have a mode for which you can calculate a steady state you may be interested in how the steady state concentrations change with respect to different kinetic parameters. For this you could choose the following settings:<br />
+<br />
+<div class="img" align="center"><table cellpadding="0" cellspacing="0"><tr><td><img alt="" src="sensitivities_gui1.png" style="width:100%" border="0"  /></td></tr><tr><td class="mini">Sensitivity&nbsp;Analysis&nbsp;dialog</td></tr></table></div><br />
+<br />
+<ul><li>For &quot;Subtask&quot; choose &quot;Steady State&quot;. This means that you are interested in the sensitivities of a result of a steady state calculation.
+</li><li>For &quot;Function&quot; choose &quot;Non-Constant Concentration of Species&quot;. &quot;Function&quot; here indicates the observables, i.e. the values of which you want to know the sensitivities. We want to calculate the sensitivities of the steady state concentrations.
+</li><li>Set &quot;Variable&quot; to &quot;Local Parameter Values&quot;. Local parameters are all kinetic parameters that are directly specified for the reactions in the model.
+</li></ul>
+<br />
+To start the calculation just click on the run button.<br />
+<br />
+<div class="img" align="center"><table cellpadding="0" cellspacing="0"><tr><td><img alt="" src="sensitivities_gui2.png" style="width:100%" border="0"  /></td></tr><tr><td class="mini">Sensitivity&nbsp;Analysis&nbsp;result</td></tr></table></div><br />
+<br />
+The results will be displayed as color coded tables of numbers.<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

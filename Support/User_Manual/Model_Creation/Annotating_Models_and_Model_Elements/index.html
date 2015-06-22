@@ -1,0 +1,42 @@
+---
+title: "Annotating Models and Model Elements"
+previous: "Support/User_Manual/Model_Creation/Events"
+next: "Support/User_Manual/Model_Creation/Parameter_View"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+Sometimes it would be beneficial to include additional information in a model that describes the model creation process or that gives biological information about the individual model elements. Especially when you get a model from someone or load some published model from the authors Website or some model repository, this information sometimes comes in handy.<br />
+<br />
+In order to standardize the process of model annotation, the <a target="_blank" href="http://www.ebi.ac.uk/miriam/" rel="external">MIRIAM (Minimal Information Requested in the Annotation of biochemical Models)</a> guidelines have been developed at the EBI in Hingston. These guidelines specify what information is needed to create properly annotated models that are suitable for publication.<br />
+<br />
+Current versions of COPASI allow the user to annotate the model and all model elements according to the MIRIAM guidelines. For this, the model widget, as well as the widgets for the compartment, the species, the reaction and the global quantities have two additional tabs at the top of the widgets. One tab is called Annotation the other tab is called RDF Browser.<br />
+<br />
+<div class="img" align="center"><table cellpadding="0" cellspacing="0"><tr><td><img alt="" src="MIRIAM_01.png" style="width:100%" border="0"  /></td></tr><tr><td class="mini">Annotation&nbsp;Widget&nbsp;with&nbsp;Annotation&nbsp;from&nbsp;Model&nbsp;123&nbsp;from&nbsp;biomodels.net&nbsp;Database</td></tr></table></div><br />
+<br />
+Before you use the annotation feature for the first time, you have to update the MIRIAM annotation that COPASI uses to create the list of resources that can be associated with an element. You update the list by pressing the the update MIRIAM button in the toolbar. Pressing this button triggers the download of the MIRIAM resources from the internet, so this will only work if you are connected to the internet (once this is done, you should restart COPASI).<br />
+<br />
+COPASI (as well as SBML) use RDF (Ressource Description Framework) to store the annotation in the model file. To view the resulting RDF tree, you can select the RDF Browser tab. This is purely for displaying and not for editing. You will probably not look at this information very often.<br />
+<br />
+If you select the Annotation tab, the same annotation is presented in a more user friendly way. There are different pieces of information that can be  given for a certain model element, e.g. the author you added the element or created the model or for species some biological information to the identity of the species.<br />
+<br />
+Each piece of information is stored as a triplet that is composed of the relationship, the resource for that relationship and the corresponding id. The relationship can be chosen from a limited set of relationships. The same goes for the resource. E.g. if you want to specify that species A in the model corresponds to ATP, the relationship would be set to <i>is</i> and the resource could for example be the <a target="_blank" href="http://www.ebi.ac.uk/chebi/" rel="external">ChEBI (Chemical Entities of Biological Interest)</a> dictionary. The id would then be the ChEBI identifier for ATP, which is <a target="_blank" href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI%3A15422" rel="external">CHEBI:A15422</a>.<br />
+<br />
+The COPASI GUI allows the user to store more information than the MIRIAM guidelines for SBML allow, so if you export your model to SBML after annotating it, some information might not be available for other SBML tools.<br />
+<br />
+There is also a <a title="DocumentationMiriam" href="/../../../Support/Technical_Documentation/MIRIAM_Annotation">page</a> on the COPASI Website that has some more technical details about the way annotations are stored in COPASI.<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

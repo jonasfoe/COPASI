@@ -1,0 +1,32 @@
+---
+title: "Species"
+previous: "Support/User_Manual/The_Model_in_COPASI/Compartments"
+next: "Support/User_Manual/The_Model_in_COPASI/Global_Quantities"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+A species is characterized by how much of it is present at a given time. This can be expressed as a particle number or as a concentration. COPASI makes sure that those two are consistent at any time. An initial value can be provided for concentration or particle number of each species. This initial value will be used as a starting point for simulations or other calculations. A species can have four different modes (called &quot;types&quot; in the GUI).<br />
+<br />
+<dl><dt><b>Species determined by reactions</b></dt><dd> This is the default case. The value (concentration/particle number) of these species changes according to the reactions in which the species participate as substrates or products.</dd></dl><br />
+<dl><dt><b>Fixed species</b></dt><dd>&quot;Fixed&quot; species have constant particle number. This means that if the volume of the compartment containing the species is not changing, the concentration of the species will also be constant. For variable compartment volume the concentration will change. &quot;Fixed&quot; species can participate in a reaction, and can influence the rate of this reaction, but their concentration/particle number will not be changed by the reaction.</dd></dl><br />
+<dl><dt><b>Species with assignment</b></dt><dd> The Concentration of a species can also be determined by an explicit mathematical expression. In this case the concentration of the species is determined by evaluating the mathematical expression (which could be constant, time-dependent, or dependent on other variables of the model) and the particle number is then calculated from the concentration. The particle numbers/concentrations of such species will not be influenced by reactions in which they participate.</dd></dl><br />
+<dl><dt><b>Species with ordinary differential equation</b></dt><dd> The modeler can also explicitly provide the right hand side of an ordinary differential equation for the species. The expression for the differential equation has the dimension of concentration per time, but it is important to note that it does <i>not</i> specify the rate of change of the concentration. Instead, the expression is internally multiplied by the compartment volume and then interpreted as the rate of change of the amount of substance of the species.</dd></dl><br />
+<br />
+Associated to the species is also a value called transition time. It is calculated as the current particle number of the species divided by either the sum of all reaction fluxes going into the species or the sum of all reaction fluxes going out of the species, whichever is smaller (the fluxes are also expressed in number of particles per second). The transition time gives a rough heuristic measure for how long a particle of this species will exist on average before it is consumed. A short transition time in a stable steady state may indicate that the equilibrium is a &quot;fast&quot; equilibrium which could be used for a simplification of the model. Note however that this calculation is inexact if any reversible reactions are involved.<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

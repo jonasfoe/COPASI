@@ -1,0 +1,37 @@
+---
+title: "Hybrid Simulation"
+previous: "Support/User_Manual/Methods/Time_Course_Calculation/Stochastic_Simulation"
+next: "Support/User_Manual/Methods/Steady_State_Calculation"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="Hybrid_Runge_Kutta_">Hybrid (Runge-Kutta)</h3>
+This hybrid simulation method developed by us combines a deterministic numerical integration of ODEs with a stochastic simulation algorithm. The whole biochemical network is partitioned into a deterministic and a stochastic subnet internally. The deterministic subnet contains all reactions, in which only species with high particle numbers take part. All reactions with at least one low-numbered species are in the stochastic subnet, because here stochastic effects are expected. Which particle numbers are considered low or high can be specified by the user with the Lower Limit and the Upper Limit parameters (Species with particle numbers between those limits do not change their status. This leads to a hysteresis-like behavior and avoids many unnecessary swaps, if the particle numbers fluctuate in the middle range). The partitioning of the biochemical network can change dynamically during the simulation. After a certain number of steps, which the user can define using the parameter Partitioning Interval, the partitioning is recalculated using the current particle numbers in the system. During one run the deterministic subnet and the stochastic subnet are simulated in parallel. A 4th-order Runge-Kutta method is used to numerically integrate the deterministic part of the system. For the stochastic part the simulation method by Gibson and Bruck [<a title="OD.Bibliography" href='/../../../Support/User_Manual/Bibliography#Gibson00'>Gibson00</a>] is utilized. The reaction probabilities of the stochastic subnet are approximated as constant during one stochastic step, even though in theory they can change due to the effects of the deterministic subnet.<br />
+<br />
+The current implementation of the Hybrid Runge Kutta Method is very inefficient when the model contains assignment rules, which leads to extended calculation times.<br />
+<br />
+<h4 name="Options_for_Hybrid_Runge_Kutta_">Options for Hybrid (Runge-Kutta)</h4>
+<dl><dt><b>Max Internal Steps</b></dt><dd> This parameter is a positive integer value specifying the maximal number of internal steps the integrator is allowed to take before the next desired reporting time. The default value is '1000000'.</dd></dl><br />
+<dl><dt><b>Lower Limit</b></dt><dd> This parameter is a double value specifying the lower limit for particle numbers. Species with a particle number below this value are considered as having a low particle number. The lower limit cannot be higher than the upper limit. The default value is '800'.</dd></dl><br />
+<dl><dt><b>Upper Limit</b></dt><dd> This parameter is a double value specifying the upper limit for particle numbers. Species with a particle number above this value are considered as having a high particle number. The upper limit cannot be lower than the lower limit. The default value is '1000'.</dd></dl><br />
+<dl><dt><b>Runge Kutta Stepsize</b></dt><dd> This positive double value is the step size of the Runge-Kutta solver for the integration of the deterministic part of the system. The default value is '0.001'.</dd></dl><br />
+<dl><dt><b>Partitioning Interval</b></dt><dd> This positive integer value specifies after how many steps the internal partitioning of the system should be recalculated. The default is '1', i.e. after every step the partitioning of the system is checked.</dd></dl><br />
+<dl><dt><b>Use Random Seed</b></dt><dd> This flag can be '0' or '1' and determines if the user-defined random seed should be used for the calculation. The default is '0' meaning that the random seed is set to a random value before each run and consecutively calculated trajectories will be different. If the value of this flag is set to '1', the user-defined random seed will be used and each calculated trajectory will be the same for the same value of the given random seed.</dd></dl><br />
+<dl><dt><b>Random Seed</b></dt><dd> This unsigned integer is used as random seed in the calculations, if the flag Use Random Seed is set to '1'. The default value is '1'.</dd></dl><br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

@@ -1,0 +1,9 @@
+resolution 800x600
+framerate 25.00
+quality 94
+type jpg
+pansmoothness 0.2
+zoomsmoothness 0.3
+img credits2.png zoom FITWIDTH startpoint 400,300 duration 1.0
+continue endpoint 400,1100 duration 9.0
+continue duration 1.5

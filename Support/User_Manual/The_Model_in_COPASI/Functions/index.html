@@ -1,0 +1,29 @@
+---
+title: "Functions"
+previous: "Support/User_Manual/The_Model_in_COPASI/Reactions"
+next: "Support/User_Manual/The_Model_in_COPASI/Deterministic_Interpretation_of_the_Model"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+A function in COPASI is a mathematical expression that calculates a value from a given list of other values. Generally functions can be used in two ways in COPASI: As a kinetic function specified for a reaction or as a function that is called from another function or expression.<br />
+<br />
+The function contains a detailed list of parameters that specifies how many values (and what kind of values) need to be passed to the function. If a function is called from another function or expression only the number of values is checked, not the kind of value. In the case that a function is used as a kinetic function for a reaction COPASI ensures consistency about the roles of the parameters in the model. Each parameter has one of six different roles: &quot;Substrate&quot;, &quot;Product&quot;, &quot;Modifier&quot;, &quot;Volume&quot;, &quot;Time&quot;, &quot;Parameter&quot;. The first three must be connected with the concentration of a species that has the respective role in the reaction. &quot;Volume&quot; must be connected with a compartment, &quot;Time&quot; is always the simulation time of the model. &quot;Parameter&quot; must be connected with a global parameter or a local value in the reaction.<br />
+<br />
+A function also specifies if it is appropriate for a reversible or irreversible reaction. This information is not automatically inferred from the mathematical description of the function, and COPASI does not enforce restrictions like irreversible kinetics having to be strictly positive.<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

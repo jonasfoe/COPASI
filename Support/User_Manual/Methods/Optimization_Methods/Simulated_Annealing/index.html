@@ -1,0 +1,44 @@
+---
+title: "Simulated Annealing"
+previous: "Support/User_Manual/Methods/Optimization_Methods/Random_Search"
+next: "Support/User_Manual/Methods/Optimization_Methods/Steepest_Descent"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+Simulated annealing is an optimization algorithm first proposed by Kirkpatrick et al. [<a title="OD.Bibliography" href='/../../../Support/User_Manual/Bibliography#Kirkpatrick83'>Kirkpatrick83</a>] and was inspired by statistical mechanics and the way in which perfect crystals are formed. Perfect crystals are formed by first melting the substance of interest, and then cooling it very slowly. At large temperatures the particles vibrate with wide amplitude and this allows a search for global optimum. As the temperature decreases so do the vibrations until the system settles to the global optimum (the perfect crystal).<br />
+<br />
+The simulated annealing optimization algorithm uses a similar concept: the objective function is considered a measure of the energy of the system and this is maintained constant for a certain number of iterations (a temperature cycle). In each iteration, the parameters are changed to a nearby location in parameter space and the new objective function value calculated; if it decreased, then the new state is accepted, if it increased then the new state is accepted with a probability that follows a Boltzmann distribution (higher temperature means higher probability of accepting the new state). After a fixed number of iterations, the stopping criterion is checked; if it is not time to stop, then the system's temperature is reduced and the algorithm continues.<br />
+<br />
+Simulated annealing is a stochastic algorithm that is guaranteed to converge if ran for an infinite number of iterations. It is one of the most robust global optimization algorithms, although it is also one of the slowest. (Be warned that simulated annealing can run for hours or even days!).<br />
+<br />
+This implementation of simulated annealing is based on the code of Corana et al. [<a title="OD.Bibliography" href='/../../../Support/User_Manual/Bibliography#Corana87'>Corana87</a>]. This implementation has tuned some of the parameters of the original implementation as follows:<br />
+<ul><li> Each temperature cycle takes <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 13; width: 133;" src="967f0f9401b9adbb4f4a21e421653ba9.png" alt="$10 \cdot p \cdot \max(5\,*p,\,100)$"> random steps, with <i>p</i> being the number of optimization parameters.
+</li><li> At each step, a new candidate solution is accepted if it fulfills either of the following:
+<ol><li> it reduced the objective function value, or
+</li><li> with a probability equal to <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: +2px; height: 15; width: 30;" src="c9b15d06cd5c64fa33a932ec82c9345a.png" alt="$e^{-\frac{\Delta f}{T}}$">, where <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: 0px; height: 13; width: 19;" src="d1426068c0a96fd5ccdaa53a363784ba.png" alt="$\Delta f$"> is the increase in objective function value, and <i>T</i> is the current temperature.
+</li></ol></li><li> The stopping criterion is applied to the last two temperature cycles (i.e. the change in objective function between this temperature and the previous must have been smaller than the Tolerance in the last two cycles).
+</li></ul>
+<br />
+<h3 name="Options_for_Simulated_Annealing">Options for Simulated Annealing</h3>
+<dl><dt><b>Start Temperature</b></dt><dd> Initial temperature of the system. The higher the temperature, the larger the probability that a global optimum is found. Note that the temperature should be very high in the beginning of the method (the system should be above the &quot;melting&quot; temperature). This value has the same units as the objective function, so what represents &quot;high&quot; is different from problem to problem. The default is '1'.</dd></dl><br />
+<dl><dt><b>Cooling Factor</b></dt><dd> Rate by which the temperature is reduced from one cycle to the next, given by the formula: Tnew=Told*&quot;Cooling Factor&quot;. The simulated annealing algorithm works best if the temperature is reduced at a slow rate, so this value should be close to 1. (but values closer to 1 will also cause the algorithm to run longer). The default is '0.85'.</dd></dl><br />
+<dl><dt><b>Tolerance</b></dt><dd> Convergence stopping criteria: the method stops when the change in the objective function has been smaller than this value in the last two temperature steps. The default is <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: +3px; height: 12; width: 27;" src="4d92e0c08889f50a40d155f0352127a6.png" alt="$10^{-6}$">. (This is an absolute tolerance)</dd></dl><br />
+<dl><dt><b>Random Number Generator</b></dt><dd>The parameter is an enumeration value to determine which random number generator this method shall use. COPASI provides two random number generators R250 [<a title="OD.Bibliography" href='/../../../Support/User_Manual/Bibliography#Maier91'>Maier91</a>] (selected through the value 0) and the <a target="_blank" href="http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt.html" rel="external">Mersenne Twister</a> [<a title="OD.Bibliography" href='/../../../Support/User_Manual/Bibliography#Matsumoto98'>Matsumoto98</a>] (selected through the value 1 (default)).</dd></dl><br />
+<dl><dt><b>Seed</b></dt><dd> The parameter is a positive integer value to determine the seed for the random number generator. A value of zero instructs COPASI to select a &quot;random&quot; value.</dd></dl><br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

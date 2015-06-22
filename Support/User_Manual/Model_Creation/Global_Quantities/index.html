@@ -1,0 +1,50 @@
+---
+title: "Global Quantities"
+previous: "Support/User_Manual/Model_Creation/Reactions"
+next: "Support/User_Manual/Model_Creation/Events"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+In the model tree right below the Reaction branch is the Global Quantities branch. If you select this branch, you see a table with all the global quantities that have been defined in your model. When you start a new model this table, just like all the others so far, is empty (see below). The table has eight columns and the ones named Status and Name should by now be already familiar. The third column specifies the type of the global quantity. There are three alternatives for that: <i>fixed</i> means the global quantity has a constant value (that can be used as a global parameter), <i>assignment</i>means the value of the quantity is calculated from a mathematical expression, and <i>ode</i>. If the type is <i>ode</i> the quantity is treated as a variable of the model and a differential equation for this variable can be provided.<br />
+<br />
+The forth and fifth column contain the initial and transient value of the global quantity as well as the rate of change of the value is displayed on the sixth column. The last two columns contains the mathematical expressions which may be required as long as the type is not <i>fixed</i>.<br />
+<br />
+As with all other model elements, you can choose how you want to add a global parameter. The most convenient way is to just enter a name in an empty cell of the column termed Name.<br />
+<br />
+<div class="img" align="center"><table cellpadding="0" cellspacing="0"><tr><td><img alt="" src="GlobalQuantities_01.png" style="width:100%" border="0"  /></td></tr><tr><td class="mini">Global&nbsp;Quantities&nbsp;Table&nbsp;with&nbsp;3&nbsp;Entries</td></tr></table></div><br />
+<br />
+If you click on the name of a global quantity in the tree on the left or double click on a row of the table only the information correlated with the chosen global quantity will be displayed.<br />
+<br />
+<div class="img" align="center"><table cellpadding="0" cellspacing="0"><tr><td><img alt="" src="GlobalQuantities_02.png" style="width:100%" border="0"  /></td></tr><tr><td class="mini">Global&nbsp;Quantity&nbsp;User&nbsp;Interface&nbsp;with&nbsp;ODE&nbsp;Rrule</td></tr></table></div><br />
+<br />
+Just as compartments and species, global quantities do not have to be a constant but can be reassigned during e.g. a time course simulation depending the values of one or more model entities. In order to specify whether a parameter has a constant value or the value is calculated on the fly according to a mathematical expression, the drop down list called Simulation Type should be used.<br />
+The drop down list contains three following entries:<br />
+<br />
+<table class="normal"><caption>Global Quantities Simulation Types</caption><colgroup><col width="10%" /><col width="90%" /></colgroup><tr><td class="heading">Name </td><td class="heading"> Description</td></tr><tr><td class="odd">fixed </td><td class="odd"> the value of the parameter is constant (which corresponds to the given initial value)</td></tr><tr><td class="even">assignment </td><td class="even"> the value of the parameter is determined by evaluating the given mathematical expression</td></tr><tr><td class="odd">ode </td><td class="odd"> the rate of change of the parameters value is determined by an ordinary differential equation</td></tr></table><br />
+<br />
+If you want the parameters value to be calculated from a given mathematical expression you select the entry called <i>assignment</i> from the drop down list. This enables a text field where the mathematical expression can be entered. Likewise if you want the rate of change of the parameters value to be determined by an ordinary differential equation (ode) you select the entry called <i>ode</i> from the drop down list.<br />
+<br />
+Not only the transient value of a parameter can be specified as a mathematical expression, but also the initial value of the parameter. If you want do specify such a mathematical expression for the initial volume of a compartment, check the check box called Use Initial Expression. An initial expression can only be specified if the Simulation Type drop down list is either set to <i>fixed</i> or to <i>ode</i> . If the list is set to <i>assignment</i>, the given assignment automatically acts as an initial assignment and there is no need to specify an additional initial assignment.<br />
+<br />
+<div class="img" align="center"><table cellpadding="0" cellspacing="0"><tr><td><img alt="" src="GlobalQuantities_03.png" style="width:100%" border="0"  /></td></tr><tr><td class="mini">Global&nbsp;Quantity&nbsp;Widget&nbsp;with&nbsp;an&nbsp;Initial&nbsp;Assignment</td></tr></table></div><br />
+<br />
+The mathematical expressions that can be specified for rules and initial assignments may contain the same elements as the expressions used to defined function definitions. For a detailed description of the elements see <a title="OD.User.Defined.Functions" href="/../../../Support/User_Manual/Model_Creation/User_Defined_Functions">User Defined Functions</a>. When it comes to referencing values of other model entities within mathematical expressions, there is a slight difference between the mathematical expression for a rule and that for an initial assignment. The former may reference transient values of other model entities whereas the latter may only reference initial values of other model entities.<br />
+<br />
+Even so COPASI does not support building models from ordinary differential equations, one can specify a model as a set of differential equations using a set of global parameters which have the type ode.<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

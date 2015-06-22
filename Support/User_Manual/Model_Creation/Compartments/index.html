@@ -1,0 +1,81 @@
+---
+title: "Compartments"
+previous: "Support/User_Manual/Model_Creation/General_Model_Settings"
+next: "Support/User_Manual/Model_Creation/Species"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+In COPASI, most of the time there are several ways to do something and you just choose the way you prefer. This is especially true for defining the elements of the model.<br />
+<br />
+Actually if you are just defining a model that has a single compartment, you will most likely not even bother to add the compartment explicitly, but we will come back to this in the <a title="OD.Species" href="/../../../Support/User_Manual/Model_Creation/Species">Species</a> and <a title="OD.Reactions" href="/../../../Support/User_Manual/Model_Creation/Reactions">Reactions</a> sections.<br />
+<br />
+Although you will probably not add compartments too often, it is good to know how it is done, especially since adding other components of the model, e.g. species or reactions, works essentially the same.<br />
+<br />
+There are three methods to add a new compartment to a model, but for all three, we have to navigate to the Compartments branch of the object tree which is located under the Model-&gt;Biochemical branch. So first open the Model branch and there open the Biochemical branch by clicking on the expansion sign in front of the branch name, or by double clicking on the branch name.<br />
+<br />
+<div class="img" align="center"><table cellpadding="0" cellspacing="0"><tr><td><img alt="" src="Compartments_01.png" style="width:100%" border="0"  /></td></tr><tr><td class="mini">Empty&nbsp;Compartment&nbsp;Table</td></tr></table></div><br />
+<br />
+If you start with a new model and you select the Compartments branch, you will get a nearly empty table with eight columns (see above). The columns are named #, Name, Type Initial Volume, Volume, Rate, Initial Expression and Expression. The # column contains the index of a given compartment in the model. Note that the index for the 'New Compartment' is not given indicating that it is not part of the model. Name is the actual name of the compartment. The Type specifies how the transient volume of the compartment is determined whereas the Initial Volume and the Volume columns show the volume of the compartment before any calculations and after re-calculation, respectively. These two values, given in the volume units defined in the <a title="OD.General.Model.Settings" href="/../../../Support/User_Manual/Model_Creation/General_Model_Settings">model settings</a> dialog, should be the same if the type is set to fixed. The Rate column show the rate of change of the compartment (if it has been set by a calculation). The Initial Expression and the Expression columns show the mathematical expressions used to calculate the initial compartments volume and the transient one, respectively. These fields are empty if no expressions has been set.<br />
+<br />
+The most obvious way to add a new compartment is to click the New button on the bottom of the window. This will create a new compartment that is added to the table with the index of 1.<br />
+<br />
+<div class="img" align="center"><table cellpadding="0" cellspacing="0"><tr><td><img alt="" src="Compartments_02.png" style="width:100%" border="0"  /></td></tr><tr><td class="mini">Compartment&nbsp;Table&nbsp;with&nbsp;new&nbsp;Compartment</td></tr></table></div><br />
+<br />
+To create multiple compartments with the default values just keep pressing the New button.<br />
+<br />
+<div class="img" align="center"><table cellpadding="0" cellspacing="0"><tr><td><img alt="" src="Compartments_03.png" style="width:100%" border="0"  /></td></tr><tr><td class="mini">Compartment&nbsp;Table&nbsp;with&nbsp;deleted&nbsp;Compartment</td></tr></table></div><br />
+<br />
+Any compartment you have created can be deleted by selecting the whole table row or clicking into the # cell that contains the compartment you want to delete and clicking the Delete button. This deletion is executed immediately if there are no consequences to other model components. If there are consequences such as the deletion of contained species. A dialog box will appear informing you of such side effects and ask whether you want to proceed or cancel the deletion.<br />
+<br />
+The Delete All button is just a convenience function to delete all compartments. All compartments will be deleted and a confirmation dialog will appear for each compartment which deletion has further consequences to the model. You are able to individually cancel or confirm any deletion.<br />
+<br />
+The most convenient way to add a compartment is to modify any cell in the e.g. the name cell by providing the desired the name of the new compartment. Once you leave the cell by either hitting the return or the tab key or by clicking somewhere else, the compartment is added to the model and a new default row is created. Actually hitting the return key after typing the name brings you directly into the next row and you can continue adding compartments until all compartments are defined.<br />
+<br />
+The third way to add a new compartment is to double click on an empty row in the table. This is essentially the same as clicking the New button and double clicking on the newly added compartment entry.<br />
+<br />
+<div class="img" align="center"><table cellpadding="0" cellspacing="0"><tr><td><img alt="" src="Compartments_04.png" style="width:100%" border="0"  /></td></tr><tr><td class="mini">Compartment&nbsp;Definition&nbsp;Dialog</td></tr></table></div><br />
+<br />
+Double clicking on any compartment entry in the table will bring you to another input dialog that lets you specify the parameters of the compartment (see above). For each compartment, you are able to change the name of the compartment, the type of simulation specifying how the compartment volume, or its rate of change, will be determined, and the initial volume.<br />
+<br />
+The field labeled Volume specifies the volume the compartment has right now, e.g. during or at the end of a simulation. Since the current version of COPASI does not support variable compartment volumes yet, this will always be the same as the initial volume.<br />
+<br />
+As stated above, compartment volumes don't have to have a constant value but they can be reassigned during e.g. a time course simulation depending the values of one or more model entities. In order to specify whether a compartment has a constant volume or the volume is calculated on the fly according to a mathematical expression, the drop down list called Simulation Type can be used. It contains three entries:<br />
+<br />
+<table class="normal"><caption>Compartments Simulation Types</caption><colgroup><col width="10%" /><col width="90%" /></colgroup><tr><td class="heading">Name </td><td class="heading"> Description</td></tr><tr><td class="odd">fixed	</td><td class="odd"> the volume of the compartment has a constant value (which corresponds to the given initial value)</td></tr><tr><td class="even">assignment </td><td class="even"> the volume of the compartment is determined by evaluating the given mathematical expression</td></tr><tr><td class="odd">ode </td><td class="odd"> the rate of change of the compartments volume is determined by an ordinary differential equation</td></tr></table><br />
+<br />
+If you want the compartment to be calculated from a given mathematical expression you select the entry called assignment from the Simulation Type drop down list. This enables a text field where the mathematical expression can be entered.<br />
+<br />
+<div class="img" align="center"><table cellpadding="0" cellspacing="0"><tr><td><img alt="" src="Compartments_05.png" style="width:100%" border="0"  /></td></tr><tr><td class="mini">Compartment&nbsp;Widget&nbsp;with&nbsp;Assignment&nbsp;Rule</td></tr></table></div><br />
+<br />
+<div style=" text-align: left; float: none; clear: none;" class='caution' >Please note, it is not possible in COPASI to calculate the volume of a compartment through an assignment based on the concentration of a species contained in the compartment. The reason for this restriction is that COPASI preserves the amount <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: +2px; height: 9; width: 9;" src="cdb55e13c1386410543ebd3f34cf4a4c.png" alt="$S$"> of a species during calculation, which leads to the following equation for the concentration <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: -1px; height: 15; width: 60;" src="5c85d773dbd2c2ebf90d0a31cf9d4b62.png" alt="$[S] = S/V$"> and therefore <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: -1px; height: 15; width: 60;" src="91712f4fb128ca863a7b7970721a8e13.png" alt="$V=S/[S]$">. Obviously, specifying any assignment for the compartment volume like <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: -1px; height: 15; width: 64;" src="ba611369cb620a662e2e08275ca71fef.png" alt="$V = f([S])$"> would lead to conflicting values.</div><br />
+<br />
+Likewise if you want the rate of change of the compartments volume to be determined by an ordinary differential equation (ode) you select the entry called ode from the drop down list.<br />
+<br />
+Not only the transient volume of a compartment can be specified as a mathematical expression (see above), but also the initial one (see below). If you want to specify such a mathematical expression for the initial volume of a compartment, check the check box called Use Initial Expression. An initial expression can only be specified if the Simulation Type drop down list is either set to fixed or to ode. If the list is set to assignment, the given assignment automatically acts as an initial assignment and there is no need to specify an additional initial assignment.<br />
+<br />
+<div class="img" align="center"><table cellpadding="0" cellspacing="0"><tr><td><img alt="" src="Compartments_06.png" style="width:100%" border="0"  /></td></tr><tr><td class="mini">Compartment&nbsp;Widget&nbsp;with&nbsp;Initial&nbsp;Assignment</td></tr></table></div><br />
+<br />
+The mathematical expressions that can be specified for rules and initial assignments may contain the same elements as the expressions used to defined function definitions. For a detailed description of the elements see <a title="OD.User.Defined.Functions" href="/../../../Support/User_Manual/Model_Creation/User_Defined_Functions">User Defined Functions</a>. When it comes to referencing values of other model entities within mathematical expressions, there is a slight difference between the mathematical expression for a rule and that for an initial assignment. The mathematical expression for a rule may reference transient values of other model entities whereas the mathematical expression for an initial assignment may only reference initial values of other model entities.<br />
+<br />
+As you might already have noticed, this dialog for changing compartment parameters, associated with the individual compartment, lives in the object tree. So if you want to change the parameters, you can also navigate to the leave in the object tree that represents the compartment you want to change instead of double clicking on an entry in the compartment table.<br />
+<br />
+<div class="img" align="center"><table cellpadding="0" cellspacing="0"><tr><td><img alt="" src="Compartments_07.png" style="width:100%" border="0"  /></td></tr><tr><td class="mini">Compartment&nbsp;Widget&nbsp;with&nbsp;ODE&nbsp;Rule&nbsp;and&nbsp;Initial&nbsp;Assignment</td></tr></table></div><br />
+<br />
+If there are already species defined that are part of the compartment being edited, they will be listed in the text widget at the bottom of the dialog called Contained Species. Otherwise, you should add new species.<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

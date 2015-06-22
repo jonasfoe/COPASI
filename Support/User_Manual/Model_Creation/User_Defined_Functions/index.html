@@ -1,0 +1,91 @@
+---
+title: "User Defined Functions"
+previous: "Support/User_Manual/Model_Creation/Parameter_View"
+next: "Support/User_Manual/Model_Creation/Sliders"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+COPASI already defines a large set of commonly used kinetic functions to choose from. The list of defined functions is located at the last branch in the object tree.<br />
+<br />
+<div class="img" align="center"><table cellpadding="0" cellspacing="0"><tr><td><img alt="" src="Functions_01.png" style="width:100%" border="0"  /></td></tr><tr><td class="mini">Function&nbsp;Table&nbsp;with&nbsp;predefined&nbsp;Functions</td></tr></table></div><br />
+<br />
+Nevertheless sometimes you need to define your own kinetic function to solve a specific problem. COPASI enables you to add a new function either by double clicking on an empty table row or by clicking on the New button on the bottom of the screen. In the function definition dialog, you give your function a name in the Function Name field. This name has to be unique within the list of defined functions. Next, you have to specify a formula that defines the reaction rate of your kinetic function in the Formula field. The function string only covers the right side of the rate function.<br />
+<br />
+<div class="img" align="center"><table cellpadding="0" cellspacing="0"><tr><td><img alt="" src="Functions_02.png" style="width:100%" border="0"  /></td></tr><tr><td class="mini">Function&nbsp;Definition&nbsp;Dialog</td></tr></table></div><br />
+<br />
+So for Michaelis-Menten which is defined as v=V*(S/(Km+S)) you would enter v=V*(S/(Km+S)) into the Formula field. While you are typing the formula, COPASI already tries to parse the equation and extract the parameters. All parameters that COPASI finds are listed in the Parameters table.<br />
+<br />
+<div class="img" align="center"><table cellpadding="0" cellspacing="0"><tr><td><img alt="" src="Functions_03.png" style="width:100%" border="0"  /></td></tr><tr><td class="mini">Function&nbsp;Definition&nbsp;Dialog&nbsp;with&nbsp;graphical&nbsp;Display&nbsp;of&nbsp;the&nbsp;Function</td></tr></table></div><br />
+<br />
+In COPASI parameters can have arbitrary names, there are only a few rules that one has to be aware of. If a parameter starts with a letter or underscore character and contains only letters, digits and underscore characters all is well, if however the parameter name contains other characters, the whole parameter name has to be enclosed in double quotes. If the parameter name contains double quotes or backslashes those have to be escaped by a backslash.<br />
+<br />
+As all variables found are defined, per default, as <i>Parameters</i> , you should specify their correct types by selecting one from the drop down list Description.<br />
+<br />
+However, the specific type of variables  will affect to the type of reactions the function can be used for. E.g, if you define the function to contain two substrates and a modifier, you can later only use it for reactions that really do have two substrates.<br />
+<br />
+<div style=" text-align: left; float: none; clear: none;" class='caution' > The restrictions on the number of modifiers is not strict since substrates and reactants could act as modifiers. So the above mentioned rate law could be used on reactions that do not explicitly specify a modifier.</div><br />
+<br />
+You can also see this in the Application restrictions table below the Parameters table. Let's say you define the function A*B and define <i>A</i> and <i>B</i> to be substrates, you will see that the Application restrictions say that there must be exactly two substrates in the reaction for that kinetics to be applicable. After defining this function, you will be able to use it for all chemical reaction that have exactly two substrates. Last but not least, you have to define whether this function can be applied to reversible, irreversible or both reaction types by selecting the reversible, irreversible or General radio button respectively. You can also call other functions from function definitions. There are four things you have to watch out for when you call a function within another function.<br />
+<ol><li> Recursive function calls are not permitted. That is a function may not call itself, neither directly nor by calling another function that might call the first function again further along the line.
+</li><li> You have to specify the correct number of arguments to the function called.
+</li><li> You have to specify the correct argument types to the function call. I.e. if you call &quot;Henry-Michaelis-Menten (irreversible)&quot; from within another function, you have to make sure that the first call argument has a usage of <i>Substrate</i> and the other two have the usage <i>Parameter</i>.
+</li><li> Which brings me to the last point. The built in function names in COPASI often use characters like &quot;-&quot; or even spaces, so if you want to call one of those functions, you have to quote this function name. So calling &quot;Henry-Michaelis-Menten (irreversible)&quot; from another function would look like this:<br /><pre>  &quot;Henry-Michaelis-Menten (irreversible)&quot;(S, Km, V)</pre>
+</li></ol>
+<br />
+After you commit the function, you can use it for the definition of reactions.<br />
+<br />
+The operators and functions that COPASI knows and therefore can be used to create user defined functions are the following:<br />
+<h3 name="Standard_Operators">Standard Operators</h3>
+<table class="normal"><caption>Standard Operators</caption><colgroup><col width="30%" /><col width="70%" /></colgroup><tr><td class="heading">Operator/Function </td><td class="heading"> Description</td></tr><tr><td class="odd">+</td><td class="odd">plus operator</td></tr><tr><td class="even">-</td><td class="even">minus operator</td></tr><tr><td class="odd">/</td><td class="odd">division operator</td></tr><tr><td class="even">*</td><td class="even">multiplication operator</td></tr><tr><td class="odd">%</td><td class="odd">modulus operator</td></tr><tr><td class="even">^</td><td class="even">power operator</td></tr></table><br />
+<h3 name="Miscellaneaous_Functions">Miscellaneaous Functions</h3>
+<table class="normal"><caption>Miscellaneaous Functions</caption><colgroup><col width="30%" /><col width="70%" /></colgroup><tr><td class="heading">Operator/Function </td><td class="heading"> Description</td></tr><tr><td class="odd">abs / ABS</td><td class="odd">absolute value</td></tr><tr><td class="even">floor / FLOOR</td><td class="even">floor value</td></tr><tr><td class="odd">ceil / CEIL</td><td class="odd">next highest integer</td></tr><tr><td class="even">factorial / FACTORIAL</td><td class="even">factorial function</td></tr><tr><td class="odd">log / LOG</td><td class="odd">natural logarithm</td></tr><tr><td class="even">log10 / LOG10</td><td class="even">logarithm for base 10</td></tr><tr><td class="odd">exp / EXP</td><td class="odd">exponent function</td></tr></table><br />
+<h3 name="Trigonometric_Functions">Trigonometric Functions</h3>
+<table class="normal"><caption>Trigonometric Functions</caption><colgroup><col width="30%" /><col width="70%" /></colgroup><tr><td class="heading">Operator/Function </td><td class="heading"> Description</td></tr><tr><td class="odd">sin / SIN</td><td class="odd">sine function</td></tr><tr><td class="even">cos / COS</td><td class="even">cosine function</td></tr><tr><td class="odd">tan / TAN</td><td class="odd">tangent function</td></tr><tr><td class="even">sec / SEC</td><td class="even">secand function</td></tr><tr><td class="odd">csc / CSC</td><td class="odd">cosecand function</td></tr><tr><td class="even">cot / COT</td><td class="even">cotangent function</td></tr><tr><td class="odd">sinh / SINH</td><td class="odd">hyperbolic sine function</td></tr><tr><td class="even">cosh / COSH</td><td class="even">hyperbolic cosine function</td></tr><tr><td class="odd">tanh / TANH</td><td class="odd">hyperbolic tangent function</td></tr><tr><td class="even">sech / SECH</td><td class="even">hyperbolic secand function</td></tr><tr><td class="odd">csch / CSCH</td><td class="odd">hyperbolic cosecand function</td></tr><tr><td class="even">coth / COTH</td><td class="even">hyperbolic cotangent function</td></tr><tr><td class="odd">asin / ASIN</td><td class="odd">arcsine function</td></tr><tr><td class="even">acos / ACOS</td><td class="even">arccosine function</td></tr><tr><td class="odd">atan / ATAN</td><td class="odd">arctangent function</td></tr><tr><td class="even">arcsec / ARCSEC</td><td class="even">arcsecand function</td></tr><tr><td class="odd">arccsc / ARCCSC</td><td class="odd">arccosecand function</td></tr><tr><td class="even">arccot / ARCCOT</td><td class="even">arccotangent function</td></tr><tr><td class="odd">arcsinh / ARCSINH</td><td class="odd">hyperbolic arcsine function</td></tr><tr><td class="even">arccosh / ARCCOSH</td><td class="even">hyperbolic arccosine function</td></tr><tr><td class="odd">arctanh / ARCTANH</td><td class="odd">hyperbolic arctangent function</td></tr><tr><td class="even">arcsech / ARCSECH</td><td class="even">hyperbolic arcsecand function</td></tr><tr><td class="odd">arccsch / ARCCSCH</td><td class="odd">hyperbolic arccosecand function</td></tr><tr><td class="even">arccoth / ARCCOTH</td><td class="even">hyperbolic arccotangent function</td></tr></table><br />
+<h3 name="Random_Distribuitions">Random Distribuitions</h3>
+<table class="normal"><caption>Random Distributions</caption><colgroup><col width="30%" /><col width="70%" /></colgroup><tr><td class="heading">Operator/Function </td><td class="heading"> Description</td></tr><tr><td class="odd">uniform/UNIFORM </td><td class="odd"> This functions takes 2 arguments min and max. It returns a normally distributed value in the open interval (min, max).</td></tr><tr><td class="even">normal/NORMAL </td><td class="even"> This function takes 2 arguments mean and standard deviation. It returns a uniform distributed value with the given mean ad standard deviation.</td></tr></table><br />
+<h3 name="Logical_Operators">Logical Operators</h3>
+The logical operators and comparisons are evaluated in the order they are listed in the table.<br />
+<br />
+<table class="normal"><caption>Logical Operators</caption><colgroup><col width="30%" /><col width="70%" /></colgroup><tr><td class="heading">Operator/Function </td><td class="heading"> Description</td></tr><tr><td class="odd">le / LE / &lt;=</td><td class="odd">smaller or equal (&amp;le;)</td></tr><tr><td class="even">lt / LT / &lt;</td><td class="even">smaller (&lt;)</td></tr><tr><td class="odd">ge / GE / &gt;=</td><td class="odd">greater or equal (&amp;ge;)</td></tr><tr><td class="even">gt / GT / &gt;</td><td class="even">greater (&gt;)</td></tr><tr><td class="odd">ne / NE / !=</td><td class="odd">not equal (!=)</td></tr><tr><td class="even">eq / EQ / ==</td><td class="even">equal (=)</td></tr><tr><td class="odd">and / AND / &amp;&amp;</td><td class="odd">logical and (&amp;)</td></tr><tr><td class="even">or / OR / ||</td><td class="even">logical or (|)</td></tr><tr><td class="odd">xor / XOR</td><td class="odd">logical xor</td></tr><tr><td class="even">not / NOT / !</td><td class="even">logical negation</td></tr></table><br />
+<h3 name="Conditional_Statement">Conditional Statement</h3>
+In addition to defining &quot;normal&quot; functions, COPASI allows the definition of piecewise defined functions. Piecewise defined functions are constructed with the IF statement.<br />
+<br />
+<table class="normal"><caption>Conditional Statements</caption><colgroup><col width="30%" /><col width="70%" /></colgroup><tr><td class="heading">Operator/Function </td><td class="heading"> Description</td></tr><tr><td class="odd">if() / IF()</td><td class="odd">if statement for the construction of piecewise defined functions etc.</td></tr></table><br />
+<br />
+The functions name can be written with either all lowercase letters or all letters uppercase. Mixing of upper and lowercase letters is not allowed and will lead to errors. This function takes 3 arguments separated by a comma:<br />
+<ol><li> Boolean expression
+</li><li> Expression evaluated if the first argument evaluates to <i>true</i>.
+</li><li> Expression evaluated if the first argument evaluates to <i>false</i>.
+</li></ol>
+So in order to make this a little more clear, we will look at how one would implement the Heaviside step function in COPASI:<br />
+<br />
+<tt>  <div align="center">if(x lt 0.0, 0.0, if(x gt 0.0, 1.0, 0.5))</div></tt><br />
+<br />
+<div style=" text-align: left; float: none; clear: none;" class='caution' >Although COPASI allows the usage of discontinuous functions (ceil, floor, factorial, etc) all integration is done by LSODA which officially can not handle discontinuous functions. Nevertheless in most cases this will lead to correct results, however you should be aware of the fact that the usage of discontinuous functions in COPASI can lead to errors. Later versions of COPASI will use different integration methods that will be able to deal with discontinuous functions.</div><br />
+<br />
+<h3 name="Parenthesis">Parenthesis</h3>
+<table class="normal"><caption>Parenthesis</caption><colgroup><col width="30%" /><col width="70%" /></colgroup><tr><td class="heading">Operator/Function </td><td class="heading"> Description</td></tr><tr><td class="odd">()</td><td class="odd">parenthesis for grouping of elements</td></tr></table><br />
+<h3 name="Built_in_Constants">Built-in Constants</h3>
+In addition to the function and operators above, COPASI knows some predefined constant names:<br />
+<br />
+<table class="normal"><caption>Built-in Constants</caption><colgroup><col width="30%" /><col width="70%" /></colgroup><tr><td class="heading">Operator/Function </td><td class="heading"> Description</td></tr><tr><td class="odd">pi / PI</td><td class="odd"> Quotient of a circles circumference and its diameter ( 3.14159...)</td></tr><tr><td class="even">exponentiale / EXPONENTIALE</td><td class="even"> Euler's number ( 2.7183... )</td></tr><tr><td class="odd">true / TRUE</td><td class="odd"> Boolean true value for conditional expressions</td></tr><tr><td class="even">false / FALSE</td><td class="even"> Boolean false value for conditional expressions</td></tr><tr><td class="odd">infinity / INFINITY</td><td class="odd"> Positive infinity</td></tr></table><br />
+<br />
+Again, built-in constant names can be written with either all lowercase letters or all letters uppercase. Mixing of upper and lowercase letters is not allowed and will lead to errors.<br />
+<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}
