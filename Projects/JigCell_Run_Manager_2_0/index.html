@@ -1,0 +1,57 @@
+---
+title: "JC-RM - JigCell Run Manager 2.0"
+previous: ""
+next: "Projects/JigCell_Run_Manager_2_0/Download"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<br />
+Biochemical modeling tools are designed to help modelers build models with a specific set of parameter values.<br />
+<br />
+However a common scenario involves different parametrization of the same model to account for mutation of the initial model (e.g. gene knock-out, overexpressions). This scenario is not well supported by existing biochemical modeling editors, forcing the user to manually generate, store and maintain big sets of variation of the same model.<br />
+<br />
+We developed an extension of our modeling editor (MSMB) (<i>Palmisano, A., Hoops, S., Watson, L. T., Jones Jr, T. C., Tyson, J. J., and Shaffer, C. A.(2014). Multistate model builder (MSMB): a flexible editor for compact biochemical models. BMC Systems Biology, 8(1), 42.</i>) called <b>JigCell Run Manager (JC-RM)</b>.<br />
+<br />
+This extension allows the modeler to define a hierarchy of parameter values, simulation and plot settings and to save them together with the initial model. MSMB-RM allows the generation of simulation plots within the tool, as well as export to COPASI and SBML for further analysis.<br />
+<br />
+JC-RM offers many innovative features:<br />
+<ul><li> graphical interface to define parameter configurations of a single model in a hierarchical way. The different configurations are displayed in a graph and each node typically differs from the others in only minor ways. This makes it easy to define and maintain big sets of small parameter changes;
+</li><li> for each node, specific values can be changed either to new numerical values or to complex expressions involving values from ancestor nodes: in this way the propagation of changes from parent nodes to all the descendants is carried seamlessly by the tool;
+</li><li> hierarchical graphs can be defined for model's values, simulation runs and plot settings. The different graphs are linked but independent one another;
+</li><li> the ensemble of parameter lists, simulation and plotting information can be run inside the tool or exported to a single COPASI file;
+</li><li> support in detecting and communicating errors/conflicts that can raise during the definition of configurations (multiple inheritance).
+</li></ul>
+<br />
+<h3 name="JC_RM_Publications_">JC-RM Publications:</h3>
+- (journal paper) under review<br />
+<h3 name="JC_RM_Documentation_">JC-RM Documentation:</h3>
+<br />
+This documentation applies to MSMB - version 2.0 (which includes RM) released on September 2014.<br />
+<br />
+<h4 name="Table_of_Contents_">Table of Contents:</h4>
+<ul><li> <a target="_blank" href="MSMB-RM.Introduction&amp;structure=SoftwareProjects.html" rel="external">Introduction and Motivation</a>
+</li><li> <a target="_blank" href="MSMB-RM.Download&amp;structure=SoftwareProjects.html" rel="external">Download</a>
+</li><li> <a target="_blank" href="MSMB-RM.FirstModel&amp;structure=SoftwareProjects.html" rel="external">First model with mutant configurations</a>
+</li><li> <a target="_blank" href="MSMB-RM.ConfigurationWithConflicts&amp;structure=Projects.html" rel="external">Mutant configuration with conflicts</a>
+</li></ul>
+<br />
+<br />
+<br />
+<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

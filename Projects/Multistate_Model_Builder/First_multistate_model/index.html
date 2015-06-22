@@ -1,0 +1,293 @@
+---
+title: "First multistate model"
+previous: "Projects/Multistate_Model_Builder/Download"
+next: "Projects/Multistate_Model_Builder/User_Guide"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+<h4 name="Building_the_first_multistate_model">Building the first multistate model</h4>
+<br />
+In this section we describe step-by-step how to build a simple multistate model filling the different tables of MSMB.<br />
+<br />
+As a running example, we use a small model at the core of the budding yeast cell cycle process. The small model presented in this section contains all the main components of a classical multistate problem and it describes the antagonistic relationship between ClbM and Cdh1 proteins (we refer the reader to the original publication [<a title="MSMB.Bibliography" href='/../../../Projects/Multistate_Model_Builder/Bibliography#Barik2010'>Barik2010</a>] for the complete characterization of the model).<br />
+<br />
+<span class="img"><img alt="" src="smallModel.png" border="0"  width="60%" /></span><br />
+<b>Multistate reaction at the core of a budding yeast cell cycle model.</b> The figure shows the core reactions of the model. We have a total of eleven forms (or states) of Cdh1: a non-phosphorylated form (Cdh1) and ten phosphorylated forms denoted as<br />
+<br />
+<img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: +3px; height: 11; width: 46;" src="20221850503e1f55f5a27220546688d0.png" alt="$Cdh1P_{1}$">, <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: +3px; height: 11; width: 46;" src="c5a1be0f4b2f90c9e2f2d499618dea62.png" alt="$Cdh1P_{2}$">, ..., <img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: +3px; height: 11; width: 52;" src="321b89540ac1bfd17327b3797b08ae13.png" alt="$Cdh1P_{10}$">.<br />
+<br />
+Some of these forms take part in specific phosphorylation and dephosphorylation reactions as reactant or product: intuitively every form with <i>i</i> phosphate groups has a successor form <i>i+1</i> and a predecessor form <i>i-1</i>. So, even if the intuitive description of this model include just the "reactions" successor/predecessor (plus the two cases of <i>i=0</i>, which has no predecessor, and <i>i=10</i>, which has no successor), the classical way of modelling this system is to explicitly write the total of 34 single state reactions in the Table below. All those reactions are necessary because each phosphorylation state is considered as a distinct species.<br />
+<br />
+To complete the description of this small model we have also to consider the fact that all eleven forms of Cdh1 take part in the degradation of ClbM.<br />
+<br />
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center">Reaction</th>
+<th align="center">Equation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center"><code>-&gt;</code> ClbM</td>
+<td align="center">ks</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">ClbM <code>-&gt;</code></td>
+<td align="center">ClbM <span class="math"> ⋅ </span> Xa</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">ClbM + Cdh1 <code>-&gt;</code> ClbM + Cdh1P<span class="math"><em></em><sub>1</sub></span></td>
+<td align="center">kp <span class="math"> ⋅ </span> ClbM <span class="math"> ⋅ </span> Cdh1</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="center">ClbM + Cdh1P<span class="math"><em></em><sub>1</sub></span> <code>-&gt;</code> ClbM + Cdh1P<span class="math"><em></em><sub>2</sub></span></td>
+<td align="center">kp <span class="math"> ⋅ </span> ClbM <span class="math"> ⋅ </span> Cdh1P<span class="math"><em></em><sub>1</sub></span></td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="center">ClbM + Cdh1P<span class="math"><em></em><sub>2</sub></span> <code>-&gt;</code> ClbM + Cdh1P<span class="math"><em></em><sub>3</sub></span></td>
+<td align="center">kp <span class="math"> ⋅ </span> ClbM <span class="math"> ⋅ </span> Cdh1P<span class="math"><em></em><sub>2</sub></span></td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td align="center">ClbM + Cdh1P<span class="math"><em></em><sub>3</sub></span> <code>-&gt;</code> ClbM + Cdh1P<span class="math"><em></em><sub>4</sub></span></td>
+<td align="center">kp <span class="math"> ⋅ </span> ClbM <span class="math"> ⋅ </span> Cdh1P<span class="math"><em></em><sub>3</sub></span></td>
+</tr>
+<tr class="odd">
+<td align="center">7</td>
+<td align="center">ClbM + Cdh1P<span class="math"><em></em><sub>4</sub></span> <code>-&gt;</code> ClbM + Cdh1P<span class="math"><em></em><sub>5</sub></span></td>
+<td align="center">kp <span class="math"> ⋅ </span> ClbM <span class="math"> ⋅ </span> Cdh1P<span class="math"><em></em><sub>4</sub></span></td>
+</tr>
+<tr class="even">
+<td align="center">8</td>
+<td align="center">ClbM + Cdh1P<span class="math"><em></em><sub>5</sub></span> <code>-&gt;</code> ClbM + Cdh1P<span class="math"><em></em><sub>6</sub></span></td>
+<td align="center">kp <span class="math"> ⋅ </span> ClbM <span class="math"> ⋅ </span> Cdh1P<span class="math"><em></em><sub>5</sub></span></td>
+</tr>
+<tr class="odd">
+<td align="center">9</td>
+<td align="center">ClbM + Cdh1P<span class="math"><em></em><sub>6</sub></span> <code>-&gt;</code> ClbM + Cdh1P<span class="math"><em></em><sub>7</sub></span></td>
+<td align="center">kp <span class="math"> ⋅ </span> ClbM <span class="math"> ⋅ </span> Cdh1P<span class="math"><em></em><sub>6</sub></span></td>
+</tr>
+<tr class="even">
+<td align="center">10</td>
+<td align="center">ClbM + Cdh1P<span class="math"><em></em><sub>7</sub></span> <code>-&gt;</code> ClbM + Cdh1P<span class="math"><em></em><sub>8</sub></span></td>
+<td align="center">kp <span class="math"> ⋅ </span> ClbM <span class="math"> ⋅ </span> Cdh1P<span class="math"><em></em><sub>7</sub></span></td>
+</tr>
+<tr class="odd">
+<td align="center">11</td>
+<td align="center">ClbM + Cdh1P<span class="math"><em></em><sub>8</sub></span> <code>-&gt;</code> ClbM + Cdh1P<span class="math"><em></em><sub>9</sub></span></td>
+<td align="center">kp <span class="math"> ⋅ </span> ClbM <span class="math"> ⋅ </span> Cdh1P<span class="math"><em></em><sub>8</sub></span></td>
+</tr>
+<tr class="even">
+<td align="center">12</td>
+<td align="center">ClbM + Cdh1P<span class="math"><em></em><sub>9</sub></span> <code>-&gt;</code> ClbM + Cdh1P<span class="math"><em></em><sub>10</sub></span></td>
+<td align="center">kp <span class="math"> ⋅ </span> ClbM <span class="math"> ⋅ </span> Cdh1P<span class="math"><em></em><sub>9</sub></span></td>
+</tr>
+<tr class="odd">
+<td align="center">13</td>
+<td align="center">Cdc14 + Cdh1P<span class="math"><em></em><sub>1</sub></span> <code>-&gt;</code> Cdc14 + Cdh1</td>
+<td align="center">kh <span class="math"> ⋅ </span> Cdc14 <span class="math"> ⋅ </span> Cdh1P<span class="math"><em></em><sub>1</sub></span></td>
+</tr>
+<tr class="even">
+<td align="center">14</td>
+<td align="center">Cdc14 + Cdh1P<span class="math"><em></em><sub>2</sub></span> <code>-&gt;</code> Cdc14 + Cdh1P<span class="math"><em></em><sub>1</sub></span></td>
+<td align="center">kh <span class="math"> ⋅ </span> Cdc14 <span class="math"> ⋅ </span> Cdh1P<span class="math"><em></em><sub>2</sub></span></td>
+</tr>
+<tr class="odd">
+<td align="center">15</td>
+<td align="center">Cdc14 + Cdh1P<span class="math"><em></em><sub>3</sub></span> <code>-&gt;</code> Cdc14 + Cdh1P<span class="math"><em></em><sub>2</sub></span></td>
+<td align="center">kh <span class="math"> ⋅ </span> Cdc14 <span class="math"> ⋅ </span> Cdh1P<span class="math"><em></em><sub>3</sub></span></td>
+</tr>
+<tr class="even">
+<td align="center">16</td>
+<td align="center">Cdc14 + Cdh1P<span class="math"><em></em><sub>4</sub></span> <code>-&gt;</code> Cdc14 + Cdh1P<span class="math"><em></em><sub>3</sub></span></td>
+<td align="center">kh <span class="math"> ⋅ </span> Cdc14 <span class="math"> ⋅ </span> Cdh1P<span class="math"><em></em><sub>4</sub></span></td>
+</tr>
+<tr class="odd">
+<td align="center">17</td>
+<td align="center">Cdc14 + Cdh1P<span class="math"><em></em><sub>5</sub></span> <code>-&gt;</code> Cdc14 + Cdh1P<span class="math"><em></em><sub>4</sub></span></td>
+<td align="center">kh <span class="math"> ⋅ </span> Cdc14 <span class="math"> ⋅ </span> Cdh1P<span class="math"><em></em><sub>5</sub></span></td>
+</tr>
+<tr class="even">
+<td align="center">18</td>
+<td align="center">Cdc14 + Cdh1P<span class="math"><em></em><sub>6</sub></span> <code>-&gt;</code> Cdc14 + Cdh1P<span class="math"><em></em><sub>5</sub></span></td>
+<td align="center">kh <span class="math"> ⋅ </span> Cdc14 <span class="math"> ⋅ </span> Cdh1P<span class="math"><em></em><sub>6</sub></span></td>
+</tr>
+<tr class="odd">
+<td align="center">19</td>
+<td align="center">Cdc14 + Cdh1P<span class="math"><em></em><sub>7</sub></span> <code>-&gt;</code> Cdc14 + Cdh1P<span class="math"><em></em><sub>6</sub></span></td>
+<td align="center">kh <span class="math"> ⋅ </span> Cdc14 <span class="math"> ⋅ </span> Cdh1P<span class="math"><em></em><sub>7</sub></span></td>
+</tr>
+<tr class="even">
+<td align="center">20</td>
+<td align="center">Cdc14 + Cdh1P<span class="math"><em></em><sub>8</sub></span> <code>-&gt;</code> Cdc14 + Cdh1P<span class="math"><em></em><sub>7</sub></span></td>
+<td align="center">kh <span class="math"> ⋅ </span> Cdc14 <span class="math"> ⋅ </span> Cdh1P<span class="math"><em></em><sub>8</sub></span></td>
+</tr>
+<tr class="odd">
+<td align="center">21</td>
+<td align="center">Cdc14 + Cdh1P<span class="math"><em></em><sub>9</sub></span> <code>-&gt;</code> Cdc14 + Cdh1P<span class="math"><em></em><sub>8</sub></span></td>
+<td align="center">kh <span class="math"> ⋅ </span> Cdc14 <span class="math"> ⋅ </span> Cdh1P<span class="math"><em></em><sub>9</sub></span></td>
+</tr>
+<tr class="even">
+<td align="center">22</td>
+<td align="center">Cdc14 + Cdh1P<span class="math"><em></em><sub>10</sub></span> <code>-&gt;</code> Cdc14 + Cdh1P<span class="math"><em></em><sub>9</sub></span></td>
+<td align="center">kh <span class="math"> ⋅ </span> Cdc14 <span class="math"> ⋅ </span> Cdh1P<span class="math"><em></em><sub>10</sub></span></td>
+</tr>
+<tr class="odd">
+<td align="center">23</td>
+<td align="center">Cdh1 <code>-&gt;</code></td>
+<td align="center">kd <span class="math"> ⋅ </span> Cdh1</td>
+</tr>
+<tr class="even">
+<td align="center">24</td>
+<td align="center">Cdh1P<span class="math"><em></em><sub>1</sub></span> <code>-&gt;</code></td>
+<td align="center">kd <span class="math"> ⋅ </span> Cdh1P<span class="math"><em></em><sub>1</sub></span></td>
+</tr>
+<tr class="odd">
+<td align="center">25</td>
+<td align="center">Cdh1P<span class="math"><em></em><sub>2</sub></span> <code>-&gt;</code></td>
+<td align="center">kd <span class="math"> ⋅ </span> Cdh1P<span class="math"><em></em><sub>2</sub></span></td>
+</tr>
+<tr class="even">
+<td align="center">26</td>
+<td align="center">Cdh1P<span class="math"><em></em><sub>3</sub></span> <code>-&gt;</code></td>
+<td align="center">kd <span class="math"> ⋅ </span> Cdh1P<span class="math"><em></em><sub>3</sub></span></td>
+</tr>
+<tr class="odd">
+<td align="center">27</td>
+<td align="center">Cdh1P<span class="math"><em></em><sub>4</sub></span> <code>-&gt;</code></td>
+<td align="center">kd <span class="math"> ⋅ </span> Cdh1P<span class="math"><em></em><sub>4</sub></span></td>
+</tr>
+<tr class="even">
+<td align="center">28</td>
+<td align="center">Cdh1P<span class="math"><em></em><sub>5</sub></span> <code>-&gt;</code></td>
+<td align="center">kd <span class="math"> ⋅ </span> Cdh1P<span class="math"><em></em><sub>5</sub></span></td>
+</tr>
+<tr class="odd">
+<td align="center">29</td>
+<td align="center">Cdh1P<span class="math"><em></em><sub>6</sub></span> <code>-&gt;</code></td>
+<td align="center">kd <span class="math"> ⋅ </span> Cdh1P<span class="math"><em></em><sub>6</sub></span></td>
+</tr>
+<tr class="even">
+<td align="center">30</td>
+<td align="center">Cdh1P<span class="math"><em></em><sub>7</sub></span> <code>-&gt;</code></td>
+<td align="center">kd <span class="math"> ⋅ </span> Cdh1P<span class="math"><em></em><sub>7</sub></span></td>
+</tr>
+<tr class="odd">
+<td align="center">31</td>
+<td align="center">Cdh1P<span class="math"><em></em><sub>8</sub></span> <code>-&gt;</code></td>
+<td align="center">kd <span class="math"> ⋅ </span> Cdh1P<span class="math"><em></em><sub>8</sub></span></td>
+</tr>
+<tr class="even">
+<td align="center">32</td>
+<td align="center">Cdh1P<span class="math"><em></em><sub>9</sub></span> <code>-&gt;</code></td>
+<td align="center">kd <span class="math"> ⋅ </span> Cdh1P<span class="math"><em></em><sub>9</sub></span></td>
+</tr>
+<tr class="odd">
+<td align="center">33</td>
+<td align="center">Cdh1P<span class="math"><em></em><sub>10</sub></span> <code>-&gt;</code></td>
+<td align="center">kd <span class="math"> ⋅ </span> Cdh1P<span class="math"><em></em><sub>10</sub></span></td>
+</tr>
+<tr class="even">
+<td align="center">34</td>
+<td align="center"><code>-&gt;</code> Cdh1</td>
+<td align="center">ks1</td>
+</tr>
+</tbody>
+</table><br />
+<b>List of reaction needed to encode the model described above.</b><br />
+As we can see from the table above, most of the reactions has the same general structure (and rate law) so what the modeller would actually want to have is a way to define Cdh1 states with a range of ordered indexes and a way to refer to the successive/preceding state.<br />
+<br />
+In this case, we have the following definition of Cdh1:<br />
+<br />
+<div align="center"><div class="simplebox">Cdh1(p{0:10})</div></div><br />
+<br />
+The intuition behind the definition is that the species called <i>Cdh1</i> has a site (called <i>p</i>) which can have different state values, and those state values ranges from 0 to 10 (as integer numbers). For a detailed description of the syntax of multistate species and reactions, we refer the reader to Section <a  href="MSMB.multistateSyntax&structure=SoftwareProjects.html" rel="">Multistate Species and Reactions syntax</a>.<br />
+<br />
+We can use this compact notation, to reduce the number of reactions from the initial 34 down to 5, by expressing the reactants and products as multistate species.<br />
+<br />
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center">Reaction</th>
+<th align="center">Equation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center"><code>-&gt;</code> ClbM</td>
+<td align="center">ks</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">ClbM <code>-&gt;</code></td>
+<td align="center">ClbM <span class="math"> ⋅ </span> Xa</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">ClbM + Cdh1(p<span class="math">{</span>0:9<span class="math">}</span>) <code>-&gt;</code> ClbM + Cdh1(succ(p))</td>
+<td align="center">kp <span class="math"> ⋅ </span> ClbM <span class="math"> ⋅ </span> Cdh1(p)</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="center">Cdc14 + Cdh1(p<span class="math">{</span>1:10<span class="math">}</span>) <code>-&gt;</code> Cdc14 + Cdh1(pred(p))</td>
+<td align="center">kh <span class="math"> ⋅ </span> Cdc14 <span class="math"> ⋅ </span> Cdh1(p)</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="center">Cdh1(p<span class="math">{</span>0:10<span class="math">}</span>) <code>-&gt;</code></td>
+<td align="center">kd <span class="math"> ⋅ </span> Cdh1(p)</td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td align="center"><code>-&gt;</code> Cdh1(p<span class="math">{</span>0<span class="math">}</span>)</td>
+<td align="center">ks1</td>
+</tr>
+</tbody>
+</table><br />
+<br />
+In Reaction 2, <i>Xa</i> is the activity of Cdh1 expressed as the weighted sum of its phosphorylated and unphosphorylated forms.<br />
+<br />
+In particular we have that<br />
+<br />
+<img class="latex-equation" style="vertical-align: text-bottom; position: relative; bottom: -3px; height: 13; width: 709;" src="836807e98f0252edeec802e27b6f9f08.png" alt="$Xa = k_a \cdot Cdh1 + k_{in} \cdot(&Cdh1P_1 + Cdh1P_2 +Cdh1P_3+Cdh1P_4 + Cdh1P_5 +Cdh1P_6+Cdh1P_7+Cdh1P_8+Cdh1P_9+Cdh1P_{10}$">)<br />
+<br />
+What the user needs is, again, a compact way to represent this sort of expressions taking advantage of the multistate format and a summation operator as follows:<br />
+<br />
+<img class="latex-equation" style="vertical-align: middle; position: relative; bottom: -3px; height: 40; width: 215;" src="46be6f5cdf721479f09e93f3047d5e8d.png" alt="$ Xa = k_a * Cdh1 + k_{in}*\sum_{i=1}^{10} Cdh1P_i $"><br />
+<br />
+In MSMB it is possible to define the above summation in a compact way as follows:<br />
+<br />
+<div align="center"><div class="simplebox">ka * Cdh1(p{0}) + kin * SUM(Cdh1;p{1:10})</div></div><br />
+<br />
+This summation operator make the expression easy to view, manipulate and edit.<br />
+<br />
+As today, there are no tools which support the multistate format directly.<br />
+Even SBML does not provide a direct way to express multistate species and reactions.<br />
+Therefore MSMB  provides support to <i>expand</i> the compact (multistate) model into a single-state species model that can be used with any other SBML-compliant tools for simulation and further analysis.<br />
+<br />
+The importance of the multistate concept is, however, acknowledged by the SBML community and there is an ongoing effort in defining a <i>multi</i> package for the SBML Level 3 specification\footnote [ <a target="_blank" href="http://sbml.org/Documents/Specifications/SBML_Level_3/Packages/Multistate_and_Multicomponent_Species_(multi)" rel="external">http://sbml.org/Documents/Specifications/SBML_Level_3/Packages/Multistate_and_Multicomponent_Species_(multi)</a> ].  The <i>multi</i> package whose purpose is to define "object structures for representing entity pools with multiple states and composed of multiple components, and reaction rules involving them".  The package is still in the proposal stage, but we are going to offer direct export to the sbml-multi format, once the specification reaches the final approved stage.<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

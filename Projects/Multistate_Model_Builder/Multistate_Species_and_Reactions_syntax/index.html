@@ -1,0 +1,532 @@
+---
+title: "Multistate Species and Reactions syntax"
+previous: "Projects/Multistate_Model_Builder/User_Guide"
+next: "Projects/Multistate_Model_Builder/Special_Features"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<br />
+Our multistate syntax has many elements and, even if it is quite intuitive, it may take some time to become familiar with that.<br />
+For this reason in the table below we provide high-level intuitive examples of all the elements of the grammar, while in the following sections we provide detailed and more formal explanation of the different elements of the language.<br />
+<br />
+Note: if inconsistencies are found in the usage of those elements, MSMB will notify the user of the error and the model will not be valid.<br />
+If everything is correct, the user can see the result of the expansion of the compacted forms of reactions using the appropriate button in the interface.<br />
+<br />
+<br />
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center">Reaction</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Cdh1(p{0:10})</td>
+<td align="center">species (called <em>Cdh1</em>), with a single site (called <em>p</em>),<br />which has the following 11 ordered numerical states <br/>0,1,2,3,4,5,6,7,8,9,10</td>
+</tr>
+<tr class="even">
+<td align="center">SBF(p{0:5};status{st1,st2,st3}c)</code></td>
+<td align="center">species (called <em>SBF</em>), with two sites (called <em>p</em> and <em>status</em>).<br /> Site <em>p</em> has 6 ordered numerical states (0,1,2,3,4,5).<br />Site <em>status</em> has three string states (<em>st1</em>, <em>st2</em> <em>st3</em>) and it is<br />circular, meaning that the successor of the last element (st3)<br /> is the first element of the list (st1) and the predecessor of the first<br />element of the list (st1) is the last element of the list (st3).<br /></td>
+</tr>
+<tr class="odd">
+<td align="center">Cdh1(p{lower:upper})</td>
+<td align="center">species (called <em>Cdh1</em>), with a single site (called <em>p</em>), which has<br />a set of ordered numerical states determined by the numerical<br />(integer) value of two Global Quantities (called <em>lower</em> and <em>upper</em>)<br />defined elsewhere in the model.</td>
+</tr>
+<tr class="even">
+<td align="center">Cdh1(p{0})</td>
+<td align="center">represents a specific state of the species <em>Cdh1</em><br />(specifically the one where the site <em>p</em> has value <em>0</em>).<br />It can be used in Reactions or Expressions.</td>
+</tr>
+<tr class="odd">
+<td align="center">Cdh1(succ(p)) and Cdh1(pred(p))</td>
+<td align="center">Restriction: can be used only as a Product in a Reaction,<br />and it represents the state value after (succ) or before (pred)<br />of <em>Cdh1</em>’s site <em>p</em> in the Reactants of the same Reaction.</td>
+</tr>
+<tr class="even">
+<td align="center">Cdh1(p=Species2.siteName)</td>
+<td align="center">Restriction: can be used only as a Product in a Reaction,<br />and it represents the transfer of the state of <em>Species2</em>’s<br/><em>siteName</em>’s value to site <em>p</em> of species <em>Cdh1</em>. <em>Species2</em> should<br />appear between the Reactants of the same Reaction.</td>
+</tr>
+<tr class="odd">
+<td align="center">SUM(Cdh1)</td>
+<td align="center">Restriction: can be used only in Expressions and it represents<br />the summation of species <em>Cdh1</em>’s amount in all its possible forms</td>
+</tr>
+<tr class="even">
+<td align="center">SUM(Cdh1;p{1:10})</td>
+<td align="center">Restriction: can be used only in Expressions and it represents<br />the summation of species <em>Cdh1</em>’s amount in all the forms where<br />site <em>p</em> has a numerical value in the range between 1 and 10</td>
+</tr>
+<tr class="odd">
+<td align="center">SUM(Cdh1;p{2:5};weightFun(p,k1))</td>
+<td align="center">Restriction: can be used only in Expressions and it represents<br />the summation of species <em>Cdh1</em>’s amount in all the forms where<br />site <em>p</em> has a numerical value in the range between 2 and 5, and each<br />term of the summation is weighted using a function called <em>weightFun</em><br />(defined in the Functions table) that takes two parameters:<br />the current value of site <em>p</em> and a Global Quantity, called <em>k1</em>.<br />Note that this is just an example of weight function, there are no<br />restrictions on the definition of this function.</td>
+</tr>
+</tbody>
+</table><br />
+<br />
+<h3 name="Multistate_Species"> Multistate Species</h3>
+<br />
+A multistate species is characterized by a name and a set of one or more distinct sites. Each site has an ordered list of possible values (or states) that it can assume. Different types of states are supported by our syntax: in particular the user can decide to use boolean values (true/false), literal strings or integer numbers. Each type behaves in a in the same way w.r.t. supported operators like successor "succ", predecessor "pred" and range ":". However the behavior of the operators depends on the interpretation of the sequence of states itself: it can be defined as a simple sequence (the default interpretation) or as a circular sequence. This second interpretation connects the last element of the sequence to the first. This implies that while the successor of the last element of a basic sequence will raise a <em>Major issue</em> error, the successor of the last element of a circular sequence will simply refer to the first element of the same sequence (see tables below for some examples). As a final note, it is important to remember that when the expansion of a multistate species is requested, all the states of the different sites of a species are combined to create all the possible single state species configurations.<br />
+<br />
+<span class="img"><img alt="" src="syntax.png" border="0"  width="60%" /></span><br />
+<b>Syntax of the multistate species.</b> Bold characters are keywords, spaces between symbols have been added just for readability and are not allowed in the species definition because they create ambiguous situation for the reaction grammar. Intuitively, any species can have a set of sites (separated by ;) and each site can have an ordered list of values (separated by ,) or a range. If the range constructor (:) is used, the two state values should be integer and represent the min and max value for that site. If the sequence of states is explicitly defined, the single values can be any literal string (with possible usage of the _ symbol). If the sequence of states is followed by the <i>c</i> letter, it means that the list will be interpreted as "circular", if the letter does not appear, the sequence of states is non-circular.<br />
+<br />
+For example see the following multistate definitions (on the left) and relative expanded form (on the right):<br />
+<br />
+<table>
+<tbody>
+<tr class="even">
+<th>Multistate format</th>
+<th>Expanded format </th>
+</tr>
+<tr class="odd">
+<td align="center">Cdh1(p{0:10})</td>
+<td align="left">Cdh1(p<span class="math">{</span>0<span class="math">}</span>) Cdh1(p<span class="math">{</span>1<span class="math">}</span>) Cdh1(p<span class="math">{</span>2<span class="math">}</span>) Cdh1(p<span class="math">{</span>3<span class="math">}</span>) Cdh1(p<span class="math">{</span>4<span class="math">}</span>) Cdh1(p<span class="math">{</span>5<span class="math">}</span>) Cdh1(p<span class="math">{</span>6<span class="math">}</span>) Cdh1(p<span class="math">{</span>7<span class="math">}</span>) Cdh1(p<span class="math">{</span>8<span class="math">}</span>) Cdh1(p<span class="math">{</span>9<span class="math">}</span>) Cdh1(p<span class="math">{</span>10<span class="math">}</span>)</td>
+</tr>
+<tr class="odd">
+<td align="center">Whi5(p{0:6}; b{bound,free})</td>
+<td align="left">Whi5(p<span class="math">{</span>0<span class="math">}</span>;b<span class="math">{</span>bound<span class="math">}</span>) Whi5(p<span class="math">{</span>1<span class="math">}</span>;b<span class="math">{</span>bound<span class="math">}</span>) Whi5(p<span class="math">{</span>2<span class="math">}</span>;b<span class="math">{</span>bound<span class="math">}</span>)Whi5(p<span class="math">{</span>3<span class="math">}</span>;b<span class="math">{</span>bound<span class="math">}</span>) Whi5(p<span class="math">{</span>4<span class="math">}</span>;b<span class="math">{</span>bound<span class="math">}</span>) Whi5(p<span class="math">{</span>5<span class="math">}</span>;b<span class="math">{</span>bound<span class="math">}</span>)Whi5(p<span class="math">{</span>6<span class="math">}</span>;b<span class="math">{</span>bound<span class="math">}</span>) Whi5(p<span class="math">{</span>0<span class="math">}</span>;b<span class="math">{</span>free<span class="math">}</span>) Whi5(p<span class="math">{</span>1<span class="math">}</span>;b<span class="math">{</span>free<span class="math">}</span>)Whi5(p<span class="math">{</span>2<span class="math">}</span>;b<span class="math">{</span>free<span class="math">}</span>) Whi5(p<span class="math">{</span>3<span class="math">}</span>;b<span class="math">{</span>free<span class="math">}</span>) Whi5(p<span class="math">{</span>4<span class="math">}</span>;b<span class="math">{</span>free<span class="math">}</span>)Whi5(p<span class="math">{</span>5<span class="math">}</span>;b<span class="math">{</span>free<span class="math">}</span>) Whi5(p<span class="math">{</span>6<span class="math">}</span>;b<span class="math">{</span>free<span class="math">}</span>)</td>
+</tr>
+</tbody>
+</table><br />
+<br />
+<h2 name="Multistate_Reactions">Multistate Reactions</h2>
+<br />
+Multistate reactions are similar to classical chemical reactions with the only difference that they involve multistate species as reactants and/or products.<br />
+Their goal is to express in a compact way an appropriate set of classical single state reactions. This compact structure reduces the cognitive load on the modelers to a meaningful extent for large models.<br />
+<br />
+The syntax of a multistate reaction should be compliant with the following rules<br />
+(!!Note!! that the rules looks very complicated because they are trying to include all possible cases.<br />
+The examples presented in the rest of the section are probably easier to read to grasp the multistate reaction syntax):<br />
+<br />
+<span class="img"><img alt="" src="syntaxReactions.png" border="0"  width="60%" /></span><br />
+<br />
+<b>Syntax of the multistate reactions.</b> Bold characters are keywords, spaces between symbols have been added just for readability. Intuitively, any reaction collectively describes the set of dierent multistate states that a reactant can have. Note that the syntax of the multistate reactant is very similar to the syntax of a multistate species definition. Operators works at the level of the single state value from the reactant to the product. So the separators (, and : ) are used with a different meaning here: they do not enforce an order but they simply allow the user to refer to a group of states. The expansion of the reaction will depend on the existing definition of the multistate species (and if inconsistencies are found, a <i>Major issue</i> will be generated by the tool). Those separator has been chosen to keep a coherent syntax for multistate species even if used in different contexts. To understand some peculiar components of the reaction grammar (as possible alias, operator, transfer_state) we refer the user to the examples below.<br />
+<br />
+Intuitively, we want to collectively describe reactions that start from different states of a multistate species and generate as products, multistate species with states logically connected to the reactant states. See the tables below for examples of multistate reactions and their expanded form.<br />
+<br />
+The successor/predecessor (<i>succ</i>(.) and <i>pred</i>(.)) operators can be used on any site type (numerical, literals, booleans) and they return the following/preceding state of a specific site. If the successor (predecessor) is called on the last (first) element of the available sequence of states and if the states values are not circular in the species definition, an error is going to be generated and the proper debug message (with major issue severity level) will be added in the list of debug messages of the model. If instead the operator is called on a site that has been defined as circular, no error is generated and the first (last) element of the set is going to be returned as a valid value. The general usage of those operators can be seen the tables below, but scenarios in which the cyclic definition of numerical sequences is meaningful or non-cyclic definition of boolean/literal states are also plausible.<br />
+<br />
+<b>WARNING!</b> If the modeler uses the "Multistate Builder" window to create boolean sites (see Section <a target="_blank" href="MSMB.DetailedUserGuide&structure=SoftwareProjects.html" rel="external">Species definition</a>), the generated sequence is going to be circular (because this is the general interpretation of true/false sequences: the successor of true is false and the successor of false is true - and the same holds for the predecessor). However if the modeler types directly the sites states in the Name column of the Species table, it is his/her responsibility to add the c qualifier after the sequence definition. This choice has been motivated by the fact that we want to keep the interpretation of the absence/presence of the c qualifier coherent, no matter which is the type of the elements contained in the sequence.<br />
+<br />
+<table>
+<thead>
+<tr class="header">
+<th align="left">Species definition</th>
+<th align="left">Reaction definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Sp(p<span class="math">{</span>1:3<span class="math">}</span>)</td>
+<td align="left">Sp(p<span class="math">{</span>1:3<span class="math">}</span>) -> Sp(succ(p))</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">expanded:</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"><span class="math">  </span>Sp(p<span class="math">{</span>1<span class="math">}</span>) Sp(p<span class="math">{</span>2<span class="math">}</span>)</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"><span class="math">  </span>Sp(p<span class="math">{</span>2<span class="math">}</span>) Sp(p<span class="math">{</span>3<span class="math">}</span>)</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"><span class="math">  </span>Error: no successor of Sp(p<span class="math">{</span>3<span class="math">}</span>)</td>
+</tr>
+<tr class="even">
+<td align="left">Sp2(p<span class="math">{</span>free,available,bound<span class="math">}</span>c)</td>
+<td align="left">Sp2(p<span class="math">{</span>free:bound<span class="math">}</span>) -> Sp2(succ(p))</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">expanded:</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"><span class="math">  </span>Sp2(p<span class="math">{</span>free<span class="math">}</span>) Sp2(p<span class="math">{</span>available<span class="math">}</span>)</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"><span class="math">  </span>Sp2(p<span class="math">{</span>available<span class="math">}</span>) Sp2(p<span class="math">{</span>bound<span class="math">}</span>)</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"><span class="math">  </span>Sp2(p<span class="math">{</span>bound<span class="math">}</span>) Sp2(p<span class="math">{</span>free<span class="math">}</span>)</td>
+</tr>
+<tr class="odd">
+<td align="left">Sp3(p<span class="math">{</span>true,false<span class="math">}</span>c)</td>
+<td align="left">Sp3(p) -> Sp3(succ(p))</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">expanded:</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"><span class="math">  </span>Sp3(p<span class="math">{</span>true<span class="math">}</span>) Sp3(p<span class="math">{</span>false<span class="math">}</span>)</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"><span class="math">  </span>Sp3(p<span class="math">{</span>false<span class="math">}</span>) Sp3(p<span class="math">{</span>true<span class="math">}</span>)</td>
+</tr>
+</tbody>
+</table><br />
+<br />
+<br />
+<br />
+<table>
+<thead>
+<tr class="header">
+<th align="left">Compact reaction</th>
+<th align="left">Expanded form</th>
+<th align="left">Existing species denition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Whi5(p{0:3}) -></td>
+<td align="left">Whi5({0};b{bound}) -></td>
+<td align="left">Whi5(p{0:6};b{bound,free})</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Whi5({1};b{bound}) -></td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Whi5({2};b{bound}) -></td>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Whi5({3};b{bound}) -></td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Whi5({0};b{free}) -></td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Whi5({1};b{free}) -></td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Whi5({2};b{free}) -></td>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Whi5({3};b{free}) -></td>
+</tr>
+<tr class="odd">
+<td align="left">Sbf(p{0}) + Whi5(p{0:2};b{free}) -> Whi5(p;b{bound})</td>
+<td align="left">Sbf(p{0}) + Whi5(p{0};b{free}) -> Whi5(p{0};b{bound})</td>
+<td align="left">Whi5(p{0:6};b{bound,free})</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Sbf(p{0}) + Whi5(p{1};b{free}) -> Whi5(p{1};b{bound})</td>
+<td align="left">Sbf(p{0:4})</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Sbf(p{0}) + Whi5(p{2};b{free}) -> Whi5(p{2};b{bound})</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Whi5(p{0:5}) -> Whi5(succ(p))</td>
+<td align="left">Whi5(p{0};b{bound}) -> Whi5(p{1};b{bound})</td>
+<td align="left">Whi5(p{0:6};b{bound,free})</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Whi5(p{1};b{bound}) -> Whi5(p{2};b{bound})</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Whi5(p{2};b{bound}) -> Whi5(p{3};b{bound})</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Whi5(p{3};b{bound}) -> Whi5(p{4};b{bound})</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Whi5(p{4};b{bound}) -> Whi5(p{5};b{bound})</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Whi5(p{5};b{bound}) -> Whi5(p{6};b{bound})</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Whi5(p{0};b{free}) -> Whi5(p{1};b{free})</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Whi5(p{1};b{free}) -> Whi5(p{2};b{free})</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Whi5(p{2};b{free}) -> Whi5(p{3};b{free})</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Whi5(p{3};b{free}) -> Whi5(p{4};b{free})</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Whi5(p{4};b{free}) -> Whi5(p{5};b{free})</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Whi5(p{5};b{free}) -> Whi5(p{6};b{free})</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table><br />
+<br />
+<b>Some examples of multistate reactions.</b> Consistency checks are performed by the tool in order to ensure that the states used in the reactions are in accordance with the one declared for each species. Note that the second group of reactions could logically represent a complexation reaction between the SBF and Whi5: that is one of the possible ways of defining a complexation reaction in MSMB. However the explicit creation of a Complex species, as explained in details in Section <a target="_blank" href="MSMB.DetailedUserGuide&structure=SoftwareProjects#Complexes.html" rel="external">Complexes</a>.<br />
+<br />
+<h4 name="Complexes_with_Multistate_Species">Complexes with Multistate Species</h4>
+<br />
+A Complex is nothing more than a Species that keeps track of possible changes in its components.<br />
+<br />
+Since we don’t keep track of the individual bonds of the Complex, if it contains only (i.e. non-multistate) species, the only advantage of defining a Complex vs the explicit definition of a normal Species, is that the tool seamlessly apply those changes to the complex itself and to all the parts of the models that uses the complex, reducing the amount of errors that a manual change would introduce.<br />
+<br />
+If the Complex, instead, contains also Multistate species, on top of all the changes applied automatically by the tool and all the consistency checks performed for the user to make sure that everything is coherent, the Complex definition reduces the size of the model since it allows the user to define reactions on the Complex using the compressed Multistate syntax: successor/predecessor operators, transfer state, computation on states for kinetic laws, etc. Below we show few examples of how the Complex definition can help managing some Multistate reactions in a model of Cell cycle presented in Section <a target="_blank" href="MSMB.FirstMultistateModel&structure=SoftwareProjects.html" rel="external">First multistate model</a>.<br /><br />
+<br />
+The reactions we want to model are the one involving the dimer formed by SBF(p{0}) and different forms of Whi5 (in particular with phosphorylation states between 0 and 2). This complex can form and break down, and it each of the different parts can also degrade. While in the dimer, Whi5 can also be phosphorylated or dephosphorylated by other species in the model. All the reactions involving the parts of the complex happen at a specific rate that are different from the corresponding reaction on the free forms of the components.<br />
+<br />
+<span class="img"><img alt="" src="exampleComplexation.png" border="0"  width="50%" /></span><br />
+<br />
+Different forms of Whi5 can form the complex with SBF. Whi5 can be phosphorylated or dephosphorylated by other species in the model both in free and complex form.<br />
+<br />
+There are different ways to encode the scenario above taking advantage of  syntax. Each scenario shows exactly the same dynamic behavior at simulation time, but they are structurally different and it’s up to the user to choose which strategy is more aligned to his/her way of writing the model.<br />
+<br />
+<table>
+<tbody>
+<tr class="odd">
+<th></th>
+<th>Reaction</th>
+<th>Type</th>
+<th>Kinetic law</th>
+</tr>
+<tr class="odd">
+<td align="center">1</td>
+<td align="left">SBF(p{0};b{free}) + Whi5(p{0:2};b{free}) Whi5(b{bound})</td>
+<td align="left">MA</td>
+<td align="left">kac</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="left">Whi5(p{0:2};b{bound}) +</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="left">  + SBF(p{0};b{bound}) SBF(p{0};b{free}) + Whi5(b{free})</td>
+<td align="left">UD</td>
+<td align="left"><em>f(kdc)</em></td>
+</tr>
+<tr class="even">
+<td align="center">3</td>
+<td align="left">Whi5(p{0:2};b{bound}) + SBF(p{0};b{bound}) SBF(p{0};b{free})</td>
+<td align="left">UD</td>
+<td align="left"><em>f(gdi5)</em></td>
+</tr>
+<tr class="odd">
+<td align="center">4</td>
+<td align="left">Whi5(p{0:2};b{bound}) + SBF(p{0};b{bound}) Whi5(b{free})</td>
+<td align="left">UD</td>
+<td align="left"><em>f(gdbf)</em></td>
+</tr>
+<tr class="even">
+<td align="center">5</td>
+<td align="left">Whi5(p{1:2};b{bound}) + Cdc14 Whi5(pred(p)) + Cdc14</td>
+<td align="left">MA</td>
+<td align="left">kdcmp</td>
+</tr>
+<tr class="odd">
+<td align="center">6</td>
+<td align="left">Whi5(p{0:1};b{bound}) + ClbS Whi5(succ(p)) + ClbS</td>
+<td align="left">MA</td>
+<td align="left">kdcmp</td>
+</tr>
+</tbody>
+</table><br />
+<b>Tracking single species states. </b>Given the SBF defined as SBF(p{0:4};b{free,bound}) and Whi5(p{0:6};b{free,bound}), we show the scenario described in the text. Reactions 1, 5 and 6 have a Mass Action (MA) kinetic law, with the specific rate showed next to it. Reaction 2, 3 and 4 are forced to have a User Defined (UD) kinetic law, because a mass action kinetic would automatically multiply the base k with the concentration of all the reactants. However reaction 2, for example, is expanded in 3 different reactions (the first with Whi5(p{0}), the second with Whi5(p{1}) and the third Whi5(p{2})) and even if each of them involves the same state of SBF, each of them should have a specific rate that depends only on the concentration of the "complex" (or specific couple in this case). In order to do that, we defined a function (not shown in the table) that performs the right calculation. Even if the model works correctly and it has the right dynamic behavior, the kinetics of the reactions involving the "complex" (represented as different independent entities) is not very intuitive and it requires some tricky calculations.<br />
+<br />
+<table>
+<tbody>
+<tr class="odd">
+<th></th>
+<th>Reaction</th>
+<th>Type</th>
+<th>Kinetic law</th>
+</tr>
+<tr class="odd">
+<td align="center">1</td>
+<td align="left">SBF(p{0};b{free}) + Whi5(p{0:2};b{free}) Whi5(b{bound})</td>
+<td align="left">MA</td>
+<td align="left">kac</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="left">Whi5(p{0:2};b{bound}) SBF(p{0};b{free}) + Whi5(b{free})</td>
+<td align="left">MA</td>
+<td align="left">kdc</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="left">Whi5(p{0:2};b{bound}) SBF(p{0};b{free})</td>
+<td align="left">MA</td>
+<td align="left">gdi5</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="left">Whi5(p{0:2};b{bound}) Whi5(b{free})</td>
+<td align="left">MA</td>
+<td align="left">gdbf</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="left">Whi5(p{1:2};b{bound}) + Cdc14 Whi5(pred(p)) + Cdc14</td>
+<td align="left">MA</td>
+<td align="left">kdcmp</td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td align="left">Whi5(p{0:1};b{bound}) + ClbS Whi5(succ(p)) + ClbS</td>
+<td align="left">MA</td>
+<td align="left">kdcmp</td>
+</tr>
+</tbody>
+</table><br />
+<br />
+<b>Ignoring SBF in the complex.</b> Given that SBF is not involved in phosphorylation/dephosphorylation reactions when it is in the complex, the user can choose not to keep track of the SBF bound species (since its concentration can always be computed using the amount of Whi5 in the bound state). The reaction that breaks the complex (2) needs to make<br />
+the SBF species "magically" reappear, and the same needs to be done by the reaction that degrades the Whi5 part of the complex (3). The advantage of this strategy (compared to the one showed in the previous table) is that each reaction can now use Mass Action kinetics. The disadvantage is that the user has to explicitly remember that the SBF elements is in the complex, and if that species was allowed to change its state inside the complex, this strategy is not powerful enough to cover that case. These reactions are using the same Multistate Species definitions and the same legend as the previous scenario.<br />
+<br />
+<br />
+<table>
+<tbody>
+<tr class="odd">
+<th></th>
+<th>Reaction</th>
+<th>Type</th>
+<th>Kinetic law</th>
+</tr>
+<tr class="odd">
+<td align="center">1</td>
+<td align="left">SBF(p{0}) + Whi5(p{0:2}) C_SBF_Whi5(sbf_p=SBF.p;whi5_p=Whi5.p)</td>
+<td align="left">MA</td>
+<td align="left">kac</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="left">C_SBF_Whi5 SBF(p=C_SBF_Whi5.sbf_p) + Whi5(p=C_SBF_Whi5.whi5_p)</td>
+<td align="left">MA</td>
+<td align="left">kdc</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="left">C_SBF_Whi5 SBF(p=C_SBF_Whi5.sbf_p)</td>
+<td align="left">MA</td>
+<td align="left">gdi5</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="left">C_SBF_Whi5 Whi5(p=C_SBF_Whi5.whi5_p)</td>
+<td align="left">MA</td>
+<td align="left">gdbf</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="left">C_SBF_Whi5(whi5_p{1:2}) + Cdc14 C_SBF_Whi5(pred(whi5_p)) + Cdc14</td>
+<td align="left">MA</td>
+<td align="left">kdcmp</td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td align="left">C_SBF_Whi5(whi5_p{0:1}) + ClbS C_SBF_Whi5(succ(whi5_p)) + ClbS</td>
+<td align="left">MA</td>
+<td align="left">kdcmp</td>
+</tr>
+</tbody>
+</table><br />
+<b>Using our Complex and transfer state concepts.</b> The complex is created in reaction 1 and it will keep track of the different sites of all its component (if so desired by the user). The break of the complex (reaction 2) is nothing but a reassignment of the states stored in the complex to each single component and in the similar way the degradation of part<br />
+of the complex will release the other part with its current state. The Complex can also be seen as a "regular" Multistate species, so reactions using operators like successor/predecessor can be defined easily. The advantage of this strategy (compared to the two previous tables) is that it combines the simple usage of Mass Action kinetics with the full tracking of the different components using the familiar multistate syntax. A further advantage is that, since we are using our internal way of defining the complex, the single components do not need to keep track of their state (bound/free) so the definition of each component is much simpler.<br />
+<br />
+The scenarios above demonstrate how the user can take advantage of the transfer state syntax to keep track of many multistate species inside a complex.<br />
+<br />
+Another common scenario that requires some specific syntax to work is the case of homodimerization of multistate species. Homodimer are dimer where both components are of the same species. With non-multistate species, the regular works perfectly. However the things are more complicated when it comes to multistate components, because they can be in different states and the user may want to keep track of those different states inside the complex. The transfer state syntax is again used in this scenario but since both components are the same, the element is ambiguous (since both the reactant have the same name and the same site to track). For these cases we introduced <i>alias</i>es that are unique names (within the list of reactants) that allow the user to refer to specific reactants in the product part of the reaction. Here is a simple example:<br />
+<ul><br />
+<li>Species definition: SpA(p{0:10}), Dimer(site1{0:10};site2{0:10})</li><br />
+<li>Homodimerization reaction:<br />
+A1=SpA(p{0:10}) + A2=SpA(p{0:10}) -> Dimer(site1=A1.p;site2=A2.p)</li><br />
+<li>Decomplexation reaction:<br />
+DimerSpA -> SpA(p=Dimer.site1) + SpA(p=Dimer.site2)</li><br />
+</ul>
+
+Note that we only need aliases when there is ambiguity between the reactants. In breaking the complex we don't have the ambiguity since the complex is one and we can assign each site state to a different product species.
+<h2 name="Multistate_Expressions">Multistate Expressions</h2>
+
+As introduced in the small example in Section <a  href="MSMB.FirstMultistateModel&structure=SoftwareProjects.html" rel="">First multistate model</a>, it is very useful to be able to use a compact description of multistate species also in expressions which calculate the collective activity of a set of species. Since multistate species are equipped with sequence of state values, it is natural to refer to them in summation operation.
+
+We define the <strong>SUM</strong> operator in the following way:<br/>
+
+<span class="img"><img alt="" src="syntaxSUM.png" border="0"  width="60%" /></span>
+
+<table>
+<tbody>
+<tr class="odd">
+<th>Description</th>
+<th>Expression</th>
+</tr>
+<tr class="even">
+<td align="center">Explicit sum</td>
+<td align="left"> Cdh1(p{1}) + Cdh1(p{2}) + Cdh1(p{3}) + Cdh1(p{4}) + Cdh1(p{5}) + Cdh1(p{6}) + Cdh1(p{7}) + Cdh1(p{8}) + Cdh1(p{9}) + Cdh1(p{10}) </td>
+</tr>
+<tr class="odd">
+<td align="center">Sum all the available states and subtract the one not needed</td>
+<td align="left">SUM(Cdh1) - Cdh1(p{0})</td>
+</tr>
+<tr class="even">
+<td align="center">Sum just the states that the user wants using the range</td>
+<td align="left"> SUM(Cdh1;p{1:10})</td>
+</tr>
+<tr class="odd">
+<td align="center">Sum (with weight) of all the available states and subtract the one not needed</td>
+<td align="left">SUM(Cdh1;p;coeff_fun(p,k1)) - Cdh1(p{0})</td>
+</tr>
+<tr class="even">
+<td align="center">Sum (with weight) just the states that the user wants using the range</td>
+<td align="left"> SUM(Cdh1;p{1:10};coeff_fun(p,k1))</td>
+</tr>
+</tbody>
+</table>
+Different ways of obtaining the sum of all the states of Cdh1 which are not 0, each with a weight of 1. For the options that uses a weighted function, in this specific case, our weight function can be <code>coeff_fun(SITE s1,GLQ k)=s1-s1+k</code> and <code>k1=1</code>, defined in the Global Quantities table. Since the parameter of type "site" is used in a mathematical expression inside the function equation, the coefficient function can be used only on states values that are integer numbers.
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

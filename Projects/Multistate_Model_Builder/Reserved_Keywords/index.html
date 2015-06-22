@@ -1,0 +1,256 @@
+---
+title: " Reserved keywords"
+previous: "Projects/Multistate_Model_Builder/Special_Features"
+next: "Projects/Multistate_Model_Builder/Bibliography"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<br />
+The following table lists  reserved keywords and symbols.<br />
+These elements have special meaning in MSMB.<br />
+Some of them represent things which look like functions, some look like constants, and so on– but they’re not, they are language constructs.<br />
+The user cannot use any of the listed keywords to name species, compartments, global quantities or functions.<br />
+If s/he wants to use any of the listed symbols as a name a model element, the symbol should be surrounded by quotes symbols<br />
+<br />
+<table>
+<thead>
+<tr class="header">
+<th align="left"><strong>Variable</strong></th>
+<th align="left"><strong>Keywords</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Avogadro Constant</td>
+<td align="left">%NA%</td>
+</tr>
+<tr class="even">
+<td align="left">Quantity Conversion Factor</td>
+<td align="left">%QCF%</td>
+</tr>
+<tr class="odd">
+<td align="left">Model Time</td>
+<td align="left">%ModTime%</td>
+</tr>
+<tr class="even">
+<td align="left">Model Initial Time</td>
+<td align="left">%ModTime.i%</td>
+</tr>
+<tr class="odd">
+<td align="left">Square root function</td>
+<td align="left">sqrt</td>
+</tr>
+<tr class="even">
+<td align="left">Round function</td>
+<td align="left">round, floor, ceil</td>
+</tr>
+<tr class="odd">
+<td align="left">Exponential function</td>
+<td align="left">exp</td>
+</tr>
+<tr class="even">
+<td align="left">Square root function</td>
+<td align="left">log, log10</td>
+</tr>
+<tr class="odd">
+<td align="left">Square root function</td>
+<td align="left">delay</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">cos, sin, tan, acos, asin, atan, tanh, cosh, sec,</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">csc, cot, sinh, arcsec, arcsc, arccot, acrsinh, arccosh,</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">arctanh, arcsech, arccscsh, arccoth</td>
+</tr>
+<tr class="odd">
+<td align="left">Square root function</td>
+<td align="left">factorial</td>
+</tr>
+<tr class="even">
+<td align="left">Square root function</td>
+<td align="left">abs</td>
+</tr>
+<tr class="odd">
+<td align="left">Square root function</td>
+<td align="left">min, max</td>
+</tr>
+<tr class="even">
+<td align="left">if statements</td>
+<td align="left">if</td>
+</tr>
+<tr class="odd">
+<td align="left">Square root function</td>
+<td align="left">PI</td>
+</tr>
+<tr class="even">
+<td align="left">Square root function</td>
+<td align="left">EXPONENTIALE</td>
+</tr>
+<tr class="odd">
+<td align="left">Not a number</td>
+<td align="left">NaN, NAN, nan</td>
+</tr>
+<tr class="even">
+<td align="left">Boolean values</td>
+<td align="left">TRUE, true, True</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">FALSE, false, False</td>
+</tr>
+<tr class="odd">
+<td align="left">Summation for Multistate species</td>
+<td align="left">SUM</td>
+</tr>
+<tr class="even">
+<td align="left">Function argument types</td>
+<td align="left">VAR, GLQ, SUB, PROD, MOD, SITE, VOL, TIME</td>
+</tr>
+</tbody>
+</table><br />
+<br />
+<table>
+<tbody>
+<tr><th> Type keyword</th> <th>Meaning</th></tr>
+<tr class="odd">
+<td align="left"><code>VAR</code></td>
+<td align="left">Generic type. Any named element of the model.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>GLQ</code></td>
+<td align="left">Parameter declared in the <em>Global quantity</em> tab</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>SUB</code></td>
+<td align="left">Substrate species listed in the reactant part of the reaction that uses this function</td>
+</tr>
+<tr class="even">
+<td align="left"><code>PROD</code></td>
+<td align="left">Product species listed in the product part of the reaction that uses this function</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>MOD</code></td>
+<td align="left">Modifier species listed as modifier for the reaction that uses this function</td>
+</tr>
+<tr class="even">
+<td align="left"><code>VOL</code></td>
+<td align="left">Volume of a compartment declared in the <em>Compartment</em> tab</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>SITE</code></td>
+<td align="left">Name of a site of a multistate species (used in the <code>SUM</code> operator)</td>
+</tr>
+</tbody>
+</table><br />
+<br />
+<br />
+<h2 name="Element_suffixes">Element suffixes</h2>
+<br />
+<table>
+<thead>
+<tr class="header">
+<th align="left"><strong>Variable</strong></th>
+<th align="left"><strong>Element extension</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Species (Initial Concentration)</td>
+<td align="left">.init.cnc</td>
+</tr>
+<tr class="even">
+<td align="left">Species (Initial Particle Number)</td>
+<td align="left">.init.prt</td>
+</tr>
+<tr class="odd">
+<td align="left">Species (Rates Concentration)</td>
+<td align="left">.rate.cnc</td>
+</tr>
+<tr class="even">
+<td align="left">Species (Rates Particle Number)</td>
+<td align="left">.rate.p</td>
+</tr>
+<tr class="odd">
+<td align="left">Species (Transient Concentration)</td>
+<td align="left">.trns.cnc</td>
+</tr>
+<tr class="even">
+<td align="left">Species (Transient Particle Number)</td>
+<td align="left">.trns.prt</td>
+</tr>
+<tr class="odd">
+<td align="left">Global Quantities (Transient Value)</td>
+<td align="left">.trns</td>
+</tr>
+<tr class="even">
+<td align="left">Global Quantities (Initial Value)</td>
+<td align="left">.init</td>
+</tr>
+<tr class="odd">
+<td align="left">Global Quantities (Rate Value)</td>
+<td align="left">.rate</td>
+</tr>
+<tr class="even">
+<td align="left">Compartments (Transient Volume)</td>
+<td align="left">.trns</td>
+</tr>
+<tr class="odd">
+<td align="left">Compartments (Initial Volume)</td>
+<td align="left">.init</td>
+</tr>
+<tr class="even">
+<td align="left">Compartments (Rates)</td>
+<td align="left">.rate</td>
+</tr>
+<tr class="odd">
+<td align="left">Reactions (Fluxes Concentration)</td>
+<td align="left">.flx.cnc</td>
+</tr>
+<tr class="even">
+<td align="left">Reactions (Fluxes Particle Number)</td>
+<td align="left">.flx.prt</td>
+</tr>
+<tr class="odd">
+<td align="left">Species (if conflicting name)</td>
+<td align="left">.spc</td>
+</tr>
+<tr class="even">
+<td align="left">Global quantity (if conflicting name)</td>
+<td align="left">.glq</td>
+</tr>
+<tr class="odd">
+<td align="left">Compartment (if conflicting name)</td>
+<td align="left">.cmp</td>
+</tr>
+<tr class="even">
+<td align="left">Reaction (if conflicting name)</td>
+<td align="left">.rct</td>
+</tr>
+<tr class="odd">
+<td align="left">Function call (if conflicting name)</td>
+<td align="left">.fnc</td>
+</tr>
+</tbody>
+</table><br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

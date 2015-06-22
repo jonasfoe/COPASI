@@ -1,0 +1,95 @@
+---
+title: "MSMB"
+previous: ""
+next: "Projects/Multistate_Model_Builder/Download"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<br />
+Writing a model is a creative effort that calls for more flexibility than can be tolerated by today's SBML editors.<br />
+MSMB (the Multistate Model Builder) is a software tool that aims to help users write biological models as chemical reaction systems.<br />
+<br />
+MSMB merges a compact spreadsheet interface front-end with a COPASI data model back-end.<br />
+<br />
+The compact spreadsheet interface allows the user to edit different parts of the model (Reactions, Species, Parameters, etc.) in an easy and intuitive way. The COPASI back-end allows the user to easily export to standard formats (like SBML and COPASI) for further simulation and analysis of the model.<br />
+<br />
+MSMB offers many innovative features:<br />
+<br />
+Editor support includes:<br />
+<ul><li> Customizable auto-completion support.
+</li><li> Customizable behavior of the tool when making changes to the model. For example, the user has complete control on the effect of deletion/renaming of elements in the model. The user can change the appearance of the tool (font size, color of the different error message, etc), the amount of warnings/pop-up and the default values of several elements. All the customization can be achieved using the &quot;Preferences&quot; menu of MSMB.
+</li><li> Import/export to SBML and COPASI format (of valid models).
+</li><li> Transient inconsistent models can be saved in MSMB format, together with the set of errors that they contain.
+</li><li> Meaningful error messages that guide the modeler toward creating valid models. This is done without forcing them to follow a specific path in defining the elements of the model. For example, the user can define an expression using a variable that is not yet defined.
+</li><li> Beginner users can be supported by wizard-like popup windows to help those unfamiliar with the tool and modeling syntax to build models.
+</li><li> Advanced users already familiar with the syntax can use more free-form typing into spreadsheet cells to quickly input their model data.
+</li><li> Context assistance available to support typing of complex mathematical expressions involving elements of the model.
+</li><li> Print to PDF for all spreadsheets, for an easy way of sharing/debugging the model
+</li></ul>
+<br />
+Multistate model syntax features:<br />
+<ul><li> A multistate species is a protein with a defined set of sites, each associated with an ordered list of states, which collectively describe a group of different forms of the same conceptual species. While modelers might naturally think of their models in terms of multistate species, this representation is not well supported by existing reaction model editors.
+</li><li> MSMB defines a compact syntax to describe multisate species. For example, Cdh1(p{0:10} is the representation of a species (called Cdh1), with a single site (called p), which has the following 11 ordered numerical states 0,1,2,3,4,5,6,7,8,9,10.
+</li><li> MSMB defines operators on sites (i.e. successor and predecessor) that can be used to compactly describe a set of reactions with a single reaction (e.g. Cdh1(p{0:9}) + ClbM -&gt; Cdh1(succ(p)) + ClbM is a single reaction that represent the fact that ClbM is phosphorylating Cdh1 at each of Cdh1's possible phosphorylation states. This reaction has to be expanded into 10 independent, but essentially identical, reactions in formats that do not handle multistate species like SBML and COPASI.
+</li><li> MSMB defines operators that collect different states of a multistate species. For example, SUM(Cdh1) represents the total amount of Cdh1 in all its forms, SUM(Cdh1,p{2:6}) represents the total amount of Cdh1 protein in the states 2,3,4,5,6.
+</li><li> Future export to the sbml-multi package. The <a target="_blank" href="http://sbml.org/Documents/Specifications/SBML_Level_3/Packages/Multistate_and_Multicomponent_Species_%28multi%29" rel="external"> sbml-multi package</a> is a package of SBML level 3 whose purpose is to define &quot;object structures for representing entity pools with multiple states and composed of multiple components, and reaction rules involving them&quot;. The package is still in the proposal stage.
+</li></ul>
+<br />
+For more details about the multistate format (e.g. definition of site's state as strings, mathematical operations on state values, definition of complexes, reactions that transfer the state of a multistate species to another multistate species, parametric definition of sites' states, etc.), see the User Manual (table of content below), or the pdf version available in the MSMB installation package.<br />
+<br />
+Here are examples that show the reduction in model size due to the use of our multistate syntax.<br />
+<br />
+Cell cycle model:<br />
+<a target="_blank" href="http://www.nature.com/msb/journal/v6/n1/synopsis/msb201055.html" rel="external">D. Barik, W.T. Baumann, M.R. Paul, B. Novak, and J.J. Tyson.<br />
+A model of yeast cell-cycle regulation based on multisite phosphorylation.<br />
+Molecular Systems Biology, 6(1), 2010</a><br />
+<ul><li>Species:	original version = 72, MSMB version = 23
+</li><li>Reactions: original version = 220, MSMB version = 73
+</li></ul>
+<br />
+mRNA translation:<br />
+<a target="_blank" href="http://www.nature.com/msb/journal/v9/n1/full/msb201273.html" rel="external">H. Firczuk, S. Kannambath, J. Pahle, A. Claydon, R. Beynon, 	J. Duncan, H. Westerhoff, P. Mendes and J.E. McCarthy.<br />
+An in vivo control map for the eukaryotic mRNA translation machinery.<br />
+Molecular Systems Biology, 9(1), 2013</a><br />
+<ul><li>Species:	original version = 166, MSMB version = 56
+</li><li>Reactions: original version = 200, MSMB version = 58
+</li></ul>
+<br />
+<br />
+<h3 name="MSMB_Publications_"> MSMB Publications:</h3>
+<ul><li>(<a target="_blank" href="http://www.biomedcentral.com/1752-0509/8/42" rel="external">Journal paper</a>) Palmisano, A., Hoops, S., Watson, L. T., Jones, T. C., Tyson, J. J., &amp; Shaffer, C. A. (2014). <b>Multistate Model Builder (MSMB): a flexible editor for compact biochemical models.</b> <i>BMC systems biology</i>, 8(1), 42.
+</li><li>(<a target="_blank" href="2013_ICCCB_MSMB_Poster.pdf&amp;page=MSMB" rel="external">poster</a>) International Conference on Computational Cell Biology (ICCCB), August 2013, Blacksburg, Virginia, USA
+</li><li>(poster) International Conference on Systems Biology (ICSB 2012),  August 2012, Toronto, Canada
+</li></ul>
+<br />
+<h3 name="MSMB_Documentation_">MSMB Documentation:</h3>
+This documentation applies to MSMB - version 1.0 - released on December 2013.<br />
+A pdf version of this documentation is available in the MSMB installation package.<br />
+<h4 name="Table_of_Contents_">Table of Contents:</h4>
+<ul><li> <a target="_blank" href="MSMB.Introduction&amp;structure=SoftwareProjects.html" rel="external">Introduction and Motivation</a>
+</li><li> <a target="_blank" href="MSMB.Download&amp;structure=SoftwareProjects.html" rel="external">Download</a>
+</li><li> <a target="_blank" href="MSMB.FirstMultistateModel&amp;structure=SoftwareProjects.html" rel="external">First multistate model</a>
+</li><li> <a target="_blank" href="MSMB.DetailedUserGuide&amp;structure=SoftwareProjects.html" rel="external">Detailed User Guide</a>
+</li><li> <a  href="MSMB.multistateSyntax&amp;structure=SoftwareProjects.html" rel="">Multistate Species and Reactions syntax</a>
+</li><li> <a target="_blank" href="MSMB.SpecialFeatures&amp;structure=SoftwareProjects.html" rel="external">Special features of MSMB</a>
+</li><li> <a  href="MSMB.reservedKeywords&amp;structure=SoftwareProjects.html" rel="">MSMB reserved keywords</a>
+</li><li> <a target="_blank" href="/../../../Projects/Multistate_Model_Builder/Bibliography" rel="external">Bibliography</a>
+</li></ul>
+<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

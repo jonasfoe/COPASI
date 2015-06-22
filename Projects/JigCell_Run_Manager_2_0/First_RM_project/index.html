@@ -1,0 +1,164 @@
+---
+title: "First RM project"
+previous: "Projects/JigCell_Run_Manager_2_0/Download"
+next: ""
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+<h3 name="Creating_a_graph_of_Parameter_lists">Creating a graph of Parameter lists</h3>
+In this section we describe step-by-step how to import an existing model of cell cycle and how to link few mutant configurations of parameters and simulations to the model.<br />
+<br />
+Different parametrization of an existing model (often referred as mutant in this document) account for variations of the parameters values that may model, for example, a genetically modified organism. Knock-out or over-expressions of specific genes and change in the growth media are just few of the modifications that are carried out by modelers just changing few numerical parameters in the model (e.g., setting them to zero or increase them by a factor).<br />
+<br />
+As a running example, we use a model of budding yeast cell cycle that has been published few years ago \cite{chen2004}.<br />
+This model is available in SBML format in the Biomodel database (model 56 \cite{biomodels}). The SBML model is parametrized with respect to the wild-type behavior of the budding yeast cell cycle. However the published model has been developed to account for more than 100 different genetic strains of budding yeast and the collection of the parameter variation needed to model these different strains is listed at \buddingYeastWebsite.<br />
+<br />
+To couple the initial SBML model with the different mutant parameter configurations, MSMB-RM can be used as follows:<br />
+<ul><li><b>load the SBML file in MSMB</b>:  tables are filled with the Reactions, Species, etc. that compose the original model
+</li></ul>
+<div class="img" align="center"><img alt="" src="Figure1.png" border="0"  width="50%" /></div><br />
+<ul><li><b>select the &quot;Open Run Manager&quot; option in the &quot;Run Manager&quot; menu</b>: a window with different tabs opens. This is RM's main window. It contains independent but connected graphs, each representing a different aspect of the model parametrization (Model values, Time course, Plotting, ...). The first time the window is opened each tab will be empty. Once graphs have been added to the model, the user can save the entire model (together with the parametrization in the Run Manager) through the &quot;Save to .msmb&quot; option. The next time the user can open the saved .msmb and continue working on either the model or its parametrization
+</li></ul>
+<div class="img" align="center"><img alt="" src="Figure2.png" border="0"  width="50%" /></div><br />
+<ul><li><b>add the first Parameter lists mutant</b>: in the &quot;Parameter lists&quot; tab, click the &quot;Create mutant from current model values&quot; button. The user will be asked to give this configuration a name. Since the current model holds the parameters for the wild type in glucose, we will call the node <code>WT_glucose</code>.
+<br />
+<br /><b>Warning!!</b> We highly encourage users to use names that contain only letters, numbers and _. The tool can also handle names with spaces and other symbols. However these names need to be quoted and they need to appear quoted every time they are used in expressions (see later for examples of expressions). Since quoting the names may make the name less readable and hard to maintain, we encourage the user to avoid spaces and other special symbols.}
+<br />
+<br />The newly created node will appear both in the graphical view of the graph, as well as in the list of all the defined lists.
+<br />Since the current model imported from Biomodels already contains the right numerical values for modeling the wild type in glucose, we don't need to customize the content of this node, so we can go on and define new nodes in the Parameter list graph.
+</li></ul>
+<div class="img" align="center"><img alt="" src="Figure3.png" border="0"  width="50%" /></div><br />
+<div align="center">Note: the look of the graph/nodes can be customized using the options listed on the right.</div><br />
+<ul><li><b>add the first dependent mutant</b>: since in RM mutants can be defined in a convenient hierarchy, we can define a new parameter list node as a child of the one defined in the previous step. This allows the child configuration to inherit all the values of the parent (or parents) possibly redefining some specific values in the local configuration. More complete examples where multiple parents are used for the mutant definition and conflict are detected are presented in the <a target="_blank" href="MSMB-RM.DetailedUserGuide&amp;structure=SoftwareProjects.html" rel="external">User Guide section</a>.
+<br />In this first example, to create a child configuration, the user can select the parent node in the graph (<code>WT_glucose</code>) and then click the &quot;Create child configuration&quot; button. The user will be asked to give this new configuration a name (note: the name has to be unique in the graph. If a duplicate name is provided, the tool will ask the user for a new fresh name). We will call the new node <code>WT_galactose</code>.
+<br />The newly created node will appear both in the graphical view of the graph (as a node connected to its parent), as well as in the list of all the defined lists.
+</li></ul>
+<div class="img" align="center"><img alt="" src="Figure4.png" border="0"  width="50%" /></div><br />
+<div align="center">Note: the newly created node will be located in the top-left corner of the screen. The user can reposition the node manually or use one of the many layout options on the right</div><br />
+<ul><li><b>customizing the new configuration</b>: since the parameter values of the <code>WT_galactose</code> are slightly different than the ones in <code>WT_glucose</code>, we need to open the new configuration and change the necessary values. To do so, the user can double click on the node s/he wants to change (or select the node in the graph and click the &quot;Edit mutant configuration&quot; button). This will open a pop-up window in which the different tables defining the models are shown. The <code>WT_galactose</code> configuration differs from the <code>WT_glucose</code> in the value of the &quot;mdt&quot; global quantity (150 instead of 80), so the user can select the proper tab, find the mdt element (possibly using the search/filter box at the top of the window as shown in the following figure).
+<br /><div class="img" align="center"><img alt="" src="Figure5.png" border="0"  width="40%" /></div>
+<br /><div align="center">Note: the use of the filter text (mdt) cause just the rows that have &quot;mdt&quot; in any of the cells to be displayed</div>
+<br />Double clicking on the &quot;Initial Value&quot; cell of mdt opens a small pop-up with three different choices. The user can type the new value in the text field (150 in this specific case) and click OK. The other two choices offer shortcuts to values already defined somewhere else (in ancestors' nodes or in the a the base set). Details about theses choices are explained in Section <a target="_blank" href="MSMB-RM.DetailedUserGuide&amp;structure=SoftwareProjects.html" rel="external">User Guide section</a>.
+<br /><div class="img" align="center"><img alt="" src="Figure6.png" border="0"  width="30%" /></div>
+<br />Once the change has been made, the fact that the old value (coming from the parent node <code>WT_glucose</code>) has been overwritten by the new value is visually identified by the color of &quot;mdt&quot;'s row, as well as through a new label shown in the &quot;Notes&quot; column (i.e., &quot;Local change&quot;). This label helps the user to keep track of the changes, because the &quot;Notes&quot; column can be used as a filter with the search/filter box at the top of the window: typing &quot;Local&quot; will filter out only the rows that contains that string in any of the columns, and the &quot;Local change&quot;s will be more easily to identify.
+</li></ul>
+<div class="img" align="center"><img alt="" src="Figure7.png" border="0"  width="50%" /></div><br />
+<ul><li><b>adding new configurations</b>: following the instructions listed in the previous steps we added one mutant configuration connected to <code>WT_glucose</code>, <code>Cdh1</code> (where we set to zero the global quantity <i>kscdh</i> and the initial quantities of the species <i>CDH1</i> and <i>CDH1i</i>), and one mutant configuration connected to <code>WT_galactose</code>, <code>GAL_CLB2</code> (where we changed the value of <i>ksb2</i>' to 0.12).
+<br />At this point the graph should look as in the figure below.
+<br /><div class="img" align="center"><img alt="" src="Figure8.png" border="0"  width="60%" /></div>
+</li></ul>
+<br />
+<ul><li><b>adding double mutant configurations</b>: the advantage of defining mutant configurations in a hierarchical way is that the user can easily and quickly define combination of parameters mutants just creating a node that inherits its values from more than one parent: this will create a configuration which is the union of the changes of all the parents (Note: this can create conflict situation. We refer the user to Section <a target="_blank" href="MSMB-RM.DetailedUserGuide&amp;structure=SoftwareProjects.html" rel="external">User Guide section</a> for examples and instructions of how to resolve these cases).
+<br />We will now define a double mutant <code>GAL_CLB2_Cdh1</code>. To create this configuration we select the two existing nodes (<code>GAL_CLB2</code> and <code>Cdh1</code>) and click the &quot;Create child configuration&quot; button. This will create a node that is connected to both parents. This configuration automatically merges the changes of both parents and we don't need to change any specific value for it. To see the actual parameters values in this configuration, we can double click on the new node and check the &quot;Global Quantities&quot; table: this should show changes in  <i>ksb2</i>' (coming from <code>GAL_CLB2</code>) and in <i>kscdh</i> (coming from <code>Cdh1</code>)
+<br /><div class="img" align="center"><img alt="" src="Figure9.png" border="0"  width="50%" /></div>
+<br /><div align="center">Note: The &quot;Notes&quot; cell of the inherited values are characterized by a special label, composed by @ followed by the name of the parent the value is inherited from. The user can use the filter at the top of the window (typing the @ sybol) to quickly see all the rows containing inherited values</div>
+</li></ul>
+<br />
+<h3 name="Creating_a_graph_of_Simulation_settings">Creating a graph of Simulation settings</h3>
+<br />
+The idea of defining changes in parameter values in a hierarchical way can be applied not just to model parameters but also to simulation settings and other similar analysis.<br />
+<br />
+Some of the changes in the model parameters may need to be treated differently for what concern simulation runs. For example, in the budding yeast cell cycle model used in the section before, some mutants represent the organism growing in different media: this cause the entire cell cycle machinery to slow down, hence in a fixed time frame less complete cycles can be observed. It may be interesting for the modeler to set different simulation settings for these slow mutants so that the overall number of cell is comparable to the fast mutants. This scenario is very similar to the one encountered when describing changes in model parameter because again only one element in the simulation settings (the end time in this case) need to change, while all others would remain the same.<br />
+<br />
+MSMB-RM allows the user to define a graph for simulation settings in the &quot;Time course&quot; tab.<br />
+<br />
+The layout of the tab is very similar to the layout of the &quot;Parameter lists&quot; tab, as it has a list of nodes on the right, the graph in the center and a list of graphical actions for the graph on the right. Also the three buttons at the top have similar functions as in the previously described section and they allow the user to create new nodes in the &quot;Time course&quot; graph, change the internal values of a node and connect them in a parent/child relationship.<br />
+<br />
+Below a figure showing a graph with two node, holding simulation settings for a &quot;short&quot; simulation run and a &quot;long&quot; one.<br />
+<div class="img" align="center"><img alt="" src="Figure10.png" border="0"  width="60%" /></div><br />
+<br />
+<br />
+Double click on a node, opens a pop-up window where the user can select specific settings for the current simulation run (figure below).<br />
+<div class="img" align="center"><img alt="" src="Figure11.png" border="0"  width="40%" /></div><br />
+<br />
+The settings displayed above shows that is possible to:<br />
+<ul><li>apply the settings only to specific mutant parameters (WT and WT_galactose)
+</li><li>customize the duration/interval size of the simulation run
+</li><li>leave other parameter values unchanged (i.e., as defined in the base set)
+</li></ul>
+<br />
+<br />
+The settings for the &quot;long&quot; time course node are displayed below and they show another interesting feature of expressions in (any) field of MSMB-RM: the user is allowed to express a quantity with a mathematical expression involving quantities of ancestors nodes.<br />
+<div class="img" align="center"><img alt="" src="Figure12.png" border="0"  width="40%" /></div><br />
+In particular, the duration of the simulation is expressed as &quot;@short*2&quot; which is statically computed by the tool to be the value of the duration in the node called &quot;short&quot; times two. In this way it is easy to propagate a single change in one of the ancestors to the appropriate descendant.<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<h3 name="Creating_a_graph_of_Plotting_settings">Creating a graph of Plotting settings</h3>
+<br />
+The idea of defining changes in parameter values in a hierarchical way can be also applied to plotting settings, following exactly the same rules as for model parameters and time courses.<br />
+<br />
+Specific mutant may require to be presented in plots with different criteria: for example in a mutant where the gene for the Cdh1 protein has been knocked out, the time course of the protein Cdh1 could be omitted (since it should be constantly 0).<br />
+<br />
+MSMB-RM allows the user to define a graph for plotting settings in the &quot;Plotting&quot; tab.<br />
+<br />
+The layout of the &quot;Plotting&quot; tab is very similar to the layout of the &quot;Parameter lists&quot; and &quot;Time course&quot; tabs, as it has a list of nodes on the right, the graph in the center and a list of graphical actions for the graph on the right. Also the three buttons at the top have similar functions as in the previously described sections and they allow the user to create new nodes in the &quot;Plotting&quot; graph, change the internal values of a node and connect them in a parent/child relationship.<br />
+<br />
+An important fact to notice is that even if the RM offers the capability of defining a hierarchical graph with multiple nodes, it is not mandatory to have multiple nodes in the &quot;Plotting&quot; tab. One single group of settings for all &quot;Time series&quot; nodes may suffice for some modelers and that's the option that we are going to show in this first short tutorial. Inheritance rules for plotted variables, colors, line styles, etc. applies for more complex graph (not shown in this tutorial).<br />
+<br />
+<div class="img" align="center"><img alt="" src="Figure13.png" border="0"  width="50%" /></div><br />
+<br />
+Double click on a node, opens a pop-up window where the user can select specific settings for the current plotting settings (figure below).<br />
+<br />
+<div class="img" align="center"><img alt="" src="Figure14.png" border="0"  width="80%" /></div><br />
+<br />
+The settings displayed above shows that is possible to:<br />
+<ul><li>apply the settings to all the time courses that will be run (long and short have both been added to the current plot properties)
+</li><li>choose any of the model variables (or time) as the X axis, and any of the other variable for the Y axis (possibly more than one)
+</li><li>customize the appearance of each line in the plot (i.e., color, thickness, symbol and plotting interval)
+</li><li>customize other general layout options for the XY plot (e.g., font and color of the title, x/y labels, plot background color, etc.)
+</li></ul>
+<br />
+Once all the changes has been done, clicking the &quot;OK&quot; button in the lower right corner will save the configuration and the entire group of parameters lists, simulation and plot settings is ready to be used for simulations inside MSMB-RM (next section).<br />
+<h3 name="Running_the_simulations_within_MSMB_RM">Running the simulations within MSMB-RM</h3>
+<br />
+If the user decides to use MSMB-RM to run and visualize the simulation runs, the plot results will be shown in the &quot;Results&quot; tab.<br />
+<br />
+To run the simulation the user can select the &quot;Run simulations&quot; option in the &quot;Edit&quot; menu.<br />
+This will open a pop-up windows in which the user can choose which time course/mutant to run. This allows the user to define a big set of mutants/simulation settings with the goal of storing it for future use, but only simulate and visualize the ones that the modeler is interested to see.<br />
+<br />
+The pop-up window for the example built in this chapter looks as follows:<br />
+<br />
+<div class="img" align="center"><img alt="" src="Figure15.png" border="0"  width="15%" /></div><br />
+<div align="center">Note: the tree shows all the available Time course nodes as roots, and a list of all the Parameter lists associated to each Time course node as their children. Checkboxes allow the user to select only the nodes that need to be run. The color of the root node indicates if all (green) or just few (cyan) of the children has been selected</div><br />
+<br />
+Once the selection is done, clicking OK will initiate the execution of all the simulation runs. The progress is presented to the user through a progress bar.<br />
+<br />
+Once the simulation task ends the plots are visualized in the &quot;Results&quot; tab as follows:<br />
+<br />
+<div class="img" align="center"><img alt="" src="Figure16.png" border="0"  width="60%" /></div><br />
+The figure above shows several capabilities of the tool, in particular:<br />
+<ul><li> it may happen that the color/style chosen in the &quot;Plotting settings&quot; node are not very pleasant in the final plot: the look of each separate plot can be customized without re-running the simulations, using the right-click menu available for each plot.
+</li><li> the right-click menu can be used to zoom in/out, print a single plot, copy it to the clipboard, save it as image
+</li><li> the right-click menu contains options to add/remove variables, change the plotting interval, show/hide legend
+</li><li> all the plots are embedded in the main window, but for easy comparison of different plots, the &quot;Open plots to separate windows&quot; is available: this cause each plot to have an independent window that can be repositioned/maximized on the user screen. Closing each window will cause the plot to go back to its embedded state. The &quot;Window&quot; menu helps the user to bring to front a selected plot
+</li><li> each plot can be saved in a separate image using the option in the right-click menu, however a single &quot;Export all to images&quot; button is available for the modeler that wants to save all the plots in a local directory
+</li></ul>
+<h3 name="Exporting_to_COPASI">Exporting to COPASI</h3>
+<br />
+An &quot;Export to .cps&quot; option is available in the &quot;File&quot; menu of the Run Manager.<br />
+<br />
+As today, multiple parameter sets can be exported and stored in a single COPASI file, but neither multiple Time courses nor multiple Plotting settings can be stored. Because of that, all the nodes in the &quot;Parameter lists&quot; graph will be exported to different &quot;Parameter Sets&quot; in the COPASI file, but only one Time course node and one plotting settings node will be stored. MSMB-RM will ask the user which nodes to save.<br />
+<br />
+<h3 name="Warning_on_using_the_Hierarchical_layout">Warning on using the Hierarchical layout</h3>
+<br />
+The library used to display the graphs and to run the different automatic layout has some issues when graphs created running Java 6 are displayed on a machine running Java 7 (and viceversa). If compatibility issues are found, an error message is shown and the layout is not performed.<br />
+The model, the parameters, and the content of the graph is not affected by this error and all other automatic layouts works fine. We are working to find a solution for this issue.<br />
+In the meantime an easy workaround is to run JCMSMB with the same version of the JRE used to create the initial graph (i.e., Java 6 for the examples provided within the installer).<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}
