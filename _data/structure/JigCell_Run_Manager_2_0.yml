@@ -1,0 +1,9 @@
+pages:
+- path: Projects/JigCell_Run_Manager_2_0
+  title: "JigCell Run Manager 2.0 (JC-RM)"
+- path: Projects/JigCell_Run_Manager_2_0/Introduction
+  title: "Introduction"
+- path: Projects/JigCell_Run_Manager_2_0/Download
+  title: "Download"
+- path: Projects/JigCell_Run_Manager_2_0/First_RM_project
+  title: "First RM project"

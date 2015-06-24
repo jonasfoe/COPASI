@@ -1,0 +1,160 @@
+pages:
+- path: Hidden/Intranet
+  title: "Intranet"
+- path: Hidden/Intranet/Development_Resources
+  title: "Development Resources"
+- path: Hidden/Intranet/Development_Resources/Guide_Lines
+  title: "Guide Lines"
+- path: Hidden/Intranet/Development_Resources/Build_Environment
+  title: "Build Environment"
+- path: Hidden/Intranet/Development_Resources/Build_Environment/Linux
+  title: "Linux"
+- path: Hidden/Intranet/Development_Resources/Build_Environment/MacOS_X
+  title: "MacOS X"
+- path: Hidden/Intranet/Development_Resources/Build_Environment/Solaris
+  title: "Solaris"
+- path: Hidden/Intranet/Development_Resources/Build_Environment/Windows
+  title: "Windows"
+- path: Hidden/Intranet/Development_Resources/Build_Environment/Git
+  title: "Git"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture
+  title: "Software Architecture"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture/Data_Model
+  title: "Data Model"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture/Class_Structure
+  title: "Class Structure"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture/Class_Structure/Object_and_Container
+  title: "Object and Container"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture/Class_Structure/Model_Classes
+  title: "Model Classes"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture/Class_Structure/Parameter_and_Group
+  title: "Parameter and Group"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture/Class_Structure/Mathematical_Model
+  title: "Mathematical Model"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture/Class_Structure/Mathematical_Model/Functionality
+  title: "Functionality"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture/Class_Structure/Mathematical_Model/Mathematical_Enitites
+  title: "Mathematical Enitites"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture/Class_Structure/Mathematical_Model/Entity_Order
+  title: "Entity Order"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture/Class_Structure/Mathematical_Model/Math_Object
+  title: "Math Object"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture/Class_Structure/Mathematical_Model/Dependency_Graph
+  title: "Dependency Graph"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture/Class_Structure/Mathematical_Model/Discontinuities
+  title: "Discontinuities"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture/Class_Structure/Mathematical_Model/Event
+  title: "Event"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture/Class_Structure/Mathematical_Model/Reaction
+  title: "Reaction"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture/Class_Structure/Task
+  title: "Task"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture/Class_Structure/Array_annotation
+  title: "Array Annotation"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture/Class_Structure/Classes_that_describe_the_output
+  title: "Classes that Describe the Output"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture/Model_Functionality
+  title: "Model Functionality"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture/Model_Functionality/Compile
+  title: "Compile"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture/Model_Functionality/Dependencies
+  title: "Dependencies"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture/Model_Functionality/Calculation
+  title: "Calculation"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture/GUI
+  title: "GUI"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture/GUI/File_Dialogs
+  title: "File Dialogs"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture/Object_Selection_Filter
+  title: "Object Selection Filter"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture/Output_System
+  title: "Output System"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture/Output_System/Overview
+  title: "Overview"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture/Output_System/Implementations
+  title: "Implementations"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture/Process_Report
+  title: "Process Report"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture/File_Format
+  title: "File Format"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture/SBML
+  title: "SBML"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture/MIRIAM_Annotation
+  title: "MIRIAM Annotation"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture/Unit_Analysis
+  title: "Unit Analysis"
+- path: Hidden/Intranet/Development_Resources/Software_Architecture/Random_Number_Generator
+  title: "Random Number Generator"
+- path: Hidden/Intranet/GUI_Improvements
+  title: "GUI Improvements"
+- path: Hidden/Intranet/GUI_Improvements/Qt_4_Conversion
+  title: "Qt 4 Conversion"
+- path: Hidden/Intranet/Miriam_Annotation
+  title: "Miriam Annotation"
+- path: Hidden/Intranet/Miriam_Annotation/Introduction
+  title: "Introduction"
+- path: Hidden/Intranet/Miriam_Annotation/Resources
+  title: "Resources"
+- path: Hidden/Intranet/Miriam_Annotation/RDF
+  title: "RDF"
+- path: Hidden/Intranet/Miriam_Annotation/Terms
+  title: "Terms"
+- path: Hidden/Intranet/Miriam_Annotation/CopasiML
+- path: Hidden/Intranet/Events
+  title: "Events"
+- path: Hidden/Intranet/Events/Trigger
+  title: "Trigger"
+- path: Hidden/Intranet/Events/Trigger/Compiling_the_Trigger_Expression
+  title: "Compiling the Trigger Expression"
+- path: Hidden/Intranet/Events/Assignment
+  title: "Assignment"
+- path: Hidden/Intranet/Events/Delay
+  title: "Delay"
+- path: Hidden/Intranet/Events/Simultaneous_Events
+  title: "Simultaneous Events"
+- path: Hidden/Intranet/Events/Cascading_Events
+  title: "Cascading Events"
+- path: Hidden/Intranet/Events/Implementation
+  title: "Implementation"
+- path: Hidden/Intranet/Events/Implementation/Model_Changes
+  title: "Model Changes"
+- path: Hidden/Intranet/Events/Implementation/Process_Queue
+  title: "Process Queue"
+- path: Hidden/Intranet/Events/SBML
+- path: Hidden/Intranet/Events/Test_cases
+- path: Hidden/Intranet/Fast_Reactions
+  title: "Fast Reactions"
+- path: Hidden/Intranet/Fast_Reactions/Mathematical_Analysis
+  title: "Mathematical Analysis"
+- path: Hidden/Intranet/Fast_Reactions/ODE_Implementation
+  title: "ODE Implementation"
+- path: Hidden/Intranet/Code_Profiling
+  title: "Code Profiling"
+- path: Hidden/Intranet/Code_Profiling/Introduction
+  title: "Introduction"
+- path: Hidden/Intranet/Code_Profiling/Tools
+  title: "Tools"
+- path: Hidden/Intranet/Code_Profiling/Tasks
+  title: "Tasks"
+- path: Hidden/Intranet/Test_Suite
+  title: "Test Suite"
+- path: Hidden/Intranet/Test_Suite/SBML
+  title: "SBML"
+- path: Hidden/Intranet/Feature_Requests_User_Workshop_2008
+  title: "Feature Requests (User Workshop 2008)"
+- path: Hidden/Intranet/ICSB_2008
+  title: "ICSB 2008"
+- path: Hidden/Intranet/Mutliple_Models
+  title: "Mutliple Models"
+- path: Hidden/Intranet/JointAnnouncement
+  title: "Joint Announcement"
+- path: Hidden/Intranet/TeamMeeting
+  title: "Team Meeting"
+- path: Hidden/Intranet/TeamMeeting2011
+  title: "Team Meeting 2011"
+- path: Hidden/Intranet/SBML_Level_3_issues
+  title: "SBML Level 3 Issues"
+- path: Hidden/Intranet/Optimisation_Benchmarks
+  title: "Optimisation Benchmarks"
+- path: Hidden/Intranet/Video_Production
+  title: "Video Production"

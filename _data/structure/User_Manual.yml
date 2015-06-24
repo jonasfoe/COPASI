@@ -1,0 +1,239 @@
+pages:
+- path: Support/User_Manual
+  title: "User Manual"
+- path: Support/User_Manual/Model_Creation
+  title: "Model Creation"
+- path: Support/User_Manual/Model_Creation/Introduction
+  title: "Introduction"
+- path: Support/User_Manual/Model_Creation/Commandline_Version_and_Commandline_Options
+  title: "Commandline Version and Commandline Options"
+- path: Support/User_Manual/Model_Creation/COPASI_GUI_Elements
+  title: "COPASI GUI Elements"
+- path: Support/User_Manual/Model_Creation/General_Model_Settings
+  title: "General Model Settings"
+- path: Support/User_Manual/Model_Creation/Compartments
+  title: "Compartments"
+- path: Support/User_Manual/Model_Creation/Species
+  title: "Species"
+- path: Support/User_Manual/Model_Creation/Reactions
+  title: "Reactions"
+- path: Support/User_Manual/Model_Creation/Global_Quantities
+  title: "Global Quantities"
+- path: Support/User_Manual/Model_Creation/Events
+  title: "Events"
+- path: Support/User_Manual/Model_Creation/Annotating_Models_and_Model_Elements
+  title: "Annotating Models and Model Elements"
+- path: Support/User_Manual/Model_Creation/Parameter_View
+  title: "Parameter View"
+- path: Support/User_Manual/Model_Creation/User_Defined_Functions
+  title: "User Defined Functions"
+- path: Support/User_Manual/Model_Creation/Sliders
+  title: "Sliders"
+- path: Support/User_Manual/Model_Creation/Tutorial_Wizard
+  title: "Tutorial Wizard"
+- path: Support/User_Manual/Output
+  title: "Output"
+- path: Support/User_Manual/Output/Predefined_Reports
+  title: "Predefined Reports"
+- path: Support/User_Manual/Output/Output_Assistant
+  title: "Output Assistant"
+- path: Support/User_Manual/Output/Manual_Definition
+  title: "Manual Definition"
+- path: Support/User_Manual/Output/Manual_Definition/Reports
+  title: "Reports"
+- path: Support/User_Manual/Output/Manual_Definition/Plots
+  title: "Plots"
+- path: Support/User_Manual/Tasks
+  title: "Tasks"
+- path: Support/User_Manual/Tasks/Steady-State_Analysis
+  title: "Steady-State Analysis"
+- path: Support/User_Manual/Tasks/Stoichiometric_State_Analysis
+  title: "Stoichiometric State Analysis"
+- path: Support/User_Manual/Tasks/Stoichiometric_State_Analysis/Elementary_Flux_Modes
+  title: "Elementary Flux Modes"
+- path: Support/User_Manual/Tasks/Stoichiometric_State_Analysis/Mass_Conservations
+  title: "Mass Conservations"
+- path: Support/User_Manual/Tasks/Time_Course_Simulation
+  title: "Time Course Simulation"
+- path: Support/User_Manual/Tasks/Time_Course_Simulation/Working_with_Plots
+  title: "Working with Plots"
+- path: Support/User_Manual/Tasks/Metabolic_Control_Analysis_MCA
+  title: "Metabolic Control Analysis (MCA)"
+- path: Support/User_Manual/Tasks/Lyapunov_Exponents
+  title: "Lyapunov Exponents"
+- path: Support/User_Manual/Tasks/Time_Scale_Separation
+  title: "Time Scale Separation"
+- path: Support/User_Manual/Tasks/Parameter_Scan
+  title: "Parameter Scan"
+- path: Support/User_Manual/Tasks/Optimization
+  title: "Optimization"
+- path: Support/User_Manual/Tasks/Parameter_Estimation
+  title: "Parameter Estimation"
+- path: Support/User_Manual/Tasks/Parameter_Estimation/Experimental_Data
+  title: "Experimental Data"
+- path: Support/User_Manual/Tasks/Parameter_Estimation/Result
+  title: "Result"
+- path: Support/User_Manual/Tasks/Sensitivity_Analysis
+  title: "Sensitivity Analysis"
+- path: Support/User_Manual/Tasks/Linear_Noise_Approximation
+  title: "Linear Noise Approximation"
+- path: Support/User_Manual/Importing_and_Exporting
+  title: "Importing and Exporting"
+- path: Support/User_Manual/Importing_and_Exporting/Importing_and_Exporting_SBML_Files
+  title: "Importing and Exporting SBML Files"
+- path: Support/User_Manual/Importing_and_Exporting/Exporting_C_Source_Files
+  title: "Exporting C Source Files"
+- path: Support/User_Manual/Importing_and_Exporting/Exporting_Berkeley_Madonna_Files
+  title: "Exporting Berkeley Madonna Files"
+- path: Support/User_Manual/Importing_and_Exporting/Exporting_XPPAUT_Files
+  title: "Exporting XPPAUT Files"
+- path: Support/User_Manual/Diagrams
+  title: "Diagrams"
+- path: Support/User_Manual/The_Model_in_COPASI
+  title: "The Model in COPASI"
+- path: Support/User_Manual/The_Model_in_COPASI/Compartments
+  title: "Compartments"
+- path: Support/User_Manual/The_Model_in_COPASI/Species
+  title: "Species"
+- path: Support/User_Manual/The_Model_in_COPASI/Global_Quantities
+  title: "Global Quantities"
+- path: Support/User_Manual/The_Model_in_COPASI/Reactions
+  title: "Reactions"
+- path: Support/User_Manual/The_Model_in_COPASI/Functions
+  title: "Functions"
+- path: Support/User_Manual/The_Model_in_COPASI/Deterministic_Interpretation_of_the_Model
+  title: "Deterministic Interpretation of the Model"
+- path: Support/User_Manual/The_Model_in_COPASI/Stochastic_Interpretation_of_the_Model
+  title: "Stochastic Interpretation of the Model"
+- path: Support/User_Manual/Methods
+  title: "Methods"
+- path: Support/User_Manual/Methods/Time_Course_Calculation
+  title: "Time Course Calculation"
+- path: Support/User_Manual/Methods/Time_Course_Calculation/Deterministic_Simulation
+  title: "Deterministic Simulation"
+- path: Support/User_Manual/Methods/Time_Course_Calculation/Stochastic_Simulation
+  title: "Stochastic Simulation"
+- path: Support/User_Manual/Methods/Time_Course_Calculation/Hybrid_Simulation
+  title: "Hybrid Simulation"
+- path: Support/User_Manual/Methods/Steady_State_Calculation
+  title: "Steady State Calculation"
+- path: Support/User_Manual/Methods/Metabolic_Control_Analysis
+  title: "Metabolic Control Analysis"
+- path: Support/User_Manual/Methods/Metabolic_Control_Analysis/Control_Coefficients
+  title: "Control Coefficients"
+- path: Support/User_Manual/Methods/Metabolic_Control_Analysis/Summation_Theorem
+  title: "Summation Theorem"
+- path: Support/User_Manual/Methods/Metabolic_Control_Analysis/Enzyme_Kinetics_and_the_Elasticity_Coefficients
+  title: "Enzyme Kinetics and the Elasticity Coefficients"
+- path: Support/User_Manual/Methods/Metabolic_Control_Analysis/Connectivity_Relations
+  title: "Connectivity Relations"
+- path: Support/User_Manual/Methods/Metabolic_Control_Analysis/Scaling
+  title: "Scaling"
+- path: Support/User_Manual/Methods/Optimization_Methods
+  title: "Optimization Methods"
+- path: Support/User_Manual/Methods/Optimization_Methods/Evolutionary_Programming
+  title: "Evolutionary Programming"
+- path: Support/User_Manual/Methods/Optimization_Methods/Evolutionary_Strategy_SRES
+  title: "Evolutionary Strategy (SRES)"
+- path: Support/User_Manual/Methods/Optimization_Methods/Genetic_Algorithm
+  title: "Genetic Algorithm"
+- path: Support/User_Manual/Methods/Optimization_Methods/Genetic_Algorithm_SR
+  title: "Genetic Algorithm SR"
+- path: Support/User_Manual/Methods/Optimization_Methods/Hooke___Jeeves
+  title: "Hooke & Jeeves"
+- path: Support/User_Manual/Methods/Optimization_Methods/Levenberg_-_Marquardt
+  title: "Levenberg - Marquardt"
+- path: Support/User_Manual/Methods/Optimization_Methods/Nelder_-_Mead
+  title: "Nelder - Mead"
+- path: Support/User_Manual/Methods/Optimization_Methods/Particle_Swarm
+  title: "Particle Swarm"
+- path: Support/User_Manual/Methods/Optimization_Methods/Praxis
+  title: "Praxis"
+- path: Support/User_Manual/Methods/Optimization_Methods/Random_Search
+  title: "Random Search"
+- path: Support/User_Manual/Methods/Optimization_Methods/Simulated_Annealing
+  title: "Simulated Annealing"
+- path: Support/User_Manual/Methods/Optimization_Methods/Steepest_Descent
+  title: "Steepest Descent"
+- path: Support/User_Manual/Methods/Optimization_Methods/Truncated_Newton
+  title: "Truncated Newton"
+- path: Support/User_Manual/Methods/Lyapunov_Exponents_Calculation
+  title: "Lyapunov Exponents Calculation"
+- path: Support/User_Manual/Methods/Sensitivities_Calculation
+  title: "Sensitivities Calculation"
+- path: Support/User_Manual/Methods/Time_Scale_Separation_Methods
+  title: "Time Scale Separation Methods"
+- path: Support/User_Manual/Methods/Time_Scale_Separation_Methods/ILDM_Deuflhard
+  title: "ILDM (Deuflhard)"
+- path: Support/User_Manual/Methods/Time_Scale_Separation_Methods/Modified_ILDM
+  title: "Modified ILDM"
+- path: Support/User_Manual/Methods/Time_Scale_Separation_Methods/CSP
+  title: "CSP"
+- path: Support/User_Manual/Error_Messages
+  title: "Error Messages"
+- path: Support/User_Manual/Error_Messages/Memory_Allocation
+  title: "Memory Allocation"
+- path: Support/User_Manual/Error_Messages/Gepasi_File_Reader
+  title: "Gepasi File Reader"
+- path: Support/User_Manual/Error_Messages/Kinetic_Function
+  title: "Kinetic Function"
+- path: Support/User_Manual/Error_Messages/Range
+  title: "Range"
+- path: Support/User_Manual/Error_Messages/COPASI_Vector
+  title: "COPASI Vector"
+- path: Support/User_Manual/Error_Messages/Function_Parameter
+  title: "Function Parameter"
+- path: Support/User_Manual/Error_Messages/Mass_Action
+  title: "Mass Action"
+- path: Support/User_Manual/Error_Messages/COPASI_Method
+  title: "COPASI Method"
+- path: Support/User_Manual/Error_Messages/Reaction
+  title: "Reaction"
+- path: Support/User_Manual/Error_Messages/Chemical_Equation
+  title: "Chemical Equation"
+- path: Support/User_Manual/Error_Messages/Method_Parameter
+  title: "Method Parameter"
+- path: Support/User_Manual/Error_Messages/Trajectory_Method
+  title: "Trajectory Method"
+- path: Support/User_Manual/Error_Messages/XML_Reader
+  title: "XML Reader"
+- path: Support/User_Manual/Error_Messages/Message_Queue
+  title: "Message Queue"
+- path: Support/User_Manual/Error_Messages/Configuration_File
+  title: "Configuration File"
+- path: Support/User_Manual/Error_Messages/Optimization_Task
+  title: "Optimization Task"
+- path: Support/User_Manual/Error_Messages/SBML
+  title: "SBML"
+- path: Support/User_Manual/Error_Messages/Trajectory_Task
+  title: "Trajectory Task"
+- path: Support/User_Manual/Error_Messages/Directory_Entry
+  title: "Directory Entry"
+- path: Support/User_Manual/Error_Messages/MathML
+  title: "MathML"
+- path: Support/User_Manual/Error_Messages/Function
+  title: "Function"
+- path: Support/User_Manual/Error_Messages/Evaluation_Node
+  title: "Evaluation Node"
+- path: Support/User_Manual/Error_Messages/COPASI_Task
+  title: "COPASI Task"
+- path: Support/User_Manual/Error_Messages/Steady_State_Calculation
+  title: "Steady State Calculation"
+- path: Support/User_Manual/Error_Messages/Parameter_Fitting
+  title: "Parameter Fitting"
+- path: Support/User_Manual/Error_Messages/COPASI_Object
+  title: "COPASI Object"
+- path: Support/User_Manual/Error_Messages/Lyapunov_Exponent_Calculation
+  title: "Lyapunov Exponent Calculation"
+- path: Support/User_Manual/Error_Messages/ODE_Export
+  title: "ODE Export"
+- path: Support/User_Manual/Error_Messages/Commercial_Version
+  title: "Commercial Version"
+- path: Support/User_Manual/Error_Messages/Time_Scale_Separation_Problem
+  title: "Time Scale Separation Problem"
+- path: Support/User_Manual/Error_Messages/Time_Scale_Separation_Method
+  title: "Time Scale Separation Method"
+- path: Support/User_Manual/Error_Messages/Eigen_Value
+  title: "Eigen Value"
+- path: Support/User_Manual/Bibliography
+  title: "Bibliography"

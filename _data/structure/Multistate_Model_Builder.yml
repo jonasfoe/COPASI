@@ -1,0 +1,23 @@
+pages:
+- path: Projects/Multistate_Model_Builder 
+  title: "Multistate Model Builder"
+- path: Projects/Multistate_Model_Builder/Introduction
+  title: "Introduction"
+- path: Projects/Multistate_Model_Builder/Download
+  title: "Download"
+- path: Projects/Multistate_Model_Builder/First_multistate_model
+  title: "First Multistate Model"
+- path: Projects/Multistate_Model_Builder/User_Guide
+  title: "User Guide"
+- path: Projects/Multistate_Model_Builder/Multistate_Species_and_Reactions_syntax
+  title: "Multistate Species and Reactions Syntax"
+- path: Projects/Multistate_Model_Builder/Special_Features
+  title: "Special Features"
+- path: Projects/Multistate_Model_Builder/Reserved_Keywords
+  title: "Reserved Keywords"
+- path: Projects/Multistate_Model_Builder/Bibliography
+  title: "Bibliography"
+
+
+
+
