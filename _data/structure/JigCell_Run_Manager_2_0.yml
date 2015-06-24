@@ -7,3 +7,5 @@ pages:
   title: "Download"
 - path: Projects/JigCell_Run_Manager_2_0/First_RM_project
   title: "First RM project"
+- path: Projects/JigCell_Run_Manager_2_0/Configuration_with_Conflicts
+  title: "Configuration with Conflicts"

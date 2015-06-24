@@ -1,0 +1,84 @@
+---
+title: "Configuration with Conflicts"
+structure: "JigCell_Run_Manager_2_0"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+<h3 name="Hierarchical_configuration_with_conflicts">Hierarchical configuration with conflicts</h3>
+<br />
+JC-RM guides the user in creating a hierarchy of parameter configurations for a single model defining nodes in terms of minor differences from adjacent nodes.<br />
+This makes it easy to define and maintain big sets of minor parameter changes.<br />
+<br />
+For each node, the values of chosen parameters can be changed to new numerical values or to algebraic expressions involving values from ancestor nodes.<br />
+Defining a configuration as a child of multiple parent nodes may result in conflicts, if multiple parents redefine a parameter to different values.<br />
+<br />
+JC-RM detects and communicates these conflicts to the modeler who can resolve it either by assigning a new local value to the parameter or by choosing the value from one specific parent.<br />
+Graphs with conflicts cannot be used for simulation nor exported to COPASI or SBML, but they can be stored in JC-RM internal format.<br />
+<br />
+<br />
+In the step-by-step tutorial below, the reader can see how the conflicts are displayed to the modeler. Different ways of resolving the conflict are also presented.<br />
+<br />
+<h4 name="The_running_example">The running example</h4>
+<br />
+To present the resolution of conflict in the easiest way possible, a small model with one reaction, three species and one global quantity is used.<br />
+<br />
+To create the model, just open JC-MSMB and input the following information in the 'Reactions' table.<br />
+<ul><li> reaction: A + B -&gt; C, kinetic type: Mass Action, kinetic law: k1
+</li></ul>
+If the autocompletion option is active, all the necessary species, compartment and global quantities will be created automatically.<br />
+For further information about how to use JC-MSMB please refer to the <a href="/../../../Projects/Multistate_Model_Builder" rel="external"> tool documentation</a>.<br />
+<br />
+Open the Run Manager selecting the option in the menu.<br />
+<br />
+In the Parameter lists tab, create a mutant WT1 from current model values (clicking the button at the top and typing the mutant name in the popup window that appears).<br />
+Then open the current configuration and assign a value for the global quantity k1 (2 as shown below).<br />
+<br />
+<span class="img"><img alt="" src="WT1.png" border="0"  width="40%" /></span><br />
+<br />
+<br />
+Create a second mutant (WT2) from current model values and assign a different value for the global quantity k1 (4 in this case).<br />
+<br />
+<span class="img"><img alt="" src="WT2.png" border="0"  width="40%" /></span><br />
+<br />
+<br />
+Select the two mutants and click &quot;create child configuration&quot; (the name for the new configuration is M).<br />
+Since the two parents redefine locally the same global quantity, JC-RM cannot decide which is the value for k1 that is going to be used in M and it presents the conflict (as shown below).<br />
+<br />
+<span class="img"><img alt="" src="M.png" border="0"  width="40%" /></span><br />
+<br />
+<br />
+The conflict is presented in the graph view as a dashed line (instead of the continuous line of the normal inheritance link) with a circle as beginning of the line (to make it easy to identify these problematic nodes also with more intricate graphs).<br />
+The specifics of the conflict are shown once the user enter the configuration: the rows with conflicts are marked with a different color and the string &quot;!! CONFLICT !!&quot; is displayed in place of the actual variable value and note (this to allow easy view of all the row with conflicts in big model, through the use of the text filter).<br />
+<br />
+<br />
+To resolve the conflict the user has several choices: double click on the &quot;Conflict&quot; label will open a popup where the user can assign a new local value to the parameter k1 (3 in the image below).<br />
+<br />
+<span class="img"><img alt="" src="image4.png" border="0"  width="40%" /></span><br />
+<br />
+After clicking &quot;Assign new value&quot; the row in the table will display the new value (instead of the conflict message) and, upon saving the configuration, the graph with the parameter lists will display the connection between M and its parent as a regular line.<br />
+<br />
+<br />
+Note that there are several ways to resolve a conflict:<br />
+<br />
+<span class="img"><img alt="" src="image5.png" border="0"  width="70%" /></span><br />
+<br />
+As shown in the image above the modeler can:<br />
+(a) pick a value from a specific parent using a drop down menu (the current value of the parameter in the parent node is displayed between brackets)<br />
+(b) pick the value from the base set (which is the base model value, the one that is shown in the MSMB tables before opening the Run Manager window)<br />
+(c) the new local expression can be a complex algebraic expression involving values from the parents with the syntax &quot;<i>parameter_name@parent_name</i>&quot;. In the example above M has a combination (in the form of sum) of the value of k1 in WT1 and of k1 in WT2. Note that the expression can involve other variables, both from the current node as well as from the parents, allowing complex parameter definitions. The complex expression will be very maintainable because changes in the current value of k1 in the parents now will be carried out seamlessly by the tool into all nodes referring to those parameters.<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}
