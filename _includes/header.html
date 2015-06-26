@@ -1,4 +1,4 @@
-{% assign cps_url =  page.url | remove_first: site.baseurl | remove_first: '/' | remove: '/index.html' %}
+{% assign cps_url =  page.url | remove_first: '/' | remove: '/index.html' %}
 {% assign cps_path = cps_url | split: '/' %}
 
 <!DOCTYPE html>
