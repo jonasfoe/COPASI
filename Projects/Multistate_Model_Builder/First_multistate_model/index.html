@@ -15,7 +15,7 @@ structure: "Multistate_Model_Builder"
 <br />
 In this section we describe step-by-step how to build a simple multistate model filling the different tables of MSMB.<br />
 <br />
-As a running example, we use a small model at the core of the budding yeast cell cycle process. The small model presented in this section contains all the main components of a classical multistate problem and it describes the antagonistic relationship between ClbM and Cdh1 proteins (we refer the reader to the original publication [<a title="MSMB.Bibliography" href='/../../../Projects/Multistate_Model_Builder/Bibliography#Barik2010'>Barik2010</a>] for the complete characterization of the model).<br />
+As a running example, we use a small model at the core of the budding yeast cell cycle process. The small model presented in this section contains all the main components of a classical multistate problem and it describes the antagonistic relationship between ClbM and Cdh1 proteins (we refer the reader to the original publication [<a title="MSMB.Bibliography" href='{{ site.baseurl }}/Projects/Multistate_Model_Builder/Bibliography#Barik2010'>Barik2010</a>] for the complete characterization of the model).<br />
 <br />
 <span class="img"><img alt="" src="smallModel.png" border="0"  width="60%" /></span><br />
 <b>Multistate reaction at the core of a budding yeast cell cycle model.</b> The figure shows the core reactions of the model. We have a total of eleven forms (or states) of Cdh1: a non-phosphorylated form (Cdh1) and ten phosphorylated forms denoted as<br />
@@ -214,7 +214,7 @@ In this case, we have the following definition of Cdh1:<br />
 <br />
 <div align="center"><div class="simplebox">Cdh1(p{0:10})</div></div><br />
 <br />
-The intuition behind the definition is that the species called <i>Cdh1</i> has a site (called <i>p</i>) which can have different state values, and those state values ranges from 0 to 10 (as integer numbers). For a detailed description of the syntax of multistate species and reactions, we refer the reader to Section <a  href="/../../../Projects/Multistate_Model_Builder/Multistate_Species_and_Reactions_syntax" rel="">Multistate Species and Reactions syntax</a>.<br />
+The intuition behind the definition is that the species called <i>Cdh1</i> has a site (called <i>p</i>) which can have different state values, and those state values ranges from 0 to 10 (as integer numbers). For a detailed description of the syntax of multistate species and reactions, we refer the reader to Section <a  href="{{ site.baseurl }}/Projects/Multistate_Model_Builder/Multistate_Species_and_Reactions_syntax" rel="">Multistate Species and Reactions syntax</a>.<br />
 <br />
 We can use this compact notation, to reduce the number of reactions from the initial 34 down to 5, by expressing the reactants and products as multistate species.<br />
 <br />
