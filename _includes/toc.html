@@ -1,0 +1,27 @@
+{% for item in site.data.structure %}
+  {% if page.structure == item[0] %}
+    {% assign cps_structure = item[1] %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% assign cps_page = cps_path | last | prepend: '/' %}
+{% assign cps_parent_url = cps_url | remove: cps_page | append: '/' %}
+{% assign cps_parent_url_size = cps_url | size %}
+{% assign cps_indent_count = 0 %}
+{% assign cps_level_counter = '0/0/0/0/0' | split: '/' %}
+{% assign cps_indent = '/&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' | split: '/' %}
+{% assign dummy = cps_level_counter[0] | plus: 1 %}
+{% assign cps_level_counter[0] = dummy %}
+{{ cps_parent_url_size }} {{ dummy }}<br/><br/>
+
+{% for item in cps_structure.pages %}
+  {% assign path_begin = item.path | truncate: cps_parent_url_size, '' %}
+
+  {% if cps_url == path_begin %}
+    {% assign indent_count = item.path | remove: cps_parent_url | split: '/' | size | minus: 1 %}
+    {% assign cps_level_counter[indent_count] = cps_level_counter[indent_count] | plus: 1 %}
+    {{ indent_count }} {{ cps_indent[indent_count] }} {{ cps_level_counter[indent_count] }} {{ item.title }}<br/>
+  {% endif %}
+
+{% endfor %}

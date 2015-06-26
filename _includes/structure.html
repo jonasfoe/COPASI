@@ -50,27 +50,27 @@
 {% if cps_navigation == true %}
 
 {% if cps_previous != '' %}
-<a href="{{ site.baseurl }}/{{ cps_previous.path }}"><img src="{{ site.baseurl }}/images/previous.png" alt="Previous Page" width="37" height="42" style="padding: 5px 5px 5px 0px;"/></a>
+<a href="{{ site.baseurl }}/{{ cps_previous.path }}"><img src="{{ site.baseurl }}/images/previous.png" alt="Previous Page" width="37px" height="42px" style="padding: 5px 5px 5px 0px;"/></a>
 {% else %}
-<img src="{{ site.baseurl }}/images/previous-inactive.png" alt="Previous Page" width="37" height="42" style="padding: 5px 5px 5px 0px;"/>
+<img src="{{ site.baseurl }}/images/previous-inactive.png" alt="Previous Page" width="37" height="42px" style="padding: 5px 5px 5px 0px;"/>
 {% endif %}
 
 {% if cps_parent != '' and cps_current.path != cps_parent.path %}
-<a href="{{ site.baseurl }}/{{ cps_parent.path }}"><img src="{{ site.baseurl }}/images/up.png" alt="Parent Page" width="42" height="42" style="padding: 5px;"/></a>
+<a href="{{ site.baseurl }}/{{ cps_parent.path }}"><img src="{{ site.baseurl }}/images/up.png" alt="Parent Page" width="42px" height="42px" style="padding: 5px;"/></a>
 {% else %}
-<img src="{{ site.baseurl }}/images/up-inactive.png" alt="Previous Page" width="42" height="42" style="padding: 5px;"/>
+<img src="{{ site.baseurl }}/images/up-inactive.png" alt="Previous Page" width="42px" height="42px" style="padding: 5px;"/>
 {% endif %}
 
 {% if cps_next != '' %}
-<a href="{{ site.baseurl }}/{{ cps_next.path }}"><img src="{{ site.baseurl }}/images/next.png" alt="Next Page" width="42" height="42" style="padding: 5px;"/></a>
+<a href="{{ site.baseurl }}/{{ cps_next.path }}"><img src="{{ site.baseurl }}/images/next.png" alt="Next Page" width="42px" height="42px" style="padding: 5px;"/></a>
 {% else %}
-<img src="{{ site.baseurl }}/images/next-inactive.png" alt="Previous Page" width="42" height="42" style="padding: 5px;"/>
+<img src="{{ site.baseurl }}/images/next-inactive.png" alt="Previous Page" width="42px" height="42px" style="padding: 5px;"/>
 {% endif %}
 
 {% if cps_home != '' and cps_current.path != cps_home.path %}
-<a href="{{ site.baseurl }}/{{ cps_home.path }}"><img src="{{ site.baseurl }}/images/house.png" alt="TOC" width="42" height="42" style="padding: 5px;"/></a>
+<a href="{{ site.baseurl }}/{{ cps_home.path }}"><img src="{{ site.baseurl }}/images/house.png" alt="TOC" width="42px" height="42px" style="padding: 5px;"/></a>
 {% else %}
-<img src="{{ site.baseurl }}/images/house-inactive.png" alt="TOC" width="42" height="42" style="padding: 5px;"/>
+<img src="{{ site.baseurl }}/images/house-inactive.png" alt="TOC" width="42px" height="42px" style="padding: 5px;"/>
 {% endif %}
     </div>
   </div>
