@@ -9,19 +9,33 @@
 {% assign cps_parent_url = cps_url | remove: cps_page | append: '/' %}
 {% assign cps_parent_url_size = cps_url | size %}
 {% assign cps_indent_count = 0 %}
-{% assign cps_level_counter = '0/0/0/0/0' | split: '/' %}
-{% assign cps_indent = '/&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' | split: '/' %}
-{% assign dummy = cps_level_counter[0] | plus: 1 %}
-{% assign cps_level_counter[0] = dummy %}
-{{ cps_parent_url_size }} {{ dummy }}<br/><br/>
 
 {% for item in cps_structure.pages %}
   {% assign path_begin = item.path | truncate: cps_parent_url_size, '' %}
 
   {% if cps_url == path_begin %}
     {% assign indent_count = item.path | remove: cps_parent_url | split: '/' | size | minus: 1 %}
-    {% assign cps_level_counter[indent_count] = cps_level_counter[indent_count] | plus: 1 %}
-    {{ indent_count }} {{ cps_indent[indent_count] }} {{ cps_level_counter[indent_count] }} {{ item.title }}<br/>
+    {% assign delta = indent_count | minus: cps_indent_count %}
+
+    {% case delta %}
+    {% when 1 %}
+      {% assign  cps_indent_count = cps_indent_count | plus: 1 %}
+    <ul><li><a href="{{ site.baseurl }}/{{ item.path }}">{{ item.title }}</a></li>
+    {% when 0 %}
+      {% if cps_indent_count > 0 %}<li><a href="{{ site.baseurl }}/{{ item.path }}">{{ item.title }}</a</li>{% endif %}
+    {% when -1 %}
+      {% assign  cps_indent_count = cps_indent_count | minus: 1 %}
+      </ul><li><a href="{{ site.baseurl }}/{{ item.path }}">{{ item.title }}</a</li>
+    {% when -2 %}
+      {% assign  cps_indent_count = cps_indent_count | minus: 2 %}
+      </ul></ul><li><a href="{{ site.baseurl }}/{{ item.path }}">{{ item.title }}</a</li>
+    {% when -3 %}
+      {% assign  cps_indent_count = cps_indent_count | minus: 3 %}
+      </ul></ul></ul><li><a href="{{ site.baseurl }}/{{ item.path }}">{{ item.title }}</a</li>
+    {% when -4 %}
+      {% assign  cps_indent_count = cps_indent_count | minus: 4 %}
+      </ul></ul></ul></ul><li><a href="{{ site.baseurl }}/{{ item.path }}">{{ item.title }}</a</li>
+    {% endcase %}
   {% endif %}
 
 {% endfor %}
