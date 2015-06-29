@@ -1,14 +1,12 @@
-{% assign cps_page = cps_path | last | prepend: '/' %}
-{% assign cps_parent_url = cps_url | remove: cps_page | append: '/' %}
-{% assign cps_parent_url_size = cps_url | size %}
+{% assign cps_parent_url = cps_url | append: '/' %}
+{% assign cps_parent_url_size = cps_parent_url | size %}
 {% assign cps_indent_count = cps_url | split: '/' | size %}
 
 {% for item in cps_structure.pages %}
   {% assign path_begin = item.path | truncate: cps_parent_url_size, '' %}
-  {% assign url_size = item.path | size %}
 
-  {% if cps_url == path_begin and cps_parent_url_size < url_size %}
-    {% assign indent_count = item.path | remove: cps_parent_url | split: '/' | size %}
+  {% if cps_parent_url == path_begin %}
+    {% assign indent_count = item.path | split: '/' | size %}
     {% assign delta = indent_count | minus: cps_indent_count %}
 
     {% case delta %}
