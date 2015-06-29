@@ -1,0 +1,49 @@
+---
+title: "COPASI 4 11 Build 64"
+structure: "Change_History"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="span_style_color_000088_Version_4_11_Build_64_span_"><span style="color:#000088;">Version 4.11 (Build 64)</span></h3>
+Release Date: Sept 30, 2013<br />
+<h4 name="New_Features_since_COPASI_4_10_Build_55_">New Features since COPASI 4.10 (Build 55)</h4>
+<ul><li> There are no new features in this release.
+</li></ul>
+<h4 name="Bug_Fixes_since_COPASI_4_10_Build_55_">Bug Fixes since COPASI 4.10 (Build 55)</h4>
+<ul><li> Graphical User Interface (CopasiUI)
+<ul><li> The Model Analysis tool does no longer treat function with unspecified reversibility as irreversible, which resulted in misleading error messages.
+</li><li> Fixed crash when double clicking the white space in the parameter overview widget.
+</li><li> Fixed problem updating the display of the weights of the individual column of the experimental data for parameter estimation occuring when some weights were set manually.
+</li><li> Fixed crash occurring when canceling the time scale separation task using the CSP method.
+</li><li> Fixed crash when attempting to display the bar chart of a 1x1 matrix.
+</li><li> Fixed crash occurring when loading a second model while the layout of the first is still visible.
+</li></ul></li><li> Simulation Engine
+<ul><li> Fixed saving of method parameters of the time scale separation method CSP.
+</li></ul></li><li> SBML
+<ul><li> Fixed problem importing functions for which the parameter names do not match the local reaction parameter names.
+</li><li> Improved recognision of identical functions.
+</li><li> Fixed export of notes to SBML level 2 which has very strict requirements on the XHTML.
+</li><li> Added warnings explaining the problems when exporting incomplete models, which cannot be exported correctly to SBML.
+</li><li> Fixed export of the object role when using the SBML render package in Level 3.
+</li><li> The exported coordinates of objects for the SBML level 3 layout package are enforced to be positive by moving the origin.
+</li><li> Improved import of reaction kinetics for reactions with computed stoichiometry.
+</li></ul></li><li> Source package
+<ul><li> Added missing file MIRIAMResources.xml.
+</li></ul></li></ul>
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

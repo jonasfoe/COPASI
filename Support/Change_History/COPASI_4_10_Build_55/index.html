@@ -1,0 +1,52 @@
+---
+title: "COPASI 4 10 Build 55"
+structure: "Change_History"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="span_style_color_000088_Version_4_10_Build_55_span_"><span style="color:#000088;">Version 4.10 (Build 55)</span></h3>
+Release Date: May 16, 2013<br />
+<h4 name="New_Features_since_COPASI_4_9_45_Development_">New Features since COPASI 4.9.45 (Development)</h4>
+<ul><li> Graphical User Interface (CopasiUI)
+<ul><li> Impproved the cross section task interface to be more intuitive.
+</li></ul></li><li> SBML
+<ul><li> Enabled export of models which use initial values of species, compartments or global quantities in mathematical expression.
+</li></ul></li></ul>
+<h4 name="Bug_Fixes_since_COPASI_4_9_45_Development_">Bug Fixes since COPASI 4.9.45 (Development)</h4>
+<ul><li> Graphical User Interface (CopasiUI)
+<ul><li> Fixed problem causing a crash in the slider dialog when the tool &quot;Convert to irreversible&quot; was used.
+</li><li> Improved performance of large list of sliders on Windows 8.
+</li></ul></li><li> Simulation Engine
+<ul><li> Fixed problem when loading CopasiML files which contained nested groups.
+</li><li> Fixed crash when exporting a model which contained an event without any assignments.
+</li><li> Fixed the calculation of the standard deviation and RMS in the parameter task fir the case where the experimental data contained missing values.
+</li><li> The subtask of the sensitivity is now always performed with the update model flag set to false.
+</li><li> Fixed problem in the result display of the time scale separation task which could lead to a crash if the task itself failed.
+</li><li> Fixed problem in the calculation of the Fisher information matrix which ignored the weights in the objective functions.
+</li><li> Fixed stochastic simulation to stop if a propensity evaluates to NaN.
+</li><li> Fixed problem in the parameter estimation task when validation data was present.
+</li></ul></li><li> SBML
+<ul><li> Fixed SBML import of function definitions specifying unused variables.
+</li><li> Improved import of functions reducing the number of duplicates and simultaneously preserving the name.
+</li><li> Improved import of irreversible reactions in which the product contributes to the kinetic law and is listed as a modifier.
+</li><li> Create a warning message if the model contains an invalid function definition and cannot be exported.
+</li></ul></li><li> Language Bindings
+<ul><li> Fixed various crashes in the Java binding caused by the retrieval of non existing objects.
+</li></ul></li></ul>
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

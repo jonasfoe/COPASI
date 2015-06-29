@@ -1,0 +1,57 @@
+---
+title: "COPASI 4 6 Build 32"
+structure: "Change_History"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="span_style_color_000088_Version_4_6_Build_32_span_"><span style="color:#000088;">Version 4.6 (Build 32)</span></h3>
+Release Date: July 14, 2010<br />
+<h4 name="New_Features_since_COPASI_4_5_Build_30_">New Features since COPASI 4.5 (Build 30)</h4>
+<ul><li> Graphical User Interface (CopasiUI)
+<ul><li> Sorting and filtering in tables, which eases handling of large models.
+</li><li> Enhanced result representation of elementary flux mode analysis.
+</li><li> Improved SBW registration to handle multiple COPASI installations.
+</li></ul></li><li> Simulation Engine
+<ul><li> Support of conditional events, which are discrete changes to the model.
+</li><li> 2 new stochastic simulation algorithms, which implements the direct Gillespie algorithm and Tau-Leap method.
+</li><li> Eigenvalues of the steady-state Jacobians are now available for further processing or output.
+</li></ul></li><li> SBML
+<ul><li> Import and export of <a target="_blank" href="http://sbml.org/Documents/Specifications#SBML_Level_2_Version_4" rel="external">SBML Level 2 Version 4</a>.
+</li><li> Full support for SBML event import/export
+</li><li> COPASI now passes all test of the SBML testsuite for all version of SBML up to L2V4 except for the tests including algebraic rules or 'fast' reactions
+</li></ul></li></ul>
+<h4 name="Bug_Fixes_since_COPASI_4_5_31_development_">Bug Fixes since COPASI 4.5.31 (development)</h4>
+<ul><li> Graphical User Interface (CopasiUI)
+<ul><li> Added support for saving sensitivity results.
+</li><li> Fixed the display of the method parameter table for tasks.
+</li><li> Removed empty lines in the rendering of the ODEs.
+</li><li> Fixed crash which may occur when deleting an event assignment.
+</li><li> Fixed crash which may occur after the execution of the Lyapunov task.
+</li></ul></li><li> Simulation Engine
+<ul><li> The initial time of non-autonomous models is now loaded correctly.
+</li><li> The information whether the MCA task shall calculate a steady-state may have been lost when loading a COPASi file.
+</li><li> If the data file and its description differ in the parameter estimation task COPASI shows now the appropriate error messages instead of crashing.
+</li><li> Fixed problem calculating the sensitivities of a steady-state towards a fixed global quantity.
+</li></ul></li><li> SBML
+<ul><li> Fixed a crash when exporting to SBML which may occur after renaming of any model object.
+</li><li> Fixed a crash when attempting to exporta model containing piecewise defined functions to L1V2.
+</li><li> Fixed error messages of SBML export to report the user selected level and version.
+</li><li> Fixed problem exporting invalid XHTML notes which were missing a meta tag defining the used style type.
+</li></ul></li></ul>
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

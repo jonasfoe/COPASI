@@ -1,0 +1,47 @@
+---
+title: "COPASI 4 2 24 development"
+structure: "Change_History"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="span_style_color_000088_Version_4_2_24_development_span_"><span style="color:#000088;">Version 4.2.24 (development)</span></h3>
+<h4 name="Release_Date_January_9_2008">Release Date: January 9, 2008</h4>
+<h4 name="New_Features">New Features</h4>
+<ul><li> Support of <span style="color:#BB0000;"><b>initial assignments</b></span> for compartments, metabolites, and global quantities.
+</li><li> Two new optimization methods <span style="color:#BB0000;"><b>Truncated Newton</b></span> and <span style="color:#BB0000;"><b>Praxis</b></span>.
+</li><li> The switch between the display of concentrations or particle numbers is now conveniently located in the tool bar.
+</li></ul>
+<h4 name="Bug_Fixes">Bug Fixes</h4>
+<ul><li> Fixed problem in the model analyzer which lead to incorrect classification of reversible kinetic laws.
+</li><li> The trajectory task is now able to integrate models, which do not contain any reactions and ODEs
+</li><li> Fixed problem in steady state calculation for models with changing volumes.
+</li><li> Steady State calculation may have returned negative particle numbers or volumes though the user opted to exclude such states.
+</li><li> Improved the GUI for the Steady State result to include a list of compartments.
+</li><li> Corrected error in the optimization method Steepest Decent, which only occurred in optimization but not in parameter estimation.
+</li><li> Enhanced the randomization of start values for large intervals containing 0.
+</li><li> Corrected problem in which COPASI overwrote existing files though the user chose to cancel the saving or export process.
+</li><li> Improved error and warning messages created during SBML import.
+</li><li> Fixed crash occurring in models imported from SBML, which used functions that contained special character such as * and + in the variable names.
+</li><li> Fixed problem loading SBML files containing functions which listed more arguments  than where used in the function.
+</li><li> Improved handling of units when importing SBML to support a wider range of models.
+</li></ul>
+<h4 name="Known_Issues">Known Issues</h4>
+<ul><li> In rare occasion COPASI may crash during SBML import. This is due to some problems in libsbml from which COPASI is not able to recover. If you encounter such a problem please contact us as we are working with the libsbml team to correct these issues and any feedback will accelerate the process.
+</li></ul>
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

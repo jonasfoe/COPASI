@@ -1,0 +1,87 @@
+---
+title: "COPASI 4 9 45 development"
+structure: "Change_History"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="span_style_color_000088_Version_4_9_45_Development_span_"><span style="color:#000088;">Version 4.9.45 (Development)</span></h3>
+Release Date: January 20, 2013<br />
+<h4 name="New_Features_since_4_8_Build_35_">New Features since 4.8 (Build 35)</h4>
+<ul><li> Graphical User Interface (CopasiUI)
+<ul><li> The start values and parameter boundaries are now displayed in optimization and parameter estimation results. Boundaries are additionally colored red if the result is very close.
+</li><li> If an unknown MIRIAM resource is found the user receives a message with instruction on how to update the MIRIAM resource database.
+</li><li> It is now possible to specify the line style and width of curves in a plot.
+</li><li> Improved GUI for defining plots
+</li><li> &quot;Window&quot; menu for easier access to plot windows
+</li><li> Logarithmic axis scaling can now be easily toggled on the plot windows
+</li><li> Improved default plots for parameter estimation results
+</li><li> Added User Interface for Linear Noise Approximation Task
+</li><li> Added User Interface for Cross Section Task
+</li><li> Added the capability to add validation data to the parameter estimation task.
+</li><li> The location of the last open or save file dialog is no remembered between sessions.
+</li><li> SBML documents can now be imported by dragging the file onto CopasiUI.
+</li><li> MIRIAM annotation which uses identifiers.org resources are now supported.
+</li><li> The web page describing a MIRIAM resource can now be openend in a Web browser by double clicking the entry in the GUI.
+</li><li> Method parameters are now remembered while working with one file. This allows easy switching between methods without the need to reenter the customized parameters.
+</li><li> Added capability to create an layout the current reaction network.
+</li></ul></li><li> Simulation Engine
+<ul><li> Added property DisplayName to all objects which allows to create more meaningful column headers in reports.
+</li><li> Added Linear Noise Approximation Task
+</li><li> Added Cross Section Task (for PoincarÃ© type cross sections and bifurcation diagrams)
+</li><li> Added min() and max() functions to be used in mathematical expressions.
+</li><li> Added indicator functions for finding bifurcation points to the steady state task
+</li><li> Added value scaling for parameter estimation
+</li></ul></li><li> SBML
+<ul><li> Added support for exporting rates of compartments, species and global quantities
+</li><li> Export and Import of Level 3 Layout and Render information
+</li><li> support for exporting min, max, uniform and normal functions
+</li></ul></li><li> Language Bindings
+<ul><li> It is now possible to add tool specific annotation in XML format to many entities of the model (compartment, species, reaction, etc.)
+</li></ul></li></ul>
+<h4 name="Bug_Fixes_since_COPASI_4_8_Build_35_">Bug Fixes since COPASI 4.8 (Build 35)</h4>
+<ul><li> Graphical User Interface (CopasiUI)
+<ul><li> The name of an object (compartment, species, reaction etc.) appears now on all widgets associated with it.
+</li><li> Boolean expressions entered in places where numerical results are expected are automatically converted to evaluate to 1.0 (true) or 0.0 (false)
+</li><li> Fixed crash when moving the last item in a report up.
+</li><li> Fixed update button in the steady-state result widget which occasionally could lead to incorrect model updates.
+</li><li> On Mac OS double clicking a COPASI file will now correctly open the file.
+</li><li> Fixed crash when deleting all reports at once.
+</li><li> Fixed problem with sliders where no all dependent initial values were updated before a new simulation was performed.
+</li><li> Improved Latex export of names containing underscores and spaces.
+</li><li> The tool Convert to Irreversible has been significantly improved to correctly handle modifiers and to avoid duplicate function creation.
+</li><li> The tool Convert to Irreversible deals now correctly with situations where the a reaction flux of a reversible reaction is referenced in other expressions.
+</li></ul></li><li> Simulation Engine
+<ul><li> Some messages were incorrectly labeled as warning messages but caused CopasiSE to stop. These messages are now correctly labeled as errors.
+</li><li> Improved handling of start values for optimization and parameter estimation in the CopasiML file.
+</li><li> Fixed rare problem in event trigger detection which could lead to firing the same event multiple times without advancing the simulation time.
+</li><li> Improved load of CopasiML files with large mathematical expressions.
+</li><li> The suppress output feature in the trajectory task now also suppresses output during events.
+</li><li> If continue from current state is selected in the scan task the user is warned if initial values are changed which do not have any effect on the current state.
+</li><li> The error message created when parsing an invalid expression or function contains now the name of the object so that is easier to determine the location of the problem.
+</li><li> Fixed rare problem in event execution due to invalid initialization of the trigger status before integration.
+</li></ul></li><li> SBML
+<ul><li> Fixed possible crash loading Level 3 files which uses undefined unit ids as model attributes.
+</li><li> Improved import performance of files with large MathML expressions
+</li></ul></li><li> Language Bindings
+<ul><li> It is now possible to set the SBML Id of the model.
+</li><li> Fixed possible crash when writing out incomplete models to CopasiML.
+</li><li> Fixed crash when accessing a non existing task by name.
+</li><li> Report definitions can now be retrieved by name.
+</li></ul></li></ul>
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

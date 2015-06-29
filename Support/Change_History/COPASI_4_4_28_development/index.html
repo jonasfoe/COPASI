@@ -1,0 +1,75 @@
+---
+title: "COPASI 4 4 28 development"
+structure: "Change_History"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="span_style_color_000088_Version_4_4_28_development_span_"><span style="color:#000088;">Version 4.4.28 (development)</span></h3>
+Release Date: December 5, 2008<br />
+<h4 name="New_Features">New Features</h4>
+<ul><li> Graphical User Interface (CopasiUI)
+<ul><li> COPASI can display graphical layouts of the reaction network. It is able to overlay simulation results of time courses onto them. Layouts can be imported through SBML files which contain them in the SBML layout extension format.
+</li><li> Added 3D bar chart display to all color coded matrices.
+</li><li> Enhanced the object selection dialog to support selecting individual matrix elements.
+</li><li> COPASI is now able to exchange SBML models with the <a target="_blank" href="http://sbw.sourceforge.net" rel="external">Systems Biology Workbench</a>. The exchange of models works in both directions.
+</li><li> The initial time for autonomous models is set and kept at 0. Autonomous models are models which do not depend explicitly on time, i.e., time does not appear in any rate law, ODE, or assignment.
+</li><li> The COPASI specific file dialog has been replaced with the standard dialog of the operating system COPASI is running on.
+</li><li> It is now possible to hide or show all curves within one plot by clicking a single button.
+</li><li> The results for the optimization task now feature an update button which allows the user to modify the model.
+</li><li> Added save button to the result of the elementary flux mode task.
+</li><li> Added save button to the parameter overview.
+</li></ul></li><li> Simulation Engine
+<ul><li> Added time scale separation analysis.
+</li><li> We added the capability to use matrix elements in mathematical formulas. This enables e.g. optimization of control coefficients.
+</li><li> Scans of optimizations and parameter estimation calculations are now possible.
+</li></ul></li><li> SBML
+<ul><li> COPASI imports the invalid RDF/XML used in SBML Level 2 Versions 2-3.
+</li><li> MIRIAM annotation is now exported to SBML as valid RDF in the COPASI name space in the annotation element and as invalid RDF/XML required in SBML Level 2 Versions 2-3.
+</li></ul></li></ul>
+<h4 name="Bug_Fixes">Bug Fixes</h4>
+<ul><li> Graphical User Interface (CopasiUI)
+<ul><li> Local reaction parameters are again selectable in the object selection widget where applicable.
+</li><li> Fixed keyboard shortcut for <b><i>Save As</i></b> to<code> shift-ctrl-s</code> (<code>shift-command-s</code> on Mac OS X).
+</li><li> Fixed problem of invalid mathematical expressions (ODEs, assignments, or initial assignments) caused by moving a species from one compartment to another.
+</li><li> Fixed problem in the object selection widget which occasionally returned the same item more than once.
+</li><li> Fixed problem of not working sliders in connection with MCA.
+</li></ul></li><li> Simulation Engine
+<ul><li> Fixed problem in stochastic and hybrid simulation, which was causing negative particle numbers in rare occasions. Negative particle numbers lead to immediate failure of the stochastic integration, which means that all completed stochastic integrations were not affected by this problem and their results can be trusted.
+</li><li> Fixed crashes during simulation caused by unidentifiable objects in mathematical expressions.
+</li><li> Improved criteria for determining whether a steady state has been found.
+</li><li> Fixed load problem of Gepasi files which contained unusable kinetic functions.
+</li><li> Fixed problem where renaming an object may have caused renaming of references which do not refer to the renamed object. The incorrectly renamed references may have caused crashes in the GUI, and SBML import.
+</li><li> Table rows were always printed in report even when the option was not selected. The option title row is no longer ignored.
+</li><li> The flag <b><i>always use initial conditions</i></b> in the scan task is no longer ignored.
+</li><li> Fixed crash in COPASI 4.4.27 (development) when the parameter estimation task contained constraints.
+</li><li> Fixed bug in sensitivities calculation that occured when sensitivities with respect to fixed global quantities were calculated.
+</li></ul></li><li> SBML
+<ul><li> Constant flux kinetics are now properly recognized by COPASI on import and mapped to the corresponding built-in constant flux kinetics.
+</li><li> Fixed import of explicitly time dependent functions which failed for SBML L2V1.
+</li><li> Fixed problem in the export of L1V2 immediately after import of SBML L2 which caused COPASI to crash.
+</li><li> Fixed problem in the export of kinetic laws to L1V2 which created invalid SBML documents.
+</li><li> Fixed problem where repeated export of the same model may have resulted in a crash.
+</li><li> Fixed crash exporting to L2 after a previous export to L1.
+</li><li> Added workaround for a libsbml problem which marked all parameters as constant when converting from L1 to L2.
+</li><li> Added workaround for a libsbml problem which caused invalid MathML to be written for square roots.
+</li></ul></li></ul>
+<br />
+<br />
+<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

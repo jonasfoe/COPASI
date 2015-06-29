@@ -1,0 +1,57 @@
+---
+title: "COPASI 4 0 Build 17 RC 1"
+structure: "Change_History"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="span_style_color_000088_Release_Candidate_1_Build_17_span_"><span style="color:#000088;">Release Candidate 1 (Build 17)</span></h3>
+<h4 name="Release_Date_February_15_2006">Release Date: February 15, 2006</h4>
+<h4 name="New_Features">New Features</h4>
+<ul><li>A <span style="color:#BB0000;"><b>Parameter Estimation</b></span> task has been added. This allows the user to simultaneously fit the model to data of steady state and time course experiments.
+</li><li>We have added the <span style="color:#BB0000;"><b>display of optimization results</b></span> to the GUI.
+</li><li><span style="color:#BB0000;"><b>Global parameters</b></span> are available for reaction kinetics, allowing the modification of several kinetic parameters at once.
+</li><li>The plotting capabilities have been enhanced by adding <span style="color:#BB0000;"><b>logarithmically scaled plots</b></span>.
+</li><li>The <span style="color:#BB0000;"><b>file dialog</b></span> has been enhanced by adding navigation buttons as short cuts to  home and example directories. In addition All Files (*.*) has been added everywhere to the file type selection.
+</li><li>Sliders are now functional in the <span style="color:#BB0000;"><b>Metabolic Control Analysis</b></span> task.
+</li><li><span style="color:#BB0000;"><b>HTML markup</b></span> may now be entered in the model description. Please use the &quot;Show Markup&quot; button to access this functionality.
+</li><li>The user can now define <span style="color:#BB0000;"><b>explicitly time dependent models</b></span>. This achieved by allowing time as a variable in the kinetic functions and adding the initial and current time to the model.
+</li><li>A test <span style="color:#BB0000;"><b>preventing circular dependencies</b></span> in function calls has been implemented.
+</li><li>The <span style="color:#BB0000;"><b>Householder decomposition method</b></span> described by Herbert Sauro, et al. is now used for moiety calculation. This results in better performance and accuracy.
+</li><li>The <span style="color:#BB0000;"><b>Hooke &amp; Jeeves</b></span> method has been added for optimization and parameter estimation.
+</li><li>It is now possible to <span style="color:#BB0000;"><b>pause the excecution</b></span> of a task in CopasiUI.
+</li></ul>
+<h4 name="Bug_Fixes">Bug Fixes</h4>
+<ul><li>A problem importing functions from SBML has been corrected.
+</li><li>The crash caused by importing biomodels.net #43 has been fixed.
+</li><li>A problem with the default absolute tolerance in the deterministic (LSODA) method has been fixed. The result is better performance and less failures caused by exceeding the internal step limit.
+</li><li>Moieties have been added to the object browser to allow access for calculations and reporting.
+</li><li>The input for the compartment volume is now verified to prevent invalid particle numbers and concentrations for metabolites.
+</li><li>Inconsistencies in the display of a metabolite's status have been corrected.
+</li><li>Updates of particle numbers in the single metabolite widget are now handled correctly.
+</li><li>A crash in the slider dialog after changing reaction kinetics has been fixed.
+</li><li>A problem preventing the saving of the result from a time course in the result widget is fixed.
+</li><li>String objects no longer clutter the object browser.
+</li><li>The display of kinetic functions with a plus or minus sign (not operator) imported from SBML has been fixed.
+</li><li>The crash when the model contained unused species is fixed.
+</li><li>The list of the optimization parameters now automatically scrolls to the parameter last added.
+</li><li>The button label in some save file dialog has been corrected from &quot;Open&quot; to &quot;Save&quot;.
+</li><li>COPASI switches now to the result display only after a successful task execution.
+</li><li>A problem with the target files for reports and experiment data files in the COPASI file format has been fixed by changing to relative paths.
+</li><li>A crash when changing the compartment for a new metabolite in the multiple metabolite display has been fixed.
+</li></ul>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

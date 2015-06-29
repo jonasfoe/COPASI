@@ -1,0 +1,48 @@
+---
+title: "COPASI 4 2 Build 22"
+structure: "Change_History"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="span_style_color_000088_Version_4_2_Build_22_span_"><span style="color:#000088;">Version 4.2 (Build 22)</span></h3>
+<h4 name="Release_Date_July_24_2007">Release Date: July 24, 2007</h4>
+<h4 name="New_Features">New Features</h4>
+<ul><li> None this is primarily a bug fix release.
+</li></ul>
+<h4 name="Bug_Fixes">Bug Fixes</h4>
+<ul><li> Fixed crash exporting SBML.
+</li><li> Messages reporting problems when starting the GUI where not displayed.
+</li><li> Fixed crash in parameter estimation and optimization after reporting that one of the parameters was not existing.
+</li><li> The scan task reports an error when a parameter is not existing.
+</li><li> Fixed crash in COPASI file load caused by manually created files having incorrect parameter names in reactions.
+</li><li> The default bin size for histograms has been changed from 0.1 to 1 to account for the fact that histograms are primarily used for particle numbers.
+</li><li> Improved the check whether a model is explicitly time dependent used to check the feasibility of steady state calculations.
+</li><li> When deleting reactions now all dependent global quantities are deleted too after user confirmation.
+</li><li> Corrected misleading error message created when the Fisher Information Matrix can not be inverted.
+</li><li> Fixed SBML import which in rare circumstances was not able to recognize Mass action kinetics properly.
+</li><li> Fixed SBML import problem which caused COPASI to ignore functions which are only used in SBML rules.
+</li><li> Fixed SBML import which crashed when given a non SBML file.
+</li><li> Fixed occasional crashes when creating a new metabolite by adding text in type table field.
+</li><li> The range for a scan parameter with logarithmic scale is now checked to be positive avoiding confusing results.
+</li><li> The sensitivities default report no longer leads to a crash when used for a different task than sensitivities.
+</li><li> On Mac OS X the cursor coordinates are now correctly displayed in the plot windows.
+</li><li> On Mac OS X (PowerPC) the menu items often were disabled after a file load or import.
+</li></ul>
+<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

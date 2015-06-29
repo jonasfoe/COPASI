@@ -1,0 +1,43 @@
+---
+title: "COPASI 4 2 23 development"
+structure: "Change_History"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="span_style_color_000088_Version_4_2_23_development_span_"><span style="color:#000088;">Version 4.2.23 (development)</span></h3>
+<h4 name="Release_Date_September_28_2007">Release Date: September 28, 2007</h4>
+<h4 name="New_Features">New Features</h4>
+<ul><li> Metabolites may now be changed through arbitrary ODEs and assignments.
+</li><li> Compartment volumes may now be dynamically changed through ODEs and assignments.
+</li><li> SBML support for import and export of all assignment and rate rules.
+</li><li> New tool to check rate laws for inconsistencies and errors
+</li></ul>
+<h4 name="Bug_Fixes">Bug Fixes</h4>
+<ul><li> Fixed bug which changed the performance statistic of the optimization task each time the result was redisplayed.
+</li><li> The validity of the objective function for optimization is now checked before task execution to avoid unnecessary task execution.
+</li><li> Fixed SBML import problem when encountering negative numbers in assignment or rate rules for model quantities.
+</li><li> Fixed SBML export problem which occasionally created rules for unspecified parameters.
+</li><li> Fixed several minor problems in the table displays of compartments, metabolites, reactions, etc.
+</li><li> Fixed crash which occasionally was triggered by deleting a parameter.
+</li><li> Improved results of the Levenberg Marquard optimization method for problems with bounded parameter space.
+</li><li> Fixed crash which rarely occurred when executing the convert to irreversible tool.
+</li><li> Improved convert to irreversible to tool to better detect the negative and positive parts of a kinetic law.
+</li><li> Improved layout of tab widget an Mac OS X
+</li><li> Fixed problem on Mac OS X, which prevented to zoom out of plots.
+</li></ul>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

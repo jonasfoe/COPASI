@@ -1,0 +1,60 @@
+---
+title: "COPASI 4 0 Build 13 test version"
+structure: "Change_History"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="span_style_color_000088_COPASI_4_0_Build_13_test_version_span_"><span style="color:#000088;">COPASI (4.0 Build 13 test version)</span></h3>
+<h4 name="Release_Date_April_28_2005">Release Date: April 28, 2005</h4>
+<h4 name="New_Features">New Features</h4>
+<ul><li><b>Parameter scans</b> are now available. This was implemented in a very flexible way even allowing for repeats of stochastic simulations (useful to estimate distributions)
+</li><li>A new widget under <i>Biochemical model</i> allows one to see and edit all of the model parameters together, irrespective of their nature (e.g. kinetic constants, volumes, etc.)
+</li><li>Sliders can now work in logarithmic space
+</li><li>COPASI files now keep all of the information about sliders, so that they are recreated every time the file is loaded again.
+</li><li>Trajectories are now allowed to proceed backwards in time with the ODE solver LSODA (not in stochastic simulations, though)
+</li><li>COPASI now displays the file name of the current model on its title bar.
+</li><li>Double-clicking metabolite names in the compartment widget, or reaction names in the metabolite widget now brings up the definition page of the element double-clicked.
+</li></ul>
+<h4 name="Bug_Fixes">Bug Fixes</h4>
+<ul><li>A bug appeared in release 12 that would not allow some kinetic parameters to be edited, this has been fixed.
+</li><li>Files saved through the <i>Save as</i> feature, or SBML export were being overwritten without warning to the user; there is now the standard warning.
+</li><li>Deleting a newly created kinetic type would crash Copasi; this no longer happens.
+</li><li>When selecting end time of a trajectory smaller than the beginning time, the program would crash. Now it does either carry out a backward integration (see new features) or warn the user that this is not possible (stochastic methods)
+</li><li>COPASI now warns the user when the <i>COPASIDIR</i> environment variable is not set.
+</li><li>Several minor bugs in table headers were fixed
+</li><li>The time unit chosen by the user was being ignored and second was always displayed. Now COPASI honors the time units specified by the user
+</li><li>In some places COPASI was not displaying units next to numeric values.
+</li><li>Some rare actions on the dialog that creates sliders would crash COPASI.
+</li><li>Slider creation is now more intuitive than previously.
+</li><li>Improved importing some SBML files that would previously crash COPASI.
+</li><li>If a user attempted to read an XML file that is not SBML, COPASI would crash; now it just ignores the file and returns an empty model.
+</li><li>Sample files in the OS X version were not reachable by the users.
+</li><li>Sometimes zooming into a plot would work correctly.
+</li><li>Under some circumstances the plot widget would crash after deleting a metabolite that was included in the plot. This no longer happens
+</li><li>Sometimes the object tree would not be initialized properly
+</li><li>COPASI would crash when loading an SBML file that had no rate laws. Now COPASI warns the user about this but will read the file.
+</li><li>When a user changes a volume, COPASI now keeps the concentration as before and adjust the number of particles to that concentration in the new volume.
+</li><li>If one tried to load an XML file as a COPASI file (<i>.cps</i>) the program would crash.
+</li><li>Selecting the MCA results widget before the MCA calculation was performed would crash COPASI.
+</li><li>COPASI would ask to save a file if elementary mode or mass conservation calculations were required.
+</li><li>If the initial time of a trajectory would not be t=0, COPASI would forget what the value was and reset it to t=0.
+</li><li>Reaction names could be lost if a parameter value was also changed but then not committed. No the name change is not lost.
+</li><li>If a metabolite name was changed in the metabolite widget, the reaction list would not be updated to reflect this metabolite name change. Now this works correctly.
+</li><li>If changes in a slider caused a new simulation to be run, the steady-state or time course results widgets would not be updated with the new results.
+</li></ul>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

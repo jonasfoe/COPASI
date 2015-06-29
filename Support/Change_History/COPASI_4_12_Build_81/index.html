@@ -1,0 +1,61 @@
+---
+title: "COPASI 4 12 Build 81"
+structure: "Change_History"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="span_style_color_000088_Version_4_12_81_span_"><span style="color:#000088;">Version 4.12.81</span></h3>
+Release Date: Apr. 18, 2014<br />
+<h4 name="New_Features_since_COPASI_4_11_Build_65_">New Features since COPASI 4.11 (Build 65)</h4>
+<ul><li> Graphical User Interface (CopasiUI)
+<ul><li> Model Parameter Sets
+</li><li> Import and Export of Kinetic Function databases.
+</li><li> Improved Network Diagrams
+</li><li> Copy functionality for model entities (compartment, species, reactions, functions, etc.)
+</li><li> Improved child window management under the window menu entry.
+</li><li> Histograms are now displaying consistently scaled bars (% of total number of recorded values)
+</li><li> Fixed problem where MIRIAM hyperlinks where not correctly generated for some old style resource identifiers.
+</li></ul></li><li> Simulation Engine
+<ul><li> New optimization algorithm: Scatter Search
+</li><li> New MCA algorithm (Smallbone)
+</li><li> Continuation on simultaneous events
+</li></ul></li><li> SED-ML
+<ul><li> Implemented SED-ML support
+</li></ul></li><li> Source package
+<ul><li> CMake based build system
+</li></ul></li></ul>
+<h4 name="Bug_Fixes_since_COPASI_4_11_Build_65_">Bug Fixes since COPASI 4.11 (Build 65)</h4>
+<ul><li> Graphical User Interface (CopasiUI)
+<ul><li> COPASI now uses a decimal point even in countries where it is common to use a comma.
+</li><li> The results of optimization and parameter estimation display not the correct start values even if update model is selected.
+</li><li> The slider dialog shows now the currently active task and has been overall improved.
+</li><li> Reversible reaction in network diagrams are now displayed with 2 arrows.
+</li><li> Improved the C export of the ODEs and assignments.
+</li><li> Fixed crash occurring when the parameter estimation task was selected for models which had parameters defined acting on deleted experiments. Such models could only be created with 3rd party tools.
+</li><li> Fixed issues editing reactions parameters for models which have multiple compartments of which at least contained spaces in the name.
+</li><li> Improved display of expressions in the table widget for compartments, species, etc.
+</li><li> It is no longer possible to close the progress dialog by hitting the escape key which left the user interface in a disabled state.
+</li></ul></li><li> Simulation Engine
+<ul><li> Fixed a problem when simulating delayed events when the delayed execution coincided with an output time of the integration.
+</li><li> Fixed a crash which could occur at the end of a scan task when out put during sub task has been selected.
+</li></ul></li><li> SBML
+<ul><li> Annotation for kinetic laws is now preserved during an import/export cycle.
+</li><li> Export of the Avogadro constant has been implemented.
+</li></ul></li></ul>
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

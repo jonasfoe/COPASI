@@ -1,0 +1,45 @@
+---
+title: "COPASI 4 0 20 development"
+structure: "Change_History"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="span_style_color_000088_Version_4_0_20_development_span_"><span style="color:#000088;">Version 4.0.20 (development)</span></h3>
+<h4 name="Release_Date_February_9_2007">Release Date: February 9, 2007</h4>
+<h4 name="New_Features">New Features</h4>
+<ul><li> New optimization methods <span style="color:#BB0000;"><b>Particle Swarm</b></span>.
+</li><li> New <span style="color:#BB0000;"><b>Sensitivities Task</b></span> in the multiple task section.
+</li><li> <span style="color:#BB0000;"><b>Intel support for MacOS X</b></span> through universal binaries.
+</li></ul>
+<h4 name="Bug_Fixes">Bug Fixes</h4>
+<ul><li> Units are now also shown for Mass Action kinetics.
+</li><li> Improved format for kinetic parameters in Madonna export.
+</li><li> Fixed problem where the GUI might stop responding after overnight calculations.
+</li><li> The slider dialog no longer interferes with other COPASI windows.
+</li><li> Improved SBML import of rules.
+</li><li> Corrected list of reactions involving the currently shown metabolite.
+</li><li> Fixed problem with delayed output for time course task.
+</li><li> Enhanced layout of single function display to give more space to the formula.
+</li><li> Prevented hanging of COPASI in rare situations when entering the single function display.
+</li><li> Fixed problems where deletion of compartments, metabolites, or reactions might COPASI to crash.
+</li><li> Enhanced display and handling of weights in the experimental data dialog so that copy settings works as expected by the user.
+</li><li> Fixed problem where repeated SBML export might lead to COPASI crashes.
+</li><li> Start values are no working correctly for optimization. Previously only parameter estimation was recognizing these values.
+</li><li> Various improvements to the steady state task, including an additional Newton step to improve numerical stability.
+</li></ul>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

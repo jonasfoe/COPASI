@@ -1,0 +1,73 @@
+---
+title: "COPASI 4 7 Build 34"
+structure: "Change_History"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="span_style_color_000088_Version_4_7_Build_34_span_"><span style="color:#000088;">Version 4.7 (Build 34)</span></h3>
+Release Date: July 13, 2011<br />
+<h4 name="New_Features_since_COPASI_4_6_33_development_">New Features since COPASI 4.6.33 (development)</h4>
+This release features new 64 bit packages for all supported platforms.<br />
+<ul><li> Graphical User Interface (CopasiUI)
+<ul><li> Enhanced parsing of mathematical expression to allow the comparison operator &lt;, &lt;=, &gt;, &gt;=, and == as well as the Boolean operators || and &amp;&amp;.
+</li><li> Allowed calculation results to be selected as constraints for optimization and parameter estimation.
+</li><li> Improved display of mass conservation results. The moieties are now displayed in amount if the user is in the concentration framework.
+</li><li> Added Update Model button to the optimization result widget
+</li></ul></li><li> Simulation Engine
+<ul><li> The calculation of statistics is no optional for optimization and parameter estimation tasks.
+</li><li> Start values can no be randomized automatically for optimization and parameter estimation tasks.
+</li></ul></li><li> SBML
+<ul><li> Added support for constant conversion factors in Level 3.
+</li></ul></li></ul>
+<h4 name="Bug_Fixes_since_COPASI_4_6_33_development_">Bug Fixes since COPASI 4.6.33 (development)</h4>
+<ul><li> Graphical User Interface (CopasiUI)
+<ul><li> Fixed crash when editing notes and switching the view mode.
+</li><li> Fixed display of rate law interpretation in the model.
+</li><li> The model name no longer appears in the left navigation tree.
+</li><li> Fixed write access to the example directory so that users are able to execute them.
+</li><li> Fixed opening of files which included non-ascii characters in the name through double click under Windows
+</li><li> Allowed calculation results to be selected as constraints for optimization and parameter estimation.
+</li><li> Deleting functions now prompts the user if the function is used within the model.
+</li><li> Improved editing behavior in tables for compartments, species, global, quantities and reactions.
+</li><li> Boolean values in tables are now represented by check boxes.
+</li><li> Preserved line breaks and indents in notes when free text and not XHTL is used.
+</li><li> Fixed problem editing particle numbers when in the particle number framework.
+</li><li> All numerical values are now displayed and edited with 10 significant digits.
+</li><li> Prevent crashes caused by incomplete specification of kinetic parameters or modifiers.
+</li><li> Fixed editing of event assignments to trigger update the internal dependencies.
+</li><li> Fixed erroneous empty error messages at the end the steady state calculation.
+</li><li> Improved MathML and rendering of build in functions like sin, cos, ceil(), and floor().
+</li><li> Fixed deletion of multiple objects which could cause a crash in COPASI.
+</li><li> Improved handling of MIRIAM resource Ids, leading and trailing spaces are now stripped automatically.
+</li></ul></li><li> Simulation Engine
+<ul><li> Fixed crash in hybrid stochastic simulation method occurring for some models
+</li><li> Fixed event detection to correctly deal with saddle points which have value 0.
+</li><li> Fixed output of time course for models with events which did not distinguish between equality and inequality when an event occurred at the end of an integration intervall.
+</li><li> Fixed occasional problem when calculating the steady-state for models with moieties for which the dependent species amount is 0.
+</li><li> Improves sensitivities task to handle failed subtasks gracefully. COPASI will report a warning when more than 20% of the subtasks fail.
+</li><li> Fixed parameter estimation to work correctly with model or experimental data containing changes to the volume.
+</li><li> Improved handling of experimental data files not located in the same directory as the COPASI file.
+</li></ul></li><li> SBML
+<ul><li> Fixed SBML export of initial assignment for species for which the hasOnlySubstance flag is set.
+</li><li> Fixed import of piecewise defined functions which are missing an otherwise construct.
+</li><li> Fixed export of render extension information.
+</li><li> Improved import of models containing initial assignments for species which in rare circumstances where not executed.
+</li><li> Fixed import of the Avogadro constant in Level 3.
+</li></ul></li></ul>
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

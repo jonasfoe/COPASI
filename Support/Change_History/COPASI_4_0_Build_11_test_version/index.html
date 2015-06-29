@@ -1,0 +1,41 @@
+---
+title: "COPASI 4 0 Build 11 test version"
+structure: "Change_History"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="span_style_color_000088_COPASI_4_0_Build_11_test_version_span_"><span style="color:#000088;">COPASI (4.0 Build 11 test version)</span></h3>
+<h4 name="Release_Date_Dec_19_2004">Release Date: Dec. 19, 2004</h4>
+<h4 name="New_Features">New Features</h4>
+<ul><li>Metabolic Control Analysis has been implemented
+</li><li>Installation directory structures made compatible in all architectures (so windows users, please uninstall older version, otherwise zombie files will stay in your disk!)
+</li><li>A message is now displayed in the Steady State widget indicating when a steady state has not been found
+</li><li>Solaris SPARC version was added to the list of available binary builds
+</li></ul>
+<h4 name="Bug_Fixes">Bug Fixes</h4>
+<ul><li>Sometimes there would be big rounding errors on setting initial concentrations, fixed.
+</li><li>COPASI was not properly escaping special characters in the SBML export, resulting in invalid SBML files when such special characters were used.
+</li><li>Plot name was not being updated on the plot window if it was changed.
+</li><li>Some model objects would be created in duplicate if &quot;Save As&quot; was run before committing a newly created object.
+</li><li>SBML import would be confused by if a species name was &quot;Pi&quot; (as this was interpreted as the number 3.1415926...)
+</li><li>Fixed a bug in the Plot window, which was confusing curves from different plots (if more than one plot was active)
+</li><li>Fixed a minor bug relating to change of focus on listviews using the tab key.
+</li><li>The COPASI image display was corrupted on the Windows version.
+</li></ul>
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

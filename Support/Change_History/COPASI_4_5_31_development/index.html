@@ -1,0 +1,68 @@
+---
+title: "COPASI 4 5 31 development"
+structure: "Change_History"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="span_style_color_000088_Version_4_5_31_development_span_"><span style="color:#000088;">Version 4.5.31 (development)</span></h3>
+Release Date: March 18, 2010<br />
+<h4 name="New_Features">New Features</h4>
+<ul><li> Support of conditional events, which are discrete changes to the model.
+</li><li> New stochastic simulation algorithm, which implements the direct Gillespie algorithm.
+</li><li> Sorting and filtering in tables, which eases handling of large models.
+</li><li> Enhanced result representation of elementary flux mode analysis.
+</li><li> Import and export of SBML Level 2 Version 4.
+</li><li> Full support for SBML event import/export
+</li><li> COPASI now passes all test of the SBML testsuite for all version of SBML up to L2V4 save for the tests including algebraic rules or 'fast' reactions
+</li></ul>
+<h4 name="Bug_Fixes">Bug Fixes</h4>
+<ul><li> Graphical User Interface (CopasiUI)
+<ul><li> Using a slider before committing changes to a task no longer reverts the changes.
+</li><li> It is no possible to select multiple objects simultaneously when creating sliders.
+</li><li> Improved error message which occurred when the MIRIAM web service connection was interrupted during update.
+</li><li> Plot and layout windows can now be closed with the keyboard shortcut Ctrl+W (Cmd+W on Mac OS X).
+</li><li> Invalid mathematical expression no longer cause the GUI to crash.
+</li><li> Fixed handling of deprecated URIs  in the MIRIAM annotation which may be present in older SBML or COPASI file.
+</li><li> Fixed display of random and normal distribution function in MathML and LaTeX.
+</li><li> The warning message that the calculation of a Steady-State is not meaningful during parameter estimation is now only shown if the Newton method is used and Steady-State data is provided.
+</li><li> Completed renaming from metabolites to species in the GUI.
+</li><li> Fixed progress dialog for a scan of of parameter estimations, which continued to grow for each parameter estimation completed.
+</li><li> Prevent closing of COPASI while as task is running which could lead to a crash report.
+</li><li> Fixed crash caused by the MIRIAM relation 'occursIn'.
+</li><li> Randomizing parameter start values takes now into consideration the latest updates to the boundaries. This problem occurred when switching between infinity and a finite value.
+</li><li> The scan task indicates now the overall progress correctly.
+</li></ul></li><li> Simulation Engine
+<ul><li> Improved Steady-State criterion which estimates the distance of the current state from a Steady-State.
+</li><li> Scan of Steady-States may have lead to incorrect results when COPASI was unable to find any Steady-State. In this case scan values after the unsuccessful attempt would have used incorrect parameters.
+</li><li> On Windows COPASI is now able to deal with file names starting with '\', i.e., are relative to the current drive.
+</li><li> EFM no longer fails for models which only have reversible reactions.
+</li><li> Fixed the Simulated Annealing optimization method which failed when a parameter started with value '0'.
+</li><li> Fixed Praxis optimization method which did not terminate for problems containing only 1 parameter.
+</li><li> Fixed the behavior of the Slider Dialog which would stay on top of all other Windows covering open and save dialogs.
+</li><li> In rare situations on Linux COPASI does not recognize the application font chosen by the user. This can now correct by selecting an application font in COPASI.
+</li><li> The MathML rendering will recognize now the application font setting of the user.
+</li></ul></li><li> SBML
+<ul><li> In rare circumstance COPASI could have created two identical SIds leading to invalid SBML files.
+</li><li> COPASI identifies itself in an XML comment as the creator of the SBML file.
+</li><li> Implemented export of the modulo '%' operator which is available in COPASI's mathematical expressions.
+</li><li> COPASI supports now round trip of models containing the delay symbol.
+</li><li> If a model was directly loaded from an SBML file, the default level and version for the export are the same as in the original file. Otherwise export to SBML is now done as SBML Level 2 Version 4 per default.
+</li><li> additional bugfixes which would lead to incorrectly imported and/or exported SBML models in certain situations
+</li></ul></li></ul>
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

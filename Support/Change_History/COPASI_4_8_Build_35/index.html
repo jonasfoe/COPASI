@@ -1,0 +1,66 @@
+---
+title: "COPASI 4 8 Build 35"
+structure: "Change_History"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="span_style_color_000088_Version_4_8_Build_35_span_"><span style="color:#000088;">Version 4.8 (Build 35)</span></h3>
+Release Date: December 20, 2011<br />
+<h4 name="New_Features_since_4_7_Build_34_">New Features since 4.7 (Build 34)</h4>
+<ul><li> Graphical User Interface (CopasiUI)
+<ul><li> Added plots and reports for parameter scans to the output assistant.
+</li><li> Only applicable plots and reports are shown in the output assistant by default.
+</li></ul></li><li> Simulation Engine
+<ul><li> Time Scale Separation Analysis can now handle multi compartment models.
+</li><li> The Time Scale Separation Analysis can now be applied to the full as well as the reduced model.
+</li><li> It is now possible to calculate the sensitivities of Eigen values.
+</li><li> Add kinetic function Bi (irreversible) to the builtin functions.
+</li></ul></li></ul>
+<h4 name="Bug_Fixes_since_COPASI_4_6_33_development_">Bug Fixes since COPASI 4.6.33 (development)</h4>
+<ul><li> Graphical User Interface (CopasiUI)
+<ul><li> Fixed crash in the species table when clicking the comportment cell for a newly created model.
+</li><li> Fixed editing problem in the species table when creating a new species in a multi compartment model.
+</li><li> All sub windows are no closed automatically.
+</li><li> Fixed reaction interface to handle reactions with non integer stoichiometries correctly.
+</li><li> Fixed crash when creating a new model and canceling the save of the modified open model.
+</li><li> Fixed crash caused by sliders of a previous model in a single COPASI session.
+</li><li> Modifying sliders in a model triggers the save model dialog when closing COPASI.
+</li><li> Fixed crash caused by notes when creating a new model in an existing COPASI session and inserting a reaction in the reaction table.
+</li><li> Enabled resizing of columns in the EFM results.
+</li><li> Fixed problem caused by an ampersand '&amp;' in an object name in the ODE display.
+</li><li> Enabled the Save button int the Time Scale Separation Analysis result.
+</li><li> Sliders for species are now always displayed in the current selected frame work (concentration or particle number).
+</li><li> The update model button in the optimization and parameter estimation results be have now similar to the update model check box in the task.
+</li></ul></li><li> Simulation Engine
+<ul><li> Improved event detection during cascading events.
+</li><li> The deterministic integration is now only restarted after events if the ODEs have changed discontinuously improving performance and avoiding restart failures.
+</li><li> Improved the modulo operator '%' to handle zero as the second argument.
+</li><li> Fixed Time Scale Separation Analysis methods ILDM and ILDM modified to return the same results as in Build-32
+</li><li> Prevent crash caused by invalid reactions in a CopasiML file.
+</li><li> Fixed unreported numeric overflow in the Ï„-Leap and Adaptive SSA/Ï„-Leap methods.
+</li><li> Fixed Gibson and Bruck method to correctly handle output of non integer particle number as initial values.
+</li><li> Improved error message for invalid parameter intervals in optimization and parameter estimation.
+</li></ul></li><li> SBML
+<ul><li> Fixed problem exporting empty reaction L3V1.
+</li><li> Corrected unit export for L3V1.
+</li></ul></li><li> Language Bindings
+<ul><li> Improved handling of spaces in function names.
+</li><li> Fixed crash in CModelEntity::setExpression.
+</li></ul></li></ul>
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

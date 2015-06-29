@@ -1,0 +1,56 @@
+---
+title: "COPASI 4 6 33 development"
+structure: "Change_History"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="span_style_color_000088_Version_4_6_33_development_span_"><span style="color:#000088;">Version 4.6.33 (development)</span></h3>
+Release Date: October 7, 2010<br />
+<h4 name="New_Features_since_COPASI_4_6_Build_32_">New Features since COPASI 4.6 (Build 32)</h4>
+<ul><li> Graphical User Interface (CopasiUI)
+<ul><li> Notes in text or XHTML format are now available for compartments, species, reactions, global quantities, events, and kinetic functions.
+</li><li> Support links in XHTML notes.
+</li><li> Support of render informations in graphical model layouts.
+</li></ul></li><li> Simulation Engine
+<ul><li> Enhanced EFM algorithm performance by applying a new selection criterion before each internal step.
+</li><li> Added an stochastic algorithm (Adaptive SSA/Tau-Leap) which dynamically partitions the model into parts simulated by the direct algorithm and the Tau-Leap algorithm.
+</li></ul></li><li> SBML
+<ul><li> Import SBML Level 3 Version 1.
+</li><li> Added SBML notes support for compartments, species, reactions, global quantities, events, and kinetic functions.
+</li><li> Added MIRIAM annotation support for events.
+</li><li> Support for the SBML Render Extension.
+</li></ul></li></ul>
+<h4 name="Bug_Fixes_since_COPASI_4_6_Build_32_">Bug Fixes since COPASI 4.6 (Build 32)</h4>
+<ul><li> Graphical User Interface (CopasiUI)
+<ul><li> The selected items in the navigation tree do now correspond to the object displayed in the main widget.
+</li><li> Fixed a crash caused by not marking any of the check boxes <i>before</i>, <i>during</i>, and <i>after</i> in the plot definition widget.
+</li><li> Fixed progress report for the scan task which was not updated during the execution.
+</li><li> Fixed crash which could occur in a model with circular calculation dependencies which additionally used sliders.
+</li><li> The delete buttons in the tables are now only active when one or more objects are selected.
+</li><li> In the steady-state result widget the button to update the model is now working.
+</li><li> Fixed crash which occasionally occurred when saving the ODEs in TeX format.
+</li><li> Fixed crash caused by saving a model where reports referenced in tasks have been deleted by the user.
+</li><li> Enabled scrolling for the rendered mathematical expressions.
+</li></ul></li><li> Simulation Engine
+<ul><li> Fixed problem in Stochastic Gibson Bruck algorithm which could make COPASI unresponsive.
+</li><li> Fixed problem in the MCA task which did not execute the selected sub task when the model was created with a previous version of COPASI.
+</li><li> Fixed crash which occasionally occurred  when exporting the ODEs to C.
+</li></ul></li></ul>
+<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

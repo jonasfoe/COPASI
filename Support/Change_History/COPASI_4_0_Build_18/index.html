@@ -1,0 +1,59 @@
+---
+title: "COPASI 4 0 Build 18"
+structure: "Change_History"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="span_style_color_000088_Version_4_0_Build_18_span_"><span style="color:#000088;">Version 4.0 (Build 18)</span></h3>
+<h4 name="Release_Date_June_16_2006">Release Date: June 16, 2006</h4>
+<h4 name="New_Features">New Features</h4>
+<ul><li>Added task to calculate the <span style="color:#BB0000;"><b>Lyapunov exponent</b></span> via the Wolf method.
+</li><li>Enabled <span style="color:#BB0000;"><b>scanning for MCA and Lyapunov exponent</b></span>.
+</li><li>Added two <span style="color:#BB0000;"><b>hybrid simulation methods</b></span> for calculating a Time Course.
+</li><li>Added two new optimization methods <span style="color:#BB0000;"><b>Levenberg-Marquardt</b></span> and <span style="color:#BB0000;"><b>Evolutionary Strategies (SRES)</b></span>.
+</li><li><span style="color:#BB0000;"><b>Redesign Optimization and Parameter Estimation widget</b></span> to enable creation and editing of multiple parameters and constraints while simultaneously displaying the information for more condensed.
+</li><li>The  <span style="color:#BB0000;"><b>objective function editor</b></span> has been greatly enhanced.
+</li><li>The <span style="color:#BB0000;"><b>description of experimental data</b></span> for Parameter Estimation can now copied to other experiments within one data file.
+</li><li>The GUI now displays the <span style="color:#BB0000;"><b>results of Parameter Estimation</b></span>, which also can be saved from there.
+</li><li>Added <span style="color:#BB0000;"><b>plotting of fitted values and errors</b></span> for Parameter Estimation.
+</li><li>Implemented <span style="color:#BB0000;"><b>logarithmically scaled plots</b></span>.
+</li><li>Added a list <span style="color:#BB0000;"><b>last visited files</b></span>, which can be found under the file menu.
+</li><li>Implemented export of <span style="color:#BB0000;"><b>Berkeley Madonna files</b></span> and <span style="color:#BB0000;"><b>C source code</b></span>. This feature is also accessible from the command line.
+</li><li>The parameter overview allows now <span style="color:#BB0000;"><b>changing of global parameters</b></span>.
+</li><li>Implemented MathML <span style="color:#BB0000;"><b>rendering of kinetic functions and ODEs</b></span>. The later may also be saved in MathML.
+</li><li>Added <span style="color:#BB0000;"><b>SBML support for non-autonomous models</b></span>.
+</li><li>Made <span style="color:#BB0000;"><b>method parameters more human readable</b></span>.
+</li></ul>
+<h4 name="Bug_Fixes">Bug Fixes</h4>
+<ul><li>Fixed <span style="color:#BB0000;"><b>plotting and reporting for Scan</b></span>.
+</li><li>The <span style="color:#BB0000;"><b>slider window behaves more civilized</b></span>, it no longer stays on top.
+</li><li>The <span style="color:#BB0000;"><b>warning and error message handling</b></span> has been fixed, i.e., no more spurious messages.
+</li><li>Fixed <span style="color:#BB0000;"><b>problem loading Gepasi file</b></span> including metabolites named &quot;PI&quot;.
+</li><li>When <span style="color:#BB0000;"><b>closing the application</b></span> hitting cancel in the save dialog prevents COPASI from exiting.
+</li><li>Fixed problem leaving the <span style="color:#BB0000;"><b>GUI in a non functional state</b></span> when deleting the last compartment, metabolite, reaction, or plot.
+</li><li>Fixed import of <span style="color:#BB0000;"><b>SBML containing NaN</b></span> in the MathML.
+</li><li>Fixed problem editing and displaying the <span style="color:#BB0000;"><b>comment for the model</b></span>.
+</li><li>Fixed resizing behavior in <span style="color:#BB0000;"><b>object selection widget</b></span>.
+</li><li>COPASI no longer refuses to do <span style="color:#BB0000;"><b>Parameter Estimation of steady state experiments for non-autonomous models</b></span>, instead it issues a warning.
+</li><li>Fixed <span style="color:#BB0000;"><b>SBML export of files with substance unit set to items</b></span> (see <a  href="tiki-view_faq.php?faqId=2#q5" rel="">FAQ</a>).
+</li><li>Fixed <span style="color:#BB0000;"><b>crash in reaction widget</b></span> when a function variable was not correctly mapped.
+</li><li>Default <span style="color:#BB0000;"><b>reports are associated with the correct task</b></span>, for which they are intended.
+</li><li>Fixed <span style="color:#BB0000;"><b>crash in Parameter Estimation</b></span> when the experimental data description is incorrect. Instead appropriate messages are created indicating the exact problem.
+</li><li>The Optimization widget now contains the previously missing <span style="color:#BB0000;"><b>update model check box</b></span>.
+</li></ul>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

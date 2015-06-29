@@ -1,0 +1,41 @@
+---
+title: "COPASI 4 4 Build 26"
+structure: "Change_History"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="span_style_color_000088_Version_4_4_Build_26_span_"><span style="color:#000088;">Version 4.4 (Build 26)</span></h3>
+Release Date: May 8, 2008<br />
+<h4 name="New_Features">New Features</h4>
+<ul><li> There are no new features in this release.This is a bug fix release for <a title="COPASI: Support/Change History/COPASI 4 3 Build 25" href="{{ site.baseurl }}/Support/Change_History/COPASI_4_3_Build_25" >COPASI 4.3 (Build 25</a>)
+</li></ul>
+<h4 name="Bug_Fixes">Bug Fixes</h4>
+<ul><li> Graphical User Interface (CopasiUI)
+<ul><li> Initial expression depending only on fixed numerical values are now properly updated.
+</li><li> Fixed problem which may lead to a crash when running  the Mass Conservation task.
+</li><li> Fixed crash in the dialog for specifying the experimental  data of the parameter estimation which occurred in rare cases.
+</li><li> Fixed problem where cut and paste of mathematical expressions for ODEs assignments and initial assignments could lead to spurious results after committing the data.
+</li></ul></li><li> Simulation Engine
+<ul><li> Fixed possible crash in MCA calculation which may occur if the model contains species of type ODE or assignment.
+</li></ul></li><li> SBML
+<ul><li> Fixed multiple use of the same SId in SBML exports.  This problem only occurred when the model has been previously imported from SBML.
+</li><li> The constant flag is now set correctly if a species is changed from constant to determined by reactions in COPASI. This problem only occurred when the model has been previously imported from SBML.
+</li></ul></li></ul>
+<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

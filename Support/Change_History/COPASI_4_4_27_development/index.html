@@ -1,0 +1,51 @@
+---
+title: "COPASI 4 4 27 development"
+structure: "Change_History"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="span_style_color_000088_Version_4_4_27_development_span_"><span style="color:#000088;">Version 4.4.27 (development)</span></h3>
+Release Date: August 20, 2008<br />
+<h4 name="New_Features">New Features</h4>
+<ul><li> MIRIAM compliant annotation for the model, species, compartments, reactions, global quantities, and kinetic functions. For details about this new feature please see the technical documentation for <a title="COPASI: Support/Technical Documentation/MIRIAM Annotation" href="{{ site.baseurl }}/Support/Technical_Documentation/MIRIAM_Annotation" >MIRIAM Annotation</a>.
+</li><li> Added information to the to the Time Course task displaying the integration and output interval.
+</li><li> The initial time has been fixed to 0 for autonomous models. This is no restriction to the capabilities of COPASI since autonomous models are time independent.
+</li><li> The correct number of substrates and products is only enforced for kinetic functions which are classified as being reversible or irreversible. This means the list of valid functions shows now all functions which are classified as unrestricted.
+</li><li> It is now possible to save plots as well as the main widget as png files. This feature provides an additional way to preserve the results.
+</li></ul>
+<h4 name="Bug_Fixes">Bug Fixes</h4>
+<ul><li> Graphical User Interface (CopasiUI)
+<ul><li> Invalid input in the time course task is discarded. The values are reverted to the last correct set.
+</li><li> In the Parameter Scan the button for selecting the scanned parameter shows now the COPASI icon which is the standard throughout the user interface.
+</li><li> Fixed a problem in the XHTML comment for the model, which could not be loaded from a COPASI file when it contained the tag &lt;hr/&gt;.
+</li><li> After running the Mass Conservation task COPASI will automatically switch to the result window.
+</li><li> Fixed a crash which may occur when one deletes all reports.
+</li><li> The object selection for sliders is now restricted to initial values or constant parameters.
+</li><li> We added a message listing the reactions for which the tool &quot;convert to irreversible' fails so that the user can address the problem.
+</li></ul></li><li> Simulation Engine
+<ul><li> We fixed the hybrid simulation to work with assignments. This fix is only partial and in rare cases using the hybrid algorithm may still lead to invalid results or failed integrations. We therefore suggest to use hybrid integration algorithms only for models where the assignments do not effect the kinetics.
+</li><li> Fixed problem in the check for negative concentrations or volumes of the steady state task The check may have failed for the Newton method but not for forward or backward integration.
+</li><li> Mathematical expression containing logical expressions with AND, OR, or XOR may have been saved to a COPASI file in a form which prevented them from being correctly loaded.
+</li></ul></li><li> SBML
+<ul><li> On import COPASI creates a warning message listing the names of the reactions for which the fast flag is ignored.
+</li><li> Fixed program crash caused by missing expressions in an assignment or rate rules.
+</li><li> Fixed problem exporting rate or assignment rules for species with the hasOnlySubstance flag set to true. The rules are now multiplied by the containing compartment's volume.
+</li><li> Fixed crash which may occur when importing and exporting an SBML file without intermittent actions.
+</li><li> Fixed export problem where COPASI occasionally created duplicate SIds for functions, leading to an invalid SBML document.
+</li></ul></li></ul>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

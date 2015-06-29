@@ -1,0 +1,74 @@
+---
+title: "COPASI 4 5 Build 30"
+structure: "Change_History"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="span_style_color_000088_Version_4_5_Build_30_span_"><span style="color:#000088;">Version 4.5 (Build 30)</span></h3>
+Release Date: April 14, 2009<br />
+<h4 name="New_Features_since_COPASI_4_4_Build_26_">New Features since COPASI 4.4 (Build 26)</h4>
+<ul><li> Graphical User Interface (CopasiUI)
+<ul><li> MIRIAM compliant annotation for the model, species, compartments, reactions, global quantities, and kinetic functions. For details about this new feature please see the technical documentation for <a title="COPASI: Support/Technical Documentation/MIRIAM Annotation" href="{{ site.baseurl }}/Support/Technical_Documentation/MIRIAM_Annotation" >MIRIAM Annotation</a>.
+</li><li> Added time scale separation task.
+</li><li> The correct number of substrates and products is only enforced for kinetic functions which are classified as being reversible or irreversible. This means the list of valid functions shows now all functions which are classified as unrestricted.
+</li><li> COPASI can display graphical layouts of the reaction network. It is able to overlay simulation results of time courses onto them. Layouts can be imported through SBML files which contain them in the SBML layout extension format. The COPASI file format preserves this layout information.
+</li><li> Added information to the to the Time Course task displaying the integration and output interval.
+</li><li> Added 3D bar chart display to all color coded matrices.
+</li><li> Enhanced the object selection dialog to support selecting individual matrix elements.
+</li><li> COPASI is now able to exchange SBML models with the <a target="_blank" href="http://sbw.sourceforge.net" rel="external">Systems Biology Workbench</a>. The exchange of models works in both directions.
+</li><li> The initial time for autonomous models is set and kept at 0. Autonomous models are models which do not depend explicitly on time, i.e., time does not appear in any rate law, ODE, or assignment.
+</li><li> The COPASI specific file dialog has been replaced with the standard dialog of the operating system COPASI is running on.
+</li><li> It is now possible to save plots as well as the main widget in the png graphic format. This feature provides an additional way to preserve the results.
+</li><li> It is now possible to hide or show all curves within one plot by clicking a single button.
+</li><li> The results for the optimization task now feature an update button which allows the user to modify the model.
+</li><li> Added save button to the result of the elementary flux mode task.
+</li><li> Added save button to the parameter overview.
+</li><li> Local reaction parameters can now be selected in mathematical expressions for initial assignments, assignments, and ODEs.
+</li><li> COPASI supports now dimensionless units.
+</li></ul></li><li> Simulation Engine
+<ul><li> Added time scale separation analysis.
+</li><li> We added the capability to use matrix elements in mathematical formulas. This enables e.g. optimization of control coefficients.
+</li><li> Scans of optimizations and parameter estimation calculations are now possible.
+</li></ul></li><li> SBML
+<ul><li> COPASI imports the invalid RDF/XML used in SBML Level 2 Versions 2-3. The SBML Level 2 Version 4 specification resolves this issue but is not yet supported by COPASI.
+</li><li> MIRIAM annotation is now exported to SBML as valid RDF in the COPASI name space in the annotation element and as invalid RDF/XML required in SBML Level 2 Versions 2-3.
+</li></ul></li></ul>
+<h4 name="Bug_Fixes_since_COPASI_4_4_29_development_">Bug Fixes since COPASI 4.4.29 (development)</h4>
+<ul><li> Graphical User Interface (CopasiUI)
+<ul><li> Missing reaction rates have been added to the simple selection widget.
+</li><li> Fixed crash occasionally occurring under Windows when changing the modifier of a reaction.
+</li><li> Fixed occasional crash in the sensitivities task.
+</li><li> Fixed crash when an invalid MCA subtask was specified for the optimization task.
+</li><li> Escape characters such as %3A arenow properly decoded in the display of MIRIAM annotation.
+</li><li> A problem in the display of the MIRIAM resource urn:miriam:sgd and urn:miriam:sgd.pathways has been corrected.
+</li><li> Fixed occasional crash in the dialog defining the experimental data for the parameter estimation task.
+</li><li> Initial values are now updated correctly when they depend on matrix elements (e.g. from the stoichiometry matrix).
+</li><li> Added missing and corrected incorrect units in all appropriate places in the GUI.
+</li><li> Corrected minor problems in the Latex export feature.
+</li><li> Fixed crash caused when displaying a layout caused by some OpenGL library incompatibilities under Linux.
+</li><li> Fixed missing confirmation dialog when a compartment was depending on the object to be deleted.
+</li><li> Fixed problem in the report definition that ignored other changes if the name was modified simultaneously.
+</li><li> Fixed crash when starting an SBW application failed due to a firewall blocking the communication under Windows.
+</li></ul></li><li> Simulation Engine
+<ul><li> Fixed load failure caused by files containing layouts with incomplete information.
+</li></ul></li><li> SBML
+<ul><li> Corrected export of the MIRIAM information of the model history if non is present.
+</li><li> Fixed crash during SBML export occasionally occurring when a previous load of a COPASI file failed.
+</li></ul></li></ul>
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

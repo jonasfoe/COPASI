@@ -1,0 +1,49 @@
+---
+title: "COPASI 4 1 Build 21"
+structure: "Change_History"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="span_style_color_000088_Version_4_1_Build_21_span_"><span style="color:#000088;">Version 4.1 (Build 21)</span></h3>
+Release Date: May 10, 2007<br />
+<h4 name="New_Features">New Features</h4>
+<ul><li> Improved the COPASI object selection dialog to only display values valid in the current context.
+</li><li> Added <span style="color:#BB0000;"><b>color coding of numerical tables</b></span> to easily distinguish between large and small values.
+</li></ul>
+<h4 name="Bug_Fixes">Bug Fixes</h4>
+<ul><li> Updated the mathematical view to display global quantities of type ASSIGNMENT and ODE.
+</li><li> Fixed problem in the convert to irreversible tool, which in special situations created incorrect parameter mappings for the kinetic law.
+</li><li> The column order when saving plot data is determined by the order of curves and their X and Y data.
+</li><li> Fixed SBML import of species with initialAmount=&quot;0&quot;.
+</li><li> Fixed occasional problem preventing the user to create more than one new item in the table views of reactions, metabolites, global quantities, and compartments.
+</li><li> Fixed incorrect detection of changes to the model made in table views, which resulted in the user not being prompted to save the modified model when exiting COPASI.
+</li><li> Fixed crash in table view, which occasionally occurred when editing multiple rows at once.
+</li><li> Created a warning message indicating missing objects in reports or plots, which were previously silently ignored.
+</li><li> Fixed crash in the convert to irreversible tool occurring in multi compartment models.
+</li><li> Fixed problem loading Gepasi files containing a Hill function, which lead to an incorrect parameter assignment.
+</li><li> Enhanced message box to be able to handle large message texts.
+</li><li> The process dialog is now displayed when a large model is compiled.
+</li><li> COPASI reports now problems with incorrectly defined kinetic laws or rules during load or SBML import.
+</li><li> Fixed problem loading of corrupted  Gepasi files.
+</li><li> Created an error message warning the user of undefined independent data for parameter estimation.
+</li><li> Fixed occasional crashes caused by changing a slider's object.
+</li></ul>
+<br />
+To view more new features and bug fixes introduced since the last stable release COPASI 4.0 (Build 18) please have a look at: <a title="COPASI: Support/Change History/COPASI 4 0 19 development" href="{{ site.baseurl }}/Support/Change_History/COPASI_4_0_19_development" >COPASI 4.0.19 (development</a>) and <a title="COPASI: Support/Change History/COPASI 4 0 20 development" href="{{ site.baseurl }}/Support/Change_History/COPASI_4_0_20_development" >COPASI 4.0.20 (development</a>).<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

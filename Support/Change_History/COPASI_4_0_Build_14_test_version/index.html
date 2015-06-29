@@ -1,0 +1,63 @@
+---
+title: "COPASI 4 0 Build 14 test version"
+structure: "Change_History"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="span_style_color_000088_COPASI_4_0_Build_14_test_version_span_"><span style="color:#000088;">COPASI (4.0 Build 14 test version)</span></h3>
+<h4 name="Release_Date_August_30_2005">Release Date: August 30, 2005</h4>
+<h4 name="New_Features">New Features</h4>
+<ul><li> <b>Optimization</b> is now available. At this time only with a few algorithms. More algorithms and parameter estimation to appear in the next version.
+</li><li> Command line version <b>CopasiSE</b> (<b>S</b>imulation <b>E</b>ngine) is now available. This is useful for executing larger optimization problems in servers without graphical front-ends, and for being called from scripts.
+</li><li> When closing COPASI with an unsaved model, there is now a dialog box asking to confirm closing (allowing the user to cancel and save model if desired).
+</li><li> Improved kinetic function support allowing functions defined in a piecewise manner and with references to other functions.
+</li><li> Improved SBML support and upgrade to <a target="_blank" href="http://www.sbml.org/software/libsbml/" rel="external">libsbml</a> 2.3.2.
+</li><li> Enhanced report definition: user now has access to header and footer of a report; conversion between the old report tables and the new report structure has been implemented.
+</li><li> COPASI now allows users to define global parameters. This allows, for example, to change several kinetic constants simultaneously.
+</li><li> The user can now generate a standard steady state report (text file) with a simple button click.
+</li><li> Program icon was added to the binaries.
+</li><li> COPASI now warns that there are some features in imported SBML files that it does not support.
+</li><li> COPASI now has an autosave capability: model files are saved every 10 minutes.
+</li></ul>
+<h4 name="Bug_Fixes">Bug Fixes</h4>
+<ul><li> COPASI would crash when doing a stochastic simulation if one of the reactions was a constant flux kinetic type.
+</li><li> If a user would change the Interval Time in the Time Course widget, and then immediately after would run the simulation, COPASI would crash.
+</li><li>A crash would ocurre if a user deleted a report definition and the simulation was still defined to use it. Currently, if a user intends to delete a report, a dialog box informs of the consequences and if the user accepts, all plots that would follow this definition are deleted.
+</li><li> After creating a new model, then switching to the trajectory task widget and then to the compartment widget, COPASI would crash.
+</li><li> When an object was removed but it previously had a slider, then activating the slider dialog would crash COPASI.
+</li><li> If the user specified too small an interval size for output, COPASI would stop with an overflow error.
+</li><li> Read-only files are now correctly handled: only save-as dialog is now displayed (as file cannot be overwritten anyway).
+</li><li> When exporting a model to SBML, the file dialog now has a default file name created from the main model's name.
+</li><li> The timestamp is now correctly written in SBML export files.
+</li><li> COPASI was not reading appropriately some units in SBML files.
+</li><li> The abbreviation for the time unit &quot;minute&quot; was corrected to &quot;min&quot; to adhere to the SI standard.
+</li><li> The activity status of plots is now read correctly from a COPASI file: non-active plots are now not drawn, only plots with active status are displayed.
+</li><li> All the result tables are now read-only.
+</li><li> If a file was saved with the &quot;save as&quot; option, the program would not change the file name displayed to the new file name.
+</li><li> The stochastic integrator was reporting more time points than requested by the user.
+</li><li> The standard time course plot was including fixed metabolite concentrations; this is no longer the case.
+</li><li> In some circumstances the integrator could enter an infinite loop.
+</li><li> Scan widgets did not have a &quot;Task executable&quot; check box.
+</li><li> In some rare circumstances COPASI would not really change the value of a parameter when the user had changed it in a edit box.
+</li><li> The behavior of the object select widget was enhanced.
+</li><li> Results saved to file with the &quot;Save to file&quot; button, are now tab separated files and the column name is more consistent with the table in COPASI.
+</li><li> If the compartment for a metabolite was changed, COPASI would not immediately adjust the concentration of the metabolite.
+</li><li> Slider behavior was enhanced.
+</li></ul>
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

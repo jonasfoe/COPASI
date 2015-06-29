@@ -1,0 +1,55 @@
+---
+title: "COPASI 4 13 Build 87"
+structure: "Change_History"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="span_style_color_000088_Version_4_13_87_span_"><span style="color:#000088;">Version 4.13.87</span></h3>
+Release Date: August 14, 2014<br />
+<h4 name="New_Features_since_COPASI_4_12_Build_81_">New Features since COPASI 4.12 (Build 81)</h4>
+<ul><li> Graphical User Interface (CopasiUI)
+<ul><li> Copy feature implemented for reports and plots
+</li></ul></li><li> Simulation Engine
+<ul><li> The parameter task can now save multiple parameter set for each fitted experiment.
+</li></ul></li></ul>
+<h4 name="Bug_Fixes_since_COPASI_4_12_Build_81_">Bug Fixes since COPASI 4.12 (Build 81)</h4>
+<ul><li> Graphical User Interface (CopasiUI)
+<ul><li> In some situations it was not possible to assign kinetics with multiple modifiers to a reaction since the reaction did not list the modifiers. Now the reaction is updated once the modifiers are selected.
+</li><li> Improved graphical presentation of mathematical expression using if statements.
+</li><li> The selection dialog for dependent experimental data no longer shows constant objects.
+</li><li> Improved auto layout for models containing multiple compartments.
+</li><li> Fixed crash when duplicating compartments.
+</li><li> Fixed editing issue when creating new reference or relationship annotation which caused an additional insert.
+</li><li> Improved cut and paste functionality in the mathematical expression editor to properly recognize species with compartment information.
+</li></ul></li><li> Simulation Engine
+<ul><li> The arguments for the log normal sampling (mean and standard deviation) are now correctly interpreted in the scan task, i.e., the log of the sampled parameter has the specified mean and standard deviation.
+</li><li> Corrected problem when loading models with non default Avogadro constants.
+</li><li> Fixed problem which could lead to saving outdated initial conditions and parameters after a task with update model enabled was executed.
+</li><li> The performance statistics for the optimization task are now correctly calculated, i.e., the CPU time is measured correctly.
+</li><li> During parameter estimation the time course task update model flag is no always set to false which is the expected behavior.
+</li></ul></li><li> SBML
+<ul><li> Improved import of hierarchical composition models by creating more user friendly names.
+</li><li> Fixed problem exporting the model history annotation if it is only partially specified.
+</li></ul></li><li> Language Bindings
+<ul><li> A crash in the language bindings used by 3rd party tools (CellDesigner) has been resolved.
+</li><li> Added methods  which make it easier to update all dependent initial values once a values is changed.
+</li></ul></li><li> Source package
+<ul><li> Fixed build under MacOS X which in some situations attempted to use lapack instead of the Accelerate framework.
+</li></ul></li></ul>
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

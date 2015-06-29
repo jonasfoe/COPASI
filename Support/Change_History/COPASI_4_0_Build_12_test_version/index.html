@@ -1,0 +1,55 @@
+---
+title: "COPASI 4 0 Build 12 test version"
+structure: "Change_History"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="span_style_color_000088_COPASI_4_0_Build_12_test_version_span_"><span style="color:#000088;">COPASI (4.0 Build 12 test version)</span></h3>
+<h4 name="Release_Date_Feb_18_2005">Release Date: Feb. 18, 2005</h4>
+<h4 name="New_Features">New Features</h4>
+<ul><li>Sliders for interactive parameter changes and simulation
+</li><li>COPASI now lists all reactions that a metabolite enters, when in the metabolite widget.
+</li><li>Particle numbers are now counted on 64 bit integers
+</li><li>COPASI's SBML files now indicate in a comment that they were written by COPASI.
+</li><li>The directory structure of COPASI installations was unified to be consistent across all systems
+</li><li>A Linux dynamic library build is now being distributed, this avoids some problems with Linux installations that have older glibc libraries.
+</li></ul>
+<h4 name="Bug_Fixes">Bug Fixes</h4>
+<ul><li>If a report for a time series was created and then deleted, COPASI would crash leaving an incomplete file.
+</li><li>COPASI would crash when trying to open a non-existing file.
+</li><li>Sometimes there would be big rounding errors when changing initial concentrations (e.g. 4.0001 instead of 4.0).
+</li><li>A dialog box saying &quot;no output specified&quot; would be displayed even if a report had been defined.
+</li><li>SBML export was broken when some special characters were included in notes or names.
+</li><li>SBML export was not fully compliant with schema (&lt;body&gt; tag, and constant metabolites)
+</li><li>Importing some SBML files would crash COPASI.
+</li><li>COPASI was leaving out the comments in an SBML file on import.
+</li><li>A plot title would not be updated in the plot, after a change in the plot definition.
+</li><li>The special identifier <i>Pi</i> in sbml files was incorrectly handled by COPASI.
+</li><li>After pressing <i>enter</i> in a listview, the focus was not consistent.
+</li><li>Reaction parameters could not be selected in the object browser.
+</li><li>Compartments were deleted without confirmation; since this is potentially a  of compartment delete.
+</li><li>When a steady state was not found, there was no clear indication on the front-end. Now COPASI clearly indicates that no steady state was found.
+</li><li>COPASI now only requires a single environment variable (COPASIDIR) on all platforms.
+</li><li>COPASI was allowing several object browser windows to open simultaneously. Only one object browser window can be open at any single time.
+</li><li>In some rare conditions an object could be created in duplicate (eg by trying to <i>save as</i>, canceling and only then comiting a new object.
+</li><li>If an object was used in more than one plot, COPASI could plot the wrong curve.
+</li><li>If COPASI was called on the command line with a file name as argument, when that file would not exist, COPASI would crash.
+</li><li>The steady state widget would not commit changes when the user left the widget.
+</li></ul>
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

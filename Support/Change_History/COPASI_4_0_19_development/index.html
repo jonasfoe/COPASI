@@ -1,0 +1,50 @@
+---
+title: "COPASI 4 0 19 development"
+structure: "Change_History"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<h3 name="span_style_color_000088_Version_4_0_19_development_span_"><span style="color:#000088;">Version 4.0.19 (development)</span></h3>
+<h4 name="Release_Date_October_6_2006">Release Date: October 6, 2006</h4>
+<h4 name="New_Features">New Features</h4>
+<ul><li> <span style="color:#BB0000;"><b>Assignment and ODE rules</b></span> are now available for global quantities.
+</li><li> New optimization methods <span style="color:#BB0000;"><b>Nelder &amp; Mead</b></span> and <span style="color:#BB0000;"><b>Simulated Annealing</b></span>.
+</li><li> The user is now able to <span style="color:#BB0000;"><b>control the weights</b></span> used in parameter estimation.
+</li><li> The user has now direct control of the <span style="color:#BB0000;"><b>starting values</b></span> for parameter estimation and optimization.
+</li><li> Export in <span style="color:#BB0000;"><b>XPPAUT format</b></span>.
+</li><li> Improved editing of mathematical expression avoids input errors.
+</li><li> The optimization and parameter estimation tasks display now a <span style="color:#BB0000;"><b>count of adjustable parameters</b></span>.
+</li><li> Added a message box displaying problems which COPASI may have encountered when starting the GUI application.
+</li></ul>
+<h4 name="Bug_Fixes">Bug Fixes</h4>
+<ul><li> Fixed <span style="color:#BB0000;"><b>interface of elementary flux modes</b></span> to allow scheduling of the task and printing of results including a total count of flux modes.
+</li><li> Improved <span style="color:#BB0000;"><b>table display of functions</b></span>, which had line breaks in their mathematical expression.
+</li><li> Improved layout of <span style="color:#BB0000;"><b>experimental data dialog</b></span>.
+</li><li> Fixed crash caused by committing an invalid expression for a function.
+</li><li> Fixed problem assigning kinetic function to reaction with <span style="color:#BB0000;"><b>non integer stoichiometry</b></span>.
+</li><li> The display status (shown/hidden) of a curve in a plot is no preserved when a task is rerun.
+</li><li> Fixed crash when a product appeared as a parameter for the kinetic function in a irreversible reaction.
+</li><li> Fixed crash caused by sliders referring to no longer existing objects.
+</li><li> Fixed Madonna export of time parameter for explicitly time dependent models.
+</li><li> Improved check before deleting objects like compartments or metabolites to avoid crashes.
+</li><li> Fixed crashes related to viewing <span style="color:#BB0000;"><b>outdated results</b></span>, which have been obtained through task execution before the model has been changed.
+</li><li> Improved SBML import of function definitions.
+</li><li> Fixed <span style="color:#BB0000;"><b>international character support</b></span> in all filenames.
+</li><li> Fixed crash of stochastic simulation for empty models.
+</li></ul>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

@@ -18,9 +18,8 @@ structure: "Multistate_Model_Builder"
 </li><li><a href='#Events' class='link'>Events</a>
 </li><li><a href='#Export_to_a_single_state_model' class='link'>Export to a single state model</a>
 </li></ul>
-</span><br />
-<br />
-
+</span>
+<a name="Species_Compartments_and_Global_quantities" ></a><h2 name="Species_Compartments_and_Global_quantities">Species, Compartments and Global quantities</h2>
 <br />
 One of the first steps in writing a model in MSMB is defining the species that are involved in the system.<br />
 <br />
@@ -110,7 +109,7 @@ The rules to define Compartments and Global Quantities are very similar to the o
 <br />
 <br />
 <br />
-<h2 name="Reactions">Reactions</h2>
+<a name="Reactions" ></a> <h2 name="Reactions">Reactions</h2>
 <br />
 The <i>Reactions</i> tab is the place used to describe the chemical interactions between the Species of the model.<br />
 The figure below shows the list of reactions defining the small model presented in Section <a title="COPASI: Projects/Multistate Model Builder/First multistate model" href="{{ site.baseurl }}/Projects/Multistate_Model_Builder/First_multistate_model" >First multistate model</a>.<br />
@@ -146,7 +145,7 @@ Cdh1 (ClbM + Cdh1(p{0:10}) -> ClbM + Cdh1(succ(p))): the reason for the inconsis
 <br />
 Finally, as a last note, the tool supports only irreversible reactions: the import of any SBML/COPASI model containing reversible reactions will result in an automatic split of those into the two equivalent irreversible reactions.<br />
 <br />
-<h2 name="Complexes">Complexes</h2>
+<a name="Complexes" ></a><h2 name="Complexes">Complexes</h2>
 As mentioned in a previous section, MSMB define a notion of <i>Complex</i>, which is a Species composed of different other Species connected to form a single unit. The Complex &mdash; as we interpret it &mdash; can be seen as a regular species (in the sense that it can be used in any context in which a regular species appears) but with the advantage that if one of its component is changed by the user (i.e. renamed, states' changes for a multistate, etc.) those changes are seamlessly carried to all the complexes that contain that modified species. We don't keep track of individual bonds formation/breakage but we help the user managing complex formation/breakage through the usage of the "Complex builder" window.<br />
 <br />
 <span class="img"><img alt="" src="ComplexBuilder.png" border="0"  width="50%" /></span><br />
@@ -180,7 +179,7 @@ They are two multistate reactions (because one of the components is a multistate
 <br />
 The last important note is that if the user tries to add the same multistate species more than once, a warning message will be prompted because aliases are needed to have a non-ambiguous set of reactants in the complexation reaction. Aliases are just local names that are used to refer to different instances of the same multistate species (e.g. an homodimerization reaction looks like A1=SpA(p{0:10}) + A2=SpA(p{0:10}) -> Dimer(site1=A1.p;site2=A2.p) and A1 and A2 are the local aliases). For more information about aliases, see Section <a title="COPASI: Projects/Multistate Model Builder/Multistate Species and Reactions syntax" href="{{ site.baseurl }}/Projects/Multistate_Model_Builder/Multistate_Species_and_Reactions_syntax" >Multistate Species and Reactions syntax</a>.<br />
 <br />
-<h2 name="Functions">Functions</h2>
+<a name="Functions" ></a><h2 name="Functions">Functions</h2>
 <br />
 The <i>Functions</i> table contains the definition of custom, model-specific mathematical expressions that can be used as rate laws or in any other field where an expression is allowed. Since MSMB takes advantage of the COPASI API and COPASI has a set of built-in functions, in the lower part of the <i>Functions</i> tab the user will see the complete set of available COPASI functions. Those elements cannot be modified but the user can use them as they are for kinetic laws or in other mathematical expressions.<br />
 <br />
@@ -247,7 +246,7 @@ There are two ways for assigning roles to the different arguments of a function:
 <b>Keywords</b> defining the different roles that an argument in a function can assume. Note that if the generic <code>VAR</code> type is chosen instead of specific ones, no consistency checks can be performed for that argument (except checking that something with that name exists in the model). So if the user defines a reaction like <code>a + b -> c</code> and assigns to it the generic version of the <code>rateLaw</code> function defined above, the software cannot identify the following misuse of the function:  <code>rateLaw(2,c,a)</code>. If, instead, the user uses the specific <code>GLQ</code>, <code>SUB</code>, <code>PROD</code> types, the usage of rateLaw as  <code>rateLaw(2,c,a)</code> will generate an "Inconsistency" error because the second parameter should be a reactant and the third a product (and not viceversa)
 <br/>
 
-<h2 name="Events">Events</h2>
+<a name="Events" ></a><h2 name="Events">Events</h2>
 
 This table allows the user to define events that are triggered during a simulation of the model. The classical fields needed to define an event in an SBML model are the <i>Trigger expression</i>, the <i>Actions</i> that has to occur once the trigger conditions are met and the possible <i>Delay</i> expression that accounts for the waiting time before the actual occurrence of the event. In the <i>Trigger expression</i> a mathematical expression evaluating to a boolean should be provided. It can refer to any element of the model and can contain boolean operators (like &amp;&amp;, ||, etc). Some examples of events definitions are provided in the table below.
 
@@ -268,7 +267,7 @@ The <i>Delay</i> field can contain any mathematical expression evaluating to a r
 <br/>
 There is one more flag that the modeler can associate to a single event definition and this flag is specific to MSMB: the Expand Actions Concentrations (<i>ExpAct.c</i>) check-box. This check-box helps the user to deal with the way in which COPASI (as other SBML tools) deals with events that involve changes of volume by an event. If one of the "Actions" is a reassignment of a compartment size value (e.g. volume divided by 2), its effect is not propagated automatically to the species contained in the compartment: the particle number will be the same after the division event, and this will cause the concentration to double. If the effect that the user wants to obtain as cell division is to divide also the particle number by two, this has to be explicitly told to the tool. However the assignments can only refer to concentration levels, so to obtain the same effect as dividing the particle number by two, the user can simply assign as a new concentration level, the same value as the one before the division. In COPASI this has to be done manually for all the species in the compartment that is divided by the event, but in order to facilitate the user to obtain this effect (which is pretty common in models of cell cycle regulation) we added the "ExpAct.c" check-box. If the user specifies, between the "Actions", an assignment involving a compartment and then s/he activates this check-box, at export time this event will be expanded to contain the action on the compartment together with the list of recalculation of all the concentration values of the species  belonging to that compartment: in this way the tedious and error prone process or listing all the species whose particle number needs to be recalculated is left to the tool.
 
-<h2 name="Export_to_a_single_state_model">Export to a single state model</h2>
+<a name="Export_to_a_single_state_model" ></a><h2 name="Export_to_a_single_state_model">Export to a single state model</h2>
 MSMB provides options to save models in multistate format for future editing (the typical extension for those files is .msmb). However the tool also allows the automatic conversion of a multistate model into standard SBML/COPASI format, expanding all the multistate reactions/species into the corresponding single states one. In this way a multistate model generated with  can be imported in any simulator/analysis tool able to handle standard SBML models.<br />
 The expanded exported model will follow some specific conventions for species and reactions names (i.e. the same used in defining the model in ) and those elements will be annotated with specific SBML annotations so that if the user decides to bring the models back into our tool, the multistate species/reactions will be back again.
 <br/>
