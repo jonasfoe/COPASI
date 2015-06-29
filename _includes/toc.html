@@ -1,20 +1,14 @@
-{% for item in site.data.structure %}
-  {% if page.structure == item[0] %}
-    {% assign cps_structure = item[1] %}
-    {% break %}
-  {% endif %}
-{% endfor %}
-
 {% assign cps_page = cps_path | last | prepend: '/' %}
 {% assign cps_parent_url = cps_url | remove: cps_page | append: '/' %}
 {% assign cps_parent_url_size = cps_url | size %}
-{% assign cps_indent_count = 0 %}
+{% assign cps_indent_count = cps_url | split: '/' | size %}
 
 {% for item in cps_structure.pages %}
   {% assign path_begin = item.path | truncate: cps_parent_url_size, '' %}
+  {% assign url_size = item.path | size %}
 
-  {% if cps_url == path_begin %}
-    {% assign indent_count = item.path | remove: cps_parent_url | split: '/' | size | minus: 1 %}
+  {% if cps_url == path_begin and cps_parent_url_size < url_size %}
+    {% assign indent_count = item.path | remove: cps_parent_url | split: '/' | size %}
     {% assign delta = indent_count | minus: cps_indent_count %}
 
     {% case delta %}
@@ -22,7 +16,7 @@
       {% assign  cps_indent_count = cps_indent_count | plus: 1 %}
     <ul><li><a href="{{ site.baseurl }}/{{ item.path }}">{{ item.title }}</a></li>
     {% when 0 %}
-      {% if cps_indent_count > 0 %}<li><a href="{{ site.baseurl }}/{{ item.path }}">{{ item.title }}</a</li>{% endif %}
+      <li><a href="{{ site.baseurl }}/{{ item.path }}">{{ item.title }}</a</li>
     {% when -1 %}
       {% assign  cps_indent_count = cps_indent_count | minus: 1 %}
       </ul><li><a href="{{ site.baseurl }}/{{ item.path }}">{{ item.title }}</a</li>
