@@ -18,6 +18,7 @@
 {% for item in cps_structure.pages %}
   {% if cps_home == '' %}
     {% assign cps_home = item %}
+    {% assign cps_home_length = cps_home.path | split: '/' | size %}
   {% endif %}
   {% if cps_parent == '' and item.path == cps_parent_url %}
     {% assign cps_parent = item %}
@@ -43,6 +44,7 @@
     {% assign cps_navigation = true %}
   {% endif %}
 {% endif %}
+
 
 <div class="container">
   <div class="row">
@@ -76,9 +78,7 @@
   </div>
   <div class="row">
     <div class="col-xs-12">
-{% for dummy in cps_path %}{% if forloop.first == false %}
-{% capture current_path %}{% for item in cps_path limit: forloop.index %}{% if forloop.first == false %}/{% endif %}{{ item }}{% endfor %}{% endcapture %}
-<a href="{{ site.baseurl }}/{{ current_path }}">{% for item in cps_structure.pages %}{% if current_path == item.path %}{{ item.title }}{% break %}{% endif %}{% endfor %}</a>{% if forloop.last == false %} | {% endif %}{% endif %}{% endfor %}
+{% for dummy in cps_path %}{% if forloop.index >= cps_home_length %}{% capture current_path %}{% for item in cps_path limit: forloop.index %}{% if forloop.first == false %}/{% endif %}{{ item }}{% endfor %}{% endcapture %}<a href="{{ site.baseurl }}/{{ current_path }}">{% for item in cps_structure.pages %}{% if current_path == item.path %}{{ item.title }}{% break %}{% endif %}{% endfor %}</a>{% if forloop.last == false %} | {% endif %}{% endif %}{% endfor %}
     </div>
   </div>
   <div class="row">
