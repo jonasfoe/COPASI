@@ -1,4 +1,4 @@
-{% assign cps_url =  page.url | remove_first: '/' | remove: '/index.html' %}
+{% assign cps_url =  page.url | remove: '/index.html' | remove_first: '/' %}
 {% assign cps_path = cps_url | split: '/' %}
 
 <!DOCTYPE html>
@@ -23,7 +23,7 @@
     <script src="{{ site.baseurl }}/stylesheets/bootstrap-3.3.4/js/bootstrap.js"></script>
     <script src="{{ site.baseurl }}/javascripts/email.js"></script>
 
-    <title>COPASI: {{ cps_url | replace: '_', ' ' }}</title>
+    <title>COPASI{% if cps_url != '' %}: {{ cps_url | replace: '_', ' ' }}{% endif %}</title>
   </head>
   <body>
 
