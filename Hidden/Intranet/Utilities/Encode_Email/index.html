@@ -1,0 +1,85 @@
+---
+title: "Encode Email"
+structure: "Intranet"
+sitemap: false
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <table width="600">
+          <tr>
+            <td bgcolor="#6C3C9E">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td width=10>&nbsp;</td>
+            <td>
+              
+              <h2>Automatic Email Protection</h2>
+              <p>This page allows you to convert email addresses into an encoded form suitable for
+                inclusion on a web site. The encoded addresses work just like normal mailto links, but
+                are much harder for spam harvesters to read. For more information, see 
+                <a href="http://www.bronze-age.com/nospam/index.html" target="_balank" >my introduction</a> to anti-spam email encoding.</p>
+              
+              <p>To use this page, simply enter email addresses into the input pane on the left below, one
+                per line. There are two acceptable forms:</p>
+              
+              <ol>
+                <li>Simple email address, e.g. <code>fred.bloggs@fake.address9z.com</code></li>
+                <li>An email address plus display name, e.g. <code>Fred Bloggs &lt;fred.bloggs@fake.address9z.com&gt;</code></li>
+              </ol>
+              
+              <p>The latter is the normal format for quoting email addresses plus display name, so
+                you should be able to copy and paste directly from your address book or similar. When
+                encoded, the display name will appear to the website reader as the content of the mailto
+                link, whilst the email address itself will be encoded as the target of the link.</p>
+              
+              <form name="auto">
+                <table>
+                  <tr><td align="center">Enter email addresses here:</td><td align="center">Encoded links:</td></tr>
+                  <tr>
+                    <td><textarea cols="40" rows="24" name="input" wrap="off" onkeypress="clearOutput()"></textarea></td>
+                    <td><textarea cols="40" rows="24" name="output" wrap="off" readonly></textarea></td>
+                  </tr>
+                  <tr>
+                    <td colspan=2 align="center"><input type="button" name="makeMail" value="Encode mail links" onclick="encodeLinks()"></td>
+                  </tr>
+                </table>
+              </form>
+              
+              <p>After pressing the "Encode mail links" button you can highlight and copy the output
+in the right-hand pane above, and simply paste into your HTML code.
+              </p>
+              
+              <p>
+                To use the encoded links, you must have the latest version of my <code>email.js</code>
+                script file - you can download it here: <a href="{{ site.baseurl }}/javascripts/email.js">email.js</a>. Make sure the
+                comment at the start of the file says version 5 or higher. You will also need to reference
+                this file in the HEAD section of every web page that uses encoded links, like so:
+              </p>
+              
+              <pre>&lt;script language="javascript" src="{{ site.baseurl }}/javascripts/email.js"&gt;&lt;/script&gt;</pre>
+              
+              <p>Be careful that the path to the email.js file is correct - in the example above I've
+                assumed you've put it into a top-level "scripts" directory in your site.</p>
+              
+              <p>Any problems, let me know on <script>mail("mbd","snowtiger",2,"")</script>.
+              </p>
+              
+              <hr>
+              <p align="right">MBD August 2003</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script language="javascript" src="{{ site.baseurl }}/javascripts/encode.js"></script>
+
+<!-- FOOTER  -->
+{% include footer.html %}
