@@ -1,0 +1,43 @@
+pages:
+- path: Events
+  title: "Events"
+- path: Events/Past_Events
+  title: "Past Events"
+- path: Events/Past_Events/COPASI_User_Workshop_VBI_2014
+  title: "COPASI User Workshop Arlington Va. USA, 2014"
+- path: Events/Past_Events/COPASI_User_Workshop_Manchester_September_2013
+  title: "COPASI User Workshop Manchester September 2013"
+- path: Events/Past_Events/COPASI_User_Workshop_Manchester_September_2013/User_Feedback_Sep2013
+  title: "User Feedback (Sep2013)"
+- path: Events/Past_Events/COPASI_User_Workshop_VBI_July_2013
+  title: "COPASI User Workshop VBI July 2013"
+- path: Events/Past_Events/COPASI_User_Workshop_VBI_July_2013/Agenda
+  title: "Agenda"
+- path: Events/Past_Events/COPASI_User_Workshop_VBI_July_2013/Materials
+  title: "Materials"
+- path: Events/Past_Events/COPASI_User_Workshop_Manchester_January_2013
+  title: "COPASI User Workshop Manchester January 2013"
+- path: Events/Past_Events/COPASI_User_Workshop_2011
+  title: "COPASI User Workshop 2011"
+- path: Events/Past_Events/COPASI_User_Workshop_2011/Agenda
+  title: "Agenda"
+- path: Events/Past_Events/COPASI_User_Workshop_2010
+  title: "COPASI User Workshop 2010"
+- path: Events/Past_Events/COPASI_User_Workshop_2010/Agenda
+  title: "Agenda"
+- path: Events/Past_Events/COPASI_User_Workshop_2009
+  title: "COPASI User Workshop 2009"
+- path: Events/Past_Events/COPASI_User_Workshop_2009/Agenda
+  title: "Agenda"
+- path: Events/Past_Events/COPASI_User_Workshop_2008
+  title: "COPASI User Workshop 2008"
+- path: Events/Past_Events/COPASI_User_Workshop_2008/Agenda
+  title: "Agenda"
+- path: Events/Past_Events/ICSB_2007_Tutorial
+  title: "ICSB 2007 Tutorial"
+- path: Events/Past_Events/Computational_Cell_Biology_2007
+  title: "Computational Cell Biology 2007"
+- path: Events/Past_Events/ICSB_2006_Introduction_Tutorial
+  title: "ICSB 2006 Introduction Tutorial"
+- path: Events/Past_Events/ICSB_2006_Advanced_Tutorial
+  title: "ICSB 2006 Advanced Tutorial"

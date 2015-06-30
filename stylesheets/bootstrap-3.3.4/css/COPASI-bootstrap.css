@@ -5659,3 +5659,141 @@ DIV.latex {
         display: none;
 }
 
+/***** Slideshow w Timer *****/
+
+.slideshow {
+    text-align: center;
+    color: #fff;
+}
+
+.inner-bg {
+    padding: 55px 0 60px 0;
+    background: url(../img/pattern-3.png);
+    -moz-box-shadow: 0 1px 5px 0 rgba(0,0,0,.3) inset;
+    -webkit-box-shadow: 0 1px 5px 0 rgba(0,0,0,.3) inset;
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,.3) inset;
+}
+
+.slideshow h2 {
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-shadow: 0 1px 10px rgba(0,0,0,2);
+}
+
+.slideshow p {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 36px;
+    text-shadow: 0 1px 10px rgba(0,0,0,2);
+}
+
+.timer {
+    margin-top: 40px;
+    text-shadow: 0 1px 5px rgba(0,0,0,.1);
+}
+
+.timer .weeks-wrapper,
+.timer .days-wrapper,
+.timer .hours-wrapper,
+.timer .minutes-wrapper,
+.timer .seconds-wrapper {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: 0 10px;
+    padding-top: 20px;
+    background: #7F0200; /* browsers that don't support rgba */
+    background: rgba(127,2,0,.7);
+    font-size: 12px;
+	font-weight: bold;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+}
+
+.timer .weeks-wrapper:hover,
+.timer .days-wrapper:hover,
+.timer .hours-wrapper:hover,
+.timer .minutes-wrapper:hover,
+.timer .seconds-wrapper:hover {
+    background: #e75967;
+    text-shadow: none;
+}
+
+.timer .weeks,
+.timer .days,
+.timer .hours,
+.timer .minutes,
+.timer .seconds {
+    font-size: 35px;
+    line-height: 40px;
+}
+
+/***** Media Queries *****/
+
+@media (min-width: 768px) and (max-width: 979px) {
+    .timer .weeks-wrapper,
+    .timer .days-wrapper,
+    .timer .hours-wrapper,
+    .timer .minutes-wrapper,
+    .timer .seconds-wrapper {
+        width: 80px;
+        height: 80px;
+        margin: 0 5px;
+        padding-top: 25px;
+        -moz-border-radius: 50px;
+        -webkit-border-radius: 50px;
+        border-radius: 50px;
+    }
+    .timer .weeks,
+    .timer .days,
+    .timer .hours,
+    .timer .minutes,
+    .timer .seconds {
+        font-size: 28px;
+        line-height: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .inner-bg {
+        padding: 45px 0 50px 0;
+    }
+    .slideshow h2 {
+        font-size: 36px;
+        padding: 0 20px;
+    }
+    .slideshow p {
+        padding: 0 20px;
+    }
+    .timer .weeks-wrapper,
+	.timer .days-wrapper,
+    .timer .hours-wrapper,
+    .timer .minutes-wrapper,
+    .timer .seconds-wrapper {
+        width: 70px;
+        height: 70px;
+        margin: 5px;
+        padding-top: 22px;
+        -moz-border-radius: 40px;
+        -webkit-border-radius: 40px;
+        border-radius: 40px;
+    }
+    .timer .weeks,
+    .timer .days,
+    .timer .hours,
+    .timer .minutes,
+    .timer .seconds {
+        font-size: 20px;
+        line-height: 8px;
+    }
+    .content h3 {
+        padding: 10px 0;
+        font-size: 28px;
+    }
+    .content p {
+        padding: 0 20px;
+    }
+}
+
