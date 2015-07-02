@@ -2,7 +2,7 @@
 title: Download
 section: Download
 ---
-<!-- HEADER -->
+
 {% include header.html %}
 {% include navbar.html %}
 
@@ -63,13 +63,17 @@ function suggest_package(release_idx) {
     }
     
     var sug_div = document.getElementById('suggest_div');
+    var dnld_name = document.getElementById('download_name');
     var dnld_lnk = document.getElementById('download_link');
     var dnld_btn = document.getElementById('download_button');
     var pltfrm_icon_code = '';
+
     if (icon_filename != 'none') {
         pltfrm_icon_code = '<img src="{{ site.baseurl }}/images/' + icon_filename + '">&nbsp';
     }
-sug_div.innerHTML = "<h3>Your browser reports it is running on " + pltfrm + ". You may want to download . . . <br /><br />" + pltfrm_icon_code + filename + "</h3>";
+
+    sug_div.innerHTML = "<h3>It seems your are running on " + pltfrm + ". You may want to download . . . </h3>";
+    dnld_name.innerHTML = "<h3>" + pltfrm_icon_code + filename + "</h3>"
     dnld_btn.title = 'Download ' + filename;
     dnld_btn.src = "{{ site.baseurl }}/images/download-button.png";
     dnld_lnk.href = dnld_url;
@@ -86,6 +90,23 @@ function load_releases(json_obj){
 }
 
 function update_packages() {
+    var regex_darwin_64 = /(darwin|macosx).*64/i;
+    var regex_darwin = /(darwin|macosx|tiger|leopard)/i;
+    var regex_linux_64 = /linux.*64/i;
+    var regex_linux_32  = /linux/i;
+    var regex_SunOS = /sunos/i;
+    var regex_source = /(src|source)/i;
+    var regex_Windows_64 = /win.*64/i;
+    var regex_Windows_32 = /win.*32/i;
+    var regex_Windows = /win/i;
+
+    var regex_AllSE = /AllSE/;
+    var regex_java = /java/i;
+    var regex_python = /python/i;
+    var regex_perl = /perl/i;
+    var regex_csharp = /(mono|C.-Bindings)/;
+    var regex_documentation = /\.pdf$/i;
+
     var vsltr = document.getElementById('version_selector');
     var release_idx = vsltr.selectedIndex;
     
@@ -95,42 +116,65 @@ function update_packages() {
 
     // assets are the files available under a release
     var assets = github_json[release_idx]['assets'];
-    var div_txt = '<table><tr><th>Platform</th><th>File</th></tr>';
+    var div_txt = '<table class="table display" id="download_table"><thead><tr><th>Content</th><th>Platform</th><th>File</th></thead></tr>';
     var clean_fn, notes;
     for (asset_idx in assets) {
         filename = assets[asset_idx]['name'];
         dnld_url = assets[asset_idx]['browser_download_url'];
         clean_fn = filename.replace('opasi-64', 'opasi').replace('opasi-32', 'opasi').toLowerCase();
 
-        if (clean_fn.match('allse')) {
-            notes = "Simulation Engines for all platforms<br />(for use in heterogenous clusters)"
-        } else if (clean_fn.match('darwin')) {
-            notes = 'Mac OS X (10.6 and above)';            
-        } else if (clean_fn.match('linux')) {
-            notes = 'Linux';
-        } else if (clean_fn.match('win')) {
-            notes = 'Windows';
-        }else if (clean_fn.match('source') || clean_fn.match('src')) {
-            notes = 'source code';
-        }
-        
-        if (clean_fn.match('32')) {
-            notes = notes + ' 32-bit';
-        } else if (clean_fn.match('64')) {
-            notes = notes + ' 64-bit';
-        }
-        
-        if (clean_fn.match('dynamic')) { notes = notes + ' dynamic';}
-        
+        var Platform = 'Any OS';
+
+        if (regex_darwin_64.test(filename)) {
+           Platform = 'Mac OS X 64-bit';
+        } else if (regex_darwin.test(filename)) {
+           Platform = 'Mac OS X';
+        } else if (regex_linux_64.test(filename)) {
+           Platform = 'Linux 64-bit';
+        } else if (regex_linux_32.test(filename)) {
+           Platform = 'Linux 32-bit';
+        } else if (regex_SunOS.test(filename)) {
+           Platform = 'Sun OX';
+        } else if (regex_source.test(filename)) {
+           Platform = 'Source Code';
+        } else if (regex_Windows_64.test(filename)) {
+           Platform = 'Windows 64-bit';
+        } else if (regex_Windows_32.test(filename)) {
+           Platform = 'Windows 32-bit';
+        } else if (regex_Windows.test(filename)) {
+           Platform = 'Windows';
+        } 
+
+        var Use = 'COPASI';
+
+        if (regex_AllSE.test(filename)) {
+          Use = 'Simulation Engines for all platforms<br />(for use in heterogenous clusters)';
+        } else if (regex_documentation.test(filename)) {
+          Use = 'Documentation';
+        } else if (regex_java.test(filename)) {
+          Use = 'Language Bindings: Java';
+        } else if (regex_python.test(filename)) {
+          Use = 'Language Bindings: Python';
+        } else if (regex_perl.test(filename)) {
+          Use = 'Language Bindings: Perl';
+        } else if (regex_csharp.test(filename)) {
+          Use = 'Language Bindings: C#';
+        } 
+
         div_txt += '<tr>';
-        div_txt += '<td>' + notes + '</td>';
+        div_txt += '<td>' + Use + '</td>';
+        div_txt += '<td>' + Platform + '</td>';
         div_txt += '<td>' + '<a href=' + dnld_url + '> ' + filename + '</a> </td>';
         div_txt += '</tr>';
     }
-
     div_txt += '</table>';
-
     man_dnld_div.innerHTML = div_txt;
+
+    $('#download_table').dataTable( {
+        "searching": false,
+        "paging": false,
+        "orderFixed": [[ 0, "asc" ], [ 1, "asc" ]]
+    });
 }
 
 // This will run when the page is loaded, to get the github info.
@@ -155,22 +199,31 @@ AJAX_req.send();
 
 <div class="section">
   <div class="container">
-    <label for="version_selector">Version:</label>
-    <select id="version_selector" onchange="update_packages()" ;="">undefined<option value="COPASI 4.14 (Build 89)  "></select>
-    <br>
-    
-    <div id="suggest_div"></div>
-    <a id="download_link"><img id="download_button" alt="download button"></a>
-    
-    <br>
-    <br>
-    <br>
-    <p>Otherwise, choose a download from below.</p>
-    <div id="manual_dnld_div"></div>
-    <br>
-    <p>Go directly to our <a href="https://github.com/copasi/COPASI/releases" target="_blank">GitHub COPASI Releases page</a>,
-    if the above frame doesn't load correctly.</p>
-  
+    <div class="row">
+      <div class="col-xs-12">
+        <h4>
+          <label for="version_selector">Select Version:</label>
+          <select id="version_selector" onchange="update_packages()" ;="">undefined<option value="COPASI 4.14 (Build 89)  "></select>
+        </h4>
+        <div id="suggest_div"></div>
+      </div>
+      <div id="download_name" class="col-xs-12 col-sm-8">
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <a id="download_link"><img id="download_button" alt="download button"></a>
+        <br>
+        <br>
+      </div>
+      <div class="col-xs-12">
+        <h4>Otherwise, choose a download from below.</h4>
+        <div id="manual_dnld_div"></div>
+        <br>
+        <p>
+          Go directly to our <a href="https://github.com/copasi/COPASI/releases" target="_blank">GitHub COPASI Releases 
+            page</a>, if the above frame doesn't load correctly.
+        </p>
+      </div>
+    </div>
   </div>
 </div>
 
