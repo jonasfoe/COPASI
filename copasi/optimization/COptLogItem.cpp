@@ -59,7 +59,7 @@ const std::string COptLogItem::MsgIDHeader[] =
   "Generation %_iteration%: Fittest individual has not changed for the last %s% generations. %s%% random individuals created.",
 
   //HJ_steplength_lower_than_tol
-  "Iteration %_iteration%: Steplength lower than tolerance. Terminating.",
+  "Iteration %_iteration%: Step length lower than tolerance. Terminating.",
 
   //LM_hess_pos_def
   "Iteration %_iteration%: Hessian matrix is positive definite. Calculating gradient.",
