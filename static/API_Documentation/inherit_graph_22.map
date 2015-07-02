@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$d4/d76/classCCopasiAbstractArray.html" title="CCopasiAbstractArray" alt="" coords="6,97,154,124"/>
+<area shape="rect" id="node2" href="$db/dde/classCCopasiArray.html" title="CCopasiArray" alt="" coords="245,5,345,32"/>
+<area shape="rect" id="node3" href="$d6/d1c/classCCopasiMatrixInterface.html" title="CCopasiMatrixInterface\l\&lt; CMatrixType \&gt;" alt="" coords="217,57,373,98"/>
+<area shape="rect" id="node4" href="$d6/d1c/classCCopasiMatrixInterface.html" title="CCopasiMatrixInterface\l\&lt; CMatrix\&lt; C_FLOAT64 \&gt; \&gt;" alt="" coords="203,122,386,163"/>
+<area shape="rect" id="node5" href="$db/d78/classCCopasiVectorInterface.html" title="CCopasiVectorInterface\l\&lt; VectorType \&gt;" alt="" coords="215,187,374,229"/>
+</map>

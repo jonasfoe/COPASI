@@ -1,0 +1,31 @@
+<map id="CQTimeSeriesWidget.cpp" name="CQTimeSeriesWidget.cpp">
+<area shape="rect" id="node2" href="$d7/de6/CQTimeSeriesWidget_8h.html" title="CQTimeSeriesWidget.h" alt="" coords="265,88,420,115"/>
+<area shape="rect" id="node6" href="$d1/d16/CQTimeSeriesDM_8h.html" title="CQTimeSeriesDM.h" alt="" coords="2244,269,2379,296"/>
+<area shape="rect" id="node17" href="$d2/dba/CopasiFileDialog_8h.html" title="CopasiFileDialog.h" alt="" coords="519,88,647,115"/>
+<area shape="rect" id="node20" href="$d4/dfa/CQMessageBox_8h.html" title="CQMessageBox.h" alt="" coords="1831,88,1955,115"/>
+<area shape="rect" id="node22" href="$d5/de1/qtUtilities_8h.html" title="qtUtilities.h" alt="" coords="727,88,812,115"/>
+<area shape="rect" id="node31" href="$da/dc0/CTrajectoryTask_8h.html" title="trajectory/CTrajectoryTask.h" alt="" coords="1409,88,1591,115"/>
+<area shape="rect" id="node47" href="$db/d7e/CCrossSectionTask_8h.html" title="crosssection/CCrossSection\lTask.h" alt="" coords="1137,81,1319,122"/>
+<area shape="rect" id="node7" href="$df/d80/CQBaseDataModel_8h.html" title="copasi/UI/CQBaseDataModel.h" alt="" coords="2523,541,2721,568"/>
+<area shape="rect" id="node9" href="$d3/d29/listviews_8h.html" title="copasi/UI/listviews.h" alt="" coords="2739,632,2876,659"/>
+<area shape="rect" id="node14" href="$dc/df8/copasi_8h.html" title="copasi.h" alt="" coords="2331,715,2400,741"/>
+<area shape="rect" id="node23" href="$d9/df7/CCopasiParameter_8h.html" title="utilities/CCopasiParameter.h" alt="" coords="373,451,557,477"/>
+<area shape="rect" id="node26" href="$d4/d70/CCopasiContainer_8h.html" title="Header file of class CCopasiContainer. " alt="" coords="1147,541,1360,568"/>
+<area shape="rect" id="node30" href="$db/d45/CCopasiObjectName_8h.html" title="copasi/report/CCopasiObject\lName.h" alt="" coords="885,534,1072,575"/>
+<area shape="rect" id="node28" href="$dd/d9f/CCopasiObject_8h.html" title="copasi/report/CCopasiObject.h" alt="" coords="1507,632,1703,659"/>
+<area shape="rect" id="node32" href="$d9/d7d/CTrajectoryMethod_8h.html" title="trajectory/CTrajectoryMethod.h" alt="" coords="1265,179,1463,205"/>
+<area shape="rect" id="node36" href="$d2/d53/CCopasiTask_8h.html" title="copasi/utilities/CCopasi\lTask.h" alt="" coords="1144,353,1297,394"/>
+<area shape="rect" id="node39" href="$d3/d2b/CReadConfig_8h.html" title="copasi/utilities/CReadConfig.h" alt="" coords="1375,360,1567,387"/>
+<area shape="rect" id="node44" href="$d5/db7/CTimeSeries_8h.html" title="trajectory/CTimeSeries.h" alt="" coords="1643,360,1805,387"/>
+<area shape="rect" id="node33" href="$d2/d39/CCopasiMethod_8h.html" title="copasi/utilities/CCopasi\lMethod.h" alt="" coords="1036,262,1189,303"/>
+<area shape="rect" id="node41" href="$da/dd9/CVector_8h.html" title="copasi/utilities/CVector.h" alt="" coords="2083,541,2245,568"/>
+<area shape="rect" id="node34" href="$dc/d95/CCopasiParameterGroup_8h.html" title="copasi/utilities/CCopasi\lParameterGroup.h" alt="" coords="388,353,541,394"/>
+<area shape="rect" id="node35" href="$d9/d2d/CCopasiMessage_8h.html" title="copasi/utilities/CCopasi\lMessage.h" alt="" coords="784,625,937,666"/>
+<area shape="rect" id="node37" href="$d7/d0c/COutputHandler_8h.html" title="utilities/COutputHandler.h" alt="" coords="1587,541,1755,568"/>
+<area shape="rect" id="node38" href="$d4/d2f/CReport_8h.html" title="report/CReport.h" alt="" coords="1259,451,1375,477"/>
+<area shape="rect" id="node45" href="$de/d11/CState_8h.html" title="model/CState.h" alt="" coords="1745,451,1855,477"/>
+<area shape="rect" id="node46" href="$de/dbd/CMatrix_8h.html" title="utilities/CMatrix.h" alt="" coords="2223,451,2343,477"/>
+<area shape="rect" id="node48" href="$d8/d3f/CEvent_8h.html" title="Header file of class CEvent. " alt="" coords="807,360,960,387"/>
+<area shape="rect" id="node49" href="$d1/d06/CAnnotation_8h.html" title="copasi/model/CAnnotation.h" alt="" coords="425,541,607,568"/>
+<area shape="rect" id="node50" href="$d7/d51/CCopasiVector_8h.html" title="copasi/utilities/CCopasi\lVector.h" alt="" coords="807,443,960,485"/>
+</map>

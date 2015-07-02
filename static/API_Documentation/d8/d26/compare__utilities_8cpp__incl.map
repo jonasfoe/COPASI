@@ -1,0 +1,38 @@
+<map id="compare_utilities.cpp" name="compare_utilities.cpp">
+<area shape="rect" id="node3" href="$dc/d60/compare__utilities_8h.html" title="compare_utilities.h" alt="" coords="4034,411,4163,437"/>
+<area shape="rect" id="node8" href="$d0/d42/CNormalBase_8h.html" title="CNormalBase.h" alt="" coords="789,411,899,437"/>
+<area shape="rect" id="node9" href="$d4/dcd/CNormalFraction_8h.html" title="CNormalFraction.h" alt="" coords="626,328,755,355"/>
+<area shape="rect" id="node11" href="$db/d14/CNormalFunction_8h.html" title="CNormalFunction.h" alt="" coords="1556,328,1687,355"/>
+<area shape="rect" id="node13" href="$d2/d4d/CNormalSum_8h.html" title="CNormalSum.h" alt="" coords="1391,237,1500,264"/>
+<area shape="rect" id="node15" href="$d1/daa/CNormalProduct_8h.html" title="CNormalProduct.h" alt="" coords="602,237,728,264"/>
+<area shape="rect" id="node16" href="$d9/d77/CNormalLogical_8h.html" title="CNormalLogical.h" alt="" coords="1191,155,1314,181"/>
+<area shape="rect" id="node18" href="$db/d69/CNormalLogicalItem_8h.html" title="copasi/compareExpressions\l/CNormalLogicalItem.h" alt="" coords="856,230,1035,271"/>
+<area shape="rect" id="node19" href="$da/db9/CNormalChoiceLogical_8h.html" title="copasi/compareExpressions\l/CNormalChoiceLogical.h" alt="" coords="882,321,1062,362"/>
+<area shape="rect" id="node20" href="$d3/d08/CNormalChoice_8h.html" title="CNormalChoice.h" alt="" coords="1712,328,1835,355"/>
+<area shape="rect" id="node21" href="$df/d9d/CNormalGeneralPower_8h.html" title="CNormalGeneralPower.h" alt="" coords="1859,328,2022,355"/>
+<area shape="rect" id="node22" href="$d0/da3/CNormalItemPower_8h.html" title="CNormalItemPower.h" alt="" coords="170,237,314,264"/>
+<area shape="rect" id="node23" href="$de/d7c/CNormalItem_8h.html" title="copasi/compareExpressions\l/CNormalItem.h" alt="" coords="66,321,246,362"/>
+<area shape="rect" id="node24" href="$d9/d48/CNormalTranslation_8h.html" title="CNormalTranslation.h" alt="" coords="2093,237,2238,264"/>
+<area shape="rect" id="node27" href="$de/dfa/CEvaluationNode_8h.html" title="copasi/function/CEvaluation\lNode.h" alt="" coords="2260,321,2442,362"/>
+<area shape="rect" id="node28" href="$d4/d59/CEvaluationNodeObject_8h.html" title="CEvaluationNodeObject.h" alt="" coords="2392,411,2560,437"/>
+<area shape="rect" id="node30" href="$da/dea/ConvertToCEvaluationNode_8h.html" title="ConvertToCEvaluationNode.h" alt="" coords="338,237,527,264"/>
+<area shape="rect" id="node31" href="$d2/d4e/CCopasiTree_8h.html" title="copasi/utilities/CCopasi\lTree.h" alt="" coords="2391,230,2544,271"/>
+<area shape="rect" id="node34" href="$de/df6/CFunctionDB_8h.html" title="copasi/function/CFunctionDB.h" alt="" coords="3403,155,3602,181"/>
+<area shape="rect" id="node35" href="$d3/d46/CEvaluationTree_8h.html" title="function/CEvaluationTree.h" alt="" coords="3258,237,3434,264"/>
+<area shape="rect" id="node40" href="$d7/df5/CFunction_8h.html" title="copasi/function/CFunction.h" alt="" coords="2704,80,2886,107"/>
+<area shape="rect" id="node41" href="$d3/de1/CFunctionParameters_8h.html" title="function/CFunctionParameters.h" alt="" coords="2680,237,2886,264"/>
+<area shape="rect" id="node42" href="$d9/d59/CFunctionParameter_8h.html" title="function/CFunctionParameter.h" alt="" coords="2693,328,2894,355"/>
+<area shape="rect" id="node44" href="$de/d6b/ConverterASTNode_8h.html" title="copasi/sbml/ConverterASTNode.h" alt="" coords="312,80,526,107"/>
+<area shape="rect" id="node46" href="$d8/dff/CChemEq_8h.html" title="copasi/model/CChemEq.h" alt="" coords="2962,237,3132,264"/>
+<area shape="rect" id="node47" href="$db/d8d/CChemEqElement_8h.html" title="model/CChemEqElement.h" alt="" coords="3071,328,3247,355"/>
+<area shape="rect" id="node48" href="$d6/d90/CModel_8h.html" title="copasi/model/CModel.h" alt="" coords="3832,237,3987,264"/>
+<area shape="rect" id="node49" href="$d1/da3/CModelValue_8h.html" title="Header file of class CModelEntity and CModelValue. " alt="" coords="3933,328,4120,355"/>
+<area shape="rect" id="node50" href="$d9/df7/CCopasiParameter_8h.html" title="copasi/utilities/CCopasi\lParameter.h" alt="" coords="3500,321,3654,362"/>
+<area shape="rect" id="node10" href="$dc/df8/copasi_8h.html" title="copasi/copasi.h" alt="" coords="1392,411,1502,437"/>
+<area shape="rect" id="node29" href="$d7/d39/CEvaluationNodeOperator_8h.html" title="CEvaluationNodeOperator.h" alt="" coords="2133,411,2312,437"/>
+<area shape="rect" id="node36" href="$d4/d70/CCopasiContainer_8h.html" title="Header file of class CCopasiContainer. " alt="" coords="3549,411,3720,437"/>
+<area shape="rect" id="node37" href="$d7/d97/CCopasiRootContainer_8h.html" title="report/CCopasiRootContainer.h" alt="" coords="3558,237,3756,264"/>
+<area shape="rect" id="node38" href="$d7/d51/CCopasiVector_8h.html" title="copasi/utilities/CCopasi\lVector.h" alt="" coords="3322,321,3475,362"/>
+<area shape="rect" id="node39" href="$d3/d2b/CReadConfig_8h.html" title="utilities/CReadConfig.h" alt="" coords="2698,411,2848,437"/>
+<area shape="rect" id="node43" href="$dd/d7e/CCallParameters_8h.html" title="function/CCallParameters.h" alt="" coords="2658,155,2836,181"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="CModelEntity" name="CModelEntity">
+<area shape="rect" id="node6" href="$d4/dd4/classCCompartment.html" title="CCompartment" alt="" coords="5,304,115,331"/>
+<area shape="rect" id="node7" href="$dc/d44/classCMetab.html" title="CMetab" alt="" coords="139,304,205,331"/>
+<area shape="rect" id="node8" href="$d4/d04/classCModel.html" title="CModel" alt="" coords="229,304,296,331"/>
+<area shape="rect" id="node9" href="$d7/dec/classCModelValue.html" title="CModelValue" alt="" coords="320,304,419,331"/>
+<area shape="rect" id="node2" href="$d9/dfd/classCCopasiContainer.html" title="CCopasiContainer" alt="" coords="88,155,213,181"/>
+<area shape="rect" id="node3" href="$d4/da8/classCCopasiObject.html" title="CCopasiObject" alt="" coords="97,80,204,107"/>
+<area shape="rect" id="node4" href="$df/dfa/classCObjectInterface.html" title="CObjectInterface" alt="" coords="91,5,211,32"/>
+<area shape="rect" id="node5" href="$d8/dfc/classCAnnotation.html" title="CAnnotation" alt="" coords="237,155,331,181"/>
+</map>

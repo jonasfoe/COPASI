@@ -1,0 +1,22 @@
+<map id="plotwindow.cpp" name="plotwindow.cpp">
+<area shape="rect" id="node8" href="$d1/d21/plotwindow_8h.html" title="plotwindow.h" alt="" coords="339,155,433,181"/>
+<area shape="rect" id="node20" href="$dc/dc2/CopasiPlot_8h.html" title="CopasiPlot.h" alt="" coords="1805,80,1899,107"/>
+<area shape="rect" id="node33" href="$de/de6/CPlotSpecification_8h.html" title="plot/CPlotSpecification.h" alt="" coords="2200,80,2363,107"/>
+<area shape="rect" id="node35" href="$d5/d4d/COutputHandlerPlot_8h.html" title="COutputHandlerPlot.h" alt="" coords="2572,80,2719,107"/>
+<area shape="rect" id="node37" href="$d3/da9/copasiui3window_8h.html" title="UI/copasiui3window.h" alt="" coords="3002,80,3147,107"/>
+<area shape="rect" id="node43" href="$d4/dfa/CQMessageBox_8h.html" title="UI/CQMessageBox.h" alt="" coords="3359,80,3499,107"/>
+<area shape="rect" id="node45" href="$d5/de1/qtUtilities_8h.html" title="UI/qtUtilities.h" alt="" coords="2505,155,2607,181"/>
+<area shape="rect" id="node46" href="$d4/d88/CQIconResource_8h.html" title="resourcesUI/CQIconResource.h" alt="" coords="3524,80,3727,107"/>
+<area shape="rect" id="node50" href="$df/d6b/scrollzoomer_8h.html" title="scrollzoomer.h" alt="" coords="3911,80,4015,107"/>
+<area shape="rect" id="node13" href="$dc/df8/copasi_8h.html" title="copasi/copasi.h" alt="" coords="1475,237,1585,264"/>
+<area shape="rect" id="node14" href="$d2/dba/CopasiFileDialog_8h.html" title="copasi/UI/CopasiFileDialog.h" alt="" coords="163,237,349,264"/>
+<area shape="rect" id="node16" href="$dd/d5a/CWindowInterface_8h.html" title="copasi/UI/CWindowInterface.h" alt="" coords="424,237,619,264"/>
+<area shape="rect" id="node18" href="$d7/d0c/COutputHandler_8h.html" title="copasi/utilities/COutput\lHandler.h" alt="" coords="2029,230,2183,271"/>
+<area shape="rect" id="node29" href="$d2/d63/CPlotItem_8h.html" title="plot/CPlotItem.h" alt="" coords="2180,155,2295,181"/>
+<area shape="rect" id="node30" href="$dd/d9f/CCopasiObject_8h.html" title="copasi/report/CCopasiObject.h" alt="" coords="1754,155,1949,181"/>
+<area shape="rect" id="node31" href="$d0/db2/CopasiTime_8h.html" title="utilities/CopasiTime.h" alt="" coords="1388,155,1532,181"/>
+<area shape="rect" id="node32" href="$da/dd9/CVector_8h.html" title="utilities/CVector.h" alt="" coords="1556,155,1679,181"/>
+<area shape="rect" id="node34" href="$d7/d51/CCopasiVector_8h.html" title="utilities/CCopasiVector.h" alt="" coords="2319,155,2480,181"/>
+<area shape="rect" id="node41" href="$d8/d90/CMIRIAMResource_8h.html" title="copasi/MIRIAM/CMIRIAMResource.h" alt="" coords="3293,155,3528,181"/>
+<area shape="rect" id="node42" href="$d9/df7/CCopasiParameter_8h.html" title="copasi/utilities/CCopasi\lParameter.h" alt="" coords="2476,230,2629,271"/>
+</map>

@@ -1,0 +1,30 @@
+<map id="CEvaluationNodeNormalizer.h" name="CEvaluationNodeNormalizer.h">
+<area shape="rect" id="node3" href="$dc/df8/copasi_8h.html" title="copasi/copasi.h" alt="" coords="1694,635,1804,661"/>
+<area shape="rect" id="node7" href="$de/dfa/CEvaluationNode_8h.html" title="copasi/function/CEvaluation\lNode.h" alt="" coords="1125,81,1307,122"/>
+<area shape="rect" id="node39" href="$d7/d39/CEvaluationNodeOperator_8h.html" title="CEvaluationNodeOperator.h" alt="" coords="2265,171,2444,197"/>
+<area shape="rect" id="node9" href="$de/d24/CCopasiNode_8h.html" title="utilities/CCopasiNode.h" alt="" coords="1829,171,1983,197"/>
+<area shape="rect" id="node10" href="$df/d18/CFunctionAnalyzer_8h.html" title="CFunctionAnalyzer.h" alt="" coords="246,560,385,587"/>
+<area shape="rect" id="node12" href="$d1/d90/CEvaluationNodeCall_8h.html" title="CEvaluationNodeCall.h" alt="" coords="1603,171,1755,197"/>
+<area shape="rect" id="node31" href="$d6/d6a/CEvaluationNodeChoice_8h.html" title="CEvaluationNodeChoice.h" alt="" coords="1801,320,1972,347"/>
+<area shape="rect" id="node32" href="$d0/d78/CEvaluationNodeConstant_8h.html" title="CEvaluationNodeConstant.h" alt="" coords="144,171,325,197"/>
+<area shape="rect" id="node33" href="$d6/dfc/CEvaluationNodeDelay_8h.html" title="CEvaluationNodeDelay.h" alt="" coords="184,245,347,272"/>
+<area shape="rect" id="node34" href="$d0/d4d/CEvaluationNodeFunction_8h.html" title="CEvaluationNodeFunction.h" alt="" coords="2009,171,2188,197"/>
+<area shape="rect" id="node36" href="$d7/da6/CEvaluationNodeLogical_8h.html" title="CEvaluationNodeLogical.h" alt="" coords="475,171,645,197"/>
+<area shape="rect" id="node37" href="$d1/d6d/CEvaluationNodeNumber_8h.html" title="CEvaluationNodeNumber.h" alt="" coords="670,171,844,197"/>
+<area shape="rect" id="node38" href="$d4/d59/CEvaluationNodeObject_8h.html" title="CEvaluationNodeObject.h" alt="" coords="711,320,879,347"/>
+<area shape="rect" id="node40" href="$d6/def/CEvaluationNodeStructure_8h.html" title="CEvaluationNodeStructure.h" alt="" coords="921,171,1103,197"/>
+<area shape="rect" id="node41" href="$d7/de2/CEvaluationNodeVariable_8h.html" title="CEvaluationNodeVariable.h" alt="" coords="1128,171,1304,197"/>
+<area shape="rect" id="node42" href="$df/d62/CEvaluationNodeVector_8h.html" title="CEvaluationNodeVector.h" alt="" coords="2173,403,2339,429"/>
+<area shape="rect" id="node43" href="$d7/d85/CEvaluationNodeWhiteSpace_8h.html" title="CEvaluationNodeWhiteSpace.h" alt="" coords="1379,171,1577,197"/>
+<area shape="rect" id="node13" href="$dd/d7e/CCallParameters_8h.html" title="function/CCallParameters.h" alt="" coords="1465,245,1644,272"/>
+<area shape="rect" id="node14" href="$d9/d59/CFunctionParameter_8h.html" title="function/CFunctionParameter.h" alt="" coords="474,403,675,429"/>
+<area shape="rect" id="node19" href="$dd/d9f/CCopasiObject_8h.html" title="copasi/report/CCopasiObject.h" alt="" coords="1371,560,1567,587"/>
+<area shape="rect" id="node23" href="$d3/de1/CFunctionParameters_8h.html" title="function/CFunctionParameters.h" alt="" coords="954,320,1160,347"/>
+<area shape="rect" id="node15" href="$d3/d2b/CReadConfig_8h.html" title="utilities/CReadConfig.h" alt="" coords="474,485,624,512"/>
+<area shape="rect" id="node17" href="$d4/d70/CCopasiContainer_8h.html" title="Header file of class CCopasiContainer. " alt="" coords="1345,485,1516,512"/>
+<area shape="rect" id="node22" href="$d3/dfe/CMathEnum_8h.html" title="copasi/math/CMathEnum.h" alt="" coords="1441,635,1617,661"/>
+<area shape="rect" id="node24" href="$d7/d51/CCopasiVector_8h.html" title="copasi/utilities/CCopasi\lVector.h" alt="" coords="940,395,1093,437"/>
+<area shape="rect" id="node25" href="$d9/d2d/CCopasiMessage_8h.html" title="utilities/CCopasiMessage.h" alt="" coords="1146,485,1320,512"/>
+<area shape="rect" id="node27" href="$d5/d47/utility_8h.html" title="utilities/utility.h" alt="" coords="1015,485,1121,512"/>
+<area shape="rect" id="node30" href="$db/d45/CCopasiObjectName_8h.html" title="report/CCopasiObjectName.h" alt="" coords="700,485,889,512"/>
+</map>

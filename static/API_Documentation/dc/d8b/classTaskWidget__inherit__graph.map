@@ -1,0 +1,17 @@
+<map id="TaskWidget" name="TaskWidget">
+<area shape="rect" id="node4" href="$d7/dc1/classCQCrossSectionTaskWidget.html" title="CQCrossSectionTaskWidget" alt="" coords="414,5,599,32"/>
+<area shape="rect" id="node5" href="$dc/d44/classCQEFMWidget.html" title="CQEFMWidget" alt="" coords="453,56,561,83"/>
+<area shape="rect" id="node6" href="$d4/d5e/classCQFittingWidget.html" title="CQFittingWidget" alt="" coords="448,107,565,133"/>
+<area shape="rect" id="node7" href="$d0/d90/classCQLNAWidget.html" title="CQLNAWidget" alt="" coords="453,157,560,184"/>
+<area shape="rect" id="node8" href="$d9/d0e/classCQLyapWidget.html" title="CQLyapWidget" alt="" coords="453,208,561,235"/>
+<area shape="rect" id="node9" href="$da/d26/classCQMCAWidget.html" title="CQMCAWidget" alt="" coords="451,259,562,285"/>
+<area shape="rect" id="node10" href="$d0/d39/classCQMoietiesTaskWidget.html" title="CQMoietiesTaskWidget" alt="" coords="428,309,585,336"/>
+<area shape="rect" id="node11" href="$d1/d63/classCQOptimizationWidget.html" title="CQOptimizationWidget" alt="" coords="430,360,583,387"/>
+<area shape="rect" id="node12" href="$da/d0e/classCQOscillationTaskWidget.html" title="CQOscillationTaskWidget" alt="" coords="422,411,591,437"/>
+<area shape="rect" id="node13" href="$dd/dc1/classCQTrajectoryWidget.html" title="CQTrajectoryWidget" alt="" coords="437,461,576,488"/>
+<area shape="rect" id="node14" href="$d2/d7a/classCQTSSAWidget.html" title="CQTSSAWidget" alt="" coords="449,512,565,539"/>
+<area shape="rect" id="node15" href="$d6/d5a/classScanWidget.html" title="ScanWidget" alt="" coords="461,563,553,589"/>
+<area shape="rect" id="node16" href="$d9/d5b/classSensitivitiesWidget.html" title="SensitivitiesWidget" alt="" coords="441,613,572,640"/>
+<area shape="rect" id="node17" href="$d7/d8d/classSteadyStateWidget.html" title="SteadyStateWidget" alt="" coords="440,664,573,691"/>
+<area shape="rect" id="node2" href="$df/db4/classCopasiWidget.html" title="CopasiWidget" alt="" coords="125,335,227,361"/>
+</map>

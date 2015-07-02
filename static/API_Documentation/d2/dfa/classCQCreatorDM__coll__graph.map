@@ -1,0 +1,30 @@
+<map id="CQCreatorDM" name="CQCreatorDM">
+<area shape="rect" id="node2" href="$d4/d01/classCQBaseDataModel.html" title="CQBaseDataModel" alt="" coords="2073,351,2205,377"/>
+<area shape="rect" id="node4" href="$d8/d25/classCMIRIAMInfo.html" title="CMIRIAMInfo" alt="" coords="2088,503,2189,529"/>
+<area shape="rect" id="node5" href="$d9/dfd/classCCopasiContainer.html" title="CCopasiContainer" alt="" coords="243,427,368,453"/>
+<area shape="rect" id="node6" href="$d4/da8/classCCopasiObject.html" title="CCopasiObject" alt="" coords="621,1784,729,1811"/>
+<area shape="rect" id="node22" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; CReference \&gt;" alt="" coords="1019,324,1216,351"/>
+<area shape="rect" id="node24" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; T \&gt;" alt="" coords="606,212,743,239"/>
+<area shape="rect" id="node42" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; CModification \&gt;" alt="" coords="1014,245,1221,272"/>
+<area shape="rect" id="node43" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; CCreator \&gt;" alt="" coords="1027,451,1207,477"/>
+<area shape="rect" id="node44" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; CBiological\lDescription \&gt;" alt="" coords="1026,87,1209,129"/>
+<area shape="rect" id="node13" href="$dc/d69/classCCopasiStaticString.html" title="CCopasiStaticString" alt="" coords="1048,1736,1187,1763"/>
+<area shape="rect" id="node7" href="$df/dfa/classCObjectInterface.html" title="CObjectInterface" alt="" coords="245,1991,365,2017"/>
+<area shape="rect" id="node9" title="STL class. " alt="" coords="259,1624,352,1651"/>
+<area shape="rect" id="node18" title="STL class. " alt="" coords="603,1000,747,1027"/>
+<area shape="rect" id="node30" title="STL class. " alt="" coords="247,1427,363,1453"/>
+<area shape="rect" id="node11" href="$d8/dc4/classCRenameHandler.html" title="CRenameHandler" alt="" coords="244,1797,367,1824"/>
+<area shape="rect" id="node12" href="$d4/dad/classUpdateMethod.html" title="UpdateMethod" alt="" coords="252,1857,359,1884"/>
+<area shape="rect" id="node14" title="STL class. " alt="" coords="267,1171,343,1197"/>
+<area shape="rect" id="node27" href="$d0/da2/classCRDFPredicate.html" title="CRDFPredicate" alt="" coords="1061,993,1173,1020"/>
+<area shape="rect" id="node32" href="$df/d48/classCRDFNode.html" title="CRDFNode" alt="" coords="1425,1156,1511,1183"/>
+<area shape="rect" id="node33" href="$d3/de3/classCRDFObject.html" title="CRDFObject" alt="" coords="1070,775,1165,801"/>
+<area shape="rect" id="node34" href="$dd/df6/classCRDFLiteral.html" title="CRDFLiteral" alt="" coords="629,759,721,785"/>
+<area shape="rect" id="node35" href="$d5/d48/classCRDFSubject.html" title="CRDFSubject" alt="" coords="845,1189,947,1216"/>
+<area shape="rect" id="node15" title="STL class. " alt="" coords="6,1163,127,1205"/>
+<area shape="rect" id="node16" href="$d0/d44/classRefresh.html" title="Refresh" alt="" coords="272,1940,339,1967"/>
+<area shape="rect" id="node21" title="STL class. " alt="" coords="250,664,361,691"/>
+<area shape="rect" id="node23" title="STL class. " alt="" coords="232,157,379,184"/>
+<area shape="rect" id="node25" href="$d1/d32/classCRDFGraph.html" title="CRDFGraph" alt="" coords="1071,1423,1163,1449"/>
+<area shape="rect" id="node31" href="$dd/dc7/classCRDFTriplet.html" title="CRDFTriplet" alt="" coords="1796,1035,1889,1061"/>
+</map>

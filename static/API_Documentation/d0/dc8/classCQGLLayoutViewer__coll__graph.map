@@ -1,0 +1,27 @@
+<map id="CQGLLayoutViewer" name="CQGLLayoutViewer">
+<area shape="rect" id="node3" href="$d6/dbf/classCQGLLayoutPainter.html" title="CQGLLayoutPainter" alt="" coords="1835,56,1973,83"/>
+<area shape="rect" id="node5" href="$db/d5d/classCLPoint.html" title="CLPoint" alt="" coords="783,168,851,195"/>
+<area shape="rect" id="node46" href="$d3/da7/classCLBoundingBox.html" title="CLBoundingBox" alt="" coords="1241,269,1356,296"/>
+<area shape="rect" id="node6" href="$d7/df9/classCLBase.html" title="CLBase" alt="" coords="336,269,403,296"/>
+<area shape="rect" id="node15" href="$da/d7e/classCLayout.html" title="CLayout" alt="" coords="1264,677,1333,704"/>
+<area shape="rect" id="node24" href="$d0/dfa/classCLDimensions.html" title="CLDimensions" alt="" coords="765,269,869,296"/>
+<area shape="rect" id="node7" title="STL class. " alt="" coords="6,1071,82,1097"/>
+<area shape="rect" id="node8" href="$dc/dd5/classCLLayoutRenderer.html" title="CLLayoutRenderer" alt="" coords="1584,1653,1712,1680"/>
+<area shape="rect" id="node10" href="$d6/d63/classCLMetabReferenceGlyph.html" title="CLMetabReferenceGlyph" alt="" coords="286,1071,453,1097"/>
+<area shape="rect" id="node37" href="$d4/d04/classCModel.html" title="CModel" alt="" coords="545,352,612,379"/>
+<area shape="rect" id="node45" href="$dd/dab/structCLGroupAttributes.html" title="CLGroupAttributes" alt="" coords="753,2228,881,2255"/>
+<area shape="rect" id="node11" title="STL class. " alt="" coords="311,1751,427,1777"/>
+<area shape="rect" id="node13" href="$d5/d2f/structCLLineStippleTexture.html" title="CLLineStippleTexture" alt="" coords="297,2421,442,2448"/>
+<area shape="rect" id="node16" href="$d9/dfd/classCCopasiContainer.html" title="CCopasiContainer" alt="" coords="307,661,432,688"/>
+<area shape="rect" id="node17" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; CLGeneral\lGlyph \&gt;" alt="" coords="728,605,907,646"/>
+<area shape="rect" id="node19" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; CLLocalRender\lInformation \&gt;" alt="" coords="714,670,921,711"/>
+<area shape="rect" id="node20" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; CLTextGlyph \&gt;" alt="" coords="716,801,919,828"/>
+<area shape="rect" id="node21" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; CLMetabGlyph \&gt;" alt="" coords="710,488,925,515"/>
+<area shape="rect" id="node22" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; CLReaction\lGlyph \&gt;" alt="" coords="725,539,910,581"/>
+<area shape="rect" id="node23" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; CLCompartment\lGlyph \&gt;" alt="" coords="711,735,923,777"/>
+<area shape="rect" id="node25" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; CLGlobalRender\lInformation \&gt;" alt="" coords="711,422,923,463"/>
+<area shape="rect" id="node18" title="STL class. " alt="" coords="296,585,443,612"/>
+<area shape="rect" id="node28" href="$dd/d54/classCLImageTexturizer.html" title="CLImageTexturizer" alt="" coords="1233,2329,1364,2356"/>
+<area shape="rect" id="node42" href="$d0/dc3/classCLRenderResolver.html" title="CLRenderResolver" alt="" coords="1235,1288,1363,1315"/>
+<area shape="rect" id="node48" href="$d1/d8e/classCLFontRendererBase.html" title="CLFontRendererBase" alt="" coords="1226,219,1371,245"/>
+</map>

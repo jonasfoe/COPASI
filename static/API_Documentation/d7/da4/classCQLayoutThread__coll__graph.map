@@ -1,0 +1,36 @@
+<map id="CQLayoutThread" name="CQLayoutThread">
+<area shape="rect" id="node3" href="$da/d7e/classCLayout.html" title="CLayout" alt="" coords="2157,1185,2227,1212"/>
+<area shape="rect" id="node31" href="$d0/d74/classCCopasiSpringLayout.html" title="CCopasiSpringLayout" alt="" coords="2462,1691,2607,1717"/>
+<area shape="rect" id="node4" href="$d7/df9/classCLBase.html" title="CLBase" alt="" coords="955,1471,1021,1497"/>
+<area shape="rect" id="node30" href="$d0/dfa/classCLDimensions.html" title="CLDimensions" alt="" coords="1505,1377,1609,1404"/>
+<area shape="rect" id="node38" href="$d8/d63/classCLGraphicalObject.html" title="CLGraphicalObject" alt="" coords="1293,1651,1424,1677"/>
+<area shape="rect" id="node42" href="$db/d5d/classCLPoint.html" title="CLPoint" alt="" coords="1325,1804,1393,1831"/>
+<area shape="rect" id="node44" href="$d3/db4/structCCopasiSpringLayout_1_1UpdateAction.html" title="this describes one update action that has to be performed during setState() " alt="" coords="1286,1585,1431,1626"/>
+<area shape="rect" id="node5" title="STL class. " alt="" coords="527,599,603,625"/>
+<area shape="rect" id="node8" href="$d4/da8/classCCopasiObject.html" title="CCopasiObject" alt="" coords="1305,251,1413,277"/>
+<area shape="rect" id="node15" href="$dc/d69/classCCopasiStaticString.html" title="CCopasiStaticString" alt="" coords="1713,172,1852,199"/>
+<area shape="rect" id="node6" title="STL class. " alt="" coords="150,591,271,633"/>
+<area shape="rect" id="node7" href="$d9/dfd/classCCopasiContainer.html" title="CCopasiContainer" alt="" coords="925,857,1051,884"/>
+<area shape="rect" id="node22" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; CLGeneral\lGlyph \&gt;" alt="" coords="1693,1211,1872,1253"/>
+<area shape="rect" id="node24" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; T \&gt;" alt="" coords="1290,976,1427,1003"/>
+<area shape="rect" id="node25" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; CLLocalRender\lInformation \&gt;" alt="" coords="1679,1059,1886,1101"/>
+<area shape="rect" id="node26" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; CLTextGlyph \&gt;" alt="" coords="1681,705,1884,732"/>
+<area shape="rect" id="node27" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; CLMetabGlyph \&gt;" alt="" coords="1675,1144,1890,1171"/>
+<area shape="rect" id="node28" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; CLReaction\lGlyph \&gt;" alt="" coords="1690,806,1875,847"/>
+<area shape="rect" id="node29" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; CLCompartment\lGlyph \&gt;" alt="" coords="1677,935,1889,977"/>
+<area shape="rect" id="node9" href="$df/dfa/classCObjectInterface.html" title="CObjectInterface" alt="" coords="928,201,1048,228"/>
+<area shape="rect" id="node11" title="STL class. " alt="" coords="1312,359,1405,385"/>
+<area shape="rect" id="node18" title="STL class. " alt="" coords="1287,425,1431,452"/>
+<area shape="rect" id="node39" title="STL class. " alt="" coords="1301,1533,1417,1560"/>
+<area shape="rect" id="node13" href="$d8/dc4/classCRenameHandler.html" title="CRenameHandler" alt="" coords="927,252,1049,279"/>
+<area shape="rect" id="node14" href="$d4/dad/classUpdateMethod.html" title="UpdateMethod" alt="" coords="935,100,1041,127"/>
+<area shape="rect" id="node16" href="$d0/d44/classRefresh.html" title="Refresh" alt="" coords="955,151,1021,177"/>
+<area shape="rect" id="node21" title="STL class. " alt="" coords="155,1855,266,1881"/>
+<area shape="rect" id="node23" title="STL class. " alt="" coords="915,1137,1061,1164"/>
+<area shape="rect" id="node32" href="$d6/dca/classCAbstractLayoutInterface.html" title="CAbstractLayoutInterface" alt="" coords="1275,1703,1443,1729"/>
+<area shape="rect" id="node34" href="$d6/dc5/classCAbstractLayoutInterface_1_1VariableDescription.html" title="CAbstractLayoutInterface\l::VariableDescription" alt="" coords="481,1650,649,1691"/>
+<area shape="rect" id="node45" href="$dd/d18/classCCopasiSpringLayout_1_1Parameters.html" title="CCopasiSpringLayout\l::Parameters" alt="" coords="1286,2015,1431,2057"/>
+<area shape="rect" id="node37" href="$de/d28/classCLCompartmentGlyph.html" title="CLCompartmentGlyph" alt="" coords="1708,1611,1857,1637"/>
+<area shape="rect" id="node41" href="$d9/d54/structCCopasiSpringLayout_1_1CoordinateRelation.html" title="CCopasiSpringLayout\l::CoordinateRelation" alt="" coords="1710,1783,1855,1825"/>
+<area shape="rect" id="node48" href="$d2/dfc/classCQSpringLayoutParameterWindow.html" title="CQSpringLayoutParameterWindow" alt="" coords="1672,2105,1893,2132"/>
+</map>

@@ -1,0 +1,38 @@
+<map id="CQBrowserPaneDM" name="CQBrowserPaneDM">
+<area shape="rect" id="node29" href="$df/dc9/classListViews.html" title="ListViews" alt="" coords="2284,1013,2357,1040"/>
+<area shape="rect" id="node3" href="$d3/dd0/classDataModelGUI.html" title="DataModelGUI" alt="" coords="1697,1195,1804,1221"/>
+<area shape="rect" id="node19" href="$d7/d56/classCQThread.html" title="CQThread" alt="" coords="1634,1285,1715,1312"/>
+<area shape="rect" id="node6" href="$d4/da8/classCCopasiObject.html" title="CCopasiObject" alt="" coords="1150,224,1257,251"/>
+<area shape="rect" id="node24" href="$d1/dc3/classCOutputInterface.html" title="COutputInterface" alt="" coords="1523,224,1644,251"/>
+<area shape="rect" id="node46" href="$d4/d04/classCModel.html" title="CModel" alt="" coords="2281,485,2348,512"/>
+<area shape="rect" id="node11" href="$d9/dfd/classCCopasiContainer.html" title="CCopasiContainer" alt="" coords="1216,485,1341,512"/>
+<area shape="rect" id="node7" href="$d8/dc4/classCRenameHandler.html" title="CRenameHandler" alt="" coords="609,112,732,139"/>
+<area shape="rect" id="node40" href="$da/de4/classCDataModelRenameHandler.html" title="CDataModelRenameHandler" alt="" coords="578,284,763,311"/>
+<area shape="rect" id="node8" href="$d0/d44/classRefresh.html" title="Refresh" alt="" coords="1676,112,1743,139"/>
+<area shape="rect" id="node9" title="STL class. " alt="" coords="2437,112,2512,139"/>
+<area shape="rect" id="node26" href="$de/d36/classCOutputDefinitionVector.html" title="COutputDefinitionVector" alt="" coords="2092,485,2251,512"/>
+<area shape="rect" id="node32" href="$d8/da5/classCProcessReport.html" title="CProcessReport" alt="" coords="2257,344,2372,371"/>
+<area shape="rect" id="node36" href="$d6/dc8/classCQBrowserPaneDM_1_1SData.html" title="CQBrowserPaneDM::SData" alt="" coords="2833,224,3012,251"/>
+<area shape="rect" id="node44" href="$d9/d07/classCCopasiDataModel_1_1CData.html" title="CCopasiDataModel::CData" alt="" coords="2345,712,2519,739"/>
+<area shape="rect" id="node47" href="$d0/d08/classCListOfLayouts.html" title="CListOfLayouts" alt="" coords="2685,284,2795,311"/>
+<area shape="rect" id="node48" href="$da/d86/classCReportDefinitionVector.html" title="CReportDefinitionVector" alt="" coords="2809,419,2967,445"/>
+<area shape="rect" id="node10" title="STL class. " alt="" coords="2414,6,2535,47"/>
+<area shape="rect" id="node38" href="$d4/d18/classCCopasiDataModel.html" title="CCopasiDataModel" alt="" coords="1487,832,1619,859"/>
+<area shape="rect" id="node42" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; CMetabOld \&gt;" alt="" coords="1084,604,1279,631"/>
+<area shape="rect" id="node50" href="$d5/d8e/classSCopasiXMLGUI.html" title="SCopasiXMLGUI" alt="" coords="1591,604,1711,631"/>
+<area shape="rect" id="node14" title="STL class. " alt="" coords="2229,224,2339,251"/>
+<area shape="rect" id="node15" title="STL class. " alt="" coords="899,13,992,40"/>
+<area shape="rect" id="node16" href="$d4/de9/classCMIRIAMResources.html" title="CMIRIAMResources" alt="" coords="373,344,512,371"/>
+<area shape="rect" id="node17" href="$df/d89/classCCopasiParameterGroup.html" title="CCopasiParameterGroup" alt="" coords="297,224,461,251"/>
+<area shape="rect" id="node23" href="$d5/dd1/classCOutputHandler.html" title="COutputHandler" alt="" coords="1656,485,1771,512"/>
+<area shape="rect" id="node22" href="$db/dee/classCOutputHandlerPlot.html" title="COutputHandlerPlot" alt="" coords="1955,604,2092,631"/>
+<area shape="rect" id="node30" href="$d4/d4b/classCProgressBar.html" title="CProgressBar" alt="" coords="241,485,343,512"/>
+<area shape="rect" id="node31" href="$d6/d9e/classCQProgressDialog.html" title="CQProgressDialog" alt="" coords="5,344,131,371"/>
+<area shape="rect" id="node33" href="$dd/de4/classCVector.html" title="CVector\&lt; CQProgressItem * \&gt;" alt="" coords="155,344,348,371"/>
+<area shape="rect" id="node34" href="$d8/db7/classCQBrowserPaneDM_1_1CNode.html" title="CQBrowserPaneDM::CNode" alt="" coords="3019,544,3201,571"/>
+<area shape="rect" id="node35" href="$d9/d9d/classCCopasiNode.html" title="CCopasiNode\&lt; SData \&gt;" alt="" coords="3031,344,3189,371"/>
+<area shape="rect" id="node37" href="$d9/d9d/classCCopasiNode.html" title="CCopasiNode\&lt; _Data \&gt;" alt="" coords="3037,224,3192,251"/>
+<area shape="rect" id="node41" href="$d2/d26/classCCopasiVectorS.html" title="CCopasiVectorS\&lt; CMetabOld \&gt;" alt="" coords="1080,712,1283,739"/>
+<area shape="rect" id="node43" href="$d2/d26/classCCopasiVectorS.html" title="CCopasiVectorS\&lt; CType \&gt;" alt="" coords="885,604,1059,631"/>
+<area shape="rect" id="node45" href="$d7/d08/classCCopasiVectorN.html" title="CCopasiVectorN\&lt; CCopasiTask \&gt;" alt="" coords="2169,604,2383,631"/>
+</map>

@@ -1,0 +1,19 @@
+<map id="CCopasiSpringLayout::CoordinateRelation" name="CCopasiSpringLayout::CoordinateRelation">
+<area shape="rect" id="node2" href="$db/d5d/classCLPoint.html" title="CLPoint" alt="" coords="934,126,1002,152"/>
+<area shape="rect" id="node22" href="$d3/da7/classCLBoundingBox.html" title="CLBoundingBox" alt="" coords="1267,76,1381,103"/>
+<area shape="rect" id="node3" href="$d7/df9/classCLBase.html" title="CLBase" alt="" coords="527,75,593,102"/>
+<area shape="rect" id="node6" href="$d8/d63/classCLGraphicalObject.html" title="CLGraphicalObject" alt="" coords="1537,106,1668,132"/>
+<area shape="rect" id="node23" href="$d0/dfa/classCLDimensions.html" title="CLDimensions" alt="" coords="916,24,1020,51"/>
+<area shape="rect" id="node4" title="STL class. " alt="" coords="202,294,278,320"/>
+<area shape="rect" id="node8" href="$d4/da8/classCCopasiObject.html" title="CCopasiObject" alt="" coords="506,423,614,450"/>
+<area shape="rect" id="node15" href="$dc/d69/classCCopasiStaticString.html" title="CCopasiStaticString" alt="" coords="899,388,1037,415"/>
+<area shape="rect" id="node5" title="STL class. " alt="" coords="6,286,127,328"/>
+<area shape="rect" id="node7" href="$d9/dfd/classCCopasiContainer.html" title="CCopasiContainer" alt="" coords="1261,327,1387,354"/>
+<area shape="rect" id="node9" href="$df/dfa/classCObjectInterface.html" title="CObjectInterface" alt="" coords="180,578,300,604"/>
+<area shape="rect" id="node11" title="STL class. " alt="" coords="513,534,607,560"/>
+<area shape="rect" id="node18" title="STL class. " alt="" coords="488,655,632,682"/>
+<area shape="rect" id="node13" href="$d8/dc4/classCRenameHandler.html" title="CRenameHandler" alt="" coords="179,388,301,415"/>
+<area shape="rect" id="node14" href="$d4/dad/classUpdateMethod.html" title="UpdateMethod" alt="" coords="187,476,293,503"/>
+<area shape="rect" id="node16" href="$d0/d44/classRefresh.html" title="Refresh" alt="" coords="207,527,273,554"/>
+<area shape="rect" id="node21" title="STL class. " alt="" coords="691,720,802,747"/>
+</map>

@@ -1,0 +1,33 @@
+<map id="PlotWindow" name="PlotWindow">
+<area shape="rect" id="node2" href="$df/d28/classCWindowInterface.html" title="CWindowInterface" alt="" coords="1467,123,1594,149"/>
+<area shape="rect" id="node50" href="$d7/de8/classSliderDialog.html" title="SliderDialog" alt="" coords="3576,124,3667,151"/>
+<area shape="rect" id="node31" href="$da/d2b/classCopasiUI3Window.html" title="CopasiUI3Window" alt="" coords="3285,169,3411,196"/>
+<area shape="rect" id="node4" href="$d1/dc3/classCOutputInterface.html" title="COutputInterface" alt="" coords="1103,1387,1225,1413"/>
+<area shape="rect" id="node9" href="$d8/db0/classCopasiPlot.html" title="CopasiPlot" alt="" coords="1489,975,1573,1001"/>
+<area shape="rect" id="node39" href="$d5/dd1/classCOutputHandler.html" title="COutputHandler" alt="" coords="1473,1387,1588,1413"/>
+<area shape="rect" id="node6" href="$d4/da8/classCCopasiObject.html" title="CCopasiObject" alt="" coords="245,1291,353,1317"/>
+<area shape="rect" id="node32" href="$d3/dd0/classDataModelGUI.html" title="DataModelGUI" alt="" coords="2679,531,2785,557"/>
+<area shape="rect" id="node7" title="STL class. " alt="" coords="6,420,82,447"/>
+<area shape="rect" id="node14" href="$d8/d8b/classCPlotItem.html" title="CPlotItem" alt="" coords="672,887,752,913"/>
+<area shape="rect" id="node40" href="$de/d36/classCOutputDefinitionVector.html" title="COutputDefinitionVector" alt="" coords="413,409,573,436"/>
+<area shape="rect" id="node43" href="$df/dc9/classListViews.html" title="ListViews" alt="" coords="3011,347,3085,373"/>
+<area shape="rect" id="node8" title="STL class. " alt="" coords="252,1459,345,1485"/>
+<area shape="rect" id="node12" title="STL class. " alt="" coords="657,836,767,863"/>
+<area shape="rect" id="node13" href="$d4/def/classCPlotSpecification.html" title="CPlotSpecification" alt="" coords="1100,1105,1228,1132"/>
+<area shape="rect" id="node15" href="$df/d89/classCCopasiParameterGroup.html" title="CCopasiParameterGroup" alt="" coords="216,277,381,304"/>
+<area shape="rect" id="node34" href="$d4/de9/classCMIRIAMResources.html" title="CMIRIAMResources" alt="" coords="1095,280,1233,307"/>
+<area shape="rect" id="node16" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; CPlotItem \&gt;" alt="" coords="619,1132,805,1159"/>
+<area shape="rect" id="node18" href="$d8/d9a/classC2DPlotCurve.html" title="C2DPlotCurve" alt="" coords="247,1117,350,1144"/>
+<area shape="rect" id="node21" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; C2DPlotCurve * \&gt;" alt="" coords="609,1296,815,1323"/>
+<area shape="rect" id="node19" title="STL class. " alt="" coords="241,537,357,564"/>
+<area shape="rect" id="node20" href="$dd/de4/classCVector.html" title="CVector\&lt; C2DPlotCurve * \&gt;" alt="" coords="1075,1273,1253,1300"/>
+<area shape="rect" id="node22" href="$dd/de4/classCVector.html" title="CVector\&lt; CType \&gt;" alt="" coords="649,1245,775,1272"/>
+<area shape="rect" id="node25" href="$dd/d9c/classCCopasiTimeVariable.html" title="CCopasiTimeVariable" alt="" coords="1091,547,1237,573"/>
+<area shape="rect" id="node36" href="$d7/d56/classCQThread.html" title="CQThread" alt="" coords="3007,567,3089,593"/>
+<area shape="rect" id="node38" href="$db/dee/classCOutputHandlerPlot.html" title="COutputHandlerPlot" alt="" coords="2345,581,2482,608"/>
+<area shape="rect" id="node45" href="$d7/d8d/classSteadyStateWidget.html" title="SteadyStateWidget" alt="" coords="2665,423,2799,449"/>
+<area shape="rect" id="node46" href="$d2/dcb/classCQPlotsWidget.html" title="CQPlotsWidget" alt="" coords="2677,271,2787,297"/>
+<area shape="rect" id="node47" href="$dc/df4/classCQDifferentialEquations.html" title="CQDifferentialEquations" alt="" coords="2653,321,2811,348"/>
+<area shape="rect" id="node48" href="$d4/d4b/classCProgressBar.html" title="CProgressBar" alt="" coords="2363,531,2464,557"/>
+<area shape="rect" id="node49" href="$d9/d23/classObjectBrowserDialog.html" title="ObjectBrowserDialog" alt="" coords="2977,119,3119,145"/>
+</map>

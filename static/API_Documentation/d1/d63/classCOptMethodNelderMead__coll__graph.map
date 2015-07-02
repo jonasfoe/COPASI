@@ -1,0 +1,43 @@
+<map id="COptMethodNelderMead" name="COptMethodNelderMead">
+<area shape="rect" id="node2" href="$dc/d24/classCOptMethod.html" title="COptMethod" alt="" coords="887,1181,981,1208"/>
+<area shape="rect" id="node3" href="$df/d49/classCCopasiMethod.html" title="CCopasiMethod" alt="" coords="1187,839,1300,865"/>
+<area shape="rect" id="node32" href="$d8/db2/classCCopasiTask.html" title="CCopasiTask" alt="" coords="2193,968,2292,995"/>
+<area shape="rect" id="node4" href="$df/d89/classCCopasiParameterGroup.html" title="CCopasiParameterGroup" alt="" coords="1341,720,1505,747"/>
+<area shape="rect" id="node28" href="$d2/d15/classCOptItem.html" title="COptItem" alt="" coords="629,839,707,865"/>
+<area shape="rect" id="node36" href="$d1/d05/classCCopasiProblem.html" title="CCopasiProblem" alt="" coords="1707,839,1825,865"/>
+<area shape="rect" id="node47" href="$db/d6b/classCOptProblem.html" title="COptProblem" alt="" coords="1289,1089,1388,1116"/>
+<area shape="rect" id="node5" href="$d5/db6/classCCopasiParameter.html" title="CCopasiParameter" alt="" coords="1359,569,1488,596"/>
+<area shape="rect" id="node6" href="$d9/dfd/classCCopasiContainer.html" title="CCopasiContainer" alt="" coords="2185,312,2311,339"/>
+<area shape="rect" id="node7" href="$d4/da8/classCCopasiObject.html" title="CCopasiObject" alt="" coords="2259,455,2367,481"/>
+<area shape="rect" id="node49" href="$d1/d50/classCEvaluationTree.html" title="CEvaluationTree" alt="" coords="1479,455,1595,481"/>
+<area shape="rect" id="node12" href="$dc/d69/classCCopasiStaticString.html" title="CCopasiStaticString" alt="" coords="1912,569,2051,596"/>
+<area shape="rect" id="node34" href="$df/d88/classCCopasiTask_1_1CResult.html" title="CCopasiTask::CResult" alt="" coords="2472,645,2620,672"/>
+<area shape="rect" id="node35" href="$d1/d4d/classCCopasiTask_1_1CDescription.html" title="CCopasiTask::CDescription" alt="" coords="2629,645,2805,672"/>
+<area shape="rect" id="node50" href="$d1/db9/classCCopasiTimer.html" title="CCopasiTimer" alt="" coords="2075,569,2177,596"/>
+<area shape="rect" id="node8" href="$df/dfa/classCObjectInterface.html" title="CObjectInterface" alt="" coords="2349,312,2469,339"/>
+<area shape="rect" id="node37" href="$d4/d04/classCModel.html" title="CModel" alt="" coords="2257,720,2324,747"/>
+<area shape="rect" id="node10" href="$d8/dc4/classCRenameHandler.html" title="CRenameHandler" alt="" coords="2039,312,2161,339"/>
+<area shape="rect" id="node11" href="$d4/dad/classUpdateMethod.html" title="UpdateMethod" alt="" coords="291,312,397,339"/>
+<area shape="rect" id="node13" title="STL class. " alt="" coords="1273,312,1348,339"/>
+<area shape="rect" id="node19" href="$d8/dea/unionCCopasiParameter_1_1Value.html" title="CCopasiParameter::Value" alt="" coords="1156,455,1324,481"/>
+<area shape="rect" id="node20" href="$d8/da5/classCProcessReport.html" title="CProcessReport" alt="" coords="1576,569,1691,596"/>
+<area shape="rect" id="node29" href="$df/dcb/classCRandom.html" title="CRandom" alt="" coords="491,455,569,481"/>
+<area shape="rect" id="node33" href="$db/d44/classCReport.html" title="CReport" alt="" coords="1809,720,1879,747"/>
+<area shape="rect" id="node48" href="$dc/dbd/classCExpression.html" title="CExpression" alt="" coords="995,569,1087,596"/>
+<area shape="rect" id="node14" title="STL class. " alt="" coords="1250,187,1371,229"/>
+<area shape="rect" id="node15" href="$d0/d44/classRefresh.html" title="Refresh" alt="" coords="2877,312,2944,339"/>
+<area shape="rect" id="node17" title="STL class. " alt="" coords="886,96,996,123"/>
+<area shape="rect" id="node21" href="$dd/d9c/classCCopasiTimeVariable.html" title="CCopasiTimeVariable" alt="" coords="1870,455,2015,481"/>
+<area shape="rect" id="node22" href="$dd/de4/classCVector.html" title="CVector\&lt; CProcessReportItem * \&gt;" alt="" coords="3541,455,3757,481"/>
+<area shape="rect" id="node23" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; CProcessReport\lItem * \&gt;" alt="" coords="3550,305,3748,346"/>
+<area shape="rect" id="node24" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; CType \&gt;" alt="" coords="3415,195,3568,221"/>
+<area shape="rect" id="node26" href="$dd/de4/classCVector.html" title="CVector\&lt; CType \&gt;" alt="" coords="3399,312,3525,339"/>
+<area shape="rect" id="node42" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; C_FLOAT64 \&gt;" alt="" coords="3223,387,3412,413"/>
+<area shape="rect" id="node39" href="$d7/dd7/classCMatrix.html" title="CMatrix\&lt; CType \&gt;" alt="" coords="3724,253,3849,280"/>
+<area shape="rect" id="node41" href="$dd/de4/classCVector.html" title="CVector\&lt; C_FLOAT64 \&gt;" alt="" coords="3337,569,3500,596"/>
+<area shape="rect" id="node30" href="$da/dc8/structCRandom_1_1ExpVars.html" title="CRandom::ExpVars" alt="" coords="421,312,551,339"/>
+<area shape="rect" id="node31" href="$df/dfc/classCOptTask.html" title="COptTask" alt="" coords="2419,1089,2497,1116"/>
+<area shape="rect" id="node38" href="$d7/dd7/classCMatrix.html" title="CMatrix\&lt; C_FLOAT64 \&gt;" alt="" coords="3633,569,3792,596"/>
+<area shape="rect" id="node45" href="$d5/dd1/classCOutputHandler.html" title="COutputHandler" alt="" coords="3096,779,3211,805"/>
+<area shape="rect" id="node43" href="$dc/d1d/classCState.html" title="CState" alt="" coords="2489,569,2551,596"/>
+</map>

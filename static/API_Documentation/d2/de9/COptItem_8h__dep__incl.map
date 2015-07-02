@@ -1,0 +1,30 @@
+<map id="COptItem.h" name="COptItem.h">
+<area shape="rect" id="node2" href="$de/d6c/COptItem_8cpp.html" title="COptItem.cpp" alt="" coords="5,80,107,107"/>
+<area shape="rect" id="node3" href="$d1/d26/COptMethodCoranaWalk_8cpp.html" title="COptMethodCoranaWalk.cpp" alt="" coords="132,80,321,107"/>
+<area shape="rect" id="node4" href="$d6/dd3/COptMethodDE_8cpp.html" title="COptMethodDE.cpp" alt="" coords="345,80,480,107"/>
+<area shape="rect" id="node5" href="$d8/dcb/COptMethodEP_8cpp.html" title="COptMethodEP.cpp" alt="" coords="505,80,640,107"/>
+<area shape="rect" id="node6" href="$d1/d80/COptMethodGA_8cpp.html" title="COptMethodGA.cpp" alt="" coords="665,80,804,107"/>
+<area shape="rect" id="node7" href="$df/d2e/COptMethodGASR_8cpp.html" title="COptMethodGASR.cpp" alt="" coords="829,80,984,107"/>
+<area shape="rect" id="node8" href="$d4/dba/COptMethodHookeJeeves_8cpp.html" title="COptMethodHookeJeeves.cpp" alt="" coords="1009,80,1204,107"/>
+<area shape="rect" id="node9" href="$d2/dcc/COptMethodLevenbergMarquardt_8cpp.html" title="COptMethodLevenbergMarquardt.cpp" alt="" coords="1229,80,1464,107"/>
+<area shape="rect" id="node10" href="$d5/df0/COptMethodNelderMead_8cpp.html" title="COptMethodNelderMead.cpp" alt="" coords="1489,80,1676,107"/>
+<area shape="rect" id="node11" href="$d5/d0e/COptMethodPraxis_8cpp.html" title="COptMethodPraxis.cpp" alt="" coords="1701,80,1855,107"/>
+<area shape="rect" id="node12" href="$d1/df7/COptMethodPS_8cpp.html" title="COptMethodPS.cpp" alt="" coords="1881,80,2017,107"/>
+<area shape="rect" id="node13" href="$d8/dff/COptMethodSA_8cpp.html" title="COptMethodSA.cpp" alt="" coords="2042,80,2179,107"/>
+<area shape="rect" id="node14" href="$d5/dc4/COptMethodSRES_8cpp.html" title="COptMethodSRES.cpp" alt="" coords="2204,80,2357,107"/>
+<area shape="rect" id="node15" href="$d2/d84/COptMethodSS_8cpp.html" title="COptMethodSS.cpp" alt="" coords="2383,80,2520,107"/>
+<area shape="rect" id="node16" href="$dd/d91/COptMethodStatistics_8cpp.html" title="COptMethodStatistics.cpp" alt="" coords="2545,80,2716,107"/>
+<area shape="rect" id="node17" href="$d1/d18/COptMethodSteepestDescent_8cpp.html" title="COptMethodSteepestDescent.cpp" alt="" coords="2741,80,2957,107"/>
+<area shape="rect" id="node18" href="$d0/d9a/COptMethodTruncatedNewton_8cpp.html" title="COptMethodTruncatedNewton.cpp" alt="" coords="2982,80,3201,107"/>
+<area shape="rect" id="node19" href="$df/d86/COptProblem_8cpp.html" title="COptProblem.cpp" alt="" coords="3226,80,3349,107"/>
+<area shape="rect" id="node20" href="$de/d3c/CRandomSearch_8cpp.html" title="CRandomSearch.cpp" alt="" coords="3375,80,3519,107"/>
+<area shape="rect" id="node21" href="$df/d14/CFitItem_8h.html" title="CFitItem.h" alt="" coords="3543,80,3624,107"/>
+<area shape="rect" id="node28" href="$dd/d6f/CQOptimizationResult_8cpp.html" title="CQOptimizationResult.cpp" alt="" coords="3649,80,3823,107"/>
+<area shape="rect" id="node29" href="$dc/d0c/CQOptimizationWidget_8cpp.html" title="CQOptimizationWidget.cpp" alt="" coords="3847,80,4024,107"/>
+<area shape="rect" id="node22" href="$da/ddc/CFitItem_8cpp.html" title="CFitItem.cpp" alt="" coords="3149,155,3245,181"/>
+<area shape="rect" id="node23" href="$de/d65/CFitProblem_8cpp.html" title="CFitProblem.cpp" alt="" coords="3270,155,3388,181"/>
+<area shape="rect" id="node24" href="$d5/db3/CQFittingItemWidget_8cpp.html" title="CQFittingItemWidget.cpp" alt="" coords="3413,155,3579,181"/>
+<area shape="rect" id="node25" href="$d1/d3d/CQFittingResult_8cpp.html" title="CQFittingResult.cpp" alt="" coords="3603,155,3740,181"/>
+<area shape="rect" id="node26" href="$d1/dd8/CQFittingResultTab1_8cpp.html" title="CQFittingResultTab1.cpp" alt="" coords="3765,155,3931,181"/>
+<area shape="rect" id="node27" href="$d3/d93/CQFittingWidget_8cpp.html" title="CQFittingWidget.cpp" alt="" coords="3956,155,4096,181"/>
+</map>

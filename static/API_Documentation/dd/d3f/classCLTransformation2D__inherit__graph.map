@@ -1,0 +1,14 @@
+<map id="CLTransformation2D" name="CLTransformation2D">
+<area shape="rect" id="node4" href="$de/db3/classCLGraphicalPrimitive1D.html" title="CLGraphicalPrimitive1D" alt="" coords="334,229,492,256"/>
+<area shape="rect" id="node13" href="$da/d09/classCLImage.html" title="CLImage" alt="" coords="517,229,591,256"/>
+<area shape="rect" id="node2" href="$dd/d1f/classCLTransformation.html" title="CLTransformation" alt="" coords="422,80,545,107"/>
+<area shape="rect" id="node3" href="$d7/df9/classCLBase.html" title="CLBase" alt="" coords="451,5,517,32"/>
+<area shape="rect" id="node5" href="$dc/d2d/classCLGraphicalPrimitive2D.html" title="CLGraphicalPrimitive2D" alt="" coords="174,304,332,331"/>
+<area shape="rect" id="node11" href="$d6/d2b/classCLRenderCurve.html" title="CLRenderCurve" alt="" coords="357,304,468,331"/>
+<area shape="rect" id="node12" href="$d1/dd9/classCLText.html" title="CLText" alt="" coords="494,304,556,331"/>
+<area shape="rect" id="node6" href="$d2/d64/classCLEllipse.html" title="CLEllipse" alt="" coords="5,379,79,405"/>
+<area shape="rect" id="node7" href="$dd/da5/classCLGroup.html" title="CLGroup" alt="" coords="105,379,177,405"/>
+<area shape="rect" id="node8" href="$d2/d49/classCLLineEnding.html" title="CLLineEnding" alt="" coords="203,379,304,405"/>
+<area shape="rect" id="node9" href="$d9/dc2/classCLPolygon.html" title="CLPolygon" alt="" coords="329,379,412,405"/>
+<area shape="rect" id="node10" href="$da/d69/classCLRectangle.html" title="CLRectangle" alt="" coords="437,379,533,405"/>
+</map>

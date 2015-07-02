@@ -1,0 +1,17 @@
+<map id="copasimathml.h" name="copasimathml.h">
+<area shape="rect" id="node2" href="$d0/d90/CEvaluationNodeCall_8cpp.html" title="CEvaluationNodeCall.cpp" alt="" coords="5,80,171,107"/>
+<area shape="rect" id="node3" href="$da/d29/CEvaluationNodeChoice_8cpp.html" title="CEvaluationNodeChoice.cpp" alt="" coords="196,80,380,107"/>
+<area shape="rect" id="node4" href="$d8/d3d/CEvaluationNodeConstant_8cpp.html" title="CEvaluationNodeConstant.cpp" alt="" coords="404,80,599,107"/>
+<area shape="rect" id="node5" href="$da/d16/CEvaluationNodeDelay_8cpp.html" title="CEvaluationNodeDelay.cpp" alt="" coords="623,80,799,107"/>
+<area shape="rect" id="node6" href="$da/d51/CEvaluationNodeFunction_8cpp.html" title="CEvaluationNodeFunction.cpp" alt="" coords="823,80,1017,107"/>
+<area shape="rect" id="node7" href="$d1/da5/CEvaluationNodeLogical_8cpp.html" title="CEvaluationNodeLogical.cpp" alt="" coords="1042,80,1227,107"/>
+<area shape="rect" id="node8" href="$d4/d37/CEvaluationNodeNumber_8cpp.html" title="CEvaluationNodeNumber.cpp" alt="" coords="1252,80,1441,107"/>
+<area shape="rect" id="node9" href="$d8/db2/CEvaluationNodeObject_8cpp.html" title="CEvaluationNodeObject.cpp" alt="" coords="1466,80,1648,107"/>
+<area shape="rect" id="node10" href="$d8/d44/CEvaluationNodeOperator_8cpp.html" title="CEvaluationNodeOperator.cpp" alt="" coords="1673,80,1868,107"/>
+<area shape="rect" id="node11" href="$d0/d27/CEvaluationNodeVariable_8cpp.html" title="CEvaluationNodeVariable.cpp" alt="" coords="1893,80,2083,107"/>
+<area shape="rect" id="node12" href="$d0/d08/CExpression_8cpp.html" title="Implementation file of class CExpression. " alt="" coords="2107,80,2223,107"/>
+<area shape="rect" id="node13" href="$d6/db0/CFunction_8cpp.html" title="CFunction.cpp" alt="" coords="2247,80,2352,107"/>
+<area shape="rect" id="node14" href="$d5/dc5/CMassAction_8cpp.html" title="CMassAction.cpp" alt="" coords="2377,80,2500,107"/>
+<area shape="rect" id="node15" href="$d6/dd8/CMMLOutput_8cpp.html" title="CMMLOutput.cpp" alt="" coords="2524,80,2647,107"/>
+<area shape="rect" id="node16" href="$db/dbd/Expression2PresentationMML_8cpp.html" title="Expression2PresentationMML.cpp" alt="" coords="2671,80,2885,107"/>
+</map>

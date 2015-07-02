@@ -1,0 +1,19 @@
+<map id="CExpression" name="CExpression">
+<area shape="rect" id="node2" href="$d1/d50/classCEvaluationTree.html" title="CEvaluationTree" alt="" coords="1697,159,1813,185"/>
+<area shape="rect" id="node3" href="$d9/dfd/classCCopasiContainer.html" title="CCopasiContainer" alt="" coords="235,656,360,683"/>
+<area shape="rect" id="node4" href="$d4/da8/classCCopasiObject.html" title="CCopasiObject" alt="" coords="611,819,719,845"/>
+<area shape="rect" id="node11" href="$dc/d69/classCCopasiStaticString.html" title="CCopasiStaticString" alt="" coords="1035,784,1173,811"/>
+<area shape="rect" id="node5" href="$df/dfa/classCObjectInterface.html" title="CObjectInterface" alt="" coords="237,1020,357,1047"/>
+<area shape="rect" id="node7" title="STL class. " alt="" coords="619,940,712,967"/>
+<area shape="rect" id="node16" title="STL class. " alt="" coords="593,616,737,643"/>
+<area shape="rect" id="node9" href="$d8/dc4/classCRenameHandler.html" title="CRenameHandler" alt="" coords="236,819,359,845"/>
+<area shape="rect" id="node10" href="$d4/dad/classUpdateMethod.html" title="UpdateMethod" alt="" coords="244,879,351,905"/>
+<area shape="rect" id="node12" title="STL class. " alt="" coords="259,276,335,303"/>
+<area shape="rect" id="node21" href="$d9/d9d/classCCopasiNode.html" title="CCopasiNode\&lt; std::string \&gt;" alt="" coords="577,7,753,33"/>
+<area shape="rect" id="node13" title="STL class. " alt="" coords="6,269,127,310"/>
+<area shape="rect" id="node14" href="$d0/d44/classRefresh.html" title="Refresh" alt="" coords="264,969,331,996"/>
+<area shape="rect" id="node19" title="STL class. " alt="" coords="610,260,721,287"/>
+<area shape="rect" id="node20" href="$d8/d9f/classCEvaluationNode.html" title="CEvaluationNode" alt="" coords="1044,57,1164,84"/>
+<area shape="rect" id="node22" href="$d9/d9d/classCCopasiNode.html" title="CCopasiNode\&lt; _Data \&gt;" alt="" coords="219,7,375,33"/>
+<area shape="rect" id="node24" href="$da/da3/classCEvaluationNode_1_1CPrecedence.html" title="CEvaluationNode::CPrecedence" alt="" coords="563,57,767,84"/>
+</map>

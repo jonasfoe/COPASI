@@ -1,0 +1,38 @@
+<map id="CQExpressionWidget" name="CQExpressionWidget">
+<area shape="rect" id="node3" href="$dd/d51/classCQValidatorExpression.html" title="CQValidatorExpression" alt="" coords="2571,1189,2723,1216"/>
+<area shape="rect" id="node4" href="$da/d00/classCQValidator.html" title="CQValidator\&lt; QTextEdit \&gt;" alt="" coords="2176,1260,2347,1287"/>
+<area shape="rect" id="node37" href="$d6/d65/classCQValidatorFunction.html" title="CQValidatorFunction" alt="" coords="3395,768,3536,795"/>
+<area shape="rect" id="node6" href="$da/d00/classCQValidator.html" title="CQValidator\&lt; Type \&gt;" alt="" coords="1796,1309,1937,1336"/>
+<area shape="rect" id="node27" href="$d8/d9f/classCEvaluationNode.html" title="CEvaluationNode" alt="" coords="1044,1031,1164,1057"/>
+<area shape="rect" id="node8" href="$dc/dbd/classCExpression.html" title="CExpression" alt="" coords="2215,967,2307,993"/>
+<area shape="rect" id="node9" href="$d1/d50/classCEvaluationTree.html" title="CEvaluationTree" alt="" coords="1809,1004,1925,1031"/>
+<area shape="rect" id="node38" href="$d9/d86/classCFunction.html" title="The class for handling a chemical kinetic function. " alt="" coords="3162,768,3243,795"/>
+<area shape="rect" id="node10" href="$d9/dfd/classCCopasiContainer.html" title="CCopasiContainer" alt="" coords="1431,664,1556,691"/>
+<area shape="rect" id="node11" href="$d4/da8/classCCopasiObject.html" title="CCopasiObject" alt="" coords="611,169,719,196"/>
+<area shape="rect" id="node41" href="$d0/d1f/classCFunctionParameters.html" title="CFunctionParameters" alt="" coords="2875,717,3021,744"/>
+<area shape="rect" id="node44" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; CFunction\lParameter \&gt;" alt="" coords="1778,837,1955,878"/>
+<area shape="rect" id="node18" href="$dc/d69/classCCopasiStaticString.html" title="CCopasiStaticString" alt="" coords="1035,135,1173,161"/>
+<area shape="rect" id="node12" href="$df/dfa/classCObjectInterface.html" title="CObjectInterface" alt="" coords="237,193,357,220"/>
+<area shape="rect" id="node14" title="STL class. " alt="" coords="619,263,712,289"/>
+<area shape="rect" id="node23" title="STL class. " alt="" coords="593,685,737,712"/>
+<area shape="rect" id="node36" title="STL class. " alt="" coords="607,551,723,577"/>
+<area shape="rect" id="node16" href="$d8/dc4/classCRenameHandler.html" title="CRenameHandler" alt="" coords="236,35,359,61"/>
+<area shape="rect" id="node17" href="$d4/dad/classUpdateMethod.html" title="UpdateMethod" alt="" coords="244,92,351,119"/>
+<area shape="rect" id="node19" title="STL class. " alt="" coords="259,773,335,800"/>
+<area shape="rect" id="node28" href="$d9/d9d/classCCopasiNode.html" title="CCopasiNode\&lt; std::string \&gt;" alt="" coords="577,1055,753,1081"/>
+<area shape="rect" id="node39" href="$d8/dfc/classCAnnotation.html" title="CAnnotation" alt="" coords="1447,745,1540,772"/>
+<area shape="rect" id="node20" title="STL class. " alt="" coords="6,766,127,807"/>
+<area shape="rect" id="node21" href="$d0/d44/classRefresh.html" title="Refresh" alt="" coords="264,143,331,169"/>
+<area shape="rect" id="node26" title="STL class. " alt="" coords="1049,1208,1159,1235"/>
+<area shape="rect" id="node45" title="STL class. " alt="" coords="809,1273,956,1300"/>
+<area shape="rect" id="node49" title="STL class. " alt="" coords="599,1109,732,1136"/>
+<area shape="rect" id="node29" href="$d9/d9d/classCCopasiNode.html" title="CCopasiNode\&lt; _Data \&gt;" alt="" coords="219,1055,375,1081"/>
+<area shape="rect" id="node31" href="$da/da3/classCEvaluationNode_1_1CPrecedence.html" title="CEvaluationNode::CPrecedence" alt="" coords="563,1004,767,1031"/>
+<area shape="rect" id="node33" href="$db/dee/classCQExpressionHighlighter.html" title="The class for highlighting the expression syntax. " alt="" coords="3384,1263,3547,1289"/>
+<area shape="rect" id="node42" href="$d9/db9/classCCopasiVectorNS.html" title="CCopasiVectorNS\&lt; CFunction\lParameter \&gt;" alt="" coords="2549,823,2744,865"/>
+<area shape="rect" id="node43" href="$d7/d08/classCCopasiVectorN.html" title="CCopasiVectorN\&lt; CFunction\lParameter \&gt;" alt="" coords="2168,823,2355,865"/>
+<area shape="rect" id="node46" href="$d7/d08/classCCopasiVectorN.html" title="CCopasiVectorN\&lt; CType \&gt;" alt="" coords="1779,903,1954,929"/>
+<area shape="rect" id="node47" href="$d9/db9/classCCopasiVectorNS.html" title="CCopasiVectorNS\&lt; CType \&gt;" alt="" coords="2169,904,2353,931"/>
+<area shape="rect" id="node48" href="$dd/df3/classCCallParameters.html" title="CCallParameters\&lt; C\l_FLOAT64 \&gt;" alt="" coords="1424,1130,1563,1171"/>
+<area shape="rect" id="node50" href="$dd/df3/classCCallParameters.html" title="CCallParameters\&lt; Type \&gt;" alt="" coords="1019,1157,1189,1184"/>
+</map>

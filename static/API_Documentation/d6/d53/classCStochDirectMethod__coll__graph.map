@@ -1,0 +1,48 @@
+<map id="CStochDirectMethod" name="CStochDirectMethod">
+<area shape="rect" id="node2" href="$d0/dc9/classCTrajectoryMethod.html" title="CTrajectoryMethod" alt="" coords="881,864,1011,891"/>
+<area shape="rect" id="node3" href="$df/d49/classCCopasiMethod.html" title="CCopasiMethod" alt="" coords="4125,495,4237,521"/>
+<area shape="rect" id="node4" href="$df/d89/classCCopasiParameterGroup.html" title="CCopasiParameterGroup" alt="" coords="4092,343,4256,369"/>
+<area shape="rect" id="node11" href="$d1/d05/classCCopasiProblem.html" title="CCopasiProblem" alt="" coords="3474,616,3592,643"/>
+<area shape="rect" id="node5" title="STL class. " alt="" coords="4119,96,4195,123"/>
+<area shape="rect" id="node6" href="$d8/da5/classCProcessReport.html" title="CProcessReport" alt="" coords="3953,343,4068,369"/>
+<area shape="rect" id="node12" href="$d4/d04/classCModel.html" title="CModel" alt="" coords="2432,495,2499,521"/>
+<area shape="rect" id="node13" href="$d0/da0/classCModelEntity.html" title="CModelEntity" alt="" coords="2828,616,2927,643"/>
+<area shape="rect" id="node15" href="$d4/da8/classCCopasiObject.html" title="CCopasiObject" alt="" coords="3335,200,3443,227"/>
+<area shape="rect" id="node18" href="$d8/dfc/classCAnnotation.html" title="CAnnotation" alt="" coords="4313,495,4407,521"/>
+<area shape="rect" id="node19" href="$dc/dbd/classCExpression.html" title="CExpression" alt="" coords="3950,267,4041,293"/>
+<area shape="rect" id="node23" href="$d6/de0/classCModelParameterSet.html" title="CModelParameterSet" alt="" coords="4280,616,4427,643"/>
+<area shape="rect" id="node34" href="$d2/dad/classCArrayAnnotation.html" title="CArrayAnnotation" alt="" coords="3187,200,3309,227"/>
+<area shape="rect" id="node48" href="$df/dcb/classCRandom.html" title="CRandom" alt="" coords="4715,200,4793,227"/>
+<area shape="rect" id="node7" href="$dd/de4/classCVector.html" title="CVector\&lt; C_INT \&gt;" alt="" coords="493,96,619,123"/>
+<area shape="rect" id="node30" href="$d9/d6a/classCLinkMatrix.html" title="CLinkMatrix" alt="" coords="1244,200,1335,227"/>
+<area shape="rect" id="node8" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; C_INT \&gt;" alt="" coords="121,5,275,32"/>
+<area shape="rect" id="node9" href="$dd/de4/classCVector.html" title="CVector\&lt; CType \&gt;" alt="" coords="493,5,619,32"/>
+<area shape="rect" id="node31" href="$dd/de4/classCVector.html" title="CVector\&lt; size_t \&gt;" alt="" coords="724,96,847,123"/>
+<area shape="rect" id="node38" href="$dd/de4/classCVector.html" title="CVector\&lt; C_FLOAT64 \&gt;" alt="" coords="127,343,289,369"/>
+<area shape="rect" id="node10" href="$d9/d61/classCTrajectoryProblem.html" title="CTrajectoryProblem" alt="" coords="2623,773,2757,800"/>
+<area shape="rect" id="node37" href="$d3/df7/classCMathModel.html" title="CMathModel" alt="" coords="1531,616,1625,643"/>
+<area shape="rect" id="node43" href="$d7/dc0/classCStateTemplate.html" title="CStateTemplate" alt="" coords="2310,773,2425,800"/>
+<area shape="rect" id="node14" href="$d9/dfd/classCCopasiContainer.html" title="CCopasiContainer" alt="" coords="3087,96,3212,123"/>
+<area shape="rect" id="node26" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; CModelValue \&gt;" alt="" coords="2204,200,2409,227"/>
+<area shape="rect" id="node40" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; CMetab \&gt;" alt="" coords="1629,267,1803,293"/>
+<area shape="rect" id="node41" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; CMoiety \&gt;" alt="" coords="3068,267,3244,293"/>
+<area shape="rect" id="node20" href="$d7/d18/classCCopasiObjectReference.html" title="CCopasiObjectReference\l\&lt; C_FLOAT64 \&gt;" alt="" coords="3473,411,3639,453"/>
+<area shape="rect" id="node17" title="STL class. " alt="" coords="3468,200,3561,227"/>
+<area shape="rect" id="node21" href="$d7/dd7/classCMatrix.html" title="CMatrix\&lt; C_FLOAT64 \&gt;" alt="" coords="1332,96,1491,123"/>
+<area shape="rect" id="node22" href="$d7/dd7/classCMatrix.html" title="CMatrix\&lt; CType \&gt;" alt="" coords="1349,5,1475,32"/>
+<area shape="rect" id="node24" href="$df/dd2/classCModelParameterGroup.html" title="CModelParameterGroup" alt="" coords="4431,495,4592,521"/>
+<area shape="rect" id="node25" href="$d7/d08/classCCopasiVectorN.html" title="CCopasiVectorN\&lt; CModelValue \&gt;" alt="" coords="1766,343,1980,369"/>
+<area shape="rect" id="node27" href="$d7/d08/classCCopasiVectorN.html" title="CCopasiVectorN\&lt; CType \&gt;" alt="" coords="2687,200,2861,227"/>
+<area shape="rect" id="node42" href="$d7/d08/classCCopasiVectorN.html" title="CCopasiVectorN\&lt; CModelParameter\lSet \&gt;" alt="" coords="2889,335,3119,377"/>
+<area shape="rect" id="node45" href="$d7/d08/classCCopasiVectorN.html" title="CCopasiVectorN\&lt; CEvent \&gt;" alt="" coords="2685,343,2864,369"/>
+<area shape="rect" id="node28" href="$d9/db9/classCCopasiVectorNS.html" title="CCopasiVectorNS\&lt; CReaction \&gt;" alt="" coords="2005,343,2211,369"/>
+<area shape="rect" id="node29" href="$d4/df2/classCLinkMatrixView.html" title="CLinkMatrixView" alt="" coords="1335,343,1451,369"/>
+<area shape="rect" id="node47" href="$d3/d1a/classCStochDirectMethod_1_1CReactionDependencies.html" title="CStochDirectMethod\l::CReactionDependencies" alt="" coords="195,487,364,529"/>
+<area shape="rect" id="node33" title="STL class. " alt="" coords="599,200,709,227"/>
+<area shape="rect" id="node35" href="$d9/db9/classCCopasiVectorNS.html" title="CCopasiVectorNS\&lt; CCompartment \&gt;" alt="" coords="2236,343,2469,369"/>
+<area shape="rect" id="node36" href="$da/d4a/classCMathDependencyGraph.html" title="CMathDependencyGraph" alt="" coords="2494,343,2660,369"/>
+<area shape="rect" id="node39" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; C_FLOAT64 \&gt;" alt="" coords="5,200,195,227"/>
+<area shape="rect" id="node44" href="$dc/d1d/classCState.html" title="CState" alt="" coords="967,343,1029,369"/>
+<area shape="rect" id="node49" href="$da/dc8/structCRandom_1_1ExpVars.html" title="CRandom::ExpVars" alt="" coords="4705,96,4835,123"/>
+<area shape="rect" id="node50" href="$d3/d61/structCRandom_1_1PoissonVars.html" title="CRandom::PoissonVars" alt="" coords="4860,96,5013,123"/>
+</map>

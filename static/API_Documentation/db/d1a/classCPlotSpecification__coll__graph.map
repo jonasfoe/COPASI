@@ -1,0 +1,24 @@
+<map id="CPlotSpecification" name="CPlotSpecification">
+<area shape="rect" id="node2" href="$d8/d8b/classCPlotItem.html" title="CPlotItem" alt="" coords="2345,773,2425,800"/>
+<area shape="rect" id="node3" href="$df/d89/classCCopasiParameterGroup.html" title="CCopasiParameterGroup" alt="" coords="2003,715,2168,741"/>
+<area shape="rect" id="node4" href="$d5/db6/classCCopasiParameter.html" title="CCopasiParameter" alt="" coords="1671,497,1801,524"/>
+<area shape="rect" id="node5" href="$d9/dfd/classCCopasiContainer.html" title="CCopasiContainer" alt="" coords="1265,171,1391,197"/>
+<area shape="rect" id="node6" href="$d4/da8/classCCopasiObject.html" title="CCopasiObject" alt="" coords="506,273,614,300"/>
+<area shape="rect" id="node30" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; CPlotItem \&gt;" alt="" coords="1992,89,2179,116"/>
+<area shape="rect" id="node32" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; T \&gt;" alt="" coords="1667,63,1805,89"/>
+<area shape="rect" id="node13" href="$dc/d69/classCCopasiStaticString.html" title="CCopasiStaticString" alt="" coords="899,449,1037,476"/>
+<area shape="rect" id="node7" href="$df/dfa/classCObjectInterface.html" title="CObjectInterface" alt="" coords="180,128,300,155"/>
+<area shape="rect" id="node9" title="STL class. " alt="" coords="513,389,607,416"/>
+<area shape="rect" id="node18" title="STL class. " alt="" coords="488,77,632,104"/>
+<area shape="rect" id="node11" href="$d8/dc4/classCRenameHandler.html" title="CRenameHandler" alt="" coords="179,179,301,205"/>
+<area shape="rect" id="node12" href="$d4/dad/classUpdateMethod.html" title="UpdateMethod" alt="" coords="187,280,293,307"/>
+<area shape="rect" id="node14" title="STL class. " alt="" coords="202,573,278,600"/>
+<area shape="rect" id="node22" href="$d8/dea/unionCCopasiParameter_1_1Value.html" title="CCopasiParameter::Value" alt="" coords="2301,568,2469,595"/>
+<area shape="rect" id="node25" href="$db/d84/classCCopasiObjectName.html" title="CCopasiObjectName" alt="" coords="489,692,631,719"/>
+<area shape="rect" id="node15" title="STL class. " alt="" coords="6,566,127,607"/>
+<area shape="rect" id="node16" href="$d0/d44/classRefresh.html" title="Refresh" alt="" coords="207,331,273,357"/>
+<area shape="rect" id="node21" title="STL class. " alt="" coords="1273,260,1383,287"/>
+<area shape="rect" id="node31" title="STL class. " alt="" coords="1255,12,1401,39"/>
+<area shape="rect" id="node24" href="$dd/d09/classCRegisteredObjectName.html" title="CRegisteredObjectName" alt="" coords="886,695,1050,721"/>
+<area shape="rect" id="node28" href="$d3/d3c/classCPlotDataChannelSpec.html" title="CPlotDataChannelSpec" alt="" coords="1249,777,1407,804"/>
+</map>

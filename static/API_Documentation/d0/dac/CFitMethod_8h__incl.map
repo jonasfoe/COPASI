@@ -1,0 +1,16 @@
+<map id="CFitMethod.h" name="CFitMethod.h">
+<area shape="rect" id="node3" href="$d0/dfa/COptMethod_8h.html" title="optimization/COptMethod.h" alt="" coords="43,80,221,107"/>
+<area shape="rect" id="node4" href="$d2/d39/CCopasiMethod_8h.html" title="utilities/CCopasiMethod.h" alt="" coords="482,155,648,181"/>
+<area shape="rect" id="node5" href="$dc/d95/CCopasiParameterGroup_8h.html" title="copasi/utilities/CCopasi\lParameterGroup.h" alt="" coords="259,230,412,271"/>
+<area shape="rect" id="node22" href="$d2/d53/CCopasiTask_8h.html" title="copasi/utilities/CCopasi\lTask.h" alt="" coords="660,230,813,271"/>
+<area shape="rect" id="node25" href="$d3/d2b/CReadConfig_8h.html" title="copasi/utilities/CReadConfig.h" alt="" coords="1429,493,1621,520"/>
+<area shape="rect" id="node7" href="$d9/df7/CCopasiParameter_8h.html" title="copasi/utilities/CCopasi\lParameter.h" alt="" coords="373,321,527,362"/>
+<area shape="rect" id="node20" href="$d9/d2d/CCopasiMessage_8h.html" title="copasi/utilities/CCopasi\lMessage.h" alt="" coords="144,321,297,362"/>
+<area shape="rect" id="node8" href="$d4/d70/CCopasiContainer_8h.html" title="Header file of class CCopasiContainer. " alt="" coords="944,411,1157,437"/>
+<area shape="rect" id="node19" href="$db/d45/CCopasiObjectName_8h.html" title="copasi/report/CCopasiObject\lName.h" alt="" coords="581,486,768,527"/>
+<area shape="rect" id="node10" href="$dd/d9f/CCopasiObject_8h.html" title="copasi/report/CCopasiObject.h" alt="" coords="1017,493,1212,520"/>
+<area shape="rect" id="node14" href="$dc/df8/copasi_8h.html" title="copasi/copasi.h" alt="" coords="1362,576,1472,603"/>
+<area shape="rect" id="node18" href="$d3/dfe/CMathEnum_8h.html" title="copasi/math/CMathEnum.h" alt="" coords="1046,576,1223,603"/>
+<area shape="rect" id="node23" href="$d7/d0c/COutputHandler_8h.html" title="utilities/COutputHandler.h" alt="" coords="701,411,869,437"/>
+<area shape="rect" id="node24" href="$d4/d2f/CReport_8h.html" title="report/CReport.h" alt="" coords="775,328,891,355"/>
+</map>

@@ -1,0 +1,17 @@
+<map id="CEvaluationNode" name="CEvaluationNode">
+<area shape="rect" id="node4" href="$df/d44/classCEvaluationNodeCall.html" title="CEvaluationNodeCall" alt="" coords="713,5,855,32"/>
+<area shape="rect" id="node5" href="$d7/ddb/classCEvaluationNodeChoice.html" title="CEvaluationNodeChoice" alt="" coords="704,56,864,83"/>
+<area shape="rect" id="node6" href="$dd/d1f/classCEvaluationNodeConstant.html" title="CEvaluationNodeConstant" alt="" coords="699,107,869,133"/>
+<area shape="rect" id="node7" href="$dd/d48/classCEvaluationNodeDelay.html" title="CEvaluationNodeDelay" alt="" coords="708,157,860,184"/>
+<area shape="rect" id="node8" href="$d8/dcb/classCEvaluationNodeFunction.html" title="CEvaluationNodeFunction" alt="" coords="699,208,869,235"/>
+<area shape="rect" id="node9" href="$de/d73/classCEvaluationNodeLogical.html" title="CEvaluationNodeLogical" alt="" coords="703,259,865,285"/>
+<area shape="rect" id="node10" href="$d3/d2a/classCEvaluationNodeNumber.html" title="CEvaluationNodeNumber" alt="" coords="701,309,867,336"/>
+<area shape="rect" id="node11" href="$d8/d28/classCEvaluationNodeObject.html" title="CEvaluationNodeObject" alt="" coords="705,360,863,387"/>
+<area shape="rect" id="node12" href="$d5/de4/classCEvaluationNodeOperator.html" title="CEvaluationNodeOperator" alt="" coords="699,411,869,437"/>
+<area shape="rect" id="node13" href="$d4/de7/classCEvaluationNodeStructure.html" title="CEvaluationNodeStructure" alt="" coords="697,461,871,488"/>
+<area shape="rect" id="node14" href="$d3/d1b/classCEvaluationNodeVariable.html" title="CEvaluationNodeVariable" alt="" coords="701,512,867,539"/>
+<area shape="rect" id="node15" href="$df/de0/classCEvaluationNodeVector.html" title="CEvaluationNodeVector" alt="" coords="705,563,863,589"/>
+<area shape="rect" id="node16" href="$d7/d6b/classCEvaluationNodeWhiteSpace.html" title="CEvaluationNodeWhiteSpace" alt="" coords="689,613,879,640"/>
+<area shape="rect" id="node2" href="$d9/d9d/classCCopasiNode.html" title="CCopasiNode\&lt; std::string \&gt;" alt="" coords="291,309,467,336"/>
+<area shape="rect" id="node3" href="$d9/d9d/classCCopasiNode.html" title="CCopasiNode\&lt; _Data \&gt;" alt="" coords="6,309,162,336"/>
+</map>

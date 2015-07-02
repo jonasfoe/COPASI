@@ -1,0 +1,18 @@
+<map id="CScanItemRandom" name="CScanItemRandom">
+<area shape="rect" id="node2" href="$d6/d8c/classCScanItem.html" title="CScanItem" alt="" coords="957,217,1043,243"/>
+<area shape="rect" id="node3" href="$d4/da8/classCCopasiObject.html" title="CCopasiObject" alt="" coords="538,195,646,222"/>
+<area shape="rect" id="node10" href="$dc/d69/classCCopasiStaticString.html" title="CCopasiStaticString" alt="" coords="931,137,1069,163"/>
+<area shape="rect" id="node14" href="$d9/dfd/classCCopasiContainer.html" title="CCopasiContainer" alt="" coords="1299,241,1424,267"/>
+<area shape="rect" id="node4" href="$df/dfa/classCObjectInterface.html" title="CObjectInterface" alt="" coords="196,85,316,111"/>
+<area shape="rect" id="node6" title="STL class. " alt="" coords="545,537,639,563"/>
+<area shape="rect" id="node16" title="STL class. " alt="" coords="520,602,664,629"/>
+<area shape="rect" id="node8" href="$d8/dc4/classCRenameHandler.html" title="CRenameHandler" alt="" coords="195,135,317,162"/>
+<area shape="rect" id="node9" href="$d4/dad/classUpdateMethod.html" title="UpdateMethod" alt="" coords="203,194,309,221"/>
+<area shape="rect" id="node11" title="STL class. " alt="" coords="218,366,294,393"/>
+<area shape="rect" id="node20" href="$df/dcb/classCRandom.html" title="CRandom" alt="" coords="553,471,631,498"/>
+<area shape="rect" id="node12" title="STL class. " alt="" coords="6,359,127,400"/>
+<area shape="rect" id="node13" href="$d0/d44/classRefresh.html" title="Refresh" alt="" coords="223,245,289,271"/>
+<area shape="rect" id="node19" title="STL class. " alt="" coords="723,647,834,674"/>
+<area shape="rect" id="node21" href="$da/dc8/structCRandom_1_1ExpVars.html" title="CRandom::ExpVars" alt="" coords="191,463,321,490"/>
+<area shape="rect" id="node22" href="$d3/d61/structCRandom_1_1PoissonVars.html" title="CRandom::PoissonVars" alt="" coords="179,514,333,541"/>
+</map>

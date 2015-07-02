@@ -1,0 +1,41 @@
+<map id="CNewtonMethod.h" name="CNewtonMethod.h">
+<area shape="rect" id="node2" href="$d5/db4/CSteadyStateMethod_8h.html" title="CSteadyStateMethod.h" alt="" coords="2583,80,2736,107"/>
+<area shape="rect" id="node3" href="$d2/d81/CLNAMethod_8h.html" title="CLNAMethod.h" alt="" coords="476,155,585,181"/>
+<area shape="rect" id="node9" href="$db/db6/CLNATask_8h.html" title="CLNATask.h" alt="" coords="1027,155,1121,181"/>
+<area shape="rect" id="node16" href="$d0/df4/CMCAMethod_8h.html" title="CMCAMethod.h" alt="" coords="3399,155,3512,181"/>
+<area shape="rect" id="node23" href="$d0/d89/CSteadyStateTask_8h.html" title="CSteadyStateTask.h" alt="" coords="2139,155,2279,181"/>
+<area shape="rect" id="node34" href="$d2/dda/CNewtonMethod_8cpp.html" title="CNewtonMethod.cpp" alt="" coords="2500,229,2640,256"/>
+<area shape="rect" id="node35" href="$d4/d6a/CSteadyStateMethod_8cpp.html" title="CSteadyStateMethod.cpp" alt="" coords="2666,229,2835,256"/>
+<area shape="rect" id="node36" href="$d0/dd1/CSteadyStateTask_8cpp.html" title="CSteadyStateTask.cpp" alt="" coords="2860,229,3013,256"/>
+<area shape="rect" id="node40" href="$d1/da4/CMCATask_8h.html" title="CMCATask.h" alt="" coords="3980,155,4079,181"/>
+<area shape="rect" id="node4" href="$d4/d0d/CLNAMethod_8cpp.html" title="CLNAMethod.cpp" alt="" coords="5,229,128,256"/>
+<area shape="rect" id="node5" href="$db/d35/CLNATask_8cpp.html" title="CLNATask.cpp" alt="" coords="585,229,692,256"/>
+<area shape="rect" id="node6" href="$de/df5/CLNAResultSubwidget_8cpp.html" title="CLNAResultSubwidget.cpp" alt="" coords="333,229,509,256"/>
+<area shape="rect" id="node7" href="$d1/df7/CLNAResultWidget_8cpp.html" title="CLNAResultWidget.cpp" alt="" coords="153,229,308,256"/>
+<area shape="rect" id="node8" href="$d3/d0b/CQLNAWidget_8cpp.html" title="CQLNAWidget.cpp" alt="" coords="717,229,847,256"/>
+<area shape="rect" id="node10" href="$d4/d38/CCopasiDataModel_8cpp.html" title="CCopasiDataModel.cpp" alt="" coords="1406,379,1561,405"/>
+<area shape="rect" id="node11" href="$df/d41/CLNAProblem_8cpp.html" title="CLNAProblem.cpp" alt="" coords="1213,229,1341,256"/>
+<area shape="rect" id="node12" href="$d8/d3f/CScanTask_8cpp.html" title="CScanTask.cpp" alt="" coords="495,379,608,405"/>
+<area shape="rect" id="node13" href="$d1/d52/DataModelGUI_8cpp.html" title="DataModelGUI.cpp" alt="" coords="1587,379,1716,405"/>
+<area shape="rect" id="node14" href="$df/d22/SliderDialog_8cpp.html" title="SliderDialog.cpp" alt="" coords="1992,379,2107,405"/>
+<area shape="rect" id="node15" href="$d6/d11/CCopasiXMLParser_8cpp.html" title="CCopasiXMLParser.cpp" alt="" coords="2257,379,2415,405"/>
+<area shape="rect" id="node17" href="$da/dc0/CMCAMethod_8cpp.html" title="CMCAMethod.cpp" alt="" coords="3039,229,3165,256"/>
+<area shape="rect" id="node18" href="$dc/d37/CMCATask_8cpp.html" title="CMCATask.cpp" alt="" coords="3400,229,3511,256"/>
+<area shape="rect" id="node19" href="$de/d80/CMCAResultSubwidget_8cpp.html" title="CMCAResultSubwidget.cpp" alt="" coords="4037,229,4216,256"/>
+<area shape="rect" id="node20" href="$db/dd9/CMCAResultWidget_8cpp.html" title="CMCAResultWidget.cpp" alt="" coords="3852,229,4011,256"/>
+<area shape="rect" id="node21" href="$d9/d53/CQMCAWidget_8cpp.html" title="CQMCAWidget.cpp" alt="" coords="3537,229,3671,256"/>
+<area shape="rect" id="node22" href="$d3/dce/CQSimpleSelectionTree_8cpp.html" title="CQSimpleSelectionTree.cpp" alt="" coords="3190,229,3375,256"/>
+<area shape="rect" id="node24" href="$df/d86/COptProblem_8cpp.html" title="COptProblem.cpp" alt="" coords="1569,229,1692,256"/>
+<area shape="rect" id="node25" href="$de/d65/CFitProblem_8cpp.html" title="CFitProblem.cpp" alt="" coords="1717,229,1835,256"/>
+<area shape="rect" id="node26" href="$d8/d2f/CScanMethod_8h.html" title="CScanMethod.h" alt="" coords="923,229,1037,256"/>
+<area shape="rect" id="node30" href="$dc/d16/SEDMLImporter_8cpp.html" title="SEDMLImporter.cpp" alt="" coords="1243,379,1381,405"/>
+<area shape="rect" id="node33" href="$db/d7a/CMCAProblem_8cpp.html" title="CMCAProblem.cpp" alt="" coords="3695,229,3827,256"/>
+<area shape="rect" id="node37" href="$d9/d81/CQSteadyStateResult_8cpp.html" title="CQSteadyStateResult.cpp" alt="" coords="1859,229,2031,256"/>
+<area shape="rect" id="node38" href="$d6/d5f/StateSubwidget_8cpp.html" title="StateSubwidget.cpp" alt="" coords="2055,229,2192,256"/>
+<area shape="rect" id="node39" href="$d7/d4a/SteadyStateWidget_8cpp.html" title="SteadyStateWidget.cpp" alt="" coords="2217,229,2375,256"/>
+<area shape="rect" id="node27" href="$db/d0b/CScanMethod_8cpp.html" title="CScanMethod.cpp" alt="" coords="773,379,901,405"/>
+<area shape="rect" id="node28" href="$d8/d01/CScanTask_8h.html" title="CScanTask.h" alt="" coords="941,304,1040,331"/>
+<area shape="rect" id="node31" href="$d1/dce/ScanWidget_8cpp.html" title="ScanWidget.cpp" alt="" coords="633,379,748,405"/>
+<area shape="rect" id="node29" href="$d9/de9/CSEDMLExporter_8cpp.html" title="CSEDMLExporter.cpp" alt="" coords="925,379,1072,405"/>
+<area shape="rect" id="node32" href="$d3/d7c/CCopasiXML_8cpp.html" title="Implementation file of class CCopasiXML. " alt="" coords="1097,379,1217,405"/>
+</map>

@@ -1,0 +1,31 @@
+<map id="CQBiologicalDescriptionDM.cpp" name="CQBiologicalDescriptionDM.cpp">
+<area shape="rect" id="node2" href="$da/dc1/CQBiologicalDescriptionDM_8h.html" title="CQBiologicalDescriptionDM.h" alt="" coords="219,245,409,272"/>
+<area shape="rect" id="node14" href="$d4/dfa/CQMessageBox_8h.html" title="UI/CQMessageBox.h" alt="" coords="436,80,576,107"/>
+<area shape="rect" id="node16" href="$d5/de1/qtUtilities_8h.html" title="UI/qtUtilities.h" alt="" coords="602,80,704,107"/>
+<area shape="rect" id="node28" href="$db/dc3/CModelMIRIAMInfo_8h.html" title="MIRIAM/CModelMIRIAMInfo.h" alt="" coords="1286,80,1484,107"/>
+<area shape="rect" id="node3" href="$df/d80/CQBaseDataModel_8h.html" title="UI/CQBaseDataModel.h" alt="" coords="235,584,393,611"/>
+<area shape="rect" id="node5" href="$d3/d29/listviews_8h.html" title="copasi/UI/listviews.h" alt="" coords="307,675,444,701"/>
+<area shape="rect" id="node10" href="$dc/df8/copasi_8h.html" title="copasi.h" alt="" coords="1027,757,1096,784"/>
+<area shape="rect" id="node18" href="$d9/df7/CCopasiParameter_8h.html" title="utilities/CCopasiParameter.h" alt="" coords="2056,493,2240,520"/>
+<area shape="rect" id="node21" href="$d4/d70/CCopasiContainer_8h.html" title="Header file of class CCopasiContainer. " alt="" coords="1179,584,1392,611"/>
+<area shape="rect" id="node27" href="$db/d45/CCopasiObjectName_8h.html" title="copasi/report/CCopasiObject\lName.h" alt="" coords="2107,577,2293,618"/>
+<area shape="rect" id="node23" href="$dd/d9f/CCopasiObject_8h.html" title="copasi/report/CCopasiObject.h" alt="" coords="1179,675,1375,701"/>
+<area shape="rect" id="node26" href="$d3/dfe/CMathEnum_8h.html" title="copasi/math/CMathEnum.h" alt="" coords="1222,757,1399,784"/>
+<area shape="rect" id="node29" href="$df/def/CCreator_8h.html" title="copasi/MIRIAM/CCreator.h" alt="" coords="1653,403,1829,429"/>
+<area shape="rect" id="node32" href="$d7/d02/CRDFObject_8h.html" title="copasi/MIRIAM/CRDFObject.h" alt="" coords="2589,675,2787,701"/>
+<area shape="rect" id="node33" href="$db/d26/CReference_8h.html" title="copasi/MIRIAM/CReference.h" alt="" coords="1474,163,1667,189"/>
+<area shape="rect" id="node46" href="$d1/dc5/CModified_8h.html" title="copasi/MIRIAM/CModified.h" alt="" coords="1395,403,1577,429"/>
+<area shape="rect" id="node47" href="$d1/d89/CBiologicalDescription_8h.html" title="copasi/MIRIAM/CBiological\lDescription.h" alt="" coords="1691,155,1871,197"/>
+<area shape="rect" id="node48" href="$da/d07/CRDFGraph_8h.html" title="copasi/MIRIAM/CRDFGraph.h" alt="" coords="899,403,1093,429"/>
+<area shape="rect" id="node50" href="$d7/d51/CCopasiVector_8h.html" title="copasi/utilities/CCopasi\lVector.h" alt="" coords="2520,486,2673,527"/>
+<area shape="rect" id="node30" href="$d4/d89/CRDFTriplet_8h.html" title="copasi/MIRIAM/CRDFTriplet.h" alt="" coords="1446,493,1641,520"/>
+<area shape="rect" id="node31" href="$db/ddd/CRDFPredicate_8h.html" title="copasi/MIRIAM/CRDFPredicate.h" alt="" coords="1417,584,1631,611"/>
+<area shape="rect" id="node34" href="$dc/de6/CConstants_8h.html" title="copasi/MIRIAM/CConstants.h" alt="" coords="1729,245,1919,272"/>
+<area shape="rect" id="node35" href="$d8/d90/CMIRIAMResource_8h.html" title="CMIRIAMResource.h" alt="" coords="2194,320,2336,347"/>
+<area shape="rect" id="node36" href="$dc/d95/CCopasiParameterGroup_8h.html" title="utilities/CCopasiParameter\lGroup.h" alt="" coords="2571,395,2745,437"/>
+<area shape="rect" id="node40" href="$db/d91/CProcessReport_8h.html" title="utilities/CProcessReport.h" alt="" coords="1918,403,2087,429"/>
+<area shape="rect" id="node44" href="$d5/d47/utility_8h.html" title="utilities/utility.h" alt="" coords="2469,584,2576,611"/>
+<area shape="rect" id="node37" href="$d9/d2d/CCopasiMessage_8h.html" title="copasi/utilities/CCopasi\lMessage.h" alt="" coords="2811,667,2964,709"/>
+<area shape="rect" id="node41" href="$da/dd9/CVector_8h.html" title="utilities/CVector.h" alt="" coords="1757,584,1880,611"/>
+<area shape="rect" id="node49" href="$d6/dd9/CRDFNode_8h.html" title="copasi/MIRIAM/CRDFNode.h" alt="" coords="875,493,1065,520"/>
+</map>

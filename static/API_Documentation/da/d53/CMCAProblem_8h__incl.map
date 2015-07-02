@@ -1,0 +1,17 @@
+<map id="CMCAProblem.h" name="CMCAProblem.h">
+<area shape="rect" id="node3" href="$de/d11/CState_8h.html" title="model/CState.h" alt="" coords="271,253,381,280"/>
+<area shape="rect" id="node15" href="$d1/d1d/CCopasiProblem_8h.html" title="utilities/CCopasiProblem.h" alt="" coords="974,80,1145,107"/>
+<area shape="rect" id="node28" href="$d3/d2b/CReadConfig_8h.html" title="utilities/CReadConfig.h" alt="" coords="503,427,653,453"/>
+<area shape="rect" id="node5" href="$da/dd9/CVector_8h.html" title="utilities/CVector.h" alt="" coords="265,344,388,371"/>
+<area shape="rect" id="node10" href="$dc/df8/copasi_8h.html" title="copasi.h" alt="" coords="76,501,145,528"/>
+<area shape="rect" id="node13" href="$d9/d2d/CCopasiMessage_8h.html" title="utilities/CCopasiMessage.h" alt="" coords="1205,427,1379,453"/>
+<area shape="rect" id="node16" href="$dc/d95/CCopasiParameterGroup_8h.html" title="utilities/CCopasiParameter\lGroup.h" alt="" coords="1546,155,1720,197"/>
+<area shape="rect" id="node25" href="$d2/d53/CCopasiTask_8h.html" title="utilities/CCopasiTask.h" alt="" coords="984,163,1136,189"/>
+<area shape="rect" id="node18" href="$d9/df7/CCopasiParameter_8h.html" title="copasi/utilities/CCopasi\lParameter.h" alt="" coords="1556,246,1709,287"/>
+<area shape="rect" id="node19" href="$d4/d70/CCopasiContainer_8h.html" title="Header file of class CCopasiContainer. " alt="" coords="905,344,1119,371"/>
+<area shape="rect" id="node24" href="$db/d45/CCopasiObjectName_8h.html" title="copasi/report/CCopasiObject\lName.h" alt="" coords="1244,337,1431,378"/>
+<area shape="rect" id="node20" href="$dd/d9f/CCopasiObject_8h.html" title="copasi/report/CCopasiObject.h" alt="" coords="781,427,976,453"/>
+<area shape="rect" id="node23" href="$d3/dfe/CMathEnum_8h.html" title="copasi/math/CMathEnum.h" alt="" coords="731,501,908,528"/>
+<area shape="rect" id="node26" href="$d7/d0c/COutputHandler_8h.html" title="utilities/COutputHandler.h" alt="" coords="616,344,784,371"/>
+<area shape="rect" id="node27" href="$d4/d2f/CReport_8h.html" title="report/CReport.h" alt="" coords="1050,253,1165,280"/>
+</map>

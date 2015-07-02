@@ -1,0 +1,26 @@
+<map id="CLGeneralGlyph" name="CLGeneralGlyph">
+<area shape="rect" id="node2" href="$dc/dac/classCLGlyphWithCurve.html" title="CLGlyphWithCurve" alt="" coords="2104,369,2235,396"/>
+<area shape="rect" id="node3" href="$d8/d63/classCLGraphicalObject.html" title="CLGraphicalObject" alt="" coords="1403,165,1533,192"/>
+<area shape="rect" id="node4" href="$d7/df9/classCLBase.html" title="CLBase" alt="" coords="383,272,449,299"/>
+<area shape="rect" id="node22" href="$d3/da7/classCLBoundingBox.html" title="CLBoundingBox" alt="" coords="1053,165,1168,192"/>
+<area shape="rect" id="node23" href="$db/d5d/classCLPoint.html" title="CLPoint" alt="" coords="731,272,799,299"/>
+<area shape="rect" id="node24" href="$d0/dfa/classCLDimensions.html" title="CLDimensions" alt="" coords="713,211,817,237"/>
+<area shape="rect" id="node25" href="$d0/df9/classCLCurve.html" title="CLCurve" alt="" coords="1866,369,1937,396"/>
+<area shape="rect" id="node27" href="$de/da1/classCLLineSegment.html" title="CLLineSegment" alt="" coords="1053,395,1168,421"/>
+<area shape="rect" id="node5" title="STL class. " alt="" coords="179,445,255,472"/>
+<area shape="rect" id="node8" href="$d4/da8/classCCopasiObject.html" title="CCopasiObject" alt="" coords="1414,657,1522,684"/>
+<area shape="rect" id="node15" href="$dc/d69/classCCopasiStaticString.html" title="CCopasiStaticString" alt="" coords="1832,581,1971,608"/>
+<area shape="rect" id="node6" title="STL class. " alt="" coords="6,438,127,479"/>
+<area shape="rect" id="node7" href="$d9/dfd/classCCopasiContainer.html" title="CCopasiContainer" alt="" coords="1048,852,1173,879"/>
+<area shape="rect" id="node28" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; CLGraphical\lObject \&gt;" alt="" coords="1807,1174,1996,1215"/>
+<area shape="rect" id="node30" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; T \&gt;" alt="" coords="1399,1172,1537,1199"/>
+<area shape="rect" id="node31" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; CLReference\lGlyph \&gt;" alt="" coords="1805,1102,1998,1143"/>
+<area shape="rect" id="node9" href="$df/dfa/classCObjectInterface.html" title="CObjectInterface" alt="" coords="1051,599,1171,625"/>
+<area shape="rect" id="node11" title="STL class. " alt="" coords="1421,964,1515,991"/>
+<area shape="rect" id="node18" title="STL class. " alt="" coords="1396,1065,1540,1092"/>
+<area shape="rect" id="node13" href="$d8/dc4/classCRenameHandler.html" title="CRenameHandler" alt="" coords="1049,649,1172,676"/>
+<area shape="rect" id="node14" href="$d4/dad/classUpdateMethod.html" title="UpdateMethod" alt="" coords="1057,700,1164,727"/>
+<area shape="rect" id="node16" href="$d0/d44/classRefresh.html" title="Refresh" alt="" coords="1077,751,1144,777"/>
+<area shape="rect" id="node21" title="STL class. " alt="" coords="361,852,471,879"/>
+<area shape="rect" id="node29" title="STL class. " alt="" coords="1037,1172,1184,1199"/>
+</map>

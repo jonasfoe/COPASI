@@ -1,0 +1,41 @@
+<map id="CCopasiXMLParser::ImageElement" name="CCopasiXMLParser::ImageElement">
+<area shape="rect" id="node2" href="$dc/db8/classCXMLElementHandler.html" title="CXMLElementHandler\l\&lt; CCopasiXMLParser,\l SCopasiXMLParserCommon \&gt;" alt="" coords="1821,1332,2021,1388"/>
+<area shape="rect" id="node3" href="$da/db0/structSCopasiXMLParserCommon.html" title="SCopasiXMLParserCommon" alt="" coords="1144,1328,1331,1355"/>
+<area shape="rect" id="node49" href="$da/d60/classCCopasiXMLParser.html" title="CCopasiXMLParser" alt="" coords="1453,1276,1587,1303"/>
+<area shape="rect" id="node4" href="$d1/d38/classCLGradientBase.html" title="CLGradientBase" alt="" coords="525,321,641,348"/>
+<area shape="rect" id="node5" title="STL class. " alt="" coords="6,1327,82,1353"/>
+<area shape="rect" id="node6" href="$da/d7e/classCLayout.html" title="CLayout" alt="" coords="548,453,617,480"/>
+<area shape="rect" id="node7" href="$da/dcc/classCReportDefinition.html" title="CReportDefinition" alt="" coords="521,511,644,537"/>
+<area shape="rect" id="node9" href="$d8/d8b/classCPlotItem.html" title="CPlotItem" alt="" coords="329,605,409,632"/>
+<area shape="rect" id="node10" href="$d9/d86/classCFunction.html" title="The class for handling a chemical kinetic function. " alt="" coords="329,1275,410,1301"/>
+<area shape="rect" id="node12" href="$d8/d1f/classCLStyle.html" title="CLStyle" alt="" coords="787,780,853,807"/>
+<area shape="rect" id="node13" href="$dd/da5/classCLGroup.html" title="CLGroup" alt="" coords="333,836,406,863"/>
+<area shape="rect" id="node16" href="$dc/dbd/classCExpression.html" title="CExpression" alt="" coords="323,1663,415,1689"/>
+<area shape="rect" id="node17" href="$d1/dd9/classCLText.html" title="CLText" alt="" coords="551,1044,614,1071"/>
+<area shape="rect" id="node22" href="$d4/d04/classCModel.html" title="CModel" alt="" coords="336,1455,403,1481"/>
+<area shape="rect" id="node23" href="$da/d3f/classCEvent.html" title="CEvent" alt="" coords="789,1467,851,1493"/>
+<area shape="rect" id="node27" href="$d0/d08/classCListOfLayouts.html" title="CListOfLayouts" alt="" coords="528,1911,637,1937"/>
+<area shape="rect" id="node28" href="$de/d36/classCOutputDefinitionVector.html" title="COutputDefinitionVector" alt="" coords="503,1955,663,1981"/>
+<area shape="rect" id="node29" href="$da/d86/classCReportDefinitionVector.html" title="CReportDefinitionVector" alt="" coords="503,1995,662,2021"/>
+<area shape="rect" id="node32" href="$dd/d3a/classCEventAssignment.html" title="CEventAssignment" alt="" coords="755,1619,885,1645"/>
+<area shape="rect" id="node33" href="$d4/dcf/classCReaction.html" title="CReaction" alt="" coords="779,1353,861,1380"/>
+<area shape="rect" id="node34" href="$d2/d49/classCLLineEnding.html" title="CLLineEnding" alt="" coords="769,831,871,857"/>
+<area shape="rect" id="node36" href="$d2/d4b/classCFunctionParameter.html" title="CFunctionParameter" alt="" coords="512,2241,653,2268"/>
+<area shape="rect" id="node42" href="$d5/db6/classCCopasiParameter.html" title="CCopasiParameter" alt="" coords="304,2336,435,2363"/>
+<area shape="rect" id="node44" href="$d3/d34/classCVersion.html" title="CVersion" alt="" coords="333,2491,406,2517"/>
+<area shape="rect" id="node45" href="$d6/d63/classCLMetabReferenceGlyph.html" title="CLMetabReferenceGlyph" alt="" coords="286,85,453,112"/>
+<area shape="rect" id="node46" href="$d9/d9f/classCLTextGlyph.html" title="CLTextGlyph" alt="" coords="321,145,417,172"/>
+<area shape="rect" id="node47" href="$d8/db2/classCCopasiTask.html" title="CCopasiTask" alt="" coords="320,225,419,252"/>
+<area shape="rect" id="node8" href="$d4/def/classCPlotSpecification.html" title="CPlotSpecification" alt="" coords="756,553,884,580"/>
+<area shape="rect" id="node11" href="$d8/d67/classCLReactionGlyph.html" title="CLReactionGlyph" alt="" coords="759,729,881,756"/>
+<area shape="rect" id="node35" href="$d2/df6/classCModelParameter.html" title="CModelParameter" alt="" coords="757,1799,883,1825"/>
+<area shape="rect" id="node18" href="$d7/d08/classCCopasiVectorN.html" title="CCopasiVectorN\&lt; CCopasiTask \&gt;" alt="" coords="713,1139,927,1165"/>
+<area shape="rect" id="node21" href="$d7/d08/classCCopasiVectorN.html" title="CCopasiVectorN\&lt; CFunction \&gt;" alt="" coords="721,1303,919,1329"/>
+<area shape="rect" id="node25" href="$dd/d45/classCLMetabGlyph.html" title="CLMetabGlyph" alt="" coords="767,1517,873,1544"/>
+<area shape="rect" id="node26" href="$de/d28/classCLCompartmentGlyph.html" title="CLCompartmentGlyph" alt="" coords="745,1568,895,1595"/>
+<area shape="rect" id="node37" href="$d5/d8e/classSCopasiXMLGUI.html" title="SCopasiXMLGUI" alt="" coords="760,2229,880,2256"/>
+<area shape="rect" id="node39" href="$de/da1/classCLLineSegment.html" title="CLLineSegment" alt="" coords="763,2343,877,2369"/>
+<area shape="rect" id="node40" href="$d0/df9/classCLCurve.html" title="CLCurve" alt="" coords="785,2393,855,2420"/>
+<area shape="rect" id="node48" href="$d8/d5c/classCKeyFactory.html" title="CKeyFactory" alt="" coords="772,264,868,291"/>
+<area shape="rect" id="node50" href="$dc/db8/classCXMLElementHandler.html" title="CXMLElementHandler\l\&lt; CType, CCommon \&gt;" alt="" coords="1445,1429,1595,1470"/>
+</map>

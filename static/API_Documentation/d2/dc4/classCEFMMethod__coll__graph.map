@@ -1,0 +1,39 @@
+<map id="CEFMMethod" name="CEFMMethod">
+<area shape="rect" id="node2" href="$df/d49/classCCopasiMethod.html" title="CCopasiMethod" alt="" coords="4177,1203,4290,1229"/>
+<area shape="rect" id="node3" href="$df/d89/classCCopasiParameterGroup.html" title="CCopasiParameterGroup" alt="" coords="2069,1103,2235,1129"/>
+<area shape="rect" id="node36" href="$d4/dcf/classCReaction.html" title="CReaction" alt="" coords="2501,637,2584,664"/>
+<area shape="rect" id="node4" href="$d5/db6/classCCopasiParameter.html" title="CCopasiParameter" alt="" coords="1684,1220,1815,1247"/>
+<area shape="rect" id="node28" href="$d9/d72/classCProcessReportItem.html" title="CProcessReportItem" alt="" coords="2772,1291,2913,1317"/>
+<area shape="rect" id="node5" href="$d9/dfd/classCCopasiContainer.html" title="CCopasiContainer" alt="" coords="863,427,988,453"/>
+<area shape="rect" id="node6" href="$d4/da8/classCCopasiObject.html" title="CCopasiObject" alt="" coords="1269,689,1377,716"/>
+<area shape="rect" id="node40" href="$d0/d1f/classCFunctionParameters.html" title="CFunctionParameters" alt="" coords="1676,436,1823,463"/>
+<area shape="rect" id="node44" href="$d1/d50/classCEvaluationTree.html" title="CEvaluationTree" alt="" coords="1265,823,1381,849"/>
+<area shape="rect" id="node47" href="$d1/dc0/classCChemEq.html" title="CChemEq" alt="" coords="1709,129,1789,156"/>
+<area shape="rect" id="node48" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; CChemEqElement \&gt;" alt="" coords="1205,89,1440,116"/>
+<area shape="rect" id="node11" href="$dc/d69/classCCopasiStaticString.html" title="CCopasiStaticString" alt="" coords="1680,684,1819,711"/>
+<area shape="rect" id="node39" href="$d1/d1c/classCFunctionParameterMap.html" title="CFunctionParameterMap" alt="" coords="2069,436,2235,463"/>
+<area shape="rect" id="node49" href="$d7/d18/classCCopasiObjectReference.html" title="CCopasiObjectReference\l\&lt; C_FLOAT64 \&gt;" alt="" coords="2069,630,2235,671"/>
+<area shape="rect" id="node50" href="$d7/d18/classCCopasiObjectReference.html" title="CCopasiObjectReference\l\&lt; CType \&gt;" alt="" coords="1666,553,1833,594"/>
+<area shape="rect" id="node7" href="$df/dfa/classCObjectInterface.html" title="CObjectInterface" alt="" coords="865,688,985,715"/>
+<area shape="rect" id="node9" href="$d8/dc4/classCRenameHandler.html" title="CRenameHandler" alt="" coords="864,739,987,765"/>
+<area shape="rect" id="node10" href="$d4/dad/classUpdateMethod.html" title="UpdateMethod" alt="" coords="872,824,979,851"/>
+<area shape="rect" id="node12" title="STL class. " alt="" coords="887,1055,963,1081"/>
+<area shape="rect" id="node21" href="$d8/dea/unionCCopasiParameter_1_1Value.html" title="CCopasiParameter::Value" alt="" coords="2459,1323,2627,1349"/>
+<area shape="rect" id="node24" href="$d8/da5/classCProcessReport.html" title="CProcessReport" alt="" coords="3939,1203,4053,1229"/>
+<area shape="rect" id="node37" href="$d8/dfc/classCAnnotation.html" title="CAnnotation" alt="" coords="1703,995,1796,1021"/>
+<area shape="rect" id="node43" href="$d9/d86/classCFunction.html" title="The class for handling a chemical kinetic function. " alt="" coords="2111,787,2193,813"/>
+<area shape="rect" id="node13" title="STL class. " alt="" coords="526,1047,647,1089"/>
+<area shape="rect" id="node14" href="$d0/d44/classRefresh.html" title="Refresh" alt="" coords="892,585,959,612"/>
+<area shape="rect" id="node16" title="STL class. " alt="" coords="149,439,293,465"/>
+<area shape="rect" id="node34" title="STL class. " alt="" coords="163,1408,279,1435"/>
+<area shape="rect" id="node20" title="STL class. " alt="" coords="166,328,277,355"/>
+<area shape="rect" id="node23" href="$dd/d09/classCRegisteredObjectName.html" title="CRegisteredObjectName" alt="" coords="2070,1424,2234,1451"/>
+<area shape="rect" id="node25" href="$dd/d9c/classCCopasiTimeVariable.html" title="CCopasiTimeVariable" alt="" coords="3562,1152,3707,1179"/>
+<area shape="rect" id="node26" href="$dd/de4/classCVector.html" title="CVector\&lt; CProcessReportItem * \&gt;" alt="" coords="3526,1253,3743,1280"/>
+<area shape="rect" id="node27" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; CProcessReport\lItem * \&gt;" alt="" coords="3123,1262,3322,1303"/>
+<area shape="rect" id="node29" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; CType \&gt;" alt="" coords="2765,1225,2920,1252"/>
+<area shape="rect" id="node30" href="$dd/de4/classCVector.html" title="CVector\&lt; CType \&gt;" alt="" coords="3159,1211,3286,1237"/>
+<area shape="rect" id="node32" href="$d6/d3c/classCFluxMode.html" title="CFluxMode" alt="" coords="882,1509,969,1536"/>
+<area shape="rect" id="node41" href="$dd/df3/classCCallParameters.html" title="CCallParameters\&lt; C\l_FLOAT64 \&gt;" alt="" coords="1680,618,1819,659"/>
+<area shape="rect" id="node42" href="$dd/df3/classCCallParameters.html" title="CCallParameters\&lt; CCopasi\lObject \&gt;" alt="" coords="1660,307,1839,349"/>
+</map>

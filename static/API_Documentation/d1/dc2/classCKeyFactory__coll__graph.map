@@ -1,0 +1,24 @@
+<map id="CKeyFactory" name="CKeyFactory">
+<area shape="rect" id="node2" href="$d9/d4e/classCKeyFactory_1_1CDecisionVector.html" title="CKeyFactory::CDecisionVector" alt="" coords="1803,683,2000,709"/>
+<area shape="rect" id="node3" href="$dd/de4/classCVector.html" title="CVector\&lt; bool \&gt;" alt="" coords="1307,751,1421,777"/>
+<area shape="rect" id="node4" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; bool \&gt;" alt="" coords="908,780,1049,807"/>
+<area shape="rect" id="node5" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; CType \&gt;" alt="" coords="488,729,643,756"/>
+<area shape="rect" id="node7" href="$dd/de4/classCVector.html" title="CVector\&lt; CType \&gt;" alt="" coords="915,729,1042,756"/>
+<area shape="rect" id="node14" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; CCopasiObject * \&gt;" alt="" coords="873,627,1084,653"/>
+<area shape="rect" id="node13" href="$dd/de4/classCVector.html" title="CVector\&lt; CCopasiObject * \&gt;" alt="" coords="1272,637,1456,664"/>
+<area shape="rect" id="node9" href="$d7/db7/classCKeyFactory_1_1HashTable.html" title="CKeyFactory::HashTable" alt="" coords="1591,637,1753,664"/>
+<area shape="rect" id="node11" title="STL class. " alt="" coords="512,679,619,705"/>
+<area shape="rect" id="node28" title="STL class. " alt="" coords="493,452,637,479"/>
+<area shape="rect" id="node30" title="STL class. " alt="" coords="702,541,813,568"/>
+<area shape="rect" id="node31" title="STL class. " alt="" coords="507,628,623,655"/>
+<area shape="rect" id="node15" href="$d4/da8/classCCopasiObject.html" title="CCopasiObject" alt="" coords="511,237,619,264"/>
+<area shape="rect" id="node22" href="$dc/d69/classCCopasiStaticString.html" title="CCopasiStaticString" alt="" coords="909,125,1048,152"/>
+<area shape="rect" id="node26" href="$d9/dfd/classCCopasiContainer.html" title="CCopasiContainer" alt="" coords="1301,299,1427,325"/>
+<area shape="rect" id="node16" href="$df/dfa/classCObjectInterface.html" title="CObjectInterface" alt="" coords="180,375,300,401"/>
+<area shape="rect" id="node18" title="STL class. " alt="" coords="519,333,612,360"/>
+<area shape="rect" id="node20" href="$d8/dc4/classCRenameHandler.html" title="CRenameHandler" alt="" coords="179,185,301,212"/>
+<area shape="rect" id="node21" href="$d4/dad/classUpdateMethod.html" title="UpdateMethod" alt="" coords="187,273,293,300"/>
+<area shape="rect" id="node23" title="STL class. " alt="" coords="202,113,278,140"/>
+<area shape="rect" id="node24" title="STL class. " alt="" coords="6,106,127,147"/>
+<area shape="rect" id="node25" href="$d0/d44/classRefresh.html" title="Refresh" alt="" coords="207,324,273,351"/>
+</map>

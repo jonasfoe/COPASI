@@ -1,0 +1,25 @@
+<map id="CModelMIRIAMInfo.h" name="CModelMIRIAMInfo.h">
+<area shape="rect" id="node3" href="$df/def/CCreator_8h.html" title="copasi/MIRIAM/CCreator.h" alt="" coords="2787,328,2963,355"/>
+<area shape="rect" id="node9" href="$d7/d02/CRDFObject_8h.html" title="copasi/MIRIAM/CRDFObject.h" alt="" coords="2426,600,2624,627"/>
+<area shape="rect" id="node10" href="$d4/d70/CCopasiContainer_8h.html" title="Header file of class CCopasiContainer. " alt="" coords="708,509,921,536"/>
+<area shape="rect" id="node19" href="$db/d26/CReference_8h.html" title="copasi/MIRIAM/CReference.h" alt="" coords="1619,88,1812,115"/>
+<area shape="rect" id="node34" href="$d1/dc5/CModified_8h.html" title="copasi/MIRIAM/CModified.h" alt="" coords="2579,328,2761,355"/>
+<area shape="rect" id="node35" href="$d1/d89/CBiologicalDescription_8h.html" title="copasi/MIRIAM/CBiological\lDescription.h" alt="" coords="1849,81,2028,122"/>
+<area shape="rect" id="node36" href="$da/d07/CRDFGraph_8h.html" title="copasi/MIRIAM/CRDFGraph.h" alt="" coords="2120,328,2315,355"/>
+<area shape="rect" id="node38" href="$d7/d51/CCopasiVector_8h.html" title="copasi/utilities/CCopasi\lVector.h" alt="" coords="601,411,755,453"/>
+<area shape="rect" id="node5" href="$d4/d89/CRDFTriplet_8h.html" title="copasi/MIRIAM/CRDFTriplet.h" alt="" coords="2529,419,2724,445"/>
+<area shape="rect" id="node6" href="$db/ddd/CRDFPredicate_8h.html" title="copasi/MIRIAM/CRDFPredicate.h" alt="" coords="2537,509,2751,536"/>
+<area shape="rect" id="node11" href="$dd/d9f/CCopasiObject_8h.html" title="copasi/report/CCopasiObject.h" alt="" coords="534,600,729,627"/>
+<area shape="rect" id="node14" href="$dc/df8/copasi_8h.html" title="copasi/copasi.h" alt="" coords="5,683,115,709"/>
+<area shape="rect" id="node18" href="$d3/dfe/CMathEnum_8h.html" title="copasi/math/CMathEnum.h" alt="" coords="539,683,716,709"/>
+<area shape="rect" id="node20" href="$dc/de6/CConstants_8h.html" title="copasi/MIRIAM/CConstants.h" alt="" coords="1621,171,1811,197"/>
+<area shape="rect" id="node21" href="$d8/d90/CMIRIAMResource_8h.html" title="CMIRIAMResource.h" alt="" coords="1519,245,1661,272"/>
+<area shape="rect" id="node22" href="$d9/df7/CCopasiParameter_8h.html" title="utilities/CCopasiParameter.h" alt="" coords="1257,419,1441,445"/>
+<area shape="rect" id="node24" href="$dc/d95/CCopasiParameterGroup_8h.html" title="utilities/CCopasiParameter\lGroup.h" alt="" coords="1503,321,1677,362"/>
+<area shape="rect" id="node28" href="$db/d91/CProcessReport_8h.html" title="utilities/CProcessReport.h" alt="" coords="1207,328,1376,355"/>
+<area shape="rect" id="node32" href="$d5/d47/utility_8h.html" title="utilities/utility.h" alt="" coords="1435,509,1541,536"/>
+<area shape="rect" id="node23" href="$db/d45/CCopasiObjectName_8h.html" title="copasi/report/CCopasiObject\lName.h" alt="" coords="945,502,1132,543"/>
+<area shape="rect" id="node25" href="$d9/d2d/CCopasiMessage_8h.html" title="copasi/utilities/CCopasi\lMessage.h" alt="" coords="1157,593,1311,634"/>
+<area shape="rect" id="node29" href="$da/dd9/CVector_8h.html" title="utilities/CVector.h" alt="" coords="1207,509,1329,536"/>
+<area shape="rect" id="node37" href="$d6/dd9/CRDFNode_8h.html" title="copasi/MIRIAM/CRDFNode.h" alt="" coords="2110,419,2300,445"/>
+</map>

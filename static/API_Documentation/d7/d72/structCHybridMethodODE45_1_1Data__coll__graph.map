@@ -1,0 +1,42 @@
+<map id="CHybridMethodODE45::Data" name="CHybridMethodODE45::Data">
+<area shape="rect" id="node2" href="$d1/d1e/classCHybridMethodODE45.html" title="CHybridMethodODE45" alt="" coords="1806,729,1957,756"/>
+<area shape="rect" id="node3" href="$d0/dc9/classCTrajectoryMethod.html" title="CTrajectoryMethod" alt="" coords="1519,880,1649,907"/>
+<area shape="rect" id="node4" href="$df/d49/classCCopasiMethod.html" title="CCopasiMethod" alt="" coords="1095,993,1209,1020"/>
+<area shape="rect" id="node5" title="STL class. " alt="" coords="349,1224,425,1251"/>
+<area shape="rect" id="node6" href="$d8/da5/classCProcessReport.html" title="CProcessReport" alt="" coords="656,1083,771,1109"/>
+<area shape="rect" id="node25" href="$d4/d04/classCModel.html" title="CModel" alt="" coords="1551,1663,1617,1689"/>
+<area shape="rect" id="node26" href="$d0/da0/classCModelEntity.html" title="CModelEntity" alt="" coords="1832,1767,1931,1793"/>
+<area shape="rect" id="node28" href="$d6/de0/classCModelParameterSet.html" title="CModelParameterSet" alt="" coords="1808,1496,1955,1523"/>
+<area shape="rect" id="node34" href="$d2/dad/classCArrayAnnotation.html" title="CArrayAnnotation" alt="" coords="863,1568,985,1595"/>
+<area shape="rect" id="node47" href="$df/dcb/classCRandom.html" title="CRandom" alt="" coords="885,705,963,732"/>
+<area shape="rect" id="node7" href="$dd/de4/classCVector.html" title="CVector\&lt; C_INT \&gt;" alt="" coords="323,976,450,1003"/>
+<area shape="rect" id="node31" href="$d9/d6a/classCLinkMatrix.html" title="CLinkMatrix" alt="" coords="668,1925,759,1952"/>
+<area shape="rect" id="node8" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; C_INT \&gt;" alt="" coords="5,976,160,1003"/>
+<area shape="rect" id="node9" href="$dd/de4/classCVector.html" title="CVector\&lt; CType \&gt;" alt="" coords="19,1444,146,1471"/>
+<area shape="rect" id="node32" href="$dd/de4/classCVector.html" title="CVector\&lt; size_t \&gt;" alt="" coords="325,1925,448,1952"/>
+<area shape="rect" id="node38" href="$dd/de4/classCVector.html" title="CVector\&lt; C_FLOAT64 \&gt;" alt="" coords="1071,1460,1233,1487"/>
+<area shape="rect" id="node10" href="$d9/d61/classCTrajectoryProblem.html" title="CTrajectoryProblem" alt="" coords="1084,929,1220,956"/>
+<area shape="rect" id="node11" href="$dc/d1d/classCState.html" title="CState" alt="" coords="1121,828,1183,855"/>
+<area shape="rect" id="node42" href="$d7/dc0/classCStateTemplate.html" title="CStateTemplate" alt="" coords="2129,1676,2245,1703"/>
+<area shape="rect" id="node14" title="STL class. " alt="" coords="658,183,769,209"/>
+<area shape="rect" id="node15" href="$d3/d78/classCInterpolation.html" title="CInterpolation" alt="" coords="1533,485,1635,512"/>
+<area shape="rect" id="node16" href="$d1/d72/classCStateRecord.html" title="CStateRecord" alt="" coords="1101,513,1203,540"/>
+<area shape="rect" id="node17" href="$d7/dd7/classCMatrix.html" title="CMatrix\&lt; C_FLOAT64 \&gt;" alt="" coords="307,2232,467,2259"/>
+<area shape="rect" id="node18" href="$d7/dd7/classCMatrix.html" title="CMatrix\&lt; CType \&gt;" alt="" coords="20,2232,145,2259"/>
+<area shape="rect" id="node19" href="$d6/db8/classCIndexedPriorityQueue.html" title="CIndexedPriorityQueue" alt="" coords="1507,127,1661,153"/>
+<area shape="rect" id="node22" href="$d9/db9/classCCopasiVectorNS.html" title="CCopasiVectorNS\&lt; CReaction \&gt;" alt="" coords="1049,1183,1255,1209"/>
+<area shape="rect" id="node23" href="$d7/d08/classCCopasiVectorN.html" title="CCopasiVectorN\&lt; CReaction \&gt;" alt="" coords="614,1235,813,1261"/>
+<area shape="rect" id="node24" href="$d9/db9/classCCopasiVectorNS.html" title="CCopasiVectorNS\&lt; CType \&gt;" alt="" coords="621,1375,805,1401"/>
+<area shape="rect" id="node35" href="$d9/db9/classCCopasiVectorNS.html" title="CCopasiVectorNS\&lt; CCompartment \&gt;" alt="" coords="1035,1511,1269,1537"/>
+<area shape="rect" id="node37" href="$d3/df7/classCMathModel.html" title="CMathModel" alt="" coords="1834,1587,1929,1613"/>
+<area shape="rect" id="node29" href="$d7/d08/classCCopasiVectorN.html" title="CCopasiVectorN\&lt; CModelValue \&gt;" alt="" coords="1045,1923,1259,1949"/>
+<area shape="rect" id="node30" href="$d4/df2/classCLinkMatrixView.html" title="CLinkMatrixView" alt="" coords="1093,1821,1211,1848"/>
+<area shape="rect" id="node36" href="$da/d4a/classCMathDependencyGraph.html" title="CMathDependencyGraph" alt="" coords="1069,2036,1235,2063"/>
+<area shape="rect" id="node39" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; CMetab \&gt;" alt="" coords="1065,1233,1239,1260"/>
+<area shape="rect" id="node40" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; CMoiety \&gt;" alt="" coords="1064,1704,1240,1731"/>
+<area shape="rect" id="node41" href="$d7/d08/classCCopasiVectorN.html" title="CCopasiVectorN\&lt; CModelParameter\lSet \&gt;" alt="" coords="1037,1755,1267,1797"/>
+<area shape="rect" id="node43" href="$d7/d08/classCCopasiVectorN.html" title="CCopasiVectorN\&lt; CEvent \&gt;" alt="" coords="1063,2137,1241,2164"/>
+<area shape="rect" id="node44" href="$da/da0/classCDependencyGraph.html" title="CDependencyGraph" alt="" coords="1515,372,1653,399"/>
+<area shape="rect" id="node48" title="STL class. " alt="" coords="1523,931,1645,957"/>
+<area shape="rect" id="node50" title="STL class. " alt="" coords="1537,1044,1631,1071"/>
+</map>

@@ -1,0 +1,27 @@
+<map id="CScanMethod.h" name="CScanMethod.h">
+<area shape="rect" id="node3" href="$d2/d39/CCopasiMethod_8h.html" title="utilities/CCopasiMethod.h" alt="" coords="294,261,460,288"/>
+<area shape="rect" id="node23" href="$d4/d2f/CReport_8h.html" title="report/CReport.h" alt="" coords="947,435,1063,461"/>
+<area shape="rect" id="node26" href="$d0/d89/CSteadyStateTask_8h.html" title="steadystate/CSteadyState\lTask.h" alt="" coords="977,81,1148,122"/>
+<area shape="rect" id="node38" href="$da/dc0/CTrajectoryTask_8h.html" title="trajectory/CTrajectoryTask.h" alt="" coords="465,88,647,115"/>
+<area shape="rect" id="node4" href="$dc/d95/CCopasiParameterGroup_8h.html" title="copasi/utilities/CCopasi\lParameterGroup.h" alt="" coords="195,337,348,378"/>
+<area shape="rect" id="node21" href="$d2/d53/CCopasiTask_8h.html" title="copasi/utilities/CCopasi\lTask.h" alt="" coords="696,337,849,378"/>
+<area shape="rect" id="node24" href="$d3/d2b/CReadConfig_8h.html" title="copasi/utilities/CReadConfig.h" alt="" coords="379,344,571,371"/>
+<area shape="rect" id="node6" href="$d9/df7/CCopasiParameter_8h.html" title="copasi/utilities/CCopasi\lParameter.h" alt="" coords="347,427,500,469"/>
+<area shape="rect" id="node19" href="$d9/d2d/CCopasiMessage_8h.html" title="copasi/utilities/CCopasi\lMessage.h" alt="" coords="660,609,813,650"/>
+<area shape="rect" id="node7" href="$d4/d70/CCopasiContainer_8h.html" title="Header file of class CCopasiContainer. " alt="" coords="1104,525,1317,552"/>
+<area shape="rect" id="node18" href="$db/d45/CCopasiObjectName_8h.html" title="copasi/report/CCopasiObject\lName.h" alt="" coords="600,518,787,559"/>
+<area shape="rect" id="node9" href="$dd/d9f/CCopasiObject_8h.html" title="copasi/report/CCopasiObject.h" alt="" coords="1042,616,1237,643"/>
+<area shape="rect" id="node13" href="$dc/df8/copasi_8h.html" title="copasi/copasi.h" alt="" coords="2066,699,2176,725"/>
+<area shape="rect" id="node17" href="$d3/dfe/CMathEnum_8h.html" title="copasi/math/CMathEnum.h" alt="" coords="1207,699,1384,725"/>
+<area shape="rect" id="node22" href="$d7/d0c/COutputHandler_8h.html" title="utilities/COutputHandler.h" alt="" coords="861,525,1029,552"/>
+<area shape="rect" id="node27" href="$de/dbd/CMatrix_8h.html" title="utilities/CMatrix.h" alt="" coords="1925,435,2045,461"/>
+<area shape="rect" id="node31" href="$d2/daf/CAnnotatedMatrix_8h.html" title="Header file of class CArrayAnnotation. " alt="" coords="1052,261,1231,288"/>
+<area shape="rect" id="node33" href="$d5/db4/CSteadyStateMethod_8h.html" title="steadystate/CSteadyState\lMethod.h" alt="" coords="731,171,901,213"/>
+<area shape="rect" id="node36" href="$df/d03/CEigen_8h.html" title="steadystate/CEigen.h" alt="" coords="1478,344,1620,371"/>
+<area shape="rect" id="node30" href="$da/dd9/CVector_8h.html" title="utilities/CVector.h" alt="" coords="1635,525,1757,552"/>
+<area shape="rect" id="node32" href="$d4/d1c/CCopasiArray_8h.html" title="report/CCopasiArray.h" alt="" coords="1796,344,1943,371"/>
+<area shape="rect" id="node34" href="$d3/d72/CNewtonMethod_8h.html" title="CNewtonMethod.h" alt="" coords="1645,344,1771,371"/>
+<area shape="rect" id="node35" href="$de/d11/CState_8h.html" title="model/CState.h" alt="" coords="1649,435,1759,461"/>
+<area shape="rect" id="node39" href="$d9/d7d/CTrajectoryMethod_8h.html" title="trajectory/CTrajectoryMethod.h" alt="" coords="278,179,476,205"/>
+<area shape="rect" id="node40" href="$d5/db7/CTimeSeries_8h.html" title="trajectory/CTimeSeries.h" alt="" coords="1291,344,1453,371"/>
+</map>

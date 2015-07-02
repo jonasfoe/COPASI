@@ -1,0 +1,36 @@
+<map id="CMathModel.h" name="CMathModel.h">
+<area shape="rect" id="node2" href="$da/dd9/CVector_8h.html" title="utilities/CVector.h" alt="" coords="315,560,437,587"/>
+<area shape="rect" id="node13" href="$de/dbd/CMatrix_8h.html" title="utilities/CMatrix.h" alt="" coords="136,477,256,504"/>
+<area shape="rect" id="node14" href="$d3/d90/CProcessQueue_8h.html" title="copasi/model/CProcessQueue.h" alt="" coords="413,304,619,331"/>
+<area shape="rect" id="node28" href="$db/df8/CMathEvent_8h.html" title="copasi/math/CMathEvent.h" alt="" coords="641,80,817,107"/>
+<area shape="rect" id="node7" href="$dc/df8/copasi_8h.html" title="copasi.h" alt="" coords="331,709,400,736"/>
+<area shape="rect" id="node10" href="$d9/d2d/CCopasiMessage_8h.html" title="utilities/CCopasiMessage.h" alt="" coords="534,635,708,661"/>
+<area shape="rect" id="node17" href="$d8/d3f/CEvent_8h.html" title="Header file of class CEvent. " alt="" coords="654,387,807,413"/>
+<area shape="rect" id="node18" href="$d1/d06/CAnnotation_8h.html" title="copasi/model/CAnnotation.h" alt="" coords="526,560,708,587"/>
+<area shape="rect" id="node19" href="$d7/d51/CCopasiVector_8h.html" title="copasi/utilities/CCopasi\lVector.h" alt="" coords="771,470,924,511"/>
+<area shape="rect" id="node21" href="$d5/d47/utility_8h.html" title="utilities/utility.h" alt="" coords="885,560,992,587"/>
+<area shape="rect" id="node23" href="$db/d45/CCopasiObjectName_8h.html" title="report/CCopasiObjectName.h" alt="" coords="1027,635,1216,661"/>
+<area shape="rect" id="node24" href="$d4/d70/CCopasiContainer_8h.html" title="Header file of class CCopasiContainer. " alt="" coords="1311,560,1483,587"/>
+<area shape="rect" id="node25" href="$dd/d9f/CCopasiObject_8h.html" title="copasi/report/CCopasiObject.h" alt="" coords="1393,635,1588,661"/>
+<area shape="rect" id="node27" href="$d3/dfe/CMathEnum_8h.html" title="copasi/math/CMathEnum.h" alt="" coords="1339,709,1516,736"/>
+<area shape="rect" id="node29" href="$da/d5a/CMathTrigger_8h.html" title="copasi/math/CMathTrigger.h" alt="" coords="767,155,951,181"/>
+<area shape="rect" id="node31" href="$d1/dcc/CExpression_8h.html" title="Header file of class CExpression. " alt="" coords="895,229,1088,256"/>
+<area shape="rect" id="node32" href="$d3/d46/CEvaluationTree_8h.html" title="function/CEvaluationTree.h" alt="" coords="901,304,1077,331"/>
+<area shape="rect" id="node33" href="$de/dfa/CEvaluationNode_8h.html" title="copasi/function/CEvaluation\lNode.h" alt="" coords="2415,379,2596,421"/>
+<area shape="rect" id="node34" href="$de/d24/CCopasiNode_8h.html" title="utilities/CCopasiNode.h" alt="" coords="2781,477,2935,504"/>
+<area shape="rect" id="node35" href="$df/d18/CFunctionAnalyzer_8h.html" title="CFunctionAnalyzer.h" alt="" coords="1758,635,1897,661"/>
+<area shape="rect" id="node36" href="$d1/d90/CEvaluationNodeCall_8h.html" title="CEvaluationNodeCall.h" alt="" coords="2605,477,2757,504"/>
+<area shape="rect" id="node38" href="$d6/d6a/CEvaluationNodeChoice_8h.html" title="CEvaluationNodeChoice.h" alt="" coords="3616,635,3787,661"/>
+<area shape="rect" id="node39" href="$d0/d78/CEvaluationNodeConstant_8h.html" title="CEvaluationNodeConstant.h" alt="" coords="2960,477,3141,504"/>
+<area shape="rect" id="node40" href="$d6/dfc/CEvaluationNodeDelay_8h.html" title="CEvaluationNodeDelay.h" alt="" coords="2176,560,2339,587"/>
+<area shape="rect" id="node41" href="$d0/d4d/CEvaluationNodeFunction_8h.html" title="CEvaluationNodeFunction.h" alt="" coords="3411,477,3591,504"/>
+<area shape="rect" id="node43" href="$d7/da6/CEvaluationNodeLogical_8h.html" title="CEvaluationNodeLogical.h" alt="" coords="3165,477,3336,504"/>
+<area shape="rect" id="node44" href="$d1/d6d/CEvaluationNodeNumber_8h.html" title="CEvaluationNodeNumber.h" alt="" coords="1345,477,1519,504"/>
+<area shape="rect" id="node45" href="$d4/d59/CEvaluationNodeObject_8h.html" title="CEvaluationNodeObject.h" alt="" coords="1152,477,1320,504"/>
+<area shape="rect" id="node46" href="$d7/d39/CEvaluationNodeOperator_8h.html" title="CEvaluationNodeOperator.h" alt="" coords="1543,477,1723,504"/>
+<area shape="rect" id="node47" href="$d6/def/CEvaluationNodeStructure_8h.html" title="CEvaluationNodeStructure.h" alt="" coords="1747,477,1929,504"/>
+<area shape="rect" id="node48" href="$d7/de2/CEvaluationNodeVariable_8h.html" title="CEvaluationNodeVariable.h" alt="" coords="1955,477,2131,504"/>
+<area shape="rect" id="node49" href="$df/d62/CEvaluationNodeVector_8h.html" title="CEvaluationNodeVector.h" alt="" coords="3091,560,3257,587"/>
+<area shape="rect" id="node50" href="$d7/d85/CEvaluationNodeWhiteSpace_8h.html" title="CEvaluationNodeWhiteSpace.h" alt="" coords="2155,477,2353,504"/>
+<area shape="rect" id="node37" href="$dd/d7e/CCallParameters_8h.html" title="function/CCallParameters.h" alt="" coords="2363,560,2541,587"/>
+</map>

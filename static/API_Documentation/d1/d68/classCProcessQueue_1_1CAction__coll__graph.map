@@ -1,0 +1,40 @@
+<map id="CProcessQueue::CAction" name="CProcessQueue::CAction">
+<area shape="rect" id="node2" href="$d2/d3c/classCMathEvent.html" title="CMathEvent" alt="" coords="3089,759,3181,785"/>
+<area shape="rect" id="node3" href="$d9/dfd/classCCopasiContainer.html" title="CCopasiContainer" alt="" coords="1505,745,1631,772"/>
+<area shape="rect" id="node4" href="$d4/da8/classCCopasiObject.html" title="CCopasiObject" alt="" coords="749,689,857,716"/>
+<area shape="rect" id="node19" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; CMathEvent\l::CAssignment \&gt;" alt="" coords="2283,569,2471,610"/>
+<area shape="rect" id="node21" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; T \&gt;" alt="" coords="1873,491,2010,517"/>
+<area shape="rect" id="node23" href="$d1/d50/classCEvaluationTree.html" title="CEvaluationTree" alt="" coords="1883,999,1999,1025"/>
+<area shape="rect" id="node28" href="$d3/de0/classCMathTrigger.html" title="CMathTrigger" alt="" coords="2671,759,2771,785"/>
+<area shape="rect" id="node32" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; CMathTrigger\l::CRootFinder \&gt;" alt="" coords="2279,634,2475,675"/>
+<area shape="rect" id="node44" href="$d3/df7/classCMathModel.html" title="CMathModel" alt="" coords="4558,408,4653,435"/>
+<area shape="rect" id="node46" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; CMathEvent \&gt;" alt="" coords="2278,384,2477,411"/>
+<area shape="rect" id="node10" href="$dc/d69/classCCopasiStaticString.html" title="CCopasiStaticString" alt="" coords="1120,687,1259,713"/>
+<area shape="rect" id="node5" href="$df/dfa/classCObjectInterface.html" title="CObjectInterface" alt="" coords="377,580,497,607"/>
+<area shape="rect" id="node49" href="$d4/d04/classCModel.html" title="CModel" alt="" coords="4787,847,4853,873"/>
+<area shape="rect" id="node7" title="STL class. " alt="" coords="20,320,113,347"/>
+<area shape="rect" id="node8" href="$d8/dc4/classCRenameHandler.html" title="CRenameHandler" alt="" coords="376,631,499,657"/>
+<area shape="rect" id="node9" href="$d4/dad/classUpdateMethod.html" title="UpdateMethod" alt="" coords="384,687,491,713"/>
+<area shape="rect" id="node11" title="STL class. " alt="" coords="399,1000,475,1027"/>
+<area shape="rect" id="node22" href="$dc/dbd/classCExpression.html" title="CExpression" alt="" coords="2331,892,2423,919"/>
+<area shape="rect" id="node12" title="STL class. " alt="" coords="6,993,127,1034"/>
+<area shape="rect" id="node13" href="$d0/d44/classRefresh.html" title="Refresh" alt="" coords="404,304,471,331"/>
+<area shape="rect" id="node15" title="STL class. " alt="" coords="731,477,875,504"/>
+<area shape="rect" id="node18" title="STL class. " alt="" coords="1134,623,1245,649"/>
+<area shape="rect" id="node20" title="STL class. " alt="" coords="1495,389,1641,416"/>
+<area shape="rect" id="node31" title="STL class. " alt="" coords="936,427,1043,453"/>
+<area shape="rect" id="node24" href="$d8/d9f/classCEvaluationNode.html" title="CEvaluationNode" alt="" coords="1129,969,1249,996"/>
+<area shape="rect" id="node33" href="$dd/de4/classCVector.html" title="CVector\&lt; C_FLOAT64 \&gt;" alt="" coords="3053,637,3216,664"/>
+<area shape="rect" id="node37" href="$d2/d85/classCProcessQueue.html" title="CProcessQueue" alt="" coords="4296,555,4411,581"/>
+<area shape="rect" id="node34" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; C_FLOAT64 \&gt;" alt="" coords="2627,596,2816,623"/>
+<area shape="rect" id="node35" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; CType \&gt;" alt="" coords="2300,440,2455,467"/>
+<area shape="rect" id="node36" href="$dd/de4/classCVector.html" title="CVector\&lt; CType \&gt;" alt="" coords="2658,379,2785,405"/>
+<area shape="rect" id="node40" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; C_INT \&gt;" alt="" coords="2644,483,2799,509"/>
+<area shape="rect" id="node39" href="$dd/de4/classCVector.html" title="CVector\&lt; C_INT \&gt;" alt="" coords="3071,509,3198,536"/>
+<area shape="rect" id="node45" href="$dd/de4/classCVector.html" title="CVector\&lt; bool \&gt;" alt="" coords="3261,347,3376,373"/>
+<area shape="rect" id="node47" href="$dd/de4/classCVector.html" title="CVector\&lt; CMathEvent * \&gt;" alt="" coords="3613,403,3781,429"/>
+<area shape="rect" id="node48" href="$dd/de4/classCVector.html" title="CVector\&lt; C_FLOAT64 * \&gt;" alt="" coords="4077,224,4248,251"/>
+<area shape="rect" id="node50" href="$dd/de4/classCVector.html" title="CVector\&lt; CMathTrigger\l::CRootFinder * \&gt;" alt="" coords="3240,282,3397,323"/>
+<area shape="rect" id="node38" title="STL iterator class. " alt="" coords="3851,835,3984,877"/>
+<area shape="rect" id="node42" href="$df/d7d/classCProcessQueue_1_1CKey.html" title="CProcessQueue::CKey" alt="" coords="3429,700,3581,727"/>
+</map>

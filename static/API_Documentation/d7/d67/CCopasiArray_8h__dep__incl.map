@@ -1,0 +1,51 @@
+<map id="CCopasiArray.h" name="CCopasiArray.h">
+<area shape="rect" id="node2" href="$d2/d07/CArrayElementReference_8h.html" title="CArrayElementReference.h" alt="" coords="334,80,510,107"/>
+<area shape="rect" id="node5" href="$dd/d2f/CCopasiArray_8cpp.html" title="CCopasiArray.cpp" alt="" coords="2607,80,2730,107"/>
+<area shape="rect" id="node6" href="$d2/daf/CAnnotatedMatrix_8h.html" title="Header file of class CArrayAnnotation. " alt="" coords="2448,80,2582,107"/>
+<area shape="rect" id="node3" href="$d7/d7b/CArrayElementReference_8cpp.html" title="CArrayElementReference.cpp" alt="" coords="132,155,322,181"/>
+<area shape="rect" id="node4" href="$d8/d20/CAnnotatedMatrix_8cpp.html" title="Implementation file of class CCopasiArray and CArrayAnnotation. " alt="" coords="348,155,496,181"/>
+<area shape="rect" id="node7" href="$df/d35/CSSAMethod_8h.html" title="CSSAMethod.h" alt="" coords="4351,155,4461,181"/>
+<area shape="rect" id="node9" href="$d2/d81/CLNAMethod_8h.html" title="CLNAMethod.h" alt="" coords="2273,155,2382,181"/>
+<area shape="rect" id="node12" href="$de/df5/CLNAResultSubwidget_8cpp.html" title="CLNAResultSubwidget.cpp" alt="" coords="3952,229,4128,256"/>
+<area shape="rect" id="node15" href="$df/d08/CModel_8cpp.html" title="CModel.cpp" alt="" coords="2406,155,2497,181"/>
+<area shape="rect" id="node16" href="$d7/dda/CObjectLists_8cpp.html" title="CObjectLists.cpp" alt="" coords="2522,155,2640,181"/>
+<area shape="rect" id="node17" href="$d3/dff/CMoietiesProblem_8cpp.html" title="CMoietiesProblem.cpp" alt="" coords="2664,155,2814,181"/>
+<area shape="rect" id="node18" href="$de/d65/CFitProblem_8cpp.html" title="CFitProblem.cpp" alt="" coords="2011,229,2129,256"/>
+<area shape="rect" id="node19" href="$d2/d55/CQPlotSubwidget_8cpp.html" title="CQPlotSubwidget.cpp" alt="" coords="2839,155,2986,181"/>
+<area shape="rect" id="node20" href="$db/da1/CSensMethod_8h.html" title="CSensMethod.h" alt="" coords="522,155,634,181"/>
+<area shape="rect" id="node24" href="$d3/d4b/CSensProblem_8h.html" title="CSensProblem.h" alt="" coords="659,155,777,181"/>
+<area shape="rect" id="node27" href="$d3/dce/CQSimpleSelectionTree_8cpp.html" title="CQSimpleSelectionTree.cpp" alt="" coords="967,229,1152,256"/>
+<area shape="rect" id="node30" href="$d0/df4/CMCAMethod_8h.html" title="CMCAMethod.h" alt="" coords="1564,155,1677,181"/>
+<area shape="rect" id="node33" href="$de/d80/CMCAResultSubwidget_8cpp.html" title="CMCAResultSubwidget.cpp" alt="" coords="1176,229,1356,256"/>
+<area shape="rect" id="node36" href="$d0/d89/CSteadyStateTask_8h.html" title="CSteadyStateTask.h" alt="" coords="2108,155,2248,181"/>
+<area shape="rect" id="node44" href="$d0/d87/CCSPMethod_8cpp.html" title="CCSPMethod.cpp" alt="" coords="3012,155,3137,181"/>
+<area shape="rect" id="node45" href="$da/d8b/CTSSAMethod_8h.html" title="CTSSAMethod.h" alt="" coords="3162,155,3280,181"/>
+<area shape="rect" id="node46" href="$d3/d2d/CCopasiSelectionDialog_8cpp.html" title="CCopasiSelectionDialog.cpp" alt="" coords="3305,155,3489,181"/>
+<area shape="rect" id="node47" href="$da/dde/CQArrayAnnotationsWidget_8h.html" title="CQArrayAnnotationsWidget.h" alt="" coords="3513,155,3702,181"/>
+<area shape="rect" id="node48" href="$d9/d06/CQExpressionWidget_8cpp.html" title="CQExpressionWidget.cpp" alt="" coords="3727,155,3893,181"/>
+<area shape="rect" id="node49" href="$de/d24/CQMatrixDialog_8cpp.html" title="CQMatrixDialog.cpp" alt="" coords="3918,155,4053,181"/>
+<area shape="rect" id="node50" href="$d7/de4/CQTSSAResultSubWidget_8cpp.html" title="CQTSSAResultSubWidget.cpp" alt="" coords="4078,155,4276,181"/>
+<area shape="rect" id="node8" href="$d4/dd0/CSSAMethod_8cpp.html" title="CSSAMethod.cpp" alt="" coords="4344,229,4469,256"/>
+<area shape="rect" id="node10" href="$d4/d0d/CLNAMethod_8cpp.html" title="CLNAMethod.cpp" alt="" coords="3432,229,3554,256"/>
+<area shape="rect" id="node11" href="$db/d35/CLNATask_8cpp.html" title="CLNATask.cpp" alt="" coords="3144,229,3252,256"/>
+<area shape="rect" id="node13" href="$d1/df7/CLNAResultWidget_8cpp.html" title="CLNAResultWidget.cpp" alt="" coords="3579,229,3734,256"/>
+<area shape="rect" id="node14" href="$d3/d0b/CQLNAWidget_8cpp.html" title="CQLNAWidget.cpp" alt="" coords="3277,229,3406,256"/>
+<area shape="rect" id="node21" href="$de/d43/CSensMethod_8cpp.html" title="CSensMethod.cpp" alt="" coords="174,229,300,256"/>
+<area shape="rect" id="node22" href="$dc/d40/CSensTask_8cpp.html" title="CSensTask.cpp" alt="" coords="37,229,148,256"/>
+<area shape="rect" id="node23" href="$db/d2b/SensitivitiesWidget_8cpp.html" title="SensitivitiesWidget.cpp" alt="" coords="321,379,474,405"/>
+<area shape="rect" id="node25" href="$d6/dc0/CSensProblem_8cpp.html" title="CSensProblem.cpp" alt="" coords="564,229,696,256"/>
+<area shape="rect" id="node26" href="$da/d3e/CQSensResultWidget_8cpp.html" title="CQSensResultWidget.cpp" alt="" coords="721,229,892,256"/>
+<area shape="rect" id="node28" href="$d4/dcb/SensitivitiesWidget_8h.html" title="SensitivitiesWidget.h" alt="" coords="328,304,468,331"/>
+<area shape="rect" id="node29" href="$d8/d86/SensWidgetComboBox_8h.html" title="SensWidgetComboBox.h" alt="" coords="376,229,540,256"/>
+<area shape="rect" id="node31" href="$da/dc0/CMCAMethod_8cpp.html" title="CMCAMethod.cpp" alt="" coords="1860,229,1986,256"/>
+<area shape="rect" id="node32" href="$dc/d37/CMCATask_8cpp.html" title="CMCATask.cpp" alt="" coords="1565,229,1676,256"/>
+<area shape="rect" id="node34" href="$db/dd9/CMCAResultWidget_8cpp.html" title="CMCAResultWidget.cpp" alt="" coords="1381,229,1540,256"/>
+<area shape="rect" id="node35" href="$d9/d53/CQMCAWidget_8cpp.html" title="CQMCAWidget.cpp" alt="" coords="1702,229,1836,256"/>
+<area shape="rect" id="node37" href="$d4/d38/CCopasiDataModel_8cpp.html" title="CCopasiDataModel.cpp" alt="" coords="2811,229,2966,256"/>
+<area shape="rect" id="node38" href="$df/d41/CLNAProblem_8cpp.html" title="CLNAProblem.cpp" alt="" coords="2992,229,3120,256"/>
+<area shape="rect" id="node39" href="$df/d86/COptProblem_8cpp.html" title="COptProblem.cpp" alt="" coords="2154,229,2277,256"/>
+<area shape="rect" id="node40" href="$d8/d2f/CScanMethod_8h.html" title="CScanMethod.h" alt="" coords="2353,229,2468,256"/>
+<area shape="rect" id="node41" href="$d8/d3f/CScanTask_8cpp.html" title="CScanTask.cpp" alt="" coords="2306,304,2418,331"/>
+<area shape="rect" id="node42" href="$dc/d16/SEDMLImporter_8cpp.html" title="SEDMLImporter.cpp" alt="" coords="2492,229,2630,256"/>
+<area shape="rect" id="node43" href="$db/d7a/CMCAProblem_8cpp.html" title="CMCAProblem.cpp" alt="" coords="2655,229,2786,256"/>
+</map>

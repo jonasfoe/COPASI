@@ -1,0 +1,25 @@
+<map id="CModelParameterSpecies" name="CModelParameterSpecies">
+<area shape="rect" id="node2" href="$d2/df6/classCModelParameter.html" title="CModelParameter" alt="" coords="2449,584,2575,611"/>
+<area shape="rect" id="node29" href="$df/dd2/classCModelParameterGroup.html" title="CModelParameterGroup" alt="" coords="3070,584,3231,611"/>
+<area shape="rect" id="node34" href="$d6/de2/classCModelParameterCompartment.html" title="CModelParameterCompartment" alt="" coords="3350,404,3554,431"/>
+<area shape="rect" id="node3" href="$dc/dbd/classCExpression.html" title="CExpression" alt="" coords="2063,917,2155,944"/>
+<area shape="rect" id="node4" href="$d1/d50/classCEvaluationTree.html" title="CEvaluationTree" alt="" coords="1670,944,1786,971"/>
+<area shape="rect" id="node5" href="$d9/dfd/classCCopasiContainer.html" title="CCopasiContainer" alt="" coords="1271,464,1396,491"/>
+<area shape="rect" id="node6" href="$d4/da8/classCCopasiObject.html" title="CCopasiObject" alt="" coords="1674,551,1782,577"/>
+<area shape="rect" id="node13" href="$dc/d69/classCCopasiStaticString.html" title="CCopasiStaticString" alt="" coords="2040,577,2179,604"/>
+<area shape="rect" id="node7" href="$df/dfa/classCObjectInterface.html" title="CObjectInterface" alt="" coords="1273,515,1393,541"/>
+<area shape="rect" id="node9" title="STL class. " alt="" coords="1287,99,1380,125"/>
+<area shape="rect" id="node18" title="STL class. " alt="" coords="1261,237,1405,264"/>
+<area shape="rect" id="node11" href="$d8/dc4/classCRenameHandler.html" title="CRenameHandler" alt="" coords="1272,565,1395,592"/>
+<area shape="rect" id="node12" href="$d4/dad/classUpdateMethod.html" title="UpdateMethod" alt="" coords="1280,616,1387,643"/>
+<area shape="rect" id="node14" title="STL class. " alt="" coords="259,819,335,845"/>
+<area shape="rect" id="node23" href="$d9/d9d/classCCopasiNode.html" title="CCopasiNode\&lt; std::string \&gt;" alt="" coords="519,999,695,1025"/>
+<area shape="rect" id="node32" href="$db/d84/classCCopasiObjectName.html" title="CCopasiObjectName" alt="" coords="734,235,877,261"/>
+<area shape="rect" id="node15" title="STL class. " alt="" coords="6,811,127,853"/>
+<area shape="rect" id="node16" href="$d0/d44/classRefresh.html" title="Refresh" alt="" coords="1300,667,1367,693"/>
+<area shape="rect" id="node21" title="STL class. " alt="" coords="551,435,662,461"/>
+<area shape="rect" id="node22" href="$d8/d9f/classCEvaluationNode.html" title="CEvaluationNode" alt="" coords="948,949,1068,976"/>
+<area shape="rect" id="node24" href="$d9/d9d/classCCopasiNode.html" title="CCopasiNode\&lt; _Data \&gt;" alt="" coords="219,1075,375,1101"/>
+<area shape="rect" id="node26" href="$da/da3/classCEvaluationNode_1_1CPrecedence.html" title="CEvaluationNode::CPrecedence" alt="" coords="505,948,709,975"/>
+<area shape="rect" id="node31" href="$dd/d09/classCRegisteredObjectName.html" title="CRegisteredObjectName" alt="" coords="2027,187,2191,213"/>
+</map>

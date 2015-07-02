@@ -1,0 +1,29 @@
+<map id="ns2__getDataTypesNameResponse" name="ns2__getDataTypesNameResponse">
+<area shape="rect" id="node2" href="$d5/dbc/classArrayOf__USCORExsd__USCOREstring.html" title="ArrayOf_USCORExsd_USCOREstring" alt="" coords="961,368,1199,395"/>
+<area shape="rect" id="node3" title="STL class. " alt="" coords="801,87,877,113"/>
+<area shape="rect" id="node4" title="STL class. " alt="" coords="511,5,633,46"/>
+<area shape="rect" id="node5" href="$d2/d38/structsoap.html" title="soap" alt="" coords="814,592,863,619"/>
+<area shape="rect" id="node20" href="$d8/d4b/structsoap__dom__element.html" title="soap_dom_element" alt="" coords="1449,592,1583,619"/>
+<area shape="rect" id="node21" href="$d3/d74/structsoap__dom__attribute.html" title="soap_dom_attribute" alt="" coords="1013,592,1147,619"/>
+<area shape="rect" id="node6" href="$dd/de8/structsoap__plist.html" title="soap_plist" alt="" coords="206,97,285,124"/>
+<area shape="rect" id="node25" href="$da/d2b/structsoap__pblk.html" title="soap_pblk" alt="" coords="532,172,612,199"/>
+<area shape="rect" id="node7" href="$d8/d49/structsoap__array.html" title="soap_array" alt="" coords="6,97,90,124"/>
+<area shape="rect" id="node8" href="$d7/d92/structsoap__nlist.html" title="soap_nlist" alt="" coords="533,261,611,288"/>
+<area shape="rect" id="node9" href="$d0/d45/structSOAP__ENV____Fault.html" title="SOAP_ENV__Fault" alt="" coords="505,312,639,339"/>
+<area shape="rect" id="node10" href="$d8/d26/structSOAP__ENV____Reason.html" title="SOAP_ENV__Reason" alt="" coords="171,252,319,279"/>
+<area shape="rect" id="node11" href="$db/d58/structSOAP__ENV____Detail.html" title="SOAP_ENV__Detail" alt="" coords="176,312,315,339"/>
+<area shape="rect" id="node12" href="$dd/dec/structSOAP__ENV____Code.html" title="SOAP_ENV__Code" alt="" coords="178,401,313,428"/>
+<area shape="rect" id="node13" href="$df/d06/structNamespace.html" title="Namespace" alt="" coords="527,363,617,389"/>
+<area shape="rect" id="node14" href="$d0/dd9/structsoap__xlist.html" title="soap_xlist" alt="" coords="533,452,611,479"/>
+<area shape="rect" id="node15" href="$d2/d8b/structsoap__attribute.html" title="soap_attribute" alt="" coords="521,541,623,568"/>
+<area shape="rect" id="node16" href="$d0/d35/structsoap__ilist.html" title="soap_ilist" alt="" coords="535,631,609,657"/>
+<area shape="rect" id="node17" href="$da/d20/structsoap__flist.html" title="soap_flist" alt="" coords="208,607,283,633"/>
+<area shape="rect" id="node18" href="$dd/de2/structsoap__mime.html" title="soap_mime" alt="" coords="528,681,616,708"/>
+<area shape="rect" id="node19" href="$d8/dbf/structsoap__multipart.html" title="soap_multipart" alt="" coords="192,725,299,752"/>
+<area shape="rect" id="node28" href="$d2/d1a/structsoap__dime.html" title="soap_dime" alt="" coords="530,732,614,759"/>
+<area shape="rect" id="node22" href="$d1/d49/structsoap__plugin.html" title="soap_plugin" alt="" coords="527,821,617,848"/>
+<area shape="rect" id="node23" href="$d3/dc8/structsoap__cookie.html" title="soap_cookie" alt="" coords="525,911,619,937"/>
+<area shape="rect" id="node24" href="$d4/d93/structSOAP__ENV____Header.html" title="SOAP_ENV__Header" alt="" coords="499,961,645,988"/>
+<area shape="rect" id="node26" href="$dd/d1f/structsoap__clist.html" title="soap_clist" alt="" coords="533,1051,611,1077"/>
+<area shape="rect" id="node27" href="$df/d81/structsoap__blist.html" title="soap_blist" alt="" coords="533,1140,611,1167"/>
+</map>

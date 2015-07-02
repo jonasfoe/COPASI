@@ -1,0 +1,9 @@
+<map id="COutputInterface" name="COutputInterface">
+<area shape="rect" id="node2" href="$d8/db0/classCopasiPlot.html" title="CopasiPlot" alt="" coords="5,80,88,107"/>
+<area shape="rect" id="node3" href="$d5/dd1/classCOutputHandler.html" title="COutputHandler" alt="" coords="113,80,228,107"/>
+<area shape="rect" id="node6" href="$db/d44/classCReport.html" title="CReport" alt="" coords="252,80,321,107"/>
+<area shape="rect" id="node7" href="$d9/d47/classCTimeSeries.html" title="CTimeSeries" alt="" coords="345,80,441,107"/>
+<area shape="rect" id="node8" href="$d4/dc1/classPlotWindow.html" title="PlotWindow" alt="" coords="465,80,556,107"/>
+<area shape="rect" id="node4" href="$d4/d18/classCCopasiDataModel.html" title="CCopasiDataModel" alt="" coords="26,155,157,181"/>
+<area shape="rect" id="node5" href="$db/dee/classCOutputHandlerPlot.html" title="COutputHandlerPlot" alt="" coords="182,155,319,181"/>
+</map>

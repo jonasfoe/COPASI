@@ -1,0 +1,24 @@
+<map id="CProcessReport" name="CProcessReport">
+<area shape="rect" id="node2" href="$dd/d9c/classCCopasiTimeVariable.html" title="CCopasiTimeVariable" alt="" coords="3330,88,3475,115"/>
+<area shape="rect" id="node3" title="STL class. " alt="" coords="202,545,278,572"/>
+<area shape="rect" id="node8" href="$d5/db6/classCCopasiParameter.html" title="CCopasiParameter" alt="" coords="1647,243,1777,269"/>
+<area shape="rect" id="node10" href="$d4/da8/classCCopasiObject.html" title="CCopasiObject" alt="" coords="506,231,614,257"/>
+<area shape="rect" id="node17" href="$dc/d69/classCCopasiStaticString.html" title="CCopasiStaticString" alt="" coords="899,400,1037,427"/>
+<area shape="rect" id="node24" href="$d8/dea/unionCCopasiParameter_1_1Value.html" title="CCopasiParameter::Value" alt="" coords="2248,267,2416,293"/>
+<area shape="rect" id="node27" href="$db/d84/classCCopasiObjectName.html" title="CCopasiObjectName" alt="" coords="489,599,631,625"/>
+<area shape="rect" id="node4" title="STL class. " alt="" coords="6,538,127,579"/>
+<area shape="rect" id="node5" href="$dd/de4/classCVector.html" title="CVector\&lt; CProcessReportItem * \&gt;" alt="" coords="3294,139,3511,165"/>
+<area shape="rect" id="node6" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; CProcessReport\lItem * \&gt;" alt="" coords="2891,131,3090,173"/>
+<area shape="rect" id="node7" href="$d9/d72/classCProcessReportItem.html" title="CProcessReportItem" alt="" coords="2540,149,2681,176"/>
+<area shape="rect" id="node9" href="$d9/dfd/classCCopasiContainer.html" title="CCopasiContainer" alt="" coords="1265,163,1391,189"/>
+<area shape="rect" id="node11" href="$df/dfa/classCObjectInterface.html" title="CObjectInterface" alt="" coords="180,121,300,148"/>
+<area shape="rect" id="node13" title="STL class. " alt="" coords="513,427,607,453"/>
+<area shape="rect" id="node20" title="STL class. " alt="" coords="488,44,632,71"/>
+<area shape="rect" id="node15" href="$d8/dc4/classCRenameHandler.html" title="CRenameHandler" alt="" coords="179,197,301,224"/>
+<area shape="rect" id="node16" href="$d4/dad/classUpdateMethod.html" title="UpdateMethod" alt="" coords="187,339,293,365"/>
+<area shape="rect" id="node18" href="$d0/d44/classRefresh.html" title="Refresh" alt="" coords="207,71,273,97"/>
+<area shape="rect" id="node23" title="STL class. " alt="" coords="1273,56,1383,83"/>
+<area shape="rect" id="node26" href="$dd/d09/classCRegisteredObjectName.html" title="CRegisteredObjectName" alt="" coords="886,607,1050,633"/>
+<area shape="rect" id="node29" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; CType \&gt;" alt="" coords="2533,69,2688,96"/>
+<area shape="rect" id="node31" href="$dd/de4/classCVector.html" title="CVector\&lt; CType \&gt;" alt="" coords="2927,75,3054,101"/>
+</map>

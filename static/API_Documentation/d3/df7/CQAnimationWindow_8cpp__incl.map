@@ -1,0 +1,28 @@
+<map id="CQAnimationWindow.cpp" name="CQAnimationWindow.cpp">
+<area shape="rect" id="node8" href="$d2/d9f/CQAnimationWindow_8h.html" title="qlayout/CQAnimationWindow.h" alt="" coords="867,88,1065,115"/>
+<area shape="rect" id="node17" href="$d5/d0d/CQAnimationSettingsEditor_8h.html" title="qlayout/CQAnimationSettings\lEditor.h" alt="" coords="1749,81,1939,122"/>
+<area shape="rect" id="node21" href="$de/da1/CQCopasiAnimation_8h.html" title="qlayout/CQCopasiAnimation.h" alt="" coords="3355,88,3548,115"/>
+<area shape="rect" id="node22" href="$d2/d68/CQLayoutScene_8h.html" title="qlayout/CQLayoutScene.h" alt="" coords="3092,179,3263,205"/>
+<area shape="rect" id="node25" href="$d5/d08/CQCopasiEffect_8h.html" title="qlayout/CQCopasiEffect.h" alt="" coords="177,88,343,115"/>
+<area shape="rect" id="node26" href="$de/de2/CQEffectDescription_8h.html" title="qlayout/CQEffectDescription.h" alt="" coords="2588,88,2780,115"/>
+<area shape="rect" id="node28" href="$d1/d6c/CQSpringLayoutParameterWindow_8h.html" title="layoutUI/CQSpringLayoutParameter\lWindow.h" alt="" coords="1191,81,1417,122"/>
+<area shape="rect" id="node29" href="$d3/d15/CCopasiSpringLayout_8h.html" title="layout/CCopasiSpringLayout.h" alt="" coords="1927,179,2120,205"/>
+<area shape="rect" id="node32" href="$d0/d32/CQLayoutThread_8h.html" title="layoutUI/CQLayoutThread.h" alt="" coords="2215,88,2395,115"/>
+<area shape="rect" id="node37" href="$d4/d7c/CLayout_8h.html" title="layout/CLayout.h" alt="" coords="1148,179,1264,205"/>
+<area shape="rect" id="node39" href="$db/d45/CCopasiObjectName_8h.html" title="report/CCopasiObjectName.h" alt="" coords="1819,360,2008,387"/>
+<area shape="rect" id="node40" href="$d7/d97/CCopasiRootContainer_8h.html" title="report/CCopasiRootContainer.h" alt="" coords="2805,88,3003,115"/>
+<area shape="rect" id="node41" href="$d4/d88/CQIconResource_8h.html" title="resourcesUI/CQIconResource.h" alt="" coords="3128,88,3331,115"/>
+<area shape="rect" id="node42" href="$d6/d90/CModel_8h.html" title="model/CModel.h" alt="" coords="3764,88,3879,115"/>
+<area shape="rect" id="node43" href="$db/dc3/CReaction_8h.html" title="copasi/model/CReaction.h" alt="" coords="3735,179,3907,205"/>
+<area shape="rect" id="node44" href="$d6/d78/CEFMTask_8h.html" title="elementaryFluxModes\l/CEFMTask.h" alt="" coords="4429,353,4576,394"/>
+<area shape="rect" id="node45" href="$d9/d08/CEFMProblem_8h.html" title="elementaryFluxModes\l/CEFMProblem.h" alt="" coords="4027,262,4173,303"/>
+<area shape="rect" id="node46" href="$d3/df7/CFluxMode_8h.html" title="elementaryFluxModes\l/CFluxMode.h" alt="" coords="3513,171,3660,213"/>
+<area shape="rect" id="node47" href="$da/dc0/CTrajectoryTask_8h.html" title="trajectory/CTrajectoryTask.h" alt="" coords="4171,88,4353,115"/>
+<area shape="rect" id="node48" href="$dc/d07/CLayoutEngine_8h.html" title="layout/CLayoutEngine.h" alt="" coords="4198,269,4353,296"/>
+<area shape="rect" id="node11" href="$dd/d5a/CWindowInterface_8h.html" title="UI/CWindowInterface.h" alt="" coords="412,179,565,205"/>
+<area shape="rect" id="node13" href="$dc/d74/CLayoutState_8h.html" title="layout/CLayoutState.h" alt="" coords="1573,179,1720,205"/>
+<area shape="rect" id="node24" href="$dd/df7/CCopasiDataModel_8h.html" title="CopasiDataModel/CCopasiData\lModel.h" alt="" coords="3287,171,3489,213"/>
+<area shape="rect" id="node30" href="$df/dcb/CLBase_8h.html" title="CLBase.h" alt="" coords="1996,269,2072,296"/>
+<area shape="rect" id="node31" href="$dc/df8/copasi_8h.html" title="copasi/copasi.h" alt="" coords="2083,360,2193,387"/>
+<area shape="rect" id="node38" href="$d7/d51/CCopasiVector_8h.html" title="utilities/CCopasiVector.h" alt="" coords="2270,269,2431,296"/>
+</map>

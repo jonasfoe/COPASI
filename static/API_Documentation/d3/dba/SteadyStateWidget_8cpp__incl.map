@@ -1,0 +1,29 @@
+<map id="SteadyStateWidget.cpp" name="SteadyStateWidget.cpp">
+<area shape="rect" id="node2" href="$dc/df1/DataModelGUI_8h.html" title="DataModelGUI.h" alt="" coords="428,179,544,205"/>
+<area shape="rect" id="node10" href="$d3/d29/listviews_8h.html" title="copasi/UI/listviews.h" alt="" coords="520,360,656,387"/>
+<area shape="rect" id="node14" href="$dc/df8/copasi_8h.html" title="copasi.h" alt="" coords="198,443,267,469"/>
+<area shape="rect" id="node18" href="$da/dde/SteadyStateWidget_8h.html" title="SteadyStateWidget.h" alt="" coords="42,88,184,115"/>
+<area shape="rect" id="node25" href="$dc/d9e/CQTaskBtnWidget_8h.html" title="CQTaskBtnWidget.h" alt="" coords="1192,88,1331,115"/>
+<area shape="rect" id="node27" href="$de/dcd/CQTaskHeaderWidget_8h.html" title="CQTaskHeaderWidget.h" alt="" coords="1882,179,2040,205"/>
+<area shape="rect" id="node29" href="$d2/dc5/CQTaskMethodWidget_8h.html" title="CQTaskMethodWidget.h" alt="" coords="1600,179,1763,205"/>
+<area shape="rect" id="node31" href="$d4/da3/CProgressBar_8h.html" title="CProgressBar.h" alt="" coords="2922,179,3032,205"/>
+<area shape="rect" id="node39" href="$dd/dda/CQSteadyStateResult_8h.html" title="CQSteadyStateResult.h" alt="" coords="1393,179,1551,205"/>
+<area shape="rect" id="node41" href="$d5/de1/qtUtilities_8h.html" title="qtUtilities.h" alt="" coords="2384,88,2470,115"/>
+<area shape="rect" id="node43" href="$dd/df7/CCopasiDataModel_8h.html" title="CopasiDataModel/CCopasiData\lModel.h" alt="" coords="1822,262,2024,303"/>
+<area shape="rect" id="node45" href="$d7/d97/CCopasiRootContainer_8h.html" title="report/CCopasiRootContainer.h" alt="" coords="2065,179,2263,205"/>
+<area shape="rect" id="node46" href="$d3/dd0/CKeyFactory_8h.html" title="copasi/report/CKeyFactory.h" alt="" coords="2310,269,2494,296"/>
+<area shape="rect" id="node47" href="$d0/d89/CSteadyStateTask_8h.html" title="steadystate/CSteadyState\lTask.h" alt="" coords="966,81,1136,122"/>
+<area shape="rect" id="node48" href="$de/d2a/CSteadyStateProblem_8h.html" title="steadystate/CSteadyState\lProblem.h" alt="" coords="3243,353,3414,394"/>
+<area shape="rect" id="node49" href="$d6/d90/CModel_8h.html" title="model/CModel.h" alt="" coords="3560,269,3675,296"/>
+<area shape="rect" id="node50" href="$df/d21/CCopasiException_8h.html" title="utilities/CCopasiException.h" alt="" coords="3750,88,3930,115"/>
+<area shape="rect" id="node6" href="$d5/d4d/COutputHandlerPlot_8h.html" title="copasi/plotUI/COutputHandler\lPlot.h" alt="" coords="621,262,814,303"/>
+<area shape="rect" id="node8" href="$d7/d0c/COutputHandler_8h.html" title="utilities/COutputHandler.h" alt="" coords="1476,443,1644,469"/>
+<area shape="rect" id="node20" href="$dc/d41/TaskWidget_8h.html" title="copasi/UI/TaskWidget.h" alt="" coords="842,179,1000,205"/>
+<area shape="rect" id="node21" href="$d2/d39/CCopasiMethod_8h.html" title="copasi/utilities/CCopasi\lMethod.h" alt="" coords="1432,262,1586,303"/>
+<area shape="rect" id="node24" href="$de/d58/copasiWidget_8h.html" title="copasi/UI/copasiWidget.h" alt="" coords="838,269,1004,296"/>
+<area shape="rect" id="node23" href="$d2/d53/CCopasiTask_8h.html" title="copasi/utilities/CCopasi\lTask.h" alt="" coords="1483,353,1636,394"/>
+<area shape="rect" id="node36" href="$db/d91/CProcessReport_8h.html" title="utilities/CProcessReport.h" alt="" coords="2569,269,2738,296"/>
+<area shape="rect" id="node38" href="$db/dd9/CQProgressDialog_8h.html" title="CQProgressDialog.h" alt="" coords="3081,269,3218,296"/>
+<area shape="rect" id="node37" href="$d9/df7/CCopasiParameter_8h.html" title="copasi/utilities/CCopasi\lParameter.h" alt="" coords="2455,353,2608,394"/>
+<area shape="rect" id="node44" href="$d1/d37/CRenameHandler_8h.html" title="copasi/report/CRenameHandler.h" alt="" coords="1814,360,2023,387"/>
+</map>

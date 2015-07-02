@@ -1,0 +1,20 @@
+<map id="CCompartmentGraphNode" name="CCompartmentGraphNode">
+<area shape="rect" id="node2" href="$de/d28/classCLCompartmentGlyph.html" title="CLCompartmentGlyph" alt="" coords="1760,95,1909,121"/>
+<area shape="rect" id="node3" href="$d8/d63/classCLGraphicalObject.html" title="CLGraphicalObject" alt="" coords="1537,164,1668,191"/>
+<area shape="rect" id="node4" href="$d7/df9/classCLBase.html" title="CLBase" alt="" coords="527,265,593,292"/>
+<area shape="rect" id="node22" href="$d3/da7/classCLBoundingBox.html" title="CLBoundingBox" alt="" coords="1267,239,1381,265"/>
+<area shape="rect" id="node23" href="$db/d5d/classCLPoint.html" title="CLPoint" alt="" coords="934,265,1002,292"/>
+<area shape="rect" id="node24" href="$d0/dfa/classCLDimensions.html" title="CLDimensions" alt="" coords="916,215,1020,241"/>
+<area shape="rect" id="node5" title="STL class. " alt="" coords="202,305,278,332"/>
+<area shape="rect" id="node8" href="$d4/da8/classCCopasiObject.html" title="CCopasiObject" alt="" coords="506,521,614,548"/>
+<area shape="rect" id="node15" href="$dc/d69/classCCopasiStaticString.html" title="CCopasiStaticString" alt="" coords="899,367,1037,393"/>
+<area shape="rect" id="node6" title="STL class. " alt="" coords="6,298,127,339"/>
+<area shape="rect" id="node7" href="$d9/dfd/classCCopasiContainer.html" title="CCopasiContainer" alt="" coords="1261,609,1387,636"/>
+<area shape="rect" id="node9" href="$df/dfa/classCObjectInterface.html" title="CObjectInterface" alt="" coords="180,624,300,651"/>
+<area shape="rect" id="node11" title="STL class. " alt="" coords="513,649,607,676"/>
+<area shape="rect" id="node18" title="STL class. " alt="" coords="488,701,632,728"/>
+<area shape="rect" id="node13" href="$d8/dc4/classCRenameHandler.html" title="CRenameHandler" alt="" coords="179,468,301,495"/>
+<area shape="rect" id="node14" href="$d4/dad/classUpdateMethod.html" title="UpdateMethod" alt="" coords="187,523,293,549"/>
+<area shape="rect" id="node16" href="$d0/d44/classRefresh.html" title="Refresh" alt="" coords="207,573,273,600"/>
+<area shape="rect" id="node21" title="STL class. " alt="" coords="691,799,802,825"/>
+</map>

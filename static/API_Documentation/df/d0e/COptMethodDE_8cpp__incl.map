@@ -1,0 +1,35 @@
+<map id="COptMethodDE.cpp" name="COptMethodDE.cpp">
+<area shape="rect" id="node5" href="$dc/df8/copasi_8h.html" title="copasi.h" alt="" coords="112,651,181,677"/>
+<area shape="rect" id="node8" href="$d5/d83/COptMethodDE_8h.html" title="COptMethodDE.h" alt="" coords="2273,80,2396,107"/>
+<area shape="rect" id="node31" href="$d5/df5/COptProblem_8h.html" title="COptProblem.h" alt="" coords="1365,155,1475,181"/>
+<area shape="rect" id="node41" href="$da/d06/COptItem_8h.html" title="COptItem.h" alt="" coords="340,229,428,256"/>
+<area shape="rect" id="node42" href="$de/d2e/COptTask_8h.html" title="COptTask.h" alt="" coords="1777,229,1868,256"/>
+<area shape="rect" id="node43" href="$db/d91/CProcessReport_8h.html" title="utilities/CProcessReport.h" alt="" coords="1551,312,1720,339"/>
+<area shape="rect" id="node44" href="$d9/d98/CRandom_8h.html" title="randomGenerator/CRandom.h" alt="" coords="2983,80,3176,107"/>
+<area shape="rect" id="node47" href="$db/da2/CPermutation_8h.html" title="randomGenerator/CPermutation.h" alt="" coords="2450,80,2664,107"/>
+<area shape="rect" id="node48" href="$d1/d13/CSort_8h.html" title="utilities/CSort.h" alt="" coords="2797,80,2907,107"/>
+<area shape="rect" id="node50" href="$da/d0d/CCopasiObjectReference_8h.html" title="report/CCopasiObjectReference.h" alt="" coords="723,403,937,429"/>
+<area shape="rect" id="node9" href="$d0/dfa/COptMethod_8h.html" title="optimization/COptMethod.h" alt="" coords="2356,155,2535,181"/>
+<area shape="rect" id="node28" href="$da/dd9/CVector_8h.html" title="utilities/CVector.h" alt="" coords="2260,403,2383,429"/>
+<area shape="rect" id="node10" href="$d2/d39/CCopasiMethod_8h.html" title="utilities/CCopasiMethod.h" alt="" coords="2101,229,2267,256"/>
+<area shape="rect" id="node11" href="$dc/d95/CCopasiParameterGroup_8h.html" title="copasi/utilities/CCopasi\lParameterGroup.h" alt="" coords="1924,305,2077,346"/>
+<area shape="rect" id="node24" href="$d2/d53/CCopasiTask_8h.html" title="copasi/utilities/CCopasi\lTask.h" alt="" coords="1745,305,1899,346"/>
+<area shape="rect" id="node27" href="$d3/d2b/CReadConfig_8h.html" title="copasi/utilities/CReadConfig.h" alt="" coords="1525,576,1717,603"/>
+<area shape="rect" id="node13" href="$d9/df7/CCopasiParameter_8h.html" title="copasi/utilities/CCopasi\lParameter.h" alt="" coords="1207,395,1360,437"/>
+<area shape="rect" id="node22" href="$d9/d2d/CCopasiMessage_8h.html" title="copasi/utilities/CCopasi\lMessage.h" alt="" coords="2076,486,2229,527"/>
+<area shape="rect" id="node14" href="$d4/d70/CCopasiContainer_8h.html" title="Header file of class CCopasiContainer. " alt="" coords="371,493,584,520"/>
+<area shape="rect" id="node21" href="$db/d45/CCopasiObjectName_8h.html" title="copasi/report/CCopasiObject\lName.h" alt="" coords="1040,486,1227,527"/>
+<area shape="rect" id="node16" href="$dd/d9f/CCopasiObject_8h.html" title="copasi/report/CCopasiObject.h" alt="" coords="454,576,649,603"/>
+<area shape="rect" id="node20" href="$d3/dfe/CMathEnum_8h.html" title="copasi/math/CMathEnum.h" alt="" coords="307,651,484,677"/>
+<area shape="rect" id="node25" href="$d7/d0c/COutputHandler_8h.html" title="utilities/COutputHandler.h" alt="" coords="877,576,1045,603"/>
+<area shape="rect" id="node26" href="$d4/d2f/CReport_8h.html" title="report/CReport.h" alt="" coords="1065,403,1180,429"/>
+<area shape="rect" id="node32" href="$db/d68/CCopasiTimer_8h.html" title="report/CCopasiTimer.h" alt="" coords="43,493,193,520"/>
+<area shape="rect" id="node34" href="$d1/d1d/CCopasiProblem_8h.html" title="utilities/CCopasiProblem.h" alt="" coords="1905,229,2076,256"/>
+<area shape="rect" id="node35" href="$d7/d51/CCopasiVector_8h.html" title="utilities/CCopasiVector.h" alt="" coords="1437,403,1597,429"/>
+<area shape="rect" id="node38" href="$d1/dcc/CExpression_8h.html" title="Header file of class CExpression. " alt="" coords="535,312,687,339"/>
+<area shape="rect" id="node33" href="$d0/db2/CopasiTime_8h.html" title="utilities/CopasiTime.h" alt="" coords="61,576,205,603"/>
+<area shape="rect" id="node36" href="$d5/d47/utility_8h.html" title="utilities/utility.h" alt="" coords="1945,493,2052,520"/>
+<area shape="rect" id="node39" href="$d3/d46/CEvaluationTree_8h.html" title="function/CEvaluationTree.h" alt="" coords="523,403,699,429"/>
+<area shape="rect" id="node45" href="$d3/d42/Cr250_8h.html" title="Cr250.h" alt="" coords="3049,155,3116,181"/>
+<area shape="rect" id="node46" href="$dd/d51/Cmt19937_8h.html" title="Cmt19937.h" alt="" coords="3140,155,3231,181"/>
+</map>

@@ -1,0 +1,32 @@
+<map id="CLayout.h" name="CLayout.h">
+<area shape="rect" id="node3" href="$d7/d51/CCopasiVector_8h.html" title="utilities/CCopasiVector.h" alt="" coords="615,435,776,461"/>
+<area shape="rect" id="node22" href="$df/dcb/CLBase_8h.html" title="CLBase.h" alt="" coords="2629,757,2705,784"/>
+<area shape="rect" id="node23" href="$db/d78/CLGlyphs_8h.html" title="CLGlyphs.h" alt="" coords="887,344,973,371"/>
+<area shape="rect" id="node25" href="$d9/d8b/CLReactionGlyph_8h.html" title="CLReactionGlyph.h" alt="" coords="733,261,864,288"/>
+<area shape="rect" id="node28" href="$de/d68/CLLocalRenderInformation_8h.html" title="copasi/layout/CLLocalRender\lInformation.h" alt="" coords="940,81,1129,122"/>
+<area shape="rect" id="node6" href="$d9/d2d/CCopasiMessage_8h.html" title="utilities/CCopasiMessage.h" alt="" coords="514,525,688,552"/>
+<area shape="rect" id="node8" href="$d5/d47/utility_8h.html" title="utilities/utility.h" alt="" coords="303,525,409,552"/>
+<area shape="rect" id="node11" href="$db/d45/CCopasiObjectName_8h.html" title="report/CCopasiObjectName.h" alt="" coords="659,608,848,635"/>
+<area shape="rect" id="node13" href="$d4/d70/CCopasiContainer_8h.html" title="Header file of class CCopasiContainer. " alt="" coords="1282,525,1453,552"/>
+<area shape="rect" id="node15" href="$dd/d9f/CCopasiObject_8h.html" title="copasi/report/CCopasiObject.h" alt="" coords="1411,608,1607,635"/>
+<area shape="rect" id="node17" href="$dc/df8/copasi_8h.html" title="copasi/copasi.h" alt="" coords="2482,832,2592,859"/>
+<area shape="rect" id="node21" href="$d3/dfe/CMathEnum_8h.html" title="copasi/math/CMathEnum.h" alt="" coords="1333,683,1509,709"/>
+<area shape="rect" id="node24" href="$d7/d8f/CLGraphicalObject_8h.html" title="CLGraphicalObject.h" alt="" coords="852,435,992,461"/>
+<area shape="rect" id="node27" href="$d1/dd0/CLCurve_8h.html" title="CLCurve.h" alt="" coords="1177,525,1257,552"/>
+<area shape="rect" id="node29" href="$d0/d56/CLRenderInformationBase_8h.html" title="copasi/layout/CLRenderInformation\lBase.h" alt="" coords="1933,171,2155,213"/>
+<area shape="rect" id="node44" href="$d4/d92/CLLocalStyle_8h.html" title="copasi/layout/CLLocalStyle.h" alt="" coords="941,179,1128,205"/>
+<area shape="rect" id="node30" href="$dd/d7c/CLColorDefinition_8h.html" title="copasi/layout/CLColorDefinition.h" alt="" coords="1932,525,2141,552"/>
+<area shape="rect" id="node31" href="$d4/dbe/CLGradientBase_8h.html" title="copasi/layout/CLGradient\lBase.h" alt="" coords="2082,337,2248,378"/>
+<area shape="rect" id="node35" href="$da/db6/CLLinearGradient_8h.html" title="copasi/layout/CLLinearGradient.h" alt="" coords="2157,261,2367,288"/>
+<area shape="rect" id="node36" href="$da/d19/CLRadialGradient_8h.html" title="copasi/layout/CLRadialGradient.h" alt="" coords="2482,261,2693,288"/>
+<area shape="rect" id="node37" href="$dc/d11/CLLineEnding_8h.html" title="copasi/layout/CLLineEnding.h" alt="" coords="1765,261,1955,288"/>
+<area shape="rect" id="node32" href="$dc/db1/CLGradientStop_8h.html" title="copasi/layout/CLGradient\lStop.h" alt="" coords="2375,427,2541,469"/>
+<area shape="rect" id="node33" href="$d0/d26/CLRelAbsVector_8h.html" title="copasi/layout/CLRelAbsVector.h" alt="" coords="2425,525,2631,552"/>
+<area shape="rect" id="node38" href="$d1/dbb/CLGraphicalPrimitive2D_8h.html" title="copasi/layout/CLGraphical\lPrimitive2D.h" alt="" coords="1682,427,1853,469"/>
+<area shape="rect" id="node42" href="$dd/d9b/CLGroup_8h.html" title="copasi/layout/CLGroup.h" alt="" coords="1167,344,1329,371"/>
+<area shape="rect" id="node39" href="$db/d29/CLGraphicalPrimitive1D_8h.html" title="copasi/layout/CLGraphical\lPrimitive1D.h" alt="" coords="1581,518,1752,559"/>
+<area shape="rect" id="node40" href="$d4/d51/CLTransformation2D_8h.html" title="copasi/layout/CLTransformation2D.h" alt="" coords="1953,608,2183,635"/>
+<area shape="rect" id="node41" href="$d2/d55/CLTransformation_8h.html" title="copasi/layout/CLTransformation.h" alt="" coords="1953,683,2167,709"/>
+<area shape="rect" id="node43" href="$d0/d15/CLText_8h.html" title="copasi/layout/CLText.h" alt="" coords="1505,435,1657,461"/>
+<area shape="rect" id="node45" href="$de/ddf/CLStyle_8h.html" title="copasi/layout/CLStyle.h" alt="" coords="1019,261,1175,288"/>
+</map>

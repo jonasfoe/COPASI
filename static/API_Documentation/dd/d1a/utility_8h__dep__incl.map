@@ -1,0 +1,51 @@
+<map id="utility.h" name="utility.h">
+<area shape="rect" id="node2" href="$d2/d8f/CConfigurationFile_8cpp.html" title="CConfigurationFile.cpp" alt="" coords="5,80,155,107"/>
+<area shape="rect" id="node3" href="$d7/d93/COptions_8cpp.html" title="COptions.cpp" alt="" coords="180,80,279,107"/>
+<area shape="rect" id="node4" href="$d7/d51/CCopasiVector_8h.html" title="CCopasiVector.h" alt="" coords="920,80,1036,107"/>
+<area shape="rect" id="node6" href="$d0/d90/CEvaluationNodeCall_8cpp.html" title="CEvaluationNodeCall.cpp" alt="" coords="771,229,937,256"/>
+<area shape="rect" id="node7" href="$df/d08/CModel_8cpp.html" title="CModel.cpp" alt="" coords="656,229,747,256"/>
+<area shape="rect" id="node8" href="$d9/d77/CReaction_8cpp.html" title="CReaction.cpp" alt="" coords="963,229,1069,256"/>
+<area shape="rect" id="node9" href="$d3/d7c/CCopasiXML_8cpp.html" title="Implementation file of class CCopasiXML. " alt="" coords="1094,229,1215,256"/>
+<area shape="rect" id="node11" href="$de/da7/CChemEqElement_8cpp.html" title="CChemEqElement.cpp" alt="" coords="405,155,555,181"/>
+<area shape="rect" id="node12" href="$da/d90/CChemEqInterface_8cpp.html" title="CChemEqInterface.cpp" alt="" coords="580,155,733,181"/>
+<area shape="rect" id="node13" href="$dc/d2d/CCompartment_8cpp.html" title="CCompartment.cpp" alt="" coords="1108,155,1241,181"/>
+<area shape="rect" id="node14" href="$d8/da4/CMoiety_8cpp.html" title="CMoiety.cpp" alt="" coords="1265,155,1359,181"/>
+<area shape="rect" id="node15" href="$da/d16/CEvaluationNodeDelay_8cpp.html" title="CEvaluationNodeDelay.cpp" alt="" coords="1451,80,1627,107"/>
+<area shape="rect" id="node16" href="$d4/d37/CEvaluationNodeNumber_8cpp.html" title="CEvaluationNodeNumber.cpp" alt="" coords="1651,80,1840,107"/>
+<area shape="rect" id="node17" href="$d7/ddb/CKinFunction_8cpp.html" title="CKinFunction.cpp" alt="" coords="1865,80,1988,107"/>
+<area shape="rect" id="node18" href="$d5/dc5/CMassAction_8cpp.html" title="CMassAction.cpp" alt="" coords="2013,80,2136,107"/>
+<area shape="rect" id="node19" href="$d2/d26/CNodeK_8cpp.html" title="CNodeK.cpp" alt="" coords="2161,80,2255,107"/>
+<area shape="rect" id="node20" href="$d2/d87/CLImageTexturizer_8cpp.html" title="CLImageTexturizer.cpp" alt="" coords="2280,80,2433,107"/>
+<area shape="rect" id="node21" href="$de/dd8/CQQtImageTexturizer_8cpp.html" title="CQQtImageTexturizer.cpp" alt="" coords="2459,80,2629,107"/>
+<area shape="rect" id="node22" href="$d4/d0d/CLNAMethod_8cpp.html" title="CLNAMethod.cpp" alt="" coords="2653,80,2776,107"/>
+<area shape="rect" id="node23" href="$d8/d90/CMIRIAMResource_8h.html" title="CMIRIAMResource.h" alt="" coords="2801,80,2943,107"/>
+<area shape="rect" id="node24" href="$db/d9d/CChemEqParser__lex_8cpp.html" title="CChemEqParser_lex.cpp" alt="" coords="2967,80,3131,107"/>
+<area shape="rect" id="node25" href="$d3/d05/CChemEqParser__yacc_8cpp.html" title="CChemEqParser_yacc.cpp" alt="" coords="3155,80,3329,107"/>
+<area shape="rect" id="node26" href="$d7/d55/CEvent_8cpp.html" title="CEvent.cpp" alt="" coords="3354,80,3440,107"/>
+<area shape="rect" id="node27" href="$d1/d70/CMetab_8cpp.html" title="CMetab.cpp" alt="" coords="3465,80,3556,107"/>
+<area shape="rect" id="node28" href="$d8/da3/CModelValue_8cpp.html" title="Implementation file of class CModelEntity and CModelValue. " alt="" coords="3580,80,3703,107"/>
+<area shape="rect" id="node29" href="$de/d6c/COptItem_8cpp.html" title="COptItem.cpp" alt="" coords="3727,80,3829,107"/>
+<area shape="rect" id="node30" href="$d0/d0f/CExperiment_8cpp.html" title="CExperiment.cpp" alt="" coords="3854,80,3972,107"/>
+<area shape="rect" id="node31" href="$d6/d58/CExperimentObjectMap_8cpp.html" title="CExperimentObjectMap.cpp" alt="" coords="3997,80,4179,107"/>
+<area shape="rect" id="node32" href="$d8/d79/CExperimentSet_8cpp.html" title="CExperimentSet.cpp" alt="" coords="4204,80,4343,107"/>
+<area shape="rect" id="node33" href="$d8/dfe/CPlotItem_8cpp.html" title="CPlotItem.cpp" alt="" coords="4367,80,4471,107"/>
+<area shape="rect" id="node34" href="$d8/d52/CReport_8cpp.html" title="CReport.cpp" alt="" coords="4495,80,4588,107"/>
+<area shape="rect" id="node35" href="$da/dc0/CMCAMethod_8cpp.html" title="CMCAMethod.cpp" alt="" coords="4613,80,4739,107"/>
+<area shape="rect" id="node36" href="$d2/dda/CNewtonMethod_8cpp.html" title="CNewtonMethod.cpp" alt="" coords="4764,80,4904,107"/>
+<area shape="rect" id="node37" href="$db/d7f/CQDifferentialEquations_8cpp.html" title="CQDifferentialEquations.cpp" alt="" coords="4929,80,5111,107"/>
+<area shape="rect" id="node38" href="$d6/df5/CQEFMResultWidget_8cpp.html" title="CQEFMResultWidget.cpp" alt="" coords="5135,80,5303,107"/>
+<area shape="rect" id="node39" href="$de/d92/CQExperimentData_8cpp.html" title="CQExperimentData.cpp" alt="" coords="5327,80,5483,107"/>
+<area shape="rect" id="node40" href="$d5/db3/CQFittingItemWidget_8cpp.html" title="CQFittingItemWidget.cpp" alt="" coords="5507,80,5673,107"/>
+<area shape="rect" id="node41" href="$dd/dd7/CQMoietiesTaskResult_8cpp.html" title="CQMoietiesTaskResult.cpp" alt="" coords="5698,80,5875,107"/>
+<area shape="rect" id="node42" href="$d6/dd0/CQTaskMethodWidget_8cpp.html" title="CQTaskMethodWidget.cpp" alt="" coords="5900,80,6076,107"/>
+<area shape="rect" id="node43" href="$d6/d33/CCopasiMessage_8cpp.html" title="CCopasiMessage.cpp" alt="" coords="6101,80,6245,107"/>
+<area shape="rect" id="node44" href="$db/d56/CCopasiParameterGroup_8cpp.html" title="CCopasiParameterGroup.cpp" alt="" coords="6271,80,6460,107"/>
+<area shape="rect" id="node45" href="$dc/d7d/CDirEntry_8cpp.html" title="CDirEntry.cpp" alt="" coords="6485,80,6584,107"/>
+<area shape="rect" id="node46" href="$d4/df4/CopasiTime_8cpp.html" title="CopasiTime.cpp" alt="" coords="6609,80,6724,107"/>
+<area shape="rect" id="node47" href="$de/d8e/CReadConfig_8cpp.html" title="CReadConfig.cpp" alt="" coords="6749,80,6869,107"/>
+<area shape="rect" id="node48" href="$d2/d12/CTableCell_8cpp.html" title="CTableCell.cpp" alt="" coords="6895,80,7004,107"/>
+<area shape="rect" id="node49" href="$de/d34/CVersion_8cpp.html" title="CVersion.cpp" alt="" coords="7029,80,7125,107"/>
+<area shape="rect" id="node50" href="$dc/dfa/utility_8cpp.html" title="utility.cpp" alt="" coords="7150,80,7225,107"/>
+<area shape="rect" id="node5" href="$de/df6/CFunctionDB_8h.html" title="CFunctionDB.h" alt="" coords="924,155,1033,181"/>
+<area shape="rect" id="node10" href="$d7/df5/CFunction_8h.html" title="CFunction.h" alt="" coords="809,155,900,181"/>
+</map>

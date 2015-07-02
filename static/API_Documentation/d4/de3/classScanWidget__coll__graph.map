@@ -1,0 +1,41 @@
+<map id="ScanWidget" name="ScanWidget">
+<area shape="rect" id="node14" href="$df/dc9/classListViews.html" title="ListViews" alt="" coords="2099,1104,2173,1131"/>
+<area shape="rect" id="node2" href="$df/d8e/classTaskWidget.html" title="TaskWidget" alt="" coords="2737,816,2828,843"/>
+<area shape="rect" id="node16" href="$d7/d8d/classSteadyStateWidget.html" title="SteadyStateWidget" alt="" coords="3003,1168,3136,1195"/>
+<area shape="rect" id="node19" href="$d2/d7a/classCQTSSAWidget.html" title="CQTSSAWidget" alt="" coords="3011,1227,3127,1253"/>
+<area shape="rect" id="node20" href="$d4/d5e/classCQFittingWidget.html" title="CQFittingWidget" alt="" coords="3011,1113,3128,1140"/>
+<area shape="rect" id="node27" href="$dd/dc1/classCQTrajectoryWidget.html" title="CQTrajectoryWidget" alt="" coords="3000,1293,3139,1320"/>
+<area shape="rect" id="node31" href="$de/d51/classCQTaskThread.html" title="CQTaskThread" alt="" coords="3015,785,3124,812"/>
+<area shape="rect" id="node3" href="$df/db4/classCopasiWidget.html" title="CopasiWidget" alt="" coords="2412,916,2513,943"/>
+<area shape="rect" id="node17" href="$d2/dcb/classCQPlotsWidget.html" title="CQPlotsWidget" alt="" coords="2727,1000,2838,1027"/>
+<area shape="rect" id="node18" href="$dc/df4/classCQDifferentialEquations.html" title="CQDifferentialEquations" alt="" coords="2704,1096,2861,1123"/>
+<area shape="rect" id="node28" href="$db/da3/classCQFittingResult.html" title="CQFittingResult" alt="" coords="2726,927,2839,953"/>
+<area shape="rect" id="node35" href="$d2/d14/classCQTaskHeaderWidget.html" title="CQTaskHeaderWidget" alt="" coords="2387,584,2538,611"/>
+<area shape="rect" id="node37" href="$d6/da9/classCQTaskBtnWidget.html" title="CQTaskBtnWidget" alt="" coords="2398,635,2527,661"/>
+<area shape="rect" id="node39" href="$d7/d92/classCQTaskMethodWidget.html" title="CQTaskMethodWidget" alt="" coords="2387,431,2539,457"/>
+<area shape="rect" id="node5" href="$d4/da8/classCCopasiObject.html" title="CCopasiObject" alt="" coords="406,212,514,239"/>
+<area shape="rect" id="node10" href="$dc/d69/classCCopasiStaticString.html" title="CCopasiStaticString" alt="" coords="699,263,837,289"/>
+<area shape="rect" id="node13" href="$d9/dfd/classCCopasiContainer.html" title="CCopasiContainer" alt="" coords="705,177,831,204"/>
+<area shape="rect" id="node44" href="$df/d88/classCCopasiTask_1_1CResult.html" title="CCopasiTask::CResult" alt="" coords="861,61,1011,88"/>
+<area shape="rect" id="node45" href="$d1/d4d/classCCopasiTask_1_1CDescription.html" title="CCopasiTask::CDescription" alt="" coords="1254,120,1431,147"/>
+<area shape="rect" id="node6" href="$df/dfa/classCObjectInterface.html" title="CObjectInterface" alt="" coords="52,231,172,257"/>
+<area shape="rect" id="node22" href="$d3/dd0/classDataModelGUI.html" title="DataModelGUI" alt="" coords="1769,1039,1876,1065"/>
+<area shape="rect" id="node8" href="$d8/dc4/classCRenameHandler.html" title="CRenameHandler" alt="" coords="51,72,173,99"/>
+<area shape="rect" id="node9" href="$d4/dad/classUpdateMethod.html" title="UpdateMethod" alt="" coords="59,129,165,156"/>
+<area shape="rect" id="node11" title="STL class. " alt="" coords="74,621,150,648"/>
+<area shape="rect" id="node25" href="$d8/da5/classCProcessReport.html" title="CProcessReport" alt="" coords="1075,617,1189,644"/>
+<area shape="rect" id="node33" href="$df/d49/classCCopasiMethod.html" title="CCopasiMethod" alt="" coords="1766,619,1879,645"/>
+<area shape="rect" id="node42" href="$d8/db2/classCCopasiTask.html" title="CCopasiTask" alt="" coords="2087,288,2185,315"/>
+<area shape="rect" id="node43" href="$db/d44/classCReport.html" title="CReport" alt="" coords="1504,352,1573,379"/>
+<area shape="rect" id="node12" href="$d0/d44/classRefresh.html" title="Refresh" alt="" coords="79,180,145,207"/>
+<area shape="rect" id="node29" href="$d4/d18/classCCopasiDataModel.html" title="CCopasiDataModel" alt="" coords="1066,352,1198,379"/>
+<area shape="rect" id="node21" href="$d6/dbc/classCQBrowserPane.html" title="CQBrowserPane" alt="" coords="1764,1201,1881,1228"/>
+<area shape="rect" id="node23" href="$d4/d4b/classCProgressBar.html" title="CProgressBar" alt="" coords="1488,844,1589,871"/>
+<area shape="rect" id="node24" href="$d6/d9e/classCQProgressDialog.html" title="CQProgressDialog" alt="" coords="1069,781,1195,808"/>
+<area shape="rect" id="node46" href="$d1/d05/classCCopasiProblem.html" title="CCopasiProblem" alt="" coords="1763,396,1882,423"/>
+<area shape="rect" id="node26" href="$dd/de4/classCVector.html" title="CVector\&lt; CQProgressItem * \&gt;" alt="" coords="1035,832,1229,859"/>
+<area shape="rect" id="node30" href="$d5/dd1/classCOutputHandler.html" title="COutputHandler" alt="" coords="711,352,825,379"/>
+<area shape="rect" id="node34" href="$df/d89/classCCopasiParameterGroup.html" title="CCopasiParameterGroup" alt="" coords="1456,516,1621,543"/>
+<area shape="rect" id="node48" href="$dc/d1d/classCState.html" title="CState" alt="" coords="1791,8,1854,35"/>
+<area shape="rect" id="node49" href="$dc/d90/classCScanContainerWidget.html" title="CScanContainerWidget" alt="" coords="1461,895,1617,921"/>
+</map>

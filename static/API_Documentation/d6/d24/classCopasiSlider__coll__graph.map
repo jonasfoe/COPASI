@@ -1,0 +1,36 @@
+<map id="CopasiSlider" name="CopasiSlider">
+<area shape="rect" id="node3" href="$d3/dd0/classDataModelGUI.html" title="DataModelGUI" alt="" coords="3007,864,3113,891"/>
+<area shape="rect" id="node26" href="$d7/d56/classCQThread.html" title="CQThread" alt="" coords="3311,909,3393,936"/>
+<area shape="rect" id="node38" href="$df/dc9/classListViews.html" title="ListViews" alt="" coords="3315,1399,3389,1425"/>
+<area shape="rect" id="node6" href="$d4/da8/classCCopasiObject.html" title="CCopasiObject" alt="" coords="923,423,1031,449"/>
+<area shape="rect" id="node31" href="$d1/dc3/classCOutputInterface.html" title="COutputInterface" alt="" coords="917,935,1038,961"/>
+<area shape="rect" id="node10" href="$dc/d69/classCCopasiStaticString.html" title="CCopasiStaticString" alt="" coords="1285,500,1424,527"/>
+<area shape="rect" id="node14" href="$d9/dfd/classCCopasiContainer.html" title="CCopasiContainer" alt="" coords="1637,552,1763,579"/>
+<area shape="rect" id="node23" href="$d5/db6/classCCopasiParameter.html" title="CCopasiParameter" alt="" coords="2015,457,2145,484"/>
+<area shape="rect" id="node47" href="$de/d75/classCSlider.html" title="CSlider" alt="" coords="2048,268,2112,295"/>
+<area shape="rect" id="node7" href="$df/dfa/classCObjectInterface.html" title="CObjectInterface" alt="" coords="511,228,631,255"/>
+<area shape="rect" id="node8" href="$d8/dc4/classCRenameHandler.html" title="CRenameHandler" alt="" coords="509,329,632,356"/>
+<area shape="rect" id="node9" href="$d4/dad/classUpdateMethod.html" title="UpdateMethod" alt="" coords="517,423,624,449"/>
+<area shape="rect" id="node11" title="STL class. " alt="" coords="533,807,609,833"/>
+<area shape="rect" id="node33" href="$de/d36/classCOutputDefinitionVector.html" title="COutputDefinitionVector" alt="" coords="897,1095,1057,1121"/>
+<area shape="rect" id="node45" href="$d8/da5/classCProcessReport.html" title="CProcessReport" alt="" coords="920,1297,1035,1324"/>
+<area shape="rect" id="node49" href="$db/d84/classCCopasiObjectName.html" title="CCopasiObjectName" alt="" coords="906,191,1049,217"/>
+<area shape="rect" id="node12" title="STL class. " alt="" coords="123,1022,245,1063"/>
+<area shape="rect" id="node13" href="$d0/d44/classRefresh.html" title="Refresh" alt="" coords="537,604,604,631"/>
+<area shape="rect" id="node17" title="STL class. " alt="" coords="922,692,1033,719"/>
+<area shape="rect" id="node25" title="STL class. " alt="" coords="919,991,1035,1017"/>
+<area shape="rect" id="node19" title="STL class. " alt="" coords="137,157,231,184"/>
+<area shape="rect" id="node21" href="$d4/de9/classCMIRIAMResources.html" title="CMIRIAMResources" alt="" coords="2672,731,2811,757"/>
+<area shape="rect" id="node22" href="$df/d89/classCCopasiParameterGroup.html" title="CCopasiParameterGroup" alt="" coords="2328,684,2493,711"/>
+<area shape="rect" id="node30" href="$d5/dd1/classCOutputHandler.html" title="COutputHandler" alt="" coords="1643,1004,1757,1031"/>
+<area shape="rect" id="node29" href="$db/dee/classCOutputHandlerPlot.html" title="COutputHandlerPlot" alt="" coords="2011,1004,2149,1031"/>
+<area shape="rect" id="node36" href="$d4/dc1/classPlotWindow.html" title="PlotWindow" alt="" coords="2365,999,2456,1025"/>
+<area shape="rect" id="node34" href="$d7/d08/classCCopasiVectorN.html" title="CCopasiVectorN\&lt; CPlotSpecification \&gt;" alt="" coords="449,1167,693,1193"/>
+<area shape="rect" id="node40" href="$d7/d8d/classSteadyStateWidget.html" title="SteadyStateWidget" alt="" coords="2993,1500,3127,1527"/>
+<area shape="rect" id="node41" href="$d2/dcb/classCQPlotsWidget.html" title="CQPlotsWidget" alt="" coords="3005,1551,3115,1577"/>
+<area shape="rect" id="node42" href="$dc/df4/classCQDifferentialEquations.html" title="CQDifferentialEquations" alt="" coords="2981,1399,3139,1425"/>
+<area shape="rect" id="node43" href="$d4/d4b/classCProgressBar.html" title="CProgressBar" alt="" coords="1304,1239,1405,1265"/>
+<area shape="rect" id="node44" href="$d6/d9e/classCQProgressDialog.html" title="CQProgressDialog" alt="" coords="914,1247,1041,1273"/>
+<area shape="rect" id="node46" href="$dd/de4/classCVector.html" title="CVector\&lt; CQProgressItem * \&gt;" alt="" coords="881,1196,1074,1223"/>
+<area shape="rect" id="node48" href="$dd/d09/classCRegisteredObjectName.html" title="CRegisteredObjectName" alt="" coords="1273,80,1437,107"/>
+</map>

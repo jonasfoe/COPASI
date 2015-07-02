@@ -1,0 +1,50 @@
+<map id="CVectorCore&lt; CType &gt;" name="CVectorCore&lt; CType &gt;">
+<area shape="rect" id="node2" href="$dd/de4/classCVector.html" title="CVector\&lt; CType \&gt;" alt="" coords="479,828,606,855"/>
+<area shape="rect" id="node23" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; CCopasiObject * \&gt;" alt="" coords="437,879,648,905"/>
+<area shape="rect" id="node24" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; const\l C_FLOAT64 * \&gt;" alt="" coords="474,363,611,405"/>
+<area shape="rect" id="node25" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; C_INT \&gt;" alt="" coords="465,5,620,32"/>
+<area shape="rect" id="node26" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; C_FLOAT64 \&gt;" alt="" coords="448,131,637,157"/>
+<area shape="rect" id="node27" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; double \&gt;" alt="" coords="465,649,620,676"/>
+<area shape="rect" id="node28" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; CQProgressItem * \&gt;" alt="" coords="433,64,653,91"/>
+<area shape="rect" id="node29" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; CMathEventN\l::CTrigger::CRoot \&gt;" alt="" coords="450,455,635,497"/>
+<area shape="rect" id="node30" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; UpdateMethod * \&gt;" alt="" coords="438,203,647,229"/>
+<area shape="rect" id="node31" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; CTrajectory\lMethodDsaLsodar::CReactionDependencies * \&gt;" alt="" coords="397,546,688,587"/>
+<area shape="rect" id="node32" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; CMathEvent * \&gt;" alt="" coords="445,1148,640,1175"/>
+<area shape="rect" id="node33" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; std::pair\l\&lt; C_FLOAT64, C_FLOAT64 * \&gt; \&gt;" alt="" coords="435,1395,650,1437"/>
+<area shape="rect" id="node34" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; C_FLOAT64 * \&gt;" alt="" coords="444,929,641,956"/>
+<area shape="rect" id="node35" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; unsigned\l char \&gt;" alt="" coords="464,1199,621,1241"/>
+<area shape="rect" id="node36" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; CMathTrigger\l::CRootFinder * \&gt;" alt="" coords="451,1031,635,1073"/>
+<area shape="rect" id="node37" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; CMathEventN\l::CAssignment \&gt;" alt="" coords="450,1330,635,1371"/>
+<area shape="rect" id="node38" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; size_t \&gt;" alt="" coords="467,740,618,767"/>
+<area shape="rect" id="node39" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; const\l CTrajAdaptiveSA::CReaction\lDependencies * \&gt;" alt="" coords="447,268,638,324"/>
+<area shape="rect" id="node40" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; std::vector\l\&lt; Refresh * \&gt; \&gt;" alt="" coords="461,1265,625,1306"/>
+<area shape="rect" id="node41" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; CMathEventN \&gt;" alt="" coords="445,1097,641,1124"/>
+<area shape="rect" id="node42" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; CMathReaction \&gt;" alt="" coords="439,980,646,1007"/>
+<area shape="rect" id="node43" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; bool \&gt;" alt="" coords="472,1461,613,1488"/>
+<area shape="rect" id="node44" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; CVector\l\&lt; C_FLOAT64 \&gt; \&gt;" alt="" coords="467,1513,619,1554"/>
+<area shape="rect" id="node45" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; CStepMatrix\lColumn * \&gt;" alt="" coords="454,1578,631,1619"/>
+<area shape="rect" id="node46" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; C_INT32 \&gt;" alt="" coords="459,1644,627,1671"/>
+<area shape="rect" id="node47" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; C2DPlotCurve * \&gt;" alt="" coords="439,1695,646,1721"/>
+<area shape="rect" id="node48" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; CMathObject \&gt;" alt="" coords="446,1745,639,1772"/>
+<area shape="rect" id="node49" href="$d5/d46/classCVectorCore.html" title="CVectorCore\&lt; CProcessReport\lItem * \&gt;" alt="" coords="443,1797,642,1838"/>
+<area shape="rect" id="node3" href="$dd/de4/classCVector.html" title="CVector\&lt; CCopasiObject * \&gt;" alt="" coords="957,877,1141,904"/>
+<area shape="rect" id="node4" href="$dd/de4/classCVector.html" title="CVector\&lt; const C_FLOAT64 * \&gt;" alt="" coords="947,451,1151,477"/>
+<area shape="rect" id="node5" href="$dd/de4/classCVector.html" title="CVector\&lt; C_INT \&gt;" alt="" coords="986,35,1113,61"/>
+<area shape="rect" id="node6" href="$dd/de4/classCVector.html" title="CVector\&lt; C_FLOAT64 \&gt;" alt="" coords="968,196,1131,223"/>
+<area shape="rect" id="node7" href="$dd/de4/classCVector.html" title="CVector\&lt; double \&gt;" alt="" coords="985,700,1113,727"/>
+<area shape="rect" id="node8" href="$dd/de4/classCVector.html" title="CVector\&lt; CQProgressItem * \&gt;" alt="" coords="953,116,1146,143"/>
+<area shape="rect" id="node9" href="$dd/de4/classCVector.html" title="CVector\&lt; CMathEventN\l::CTrigger::CRoot \&gt;" alt="" coords="970,533,1129,574"/>
+<area shape="rect" id="node10" href="$dd/de4/classCVector.html" title="CVector\&lt; UpdateMethod * \&gt;" alt="" coords="958,276,1141,303"/>
+<area shape="rect" id="node11" href="$dd/de4/classCVector.html" title="CVector\&lt; CTrajectoryMethod\lDsaLsodar::CReactionDependencies * \&gt;" alt="" coords="925,627,1173,669"/>
+<area shape="rect" id="node12" href="$dd/de4/classCVector.html" title="CVector\&lt; CMathEvent * \&gt;" alt="" coords="965,1283,1133,1309"/>
+<area shape="rect" id="node13" href="$dd/de4/classCVector.html" title="CVector\&lt; std::pair\l\&lt; C_FLOAT64, C_FLOAT64 * \&gt; \&gt;" alt="" coords="942,1570,1157,1611"/>
+<area shape="rect" id="node14" href="$dd/de4/classCVector.html" title="CVector\&lt; C_FLOAT64 * \&gt;" alt="" coords="964,937,1135,964"/>
+<area shape="rect" id="node15" href="$dd/de4/classCVector.html" title="CVector\&lt; unsigned char \&gt;" alt="" coords="965,1337,1134,1364"/>
+<area shape="rect" id="node16" href="$dd/de4/classCVector.html" title="CVector\&lt; CMathTrigger\l::CRootFinder * \&gt;" alt="" coords="971,1095,1128,1137"/>
+<area shape="rect" id="node17" href="$dd/de4/classCVector.html" title="CVector\&lt; CMathEventN\l::CAssignment \&gt;" alt="" coords="970,1475,1129,1517"/>
+<area shape="rect" id="node18" href="$dd/de4/classCVector.html" title="CVector\&lt; size_t \&gt;" alt="" coords="988,769,1111,796"/>
+<area shape="rect" id="node19" href="$dd/de4/classCVector.html" title="CVector\&lt; const CTrajAdaptive\lSA::CReactionDependencies * \&gt;" alt="" coords="946,359,1153,401"/>
+<area shape="rect" id="node20" href="$dd/de4/classCVector.html" title="CVector\&lt; std::vector\l\&lt; Refresh * \&gt; \&gt;" alt="" coords="981,1395,1118,1437"/>
+<area shape="rect" id="node21" href="$dd/de4/classCVector.html" title="CVector\&lt; CMathEventN \&gt;" alt="" coords="965,1199,1134,1225"/>
+<area shape="rect" id="node22" href="$dd/de4/classCVector.html" title="CVector\&lt; CMathReaction \&gt;" alt="" coords="960,1007,1139,1033"/>
+</map>

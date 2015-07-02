@@ -1,0 +1,22 @@
+<map id="SensWidgetComboBox.cpp" name="SensWidgetComboBox.cpp">
+<area shape="rect" id="node18" href="$d8/d86/SensWidgetComboBox_8h.html" title="SensWidgetComboBox.h" alt="" coords="2222,80,2385,107"/>
+<area shape="rect" id="node49" href="$d5/de1/qtUtilities_8h.html" title="qtUtilities.h" alt="" coords="2413,80,2499,107"/>
+<area shape="rect" id="node21" href="$dc/df8/copasi_8h.html" title="copasi/copasi.h" alt="" coords="3086,699,3196,725"/>
+<area shape="rect" id="node25" href="$d3/d4b/CSensProblem_8h.html" title="copasi/sensitivities\l/CSensProblem.h" alt="" coords="2083,155,2211,197"/>
+<area shape="rect" id="node27" href="$d1/d1d/CCopasiProblem_8h.html" title="copasi/utilities/CCopasi\lProblem.h" alt="" coords="1633,246,1787,287"/>
+<area shape="rect" id="node45" href="$df/dd9/CObjectLists_8h.html" title="copasi/model/CObjectLists.h" alt="" coords="1961,616,2145,643"/>
+<area shape="rect" id="node46" href="$d2/daf/CAnnotatedMatrix_8h.html" title="Header file of class CArrayAnnotation. " alt="" coords="2387,246,2561,287"/>
+<area shape="rect" id="node28" href="$dc/d95/CCopasiParameterGroup_8h.html" title="utilities/CCopasiParameter\lGroup.h" alt="" coords="1275,337,1449,378"/>
+<area shape="rect" id="node40" href="$da/dd9/CVector_8h.html" title="utilities/CVector.h" alt="" coords="2820,525,2943,552"/>
+<area shape="rect" id="node42" href="$d2/d53/CCopasiTask_8h.html" title="utilities/CCopasiTask.h" alt="" coords="1635,344,1787,371"/>
+<area shape="rect" id="node29" href="$d9/df7/CCopasiParameter_8h.html" title="copasi/utilities/CCopasi\lParameter.h" alt="" coords="2056,427,2209,469"/>
+<area shape="rect" id="node38" href="$d9/d2d/CCopasiMessage_8h.html" title="copasi/utilities/CCopasi\lMessage.h" alt="" coords="1629,609,1783,650"/>
+<area shape="rect" id="node30" href="$d4/d70/CCopasiContainer_8h.html" title="Header file of class CCopasiContainer. " alt="" coords="2304,525,2517,552"/>
+<area shape="rect" id="node37" href="$db/d45/CCopasiObjectName_8h.html" title="copasi/report/CCopasiObject\lName.h" alt="" coords="1859,518,2045,559"/>
+<area shape="rect" id="node32" href="$dd/d9f/CCopasiObject_8h.html" title="copasi/report/CCopasiObject.h" alt="" coords="2273,616,2468,643"/>
+<area shape="rect" id="node36" href="$d3/dfe/CMathEnum_8h.html" title="copasi/math/CMathEnum.h" alt="" coords="2386,699,2563,725"/>
+<area shape="rect" id="node43" href="$d7/d0c/COutputHandler_8h.html" title="utilities/COutputHandler.h" alt="" coords="1477,525,1645,552"/>
+<area shape="rect" id="node44" href="$d4/d2f/CReport_8h.html" title="report/CReport.h" alt="" coords="1763,435,1879,461"/>
+<area shape="rect" id="node47" href="$d4/d1c/CCopasiArray_8h.html" title="report/CCopasiArray.h" alt="" coords="2513,344,2660,371"/>
+<area shape="rect" id="node48" href="$de/dbd/CMatrix_8h.html" title="copasi/utilities/CMatrix.h" alt="" coords="2801,435,2961,461"/>
+</map>

@@ -1,0 +1,20 @@
+<map id="wizard.cpp" name="wizard.cpp">
+<area shape="rect" id="node3" href="$df/d37/wizard_8h.html" title="wizard.h" alt="" coords="289,80,356,107"/>
+<area shape="rect" id="node6" href="$d4/dfa/CQMessageBox_8h.html" title="UI/CQMessageBox.h" alt="" coords="508,80,648,107"/>
+<area shape="rect" id="node9" href="$d3/d29/listviews_8h.html" title="UI/listviews.h" alt="" coords="336,477,432,504"/>
+<area shape="rect" id="node13" href="$dc/df8/copasi_8h.html" title="copasi.h" alt="" coords="469,560,539,587"/>
+<area shape="rect" id="node17" href="$d3/da9/copasiui3window_8h.html" title="UI/copasiui3window.h" alt="" coords="1470,80,1615,107"/>
+<area shape="rect" id="node43" href="$d3/db4/COptions_8h.html" title="commandline/COptions.h" alt="" coords="2235,395,2401,421"/>
+<area shape="rect" id="node23" href="$d8/d90/CMIRIAMResource_8h.html" title="copasi/MIRIAM/CMIRIAMResource.h" alt="" coords="1626,155,1861,181"/>
+<area shape="rect" id="node24" href="$d9/df7/CCopasiParameter_8h.html" title="utilities/CCopasiParameter.h" alt="" coords="1655,320,1839,347"/>
+<area shape="rect" id="node33" href="$dc/d95/CCopasiParameterGroup_8h.html" title="utilities/CCopasiParameter\lGroup.h" alt="" coords="1797,230,1971,271"/>
+<area shape="rect" id="node37" href="$db/d91/CProcessReport_8h.html" title="utilities/CProcessReport.h" alt="" coords="1470,237,1639,264"/>
+<area shape="rect" id="node41" href="$d5/d47/utility_8h.html" title="utilities/utility.h" alt="" coords="941,395,1048,421"/>
+<area shape="rect" id="node26" href="$d4/d70/CCopasiContainer_8h.html" title="Header file of class CCopasiContainer. " alt="" coords="1415,395,1628,421"/>
+<area shape="rect" id="node32" href="$db/d45/CCopasiObjectName_8h.html" title="copasi/report/CCopasiObject\lName.h" alt="" coords="1093,470,1280,511"/>
+<area shape="rect" id="node28" href="$dd/d9f/CCopasiObject_8h.html" title="copasi/report/CCopasiObject.h" alt="" coords="1355,477,1551,504"/>
+<area shape="rect" id="node31" href="$d3/dfe/CMathEnum_8h.html" title="copasi/math/CMathEnum.h" alt="" coords="1418,560,1595,587"/>
+<area shape="rect" id="node34" href="$d9/d2d/CCopasiMessage_8h.html" title="copasi/utilities/CCopasi\lMessage.h" alt="" coords="1576,470,1729,511"/>
+<area shape="rect" id="node38" href="$da/dd9/CVector_8h.html" title="utilities/CVector.h" alt="" coords="691,395,813,421"/>
+<area shape="rect" id="node44" href="$dd/df5/CLocaleString_8h.html" title="copasi/commandline\l/CLocaleString.h" alt="" coords="2110,470,2249,511"/>
+</map>

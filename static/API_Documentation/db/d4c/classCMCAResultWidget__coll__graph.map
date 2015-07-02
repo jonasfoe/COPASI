@@ -1,0 +1,47 @@
+<map id="CMCAResultWidget" name="CMCAResultWidget">
+<area shape="rect" id="node13" href="$df/dc9/classListViews.html" title="ListViews" alt="" coords="1728,640,1803,667"/>
+<area shape="rect" id="node2" href="$df/db4/classCopasiWidget.html" title="CopasiWidget" alt="" coords="1996,735,2097,761"/>
+<area shape="rect" id="node16" href="$d2/dcb/classCQPlotsWidget.html" title="CQPlotsWidget" alt="" coords="2317,552,2427,579"/>
+<area shape="rect" id="node17" href="$dc/df4/classCQDifferentialEquations.html" title="CQDifferentialEquations" alt="" coords="2293,773,2451,800"/>
+<area shape="rect" id="node24" href="$db/da3/classCQFittingResult.html" title="CQFittingResult" alt="" coords="2315,688,2429,715"/>
+<area shape="rect" id="node25" href="$df/de3/classCQLyapResultWidget.html" title="CQLyapResultWidget" alt="" coords="2300,249,2444,276"/>
+<area shape="rect" id="node26" href="$dc/d22/classCQPlotSubwidget.html" title="CQPlotSubwidget" alt="" coords="2310,493,2434,520"/>
+<area shape="rect" id="node28" href="$d7/d3f/classCQSensResultWidget.html" title="CQSensResultWidget" alt="" coords="2299,1187,2445,1213"/>
+<area shape="rect" id="node29" href="$d1/dd9/classCQReportDefinition.html" title="CQReportDefinition" alt="" coords="2306,8,2438,35"/>
+<area shape="rect" id="node30" href="$d1/de9/classCQParameterSetsWidget.html" title="CQParameterSetsWidget" alt="" coords="2289,1245,2455,1272"/>
+<area shape="rect" id="node31" href="$df/db3/classCQParameterOverviewWidget.html" title="CQParameterOverviewWidget" alt="" coords="2275,617,2469,644"/>
+<area shape="rect" id="node32" href="$df/db4/classCLNAResultWidget.html" title="CLNAResultWidget" alt="" coords="2306,353,2438,380"/>
+<area shape="rect" id="node33" href="$d3/d52/classCQMathMatrixWidget.html" title="CQMathMatrixWidget" alt="" coords="2299,849,2445,876"/>
+<area shape="rect" id="node36" href="$df/dfe/classCQFunctionsWidget.html" title="CQFunctionsWidget" alt="" coords="2303,149,2441,176"/>
+<area shape="rect" id="node39" href="$de/d27/classCQLayoutsWidget.html" title="CQLayoutsWidget" alt="" coords="2309,989,2435,1016"/>
+<area shape="rect" id="node41" href="$d5/d93/classCQTimeSeriesWidget.html" title="CQTimeSeriesWidget" alt="" coords="2299,920,2445,947"/>
+<area shape="rect" id="node42" href="$d3/dbe/classCQGlobalQuantitiesWidget.html" title="CQGlobalQuantitiesWidget" alt="" coords="2284,1116,2460,1143"/>
+<area shape="rect" id="node43" href="$d3/dfa/classCQEventsWidget.html" title="CQEventsWidget" alt="" coords="2313,91,2431,117"/>
+<area shape="rect" id="node44" href="$dd/dee/classCQTabWidget.html" title="CQTabWidget" alt="" coords="2321,439,2423,465"/>
+<area shape="rect" id="node46" href="$db/d1a/classCQOptimizationResult.html" title="CQOptimizationResult" alt="" coords="2297,1057,2447,1084"/>
+<area shape="rect" id="node48" href="$d8/d50/classCMCAResultSubwidget.html" title="CMCAResultSubwidget" alt="" coords="2294,1360,2450,1387"/>
+<area shape="rect" id="node4" href="$d4/da8/classCCopasiObject.html" title="CCopasiObject" alt="" coords="315,583,423,609"/>
+<area shape="rect" id="node9" href="$dc/d69/classCCopasiStaticString.html" title="CCopasiStaticString" alt="" coords="645,541,784,568"/>
+<area shape="rect" id="node12" href="$d9/dfd/classCCopasiContainer.html" title="CCopasiContainer" alt="" coords="652,623,777,649"/>
+<area shape="rect" id="node34" href="$d7/dc1/classCQCrossSectionTaskWidget.html" title="CQCrossSectionTaskWidget" alt="" coords="846,351,1031,377"/>
+<area shape="rect" id="node5" href="$df/dfa/classCObjectInterface.html" title="CObjectInterface" alt="" coords="7,627,127,653"/>
+<area shape="rect" id="node22" href="$d3/dd0/classDataModelGUI.html" title="DataModelGUI" alt="" coords="1069,421,1176,448"/>
+<area shape="rect" id="node7" href="$d8/dc4/classCRenameHandler.html" title="CRenameHandler" alt="" coords="5,677,128,704"/>
+<area shape="rect" id="node8" href="$d4/dad/classUpdateMethod.html" title="UpdateMethod" alt="" coords="13,732,120,759"/>
+<area shape="rect" id="node10" title="STL class. " alt="" coords="29,328,105,355"/>
+<area shape="rect" id="node11" href="$d0/d44/classRefresh.html" title="Refresh" alt="" coords="33,576,100,603"/>
+<area shape="rect" id="node38" href="$d4/d18/classCCopasiDataModel.html" title="CCopasiDataModel" alt="" coords="1057,628,1189,655"/>
+<area shape="rect" id="node45" href="$d3/df7/classCMathModel.html" title="CMathModel" alt="" coords="1239,489,1334,516"/>
+<area shape="rect" id="node15" href="$d7/d8d/classSteadyStateWidget.html" title="SteadyStateWidget" alt="" coords="1396,729,1529,756"/>
+<area shape="rect" id="node18" href="$d2/d7a/classCQTSSAWidget.html" title="CQTSSAWidget" alt="" coords="1405,780,1521,807"/>
+<area shape="rect" id="node19" href="$d6/d5a/classScanWidget.html" title="ScanWidget" alt="" coords="1417,831,1509,857"/>
+<area shape="rect" id="node20" href="$d4/d5e/classCQFittingWidget.html" title="CQFittingWidget" alt="" coords="1404,881,1521,908"/>
+<area shape="rect" id="node21" href="$d6/dbc/classCQBrowserPane.html" title="CQBrowserPane" alt="" coords="1404,932,1521,959"/>
+<area shape="rect" id="node37" href="$d7/d23/classCQBrowserPaneDM.html" title="CQBrowserPaneDM" alt="" coords="1394,628,1531,655"/>
+<area shape="rect" id="node23" href="$dd/dc1/classCQTrajectoryWidget.html" title="CQTrajectoryWidget" alt="" coords="1393,983,1532,1009"/>
+<area shape="rect" id="node27" href="$dc/d44/classCQEFMWidget.html" title="CQEFMWidget" alt="" coords="1409,199,1517,225"/>
+<area shape="rect" id="node35" href="$d1/d63/classCQOptimizationWidget.html" title="CQOptimizationWidget" alt="" coords="1386,300,1539,327"/>
+<area shape="rect" id="node40" href="$d0/d39/classCQMoietiesTaskWidget.html" title="CQMoietiesTaskWidget" alt="" coords="1384,527,1541,553"/>
+<area shape="rect" id="node47" href="$d0/d90/classCQLNAWidget.html" title="CQLNAWidget" alt="" coords="1409,577,1516,604"/>
+<area shape="rect" id="node50" href="$d4/d57/classCMCAMethod.html" title="CMCAMethod" alt="" coords="1995,1436,2098,1463"/>
+</map>

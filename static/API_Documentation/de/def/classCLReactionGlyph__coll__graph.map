@@ -1,0 +1,25 @@
+<map id="CLReactionGlyph" name="CLReactionGlyph">
+<area shape="rect" id="node2" href="$dc/dac/classCLGlyphWithCurve.html" title="CLGlyphWithCurve" alt="" coords="2120,337,2251,364"/>
+<area shape="rect" id="node3" href="$d8/d63/classCLGraphicalObject.html" title="CLGraphicalObject" alt="" coords="1403,337,1533,364"/>
+<area shape="rect" id="node4" href="$d7/df9/classCLBase.html" title="CLBase" alt="" coords="383,257,449,284"/>
+<area shape="rect" id="node22" href="$d3/da7/classCLBoundingBox.html" title="CLBoundingBox" alt="" coords="1053,293,1168,320"/>
+<area shape="rect" id="node23" href="$db/d5d/classCLPoint.html" title="CLPoint" alt="" coords="731,206,799,233"/>
+<area shape="rect" id="node24" href="$d0/dfa/classCLDimensions.html" title="CLDimensions" alt="" coords="713,308,817,334"/>
+<area shape="rect" id="node25" href="$d0/df9/classCLCurve.html" title="CLCurve" alt="" coords="1874,246,1945,273"/>
+<area shape="rect" id="node27" href="$de/da1/classCLLineSegment.html" title="CLLineSegment" alt="" coords="1053,190,1168,217"/>
+<area shape="rect" id="node5" title="STL class. " alt="" coords="179,460,255,486"/>
+<area shape="rect" id="node8" href="$d4/da8/classCCopasiObject.html" title="CCopasiObject" alt="" coords="1414,633,1522,660"/>
+<area shape="rect" id="node15" href="$dc/d69/classCCopasiStaticString.html" title="CCopasiStaticString" alt="" coords="1840,538,1979,565"/>
+<area shape="rect" id="node6" title="STL class. " alt="" coords="6,452,127,494"/>
+<area shape="rect" id="node7" href="$d9/dfd/classCCopasiContainer.html" title="CCopasiContainer" alt="" coords="1048,873,1173,900"/>
+<area shape="rect" id="node28" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; CLMetabReference\lGlyph \&gt;" alt="" coords="1795,988,2024,1030"/>
+<area shape="rect" id="node30" href="$d8/d2c/classCCopasiVector.html" title="CCopasiVector\&lt; T \&gt;" alt="" coords="1399,1072,1537,1098"/>
+<area shape="rect" id="node9" href="$df/dfa/classCObjectInterface.html" title="CObjectInterface" alt="" coords="1051,561,1171,588"/>
+<area shape="rect" id="node11" title="STL class. " alt="" coords="1421,752,1515,778"/>
+<area shape="rect" id="node18" title="STL class. " alt="" coords="1396,1010,1540,1037"/>
+<area shape="rect" id="node13" href="$d8/dc4/classCRenameHandler.html" title="CRenameHandler" alt="" coords="1049,612,1172,638"/>
+<area shape="rect" id="node14" href="$d4/dad/classUpdateMethod.html" title="UpdateMethod" alt="" coords="1057,662,1164,689"/>
+<area shape="rect" id="node16" href="$d0/d44/classRefresh.html" title="Refresh" alt="" coords="1077,725,1144,752"/>
+<area shape="rect" id="node21" title="STL class. " alt="" coords="361,880,471,906"/>
+<area shape="rect" id="node29" title="STL class. " alt="" coords="1037,1105,1184,1132"/>
+</map>

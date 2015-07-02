@@ -1,0 +1,37 @@
+<map id="CQEFMListWidget" name="CQEFMListWidget">
+<area shape="rect" id="node4" href="$d7/d7c/classCQFluxModeDM.html" title="CQFluxModeDM" alt="" coords="4423,1231,4540,1257"/>
+<area shape="rect" id="node5" href="$d4/d01/classCQBaseDataModel.html" title="CQBaseDataModel" alt="" coords="4159,1289,4291,1316"/>
+<area shape="rect" id="node8" href="$d6/d3c/classCFluxMode.html" title="CFluxMode" alt="" coords="858,1200,945,1227"/>
+<area shape="rect" id="node10" title="STL class. " alt="" coords="150,815,266,841"/>
+<area shape="rect" id="node12" title="STL class. " alt="" coords="153,519,263,545"/>
+<area shape="rect" id="node26" title="STL class. " alt="" coords="291,83,435,109"/>
+<area shape="rect" id="node13" href="$de/d2e/classCEFMTask.html" title="CEFMTask" alt="" coords="4182,1160,4269,1187"/>
+<area shape="rect" id="node14" href="$d8/db2/classCCopasiTask.html" title="CCopasiTask" alt="" coords="3976,751,4075,777"/>
+<area shape="rect" id="node15" href="$d9/dfd/classCCopasiContainer.html" title="CCopasiContainer" alt="" coords="839,173,964,200"/>
+<area shape="rect" id="node16" href="$d4/da8/classCCopasiObject.html" title="CCopasiObject" alt="" coords="1209,412,1317,439"/>
+<area shape="rect" id="node32" href="$d4/d18/classCCopasiDataModel.html" title="CCopasiDataModel" alt="" coords="3155,397,3287,424"/>
+<area shape="rect" id="node39" href="$d5/db6/classCCopasiParameter.html" title="CCopasiParameter" alt="" coords="1591,669,1721,696"/>
+<area shape="rect" id="node21" href="$dc/d69/classCCopasiStaticString.html" title="CCopasiStaticString" alt="" coords="1587,591,1725,617"/>
+<area shape="rect" id="node30" href="$da/dcc/classCReportDefinition.html" title="CReportDefinition" alt="" coords="1595,523,1717,549"/>
+<area shape="rect" id="node43" href="$df/d88/classCCopasiTask_1_1CResult.html" title="CCopasiTask::CResult" alt="" coords="1787,297,1936,324"/>
+<area shape="rect" id="node44" href="$d1/d4d/classCCopasiTask_1_1CDescription.html" title="CCopasiTask::CDescription" alt="" coords="2107,195,2285,221"/>
+<area shape="rect" id="node17" href="$df/dfa/classCObjectInterface.html" title="CObjectInterface" alt="" coords="841,523,961,549"/>
+<area shape="rect" id="node29" href="$d1/dc3/classCOutputInterface.html" title="COutputInterface" alt="" coords="1961,436,2082,463"/>
+<area shape="rect" id="node46" href="$d4/d04/classCModel.html" title="CModel" alt="" coords="3491,852,3557,879"/>
+<area shape="rect" id="node19" href="$d8/dc4/classCRenameHandler.html" title="CRenameHandler" alt="" coords="840,352,963,379"/>
+<area shape="rect" id="node20" href="$d4/dad/classUpdateMethod.html" title="UpdateMethod" alt="" coords="848,412,955,439"/>
+<area shape="rect" id="node22" title="STL class. " alt="" coords="863,833,939,860"/>
+<area shape="rect" id="node28" href="$db/d44/classCReport.html" title="CReport" alt="" coords="3489,575,3559,601"/>
+<area shape="rect" id="node37" href="$df/d49/classCCopasiMethod.html" title="CCopasiMethod" alt="" coords="3467,1124,3581,1151"/>
+<area shape="rect" id="node40" href="$d8/da5/classCProcessReport.html" title="CProcessReport" alt="" coords="3164,1012,3279,1039"/>
+<area shape="rect" id="node23" title="STL class. " alt="" coords="505,826,626,867"/>
+<area shape="rect" id="node24" href="$d0/d44/classRefresh.html" title="Refresh" alt="" coords="868,584,935,611"/>
+<area shape="rect" id="node45" href="$d1/d05/classCCopasiProblem.html" title="CCopasiProblem" alt="" coords="3715,801,3834,828"/>
+<area shape="rect" id="node33" href="$d5/dd1/classCOutputHandler.html" title="COutputHandler" alt="" coords="2777,360,2892,387"/>
+<area shape="rect" id="node36" title="STL class. " alt="" coords="3176,600,3267,627"/>
+<area shape="rect" id="node38" href="$df/d89/classCCopasiParameterGroup.html" title="CCopasiParameterGroup" alt="" coords="3139,837,3304,864"/>
+<area shape="rect" id="node41" href="$dd/d9c/classCCopasiTimeVariable.html" title="CCopasiTimeVariable" alt="" coords="2762,1063,2907,1089"/>
+<area shape="rect" id="node42" href="$dd/de4/classCVector.html" title="CVector\&lt; CProcessReportItem * \&gt;" alt="" coords="2726,1012,2943,1039"/>
+<area shape="rect" id="node47" href="$dc/d1d/classCState.html" title="CState" alt="" coords="3190,960,3253,987"/>
+<area shape="rect" id="node49" href="$d1/d45/classCQSortFilterProxyModel.html" title="CQSortFilterProxyModel" alt="" coords="4401,1307,4562,1333"/>
+</map>

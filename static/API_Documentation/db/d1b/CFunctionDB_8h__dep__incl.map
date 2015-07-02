@@ -1,0 +1,47 @@
+<map id="CFunctionDB.h" name="CFunctionDB.h">
+<area shape="rect" id="node2" href="$d1/d89/compare__utilities_8cpp.html" title="compare_utilities.cpp" alt="" coords="5,80,147,107"/>
+<area shape="rect" id="node3" href="$dc/dbf/stress__test_8cpp.html" title="stress_test.cpp" alt="" coords="172,80,279,107"/>
+<area shape="rect" id="node4" href="$d7/d26/test__compare__utilities_8cpp.html" title="test_compare_utilities.cpp" alt="" coords="303,80,473,107"/>
+<area shape="rect" id="node5" href="$d4/d38/CCopasiDataModel_8cpp.html" title="CCopasiDataModel.cpp" alt="" coords="245,155,400,181"/>
+<area shape="rect" id="node6" href="$de/d4c/CopasiSE_8cpp.html" title="CopasiSE.cpp" alt="" coords="990,80,1092,107"/>
+<area shape="rect" id="node7" href="$d7/d78/CopasiUI_2main_8cpp.html" title="main.cpp" alt="" coords="1117,80,1191,107"/>
+<area shape="rect" id="node8" href="$d0/d90/CEvaluationNodeCall_8cpp.html" title="CEvaluationNodeCall.cpp" alt="" coords="1215,80,1381,107"/>
+<area shape="rect" id="node9" href="$da/d55/CEvaluationTree_8cpp.html" title="CEvaluationTree.cpp" alt="" coords="1406,80,1545,107"/>
+<area shape="rect" id="node10" href="$d6/db0/CFunction_8cpp.html" title="CFunction.cpp" alt="" coords="1570,80,1675,107"/>
+<area shape="rect" id="node11" href="$d0/df1/CFunctionDB_8cpp.html" title="CFunctionDB.cpp" alt="" coords="1700,80,1823,107"/>
+<area shape="rect" id="node12" href="$df/d08/CModel_8cpp.html" title="CModel.cpp" alt="" coords="1847,80,1937,107"/>
+<area shape="rect" id="node13" href="$d9/d77/CReaction_8cpp.html" title="CReaction.cpp" alt="" coords="425,155,532,181"/>
+<area shape="rect" id="node14" href="$d3/d07/CReactionInterface_8cpp.html" title="CReactionInterface.cpp" alt="" coords="1961,80,2119,107"/>
+<area shape="rect" id="node15" href="$df/d86/COptProblem_8cpp.html" title="COptProblem.cpp" alt="" coords="2143,80,2267,107"/>
+<area shape="rect" id="node16" href="$d5/d22/CCopasiObject_8cpp.html" title="CCopasiObject.cpp" alt="" coords="2291,80,2423,107"/>
+<area shape="rect" id="node17" href="$d2/d4b/CCopasiRootContainer_8cpp.html" title="CCopasiRootContainer.cpp" alt="" coords="2448,80,2624,107"/>
+<area shape="rect" id="node18" href="$d5/d1a/SBMLImporter_8h.html" title="SBMLImporter.h" alt="" coords="599,80,715,107"/>
+<area shape="rect" id="node20" href="$df/dfd/SBMLImporter_8cpp.html" title="SBMLImporter.cpp" alt="" coords="719,155,848,181"/>
+<area shape="rect" id="node21" href="$dc/d16/SEDMLImporter_8cpp.html" title="SEDMLImporter.cpp" alt="" coords="873,155,1012,181"/>
+<area shape="rect" id="node22" href="$d2/d55/test000058_8cpp.html" title="test000058.cpp" alt="" coords="2648,80,2757,107"/>
+<area shape="rect" id="node23" href="$dc/dd2/test000059_8cpp.html" title="test000059.cpp" alt="" coords="2781,80,2891,107"/>
+<area shape="rect" id="node24" href="$d2/da0/test000060_8cpp.html" title="test000060.cpp" alt="" coords="2915,80,3024,107"/>
+<area shape="rect" id="node25" href="$d3/dcb/test000061_8cpp.html" title="test000061.cpp" alt="" coords="3048,80,3157,107"/>
+<area shape="rect" id="node26" href="$d7/d29/test000062_8cpp.html" title="test000062.cpp" alt="" coords="3181,80,3291,107"/>
+<area shape="rect" id="node27" href="$de/db5/test000063_8cpp.html" title="test000063.cpp" alt="" coords="3315,80,3424,107"/>
+<area shape="rect" id="node28" href="$d9/d5d/test000067_8cpp.html" title="test000067.cpp" alt="" coords="3448,80,3557,107"/>
+<area shape="rect" id="node29" href="$d8/d35/test000075_8cpp.html" title="test000075.cpp" alt="" coords="3581,80,3691,107"/>
+<area shape="rect" id="node30" href="$da/d9d/test000078_8cpp.html" title="test000078.cpp" alt="" coords="3715,80,3824,107"/>
+<area shape="rect" id="node31" href="$de/da5/utilities_8cpp.html" title="utilities.cpp" alt="" coords="3849,80,3935,107"/>
+<area shape="rect" id="node32" href="$d8/d30/SEDMLImporter_8h.html" title="SEDMLImporter.h" alt="" coords="842,80,965,107"/>
+<area shape="rect" id="node33" href="$d4/df5/CODEExporter_8cpp.html" title="CODEExporter.cpp" alt="" coords="3959,80,4088,107"/>
+<area shape="rect" id="node34" href="$df/dc6/CODEExporterBM_8cpp.html" title="CODEExporterBM.cpp" alt="" coords="4112,80,4260,107"/>
+<area shape="rect" id="node35" href="$dd/d38/CODEExporterC_8cpp.html" title="CODEExporterC.cpp" alt="" coords="4285,80,4424,107"/>
+<area shape="rect" id="node36" href="$dd/d95/CODEExporterXPPAUT_8cpp.html" title="CODEExporterXPPAUT.cpp" alt="" coords="4449,80,4631,107"/>
+<area shape="rect" id="node37" href="$d2/d8e/CQBrowserPaneDM_8cpp.html" title="CQBrowserPaneDM.cpp" alt="" coords="4655,80,4816,107"/>
+<area shape="rect" id="node38" href="$d9/d06/CQExpressionWidget_8cpp.html" title="CQExpressionWidget.cpp" alt="" coords="4841,80,5007,107"/>
+<area shape="rect" id="node39" href="$d8/d39/CQFunctionDM_8cpp.html" title="CQFunctionDM.cpp" alt="" coords="5031,80,5165,107"/>
+<area shape="rect" id="node40" href="$d4/db0/CQFunctionsWidget_8cpp.html" title="CQFunctionsWidget.cpp" alt="" coords="5190,80,5351,107"/>
+<area shape="rect" id="node41" href="$d0/ddf/CQMessageBox_8cpp.html" title="CQMessageBox.cpp" alt="" coords="5376,80,5515,107"/>
+<area shape="rect" id="node42" href="$d1/d52/DataModelGUI_8cpp.html" title="DataModelGUI.cpp" alt="" coords="5539,80,5668,107"/>
+<area shape="rect" id="node43" href="$d6/da1/FunctionWidget1_8cpp.html" title="FunctionWidget1.cpp" alt="" coords="5693,80,5835,107"/>
+<area shape="rect" id="node44" href="$d7/dc4/ReactionsWidget1_8cpp.html" title="ReactionsWidget1.cpp" alt="" coords="5859,80,6009,107"/>
+<area shape="rect" id="node45" href="$d5/d00/ViewCurrentUI_2main_8cpp.html" title="main.cpp" alt="" coords="6035,80,6108,107"/>
+<area shape="rect" id="node46" href="$d3/d7c/CCopasiXML_8cpp.html" title="Implementation file of class CCopasiXML. " alt="" coords="6134,80,6255,107"/>
+<area shape="rect" id="node19" href="$d5/d2f/CSBMLExporter_8cpp.html" title="CSBMLExporter.cpp" alt="" coords="556,155,695,181"/>
+</map>

@@ -1,0 +1,17 @@
+<map id="COptMethodSteepestDescent.h" name="COptMethodSteepestDescent.h">
+<area shape="rect" id="node2" href="$d0/dfa/COptMethod_8h.html" title="optimization/COptMethod.h" alt="" coords="221,80,399,107"/>
+<area shape="rect" id="node27" href="$da/dd9/CVector_8h.html" title="utilities/CVector.h" alt="" coords="1502,419,1625,445"/>
+<area shape="rect" id="node4" href="$d2/d39/CCopasiMethod_8h.html" title="utilities/CCopasiMethod.h" alt="" coords="227,155,393,181"/>
+<area shape="rect" id="node5" href="$dc/d95/CCopasiParameterGroup_8h.html" title="copasi/utilities/CCopasi\lParameterGroup.h" alt="" coords="290,230,443,271"/>
+<area shape="rect" id="node22" href="$d2/d53/CCopasiTask_8h.html" title="copasi/utilities/CCopasi\lTask.h" alt="" coords="803,230,957,271"/>
+<area shape="rect" id="node25" href="$d3/d2b/CReadConfig_8h.html" title="copasi/utilities/CReadConfig.h" alt="" coords="157,509,349,536"/>
+<area shape="rect" id="node7" href="$d9/df7/CCopasiParameter_8h.html" title="copasi/utilities/CCopasi\lParameter.h" alt="" coords="483,321,637,362"/>
+<area shape="rect" id="node20" href="$d9/d2d/CCopasiMessage_8h.html" title="copasi/utilities/CCopasi\lMessage.h" alt="" coords="677,502,830,543"/>
+<area shape="rect" id="node8" href="$d4/d70/CCopasiContainer_8h.html" title="Header file of class CCopasiContainer. " alt="" coords="906,419,1119,445"/>
+<area shape="rect" id="node19" href="$db/d45/CCopasiObjectName_8h.html" title="copasi/report/CCopasiObject\lName.h" alt="" coords="585,411,771,453"/>
+<area shape="rect" id="node10" href="$dd/d9f/CCopasiObject_8h.html" title="copasi/report/CCopasiObject.h" alt="" coords="1059,509,1254,536"/>
+<area shape="rect" id="node14" href="$dc/df8/copasi_8h.html" title="copasi/copasi.h" alt="" coords="1607,592,1717,619"/>
+<area shape="rect" id="node18" href="$d3/dfe/CMathEnum_8h.html" title="copasi/math/CMathEnum.h" alt="" coords="1077,592,1254,619"/>
+<area shape="rect" id="node23" href="$d7/d0c/COutputHandler_8h.html" title="utilities/COutputHandler.h" alt="" coords="1310,419,1478,445"/>
+<area shape="rect" id="node24" href="$d4/d2f/CReport_8h.html" title="report/CReport.h" alt="" coords="823,328,938,355"/>
+</map>

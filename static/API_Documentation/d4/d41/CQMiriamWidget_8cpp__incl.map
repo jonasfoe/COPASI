@@ -1,0 +1,35 @@
+<map id="CQMiriamWidget.cpp" name="CQMiriamWidget.cpp">
+<area shape="rect" id="node2" href="$d8/d8a/CQMiriamWidget_8h.html" title="CQMiriamWidget.h" alt="" coords="825,88,955,115"/>
+<area shape="rect" id="node16" href="$dc/df8/copasi_8h.html" title="copasi.h" alt="" coords="1747,533,1816,560"/>
+<area shape="rect" id="node20" href="$d5/de1/qtUtilities_8h.html" title="UI/qtUtilities.h" alt="" coords="2241,88,2343,115"/>
+<area shape="rect" id="node26" href="$d4/dfa/CQMessageBox_8h.html" title="UI/CQMessageBox.h" alt="" coords="4123,88,4263,115"/>
+<area shape="rect" id="node29" href="$db/dc3/CModelMIRIAMInfo_8h.html" title="MIRIAM/CModelMIRIAMInfo.h" alt="" coords="3111,269,3309,296"/>
+<area shape="rect" id="node37" href="$d7/df5/CFunction_8h.html" title="function/CFunction.h" alt="" coords="3665,88,3805,115"/>
+<area shape="rect" id="node44" href="$d3/dd0/CKeyFactory_8h.html" title="report/CKeyFactory.h" alt="" coords="1799,360,1941,387"/>
+<area shape="rect" id="node46" href="$d7/d97/CCopasiRootContainer_8h.html" title="report/CCopasiRootContainer.h" alt="" coords="1849,269,2047,296"/>
+<area shape="rect" id="node48" href="$d4/d4d/CConfigurationFile_8h.html" title="commandline/CConfiguration\lFile.h" alt="" coords="1996,81,2183,122"/>
+<area shape="rect" id="node5" href="$d5/d28/CQCreatorDM_8h.html" title="copasi/MIRIAMUI/CQCreatorDM.h" alt="" coords="309,179,528,205"/>
+<area shape="rect" id="node6" href="$d8/dd3/CQReferenceDM_8h.html" title="copasi/MIRIAMUI/CQReferenceDM.h" alt="" coords="553,179,788,205"/>
+<area shape="rect" id="node7" href="$da/dc1/CQBiologicalDescriptionDM_8h.html" title="copasi/MIRIAMUI/CQBiological\lDescriptionDM.h" alt="" coords="813,171,1016,213"/>
+<area shape="rect" id="node8" href="$d8/d4d/CQModifiedDM_8h.html" title="copasi/MIRIAMUI/CQModifiedDM.h" alt="" coords="1041,179,1265,205"/>
+<area shape="rect" id="node9" href="$da/d4e/CQSortFilterProxyModel_8h.html" title="copasi/UI/CQSortFilterProxy\lModel.h" alt="" coords="1291,171,1475,213"/>
+<area shape="rect" id="node10" href="$d6/d91/CQComboDelegate_8h.html" title="copasi/UI/CQComboDelegate.h" alt="" coords="1499,179,1700,205"/>
+<area shape="rect" id="node22" href="$d9/df7/CCopasiParameter_8h.html" title="utilities/CCopasiParameter.h" alt="" coords="2169,360,2353,387"/>
+<area shape="rect" id="node24" href="$d4/d70/CCopasiContainer_8h.html" title="Header file of class CCopasiContainer. " alt="" coords="3209,451,3423,477"/>
+<area shape="rect" id="node30" href="$df/def/CCreator_8h.html" title="copasi/MIRIAM/CCreator.h" alt="" coords="2808,360,2984,387"/>
+<area shape="rect" id="node31" href="$db/d26/CReference_8h.html" title="copasi/MIRIAM/CReference.h" alt="" coords="3009,360,3201,387"/>
+<area shape="rect" id="node32" href="$d1/dc5/CModified_8h.html" title="copasi/MIRIAM/CModified.h" alt="" coords="2378,360,2560,387"/>
+<area shape="rect" id="node33" href="$d1/d89/CBiologicalDescription_8h.html" title="copasi/MIRIAM/CBiological\lDescription.h" alt="" coords="3226,353,3405,394"/>
+<area shape="rect" id="node34" href="$da/d07/CRDFGraph_8h.html" title="copasi/MIRIAM/CRDFGraph.h" alt="" coords="3961,360,4156,387"/>
+<area shape="rect" id="node35" href="$d7/d02/CRDFObject_8h.html" title="copasi/MIRIAM/CRDFObject.h" alt="" coords="2585,360,2783,387"/>
+<area shape="rect" id="node36" href="$d7/d51/CCopasiVector_8h.html" title="copasi/utilities/CCopasi\lVector.h" alt="" coords="3431,353,3584,394"/>
+<area shape="rect" id="node38" href="$d3/d46/CEvaluationTree_8h.html" title="function/CEvaluationTree.h" alt="" coords="3609,360,3785,387"/>
+<area shape="rect" id="node40" href="$d3/de1/CFunctionParameters_8h.html" title="function/CFunctionParameters.h" alt="" coords="3614,269,3820,296"/>
+<area shape="rect" id="node41" href="$dd/d7e/CCallParameters_8h.html" title="function/CCallParameters.h" alt="" coords="3647,179,3825,205"/>
+<area shape="rect" id="node42" href="$d7/db0/CKinFunction_8h.html" title="CKinFunction.h" alt="" coords="3850,179,3960,205"/>
+<area shape="rect" id="node43" href="$d6/d50/CMassAction_8h.html" title="CMassAction.h" alt="" coords="3985,179,4092,205"/>
+<area shape="rect" id="node45" href="$da/dd9/CVector_8h.html" title="utilities/CVector.h" alt="" coords="1804,451,1927,477"/>
+<area shape="rect" id="node47" href="$dd/df7/CCopasiDataModel_8h.html" title="copasi/CopasiDataModel\l/CCopasiDataModel.h" alt="" coords="2177,443,2340,485"/>
+<area shape="rect" id="node49" href="$dc/d95/CCopasiParameterGroup_8h.html" title="utilities/CCopasiParameter\lGroup.h" alt="" coords="2173,262,2347,303"/>
+<area shape="rect" id="node50" href="$d8/d90/CMIRIAMResource_8h.html" title="CMIRIAMResource.h" alt="" coords="2018,179,2160,205"/>
+</map>
