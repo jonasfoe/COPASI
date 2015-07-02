@@ -1,0 +1,28 @@
+---
+title: "Python Bindings Installation"
+structure: "Installation"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+<h3 name="Python_Bindings_Installation">Python Bindings Installation</h3>
+Once you downloaded the binary package for the Java bindings you have to unpack it. It will be unpacked to a directory called copasi_python. This directory contains the native library, a python file, a documentation file and the license file. It also contains a directory called unittests with lots of unittests that can be used to check if the bindings are working.<br />
+<br />
+To run the unittests, you first have to set the <i>PYTHONPATH</i> environment variable to the directory where the native library and the <i>COPASI.py</i> file are located. Once you changed into the unittests directory you find a file called <i>runTests.py</i> which runs all the unittests in the directory.<br />
+<br />
+Please note that under Microsoft Windows the language bindings require certain versions of the Microsoft runtime libraries. If these are not installed, the bindings might not work. Please see the download page for the individual language binding versions for the runtime requirements.<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

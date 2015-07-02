@@ -1,0 +1,36 @@
+---
+title: "Linux"
+structure: "Installation"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+<h3 name="Linux_Installation">Linux Installation</h3>
+<ol><li>Download the Linux (recommended) installation package.
+</li><li>Expand the contents of the tarball into a directory of choice with <span style="color:#000088;"><b><code>tar -xzvf COPASI-*-Linux-*bit.tar.gz</code></b></span>.
+</li><li>CopasiUI is a dynamically linked executables, and has no library dependencies except the glibc shared library, CopasiSE has no library dependencies.
+</li><li>Optionally, add the environment variable <b><code>COPASIDIR</code></b> to your start up script. The value must be the absolute path for the directory &quot;copasi&quot; created during extraction.
+</li></ol>
+<h3 name="Linux_Alternative_Installation">Linux Alternative Installation</h3>
+<ol><li>Download the Linux (all static) installation package.
+</li><li>Expand the contents of the tarball into a directory of choice with <span style="color:#000088;"><b><code>tar -xzvf COPASI-*-Linux-*bit.tar.gz</code></b></span>.
+</li><li>CopasiUI and CopasiSE are the executables, and have no library dependencies except that they need glibc version 2.3.6 (it may not run well with older versions.)
+</li><li>Optionally, add the environment variable <b><code>COPASIDIR</code></b> to your start up script. The value must be the absolute path for the directory &quot;copasi&quot; created during extraction.
+</li></ol>
+<br />
+<b><span style="color:#000088;">Please note, you will have to replace the<code>*</code> above with the build number of your package.</span></b><br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

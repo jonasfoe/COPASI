@@ -1,0 +1,59 @@
+---
+title: "COPASI Java and Python Language Bindings"
+structure: "Installation"
+---
+
+{% include header.html %}
+{% include navbar.html %}
+{% include structure.html %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+<br />
+<h3 name="General_Information">General Information</h3>
+The Java and Python language bindings for COPASI allow you to use the C++ API of COPASI from Java or Python. These language bindings are a work in progress. They come as they are and currently we are not able to provide support for them. If you would like to try them anyway, we would be glad to have feedback on errors, bugs and additional features that you would like to see in the future.<br />
+<br />
+In the future we will try to release new bindings for every stable release of COPASI and we will also try to extend and update the documentation of the bindings as they mature. Right now, there is a small document describing parts of the API. It has been written for the Java bindings, but most things apply to the python bindings as well. The document is included with all the binary packages that you can download.<br />
+<br />
+<br />
+<h4 name="Bindings_for_Build_34"> Bindings for Build 34</h4>
+<br />
+We have just updated the language bindings for COPASI Build 34. THe API for the new version has remained more or less the same. Some extra work has gone into making sure the java bindings work again with the CellDesigner software.<br />
+Naturally all bugfixes to the COPASI backend between Build 32 and Build 34 are incorporated into the new version of the bindings.<br />
+The binary versions of the bindings have more or less stayed the same as well, but we do provide some additional 64 bit versions of the language bindings for the Windows and Linux operating system.<br />
+At the same time support for older operating systems like Mac OS X 10.4 was dropped (or at least not tested).<br />
+<br />
+The major new feature of the source package for the language bindings is that the build system is prepared to generate perl, octave and R language bindings in addition to java and python. I was able to build binaries for these languages on Linux and Mac OS X, but since I am not well versed with any of these three languages yet, I have not been able to test them. For this reason bindings for these new languages are not being released in binary form at this time. If someone would actually be willing to spend some time in testing these new language binaries, I could try to provide binaries for his/her operating system.<br />
+<br />
+<br />
+<h4 name="Bindings_for_Build_32"> Bindings for Build 32</h4>
+<br />
+We have binary packages (Build 32) which have been build for the following platforms and languages:<br />
+<br />
+<table class="normal"><tr><td class="heading">Language </td><td class="heading"> Operating System </td><td class="heading"> Description</td></tr><tr><td class="odd">Java 5 </td><td class="odd"> Linux (Ubuntu 6.06) </td><td class="odd"> Binaries (i386) of Java bindings. The bindings were compiled on Ubuntu 6.06 (i386), but they might also work on other distributions with Java 6 and maybe even other version of Java. Testing with java 6 on Ubuntu 10.04 worked.</td></tr><tr><td class="even">Java </td><td class="even"> MacOS X 10.4 </td><td class="even"> Universal binaries (i386,ppc) of Java bindings that should work on MacOS X 10.4 (Tiger) (and MacOS X 10.5 (Leopard))</td></tr><tr><td class="odd">Java </td><td class="odd"> MacOS X 10.5 </td><td class="odd"> Universal binaries (i386,ppc) of Java bindings that should work on MacOS X 10.5 (Leopard)</td></tr><tr><td class="even">Java </td><td class="even"> MacOS X 10.6 </td><td class="even"> These bindings are provided in two versions, one for 32 Bit systems and one for 64 bit systems.</td></tr><tr><td class="odd">Java 5 </td><td class="odd"> Windows XP (32Bit) </td><td class="odd"> Binaries (i386) of Java bindings. The bindings were compiled on Windows XP (32Bit), but they also work on windows 7 (at least for me).</td></tr><tr><td class="even">Python 2.6 </td><td class="even"> Linux (Ubuntu 6.06) </td><td class="even"> Binaries (i386) of python bindings. The bindings were compiled on Ubuntu 6.06 (i386), and they also worked on Ubuntu 10.04, so other distributions should work as long as you use python 2.6.</td></tr><tr><td class="odd">Python  2.3 </td><td class="odd"> MacOS X 10.4 </td><td class="odd"> Universal binaries (i386,ppc) of python bindings for Tiger.</td></tr><tr><td class="even">Python 2.5 </td><td class="even"> MacOS X 10.5 </td><td class="even"> Universal binaries (i386,ppc) of python bindings for Leopard.</td></tr><tr><td class="odd">Python 2.6 </td><td class="odd"> MacOS X 10.6 </td><td class="odd"> binaries for x86 (32 Bit) and x86_64 (64 Bit) of python bindings for Snow Leopard.</td></tr><tr><td class="even">Python 2.5 </td><td class="even"> Windows XP (32Bit) </td><td class="even"> Binaries (i386) of python bindings. The bindings were compiled on Windows XP (32Bit), but they also worked on windows 7 with python 2.6. Other versions of python will probably not work.</td></tr></table><br />
+<br />
+If you need language bindings for any other operating system or other versions of Java and/or python, you have to compile the bindings from the source code. Instructions on how to compile the bindings from the sources can be found <a title="COPASI: Support/Installation/Language Bindings/Compiling from Source" href="{{ site.baseurl }}/Support/Installation/Language_Bindings/Compiling_from_Source" >here</a>.<br />
+<br />
+The language bindings for older version might have been build for different versions of the python language, so please check on the download page to find out which python version is needed for the individual python bindings.<br />
+<br />
+<br />
+<h3 name="Download">Download</h3>
+Language bindings are available in our download area for <a title="COPASI: Download/Obsolete/Free Version Artistic License 2 0/Language Bindings" href="{{ site.baseurl }}/Download/Obsolete/Free_Version_Artistic_License_2_0/Language_Bindings" >non-commercial</a> and <a title="COPASI: Download/Obsolete/Commercial License Only Older Versions/Language Bindings" href="{{ site.baseurl }}/Download/Obsolete/Commercial_License_Only_Older_Versions/Language_Bindings" >commercial</a> use.<br />
+<br />
+Due to our change in license, language bindings from Build 34 upwards can be found in the non-commercial section and are free for all users.<br />
+<h3 name="License">License</h3>
+The packages fall under the same license as COPASI, which means that the packages are free for non-commercial users. Commercial users that already have a valid license are also allowed to use the language bindings, but they should be aware that the bindings do come without any kind of support. Commercial users that do not have a license yet and want to use the bindings will have to buy a license first.<br />
+<br />
+Starting with Build 33, COPASI is released under the Artistic License, which basically means that it is free for all users.<br />
+<br />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+{% include footer.html %}

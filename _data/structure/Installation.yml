@@ -1,0 +1,17 @@
+pages:
+- path: Support/Installation
+  title: "Installation"
+- path: Support/Installation/Mac_OS_X
+  title: "Mac OS X"
+- path: Support/Installation/Windows
+  title: "Windows"
+- path: Support/Installation/Linux
+  title: "Linux"
+- path: Support/Installation/Language_Bindings
+  title: "Language Bindings"
+- path: Support/Installation/Language_Bindings/Java_Bindings_Installation
+  title: "Java Bindings Installation"
+- path: Support/Installation/Language_Bindings/Python_Bindings_Installation
+  title: "Python Bindings Installation"
+- path: Support/Installation/Language_Bindings/Compiling_from_Source
+  title: "Compiling from Source"
