@@ -41,6 +41,7 @@ COptMethodDE::COptMethodDE(const CCopasiContainer * pParent,
   addParameter("Population Size", CCopasiParameter::UINT, (unsigned C_INT32) 10);
   addParameter("Random Number Generator", CCopasiParameter::UINT, (unsigned C_INT32) CRandom::mt19937);
   addParameter("Seed", CCopasiParameter::UINT, (unsigned C_INT32) 0);
+  addParameter("#LogVerbosity", CCopasiParameter::UINT, (unsigned C_INT32) 0);
 
   initObjects();
 }
@@ -338,6 +339,8 @@ bool COptMethodDE::initialize()
       return false;
     }
 
+  mLogVerbosity = getValue< unsigned C_INT32 >("#LogVerbosity");
+
   mGenerations = getValue< unsigned C_INT32 >("Number of Generations");
   mGeneration = 0;
 
@@ -353,6 +356,8 @@ bool COptMethodDE::initialize()
 
   if (mPopulationSize < 4)
     {
+      mMethodLog.enterLogItem(COptLogItem(COptLogItem::DE_usrdef_error_pop_size).with(4));
+
       mPopulationSize = 4;
       setValue("Population Size", mPopulationSize);
     }
@@ -404,10 +409,14 @@ bool COptMethodDE::optimise()
       return false;
     }
 
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_start_nodoc));
+
   size_t i;
 
   // initialise the population
   // first individual is the initial guess
+  bool pointInParameterDomain = true;
+
   for (i = 0; i < mVariableSize; i++)
     {
       C_FLOAT64 & mut = (*mIndividual[0])[i];
@@ -420,10 +429,12 @@ bool COptMethodDE::optimise()
         {
           case - 1:
             mut = *OptItem.getLowerBoundValue();
+            pointInParameterDomain = false;
             break;
 
           case 1:
             mut = *OptItem.getUpperBoundValue();
+            pointInParameterDomain = false;
             break;
         }
 
@@ -431,6 +442,7 @@ bool COptMethodDE::optimise()
       // account of the value.
       *mContainerVariables[i] = mut;
     }
+  if (!pointInParameterDomain) mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_initial_point_out_of_domain));
 
   Continue &= evaluate(*mIndividual[0]);
   mValue[0] = mEvaluationValue;
@@ -463,6 +475,8 @@ bool COptMethodDE::optimise()
 
   if (!Continue)
     {
+      mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_early_stop));
+
       if (mpCallBack)
         mpCallBack->finishItem(mhGenerations);
 
@@ -479,6 +493,8 @@ bool COptMethodDE::optimise()
     {
       if (Stalled > 10)
         {
+          if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::DE_fittest_not_changed_x_random_generated).iter(mGeneration).with(Stalled - 1).with(40));
+
           Continue &= creation((size_t) 0.4 * mPopulationSize, (size_t) 0.8 * mPopulationSize);
         }
 
@@ -507,10 +523,17 @@ bool COptMethodDE::optimise()
         Continue &= mpCallBack->progressItem(mhGenerations);
     }
 
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_finish_x_of_max_gener).iter(mGeneration - 1).with(mGenerations));
+
   if (mpCallBack)
     mpCallBack->finishItem(mhGenerations);
 
   cleanup();
 
   return true;
+}
+
+unsigned C_INT32 COptMethodDE::getMaxLogVerbosity() const
+{
+  return 1;
 }

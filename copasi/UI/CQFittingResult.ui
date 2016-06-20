@@ -427,6 +427,19 @@
        </property>
       </column>
      </widget>
+     <widget class="QWidget" name="mpLogPage">
+       <attribute name="title">
+         <string>Log</string>
+       </attribute>
+       <layout class="QGridLayout">
+         <property name="margin">
+           <number>0</number>
+         </property>
+         <item row="0" column="0">
+           <widget class="CQProtocolWebView" name="mpLogWebView"/>
+         </item>
+       </layout>
+     </widget>
     </widget>
    </item>
   </layout>
@@ -437,6 +450,11 @@
    <class>CQArrayAnnotationsWidget</class>
    <extends>QWidget</extends>
    <header>CQArrayAnnotationsWidget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CQProtocolWebView</class>
+   <extends>QWebView</extends>
+   <header>copasi/UI/CQProtocolWebView.h</header>
   </customwidget>
   <customwidget>
    <class>CopasiWidget</class>

@@ -51,6 +51,7 @@ COptMethodGASR::COptMethodGASR(const CCopasiContainer * pParent,
   addParameter("Random Number Generator", CCopasiParameter::UINT, (unsigned C_INT32) CRandom::mt19937);
   addParameter("Seed", CCopasiParameter::UINT, (unsigned C_INT32) 0);
   addParameter("Pf", CCopasiParameter::DOUBLE, (C_FLOAT64) 0.475);  //*****ADDED for SR
+  addParameter("#LogVerbosity", CCopasiParameter::UINT, (unsigned C_INT32) 0);
 
   initObjects();
 }
@@ -405,6 +406,8 @@ bool COptMethodGASR::initialize()
 
   if (!COptMethod::initialize()) return false;
 
+  mLogVerbosity = getValue< unsigned C_INT32 >("#LogVerbosity");
+
   mGeneration = 0;
   mGenerations = getValue< unsigned C_INT32 >("Number of Generations");
 
@@ -423,6 +426,8 @@ bool COptMethodGASR::initialize()
     {
       mPf = 0.475;
       setValue("Pf", mPf);
+
+      mMethodLog.enterLogItem(COptLogItem(COptLogItem::GASR_usrdef_error_pf).with(mPf));
     }
 
   mpRandom =
@@ -478,6 +483,8 @@ bool COptMethodGASR::optimise()
       return false;
     }
 
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_start).with("OD.Genetic.Algorithm.SR"));
+
   // Counters to determine whether the optimization process has stalled
   // They count the number of generations without advances.
   size_t Stalled, Stalled10, Stalled30, Stalled50;
@@ -521,6 +528,8 @@ bool COptMethodGASR::optimise()
 
   if (!Continue)
     {
+      mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_early_stop));
+
       if (mpCallBack)
         mpCallBack->finishItem(mhGenerations);
 
@@ -536,18 +545,24 @@ bool COptMethodGASR::optimise()
       // perturb the population if we have stalled for a while
       if (Stalled > 50 && Stalled50 > 50)
         {
+          if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::GASR_fittest_not_changed_x_random_generated).iter(mGeneration).with(Stalled50 - 1).with(50));
+
           Continue = creation((size_t)(mPopulationSize * 0.5),
                               mPopulationSize);
           Stalled10 = Stalled30 = Stalled50 = 0;
         }
       else if (Stalled > 30 && Stalled30 > 30)
         {
+          if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::GASR_fittest_not_changed_x_random_generated).iter(mGeneration).with(Stalled50 - 1).with(30));
+
           Continue = creation((size_t)(mPopulationSize * 0.7),
                               mPopulationSize);
           Stalled10 = Stalled30 = 0;
         }
       else if (Stalled > 10 && Stalled10 > 10)
         {
+          if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::GASR_fittest_not_changed_x_random_generated).iter(mGeneration).with(Stalled50 - 1).with(10));
+
           Continue = creation((size_t)(mPopulationSize * 0.9),
                               mPopulationSize);
           Stalled10 = 0;
@@ -578,10 +593,17 @@ bool COptMethodGASR::optimise()
         Continue = mpCallBack->progressItem(mhGenerations);
     }
 
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_finish_x_of_max_gener).iter(mGeneration - 1).with(mGenerations));
+
   if (mpCallBack)
     mpCallBack->finishItem(mhGenerations);
 
   cleanup();
 
   return true;
+}
+
+unsigned C_INT32 COptMethodGASR::getMaxLogVerbosity() const
+{
+  return 1;
 }

@@ -35,6 +35,7 @@ COptMethodNelderMead::COptMethodNelderMead(const CCopasiContainer * pParent,
   addParameter("Iteration Limit", CCopasiParameter::UINT, (unsigned C_INT32) 200);
   addParameter("Tolerance", CCopasiParameter::UDOUBLE, (C_FLOAT64) 1.e-005);
   addParameter("Scale", CCopasiParameter::UDOUBLE, (C_FLOAT64) 10.0);
+  addParameter("#LogVerbosity", CCopasiParameter::UINT, (unsigned C_INT32) 0);
 
   initObjects();
 }
@@ -180,6 +181,8 @@ bool COptMethodNelderMead::optimise()
       return false;
     }
 
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_start).with("OD.Nelder.Mead"));
+
   // set tolerances for local minima test to zero
   C_FLOAT64 abstol, reltol;
   abstol = reltol = 0.0;
@@ -215,6 +218,7 @@ bool COptMethodNelderMead::optimise()
 
   // initial point is first guess but we have to make sure that we
   // are within the parameter domain
+  bool pointInParameterDomain = true;
   for (i = 0; i < mVariableSize; i++)
     {
       const COptItem & OptItem = *(*mpOptItem)[i];
@@ -223,10 +227,12 @@ bool COptMethodNelderMead::optimise()
         {
           case - 1:
             mCurrent[i] = *OptItem.getLowerBoundValue();
+            pointInParameterDomain = false;
             break;
 
           case 1:
             mCurrent[i] = *OptItem.getUpperBoundValue();
+            pointInParameterDomain = false;
             break;
 
           case 0:
@@ -239,6 +245,7 @@ bool COptMethodNelderMead::optimise()
       // set the magnitude of each parameter
       mStep[i] = (*OptItem.getUpperBoundValue() - *OptItem.getLowerBoundValue()) / mScale;
     }
+  if (!pointInParameterDomain) mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_initial_point_out_of_domain));
 
   evaluate();
 
@@ -549,6 +556,8 @@ First:
         }
     }   /* while not found and not quit ... */
 
+  if (mLogVerbosity >= 1 && found) mMethodLog.enterLogItem(COptLogItem(COptLogItem::NM_fval_change_lower_than_tol).iter(mIteration));
+
   /* **** bail out if necessary **** */
   if (quit || !mContinue) goto Finish;
 
@@ -588,10 +597,14 @@ First:
 
   if (ok) /* then */
     {
+      mMethodLog.enterLogItem(COptLogItem(COptLogItem::NM_local_min_termination).iter(mIteration));
+
       goto Finish;
     }
 
   /* ---- Reduce the size of the simplex and restart the procedure. ---- */
+
+  if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::NM_no_local_min_reducing_simplex).iter(mIteration));
 
   found = 0;   /* -- we did not find a 1 minimum -- */
   del = std::max(del * factor, 100.0 * std::numeric_limits< C_FLOAT64 >::epsilon());
@@ -599,6 +612,7 @@ First:
   goto First;
 
 Finish:  /* end of procedure */
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_finish_x_of_max_iter).iter(mIteration).with(mIterationLimit));
 
   if (mpCallBack)
     mpCallBack->finishItem(mhIteration);
@@ -639,6 +653,7 @@ bool COptMethodNelderMead::initialize()
   mIterationLimit = getValue< unsigned C_INT32 >("Iteration Limit");
   mTolerance = getValue< C_FLOAT64 >("Tolerance");
   mScale = getValue< C_FLOAT64 >("Scale");
+  mLogVerbosity = getValue< unsigned C_INT32 >("#LogVerbosity");
 
   mIteration = 0;
 
@@ -662,4 +677,9 @@ bool COptMethodNelderMead::initialize()
   mContinue = true;
 
   return true;
+}
+
+unsigned C_INT32 COptMethodNelderMead::getMaxLogVerbosity() const
+{
+  return 1;
 }

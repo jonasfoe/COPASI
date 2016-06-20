@@ -28,7 +28,11 @@ COptMethodTruncatedNewton::COptMethodTruncatedNewton(const CCopasiContainer * pP
   COptMethod(pParent, methodType, taskType),
   mpTruncatedNewton(new FTruncatedNewtonTemplate<COptMethodTruncatedNewton>(this, &COptMethodTruncatedNewton::sFun)),
   mpCTruncatedNewton(new CTruncatedNewton())
-{initObjects();}
+{
+  addParameter("#LogVerbosity", CCopasiParameter::UINT, (unsigned C_INT32) 0);
+
+  initObjects();
+}
 
 COptMethodTruncatedNewton::COptMethodTruncatedNewton(const COptMethodTruncatedNewton & src,
     const CCopasiContainer * pParent):
@@ -53,6 +57,8 @@ bool COptMethodTruncatedNewton::optimise()
 {
   if (!initialize()) return false;
 
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_start).with("OD.Truncated.Newton"));
+
   C_FLOAT64 fest;
   C_INT lw, ierror = 0;
   lw = 14 * mVariableSize;
@@ -68,6 +74,7 @@ bool COptMethodTruncatedNewton::optimise()
   // initial point is the first guess but we have to make sure that
   // we are within the parameter domain
   C_INT i, repeat;
+  bool pointInParameterDomain = true;
 
   for (i = 0; i < mVariableSize; i++)
     {
@@ -85,10 +92,12 @@ bool COptMethodTruncatedNewton::optimise()
         {
           case - 1:
             mCurrent[i] = *OptItem.getLowerBoundValue();
+            pointInParameterDomain = false;
             break;
 
           case 1:
             mCurrent[i] = *OptItem.getUpperBoundValue();
+            pointInParameterDomain = false;
             break;
 
           case 0:
@@ -98,6 +107,7 @@ bool COptMethodTruncatedNewton::optimise()
       // set the value
       *mContainerVariables[i] = (mCurrent[i]);
     }
+  if (!pointInParameterDomain) mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_initial_point_out_of_domain));
 
   // Report the first value as the current best
   mBestValue = evaluate();
@@ -225,7 +235,11 @@ bool COptMethodTruncatedNewton::optimise()
         }
 
 #endif // XXXX
+
+      if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::TN_next_repeat).with(repeat));
     }
+
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_finish));
 
   return true;
 }
@@ -235,6 +249,8 @@ bool COptMethodTruncatedNewton::initialize()
   cleanup();
 
   if (!COptMethod::initialize()) return false;
+
+  mLogVerbosity = getValue< unsigned C_INT32 >("#LogVerbosity");
 
   mVariableSize = (C_INT) mpOptItem->size();
   mCurrent.resize(mVariableSize);
@@ -320,4 +336,9 @@ const C_FLOAT64 & COptMethodTruncatedNewton::evaluate()
     mEvaluationValue = mBestValue + mBestValue - mEvaluationValue;
 
   return mEvaluationValue;
+}
+
+unsigned C_INT32 COptMethodTruncatedNewton::getMaxLogVerbosity() const
+{
+  return 1;
 }

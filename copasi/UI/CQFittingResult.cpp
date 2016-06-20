@@ -30,12 +30,15 @@
 #include "parameterFitting/CFitItem.h"
 #include "parameterFitting/CExperimentSet.h"
 #include "parameterFitting/CExperiment.h"
+#include "optimization/COptMethod.h"
+#include "optimization/COptLog.h"
 #include "report/CCopasiRootContainer.h"
 #include "commandline/CLocaleString.h"
 #include "model/CModel.h"
 #include "math/CMathContainer.h"
 
 #include "UI/qtUtilities.h"
+#include <QWebFrame>
 
 /*
  *  Constructs a CQFittingResult which is a child of 'parent', with the
@@ -427,6 +430,51 @@ bool CQFittingResult::enterProtected()
 
   mpCrossValidationValues->resizeColumnsToContents();
   mpCrossValidationValues->resizeRowsToContents();
+
+  // log
+  const COptMethod * pMethod = dynamic_cast<const COptMethod *>(mpTask->getMethod());
+
+  if (pMethod)
+    {
+      mpTabWidget->setTabEnabled(mpTabWidget->indexOf(mpLogPage), true);
+
+      QStringList logHtmlTemp, logHtml;
+      QFile logFile("../protocol/protocol.html");
+      logFile.open(QIODevice::ReadOnly);
+
+      logHtml = ((QString)logFile.readAll()).split("var elementcount");
+      logHtmlTemp = logHtml[1].split("id=\"accordion\">\n");
+
+      logHtml[1] = logHtmlTemp[0];
+      logHtml << logHtmlTemp[1];
+
+      logFile.close();
+
+
+      if (logHtml.size() == 3)
+        {
+          logHtml[0].append("var elementcount = ");
+
+          logHtml[0].append(QString::number(pMethod->getMethodLog().getElementCount()));
+
+          logHtml[1].append("id=\"accordion\">\n");
+
+          logHtml[1].append(pMethod->getMethodLog().getRichLog().c_str());
+
+          QString logQString = logHtml.join(QString());
+          mpLogWebView->page()->action(QWebPage::Reload)->setVisible(false);
+          mpLogWebView->page()->action(QWebPage::SelectAll)->setEnabled(true);
+          mpLogWebView->page()->action(QWebPage::SelectAll)->setVisible(true);
+#ifdef COPASI_DEBUG
+          mpLogWebView->settings()->setAttribute(QWebSettings::DeveloperExtrasEnabled, true);
+#endif // COPASI_DEBUG
+          mpLogWebView->setHtml(logQString, QUrl::fromLocalFile(QFileInfo("../protocol/protocol.html").absoluteFilePath()));
+        }
+    }
+  else
+    {
+      mpTabWidget->setTabEnabled(mpTabWidget->indexOf(mpLogPage), false);
+    }
 
   return true;
 }

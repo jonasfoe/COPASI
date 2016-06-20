@@ -59,6 +59,7 @@ COptMethodGA::COptMethodGA(const CCopasiContainer * pParent,
   addParameter("Population Size", CCopasiParameter::UINT, (unsigned C_INT32) 20);
   addParameter("Random Number Generator", CCopasiParameter::UINT, (unsigned C_INT32) CRandom::mt19937);
   addParameter("Seed", CCopasiParameter::UINT, (unsigned C_INT32) 0);
+  addParameter("#LogVerbosity", CCopasiParameter::UINT, (unsigned C_INT32) 0);
 
   initObjects();
 }
@@ -429,6 +430,8 @@ bool COptMethodGA::initialize()
       return false;
     }
 
+  mLogVerbosity = getValue< unsigned C_INT32 >("#LogVerbosity");
+
   mGenerations = (unsigned C_INT32)getValue< C_FLOAT64 >("Number of Generations");
   mGeneration = 0;
 
@@ -496,6 +499,8 @@ bool COptMethodGA::optimise()
       return false;
     }
 
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_start).with("OD.Genetic.Algorithm"));
+
   // Counters to determine whether the optimization process has stalled
   // They count the number of generations without advances.
   size_t Stalled, Stalled10, Stalled30, Stalled50;
@@ -505,6 +510,7 @@ bool COptMethodGA::optimise()
 
   // initialise the population
   // first individual is the initial guess
+  bool pointInParameterDomain = true;
   for (i = 0; i < mVariableSize; i++)
     {
       C_FLOAT64 & mut = (*mIndividual[0])[i];
@@ -517,10 +523,12 @@ bool COptMethodGA::optimise()
         {
           case - 1:
             mut = *OptItem.getLowerBoundValue();
+            pointInParameterDomain = false;
             break;
 
           case 1:
             mut = *OptItem.getUpperBoundValue();
+            pointInParameterDomain = false;
             break;
         }
 
@@ -528,6 +536,7 @@ bool COptMethodGA::optimise()
       // account of the value.
       *mContainerVariables[i] = mut;
     }
+  if (!pointInParameterDomain) mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_initial_point_out_of_domain));
 
   Continue &= evaluate(*mIndividual[0]);
   mValue[0] = mEvaluationValue;
@@ -566,6 +575,8 @@ bool COptMethodGA::optimise()
   // test if the user wants to stop, and do so if needed
   if (!Continue)
     {
+      mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_early_stop));
+
       if (mpCallBack)
         mpCallBack->finishItem(mhGenerations);
 
@@ -581,18 +592,24 @@ bool COptMethodGA::optimise()
       // perturb the population if we have stalled for a while
       if (Stalled > 50 && Stalled50 > 50)
         {
+          if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::GA_fittest_not_changed_x_random_generated).iter(mGeneration).with(Stalled50 - 1).with(50));
+
           Continue &= creation((size_t)(mPopulationSize / 2),
                                mPopulationSize);
           Stalled10 = Stalled30 = Stalled50 = 0;
         }
       else if (Stalled > 30 && Stalled30 > 30)
         {
+          if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::GA_fittest_not_changed_x_random_generated).iter(mGeneration).with(Stalled50 - 1).with(30));
+
           Continue &= creation((size_t)(mPopulationSize * 0.7),
                                mPopulationSize);
           Stalled10 = Stalled30 = 0;
         }
       else if (Stalled > 10 && Stalled10 > 10)
         {
+          if (mLogVerbosity >= 1) mMethodLog.enterLogItem(COptLogItem(COptLogItem::GA_fittest_not_changed_x_random_generated).iter(mGeneration).with(Stalled50 - 1).with(10));
+
           Continue &= creation((size_t)(mPopulationSize * 0.9),
                                mPopulationSize);
           Stalled10 = 0;
@@ -628,9 +645,16 @@ bool COptMethodGA::optimise()
 #endif
     }
 
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_finish_x_of_max_gener).iter(mGeneration - 1).with(mGenerations));
+
   if (mpCallBack)
     mpCallBack->finishItem(mhGenerations);
 
   cleanup();
   return true;
+}
+
+unsigned C_INT32 COptMethodGA::getMaxLogVerbosity() const
+{
+  return 1;
 }

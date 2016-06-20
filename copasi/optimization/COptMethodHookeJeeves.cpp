@@ -38,6 +38,7 @@ COptMethodHookeJeeves::COptMethodHookeJeeves(const CCopasiContainer * pParent,
   addParameter("Iteration Limit", CCopasiParameter::UINT, (unsigned C_INT32) 50);
   addParameter("Tolerance", CCopasiParameter::DOUBLE, (C_FLOAT64) 1.e-005);
   addParameter("Rho", CCopasiParameter::DOUBLE, (C_FLOAT64) 0.2);
+  addParameter("#LogVerbosity", CCopasiParameter::UINT, (unsigned C_INT32) 0);
 
   initObjects();
 }
@@ -64,6 +65,8 @@ bool COptMethodHookeJeeves::optimise()
       return false;
     }
 
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_start).with("OD.Hooke.Jeeves"));
+
   C_FLOAT64 newf, steplength, tmp;
   bool Keep;
   size_t iadj;
@@ -72,6 +75,8 @@ bool COptMethodHookeJeeves::optimise()
   size_t i;
 
   // initialise the guess vector
+  bool pointInParameterDomain = true;
+
   for (i = 0; i < mVariableSize; i++)
     {
       C_FLOAT64 & mut = mIndividual[i];
@@ -84,10 +89,12 @@ bool COptMethodHookeJeeves::optimise()
         {
           case - 1:
             mut = *OptItem.getLowerBoundValue();
+            pointInParameterDomain = false;
             break;
 
           case 1:
             mut = *OptItem.getUpperBoundValue();
+            pointInParameterDomain = false;
             break;
         }
 
@@ -95,6 +102,7 @@ bool COptMethodHookeJeeves::optimise()
       // account of the value.
       *mContainerVariables[i] = mut;
     }
+  if (!pointInParameterDomain) mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_initial_point_out_of_domain));
 
   mContinue &= evaluate();
 
@@ -105,6 +113,8 @@ bool COptMethodHookeJeeves::optimise()
 
   if (!mContinue)
     {
+      mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_early_stop));
+
       if (mpCallBack)
         mpCallBack->finishItem(mhIteration);
 
@@ -212,6 +222,10 @@ bool COptMethodHookeJeeves::optimise()
         }
     }
 
+  if (steplength <= mTolerance) mMethodLog.enterLogItem(COptLogItem(COptLogItem::HJ_steplength_lower_than_tol).iter(mIteration));
+
+  mMethodLog.enterLogItem(COptLogItem(COptLogItem::STD_finish_x_of_max_iter).iter(mIteration).with(mIterationLimit));
+
   if (mpCallBack)
     mpCallBack->finishItem(mhIteration);
 
@@ -229,6 +243,8 @@ bool COptMethodHookeJeeves::initialize()
   cleanup();
 
   if (!COptMethod::initialize()) return false;
+
+  mLogVerbosity = getValue< unsigned C_INT32 >("#LogVerbosity");
 
   mIterationLimit = getValue< unsigned C_INT32 >("Iteration Limit");
   mTolerance = getValue< C_FLOAT64 >("Tolerance");
@@ -356,6 +372,11 @@ C_FLOAT64 COptMethodHookeJeeves::bestNearby()
   mNew = mIndividual;
 
   return (minf);
+}
+
+unsigned C_INT32 COptMethodHookeJeeves::getMaxLogVerbosity() const
+{
+  return 0;
 }
 
 /* Find a point X where the nonlinear function f(X) has a local    */

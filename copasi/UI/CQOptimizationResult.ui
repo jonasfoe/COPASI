@@ -139,43 +139,76 @@ p, li { white-space: pre-wrap; }
     </layout>
    </item>
    <item>
-    <widget class="QTableWidget" name="mpParameters">
-     <property name="editTriggers">
-      <set>QAbstractItemView::NoEditTriggers</set>
+    <widget class="QTabWidget" name="mpTabWidget">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
      </property>
-     <property name="sortingEnabled">
-      <bool>true</bool>
+     <property name="minimumSize">
+      <size>
+       <width>210</width>
+       <height>180</height>
+      </size>
      </property>
-     <column>
-      <property name="text">
-       <string>Parameter</string>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QTableWidget" name="mpParameters">
+      <attribute name="title">
+       <string>Main</string>
+      </attribute>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
       </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Lower Bound</string>
+      <property name="sortingEnabled">
+       <bool>true</bool>
       </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Start Value</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Value</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Upper Bound</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Gradient</string>
-      </property>
-     </column>
+      <column>
+       <property name="text">
+        <string>Parameter</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Lower Bound</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Start Value</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Value</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Upper Bound</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Gradient</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QWidget" name="mpLogPage">
+      <attribute name="title">
+       <string>Log</string>
+      </attribute>
+      <layout class="QGridLayout">
+        <property name="margin">
+          <number>0</number>
+        </property>
+        <item row="0" column="0">
+          <widget class="CQProtocolWebView" name="mpLogWebView"/>
+        </item>
+      </layout>
+     </widget>
     </widget>
    </item>
   </layout>
@@ -187,6 +220,11 @@ p, li { white-space: pre-wrap; }
    <extends>QWidget</extends>
    <header>copasi/UI/copasiWidget.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>CQProtocolWebView</class>
+   <extends>QWebView</extends>
+   <header>copasi/UI/CQProtocolWebView.h</header>
   </customwidget>
  </customwidgets>
  <includes>
