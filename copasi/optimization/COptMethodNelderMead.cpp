@@ -653,7 +653,7 @@ bool COptMethodNelderMead::initialize()
   mIterationLimit = getValue< unsigned C_INT32 >("Iteration Limit");
   mTolerance = getValue< C_FLOAT64 >("Tolerance");
   mScale = getValue< C_FLOAT64 >("Scale");
-  mLogVerbosity = * getValue("#LogVerbosity").pUINT;
+  mLogVerbosity = getValue< unsigned C_INT32 >("#LogVerbosity");
 
   mIteration = 0;
 

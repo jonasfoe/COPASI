@@ -438,7 +438,7 @@ bool COptMethodLevenbergMarquardt::initialize()
   mModulation = 0.001;
   mIterationLimit = getValue< unsigned C_INT32 >("Iteration Limit");
   mTolerance = getValue< C_FLOAT64 >("Tolerance");
-  mLogVerbosity = * getValue("#LogVerbosity").pUINT;
+  mLogVerbosity = getValue< unsigned C_INT32 >("#LogVerbosity");
 
 #ifdef COPASI_DEBUG
   mModulation = getValue< C_FLOAT64 >("Modulation");

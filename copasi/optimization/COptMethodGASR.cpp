@@ -406,7 +406,7 @@ bool COptMethodGASR::initialize()
 
   if (!COptMethod::initialize()) return false;
 
-  mLogVerbosity = * getValue("#LogVerbosity").pUINT;
+  mLogVerbosity = getValue< unsigned C_INT32 >("#LogVerbosity");
 
   mGeneration = 0;
   mGenerations = getValue< unsigned C_INT32 >("Number of Generations");

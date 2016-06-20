@@ -250,7 +250,7 @@ bool COptMethodTruncatedNewton::initialize()
 
   if (!COptMethod::initialize()) return false;
 
-  mLogVerbosity = * getValue("#LogVerbosity").pUINT;
+  mLogVerbosity = getValue< unsigned C_INT32 >("#LogVerbosity");
 
   mVariableSize = (C_INT) mpOptItem->size();
   mCurrent.resize(mVariableSize);

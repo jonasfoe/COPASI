@@ -134,7 +134,7 @@ bool COptMethodPraxis::initialize()
 
   if (!COptMethod::initialize()) return false;
 
-  mLogVerbosity = * getValue("#LogVerbosity").pUINT
+  mLogVerbosity = getValue< unsigned C_INT32 >("#LogVerbosity");
 
   mTolerance = getValue< C_FLOAT64 >("Tolerance");
   mIteration = 0;

@@ -322,7 +322,7 @@ bool COptMethodSA::initialize()
   mTemperature = getValue< C_FLOAT64 >("Start Temperature");
   mCoolingFactor = getValue< C_FLOAT64 >("Cooling Factor");
   mTolerance = getValue< C_FLOAT64 >("Tolerance");
-  mLogVerbosity = * getValue("#LogVerbosity").pUINT;
+  mLogVerbosity = getValue< unsigned C_INT32 >("#LogVerbosity");
   mpRandom =
     CRandom::createGenerator((CRandom::Type) getValue< unsigned C_INT32 >("Random Number Generator"),
                              getValue< unsigned C_INT32 >("Seed"));

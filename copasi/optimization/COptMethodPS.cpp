@@ -334,7 +334,7 @@ bool COptMethodPS::initialize()
   if (!COptMethod::initialize()) return false;
 
   mIterationLimit = getValue< unsigned C_INT32 >("Iteration Limit");
-  mLogVerbosity = * getValue("#LogVerbosity").pUINT;
+  mLogVerbosity = getValue< unsigned C_INT32 >("#LogVerbosity");
   mIteration = 0;
 
   if (mpCallBack)

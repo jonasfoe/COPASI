@@ -283,7 +283,7 @@ bool COptMethodCoranaWalk::initialize()
 
   if (!COptMethod::initialize()) return false;
 
-  mLogVerbosity = * getValue("#LogVerbosity").pUINT;
+  mLogVerbosity = getValue< unsigned C_INT32 >("#LogVerbosity");
 
   mTemperature = getValue< C_FLOAT64 >("Temperature");
   mIterations = getValue< unsigned C_INT32 >("Iterations");

@@ -218,7 +218,7 @@ bool COptMethodSteepestDescent::initialize()
 
   if (!COptMethod::initialize()) return false;
 
-  mLogVerbosity = * getValue("#LogVerbosity").pUINT;
+  mLogVerbosity = getValue< unsigned C_INT32 >("#LogVerbosity");
 
   mIterations = getValue< unsigned C_INT32 >("Iteration Limit");
   mTolerance = getValue< C_FLOAT64 >("Tolerance");

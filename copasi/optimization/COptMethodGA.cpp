@@ -430,7 +430,7 @@ bool COptMethodGA::initialize()
       return false;
     }
 
-  mLogVerbosity = * getValue("#LogVerbosity").pUINT;
+  mLogVerbosity = getValue< unsigned C_INT32 >("#LogVerbosity");
 
   mGenerations = (unsigned C_INT32)getValue< C_FLOAT64 >("Number of Generations");
   mGeneration = 0;
