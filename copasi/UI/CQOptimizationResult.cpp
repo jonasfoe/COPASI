@@ -85,6 +85,10 @@ bool CQOptimizationResult::enterProtected()
   const C_FLOAT64 & ExecutionTime = mpProblem->getExecutionTime();
   mpEditCPUTime->setText(QString::number(ExecutionTime));
   mpEditSpeed->setText(QString::number(FunctionEvaluations / ExecutionTime));
+  const unsigned C_INT32 & FailedEvaluationsExc = mpProblem->getFailedEvaluationsExc();
+  mpEditFailedEvaluationsExc->setText(QString::number(FailedEvaluationsExc));
+  const unsigned C_INT32 & FailedEvaluationsNaN = mpProblem->getFailedEvaluationsNaN();
+  mpEditFailedEvaluationsNaN->setText(QString::number(FailedEvaluationsNaN));
 
   size_t i, imax;
 

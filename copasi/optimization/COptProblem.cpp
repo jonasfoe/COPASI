@@ -89,7 +89,8 @@ COptProblem::COptProblem(const CTaskEnum::Task & type,
   mContainerVariables(),
   mSolutionValue(0),
   mCounter(0),
-  mFailedCounter(0),
+  mFailedCounterException(0),
+  mFailedCounterNaN(0),
   mConstraintCounter(0),
   mFailedConstraintCounter(0),
   mCPUTime(CCopasiTimer::PROCESS, this),
@@ -128,7 +129,8 @@ COptProblem::COptProblem(const COptProblem& src,
   mContainerVariables(src.mContainerVariables),
   mSolutionValue(src.mSolutionValue),
   mCounter(0),
-  mFailedCounter(0),
+  mFailedCounterException(0),
+  mFailedCounterNaN(0),
   mConstraintCounter(0),
   mFailedConstraintCounter(0),
   mCPUTime(CCopasiTimer::PROCESS, this),
@@ -328,7 +330,8 @@ bool COptProblem::initialize()
 
   mpReport = NULL;
   mCounter = 0;
-  mFailedCounter = 0;
+  mFailedCounterException = 0;
+  mFailedCounterNaN = 0;
   mConstraintCounter = 0;
   mFailedConstraintCounter = 0;
 
@@ -454,8 +457,8 @@ bool COptProblem::restore(const bool & updateModel)
   mpContainer->applyUpdateSequence(mInitialRefreshSequence);
   mpContainer->pushInitialState();
 
-  if (mFailedCounter * 20 > mCounter) // > 5% failure rate
-    CCopasiMessage(CCopasiMessage::WARNING, MCOptimization + 8, mFailedCounter, mCounter);
+  if ((mFailedCounterException + mFailedCounterNaN) * 20 > mCounter) // > 5% failure rate
+    CCopasiMessage(CCopasiMessage::WARNING, MCOptimization + 8, mFailedCounterException + mFailedCounterNaN, mCounter);
 
   if (10 * mFailedConstraintCounter > 8 * mConstraintCounter) // > 80 % failure rate
     CCopasiMessage(CCopasiMessage::WARNING, MCOptimization + 9, mFailedConstraintCounter, mConstraintCounter);
@@ -553,9 +556,15 @@ bool COptProblem::calculate()
       pdelete(pOutputHandler);
     }
 
-  if (!success || isnan(mCalculateValue))
+  if (!success)
     {
-      mFailedCounter++;
+      mFailedCounterException++;
+      mCalculateValue = std::numeric_limits< C_FLOAT64 >::infinity();
+    }
+
+  if (isnan(mCalculateValue))
+    {
+      mFailedCounterNaN++;
       mCalculateValue = std::numeric_limits< C_FLOAT64 >::infinity();
     }
 
@@ -817,6 +826,12 @@ void COptProblem::incrementEvaluations(unsigned C_INT32 increment)
 
 void COptProblem::resetEvaluations()
 {mCounter = 0;}
+
+const unsigned C_INT32 & COptProblem::getFailedEvaluationsExc() const
+{return mFailedCounterException;}
+
+const unsigned C_INT32 & COptProblem::getFailedEvaluationsNaN() const
+{return mFailedCounterNaN;}
 
 const C_FLOAT64 & COptProblem::getExecutionTime() const
 {
