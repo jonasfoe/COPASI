@@ -27,7 +27,7 @@
 
 
 
-%module(directors="1") COPASI
+%module(directors="1") CoRC
 
 
 %warnfilter(402) CCommonName;
