@@ -37,6 +37,7 @@ if (NOT R_INCLUDE_DIRS)
         NAMES R.h
         PATHS /usr/include /usr/local/include /usr/share/R/include
               /usr/include/R /usr/local/include/R
+              /usr/local/lib/R/include /usr/local/lib64/R/include
               /Library/Frameworks/R.framework/Versions/Current/Resources/include
               $ENV{ProgramFiles}/R/R-3.1.0/include
               $ENV{ProgramW6432}/R/R-3.1.0/include
@@ -65,7 +66,8 @@ if (NOT R_LIB)
   find_library(R_LIB
       NAMES Rlib.lib R
       PATHS /usr/${LIB_DIR} /usr/local/${LIB_DIR} 
-          /usr/lib /usr/local/lib /usr/lib/R/lib
+          /usr/lib /usr/local/lib
+          /usr/lib/R/lib /usr/local/lib64/R/lib
           $ENV{ProgramFiles}/R/R-3.1.0/bin${R_SUFFIX}
           $ENV{ProgramW6432}/R/R-3.1.0/bin${R_SUFFIX}
           $ENV{ProgramFiles}/R/R-3.0.3/bin${R_SUFFIX}
